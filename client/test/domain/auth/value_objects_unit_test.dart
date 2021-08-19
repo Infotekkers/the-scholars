@@ -16,4 +16,22 @@ void main() {
     final EmailAddress emailAddress = EmailAddress("testing101");
     expect(emailAddress.value.fold((l) => l, (r) => r), const ValueFailure.invalidEmail(failedValue: "testing101"));
   });
+
+  // * PASSWORD TEST
+  test("Password should return the valid password as string.", () {
+    final Password password = Password("Test4Scholars!");
+    expect(password.value.fold((l) => l, (r) => r), "Test4Scholars!");
+  });
+  test("Password should return the empty value failure.", () {
+    final Password password = Password("");
+    expect(password.value.fold((l) => l, (r) => r), const ValueFailure.empty(failedValue: ""));
+  });
+  test("Password should return the short password value failure.", () {
+    final Password password = Password("test");
+    expect(password.value.fold((l) => l, (r) => r), const ValueFailure.shortPassword(failedValue: "test"));
+  });
+  test("Password should return the invalid password value failure.", () {
+    final Password password = Password("testingatscholars");
+    expect(password.value.fold((l) => l, (r) => r), const ValueFailure.invalidPassword(failedValue: "testingatscholars"));
+  });
 }
