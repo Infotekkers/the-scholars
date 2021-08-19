@@ -4,6 +4,9 @@ const mongoose = require("mongoose");
 const CORS = require("cors");
 require("dotenv").config();
 
+// Importing custom middleware
+const authRoutes = require("./routes/auth/authRoutes");
+
 // Creating express instance
 const app = express();
 
@@ -30,6 +33,18 @@ const dbInstance = mongoose.connection;
 dbInstance.once("open", () => {
   console.log("Database connected successfully");
 });
+
+// Swagger Docs Config
+const swaggerJsDoc = require("swagger-jsdoc");
+const swaggerUi = require("swagger-ui-express");
+const swaggerConfig = require("./config");
+
+const swaggerDocs = swaggerJsDoc(swaggerConfig);
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+
+// Auth route middleware
+app.use("/auth", authRoutes);
 
 // Run server
 const port = process.env.PORT_NUMBER || 3000;
