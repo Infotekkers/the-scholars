@@ -32,7 +32,11 @@ const swaggerOptions = {
       },
     ],
   },
-  apis: ["./routes/auth/*.js"],
+  apis: [
+    "./routes/auth/*.js",
+    "./routes/admin/adminRoutes.js",
+    "./routes/user/userRoutes.js",
+  ],
 };
 
 module.exports = swaggerOptions;
