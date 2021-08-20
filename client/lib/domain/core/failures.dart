@@ -15,6 +15,9 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.shortPassword({
     required T failedValue,
   }) = ShortPassword<T>;
+  const factory ValueFailure.invalidPassword({
+    required T failedValue,
+  }) = InvalidPassword<T>;
   const factory ValueFailure.exceedingLength({
     required T failedValue,
   }) = ExceedingLength<T>;
