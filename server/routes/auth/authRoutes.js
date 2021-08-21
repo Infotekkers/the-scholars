@@ -35,7 +35,7 @@ const transporter = nodemailer.createTransport({
  * @swagger
  * /auth/register:
  *    post:
- *      description: An api endpoint to register a new user
+ *      description: An api endpoint for registering a new User
  *      tags:
  *      - Authentication
  *    responses:
@@ -79,7 +79,17 @@ router.post("/register", async (req, res) => {
   }
 });
 
-// Login route
+/**
+ * @swagger
+ * /auth/login:
+ *    post:
+ *      description: An api endpoint for signing in a User
+ *      tags:
+ *      - Authentication
+ *    responses:
+ *      '201':
+ *        description: Successfully created user
+ */
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -105,7 +115,17 @@ router.post("/login", async (req, res) => {
   }
 });
 
-// Reset Route
+/**
+ * @swagger
+ * /auth/reset/:changeItem:
+ *    patch:
+ *      description: An api endpoint for resetting credentials from within the account. After logging in.
+ *      tags:
+ *      - Authentication
+ *    responses:
+ *      '201':
+ *        description: Successfully created user
+ */
 router.patch("/reset/:changeItem", async (req, res) => {
   const { changeValue, email } = req.body;
   if (req.params.changeItem == "role" || req.params.changeItem == "username") {
@@ -123,7 +143,17 @@ router.patch("/reset/:changeItem", async (req, res) => {
   }
 });
 
-// Send Reset link over email
+/**
+ * @swagger
+ * /auth/request/reset:
+ *    post:
+ *      description: An api endpoint for requesting a reset link sent to associated email
+ *      tags:
+ *      - Authentication
+ *    responses:
+ *      '201':
+ *        description: Successfully created user
+ */
 router.post("/request/reset", async (req, res) => {
   const { email } = req.body;
 
@@ -154,7 +184,17 @@ router.post("/request/reset", async (req, res) => {
   });
 });
 
-// Reset Credentials
+/**
+ * @swagger
+ * /auth/reset/email/:token:
+ *    post:
+ *      description: An api endpoint for resetting credentials using link sent to email
+ *      tags:
+ *      - Authentication
+ *    responses:
+ *      '201':
+ *        description: Successfully created user
+ */
 router.post("/reset/email/:token", async (req, res) => {
   // Verify Token expiry
   const token = req.params.token;
@@ -212,7 +252,17 @@ router.post("/reset/email/:token", async (req, res) => {
   }
 });
 
-// Delete account
+/**
+ * @swagger
+ * /auth/delete:
+ *    delete:
+ *      description: An api endpoint for deleting account
+ *      tags:
+ *      - Authentication
+ *    responses:
+ *      '201':
+ *        description: Successfully created user
+ */
 router.delete("/delete", async (req, res) => {
   const { email } = req.body;
   const user = await User.deleteOne({ email })
@@ -222,17 +272,6 @@ router.delete("/delete", async (req, res) => {
     .catch((err) => {
       console.log(err);
     });
-});
-
-// Test Route
-router.get("/verify", (req, res) => {
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiam9obmRvZUBnbWFpbC5jb20iLCJpYXQiOjE2Mjc4Mzg0MDksImV4cCI6MTYyNzgzODQxOX0.d1aQVdSQGDIKsIjrhOgRaWUcAXXWhmCC27LE9HXdMBs";
-  try {
-    const decoded = jwt.verify(token, secret_key);
-  } catch (err) {
-    res.send(err);
-  }
 });
 
 module.exports = router;
