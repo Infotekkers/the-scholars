@@ -1,9 +1,6 @@
 // Importing Essentials
 const express = require("express");
 const router = express.Router();
-// Importing Essentials
-const express = require("express");
-const router = express.Router();
 
 // Name Generator import
 const { v4: uuidv4 } = require("uuid");
@@ -79,6 +76,25 @@ router.get("/test", async (req, res) => {
 
   console.log("Empty Application Generated Successfully");
   res.status(200).send(application_id);
+});
+
+router.post("/extra-curricular", async (req, res) => {
+  const applicationId = await req.body.applicationId;
+  const inputExtraCurricular = await req.body.extracurricularInfo;
+
+  if(!inputExtraCurricular) {
+    res.status(400).send('Input is required');
+  }
+
+  try {
+    const update = await Application.findByIdAndUpdate(applicationId, {
+      extracurricularActivities: inputExtraCurricular,
+    });
+
+    res.status(200).send("Extra-curricular information recorded");
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 // Export router
