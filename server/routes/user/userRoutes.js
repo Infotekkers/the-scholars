@@ -59,7 +59,6 @@ router.post("/document", async (req, res) => {
 
   const applicationUpdate = await Application.findByIdAndUpdate(
     applicationId,
-
     updateValue
   );
 
@@ -82,18 +81,37 @@ router.post("/extra-curricular", async (req, res) => {
   const applicationId = await req.body.applicationId;
   const inputExtraCurricular = await req.body.extracurricularInfo;
 
-  if(!inputExtraCurricular) {
-    res.status(400).send('Input is required');
+  if (!inputExtraCurricular) {
+    res.status(400).send("Please provide input");
   }
 
   try {
-    const update = await Application.findByIdAndUpdate(applicationId, {
+    await Application.findByIdAndUpdate(applicationId, {
       extracurricularActivities: inputExtraCurricular,
     });
 
     res.status(200).send("Extra-curricular information recorded");
   } catch (err) {
-    console.log(err);
+    res.status(500).send("Couldn't process request please try again");
+  }
+});
+
+router.put("/preferred-department", async (req, res) => {
+  const appllicationId = await req.body.applicationId;
+  const departmentPreference = await req.body.departmentChoice;
+
+  if (!departmentPreference) {
+    res.status(400).send("Please select preferences");
+  }
+
+  try {
+    await Application.findByIdAndUpdate(appllicationId, {
+      $set: { departmentChoice: departmentPreference },
+    });
+
+    res.status(200).send("Department choice recorded");
+  } catch (err) {
+    res.status(500).send("Couldn't process request please try again");
   }
 });
 
