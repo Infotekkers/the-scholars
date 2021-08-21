@@ -19,11 +19,13 @@ class _$UserTearOff {
   _User call(
       {required Token token,
       required Name name,
-      required EmailAddress emailAddress}) {
+      required EmailAddress emailAddress,
+      required Role role}) {
     return _User(
       token: token,
       name: name,
       emailAddress: emailAddress,
+      role: role,
     );
   }
 }
@@ -36,6 +38,7 @@ mixin _$User {
   Token get token => throw _privateConstructorUsedError;
   Name get name => throw _privateConstructorUsedError;
   EmailAddress get emailAddress => throw _privateConstructorUsedError;
+  Role get role => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
@@ -45,7 +48,7 @@ mixin _$User {
 abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res>;
-  $Res call({Token token, Name name, EmailAddress emailAddress});
+  $Res call({Token token, Name name, EmailAddress emailAddress, Role role});
 }
 
 /// @nodoc
@@ -61,6 +64,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
     Object? token = freezed,
     Object? name = freezed,
     Object? emailAddress = freezed,
+    Object? role = freezed,
   }) {
     return _then(_value.copyWith(
       token: token == freezed
@@ -75,6 +79,10 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
           ? _value.emailAddress
           : emailAddress // ignore: cast_nullable_to_non_nullable
               as EmailAddress,
+      role: role == freezed
+          ? _value.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as Role,
     ));
   }
 }
@@ -84,7 +92,7 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   factory _$UserCopyWith(_User value, $Res Function(_User) then) =
       __$UserCopyWithImpl<$Res>;
   @override
-  $Res call({Token token, Name name, EmailAddress emailAddress});
+  $Res call({Token token, Name name, EmailAddress emailAddress, Role role});
 }
 
 /// @nodoc
@@ -101,6 +109,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
     Object? token = freezed,
     Object? name = freezed,
     Object? emailAddress = freezed,
+    Object? role = freezed,
   }) {
     return _then(_User(
       token: token == freezed
@@ -115,6 +124,10 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
           ? _value.emailAddress
           : emailAddress // ignore: cast_nullable_to_non_nullable
               as EmailAddress,
+      role: role == freezed
+          ? _value.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as Role,
     ));
   }
 }
@@ -123,7 +136,10 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 
 class _$_User implements _User {
   const _$_User(
-      {required this.token, required this.name, required this.emailAddress});
+      {required this.token,
+      required this.name,
+      required this.emailAddress,
+      required this.role});
 
   @override
   final Token token;
@@ -131,10 +147,12 @@ class _$_User implements _User {
   final Name name;
   @override
   final EmailAddress emailAddress;
+  @override
+  final Role role;
 
   @override
   String toString() {
-    return 'User(token: $token, name: $name, emailAddress: $emailAddress)';
+    return 'User(token: $token, name: $name, emailAddress: $emailAddress, role: $role)';
   }
 
   @override
@@ -147,7 +165,9 @@ class _$_User implements _User {
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.emailAddress, emailAddress) ||
                 const DeepCollectionEquality()
-                    .equals(other.emailAddress, emailAddress)));
+                    .equals(other.emailAddress, emailAddress)) &&
+            (identical(other.role, role) ||
+                const DeepCollectionEquality().equals(other.role, role)));
   }
 
   @override
@@ -155,7 +175,8 @@ class _$_User implements _User {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(token) ^
       const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(emailAddress);
+      const DeepCollectionEquality().hash(emailAddress) ^
+      const DeepCollectionEquality().hash(role);
 
   @JsonKey(ignore: true)
   @override
@@ -167,7 +188,8 @@ abstract class _User implements User {
   const factory _User(
       {required Token token,
       required Name name,
-      required EmailAddress emailAddress}) = _$_User;
+      required EmailAddress emailAddress,
+      required Role role}) = _$_User;
 
   @override
   Token get token => throw _privateConstructorUsedError;
@@ -175,6 +197,8 @@ abstract class _User implements User {
   Name get name => throw _privateConstructorUsedError;
   @override
   EmailAddress get emailAddress => throw _privateConstructorUsedError;
+  @override
+  Role get role => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$UserCopyWith<_User> get copyWith => throw _privateConstructorUsedError;

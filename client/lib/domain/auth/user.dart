@@ -10,5 +10,6 @@ abstract class User with _$User {
     required Token token,
     required Name name,
     required EmailAddress emailAddress,
+    required Role role,
   }) = _User;
 }
