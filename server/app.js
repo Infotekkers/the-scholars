@@ -6,6 +6,7 @@ require("dotenv").config();
 
 // Importing custom middleware
 const authRoutes = require("./routes/auth/authRoutes");
+const userRoutes = require("./routes/user/userRoutes");
 
 // Creating express instance
 const app = express();
@@ -45,6 +46,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 // Auth route middleware
 app.use("/auth", authRoutes);
+app.use("/user", userRoutes);
 
 // Run server
 const port = process.env.PORT_NUMBER || 3000;

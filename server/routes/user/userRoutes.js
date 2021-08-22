@@ -1,9 +1,6 @@
 // Importing Essentials
 const express = require("express");
 const router = express.Router();
-// Importing Essentials
-const express = require("express");
-const router = express.Router();
 
 // Name Generator import
 const { v4: uuidv4 } = require("uuid");
@@ -62,7 +59,6 @@ router.post("/document", async (req, res) => {
 
   const applicationUpdate = await Application.findByIdAndUpdate(
     applicationId,
-
     updateValue
   );
 
@@ -79,6 +75,44 @@ router.get("/test", async (req, res) => {
 
   console.log("Empty Application Generated Successfully");
   res.status(200).send(application_id);
+});
+
+router.post("/extra-curricular", async (req, res) => {
+  const applicationId = await req.body.applicationId;
+  const inputExtraCurricular = await req.body.extracurricularInfo;
+
+  if (!inputExtraCurricular) {
+    res.status(400).send("Please provide input");
+  }
+
+  try {
+    await Application.findByIdAndUpdate(applicationId, {
+      extracurricularActivities: inputExtraCurricular,
+    });
+
+    res.status(200).send("Extra-curricular information recorded");
+  } catch (err) {
+    res.status(500).send("Couldn't process request please try again");
+  }
+});
+
+router.put("/preferred-department", async (req, res) => {
+  const appllicationId = await req.body.applicationId;
+  const departmentPreference = await req.body.departmentChoice;
+
+  if (!departmentPreference) {
+    res.status(400).send("Please select preferences");
+  }
+
+  try {
+    await Application.findByIdAndUpdate(appllicationId, {
+      $set: { departmentChoice: departmentPreference },
+    });
+
+    res.status(200).send("Department choice recorded");
+  } catch (err) {
+    res.status(500).send("Couldn't process request please try again");
+  }
 });
 
 // Export router
