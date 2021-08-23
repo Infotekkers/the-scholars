@@ -16,6 +16,7 @@ app.use(express.json());
 app.use(
   express.urlencoded({
     extended: true,
+    limit: "25mb",
   })
 );
 
@@ -27,6 +28,7 @@ mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
+  useFindAndModify: true,
 });
 
 // Verify db Setup
@@ -46,6 +48,9 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 // Auth route middleware
 app.use("/auth", authRoutes);
+app.use("/user", userRoutes);
+
+// User route middleware
 app.use("/user", userRoutes);
 
 // Run server

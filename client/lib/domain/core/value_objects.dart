@@ -6,7 +6,7 @@ import 'package:flutter/foundation.dart';
 @immutable
 abstract class ValueObject<T> {
   const ValueObject();
-  Either<ValueFailure<T>,T> get value;
+  Either<ValueFailure<T>, T> get value;
 
   /// Throws [UnexpectedValueError] containing the [ValueFailure]
   T getOrCrash() {

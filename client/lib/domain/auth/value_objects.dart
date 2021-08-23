@@ -10,7 +10,7 @@ class EmailAddress extends ValueObject<String> {
   factory EmailAddress(String emailStr) {
     return EmailAddress._(validateEmailAddress(emailStr));
   }
-  
+
   const EmailAddress._(this.value);
 }
 
@@ -21,7 +21,7 @@ class Password extends ValueObject<String> {
   factory Password(String passwordStr) {
     return Password._(validatePassword(passwordStr));
   }
-  
+
   const Password._(this.value);
 }
 
@@ -32,7 +32,7 @@ class Name extends ValueObject<String> {
   factory Name(String nameStr) {
     return Name._(validateName(nameStr));
   }
-  
+
   const Name._(this.value);
 }
 
@@ -48,6 +48,6 @@ class Role extends ValueObject<String> {
     // TODO: Implement role validation
     return Role._(right(roleStr));
   }
-  
+
   const Role._(this.value);
 }

@@ -11,17 +11,59 @@ const fs = require("fs");
 // Import application model
 const Application = require("../../models/Application");
 
+// Defining Swagger Components begin
+
+// Defining Swagger Component - Document
+/**
+ *@swagger
+ * components:
+ *   schemas:
+ *     Document:
+ *       type : object
+ *       properties:
+ *         documentContent:
+ *           type: string
+ *           description : The document itself in base64 encoding
+ *         documentType:
+ *           type: string
+ *           default: doc
+ *           description : The type of document (doc/image) to help decide save folder
+ *         documentExtension:
+ *           type: string
+ *           default: pdf
+ *         applicationId:
+ *           type: string
+ *         submittedDocumentType:
+ *           type: string
+ *           description : schoolTranscript/extraCertification ...
+ *       required:
+ *          - documentContent
+ *          - documentType
+ *          - documentExtension
+ *          - applicationId
+ *          - submittedDocumentType
+ * */
+
+// Defining Swagger Components ends
+
 /**
  * @swagger
  * /user/document:
  *  post:
- *      description: An api end point for uploading documents. With uploaded document type embedded in the body
- *      tags:
- *          - User
- *  responses:
+ *    summary: An endpoint to save a document
+ *    tags : [User]
+ *    consumes:
+ *      - application/json
+ *    requestBody:
+ *      description : Body must contain the following details
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            $ref : '#components/schemas/Document'
+ *    responses:
  *      200 :
- *          description : "Great Success"
- * */
+ */
 router.post("/document", async (req, res) => {
   console.log("Launched");
   // get document form body
@@ -65,7 +107,16 @@ router.post("/document", async (req, res) => {
   res.status(200).send("Completed");
 });
 
-// Test Route - Add a new application to DB
+/**
+ * @swagger
+ * /user/test:
+ *  get:
+ *    summary: An endpoint to generate an empty application
+ *    tags : [Dev]
+ *    responses:
+ *      200 :
+ *        description : Returns application Id
+ */
 router.get("/test", async (req, res) => {
   const newApplication = Application();
 
