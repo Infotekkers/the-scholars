@@ -188,5 +188,23 @@ router.post("/standardized-tests", async (req, res) => {
   }
 });
 
+router.post("/supplement-essay", async (req, res) => {
+  const applicationId = await req.body.applicationId;
+  const supplements = await req.body.supplementEssay;
+
+  if (!supplements) {
+    res.status(400).send("Please complete fields");
+  }
+
+  try {
+    await Application.findByIdAndUpdate(applicationId, {
+      $set: { smallEssay: supplements },
+    });
+  } catch (err) {
+    res.status(500).send("Couldn't process request please try again");
+    console.log(err);
+  }
+});
+
 // Export router
 module.exports = router;
