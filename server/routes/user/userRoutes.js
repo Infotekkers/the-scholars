@@ -144,6 +144,7 @@ router.post("/extra-curricular", async (req, res) => {
     res.status(200).send("Extra-curricular information recorded");
   } catch (err) {
     res.status(500).send("Couldn't process request please try again");
+    console.log(err);
   }
 });
 
@@ -163,6 +164,27 @@ router.put("/preferred-department", async (req, res) => {
     res.status(200).send("Department choice recorded");
   } catch (err) {
     res.status(500).send("Couldn't process request please try again");
+    console.log(err);
+  }
+});
+
+router.post("/standardized-tests", async (req, res) => {
+  const appllicationId = await req.body.applicationId;
+  const proficiencyTests = await req.body.standardizedTestScores;
+
+  if (!proficiencyTests) {
+    res.status(400).send("Please complete fields");
+  }
+
+  try {
+    await Application.findByIdAndUpdate(appllicationId, {
+      $set: { proficiencyExams: proficiencyTests },
+    });
+
+    res.status(200).send("Response recorded");
+  } catch (err) {
+    res.status(500).send("Couldn't process request please try again");
+    console.log(err);
   }
 });
 

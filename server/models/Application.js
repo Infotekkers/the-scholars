@@ -32,9 +32,9 @@ const applicationSchema = mongoose.Schema({
     // unique: true,
   },
 
-  //   Store a URL for SAT Scores
+  //   Store string of URLs for Standardized tests (SAT, TOEFL)
   proficiencyExams: {
-    type: String,
+    type: [String],
     required: false,
     default: "",
   },
@@ -63,6 +63,7 @@ const applicationSchema = mongoose.Schema({
     default: "",
   },
 });
+
 
 // Package to ensure unique data
 const uniqueValidator = require("mongoose-unique-validator");

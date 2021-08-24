@@ -48,7 +48,6 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 // Auth route middleware
 app.use("/auth", authRoutes);
-app.use("/user", userRoutes);
 
 // User route middleware
 app.use("/user", userRoutes);
