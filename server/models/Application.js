@@ -32,7 +32,7 @@ const applicationSchema = mongoose.Schema({
     // unique: true,
   },
 
-  //   Store string of URLs for Standardized tests (SAT, TOEFL)
+  //   Store Array of URLs for Standardized tests (SAT, TOEFL)
   proficiencyExams: {
     type: [String],
     required: false,
