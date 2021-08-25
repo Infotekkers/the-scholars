@@ -26,4 +26,28 @@ void main() {
     });
 
   });
+  // * REGISTER
+  group("Auth Repo register", () {
+    test("should return a valid user object", () async {
+      final authRepo = ApiAuthRepository();
+      final result = await authRepo.register(
+          emailAddress: EmailAddress("clown@ing2.com"),
+          password: Password("Testing@12"),
+          role: Role("user"),
+          name: Name("Clown"));
+
+      expect(result.isRight(), true);
+    });
+    test("should return an auth failure", () async {
+      final authRepo = ApiAuthRepository();
+      final result = await authRepo.register(
+          emailAddress: EmailAddress("clown@ing.com"),
+          password: Password("Testing@12"),
+          role: Role("user"),
+          name: Name("Clown2"));
+          
+      expect(result.isRight(), false);
+    });
+
+  });
 }
