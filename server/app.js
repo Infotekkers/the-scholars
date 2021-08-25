@@ -6,6 +6,7 @@ require("dotenv").config();
 
 // Importing custom middleware
 const authRoutes = require("./routes/auth/authRoutes");
+const userRoutes = require("./routes/user/userRoutes");
 
 // Creating express instance
 const app = express();
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use(
   express.urlencoded({
     extended: true,
+    limit: "25mb",
   })
 );
 
@@ -26,6 +28,7 @@ mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
+  useFindAndModify: true,
 });
 
 // Verify db Setup
@@ -45,6 +48,9 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 // Auth route middleware
 app.use("/auth", authRoutes);
+
+// User route middleware
+app.use("/user", userRoutes);
 
 // Run server
 const port = process.env.PORT_NUMBER || 3000;

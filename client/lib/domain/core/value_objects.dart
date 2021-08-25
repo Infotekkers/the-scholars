@@ -6,7 +6,7 @@ import 'package:flutter/foundation.dart';
 @immutable
 abstract class ValueObject<T> {
   const ValueObject();
-  Either<ValueFailure<T>,T> get value;
+  Either<ValueFailure<T>, T> get value;
 
   /// Throws [UnexpectedValueError] containing the [ValueFailure]
   T getOrCrash() {
@@ -43,7 +43,7 @@ class Token extends ValueObject<String> {
 
   factory Token(String tokenStr) {
     return Token._(right(tokenStr));
-  } 
+  }
 
   const Token._(this.value);
 }

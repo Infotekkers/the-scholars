@@ -30,6 +30,10 @@ const swaggerOptions = {
         name: "Other",
         description: "Category tests, unimplemented features...",
       },
+      {
+        name: "Dev",
+        description: "Category for dev helping routes",
+      },
     ],
   },
   apis: [

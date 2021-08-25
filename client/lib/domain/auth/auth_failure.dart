@@ -4,7 +4,8 @@ part 'auth_failure.freezed.dart';
 
 @freezed
 abstract class AuthFailure with _$AuthFailure {
-  const factory AuthFailure.invalidEmailPasswordCombination() = InvalidEmailPasswordCombination;
+  const factory AuthFailure.invalidEmailPasswordCombination() =
+      InvalidEmailPasswordCombination;
   const factory AuthFailure.emailAlreadyInUse() = EmailAlreadyInUse;
   const factory AuthFailure.serverError() = ServerError;
   const factory AuthFailure.networkError() = NetworkError;

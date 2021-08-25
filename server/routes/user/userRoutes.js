@@ -1,9 +1,6 @@
 // Importing Essentials
 const express = require("express");
 const router = express.Router();
-// Importing Essentials
-const express = require("express");
-const router = express.Router();
 
 // Name Generator import
 const { v4: uuidv4 } = require("uuid");
@@ -14,17 +11,59 @@ const fs = require("fs");
 // Import application model
 const Application = require("../../models/Application");
 
+// Defining Swagger Components begin
+
+// Defining Swagger Component - Document
+/**
+ *@swagger
+ * components:
+ *   schemas:
+ *     Document:
+ *       type : object
+ *       properties:
+ *         documentContent:
+ *           type: string
+ *           description : The document itself in base64 encoding
+ *         documentType:
+ *           type: string
+ *           default: doc
+ *           description : The type of document (doc/image) to help decide save folder
+ *         documentExtension:
+ *           type: string
+ *           default: pdf
+ *         applicationId:
+ *           type: string
+ *         submittedDocumentType:
+ *           type: string
+ *           description : schoolTranscript/extraCertification ...
+ *       required:
+ *          - documentContent
+ *          - documentType
+ *          - documentExtension
+ *          - applicationId
+ *          - submittedDocumentType
+ * */
+
+// Defining Swagger Components ends
+
 /**
  * @swagger
  * /user/document:
  *  post:
- *      description: An api end point for uploading documents. With uploaded document type embedded in the body
- *      tags:
- *          - User
- *  responses:
+ *    summary: An endpoint to save a document
+ *    tags : [User]
+ *    consumes:
+ *      - application/json
+ *    requestBody:
+ *      description : Body must contain the following details
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            $ref : '#components/schemas/Document'
+ *    responses:
  *      200 :
- *          description : "Great Success"
- * */
+ */
 router.post("/document", async (req, res) => {
   console.log("Launched");
   // get document form body
@@ -62,14 +101,22 @@ router.post("/document", async (req, res) => {
 
   const applicationUpdate = await Application.findByIdAndUpdate(
     applicationId,
-
     updateValue
   );
 
   res.status(200).send("Completed");
 });
 
-// Test Route - Add a new application to DB
+/**
+ * @swagger
+ * /user/test:
+ *  get:
+ *    summary: An endpoint to generate an empty application
+ *    tags : [Dev]
+ *    responses:
+ *      200 :
+ *        description : Returns application Id
+ */
 router.get("/test", async (req, res) => {
   const newApplication = Application();
 
@@ -79,6 +126,84 @@ router.get("/test", async (req, res) => {
 
   console.log("Empty Application Generated Successfully");
   res.status(200).send(application_id);
+});
+
+router.post("/extra-curricular", async (req, res) => {
+  const applicationId = await req.body.applicationId;
+  const inputExtraCurricular = await req.body.extracurricularInfo;
+
+  if (!inputExtraCurricular) {
+    res.status(400).send("Please provide input");
+  }
+
+  try {
+    await Application.findByIdAndUpdate(applicationId, {
+      extracurricularActivities: inputExtraCurricular,
+    });
+
+    res.status(200).send("Extra-curricular information recorded");
+  } catch (err) {
+    res.status(500).send("Couldn't process request please try again");
+    console.log(err);
+  }
+});
+
+router.put("/preferred-department", async (req, res) => {
+  const appllicationId = await req.body.applicationId;
+  const departmentPreference = await req.body.departmentChoice;
+
+  if (!departmentPreference) {
+    res.status(400).send("Please select preferences");
+  }
+
+  try {
+    await Application.findByIdAndUpdate(appllicationId, {
+      $set: { departmentChoice: departmentPreference },
+    });
+
+    res.status(200).send("Department choice recorded");
+  } catch (err) {
+    res.status(500).send("Couldn't process request please try again");
+    console.log(err);
+  }
+});
+
+router.post("/standardized-tests", async (req, res) => {
+  const appllicationId = await req.body.applicationId;
+  const proficiencyTests = await req.body.standardizedTestScores;
+
+  if (!proficiencyTests) {
+    res.status(400).send("Please complete fields");
+  }
+
+  try {
+    await Application.findByIdAndUpdate(appllicationId, {
+      $set: { proficiencyExams: proficiencyTests },
+    });
+
+    res.status(200).send("Response recorded");
+  } catch (err) {
+    res.status(500).send("Couldn't process request please try again");
+    console.log(err);
+  }
+});
+
+router.post("/supplement-essay", async (req, res) => {
+  const applicationId = await req.body.applicationId;
+  const supplements = await req.body.supplementEssay;
+
+  if (!supplements) {
+    res.status(400).send("Please complete fields");
+  }
+
+  try {
+    await Application.findByIdAndUpdate(applicationId, {
+      $set: { smallEssay: supplements },
+    });
+  } catch (err) {
+    res.status(500).send("Couldn't process request please try again");
+    console.log(err);
+  }
 });
 
 // Export router

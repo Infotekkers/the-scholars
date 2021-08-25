@@ -31,16 +31,123 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+//  Defining Components begin
+
+// Defining Swagger Component - Register User
+/**
+ *@swagger
+ * components:
+ *   schemas:
+ *     RegisterUser:
+ *       type : object
+ *       properties:
+ *         userName:
+ *           type: string
+ *           default: userOne
+ *         password:
+ *           type: string
+ *           default: Testing@123
+ *         email:
+ *           type: string
+ *           default: userOne@gmail.com
+ *         role:
+ *           type: string
+ *           default: user
+ *       required:
+ *          - userName
+ *          - password
+ *          - email
+ *          - role
+ * */
+
+// Defining Swagger Component - Login User
+/**
+ *@swagger
+ * components:
+ *   schemas:
+ *     LoginUser:
+ *       type : object
+ *       properties:
+ *         password:
+ *           type: string
+ *           default: Testing@123
+ *         email:
+ *           type: string
+ *           default: userOne@gmail.com
+ *       required:
+ *          - email
+ *          - password
+ * */
+
+//  Defining Swagger Component- Local Reset
+/**
+ *@swagger
+ * components:
+ *   schemas:
+ *     LocalReset:
+ *       type : object
+ *       properties:
+ *         changeValue:
+ *           type: string
+ *           default: user
+ *           description : Value of the item to be changed
+ *         email:
+ *           type: string
+ *           default: userOne@gmail.com
+ *       required:
+ *          - email
+ *          - changeValue
+ * */
+
+//  Defining Swagger Component - Email
+/**
+ *@swagger
+ * components:
+ *   schemas:
+ *     Email:
+ *       type : object
+ *       properties:
+ *         email:
+ *           type: string
+ *           default: userOne@gmail.com
+ *       required:
+ *          - email
+ * */
+
+//  Defining Swagger Component - Token
+/**
+ *@swagger
+ * components:
+ *   schemas:
+ *     Token:
+ *       type : object
+ *       properties:
+ *         token:
+ *           type: string
+ *       required:
+ *          - token
+ * */
+
+//  Defining Ends
+
 /**
  * @swagger
  * /auth/register:
- *    post:
- *      description: An api endpoint for registering a new User
- *      tags:
- *      - Authentication
+ *  post:
+ *    summary: An endpoint to register a new user
+ *    tags : [Authentication]
+ *    consumes:
+ *      - application/json
+ *    requestBody:
+ *      description : Body must contain the following details
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            $ref: '#components/schemas/RegisterUser'
  *    responses:
- *      '201':
- *        description: Successfully created user
+ *      200 :
+ *        description : Returns a generated user token
  */
 router.post("/register", async (req, res) => {
   console.log("Registering New User");
@@ -82,18 +189,26 @@ router.post("/register", async (req, res) => {
 /**
  * @swagger
  * /auth/login:
- *    post:
- *      description: An api endpoint for signing in a User
- *      tags:
- *      - Authentication
+ *  post:
+ *    summary: An endpoint to login a user
+ *    tags : [Authentication]
+ *    consumes:
+ *      - application/json
+ *    requestBody:
+ *      description : Body must contain the following details
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            $ref: '#components/schemas/LoginUser'
  *    responses:
- *      '201':
- *        description: Successfully created user
+ *      200 :
+ *        description : Returns a generated user token
  */
 router.post("/login", async (req, res) => {
-  const { email, password } = req.body;
+  const { emailAddress, password } = req.body;
   try {
-    const user = await User.login(email, password);
+    const user = await User.login(emailAddress, password);
     if (user) {
       // Get user id
       const userId = await user._id;
@@ -108,7 +223,12 @@ router.post("/login", async (req, res) => {
       );
 
       // Send token
-      res.status(200).json({ userToken: token });
+      res.status(200).json({
+        token: token,
+        name: user.name,
+        emailAddress: user.email,
+        role: user.role,
+      });
     }
   } catch (err) {
     res.status(400).json(err);
@@ -117,14 +237,29 @@ router.post("/login", async (req, res) => {
 
 /**
  * @swagger
- * /auth/reset/:changeItem:
- *    patch:
- *      description: An api endpoint for resetting credentials from within the account. After logging in.
- *      tags:
- *      - Authentication
+ * /auth/reset/{changeItem}:
+ *  patch:
+ *    summary: An endpoint to reset credentials from within the app
+ *    tags : [Authentication]
+ *    consumes:
+ *      - application/json
+ *    parameters:
+ *    - in : path
+ *      name: changeItem
+ *      schema:
+ *        type: string
+ *        default: role
+ *      required: true
+ *      description : Item to be changed
+ *    requestBody:
+ *      description : Body must contain the following details
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            $ref : '#components/schemas/LocalReset'
  *    responses:
- *      '201':
- *        description: Successfully created user
+ *      200 :
  */
 router.patch("/reset/:changeItem", async (req, res) => {
   const { changeValue, email } = req.body;
@@ -146,13 +281,20 @@ router.patch("/reset/:changeItem", async (req, res) => {
 /**
  * @swagger
  * /auth/request/reset:
- *    post:
- *      description: An api endpoint for requesting a reset link sent to associated email
- *      tags:
- *      - Authentication
+ *  post:
+ *    summary: An endpoint to request a reset token to email
+ *    tags : [Authentication]
+ *    consumes:
+ *      - application/json
+ *    requestBody:
+ *      description : Body must contain the following details
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            $ref : '#components/schemas/Email'
  *    responses:
- *      '201':
- *        description: Successfully created user
+ *      200 :
  */
 router.post("/request/reset", async (req, res) => {
   const { email } = req.body;
@@ -186,14 +328,20 @@ router.post("/request/reset", async (req, res) => {
 
 /**
  * @swagger
- * /auth/reset/email/:token:
- *    post:
- *      description: An api endpoint for resetting credentials using link sent to email
- *      tags:
- *      - Authentication
+ * /auth/reset/email/{token}:
+ *  post:
+ *    summary: An endpoint to reset credentials before logging in. Via email
+ *    tags : [Authentication]
+ *    consumes:
+ *      - application/json
+ *    parameters:
+ *    - in : path
+ *      name: changeItem
+ *      schema:
+ *        $ref : '#components/schemas/Token'
+ *      required: true
  *    responses:
- *      '201':
- *        description: Successfully created user
+ *      200 :
  */
 router.post("/reset/email/:token", async (req, res) => {
   // Verify Token expiry
@@ -254,14 +402,21 @@ router.post("/reset/email/:token", async (req, res) => {
 
 /**
  * @swagger
- * /auth/delete:
- *    delete:
- *      description: An api endpoint for deleting account
- *      tags:
- *      - Authentication
+ * /auth/request/reset:
+ *  delete:
+ *    summary: An endpoint to delete account
+ *    tags : [Authentication]
+ *    consumes:
+ *      - application/json
+ *    requestBody:
+ *      description : Body must contain the following details
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            $ref : '#components/schemas/Email'
  *    responses:
- *      '201':
- *        description: Successfully created user
+ *      200 :
  */
 router.delete("/delete", async (req, res) => {
   const { email } = req.body;
