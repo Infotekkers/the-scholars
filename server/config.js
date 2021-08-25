@@ -30,9 +30,17 @@ const swaggerOptions = {
         name: "Other",
         description: "Category tests, unimplemented features...",
       },
+      {
+        name: "Dev",
+        description: "Category for dev helping routes",
+      },
     ],
   },
-  apis: ["./routes/auth/*.js"],
+  apis: [
+    "./routes/auth/*.js",
+    "./routes/admin/adminRoutes.js",
+    "./routes/user/userRoutes.js",
+  ],
 };
 
 module.exports = swaggerOptions;
