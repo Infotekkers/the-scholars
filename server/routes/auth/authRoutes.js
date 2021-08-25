@@ -81,9 +81,9 @@ router.post("/register", async (req, res) => {
 
 // Login route
 router.post("/login", async (req, res) => {
-  const { email, password } = req.body;
+  const { emailAddress, password } = req.body;
   try {
-    const user = await User.login(email, password);
+    const user = await User.login(emailAddress, password);
     if (user) {
       // Get user id
       const userId = await user._id;
@@ -98,7 +98,12 @@ router.post("/login", async (req, res) => {
       );
 
       // Send token
-      res.status(200).json({ userToken: token });
+      res.status(200).json({
+        token: token,
+        name: user.name,
+        emailAddress: user.email,
+        role: user.role,
+      });
     }
   } catch (err) {
     res.status(400).json(err);
