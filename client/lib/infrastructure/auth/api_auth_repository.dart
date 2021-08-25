@@ -13,16 +13,33 @@ import 'package:http/http.dart' as http;
 @LazySingleton(as: IAuthRepository)
 class ApiAuthRepository implements IAuthRepository {
   // static final String? _baseUrl = dotenv.env["AUTH_API"];
-  static final String? _baseUrl = "http://localhost:3000/auth";
+  static const String _baseUrl = "http://localhost:3000/auth";
 
   @override
   Future<Either<AuthFailure, User>> register(
       {required EmailAddress emailAddress,
       required Password password,
       required Name name,
-      required Role role}) {
-    // TODO: implement register
-    throw UnimplementedError();
+      required Role role}) async {
+    final Uri url = Uri.parse("$_baseUrl/register");
+    final UserDto userDtoOut = UserDto.fromDomainRegister(emailAddress, password, name, role);
+    final outgoingJson = userDtoOut.toJson();
+
+    try {
+      final response = await http.post(url, body: outgoingJson);
+
+      if (response.statusCode == 201) {
+        final UserDto userDtoIn =
+            UserDto.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+        return right(userDtoIn.toDomain());
+      } else if (response.statusCode == 400) {
+        return left(const AuthFailure.emailAlreadyInUse());
+      } else {
+        return left(const AuthFailure.serverError());
+      }
+    } catch (_) {
+      return left(const AuthFailure.networkError());
+    }
   }
 
   @override
@@ -34,7 +51,7 @@ class ApiAuthRepository implements IAuthRepository {
 
     try {
       final response = await http.post(url, body: outgoingJson);
-      
+
       if (response.statusCode == 200) {
         final UserDto userDtoIn =
             UserDto.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
