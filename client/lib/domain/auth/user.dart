@@ -12,4 +12,10 @@ abstract class User with _$User {
     required EmailAddress emailAddress,
     required Role role,
   }) = _User;
+
+  factory User.initial() => User(
+      token: Token(""),
+      name: Name(""),
+      emailAddress: EmailAddress(""),
+      role: Role(""));
 }

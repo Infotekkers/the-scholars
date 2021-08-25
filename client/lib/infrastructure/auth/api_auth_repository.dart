@@ -17,12 +17,9 @@ class ApiAuthRepository implements IAuthRepository {
 
   @override
   Future<Either<AuthFailure, User>> register(
-      {required EmailAddress emailAddress,
-      required Password password,
-      required Name name,
-      required Role role}) async {
+      {required User user, required Password password}) async {
     final Uri url = Uri.parse("$_baseUrl/register");
-    final UserDto userDtoOut = UserDto.fromDomainRegister(emailAddress, password, name, role);
+    final UserDto userDtoOut = UserDto.fromDomain(user);
     final outgoingJson = userDtoOut.toJson();
 
     try {
@@ -44,10 +41,11 @@ class ApiAuthRepository implements IAuthRepository {
 
   @override
   Future<Either<AuthFailure, User>> signIn(
-      {required EmailAddress emailAddress, required Password password}) async {
+      {required User user, required Password password}) async {
     final Uri url = Uri.parse("$_baseUrl/login");
-    final UserDto userDtoOut = UserDto.fromDomainSignIn(emailAddress, password);
-    final outgoingJson = userDtoOut.toJson();
+    final UserDto userDtoOut = UserDto.fromDomain(user);
+    final outgoingJson =
+        userDtoOut.copyWith(password: password.getOrCrash()).toJson();
 
     try {
       final response = await http.post(url, body: outgoingJson);

@@ -21,11 +21,11 @@ class _$UserDtoTearOff {
   const _$UserDtoTearOff();
 
   _UserDto call(
-      {String emailAddress = "",
-      String password = "",
-      String role = "",
-      String name = "",
-      String token = ""}) {
+      {required String emailAddress,
+      required String password,
+      required String role,
+      required String name,
+      required String token}) {
     return _UserDto(
       emailAddress: emailAddress,
       password: password,
@@ -168,29 +168,24 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_UserDto extends _UserDto {
   const _$_UserDto(
-      {this.emailAddress = "",
-      this.password = "",
-      this.role = "",
-      this.name = "",
-      this.token = ""})
+      {required this.emailAddress,
+      required this.password,
+      required this.role,
+      required this.name,
+      required this.token})
       : super._();
 
   factory _$_UserDto.fromJson(Map<String, dynamic> json) =>
       _$_$_UserDtoFromJson(json);
 
-  @JsonKey(defaultValue: "")
   @override
   final String emailAddress;
-  @JsonKey(defaultValue: "")
   @override
   final String password;
-  @JsonKey(defaultValue: "")
   @override
   final String role;
-  @JsonKey(defaultValue: "")
   @override
   final String name;
-  @JsonKey(defaultValue: "")
   @override
   final String token;
 
@@ -239,11 +234,11 @@ class _$_UserDto extends _UserDto {
 
 abstract class _UserDto extends UserDto {
   const factory _UserDto(
-      {String emailAddress,
-      String password,
-      String role,
-      String name,
-      String token}) = _$_UserDto;
+      {required String emailAddress,
+      required String password,
+      required String role,
+      required String name,
+      required String token}) = _$_UserDto;
   const _UserDto._() : super._();
 
   factory _UserDto.fromJson(Map<String, dynamic> json) = _$_UserDto.fromJson;

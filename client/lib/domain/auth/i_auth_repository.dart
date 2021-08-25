@@ -5,13 +5,9 @@ import 'package:dartz/dartz.dart';
 
 abstract class IAuthRepository {
   Future<Either<AuthFailure, User>> signIn({
-    required EmailAddress emailAddress,
-    required Password password,
+    required User user, required Password password
   });
   Future<Either<AuthFailure, User>> register({
-    required EmailAddress emailAddress,
-    required Password password,
-    required Name name,
-    required Role role,
+    required User user, required Password password
   });
 }
