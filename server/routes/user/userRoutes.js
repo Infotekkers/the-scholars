@@ -206,5 +206,16 @@ router.post("/supplement-essay", async (req, res) => {
   }
 });
 
+router.get("/admission-status", async (req, res) => {
+  const applicationId = await req.body.applicationId;
+  const status = await req.body.admissionStatus;
+
+  if (!status) {
+    res.status(200).send("Nothing to display");
+  }
+
+  res.status(400).send(status);
+})
+
 // Export router
 module.exports = router;
