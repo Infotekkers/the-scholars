@@ -13,18 +13,23 @@ import 'package:http/http.dart' as http;
 @LazySingleton(as: IAuthRepository)
 class ApiAuthRepository implements IAuthRepository {
   // static final String? _baseUrl = dotenv.env["AUTH_API"];
+  http.Client? client = http.Client();
   static const String _baseUrl = "http://localhost:3000/auth";
+
+  ApiAuthRepository();
+  ApiAuthRepository.test(this.client);
 
   @override
   Future<Either<AuthFailure, User>> register(
       {required User user, required Password password}) async {
     final Uri url = Uri.parse("$_baseUrl/register");
     final UserDto userDtoOut = UserDto.fromDomain(user);
-    final outgoingJson = userDtoOut.toJson();
+    final outgoingJson =
+        userDtoOut.copyWith(password: password.getOrCrash()).toJson();
 
     try {
-      final response = await http.post(url, body: outgoingJson);
-
+      final response = await client!.post(url, body: outgoingJson);
+      
       if (response.statusCode == 201) {
         final UserDto userDtoIn =
             UserDto.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -34,7 +39,8 @@ class ApiAuthRepository implements IAuthRepository {
       } else {
         return left(const AuthFailure.serverError());
       }
-    } catch (_) {
+    } catch (err) {
+      print(err);
       return left(const AuthFailure.networkError());
     }
   }
@@ -48,7 +54,7 @@ class ApiAuthRepository implements IAuthRepository {
         userDtoOut.copyWith(password: password.getOrCrash()).toJson();
 
     try {
-      final response = await http.post(url, body: outgoingJson);
+      final response = await client!.post(url, body: outgoingJson);
 
       if (response.statusCode == 200) {
         final UserDto userDtoIn =
@@ -59,7 +65,7 @@ class ApiAuthRepository implements IAuthRepository {
       } else {
         return left(const AuthFailure.serverError());
       }
-    } catch (_) {
+    } catch (err) {
       return left(const AuthFailure.networkError());
     }
   }
