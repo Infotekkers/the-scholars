@@ -12,20 +12,20 @@ abstract class UserDto implements _$UserDto {
 
   const factory UserDto({
     required String emailAddress,
-    required String password,
     required String role,
     required String name,
     required String token,
+    @Default("") String password,
   }) = _UserDto;
 
   factory UserDto.fromDomain(
           User user, {Password? password}) =>
       UserDto(
         emailAddress: user.emailAddress.isValid() ? user.emailAddress.getOrCrash() : "",
-        password: password?.isValid() == true ? password!.getOrCrash() : "",
         name: user.name.isValid() ? user.name.getOrCrash() : "",
         role: user.role.isValid() ? user.role.getOrCrash() : "",
-        token: user.token.isValid() ? user.token.getOrCrash() : ""
+        token: user.token.isValid() ? user.token.getOrCrash() : "",
+        password: password?.isValid() == true ? password!.getOrCrash() : "",
       );
 
   User toDomain() => User(

@@ -176,13 +176,18 @@ router.post("/register", async (req, res) => {
     );
 
     // Return token
-    res.status(200).json({ userToken: token });
+    res.status(201).json({ 
+      token: token,
+      name: user.userName,
+      emailAddress: user.email,
+      role: user.role,
+   });
   } catch (err) {
     // Use custom error middleware
     const errorMessage = handleError(err);
 
     // Return error message
-    res.json({ errors: errorMessage });
+    res.status(400).json({ errors: errorMessage });
   }
 });
 
@@ -207,6 +212,7 @@ router.post("/register", async (req, res) => {
  */
 router.post("/login", async (req, res) => {
   const { emailAddress, password } = req.body;
+
   try {
     const user = await User.login(emailAddress, password);
     if (user) {
@@ -225,7 +231,7 @@ router.post("/login", async (req, res) => {
       // Send token
       res.status(200).json({
         token: token,
-        name: user.name,
+        name: user.userName,
         emailAddress: user.email,
         role: user.role,
       });
