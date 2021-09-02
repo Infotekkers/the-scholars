@@ -22,16 +22,16 @@ class _$UserDtoTearOff {
 
   _UserDto call(
       {required String emailAddress,
-      required String password,
       required String role,
       required String name,
-      required String token}) {
+      required String token,
+      String password = ""}) {
     return _UserDto(
       emailAddress: emailAddress,
-      password: password,
       role: role,
       name: name,
       token: token,
+      password: password,
     );
   }
 
@@ -46,10 +46,10 @@ const $UserDto = _$UserDtoTearOff();
 /// @nodoc
 mixin _$UserDto {
   String get emailAddress => throw _privateConstructorUsedError;
-  String get password => throw _privateConstructorUsedError;
   String get role => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get token => throw _privateConstructorUsedError;
+  String get password => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -62,10 +62,10 @@ abstract class $UserDtoCopyWith<$Res> {
       _$UserDtoCopyWithImpl<$Res>;
   $Res call(
       {String emailAddress,
-      String password,
       String role,
       String name,
-      String token});
+      String token,
+      String password});
 }
 
 /// @nodoc
@@ -79,19 +79,15 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
   @override
   $Res call({
     Object? emailAddress = freezed,
-    Object? password = freezed,
     Object? role = freezed,
     Object? name = freezed,
     Object? token = freezed,
+    Object? password = freezed,
   }) {
     return _then(_value.copyWith(
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
           : emailAddress // ignore: cast_nullable_to_non_nullable
-              as String,
-      password: password == freezed
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
               as String,
       role: role == freezed
           ? _value.role
@@ -105,6 +101,10 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
               as String,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -116,10 +116,10 @@ abstract class _$UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
   @override
   $Res call(
       {String emailAddress,
-      String password,
       String role,
       String name,
-      String token});
+      String token,
+      String password});
 }
 
 /// @nodoc
@@ -134,19 +134,15 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
   @override
   $Res call({
     Object? emailAddress = freezed,
-    Object? password = freezed,
     Object? role = freezed,
     Object? name = freezed,
     Object? token = freezed,
+    Object? password = freezed,
   }) {
     return _then(_UserDto(
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
           : emailAddress // ignore: cast_nullable_to_non_nullable
-              as String,
-      password: password == freezed
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
               as String,
       role: role == freezed
           ? _value.role
@@ -160,6 +156,10 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
               as String,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -169,10 +169,10 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
 class _$_UserDto extends _UserDto {
   const _$_UserDto(
       {required this.emailAddress,
-      required this.password,
       required this.role,
       required this.name,
-      required this.token})
+      required this.token,
+      this.password = ""})
       : super._();
 
   factory _$_UserDto.fromJson(Map<String, dynamic> json) =>
@@ -181,17 +181,18 @@ class _$_UserDto extends _UserDto {
   @override
   final String emailAddress;
   @override
-  final String password;
-  @override
   final String role;
   @override
   final String name;
   @override
   final String token;
+  @JsonKey(defaultValue: "")
+  @override
+  final String password;
 
   @override
   String toString() {
-    return 'UserDto(emailAddress: $emailAddress, password: $password, role: $role, name: $name, token: $token)';
+    return 'UserDto(emailAddress: $emailAddress, role: $role, name: $name, token: $token, password: $password)';
   }
 
   @override
@@ -201,25 +202,25 @@ class _$_UserDto extends _UserDto {
             (identical(other.emailAddress, emailAddress) ||
                 const DeepCollectionEquality()
                     .equals(other.emailAddress, emailAddress)) &&
-            (identical(other.password, password) ||
-                const DeepCollectionEquality()
-                    .equals(other.password, password)) &&
             (identical(other.role, role) ||
                 const DeepCollectionEquality().equals(other.role, role)) &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.token, token) ||
-                const DeepCollectionEquality().equals(other.token, token)));
+                const DeepCollectionEquality().equals(other.token, token)) &&
+            (identical(other.password, password) ||
+                const DeepCollectionEquality()
+                    .equals(other.password, password)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(emailAddress) ^
-      const DeepCollectionEquality().hash(password) ^
       const DeepCollectionEquality().hash(role) ^
       const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(token);
+      const DeepCollectionEquality().hash(token) ^
+      const DeepCollectionEquality().hash(password);
 
   @JsonKey(ignore: true)
   @override
@@ -235,10 +236,10 @@ class _$_UserDto extends _UserDto {
 abstract class _UserDto extends UserDto {
   const factory _UserDto(
       {required String emailAddress,
-      required String password,
       required String role,
       required String name,
-      required String token}) = _$_UserDto;
+      required String token,
+      String password}) = _$_UserDto;
   const _UserDto._() : super._();
 
   factory _UserDto.fromJson(Map<String, dynamic> json) = _$_UserDto.fromJson;
@@ -246,13 +247,13 @@ abstract class _UserDto extends UserDto {
   @override
   String get emailAddress => throw _privateConstructorUsedError;
   @override
-  String get password => throw _privateConstructorUsedError;
-  @override
   String get role => throw _privateConstructorUsedError;
   @override
   String get name => throw _privateConstructorUsedError;
   @override
   String get token => throw _privateConstructorUsedError;
+  @override
+  String get password => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$UserDtoCopyWith<_UserDto> get copyWith =>
