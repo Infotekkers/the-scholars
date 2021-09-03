@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "Khula-regular";
+  src: url("./assets/Khula/khula-regular.otf");
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  padding: 0 10rem;
+}
+
+:root {
+  --clr-one: white;
+  --clr-two: black;
+
+  font-family: "Khula-regular";
+}
+
+section {
+  padding: 2rem;
+}
+
+#basic-info {
+  display: flex;
+  background: var(--clr-one);
+}
+
+.profile-image {
+  width: 250px;
+  aspect-ratio: 3/4;
+  margin-right: 2rem;
+
+  background: var(--clr-two);
+}
+
+label {
+  display: inline-block;
+}
+
+h3 + label {
+  margin-top: 1.2rem;
+}
+
+.basic-info__description {
+  display: flex;
+  gap: 4rem;
+}

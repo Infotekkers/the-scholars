@@ -200,6 +200,8 @@ router.post("/supplement-essay", async (req, res) => {
     await Application.findByIdAndUpdate(applicationId, {
       $set: { smallEssay: supplements },
     });
+
+    res.status(200).send("Response recorded");
   } catch (err) {
     res.status(500).send("Couldn't process request please try again");
     console.log(err);

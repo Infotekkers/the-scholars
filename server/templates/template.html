@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Application</title>
+
+    <link rel="stylesheet" href="./template.css" />
+
+    <style>
+      #application-info {
+        background: var(--clr-two);
+        color: var(--clr-one);
+      }
+
+      #application-info > label {
+        background: var(--clr-one);
+        color: var(--clr-two);
+
+        display: block;
+      }
+
+      #application-info > * + label {
+        margin-top: 2rem;
+      }
+
+      .large-label {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .large-label--smaller {
+        font-size: 1.2rem;
+      }
+
+      .transcript, .essay > div, .testing > div {
+        width: 100%;
+        aspect-ratio: 16/9;
+
+        background: var(--clr-one);
+      }
+
+      :is(.essay, .testing) > label:last-of-type {
+        margin-top: 1rem;
+      }
+
+    </style>
+  </head>
+  <body>
+    <main>
+      <section id="basic-info" class="">
+        <div class="profile-image"></div>
+        <div class="basic-info__description">
+          <div class="basic-info__description__contact">
+            <label for="">Name</label>
+            <h3>Barok Dagim</h3>
+
+            <label for="">Phone number</label>
+            <h3>+251 939507783</h3>
+
+            <label for="">Email</label>
+            <h3>dagimbarok@gmail.com</h3>
+
+            <label for="">P.O. Box</label>
+            <h3>17283</h3>
+
+            <label for="">Residence</label>
+            <div class="basic-info__description__contact__location">
+              <h3>Addis Ababa, Ethiopia</h3>
+            </div>
+          </div>
+          <div class="basic-info__description__education">
+            <label for="">High School</label>
+            <h3>Saint Joseph High School</h3>
+
+            <label for="">Dates Attended</label>
+            <h3>September 2015 - June 2018</h3>
+          </div>
+        </div>
+      </section>
+
+      <section id="application-info">
+        <label class="large-label" for="">Transcript</label>
+        <div class="transcript"></div>
+
+        <label class="large-label" for="">Essays</label>
+        <div class="essay">
+          <label class="large-label large-label--smaller" for="">Main</label>
+          <div class="essay__main"></div>
+
+          <label class="large-label large-label--smaller" for="">Supplement</label>
+          <div class="essay__supplement"></div>
+        </div>
+
+        <label for="" class="large-label">National Exams</label>
+        <div class="testing">
+          <label for="" class="large-label large-label--smaller">National Exams</label>
+          <div class="testing__national-exams"></div>
+
+          <label for="" class="large-label large-label--smaller">SAT</label>
+          <div class="testing__SAT"></div>
+        </div>
+        <div class="extra-curricular">
+
+        </div>
+        <div class="department-choice"></div>
+      </section>
+    </main>
+  </body>
+</html>
