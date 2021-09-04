@@ -45,6 +45,28 @@ class _$ValueFailureTearOff {
       failedValue: failedValue,
     );
   }
+
+  InvalidApplication<T> invalidApplication<T>({required T failedValue}) {
+    return InvalidApplication<T>(
+      failedValue: failedValue,
+    );
+  }
+
+  EmptyApplication<T> emptyApplication<T>({required T failedValue}) {
+    return EmptyApplication<T>(
+      failedValue: failedValue,
+    );
+  }
+
+  IncompleteApplication<T> incompleteApplication<T>({required T failedValue}) {
+    return IncompleteApplication<T>(
+      failedValue: failedValue,
+    );
+  }
+
+  GeneralError<T> generalError<T>() {
+    return GeneralError<T>();
+  }
 }
 
 /// @nodoc
@@ -52,8 +74,6 @@ const $ValueFailure = _$ValueFailureTearOff();
 
 /// @nodoc
 mixin _$ValueFailure<T> {
-  T get failedValue => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) empty,
@@ -61,6 +81,10 @@ mixin _$ValueFailure<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -70,6 +94,10 @@ mixin _$ValueFailure<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -80,6 +108,11 @@ mixin _$ValueFailure<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -89,12 +122,12 @@ mixin _$ValueFailure<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $ValueFailureCopyWith<T, ValueFailure<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -103,7 +136,6 @@ abstract class $ValueFailureCopyWith<T, $Res> {
   factory $ValueFailureCopyWith(
           ValueFailure<T> value, $Res Function(ValueFailure<T>) then) =
       _$ValueFailureCopyWithImpl<T, $Res>;
-  $Res call({T failedValue});
 }
 
 /// @nodoc
@@ -114,26 +146,12 @@ class _$ValueFailureCopyWithImpl<T, $Res>
   final ValueFailure<T> _value;
   // ignore: unused_field
   final $Res Function(ValueFailure<T>) _then;
-
-  @override
-  $Res call({
-    Object? failedValue = freezed,
-  }) {
-    return _then(_value.copyWith(
-      failedValue: failedValue == freezed
-          ? _value.failedValue
-          : failedValue // ignore: cast_nullable_to_non_nullable
-              as T,
-    ));
-  }
 }
 
 /// @nodoc
-abstract class $EmptyCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+abstract class $EmptyCopyWith<T, $Res> {
   factory $EmptyCopyWith(Empty<T> value, $Res Function(Empty<T>) then) =
       _$EmptyCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue});
 }
 
@@ -206,6 +224,10 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
   }) {
     return empty(failedValue);
   }
@@ -218,6 +240,10 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -234,6 +260,11 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
   }) {
     return empty(this);
   }
@@ -246,6 +277,10 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -258,21 +293,17 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
 abstract class Empty<T> implements ValueFailure<T> {
   const factory Empty({required T failedValue}) = _$Empty<T>;
 
-  @override
   T get failedValue => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   $EmptyCopyWith<T, Empty<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $InvalidEmailCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+abstract class $InvalidEmailCopyWith<T, $Res> {
   factory $InvalidEmailCopyWith(
           InvalidEmail<T> value, $Res Function(InvalidEmail<T>) then) =
       _$InvalidEmailCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue});
 }
 
@@ -349,6 +380,10 @@ class _$InvalidEmail<T>
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
   }) {
     return invalidEmail(failedValue);
   }
@@ -361,6 +396,10 @@ class _$InvalidEmail<T>
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -377,6 +416,11 @@ class _$InvalidEmail<T>
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
   }) {
     return invalidEmail(this);
   }
@@ -389,6 +433,10 @@ class _$InvalidEmail<T>
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -401,21 +449,17 @@ class _$InvalidEmail<T>
 abstract class InvalidEmail<T> implements ValueFailure<T> {
   const factory InvalidEmail({required T failedValue}) = _$InvalidEmail<T>;
 
-  @override
   T get failedValue => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   $InvalidEmailCopyWith<T, InvalidEmail<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ShortPasswordCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+abstract class $ShortPasswordCopyWith<T, $Res> {
   factory $ShortPasswordCopyWith(
           ShortPassword<T> value, $Res Function(ShortPassword<T>) then) =
       _$ShortPasswordCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue});
 }
 
@@ -492,6 +536,10 @@ class _$ShortPassword<T>
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
   }) {
     return shortPassword(failedValue);
   }
@@ -504,6 +552,10 @@ class _$ShortPassword<T>
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -520,6 +572,11 @@ class _$ShortPassword<T>
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
   }) {
     return shortPassword(this);
   }
@@ -532,6 +589,10 @@ class _$ShortPassword<T>
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -544,21 +605,17 @@ class _$ShortPassword<T>
 abstract class ShortPassword<T> implements ValueFailure<T> {
   const factory ShortPassword({required T failedValue}) = _$ShortPassword<T>;
 
-  @override
   T get failedValue => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   $ShortPasswordCopyWith<T, ShortPassword<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $InvalidPasswordCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+abstract class $InvalidPasswordCopyWith<T, $Res> {
   factory $InvalidPasswordCopyWith(
           InvalidPassword<T> value, $Res Function(InvalidPassword<T>) then) =
       _$InvalidPasswordCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue});
 }
 
@@ -635,6 +692,10 @@ class _$InvalidPassword<T>
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
   }) {
     return invalidPassword(failedValue);
   }
@@ -647,6 +708,10 @@ class _$InvalidPassword<T>
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
     required TResult orElse(),
   }) {
     if (invalidPassword != null) {
@@ -663,6 +728,11 @@ class _$InvalidPassword<T>
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
   }) {
     return invalidPassword(this);
   }
@@ -675,6 +745,10 @@ class _$InvalidPassword<T>
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
     required TResult orElse(),
   }) {
     if (invalidPassword != null) {
@@ -688,21 +762,17 @@ abstract class InvalidPassword<T> implements ValueFailure<T> {
   const factory InvalidPassword({required T failedValue}) =
       _$InvalidPassword<T>;
 
-  @override
   T get failedValue => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   $InvalidPasswordCopyWith<T, InvalidPassword<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ExceedingLengthCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+abstract class $ExceedingLengthCopyWith<T, $Res> {
   factory $ExceedingLengthCopyWith(
           ExceedingLength<T> value, $Res Function(ExceedingLength<T>) then) =
       _$ExceedingLengthCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue});
 }
 
@@ -779,6 +849,10 @@ class _$ExceedingLength<T>
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
   }) {
     return exceedingLength(failedValue);
   }
@@ -791,6 +865,10 @@ class _$ExceedingLength<T>
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
     required TResult orElse(),
   }) {
     if (exceedingLength != null) {
@@ -807,6 +885,11 @@ class _$ExceedingLength<T>
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
   }) {
     return exceedingLength(this);
   }
@@ -819,6 +902,10 @@ class _$ExceedingLength<T>
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
     required TResult orElse(),
   }) {
     if (exceedingLength != null) {
@@ -832,10 +919,607 @@ abstract class ExceedingLength<T> implements ValueFailure<T> {
   const factory ExceedingLength({required T failedValue}) =
       _$ExceedingLength<T>;
 
-  @override
   T get failedValue => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   $ExceedingLengthCopyWith<T, ExceedingLength<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $InvalidApplicationCopyWith<T, $Res> {
+  factory $InvalidApplicationCopyWith(InvalidApplication<T> value,
+          $Res Function(InvalidApplication<T>) then) =
+      _$InvalidApplicationCopyWithImpl<T, $Res>;
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class _$InvalidApplicationCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $InvalidApplicationCopyWith<T, $Res> {
+  _$InvalidApplicationCopyWithImpl(
+      InvalidApplication<T> _value, $Res Function(InvalidApplication<T>) _then)
+      : super(_value, (v) => _then(v as InvalidApplication<T>));
+
+  @override
+  InvalidApplication<T> get _value => super._value as InvalidApplication<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(InvalidApplication<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InvalidApplication<T>
+    with DiagnosticableTreeMixin
+    implements InvalidApplication<T> {
+  const _$InvalidApplication({required this.failedValue});
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.invalidApplication(failedValue: $failedValue)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.invalidApplication'))
+      ..add(DiagnosticsProperty('failedValue', failedValue));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is InvalidApplication<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @JsonKey(ignore: true)
+  @override
+  $InvalidApplicationCopyWith<T, InvalidApplication<T>> get copyWith =>
+      _$InvalidApplicationCopyWithImpl<T, InvalidApplication<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+  }) {
+    return invalidApplication(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    required TResult orElse(),
+  }) {
+    if (invalidApplication != null) {
+      return invalidApplication(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+  }) {
+    return invalidApplication(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    required TResult orElse(),
+  }) {
+    if (invalidApplication != null) {
+      return invalidApplication(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidApplication<T> implements ValueFailure<T> {
+  const factory InvalidApplication({required T failedValue}) =
+      _$InvalidApplication<T>;
+
+  T get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $InvalidApplicationCopyWith<T, InvalidApplication<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $EmptyApplicationCopyWith<T, $Res> {
+  factory $EmptyApplicationCopyWith(
+          EmptyApplication<T> value, $Res Function(EmptyApplication<T>) then) =
+      _$EmptyApplicationCopyWithImpl<T, $Res>;
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class _$EmptyApplicationCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $EmptyApplicationCopyWith<T, $Res> {
+  _$EmptyApplicationCopyWithImpl(
+      EmptyApplication<T> _value, $Res Function(EmptyApplication<T>) _then)
+      : super(_value, (v) => _then(v as EmptyApplication<T>));
+
+  @override
+  EmptyApplication<T> get _value => super._value as EmptyApplication<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(EmptyApplication<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$EmptyApplication<T>
+    with DiagnosticableTreeMixin
+    implements EmptyApplication<T> {
+  const _$EmptyApplication({required this.failedValue});
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.emptyApplication(failedValue: $failedValue)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.emptyApplication'))
+      ..add(DiagnosticsProperty('failedValue', failedValue));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is EmptyApplication<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @JsonKey(ignore: true)
+  @override
+  $EmptyApplicationCopyWith<T, EmptyApplication<T>> get copyWith =>
+      _$EmptyApplicationCopyWithImpl<T, EmptyApplication<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+  }) {
+    return emptyApplication(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    required TResult orElse(),
+  }) {
+    if (emptyApplication != null) {
+      return emptyApplication(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+  }) {
+    return emptyApplication(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    required TResult orElse(),
+  }) {
+    if (emptyApplication != null) {
+      return emptyApplication(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EmptyApplication<T> implements ValueFailure<T> {
+  const factory EmptyApplication({required T failedValue}) =
+      _$EmptyApplication<T>;
+
+  T get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $EmptyApplicationCopyWith<T, EmptyApplication<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $IncompleteApplicationCopyWith<T, $Res> {
+  factory $IncompleteApplicationCopyWith(IncompleteApplication<T> value,
+          $Res Function(IncompleteApplication<T>) then) =
+      _$IncompleteApplicationCopyWithImpl<T, $Res>;
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class _$IncompleteApplicationCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $IncompleteApplicationCopyWith<T, $Res> {
+  _$IncompleteApplicationCopyWithImpl(IncompleteApplication<T> _value,
+      $Res Function(IncompleteApplication<T>) _then)
+      : super(_value, (v) => _then(v as IncompleteApplication<T>));
+
+  @override
+  IncompleteApplication<T> get _value =>
+      super._value as IncompleteApplication<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(IncompleteApplication<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$IncompleteApplication<T>
+    with DiagnosticableTreeMixin
+    implements IncompleteApplication<T> {
+  const _$IncompleteApplication({required this.failedValue});
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.incompleteApplication(failedValue: $failedValue)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'ValueFailure<$T>.incompleteApplication'))
+      ..add(DiagnosticsProperty('failedValue', failedValue));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is IncompleteApplication<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @JsonKey(ignore: true)
+  @override
+  $IncompleteApplicationCopyWith<T, IncompleteApplication<T>> get copyWith =>
+      _$IncompleteApplicationCopyWithImpl<T, IncompleteApplication<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+  }) {
+    return incompleteApplication(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    required TResult orElse(),
+  }) {
+    if (incompleteApplication != null) {
+      return incompleteApplication(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+  }) {
+    return incompleteApplication(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    required TResult orElse(),
+  }) {
+    if (incompleteApplication != null) {
+      return incompleteApplication(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class IncompleteApplication<T> implements ValueFailure<T> {
+  const factory IncompleteApplication({required T failedValue}) =
+      _$IncompleteApplication<T>;
+
+  T get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $IncompleteApplicationCopyWith<T, IncompleteApplication<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GeneralErrorCopyWith<T, $Res> {
+  factory $GeneralErrorCopyWith(
+          GeneralError<T> value, $Res Function(GeneralError<T>) then) =
+      _$GeneralErrorCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class _$GeneralErrorCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $GeneralErrorCopyWith<T, $Res> {
+  _$GeneralErrorCopyWithImpl(
+      GeneralError<T> _value, $Res Function(GeneralError<T>) _then)
+      : super(_value, (v) => _then(v as GeneralError<T>));
+
+  @override
+  GeneralError<T> get _value => super._value as GeneralError<T>;
+}
+
+/// @nodoc
+
+class _$GeneralError<T>
+    with DiagnosticableTreeMixin
+    implements GeneralError<T> {
+  const _$GeneralError();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.generalError()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.generalError'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is GeneralError<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+  }) {
+    return generalError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    required TResult orElse(),
+  }) {
+    if (generalError != null) {
+      return generalError();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+  }) {
+    return generalError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    required TResult orElse(),
+  }) {
+    if (generalError != null) {
+      return generalError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GeneralError<T> implements ValueFailure<T> {
+  const factory GeneralError() = _$GeneralError<T>;
 }

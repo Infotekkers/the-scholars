@@ -18,10 +18,9 @@ abstract class UserDto implements _$UserDto {
     @Default("") String password,
   }) = _UserDto;
 
-  factory UserDto.fromDomain(
-          User user, {Password? password}) =>
-      UserDto(
-        emailAddress: user.emailAddress.isValid() ? user.emailAddress.getOrCrash() : "",
+  factory UserDto.fromDomain(User user, {Password? password}) => UserDto(
+        emailAddress:
+            user.emailAddress.isValid() ? user.emailAddress.getOrCrash() : "",
         name: user.name.isValid() ? user.name.getOrCrash() : "",
         role: user.role.isValid() ? user.role.getOrCrash() : "",
         token: user.token.isValid() ? user.token.getOrCrash() : "",

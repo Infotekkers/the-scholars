@@ -29,7 +29,7 @@ class ApiAuthRepository implements IAuthRepository {
 
     try {
       final response = await client!.post(url, body: outgoingJson);
-      
+
       if (response.statusCode == 201) {
         final UserDto userDtoIn =
             UserDto.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

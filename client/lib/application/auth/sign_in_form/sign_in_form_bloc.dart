@@ -22,36 +22,29 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
   Stream<SignInFormState> mapEventToState(SignInFormEvent event) async* {
     yield* event.map(
       emailChanged: (e) async* {
-        yield state.copyWith(
-          emailAddress: EmailAddress(e.emailStr)
-        );
+        yield state.copyWith(emailAddress: EmailAddress(e.emailStr));
       },
       passwordChanged: (e) async* {
-        yield state.copyWith(
-          password: Password(e.passwordStr)
-        );
+        yield state.copyWith(password: Password(e.passwordStr));
       },
       signInPressed: (e) async* {
         Either<AuthFailure, User>? failureOrSuccess;
 
         if (state.emailAddress.isValid() && state.password.isValid()) {
           yield state.copyWith(
-            isSubmitting: true,
-            authFailureOrSuccess: none()
-          );
+              isSubmitting: true, authFailureOrSuccess: none());
 
           final User user = User.initial();
           user.copyWith(emailAddress: state.emailAddress);
-          failureOrSuccess = await authRepository.signIn(user: user, password: state.password);
-        } 
+          failureOrSuccess =
+              await authRepository.signIn(user: user, password: state.password);
+        }
 
         yield state.copyWith(
-          isSubmitting: false,
-          showErrorMessages: true,
-          authFailureOrSuccess: optionOf(failureOrSuccess)
-        );
+            isSubmitting: false,
+            showErrorMessages: true,
+            authFailureOrSuccess: optionOf(failureOrSuccess));
       },
     );
   }
-
 }
