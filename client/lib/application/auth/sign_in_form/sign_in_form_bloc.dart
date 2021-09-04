@@ -23,12 +23,14 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     yield* event.map(
       emailChanged: (e) async* {
         yield state.copyWith(
-          emailAddress: EmailAddress(e.emailStr)
+          emailAddress: EmailAddress(e.emailStr),
+          authFailureOrSuccess: none(),
         );
       },
       passwordChanged: (e) async* {
         yield state.copyWith(
-          password: Password(e.passwordStr)
+          password: Password(e.passwordStr),
+          authFailureOrSuccess: none(),
         );
       },
       signInPressed: (e) async* {
@@ -36,22 +38,19 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
 
         if (state.emailAddress.isValid() && state.password.isValid()) {
           yield state.copyWith(
-            isSubmitting: true,
-            authFailureOrSuccess: none()
-          );
+              isSubmitting: true, authFailureOrSuccess: none());
 
           final User user = User.initial();
-          user.copyWith(emailAddress: state.emailAddress);
-          failureOrSuccess = await authRepository.signIn(user: user, password: state.password);
-        } 
+          failureOrSuccess = await authRepository.signIn(
+              user: user.copyWith(emailAddress: state.emailAddress),
+              password: state.password);
+        }
 
         yield state.copyWith(
-          isSubmitting: false,
-          showErrorMessages: true,
-          authFailureOrSuccess: optionOf(failureOrSuccess)
-        );
+            isSubmitting: false,
+            showErrorMessages: true,
+            authFailureOrSuccess: optionOf(failureOrSuccess));
       },
     );
   }
-
 }
