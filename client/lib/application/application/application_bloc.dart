@@ -16,6 +16,7 @@ part 'application_bloc.freezed.dart';
 
 @lazySingleton
 class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
+  // ignore: unused_field
   final IApplicationRepository _iApplicationRepository;
   ApplicationBloc(this._iApplicationRepository)
       : super(ApplicationState.initial());
@@ -96,7 +97,93 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
           isSubmitting: false,
         );
       },
-      submitApplicationClicked: (e) async* {},
+      submitApplicationClicked: (e) async* {
+        Application application;
+        // ignore: unused_local_variable
+        Either<ApplicationFailure, Application> failureOrSuccess;
+        // Check Values Validity
+        final isProficencyTestUrlValid = state.proficencyTest.isValid();
+
+        final isMilitaryFamilyStatusValid =
+            state.militaryFamilyStatus.isValid();
+
+        final isUniversityFamilyStatusValid =
+            state.universityFamilyStatus.isValid();
+
+        final isExtraEssayValid = state.extraEssay.isValid();
+
+        if (isProficencyTestUrlValid &&
+            isMilitaryFamilyStatusValid &&
+            isUniversityFamilyStatusValid &&
+            isExtraEssayValid) {
+          yield state.copyWith(
+            isSubmitting: true,
+            applicationFailureOrSuccess: none(),
+          );
+
+          application = Application(
+            schoolTranscript: state.schoolTranscript,
+            mainEssay: state.mainEssay,
+            departmentSelection:
+                DepartmentSelection(departmentSelection: ["1", "2", "3", "4"]),
+            extraCertification: state.extraCertification,
+            proficencyTest: state.proficencyTest,
+            extraEssay: state.extraEssay,
+            militaryFamilyStatus: state.militaryFamilyStatus,
+            universityFamilyStatus: state.universityFamilyStatus,
+            recomendationLetter: state.recomendationLetter,
+          );
+
+          failureOrSuccess = await _iApplicationRepository
+              .createServerApplication(application: application);
+          print("@applicatio bloc called creator");
+          yield state.copyWith(
+            isSubmitting: false,
+            applicationFailureOrSuccess: optionOf(failureOrSuccess),
+          );
+        } else {
+          late ValueFailure valueSuccessOrFailure;
+          if (!isProficencyTestUrlValid) {
+            state.proficencyTest.value.fold(
+              (l) => valueSuccessOrFailure = l,
+              (r) => const ValueFailure.generalError(),
+            );
+          } else if (!isMilitaryFamilyStatusValid) {
+            state.militaryFamilyStatus.value.fold(
+              (l) => valueSuccessOrFailure = l,
+              (r) => const ValueFailure.generalError(),
+            );
+          } else if (!isUniversityFamilyStatusValid) {
+            state.universityFamilyStatus.value.fold(
+              (l) => valueSuccessOrFailure = l,
+              (r) => const ValueFailure.generalError(),
+            );
+          } else if (!isExtraEssayValid) {
+            state.extraEssay.value.fold(
+              (l) => valueSuccessOrFailure = l,
+              (r) => const ValueFailure.generalError(),
+            );
+          }
+
+          yield state.copyWith(
+            isSubmitting: false,
+            showErrorMessages: true,
+            valueFailureOrSuccess: some(
+              left(valueSuccessOrFailure),
+            ),
+          );
+        }
+
+        yield state.copyWith(
+          isSubmitting: false,
+          showErrorMessages: false,
+          valueFailureOrSuccess: some(
+            left(
+              const ValueFailure.generalError(),
+            ),
+          ),
+        );
+      },
     );
   }
 }
