@@ -1,7 +1,7 @@
 name: client
 description: A new Flutter project.
 
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
 
@@ -21,6 +21,7 @@ dependencies:
   http: ^0.13.3
   injectable: ^1.4.9
   json_annotation: ^4.0.0
+  curved_navigation_bar: ^1.0.1
 
 dev_dependencies:
   bloc_test: ^8.1.0

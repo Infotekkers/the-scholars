@@ -1,0 +1,2198 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+
+part of 'application_bloc.dart';
+
+// **************************************************************************
+// FreezedGenerator
+// **************************************************************************
+
+T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
+class _$ApplicationEventTearOff {
+  const _$ApplicationEventTearOff();
+
+  _InitialApplication initialEvent() {
+    return const _InitialApplication();
+  }
+
+  _SchoolTranscriptChanged schoolTranscriptChanged(
+      String schoolTranscriptPath) {
+    return _SchoolTranscriptChanged(
+      schoolTranscriptPath,
+    );
+  }
+
+  _ReccomendationLetterChanged reccomnedationLetterChanged(
+      String reccomendationLetterPath) {
+    return _ReccomendationLetterChanged(
+      reccomendationLetterPath,
+    );
+  }
+
+  _MainEssayChanged mainEssayChanged(String mainEssayPath) {
+    return _MainEssayChanged(
+      mainEssayPath,
+    );
+  }
+
+  _ExtraCertificationChanged extraCertificationChanged(
+      String extraCertificationPath) {
+    return _ExtraCertificationChanged(
+      extraCertificationPath,
+    );
+  }
+
+  _ExtraEssay extraEssayChanged(String extraEssay) {
+    return _ExtraEssay(
+      extraEssay,
+    );
+  }
+
+  _MilitaryStatusChanged militaryStatusChanged(String militaryStatus) {
+    return _MilitaryStatusChanged(
+      militaryStatus,
+    );
+  }
+
+  _UniversityStatusChanged universityStatusChanged(String universityStatus) {
+    return _UniversityStatusChanged(
+      universityStatus,
+    );
+  }
+
+  _ProficiencyChanged proficiencyUrlChanged(String testUrl) {
+    return _ProficiencyChanged(
+      testUrl,
+    );
+  }
+
+  _SubmitApplicationClicked submitApplicationClicked() {
+    return const _SubmitApplicationClicked();
+  }
+}
+
+/// @nodoc
+const $ApplicationEvent = _$ApplicationEventTearOff();
+
+/// @nodoc
+mixin _$ApplicationEvent {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialEvent,
+    required TResult Function(String schoolTranscriptPath)
+        schoolTranscriptChanged,
+    required TResult Function(String reccomendationLetterPath)
+        reccomnedationLetterChanged,
+    required TResult Function(String mainEssayPath) mainEssayChanged,
+    required TResult Function(String extraCertificationPath)
+        extraCertificationChanged,
+    required TResult Function(String extraEssay) extraEssayChanged,
+    required TResult Function(String militaryStatus) militaryStatusChanged,
+    required TResult Function(String universityStatus) universityStatusChanged,
+    required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function() submitApplicationClicked,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialEvent,
+    TResult Function(String schoolTranscriptPath)? schoolTranscriptChanged,
+    TResult Function(String reccomendationLetterPath)?
+        reccomnedationLetterChanged,
+    TResult Function(String mainEssayPath)? mainEssayChanged,
+    TResult Function(String extraCertificationPath)? extraCertificationChanged,
+    TResult Function(String extraEssay)? extraEssayChanged,
+    TResult Function(String militaryStatus)? militaryStatusChanged,
+    TResult Function(String universityStatus)? universityStatusChanged,
+    TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function()? submitApplicationClicked,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialApplication value) initialEvent,
+    required TResult Function(_SchoolTranscriptChanged value)
+        schoolTranscriptChanged,
+    required TResult Function(_ReccomendationLetterChanged value)
+        reccomnedationLetterChanged,
+    required TResult Function(_MainEssayChanged value) mainEssayChanged,
+    required TResult Function(_ExtraCertificationChanged value)
+        extraCertificationChanged,
+    required TResult Function(_ExtraEssay value) extraEssayChanged,
+    required TResult Function(_MilitaryStatusChanged value)
+        militaryStatusChanged,
+    required TResult Function(_UniversityStatusChanged value)
+        universityStatusChanged,
+    required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_SubmitApplicationClicked value)
+        submitApplicationClicked,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialApplication value)? initialEvent,
+    TResult Function(_SchoolTranscriptChanged value)? schoolTranscriptChanged,
+    TResult Function(_ReccomendationLetterChanged value)?
+        reccomnedationLetterChanged,
+    TResult Function(_MainEssayChanged value)? mainEssayChanged,
+    TResult Function(_ExtraCertificationChanged value)?
+        extraCertificationChanged,
+    TResult Function(_ExtraEssay value)? extraEssayChanged,
+    TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
+    TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
+    TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ApplicationEventCopyWith<$Res> {
+  factory $ApplicationEventCopyWith(
+          ApplicationEvent value, $Res Function(ApplicationEvent) then) =
+      _$ApplicationEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$ApplicationEventCopyWithImpl<$Res>
+    implements $ApplicationEventCopyWith<$Res> {
+  _$ApplicationEventCopyWithImpl(this._value, this._then);
+
+  final ApplicationEvent _value;
+  // ignore: unused_field
+  final $Res Function(ApplicationEvent) _then;
+}
+
+/// @nodoc
+abstract class _$InitialApplicationCopyWith<$Res> {
+  factory _$InitialApplicationCopyWith(
+          _InitialApplication value, $Res Function(_InitialApplication) then) =
+      __$InitialApplicationCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$InitialApplicationCopyWithImpl<$Res>
+    extends _$ApplicationEventCopyWithImpl<$Res>
+    implements _$InitialApplicationCopyWith<$Res> {
+  __$InitialApplicationCopyWithImpl(
+      _InitialApplication _value, $Res Function(_InitialApplication) _then)
+      : super(_value, (v) => _then(v as _InitialApplication));
+
+  @override
+  _InitialApplication get _value => super._value as _InitialApplication;
+}
+
+/// @nodoc
+
+class _$_InitialApplication implements _InitialApplication {
+  const _$_InitialApplication();
+
+  @override
+  String toString() {
+    return 'ApplicationEvent.initialEvent()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _InitialApplication);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialEvent,
+    required TResult Function(String schoolTranscriptPath)
+        schoolTranscriptChanged,
+    required TResult Function(String reccomendationLetterPath)
+        reccomnedationLetterChanged,
+    required TResult Function(String mainEssayPath) mainEssayChanged,
+    required TResult Function(String extraCertificationPath)
+        extraCertificationChanged,
+    required TResult Function(String extraEssay) extraEssayChanged,
+    required TResult Function(String militaryStatus) militaryStatusChanged,
+    required TResult Function(String universityStatus) universityStatusChanged,
+    required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function() submitApplicationClicked,
+  }) {
+    return initialEvent();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialEvent,
+    TResult Function(String schoolTranscriptPath)? schoolTranscriptChanged,
+    TResult Function(String reccomendationLetterPath)?
+        reccomnedationLetterChanged,
+    TResult Function(String mainEssayPath)? mainEssayChanged,
+    TResult Function(String extraCertificationPath)? extraCertificationChanged,
+    TResult Function(String extraEssay)? extraEssayChanged,
+    TResult Function(String militaryStatus)? militaryStatusChanged,
+    TResult Function(String universityStatus)? universityStatusChanged,
+    TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function()? submitApplicationClicked,
+    required TResult orElse(),
+  }) {
+    if (initialEvent != null) {
+      return initialEvent();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialApplication value) initialEvent,
+    required TResult Function(_SchoolTranscriptChanged value)
+        schoolTranscriptChanged,
+    required TResult Function(_ReccomendationLetterChanged value)
+        reccomnedationLetterChanged,
+    required TResult Function(_MainEssayChanged value) mainEssayChanged,
+    required TResult Function(_ExtraCertificationChanged value)
+        extraCertificationChanged,
+    required TResult Function(_ExtraEssay value) extraEssayChanged,
+    required TResult Function(_MilitaryStatusChanged value)
+        militaryStatusChanged,
+    required TResult Function(_UniversityStatusChanged value)
+        universityStatusChanged,
+    required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_SubmitApplicationClicked value)
+        submitApplicationClicked,
+  }) {
+    return initialEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialApplication value)? initialEvent,
+    TResult Function(_SchoolTranscriptChanged value)? schoolTranscriptChanged,
+    TResult Function(_ReccomendationLetterChanged value)?
+        reccomnedationLetterChanged,
+    TResult Function(_MainEssayChanged value)? mainEssayChanged,
+    TResult Function(_ExtraCertificationChanged value)?
+        extraCertificationChanged,
+    TResult Function(_ExtraEssay value)? extraEssayChanged,
+    TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
+    TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
+    TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    required TResult orElse(),
+  }) {
+    if (initialEvent != null) {
+      return initialEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InitialApplication implements ApplicationEvent {
+  const factory _InitialApplication() = _$_InitialApplication;
+}
+
+/// @nodoc
+abstract class _$SchoolTranscriptChangedCopyWith<$Res> {
+  factory _$SchoolTranscriptChangedCopyWith(_SchoolTranscriptChanged value,
+          $Res Function(_SchoolTranscriptChanged) then) =
+      __$SchoolTranscriptChangedCopyWithImpl<$Res>;
+  $Res call({String schoolTranscriptPath});
+}
+
+/// @nodoc
+class __$SchoolTranscriptChangedCopyWithImpl<$Res>
+    extends _$ApplicationEventCopyWithImpl<$Res>
+    implements _$SchoolTranscriptChangedCopyWith<$Res> {
+  __$SchoolTranscriptChangedCopyWithImpl(_SchoolTranscriptChanged _value,
+      $Res Function(_SchoolTranscriptChanged) _then)
+      : super(_value, (v) => _then(v as _SchoolTranscriptChanged));
+
+  @override
+  _SchoolTranscriptChanged get _value =>
+      super._value as _SchoolTranscriptChanged;
+
+  @override
+  $Res call({
+    Object? schoolTranscriptPath = freezed,
+  }) {
+    return _then(_SchoolTranscriptChanged(
+      schoolTranscriptPath == freezed
+          ? _value.schoolTranscriptPath
+          : schoolTranscriptPath // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SchoolTranscriptChanged implements _SchoolTranscriptChanged {
+  const _$_SchoolTranscriptChanged(this.schoolTranscriptPath);
+
+  @override
+  final String schoolTranscriptPath;
+
+  @override
+  String toString() {
+    return 'ApplicationEvent.schoolTranscriptChanged(schoolTranscriptPath: $schoolTranscriptPath)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _SchoolTranscriptChanged &&
+            (identical(other.schoolTranscriptPath, schoolTranscriptPath) ||
+                const DeepCollectionEquality()
+                    .equals(other.schoolTranscriptPath, schoolTranscriptPath)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(schoolTranscriptPath);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SchoolTranscriptChangedCopyWith<_SchoolTranscriptChanged> get copyWith =>
+      __$SchoolTranscriptChangedCopyWithImpl<_SchoolTranscriptChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialEvent,
+    required TResult Function(String schoolTranscriptPath)
+        schoolTranscriptChanged,
+    required TResult Function(String reccomendationLetterPath)
+        reccomnedationLetterChanged,
+    required TResult Function(String mainEssayPath) mainEssayChanged,
+    required TResult Function(String extraCertificationPath)
+        extraCertificationChanged,
+    required TResult Function(String extraEssay) extraEssayChanged,
+    required TResult Function(String militaryStatus) militaryStatusChanged,
+    required TResult Function(String universityStatus) universityStatusChanged,
+    required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function() submitApplicationClicked,
+  }) {
+    return schoolTranscriptChanged(schoolTranscriptPath);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialEvent,
+    TResult Function(String schoolTranscriptPath)? schoolTranscriptChanged,
+    TResult Function(String reccomendationLetterPath)?
+        reccomnedationLetterChanged,
+    TResult Function(String mainEssayPath)? mainEssayChanged,
+    TResult Function(String extraCertificationPath)? extraCertificationChanged,
+    TResult Function(String extraEssay)? extraEssayChanged,
+    TResult Function(String militaryStatus)? militaryStatusChanged,
+    TResult Function(String universityStatus)? universityStatusChanged,
+    TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function()? submitApplicationClicked,
+    required TResult orElse(),
+  }) {
+    if (schoolTranscriptChanged != null) {
+      return schoolTranscriptChanged(schoolTranscriptPath);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialApplication value) initialEvent,
+    required TResult Function(_SchoolTranscriptChanged value)
+        schoolTranscriptChanged,
+    required TResult Function(_ReccomendationLetterChanged value)
+        reccomnedationLetterChanged,
+    required TResult Function(_MainEssayChanged value) mainEssayChanged,
+    required TResult Function(_ExtraCertificationChanged value)
+        extraCertificationChanged,
+    required TResult Function(_ExtraEssay value) extraEssayChanged,
+    required TResult Function(_MilitaryStatusChanged value)
+        militaryStatusChanged,
+    required TResult Function(_UniversityStatusChanged value)
+        universityStatusChanged,
+    required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_SubmitApplicationClicked value)
+        submitApplicationClicked,
+  }) {
+    return schoolTranscriptChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialApplication value)? initialEvent,
+    TResult Function(_SchoolTranscriptChanged value)? schoolTranscriptChanged,
+    TResult Function(_ReccomendationLetterChanged value)?
+        reccomnedationLetterChanged,
+    TResult Function(_MainEssayChanged value)? mainEssayChanged,
+    TResult Function(_ExtraCertificationChanged value)?
+        extraCertificationChanged,
+    TResult Function(_ExtraEssay value)? extraEssayChanged,
+    TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
+    TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
+    TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    required TResult orElse(),
+  }) {
+    if (schoolTranscriptChanged != null) {
+      return schoolTranscriptChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SchoolTranscriptChanged implements ApplicationEvent {
+  const factory _SchoolTranscriptChanged(String schoolTranscriptPath) =
+      _$_SchoolTranscriptChanged;
+
+  String get schoolTranscriptPath => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$SchoolTranscriptChangedCopyWith<_SchoolTranscriptChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$ReccomendationLetterChangedCopyWith<$Res> {
+  factory _$ReccomendationLetterChangedCopyWith(
+          _ReccomendationLetterChanged value,
+          $Res Function(_ReccomendationLetterChanged) then) =
+      __$ReccomendationLetterChangedCopyWithImpl<$Res>;
+  $Res call({String reccomendationLetterPath});
+}
+
+/// @nodoc
+class __$ReccomendationLetterChangedCopyWithImpl<$Res>
+    extends _$ApplicationEventCopyWithImpl<$Res>
+    implements _$ReccomendationLetterChangedCopyWith<$Res> {
+  __$ReccomendationLetterChangedCopyWithImpl(
+      _ReccomendationLetterChanged _value,
+      $Res Function(_ReccomendationLetterChanged) _then)
+      : super(_value, (v) => _then(v as _ReccomendationLetterChanged));
+
+  @override
+  _ReccomendationLetterChanged get _value =>
+      super._value as _ReccomendationLetterChanged;
+
+  @override
+  $Res call({
+    Object? reccomendationLetterPath = freezed,
+  }) {
+    return _then(_ReccomendationLetterChanged(
+      reccomendationLetterPath == freezed
+          ? _value.reccomendationLetterPath
+          : reccomendationLetterPath // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ReccomendationLetterChanged implements _ReccomendationLetterChanged {
+  const _$_ReccomendationLetterChanged(this.reccomendationLetterPath);
+
+  @override
+  final String reccomendationLetterPath;
+
+  @override
+  String toString() {
+    return 'ApplicationEvent.reccomnedationLetterChanged(reccomendationLetterPath: $reccomendationLetterPath)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ReccomendationLetterChanged &&
+            (identical(
+                    other.reccomendationLetterPath, reccomendationLetterPath) ||
+                const DeepCollectionEquality().equals(
+                    other.reccomendationLetterPath, reccomendationLetterPath)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(reccomendationLetterPath);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ReccomendationLetterChangedCopyWith<_ReccomendationLetterChanged>
+      get copyWith => __$ReccomendationLetterChangedCopyWithImpl<
+          _ReccomendationLetterChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialEvent,
+    required TResult Function(String schoolTranscriptPath)
+        schoolTranscriptChanged,
+    required TResult Function(String reccomendationLetterPath)
+        reccomnedationLetterChanged,
+    required TResult Function(String mainEssayPath) mainEssayChanged,
+    required TResult Function(String extraCertificationPath)
+        extraCertificationChanged,
+    required TResult Function(String extraEssay) extraEssayChanged,
+    required TResult Function(String militaryStatus) militaryStatusChanged,
+    required TResult Function(String universityStatus) universityStatusChanged,
+    required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function() submitApplicationClicked,
+  }) {
+    return reccomnedationLetterChanged(reccomendationLetterPath);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialEvent,
+    TResult Function(String schoolTranscriptPath)? schoolTranscriptChanged,
+    TResult Function(String reccomendationLetterPath)?
+        reccomnedationLetterChanged,
+    TResult Function(String mainEssayPath)? mainEssayChanged,
+    TResult Function(String extraCertificationPath)? extraCertificationChanged,
+    TResult Function(String extraEssay)? extraEssayChanged,
+    TResult Function(String militaryStatus)? militaryStatusChanged,
+    TResult Function(String universityStatus)? universityStatusChanged,
+    TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function()? submitApplicationClicked,
+    required TResult orElse(),
+  }) {
+    if (reccomnedationLetterChanged != null) {
+      return reccomnedationLetterChanged(reccomendationLetterPath);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialApplication value) initialEvent,
+    required TResult Function(_SchoolTranscriptChanged value)
+        schoolTranscriptChanged,
+    required TResult Function(_ReccomendationLetterChanged value)
+        reccomnedationLetterChanged,
+    required TResult Function(_MainEssayChanged value) mainEssayChanged,
+    required TResult Function(_ExtraCertificationChanged value)
+        extraCertificationChanged,
+    required TResult Function(_ExtraEssay value) extraEssayChanged,
+    required TResult Function(_MilitaryStatusChanged value)
+        militaryStatusChanged,
+    required TResult Function(_UniversityStatusChanged value)
+        universityStatusChanged,
+    required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_SubmitApplicationClicked value)
+        submitApplicationClicked,
+  }) {
+    return reccomnedationLetterChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialApplication value)? initialEvent,
+    TResult Function(_SchoolTranscriptChanged value)? schoolTranscriptChanged,
+    TResult Function(_ReccomendationLetterChanged value)?
+        reccomnedationLetterChanged,
+    TResult Function(_MainEssayChanged value)? mainEssayChanged,
+    TResult Function(_ExtraCertificationChanged value)?
+        extraCertificationChanged,
+    TResult Function(_ExtraEssay value)? extraEssayChanged,
+    TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
+    TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
+    TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    required TResult orElse(),
+  }) {
+    if (reccomnedationLetterChanged != null) {
+      return reccomnedationLetterChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ReccomendationLetterChanged implements ApplicationEvent {
+  const factory _ReccomendationLetterChanged(String reccomendationLetterPath) =
+      _$_ReccomendationLetterChanged;
+
+  String get reccomendationLetterPath => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ReccomendationLetterChangedCopyWith<_ReccomendationLetterChanged>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$MainEssayChangedCopyWith<$Res> {
+  factory _$MainEssayChangedCopyWith(
+          _MainEssayChanged value, $Res Function(_MainEssayChanged) then) =
+      __$MainEssayChangedCopyWithImpl<$Res>;
+  $Res call({String mainEssayPath});
+}
+
+/// @nodoc
+class __$MainEssayChangedCopyWithImpl<$Res>
+    extends _$ApplicationEventCopyWithImpl<$Res>
+    implements _$MainEssayChangedCopyWith<$Res> {
+  __$MainEssayChangedCopyWithImpl(
+      _MainEssayChanged _value, $Res Function(_MainEssayChanged) _then)
+      : super(_value, (v) => _then(v as _MainEssayChanged));
+
+  @override
+  _MainEssayChanged get _value => super._value as _MainEssayChanged;
+
+  @override
+  $Res call({
+    Object? mainEssayPath = freezed,
+  }) {
+    return _then(_MainEssayChanged(
+      mainEssayPath == freezed
+          ? _value.mainEssayPath
+          : mainEssayPath // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_MainEssayChanged implements _MainEssayChanged {
+  const _$_MainEssayChanged(this.mainEssayPath);
+
+  @override
+  final String mainEssayPath;
+
+  @override
+  String toString() {
+    return 'ApplicationEvent.mainEssayChanged(mainEssayPath: $mainEssayPath)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _MainEssayChanged &&
+            (identical(other.mainEssayPath, mainEssayPath) ||
+                const DeepCollectionEquality()
+                    .equals(other.mainEssayPath, mainEssayPath)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(mainEssayPath);
+
+  @JsonKey(ignore: true)
+  @override
+  _$MainEssayChangedCopyWith<_MainEssayChanged> get copyWith =>
+      __$MainEssayChangedCopyWithImpl<_MainEssayChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialEvent,
+    required TResult Function(String schoolTranscriptPath)
+        schoolTranscriptChanged,
+    required TResult Function(String reccomendationLetterPath)
+        reccomnedationLetterChanged,
+    required TResult Function(String mainEssayPath) mainEssayChanged,
+    required TResult Function(String extraCertificationPath)
+        extraCertificationChanged,
+    required TResult Function(String extraEssay) extraEssayChanged,
+    required TResult Function(String militaryStatus) militaryStatusChanged,
+    required TResult Function(String universityStatus) universityStatusChanged,
+    required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function() submitApplicationClicked,
+  }) {
+    return mainEssayChanged(mainEssayPath);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialEvent,
+    TResult Function(String schoolTranscriptPath)? schoolTranscriptChanged,
+    TResult Function(String reccomendationLetterPath)?
+        reccomnedationLetterChanged,
+    TResult Function(String mainEssayPath)? mainEssayChanged,
+    TResult Function(String extraCertificationPath)? extraCertificationChanged,
+    TResult Function(String extraEssay)? extraEssayChanged,
+    TResult Function(String militaryStatus)? militaryStatusChanged,
+    TResult Function(String universityStatus)? universityStatusChanged,
+    TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function()? submitApplicationClicked,
+    required TResult orElse(),
+  }) {
+    if (mainEssayChanged != null) {
+      return mainEssayChanged(mainEssayPath);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialApplication value) initialEvent,
+    required TResult Function(_SchoolTranscriptChanged value)
+        schoolTranscriptChanged,
+    required TResult Function(_ReccomendationLetterChanged value)
+        reccomnedationLetterChanged,
+    required TResult Function(_MainEssayChanged value) mainEssayChanged,
+    required TResult Function(_ExtraCertificationChanged value)
+        extraCertificationChanged,
+    required TResult Function(_ExtraEssay value) extraEssayChanged,
+    required TResult Function(_MilitaryStatusChanged value)
+        militaryStatusChanged,
+    required TResult Function(_UniversityStatusChanged value)
+        universityStatusChanged,
+    required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_SubmitApplicationClicked value)
+        submitApplicationClicked,
+  }) {
+    return mainEssayChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialApplication value)? initialEvent,
+    TResult Function(_SchoolTranscriptChanged value)? schoolTranscriptChanged,
+    TResult Function(_ReccomendationLetterChanged value)?
+        reccomnedationLetterChanged,
+    TResult Function(_MainEssayChanged value)? mainEssayChanged,
+    TResult Function(_ExtraCertificationChanged value)?
+        extraCertificationChanged,
+    TResult Function(_ExtraEssay value)? extraEssayChanged,
+    TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
+    TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
+    TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    required TResult orElse(),
+  }) {
+    if (mainEssayChanged != null) {
+      return mainEssayChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _MainEssayChanged implements ApplicationEvent {
+  const factory _MainEssayChanged(String mainEssayPath) = _$_MainEssayChanged;
+
+  String get mainEssayPath => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$MainEssayChangedCopyWith<_MainEssayChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$ExtraCertificationChangedCopyWith<$Res> {
+  factory _$ExtraCertificationChangedCopyWith(_ExtraCertificationChanged value,
+          $Res Function(_ExtraCertificationChanged) then) =
+      __$ExtraCertificationChangedCopyWithImpl<$Res>;
+  $Res call({String extraCertificationPath});
+}
+
+/// @nodoc
+class __$ExtraCertificationChangedCopyWithImpl<$Res>
+    extends _$ApplicationEventCopyWithImpl<$Res>
+    implements _$ExtraCertificationChangedCopyWith<$Res> {
+  __$ExtraCertificationChangedCopyWithImpl(_ExtraCertificationChanged _value,
+      $Res Function(_ExtraCertificationChanged) _then)
+      : super(_value, (v) => _then(v as _ExtraCertificationChanged));
+
+  @override
+  _ExtraCertificationChanged get _value =>
+      super._value as _ExtraCertificationChanged;
+
+  @override
+  $Res call({
+    Object? extraCertificationPath = freezed,
+  }) {
+    return _then(_ExtraCertificationChanged(
+      extraCertificationPath == freezed
+          ? _value.extraCertificationPath
+          : extraCertificationPath // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ExtraCertificationChanged implements _ExtraCertificationChanged {
+  const _$_ExtraCertificationChanged(this.extraCertificationPath);
+
+  @override
+  final String extraCertificationPath;
+
+  @override
+  String toString() {
+    return 'ApplicationEvent.extraCertificationChanged(extraCertificationPath: $extraCertificationPath)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ExtraCertificationChanged &&
+            (identical(other.extraCertificationPath, extraCertificationPath) ||
+                const DeepCollectionEquality().equals(
+                    other.extraCertificationPath, extraCertificationPath)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(extraCertificationPath);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ExtraCertificationChangedCopyWith<_ExtraCertificationChanged>
+      get copyWith =>
+          __$ExtraCertificationChangedCopyWithImpl<_ExtraCertificationChanged>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialEvent,
+    required TResult Function(String schoolTranscriptPath)
+        schoolTranscriptChanged,
+    required TResult Function(String reccomendationLetterPath)
+        reccomnedationLetterChanged,
+    required TResult Function(String mainEssayPath) mainEssayChanged,
+    required TResult Function(String extraCertificationPath)
+        extraCertificationChanged,
+    required TResult Function(String extraEssay) extraEssayChanged,
+    required TResult Function(String militaryStatus) militaryStatusChanged,
+    required TResult Function(String universityStatus) universityStatusChanged,
+    required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function() submitApplicationClicked,
+  }) {
+    return extraCertificationChanged(extraCertificationPath);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialEvent,
+    TResult Function(String schoolTranscriptPath)? schoolTranscriptChanged,
+    TResult Function(String reccomendationLetterPath)?
+        reccomnedationLetterChanged,
+    TResult Function(String mainEssayPath)? mainEssayChanged,
+    TResult Function(String extraCertificationPath)? extraCertificationChanged,
+    TResult Function(String extraEssay)? extraEssayChanged,
+    TResult Function(String militaryStatus)? militaryStatusChanged,
+    TResult Function(String universityStatus)? universityStatusChanged,
+    TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function()? submitApplicationClicked,
+    required TResult orElse(),
+  }) {
+    if (extraCertificationChanged != null) {
+      return extraCertificationChanged(extraCertificationPath);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialApplication value) initialEvent,
+    required TResult Function(_SchoolTranscriptChanged value)
+        schoolTranscriptChanged,
+    required TResult Function(_ReccomendationLetterChanged value)
+        reccomnedationLetterChanged,
+    required TResult Function(_MainEssayChanged value) mainEssayChanged,
+    required TResult Function(_ExtraCertificationChanged value)
+        extraCertificationChanged,
+    required TResult Function(_ExtraEssay value) extraEssayChanged,
+    required TResult Function(_MilitaryStatusChanged value)
+        militaryStatusChanged,
+    required TResult Function(_UniversityStatusChanged value)
+        universityStatusChanged,
+    required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_SubmitApplicationClicked value)
+        submitApplicationClicked,
+  }) {
+    return extraCertificationChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialApplication value)? initialEvent,
+    TResult Function(_SchoolTranscriptChanged value)? schoolTranscriptChanged,
+    TResult Function(_ReccomendationLetterChanged value)?
+        reccomnedationLetterChanged,
+    TResult Function(_MainEssayChanged value)? mainEssayChanged,
+    TResult Function(_ExtraCertificationChanged value)?
+        extraCertificationChanged,
+    TResult Function(_ExtraEssay value)? extraEssayChanged,
+    TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
+    TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
+    TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    required TResult orElse(),
+  }) {
+    if (extraCertificationChanged != null) {
+      return extraCertificationChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ExtraCertificationChanged implements ApplicationEvent {
+  const factory _ExtraCertificationChanged(String extraCertificationPath) =
+      _$_ExtraCertificationChanged;
+
+  String get extraCertificationPath => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ExtraCertificationChangedCopyWith<_ExtraCertificationChanged>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$ExtraEssayCopyWith<$Res> {
+  factory _$ExtraEssayCopyWith(
+          _ExtraEssay value, $Res Function(_ExtraEssay) then) =
+      __$ExtraEssayCopyWithImpl<$Res>;
+  $Res call({String extraEssay});
+}
+
+/// @nodoc
+class __$ExtraEssayCopyWithImpl<$Res>
+    extends _$ApplicationEventCopyWithImpl<$Res>
+    implements _$ExtraEssayCopyWith<$Res> {
+  __$ExtraEssayCopyWithImpl(
+      _ExtraEssay _value, $Res Function(_ExtraEssay) _then)
+      : super(_value, (v) => _then(v as _ExtraEssay));
+
+  @override
+  _ExtraEssay get _value => super._value as _ExtraEssay;
+
+  @override
+  $Res call({
+    Object? extraEssay = freezed,
+  }) {
+    return _then(_ExtraEssay(
+      extraEssay == freezed
+          ? _value.extraEssay
+          : extraEssay // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ExtraEssay implements _ExtraEssay {
+  const _$_ExtraEssay(this.extraEssay);
+
+  @override
+  final String extraEssay;
+
+  @override
+  String toString() {
+    return 'ApplicationEvent.extraEssayChanged(extraEssay: $extraEssay)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ExtraEssay &&
+            (identical(other.extraEssay, extraEssay) ||
+                const DeepCollectionEquality()
+                    .equals(other.extraEssay, extraEssay)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(extraEssay);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ExtraEssayCopyWith<_ExtraEssay> get copyWith =>
+      __$ExtraEssayCopyWithImpl<_ExtraEssay>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialEvent,
+    required TResult Function(String schoolTranscriptPath)
+        schoolTranscriptChanged,
+    required TResult Function(String reccomendationLetterPath)
+        reccomnedationLetterChanged,
+    required TResult Function(String mainEssayPath) mainEssayChanged,
+    required TResult Function(String extraCertificationPath)
+        extraCertificationChanged,
+    required TResult Function(String extraEssay) extraEssayChanged,
+    required TResult Function(String militaryStatus) militaryStatusChanged,
+    required TResult Function(String universityStatus) universityStatusChanged,
+    required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function() submitApplicationClicked,
+  }) {
+    return extraEssayChanged(extraEssay);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialEvent,
+    TResult Function(String schoolTranscriptPath)? schoolTranscriptChanged,
+    TResult Function(String reccomendationLetterPath)?
+        reccomnedationLetterChanged,
+    TResult Function(String mainEssayPath)? mainEssayChanged,
+    TResult Function(String extraCertificationPath)? extraCertificationChanged,
+    TResult Function(String extraEssay)? extraEssayChanged,
+    TResult Function(String militaryStatus)? militaryStatusChanged,
+    TResult Function(String universityStatus)? universityStatusChanged,
+    TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function()? submitApplicationClicked,
+    required TResult orElse(),
+  }) {
+    if (extraEssayChanged != null) {
+      return extraEssayChanged(extraEssay);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialApplication value) initialEvent,
+    required TResult Function(_SchoolTranscriptChanged value)
+        schoolTranscriptChanged,
+    required TResult Function(_ReccomendationLetterChanged value)
+        reccomnedationLetterChanged,
+    required TResult Function(_MainEssayChanged value) mainEssayChanged,
+    required TResult Function(_ExtraCertificationChanged value)
+        extraCertificationChanged,
+    required TResult Function(_ExtraEssay value) extraEssayChanged,
+    required TResult Function(_MilitaryStatusChanged value)
+        militaryStatusChanged,
+    required TResult Function(_UniversityStatusChanged value)
+        universityStatusChanged,
+    required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_SubmitApplicationClicked value)
+        submitApplicationClicked,
+  }) {
+    return extraEssayChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialApplication value)? initialEvent,
+    TResult Function(_SchoolTranscriptChanged value)? schoolTranscriptChanged,
+    TResult Function(_ReccomendationLetterChanged value)?
+        reccomnedationLetterChanged,
+    TResult Function(_MainEssayChanged value)? mainEssayChanged,
+    TResult Function(_ExtraCertificationChanged value)?
+        extraCertificationChanged,
+    TResult Function(_ExtraEssay value)? extraEssayChanged,
+    TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
+    TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
+    TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    required TResult orElse(),
+  }) {
+    if (extraEssayChanged != null) {
+      return extraEssayChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ExtraEssay implements ApplicationEvent {
+  const factory _ExtraEssay(String extraEssay) = _$_ExtraEssay;
+
+  String get extraEssay => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ExtraEssayCopyWith<_ExtraEssay> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$MilitaryStatusChangedCopyWith<$Res> {
+  factory _$MilitaryStatusChangedCopyWith(_MilitaryStatusChanged value,
+          $Res Function(_MilitaryStatusChanged) then) =
+      __$MilitaryStatusChangedCopyWithImpl<$Res>;
+  $Res call({String militaryStatus});
+}
+
+/// @nodoc
+class __$MilitaryStatusChangedCopyWithImpl<$Res>
+    extends _$ApplicationEventCopyWithImpl<$Res>
+    implements _$MilitaryStatusChangedCopyWith<$Res> {
+  __$MilitaryStatusChangedCopyWithImpl(_MilitaryStatusChanged _value,
+      $Res Function(_MilitaryStatusChanged) _then)
+      : super(_value, (v) => _then(v as _MilitaryStatusChanged));
+
+  @override
+  _MilitaryStatusChanged get _value => super._value as _MilitaryStatusChanged;
+
+  @override
+  $Res call({
+    Object? militaryStatus = freezed,
+  }) {
+    return _then(_MilitaryStatusChanged(
+      militaryStatus == freezed
+          ? _value.militaryStatus
+          : militaryStatus // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_MilitaryStatusChanged implements _MilitaryStatusChanged {
+  const _$_MilitaryStatusChanged(this.militaryStatus);
+
+  @override
+  final String militaryStatus;
+
+  @override
+  String toString() {
+    return 'ApplicationEvent.militaryStatusChanged(militaryStatus: $militaryStatus)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _MilitaryStatusChanged &&
+            (identical(other.militaryStatus, militaryStatus) ||
+                const DeepCollectionEquality()
+                    .equals(other.militaryStatus, militaryStatus)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(militaryStatus);
+
+  @JsonKey(ignore: true)
+  @override
+  _$MilitaryStatusChangedCopyWith<_MilitaryStatusChanged> get copyWith =>
+      __$MilitaryStatusChangedCopyWithImpl<_MilitaryStatusChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialEvent,
+    required TResult Function(String schoolTranscriptPath)
+        schoolTranscriptChanged,
+    required TResult Function(String reccomendationLetterPath)
+        reccomnedationLetterChanged,
+    required TResult Function(String mainEssayPath) mainEssayChanged,
+    required TResult Function(String extraCertificationPath)
+        extraCertificationChanged,
+    required TResult Function(String extraEssay) extraEssayChanged,
+    required TResult Function(String militaryStatus) militaryStatusChanged,
+    required TResult Function(String universityStatus) universityStatusChanged,
+    required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function() submitApplicationClicked,
+  }) {
+    return militaryStatusChanged(militaryStatus);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialEvent,
+    TResult Function(String schoolTranscriptPath)? schoolTranscriptChanged,
+    TResult Function(String reccomendationLetterPath)?
+        reccomnedationLetterChanged,
+    TResult Function(String mainEssayPath)? mainEssayChanged,
+    TResult Function(String extraCertificationPath)? extraCertificationChanged,
+    TResult Function(String extraEssay)? extraEssayChanged,
+    TResult Function(String militaryStatus)? militaryStatusChanged,
+    TResult Function(String universityStatus)? universityStatusChanged,
+    TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function()? submitApplicationClicked,
+    required TResult orElse(),
+  }) {
+    if (militaryStatusChanged != null) {
+      return militaryStatusChanged(militaryStatus);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialApplication value) initialEvent,
+    required TResult Function(_SchoolTranscriptChanged value)
+        schoolTranscriptChanged,
+    required TResult Function(_ReccomendationLetterChanged value)
+        reccomnedationLetterChanged,
+    required TResult Function(_MainEssayChanged value) mainEssayChanged,
+    required TResult Function(_ExtraCertificationChanged value)
+        extraCertificationChanged,
+    required TResult Function(_ExtraEssay value) extraEssayChanged,
+    required TResult Function(_MilitaryStatusChanged value)
+        militaryStatusChanged,
+    required TResult Function(_UniversityStatusChanged value)
+        universityStatusChanged,
+    required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_SubmitApplicationClicked value)
+        submitApplicationClicked,
+  }) {
+    return militaryStatusChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialApplication value)? initialEvent,
+    TResult Function(_SchoolTranscriptChanged value)? schoolTranscriptChanged,
+    TResult Function(_ReccomendationLetterChanged value)?
+        reccomnedationLetterChanged,
+    TResult Function(_MainEssayChanged value)? mainEssayChanged,
+    TResult Function(_ExtraCertificationChanged value)?
+        extraCertificationChanged,
+    TResult Function(_ExtraEssay value)? extraEssayChanged,
+    TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
+    TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
+    TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    required TResult orElse(),
+  }) {
+    if (militaryStatusChanged != null) {
+      return militaryStatusChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _MilitaryStatusChanged implements ApplicationEvent {
+  const factory _MilitaryStatusChanged(String militaryStatus) =
+      _$_MilitaryStatusChanged;
+
+  String get militaryStatus => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$MilitaryStatusChangedCopyWith<_MilitaryStatusChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$UniversityStatusChangedCopyWith<$Res> {
+  factory _$UniversityStatusChangedCopyWith(_UniversityStatusChanged value,
+          $Res Function(_UniversityStatusChanged) then) =
+      __$UniversityStatusChangedCopyWithImpl<$Res>;
+  $Res call({String universityStatus});
+}
+
+/// @nodoc
+class __$UniversityStatusChangedCopyWithImpl<$Res>
+    extends _$ApplicationEventCopyWithImpl<$Res>
+    implements _$UniversityStatusChangedCopyWith<$Res> {
+  __$UniversityStatusChangedCopyWithImpl(_UniversityStatusChanged _value,
+      $Res Function(_UniversityStatusChanged) _then)
+      : super(_value, (v) => _then(v as _UniversityStatusChanged));
+
+  @override
+  _UniversityStatusChanged get _value =>
+      super._value as _UniversityStatusChanged;
+
+  @override
+  $Res call({
+    Object? universityStatus = freezed,
+  }) {
+    return _then(_UniversityStatusChanged(
+      universityStatus == freezed
+          ? _value.universityStatus
+          : universityStatus // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_UniversityStatusChanged implements _UniversityStatusChanged {
+  const _$_UniversityStatusChanged(this.universityStatus);
+
+  @override
+  final String universityStatus;
+
+  @override
+  String toString() {
+    return 'ApplicationEvent.universityStatusChanged(universityStatus: $universityStatus)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _UniversityStatusChanged &&
+            (identical(other.universityStatus, universityStatus) ||
+                const DeepCollectionEquality()
+                    .equals(other.universityStatus, universityStatus)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(universityStatus);
+
+  @JsonKey(ignore: true)
+  @override
+  _$UniversityStatusChangedCopyWith<_UniversityStatusChanged> get copyWith =>
+      __$UniversityStatusChangedCopyWithImpl<_UniversityStatusChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialEvent,
+    required TResult Function(String schoolTranscriptPath)
+        schoolTranscriptChanged,
+    required TResult Function(String reccomendationLetterPath)
+        reccomnedationLetterChanged,
+    required TResult Function(String mainEssayPath) mainEssayChanged,
+    required TResult Function(String extraCertificationPath)
+        extraCertificationChanged,
+    required TResult Function(String extraEssay) extraEssayChanged,
+    required TResult Function(String militaryStatus) militaryStatusChanged,
+    required TResult Function(String universityStatus) universityStatusChanged,
+    required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function() submitApplicationClicked,
+  }) {
+    return universityStatusChanged(universityStatus);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialEvent,
+    TResult Function(String schoolTranscriptPath)? schoolTranscriptChanged,
+    TResult Function(String reccomendationLetterPath)?
+        reccomnedationLetterChanged,
+    TResult Function(String mainEssayPath)? mainEssayChanged,
+    TResult Function(String extraCertificationPath)? extraCertificationChanged,
+    TResult Function(String extraEssay)? extraEssayChanged,
+    TResult Function(String militaryStatus)? militaryStatusChanged,
+    TResult Function(String universityStatus)? universityStatusChanged,
+    TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function()? submitApplicationClicked,
+    required TResult orElse(),
+  }) {
+    if (universityStatusChanged != null) {
+      return universityStatusChanged(universityStatus);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialApplication value) initialEvent,
+    required TResult Function(_SchoolTranscriptChanged value)
+        schoolTranscriptChanged,
+    required TResult Function(_ReccomendationLetterChanged value)
+        reccomnedationLetterChanged,
+    required TResult Function(_MainEssayChanged value) mainEssayChanged,
+    required TResult Function(_ExtraCertificationChanged value)
+        extraCertificationChanged,
+    required TResult Function(_ExtraEssay value) extraEssayChanged,
+    required TResult Function(_MilitaryStatusChanged value)
+        militaryStatusChanged,
+    required TResult Function(_UniversityStatusChanged value)
+        universityStatusChanged,
+    required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_SubmitApplicationClicked value)
+        submitApplicationClicked,
+  }) {
+    return universityStatusChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialApplication value)? initialEvent,
+    TResult Function(_SchoolTranscriptChanged value)? schoolTranscriptChanged,
+    TResult Function(_ReccomendationLetterChanged value)?
+        reccomnedationLetterChanged,
+    TResult Function(_MainEssayChanged value)? mainEssayChanged,
+    TResult Function(_ExtraCertificationChanged value)?
+        extraCertificationChanged,
+    TResult Function(_ExtraEssay value)? extraEssayChanged,
+    TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
+    TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
+    TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    required TResult orElse(),
+  }) {
+    if (universityStatusChanged != null) {
+      return universityStatusChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UniversityStatusChanged implements ApplicationEvent {
+  const factory _UniversityStatusChanged(String universityStatus) =
+      _$_UniversityStatusChanged;
+
+  String get universityStatus => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$UniversityStatusChangedCopyWith<_UniversityStatusChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$ProficiencyChangedCopyWith<$Res> {
+  factory _$ProficiencyChangedCopyWith(
+          _ProficiencyChanged value, $Res Function(_ProficiencyChanged) then) =
+      __$ProficiencyChangedCopyWithImpl<$Res>;
+  $Res call({String testUrl});
+}
+
+/// @nodoc
+class __$ProficiencyChangedCopyWithImpl<$Res>
+    extends _$ApplicationEventCopyWithImpl<$Res>
+    implements _$ProficiencyChangedCopyWith<$Res> {
+  __$ProficiencyChangedCopyWithImpl(
+      _ProficiencyChanged _value, $Res Function(_ProficiencyChanged) _then)
+      : super(_value, (v) => _then(v as _ProficiencyChanged));
+
+  @override
+  _ProficiencyChanged get _value => super._value as _ProficiencyChanged;
+
+  @override
+  $Res call({
+    Object? testUrl = freezed,
+  }) {
+    return _then(_ProficiencyChanged(
+      testUrl == freezed
+          ? _value.testUrl
+          : testUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ProficiencyChanged implements _ProficiencyChanged {
+  const _$_ProficiencyChanged(this.testUrl);
+
+  @override
+  final String testUrl;
+
+  @override
+  String toString() {
+    return 'ApplicationEvent.proficiencyUrlChanged(testUrl: $testUrl)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ProficiencyChanged &&
+            (identical(other.testUrl, testUrl) ||
+                const DeepCollectionEquality().equals(other.testUrl, testUrl)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(testUrl);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ProficiencyChangedCopyWith<_ProficiencyChanged> get copyWith =>
+      __$ProficiencyChangedCopyWithImpl<_ProficiencyChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialEvent,
+    required TResult Function(String schoolTranscriptPath)
+        schoolTranscriptChanged,
+    required TResult Function(String reccomendationLetterPath)
+        reccomnedationLetterChanged,
+    required TResult Function(String mainEssayPath) mainEssayChanged,
+    required TResult Function(String extraCertificationPath)
+        extraCertificationChanged,
+    required TResult Function(String extraEssay) extraEssayChanged,
+    required TResult Function(String militaryStatus) militaryStatusChanged,
+    required TResult Function(String universityStatus) universityStatusChanged,
+    required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function() submitApplicationClicked,
+  }) {
+    return proficiencyUrlChanged(testUrl);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialEvent,
+    TResult Function(String schoolTranscriptPath)? schoolTranscriptChanged,
+    TResult Function(String reccomendationLetterPath)?
+        reccomnedationLetterChanged,
+    TResult Function(String mainEssayPath)? mainEssayChanged,
+    TResult Function(String extraCertificationPath)? extraCertificationChanged,
+    TResult Function(String extraEssay)? extraEssayChanged,
+    TResult Function(String militaryStatus)? militaryStatusChanged,
+    TResult Function(String universityStatus)? universityStatusChanged,
+    TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function()? submitApplicationClicked,
+    required TResult orElse(),
+  }) {
+    if (proficiencyUrlChanged != null) {
+      return proficiencyUrlChanged(testUrl);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialApplication value) initialEvent,
+    required TResult Function(_SchoolTranscriptChanged value)
+        schoolTranscriptChanged,
+    required TResult Function(_ReccomendationLetterChanged value)
+        reccomnedationLetterChanged,
+    required TResult Function(_MainEssayChanged value) mainEssayChanged,
+    required TResult Function(_ExtraCertificationChanged value)
+        extraCertificationChanged,
+    required TResult Function(_ExtraEssay value) extraEssayChanged,
+    required TResult Function(_MilitaryStatusChanged value)
+        militaryStatusChanged,
+    required TResult Function(_UniversityStatusChanged value)
+        universityStatusChanged,
+    required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_SubmitApplicationClicked value)
+        submitApplicationClicked,
+  }) {
+    return proficiencyUrlChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialApplication value)? initialEvent,
+    TResult Function(_SchoolTranscriptChanged value)? schoolTranscriptChanged,
+    TResult Function(_ReccomendationLetterChanged value)?
+        reccomnedationLetterChanged,
+    TResult Function(_MainEssayChanged value)? mainEssayChanged,
+    TResult Function(_ExtraCertificationChanged value)?
+        extraCertificationChanged,
+    TResult Function(_ExtraEssay value)? extraEssayChanged,
+    TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
+    TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
+    TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    required TResult orElse(),
+  }) {
+    if (proficiencyUrlChanged != null) {
+      return proficiencyUrlChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ProficiencyChanged implements ApplicationEvent {
+  const factory _ProficiencyChanged(String testUrl) = _$_ProficiencyChanged;
+
+  String get testUrl => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ProficiencyChangedCopyWith<_ProficiencyChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$SubmitApplicationClickedCopyWith<$Res> {
+  factory _$SubmitApplicationClickedCopyWith(_SubmitApplicationClicked value,
+          $Res Function(_SubmitApplicationClicked) then) =
+      __$SubmitApplicationClickedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SubmitApplicationClickedCopyWithImpl<$Res>
+    extends _$ApplicationEventCopyWithImpl<$Res>
+    implements _$SubmitApplicationClickedCopyWith<$Res> {
+  __$SubmitApplicationClickedCopyWithImpl(_SubmitApplicationClicked _value,
+      $Res Function(_SubmitApplicationClicked) _then)
+      : super(_value, (v) => _then(v as _SubmitApplicationClicked));
+
+  @override
+  _SubmitApplicationClicked get _value =>
+      super._value as _SubmitApplicationClicked;
+}
+
+/// @nodoc
+
+class _$_SubmitApplicationClicked implements _SubmitApplicationClicked {
+  const _$_SubmitApplicationClicked();
+
+  @override
+  String toString() {
+    return 'ApplicationEvent.submitApplicationClicked()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _SubmitApplicationClicked);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialEvent,
+    required TResult Function(String schoolTranscriptPath)
+        schoolTranscriptChanged,
+    required TResult Function(String reccomendationLetterPath)
+        reccomnedationLetterChanged,
+    required TResult Function(String mainEssayPath) mainEssayChanged,
+    required TResult Function(String extraCertificationPath)
+        extraCertificationChanged,
+    required TResult Function(String extraEssay) extraEssayChanged,
+    required TResult Function(String militaryStatus) militaryStatusChanged,
+    required TResult Function(String universityStatus) universityStatusChanged,
+    required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function() submitApplicationClicked,
+  }) {
+    return submitApplicationClicked();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialEvent,
+    TResult Function(String schoolTranscriptPath)? schoolTranscriptChanged,
+    TResult Function(String reccomendationLetterPath)?
+        reccomnedationLetterChanged,
+    TResult Function(String mainEssayPath)? mainEssayChanged,
+    TResult Function(String extraCertificationPath)? extraCertificationChanged,
+    TResult Function(String extraEssay)? extraEssayChanged,
+    TResult Function(String militaryStatus)? militaryStatusChanged,
+    TResult Function(String universityStatus)? universityStatusChanged,
+    TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function()? submitApplicationClicked,
+    required TResult orElse(),
+  }) {
+    if (submitApplicationClicked != null) {
+      return submitApplicationClicked();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialApplication value) initialEvent,
+    required TResult Function(_SchoolTranscriptChanged value)
+        schoolTranscriptChanged,
+    required TResult Function(_ReccomendationLetterChanged value)
+        reccomnedationLetterChanged,
+    required TResult Function(_MainEssayChanged value) mainEssayChanged,
+    required TResult Function(_ExtraCertificationChanged value)
+        extraCertificationChanged,
+    required TResult Function(_ExtraEssay value) extraEssayChanged,
+    required TResult Function(_MilitaryStatusChanged value)
+        militaryStatusChanged,
+    required TResult Function(_UniversityStatusChanged value)
+        universityStatusChanged,
+    required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_SubmitApplicationClicked value)
+        submitApplicationClicked,
+  }) {
+    return submitApplicationClicked(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialApplication value)? initialEvent,
+    TResult Function(_SchoolTranscriptChanged value)? schoolTranscriptChanged,
+    TResult Function(_ReccomendationLetterChanged value)?
+        reccomnedationLetterChanged,
+    TResult Function(_MainEssayChanged value)? mainEssayChanged,
+    TResult Function(_ExtraCertificationChanged value)?
+        extraCertificationChanged,
+    TResult Function(_ExtraEssay value)? extraEssayChanged,
+    TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
+    TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
+    TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    required TResult orElse(),
+  }) {
+    if (submitApplicationClicked != null) {
+      return submitApplicationClicked(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SubmitApplicationClicked implements ApplicationEvent {
+  const factory _SubmitApplicationClicked() = _$_SubmitApplicationClicked;
+}
+
+/// @nodoc
+class _$ApplicationStateTearOff {
+  const _$ApplicationStateTearOff();
+
+  _ApplicationState call(
+      {required SchoolTranscript schoolTranscript,
+      required MainEssay mainEssay,
+      required ExtraEssay extraEssay,
+      required ProficencyTest proficencyTest,
+      required ExtraCertification extraCertification,
+      required RecomendationLetter recomendationLetter,
+      required MilitaryFamilyStatus militaryFamilyStatus,
+      required UniversityFamilyStatus universityFamilyStatus,
+      required bool isSubmitting,
+      required bool showErrorMessages,
+      required bool isApplicationCached,
+      required Option<Either<ApplicationFailure, Application>>
+          applicationFailureOrSuccess,
+      required Option<Either<ValueFailure, dynamic>> valueFailureOrSuccess}) {
+    return _ApplicationState(
+      schoolTranscript: schoolTranscript,
+      mainEssay: mainEssay,
+      extraEssay: extraEssay,
+      proficencyTest: proficencyTest,
+      extraCertification: extraCertification,
+      recomendationLetter: recomendationLetter,
+      militaryFamilyStatus: militaryFamilyStatus,
+      universityFamilyStatus: universityFamilyStatus,
+      isSubmitting: isSubmitting,
+      showErrorMessages: showErrorMessages,
+      isApplicationCached: isApplicationCached,
+      applicationFailureOrSuccess: applicationFailureOrSuccess,
+      valueFailureOrSuccess: valueFailureOrSuccess,
+    );
+  }
+}
+
+/// @nodoc
+const $ApplicationState = _$ApplicationStateTearOff();
+
+/// @nodoc
+mixin _$ApplicationState {
+  SchoolTranscript get schoolTranscript => throw _privateConstructorUsedError;
+  MainEssay get mainEssay => throw _privateConstructorUsedError;
+  ExtraEssay get extraEssay => throw _privateConstructorUsedError;
+  ProficencyTest get proficencyTest => throw _privateConstructorUsedError;
+  ExtraCertification get extraCertification =>
+      throw _privateConstructorUsedError;
+  RecomendationLetter get recomendationLetter =>
+      throw _privateConstructorUsedError;
+  MilitaryFamilyStatus get militaryFamilyStatus =>
+      throw _privateConstructorUsedError;
+  UniversityFamilyStatus get universityFamilyStatus =>
+      throw _privateConstructorUsedError;
+  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get isApplicationCached => throw _privateConstructorUsedError;
+  Option<Either<ApplicationFailure, Application>>
+      get applicationFailureOrSuccess => throw _privateConstructorUsedError;
+  Option<Either<ValueFailure, dynamic>> get valueFailureOrSuccess =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ApplicationStateCopyWith<ApplicationState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ApplicationStateCopyWith<$Res> {
+  factory $ApplicationStateCopyWith(
+          ApplicationState value, $Res Function(ApplicationState) then) =
+      _$ApplicationStateCopyWithImpl<$Res>;
+  $Res call(
+      {SchoolTranscript schoolTranscript,
+      MainEssay mainEssay,
+      ExtraEssay extraEssay,
+      ProficencyTest proficencyTest,
+      ExtraCertification extraCertification,
+      RecomendationLetter recomendationLetter,
+      MilitaryFamilyStatus militaryFamilyStatus,
+      UniversityFamilyStatus universityFamilyStatus,
+      bool isSubmitting,
+      bool showErrorMessages,
+      bool isApplicationCached,
+      Option<Either<ApplicationFailure, Application>>
+          applicationFailureOrSuccess,
+      Option<Either<ValueFailure, dynamic>> valueFailureOrSuccess});
+}
+
+/// @nodoc
+class _$ApplicationStateCopyWithImpl<$Res>
+    implements $ApplicationStateCopyWith<$Res> {
+  _$ApplicationStateCopyWithImpl(this._value, this._then);
+
+  final ApplicationState _value;
+  // ignore: unused_field
+  final $Res Function(ApplicationState) _then;
+
+  @override
+  $Res call({
+    Object? schoolTranscript = freezed,
+    Object? mainEssay = freezed,
+    Object? extraEssay = freezed,
+    Object? proficencyTest = freezed,
+    Object? extraCertification = freezed,
+    Object? recomendationLetter = freezed,
+    Object? militaryFamilyStatus = freezed,
+    Object? universityFamilyStatus = freezed,
+    Object? isSubmitting = freezed,
+    Object? showErrorMessages = freezed,
+    Object? isApplicationCached = freezed,
+    Object? applicationFailureOrSuccess = freezed,
+    Object? valueFailureOrSuccess = freezed,
+  }) {
+    return _then(_value.copyWith(
+      schoolTranscript: schoolTranscript == freezed
+          ? _value.schoolTranscript
+          : schoolTranscript // ignore: cast_nullable_to_non_nullable
+              as SchoolTranscript,
+      mainEssay: mainEssay == freezed
+          ? _value.mainEssay
+          : mainEssay // ignore: cast_nullable_to_non_nullable
+              as MainEssay,
+      extraEssay: extraEssay == freezed
+          ? _value.extraEssay
+          : extraEssay // ignore: cast_nullable_to_non_nullable
+              as ExtraEssay,
+      proficencyTest: proficencyTest == freezed
+          ? _value.proficencyTest
+          : proficencyTest // ignore: cast_nullable_to_non_nullable
+              as ProficencyTest,
+      extraCertification: extraCertification == freezed
+          ? _value.extraCertification
+          : extraCertification // ignore: cast_nullable_to_non_nullable
+              as ExtraCertification,
+      recomendationLetter: recomendationLetter == freezed
+          ? _value.recomendationLetter
+          : recomendationLetter // ignore: cast_nullable_to_non_nullable
+              as RecomendationLetter,
+      militaryFamilyStatus: militaryFamilyStatus == freezed
+          ? _value.militaryFamilyStatus
+          : militaryFamilyStatus // ignore: cast_nullable_to_non_nullable
+              as MilitaryFamilyStatus,
+      universityFamilyStatus: universityFamilyStatus == freezed
+          ? _value.universityFamilyStatus
+          : universityFamilyStatus // ignore: cast_nullable_to_non_nullable
+              as UniversityFamilyStatus,
+      isSubmitting: isSubmitting == freezed
+          ? _value.isSubmitting
+          : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
+      showErrorMessages: showErrorMessages == freezed
+          ? _value.showErrorMessages
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isApplicationCached: isApplicationCached == freezed
+          ? _value.isApplicationCached
+          : isApplicationCached // ignore: cast_nullable_to_non_nullable
+              as bool,
+      applicationFailureOrSuccess: applicationFailureOrSuccess == freezed
+          ? _value.applicationFailureOrSuccess
+          : applicationFailureOrSuccess // ignore: cast_nullable_to_non_nullable
+              as Option<Either<ApplicationFailure, Application>>,
+      valueFailureOrSuccess: valueFailureOrSuccess == freezed
+          ? _value.valueFailureOrSuccess
+          : valueFailureOrSuccess // ignore: cast_nullable_to_non_nullable
+              as Option<Either<ValueFailure, dynamic>>,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$ApplicationStateCopyWith<$Res>
+    implements $ApplicationStateCopyWith<$Res> {
+  factory _$ApplicationStateCopyWith(
+          _ApplicationState value, $Res Function(_ApplicationState) then) =
+      __$ApplicationStateCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {SchoolTranscript schoolTranscript,
+      MainEssay mainEssay,
+      ExtraEssay extraEssay,
+      ProficencyTest proficencyTest,
+      ExtraCertification extraCertification,
+      RecomendationLetter recomendationLetter,
+      MilitaryFamilyStatus militaryFamilyStatus,
+      UniversityFamilyStatus universityFamilyStatus,
+      bool isSubmitting,
+      bool showErrorMessages,
+      bool isApplicationCached,
+      Option<Either<ApplicationFailure, Application>>
+          applicationFailureOrSuccess,
+      Option<Either<ValueFailure, dynamic>> valueFailureOrSuccess});
+}
+
+/// @nodoc
+class __$ApplicationStateCopyWithImpl<$Res>
+    extends _$ApplicationStateCopyWithImpl<$Res>
+    implements _$ApplicationStateCopyWith<$Res> {
+  __$ApplicationStateCopyWithImpl(
+      _ApplicationState _value, $Res Function(_ApplicationState) _then)
+      : super(_value, (v) => _then(v as _ApplicationState));
+
+  @override
+  _ApplicationState get _value => super._value as _ApplicationState;
+
+  @override
+  $Res call({
+    Object? schoolTranscript = freezed,
+    Object? mainEssay = freezed,
+    Object? extraEssay = freezed,
+    Object? proficencyTest = freezed,
+    Object? extraCertification = freezed,
+    Object? recomendationLetter = freezed,
+    Object? militaryFamilyStatus = freezed,
+    Object? universityFamilyStatus = freezed,
+    Object? isSubmitting = freezed,
+    Object? showErrorMessages = freezed,
+    Object? isApplicationCached = freezed,
+    Object? applicationFailureOrSuccess = freezed,
+    Object? valueFailureOrSuccess = freezed,
+  }) {
+    return _then(_ApplicationState(
+      schoolTranscript: schoolTranscript == freezed
+          ? _value.schoolTranscript
+          : schoolTranscript // ignore: cast_nullable_to_non_nullable
+              as SchoolTranscript,
+      mainEssay: mainEssay == freezed
+          ? _value.mainEssay
+          : mainEssay // ignore: cast_nullable_to_non_nullable
+              as MainEssay,
+      extraEssay: extraEssay == freezed
+          ? _value.extraEssay
+          : extraEssay // ignore: cast_nullable_to_non_nullable
+              as ExtraEssay,
+      proficencyTest: proficencyTest == freezed
+          ? _value.proficencyTest
+          : proficencyTest // ignore: cast_nullable_to_non_nullable
+              as ProficencyTest,
+      extraCertification: extraCertification == freezed
+          ? _value.extraCertification
+          : extraCertification // ignore: cast_nullable_to_non_nullable
+              as ExtraCertification,
+      recomendationLetter: recomendationLetter == freezed
+          ? _value.recomendationLetter
+          : recomendationLetter // ignore: cast_nullable_to_non_nullable
+              as RecomendationLetter,
+      militaryFamilyStatus: militaryFamilyStatus == freezed
+          ? _value.militaryFamilyStatus
+          : militaryFamilyStatus // ignore: cast_nullable_to_non_nullable
+              as MilitaryFamilyStatus,
+      universityFamilyStatus: universityFamilyStatus == freezed
+          ? _value.universityFamilyStatus
+          : universityFamilyStatus // ignore: cast_nullable_to_non_nullable
+              as UniversityFamilyStatus,
+      isSubmitting: isSubmitting == freezed
+          ? _value.isSubmitting
+          : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
+      showErrorMessages: showErrorMessages == freezed
+          ? _value.showErrorMessages
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isApplicationCached: isApplicationCached == freezed
+          ? _value.isApplicationCached
+          : isApplicationCached // ignore: cast_nullable_to_non_nullable
+              as bool,
+      applicationFailureOrSuccess: applicationFailureOrSuccess == freezed
+          ? _value.applicationFailureOrSuccess
+          : applicationFailureOrSuccess // ignore: cast_nullable_to_non_nullable
+              as Option<Either<ApplicationFailure, Application>>,
+      valueFailureOrSuccess: valueFailureOrSuccess == freezed
+          ? _value.valueFailureOrSuccess
+          : valueFailureOrSuccess // ignore: cast_nullable_to_non_nullable
+              as Option<Either<ValueFailure, dynamic>>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ApplicationState implements _ApplicationState {
+  const _$_ApplicationState(
+      {required this.schoolTranscript,
+      required this.mainEssay,
+      required this.extraEssay,
+      required this.proficencyTest,
+      required this.extraCertification,
+      required this.recomendationLetter,
+      required this.militaryFamilyStatus,
+      required this.universityFamilyStatus,
+      required this.isSubmitting,
+      required this.showErrorMessages,
+      required this.isApplicationCached,
+      required this.applicationFailureOrSuccess,
+      required this.valueFailureOrSuccess});
+
+  @override
+  final SchoolTranscript schoolTranscript;
+  @override
+  final MainEssay mainEssay;
+  @override
+  final ExtraEssay extraEssay;
+  @override
+  final ProficencyTest proficencyTest;
+  @override
+  final ExtraCertification extraCertification;
+  @override
+  final RecomendationLetter recomendationLetter;
+  @override
+  final MilitaryFamilyStatus militaryFamilyStatus;
+  @override
+  final UniversityFamilyStatus universityFamilyStatus;
+  @override
+  final bool isSubmitting;
+  @override
+  final bool showErrorMessages;
+  @override
+  final bool isApplicationCached;
+  @override
+  final Option<Either<ApplicationFailure, Application>>
+      applicationFailureOrSuccess;
+  @override
+  final Option<Either<ValueFailure, dynamic>> valueFailureOrSuccess;
+
+  @override
+  String toString() {
+    return 'ApplicationState(schoolTranscript: $schoolTranscript, mainEssay: $mainEssay, extraEssay: $extraEssay, proficencyTest: $proficencyTest, extraCertification: $extraCertification, recomendationLetter: $recomendationLetter, militaryFamilyStatus: $militaryFamilyStatus, universityFamilyStatus: $universityFamilyStatus, isSubmitting: $isSubmitting, showErrorMessages: $showErrorMessages, isApplicationCached: $isApplicationCached, applicationFailureOrSuccess: $applicationFailureOrSuccess, valueFailureOrSuccess: $valueFailureOrSuccess)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ApplicationState &&
+            (identical(other.schoolTranscript, schoolTranscript) ||
+                const DeepCollectionEquality()
+                    .equals(other.schoolTranscript, schoolTranscript)) &&
+            (identical(other.mainEssay, mainEssay) ||
+                const DeepCollectionEquality()
+                    .equals(other.mainEssay, mainEssay)) &&
+            (identical(other.extraEssay, extraEssay) ||
+                const DeepCollectionEquality()
+                    .equals(other.extraEssay, extraEssay)) &&
+            (identical(other.proficencyTest, proficencyTest) ||
+                const DeepCollectionEquality()
+                    .equals(other.proficencyTest, proficencyTest)) &&
+            (identical(other.extraCertification, extraCertification) ||
+                const DeepCollectionEquality()
+                    .equals(other.extraCertification, extraCertification)) &&
+            (identical(other.recomendationLetter, recomendationLetter) ||
+                const DeepCollectionEquality()
+                    .equals(other.recomendationLetter, recomendationLetter)) &&
+            (identical(other.militaryFamilyStatus, militaryFamilyStatus) ||
+                const DeepCollectionEquality().equals(
+                    other.militaryFamilyStatus, militaryFamilyStatus)) &&
+            (identical(other.universityFamilyStatus, universityFamilyStatus) ||
+                const DeepCollectionEquality().equals(
+                    other.universityFamilyStatus, universityFamilyStatus)) &&
+            (identical(other.isSubmitting, isSubmitting) ||
+                const DeepCollectionEquality()
+                    .equals(other.isSubmitting, isSubmitting)) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                const DeepCollectionEquality()
+                    .equals(other.showErrorMessages, showErrorMessages)) &&
+            (identical(other.isApplicationCached, isApplicationCached) ||
+                const DeepCollectionEquality()
+                    .equals(other.isApplicationCached, isApplicationCached)) &&
+            (identical(other.applicationFailureOrSuccess,
+                    applicationFailureOrSuccess) ||
+                const DeepCollectionEquality().equals(
+                    other.applicationFailureOrSuccess,
+                    applicationFailureOrSuccess)) &&
+            (identical(other.valueFailureOrSuccess, valueFailureOrSuccess) ||
+                const DeepCollectionEquality().equals(
+                    other.valueFailureOrSuccess, valueFailureOrSuccess)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(schoolTranscript) ^
+      const DeepCollectionEquality().hash(mainEssay) ^
+      const DeepCollectionEquality().hash(extraEssay) ^
+      const DeepCollectionEquality().hash(proficencyTest) ^
+      const DeepCollectionEquality().hash(extraCertification) ^
+      const DeepCollectionEquality().hash(recomendationLetter) ^
+      const DeepCollectionEquality().hash(militaryFamilyStatus) ^
+      const DeepCollectionEquality().hash(universityFamilyStatus) ^
+      const DeepCollectionEquality().hash(isSubmitting) ^
+      const DeepCollectionEquality().hash(showErrorMessages) ^
+      const DeepCollectionEquality().hash(isApplicationCached) ^
+      const DeepCollectionEquality().hash(applicationFailureOrSuccess) ^
+      const DeepCollectionEquality().hash(valueFailureOrSuccess);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ApplicationStateCopyWith<_ApplicationState> get copyWith =>
+      __$ApplicationStateCopyWithImpl<_ApplicationState>(this, _$identity);
+}
+
+abstract class _ApplicationState implements ApplicationState {
+  const factory _ApplicationState(
+      {required SchoolTranscript schoolTranscript,
+      required MainEssay mainEssay,
+      required ExtraEssay extraEssay,
+      required ProficencyTest proficencyTest,
+      required ExtraCertification extraCertification,
+      required RecomendationLetter recomendationLetter,
+      required MilitaryFamilyStatus militaryFamilyStatus,
+      required UniversityFamilyStatus universityFamilyStatus,
+      required bool isSubmitting,
+      required bool showErrorMessages,
+      required bool isApplicationCached,
+      required Option<Either<ApplicationFailure, Application>>
+          applicationFailureOrSuccess,
+      required Option<Either<ValueFailure, dynamic>>
+          valueFailureOrSuccess}) = _$_ApplicationState;
+
+  @override
+  SchoolTranscript get schoolTranscript => throw _privateConstructorUsedError;
+  @override
+  MainEssay get mainEssay => throw _privateConstructorUsedError;
+  @override
+  ExtraEssay get extraEssay => throw _privateConstructorUsedError;
+  @override
+  ProficencyTest get proficencyTest => throw _privateConstructorUsedError;
+  @override
+  ExtraCertification get extraCertification =>
+      throw _privateConstructorUsedError;
+  @override
+  RecomendationLetter get recomendationLetter =>
+      throw _privateConstructorUsedError;
+  @override
+  MilitaryFamilyStatus get militaryFamilyStatus =>
+      throw _privateConstructorUsedError;
+  @override
+  UniversityFamilyStatus get universityFamilyStatus =>
+      throw _privateConstructorUsedError;
+  @override
+  bool get isSubmitting => throw _privateConstructorUsedError;
+  @override
+  bool get showErrorMessages => throw _privateConstructorUsedError;
+  @override
+  bool get isApplicationCached => throw _privateConstructorUsedError;
+  @override
+  Option<Either<ApplicationFailure, Application>>
+      get applicationFailureOrSuccess => throw _privateConstructorUsedError;
+  @override
+  Option<Either<ValueFailure, dynamic>> get valueFailureOrSuccess =>
+      throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$ApplicationStateCopyWith<_ApplicationState> get copyWith =>
+      throw _privateConstructorUsedError;
+}

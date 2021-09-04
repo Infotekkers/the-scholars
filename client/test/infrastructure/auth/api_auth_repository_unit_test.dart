@@ -90,8 +90,7 @@ void main() {
       user = user.copyWith(
           emailAddress: EmailAddress("copyclown@ing.com"),
           role: Role("user"),
-          name: Name("CopyClown")
-      );
+          name: Name("CopyClown"));
       final Password password = Password("Testing@12");
 
       // Request Setup
@@ -127,8 +126,7 @@ void main() {
       user = user.copyWith(
           emailAddress: EmailAddress("clown@ing.com"),
           role: Role("user"),
-          name: Name("Clown")
-      );
+          name: Name("Clown"));
       final Password password = Password("Testing@12");
 
       // Request Setup
@@ -136,7 +134,7 @@ void main() {
       final UserDto userDtoOut = UserDto.fromDomain(user);
       final outgoingJson =
           userDtoOut.copyWith(password: password.getOrCrash()).toJson();
-          
+
       // Response Setup
       when(client.post(url, body: outgoingJson))
           .thenAnswer((_) async => http.Response('''
