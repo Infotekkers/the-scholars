@@ -3,7 +3,9 @@ import 'package:client/domain/application/application.dart';
 import 'package:client/domain/application/i_application_repository.dart';
 import 'package:dartz/dartz.dart';
 import 'package:client/domain/application/value_objects.dart';
+import 'package:injectable/injectable.dart';
 
+@LazySingleton(as: IApplicationRepository)
 class ApiApplicationRepository implements IApplicationRepository {
   // Function to create a complete Applciation -- ON Server
   @override
