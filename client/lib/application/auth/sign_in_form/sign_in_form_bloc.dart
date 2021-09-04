@@ -41,9 +41,9 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
               isSubmitting: true, authFailureOrSuccess: none());
 
           final User user = User.initial();
-          user.copyWith(emailAddress: state.emailAddress);
-          failureOrSuccess =
-              await authRepository.signIn(user: user, password: state.password);
+          failureOrSuccess = await authRepository.signIn(
+              user: user.copyWith(emailAddress: state.emailAddress),
+              password: state.password);
         }
 
         yield state.copyWith(
