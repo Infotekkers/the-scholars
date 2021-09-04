@@ -40,7 +40,6 @@ class ApiAuthRepository implements IAuthRepository {
         return left(const AuthFailure.serverError());
       }
     } catch (err) {
-      print(err);
       return left(const AuthFailure.networkError());
     }
   }
