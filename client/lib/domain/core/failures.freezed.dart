@@ -67,6 +67,102 @@ class _$ValueFailureTearOff {
   GeneralError<T> generalError<T>() {
     return GeneralError<T>();
   }
+
+  _InvalidFormat<T> fullNameInvalidFormat<T>() {
+    return _InvalidFormat<T>();
+  }
+
+  _EmptyValue<T> fullNameEmptyValue<T>() {
+    return _EmptyValue<T>();
+  }
+
+  _InvalidLength<T> fullNameInvalidLength<T>() {
+    return _InvalidLength<T>();
+  }
+
+  _EmptyBirthDate<T> emptyBirthDate<T>() {
+    return _EmptyBirthDate<T>();
+  }
+
+  _InvalidBirthDate<T> birthDateInvalid<T>() {
+    return _InvalidBirthDate<T>();
+  }
+
+  _EmptyGender<T> emptyGender<T>() {
+    return _EmptyGender<T>();
+  }
+
+  _InvalidGender<T> invalidGender<T>() {
+    return _InvalidGender<T>();
+  }
+
+  _EmptyLocation<T> emptyLocation<T>() {
+    return _EmptyLocation<T>();
+  }
+
+  _InvalidLocation<T> invalidLocation<T>() {
+    return _InvalidLocation<T>();
+  }
+
+  _EmptyPhoneNumber<T> emptyPhoneNumber<T>() {
+    return _EmptyPhoneNumber<T>();
+  }
+
+  _InvalidPhoneNumber<T> invalidPhoneNumber<T>() {
+    return _InvalidPhoneNumber<T>();
+  }
+
+  _ShortPhoneNumber<T> shortPhoneNumber<T>() {
+    return _ShortPhoneNumber<T>();
+  }
+
+  _InvalidPhoneCode<T> invalidPhoneCode<T>() {
+    return _InvalidPhoneCode<T>();
+  }
+
+  _EmptyPhoneCode<T> emptyPhoneCode<T>() {
+    return _EmptyPhoneCode<T>();
+  }
+
+  _EmptyFile<T> emptyFile<T>({required String failedValue}) {
+    return _EmptyFile<T>(
+      failedValue: failedValue,
+    );
+  }
+
+  _InvalidFileFormat<T> invalidFileFormat<T>({required String failedValue}) {
+    return _InvalidFileFormat<T>(
+      failedValue: failedValue,
+    );
+  }
+
+  _EmptyTestUrl<T> emptyProficencyTestUrl<T>() {
+    return _EmptyTestUrl<T>();
+  }
+
+  _InvalidTestUrl<T> invalidProficencyTestUrl<T>() {
+    return _InvalidTestUrl<T>();
+  }
+
+  _InvalidMilitaryFamilyStatus<T> invalidMilitaryFamilyStatus<T>() {
+    return _InvalidMilitaryFamilyStatus<T>();
+  }
+
+  _InvalidUniversityFamilyStatus<T> invalidUniversityFamilyStatus<T>() {
+    return _InvalidUniversityFamilyStatus<T>();
+  }
+
+  _EmptyExtraEssay<T> emptyExtraEssay<T>() {
+    return _EmptyExtraEssay<T>();
+  }
+
+  _VeryShortExtraEssay<T> veryShortExtraEssay<T>() {
+    return _VeryShortExtraEssay<T>();
+  }
+
+  _ExceedingLengthExtraEssay<T> exceedingLengthExtraEssay<T>() {
+    return _ExceedingLengthExtraEssay<T>();
+  }
 }
 
 /// @nodoc
@@ -85,6 +181,29 @@ mixin _$ValueFailure<T> {
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
     required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -98,6 +217,29 @@ mixin _$ValueFailure<T> {
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
     TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,6 +255,34 @@ mixin _$ValueFailure<T> {
     required TResult Function(IncompleteApplication<T> value)
         incompleteApplication,
     required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -126,6 +296,32 @@ mixin _$ValueFailure<T> {
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
     TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -228,6 +424,29 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
     required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
   }) {
     return empty(failedValue);
   }
@@ -244,6 +463,29 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
     TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -265,6 +507,34 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     required TResult Function(IncompleteApplication<T> value)
         incompleteApplication,
     required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
   }) {
     return empty(this);
   }
@@ -281,6 +551,32 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
     TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -384,6 +680,29 @@ class _$InvalidEmail<T>
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
     required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
   }) {
     return invalidEmail(failedValue);
   }
@@ -400,6 +719,29 @@ class _$InvalidEmail<T>
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
     TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -421,6 +763,34 @@ class _$InvalidEmail<T>
     required TResult Function(IncompleteApplication<T> value)
         incompleteApplication,
     required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
   }) {
     return invalidEmail(this);
   }
@@ -437,6 +807,32 @@ class _$InvalidEmail<T>
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
     TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -540,6 +936,29 @@ class _$ShortPassword<T>
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
     required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
   }) {
     return shortPassword(failedValue);
   }
@@ -556,6 +975,29 @@ class _$ShortPassword<T>
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
     TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -577,6 +1019,34 @@ class _$ShortPassword<T>
     required TResult Function(IncompleteApplication<T> value)
         incompleteApplication,
     required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
   }) {
     return shortPassword(this);
   }
@@ -593,6 +1063,32 @@ class _$ShortPassword<T>
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
     TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -696,6 +1192,29 @@ class _$InvalidPassword<T>
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
     required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
   }) {
     return invalidPassword(failedValue);
   }
@@ -712,6 +1231,29 @@ class _$InvalidPassword<T>
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
     TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
     required TResult orElse(),
   }) {
     if (invalidPassword != null) {
@@ -733,6 +1275,34 @@ class _$InvalidPassword<T>
     required TResult Function(IncompleteApplication<T> value)
         incompleteApplication,
     required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
   }) {
     return invalidPassword(this);
   }
@@ -749,6 +1319,32 @@ class _$InvalidPassword<T>
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
     TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
     required TResult orElse(),
   }) {
     if (invalidPassword != null) {
@@ -853,6 +1449,29 @@ class _$ExceedingLength<T>
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
     required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
   }) {
     return exceedingLength(failedValue);
   }
@@ -869,6 +1488,29 @@ class _$ExceedingLength<T>
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
     TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
     required TResult orElse(),
   }) {
     if (exceedingLength != null) {
@@ -890,6 +1532,34 @@ class _$ExceedingLength<T>
     required TResult Function(IncompleteApplication<T> value)
         incompleteApplication,
     required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
   }) {
     return exceedingLength(this);
   }
@@ -906,6 +1576,32 @@ class _$ExceedingLength<T>
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
     TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
     required TResult orElse(),
   }) {
     if (exceedingLength != null) {
@@ -1011,6 +1707,29 @@ class _$InvalidApplication<T>
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
     required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
   }) {
     return invalidApplication(failedValue);
   }
@@ -1027,6 +1746,29 @@ class _$InvalidApplication<T>
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
     TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
     required TResult orElse(),
   }) {
     if (invalidApplication != null) {
@@ -1048,6 +1790,34 @@ class _$InvalidApplication<T>
     required TResult Function(IncompleteApplication<T> value)
         incompleteApplication,
     required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
   }) {
     return invalidApplication(this);
   }
@@ -1064,6 +1834,32 @@ class _$InvalidApplication<T>
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
     TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
     required TResult orElse(),
   }) {
     if (invalidApplication != null) {
@@ -1168,6 +1964,29 @@ class _$EmptyApplication<T>
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
     required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
   }) {
     return emptyApplication(failedValue);
   }
@@ -1184,6 +2003,29 @@ class _$EmptyApplication<T>
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
     TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
     required TResult orElse(),
   }) {
     if (emptyApplication != null) {
@@ -1205,6 +2047,34 @@ class _$EmptyApplication<T>
     required TResult Function(IncompleteApplication<T> value)
         incompleteApplication,
     required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
   }) {
     return emptyApplication(this);
   }
@@ -1221,6 +2091,32 @@ class _$EmptyApplication<T>
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
     TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
     required TResult orElse(),
   }) {
     if (emptyApplication != null) {
@@ -1328,6 +2224,29 @@ class _$IncompleteApplication<T>
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
     required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
   }) {
     return incompleteApplication(failedValue);
   }
@@ -1344,6 +2263,29 @@ class _$IncompleteApplication<T>
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
     TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
     required TResult orElse(),
   }) {
     if (incompleteApplication != null) {
@@ -1365,6 +2307,34 @@ class _$IncompleteApplication<T>
     required TResult Function(IncompleteApplication<T> value)
         incompleteApplication,
     required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
   }) {
     return incompleteApplication(this);
   }
@@ -1381,6 +2351,32 @@ class _$IncompleteApplication<T>
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
     TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
     required TResult orElse(),
   }) {
     if (incompleteApplication != null) {
@@ -1458,6 +2454,29 @@ class _$GeneralError<T>
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
     required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
   }) {
     return generalError();
   }
@@ -1474,6 +2493,29 @@ class _$GeneralError<T>
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
     TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
     required TResult orElse(),
   }) {
     if (generalError != null) {
@@ -1495,6 +2537,34 @@ class _$GeneralError<T>
     required TResult Function(IncompleteApplication<T> value)
         incompleteApplication,
     required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
   }) {
     return generalError(this);
   }
@@ -1511,6 +2581,32 @@ class _$GeneralError<T>
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
     TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
     required TResult orElse(),
   }) {
     if (generalError != null) {
@@ -1522,4 +2618,5237 @@ class _$GeneralError<T>
 
 abstract class GeneralError<T> implements ValueFailure<T> {
   const factory GeneralError() = _$GeneralError<T>;
+}
+
+/// @nodoc
+abstract class _$InvalidFormatCopyWith<T, $Res> {
+  factory _$InvalidFormatCopyWith(
+          _InvalidFormat<T> value, $Res Function(_InvalidFormat<T>) then) =
+      __$InvalidFormatCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$InvalidFormatCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$InvalidFormatCopyWith<T, $Res> {
+  __$InvalidFormatCopyWithImpl(
+      _InvalidFormat<T> _value, $Res Function(_InvalidFormat<T>) _then)
+      : super(_value, (v) => _then(v as _InvalidFormat<T>));
+
+  @override
+  _InvalidFormat<T> get _value => super._value as _InvalidFormat<T>;
+}
+
+/// @nodoc
+
+class _$_InvalidFormat<T>
+    with DiagnosticableTreeMixin
+    implements _InvalidFormat<T> {
+  const _$_InvalidFormat();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.fullNameInvalidFormat()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ValueFailure<$T>.fullNameInvalidFormat'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _InvalidFormat<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+  }) {
+    return fullNameInvalidFormat();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (fullNameInvalidFormat != null) {
+      return fullNameInvalidFormat();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+  }) {
+    return fullNameInvalidFormat(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (fullNameInvalidFormat != null) {
+      return fullNameInvalidFormat(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InvalidFormat<T> implements ValueFailure<T> {
+  const factory _InvalidFormat() = _$_InvalidFormat<T>;
+}
+
+/// @nodoc
+abstract class _$EmptyValueCopyWith<T, $Res> {
+  factory _$EmptyValueCopyWith(
+          _EmptyValue<T> value, $Res Function(_EmptyValue<T>) then) =
+      __$EmptyValueCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$EmptyValueCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$EmptyValueCopyWith<T, $Res> {
+  __$EmptyValueCopyWithImpl(
+      _EmptyValue<T> _value, $Res Function(_EmptyValue<T>) _then)
+      : super(_value, (v) => _then(v as _EmptyValue<T>));
+
+  @override
+  _EmptyValue<T> get _value => super._value as _EmptyValue<T>;
+}
+
+/// @nodoc
+
+class _$_EmptyValue<T> with DiagnosticableTreeMixin implements _EmptyValue<T> {
+  const _$_EmptyValue();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.fullNameEmptyValue()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.fullNameEmptyValue'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _EmptyValue<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+  }) {
+    return fullNameEmptyValue();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (fullNameEmptyValue != null) {
+      return fullNameEmptyValue();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+  }) {
+    return fullNameEmptyValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (fullNameEmptyValue != null) {
+      return fullNameEmptyValue(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EmptyValue<T> implements ValueFailure<T> {
+  const factory _EmptyValue() = _$_EmptyValue<T>;
+}
+
+/// @nodoc
+abstract class _$InvalidLengthCopyWith<T, $Res> {
+  factory _$InvalidLengthCopyWith(
+          _InvalidLength<T> value, $Res Function(_InvalidLength<T>) then) =
+      __$InvalidLengthCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$InvalidLengthCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$InvalidLengthCopyWith<T, $Res> {
+  __$InvalidLengthCopyWithImpl(
+      _InvalidLength<T> _value, $Res Function(_InvalidLength<T>) _then)
+      : super(_value, (v) => _then(v as _InvalidLength<T>));
+
+  @override
+  _InvalidLength<T> get _value => super._value as _InvalidLength<T>;
+}
+
+/// @nodoc
+
+class _$_InvalidLength<T>
+    with DiagnosticableTreeMixin
+    implements _InvalidLength<T> {
+  const _$_InvalidLength();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.fullNameInvalidLength()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ValueFailure<$T>.fullNameInvalidLength'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _InvalidLength<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+  }) {
+    return fullNameInvalidLength();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (fullNameInvalidLength != null) {
+      return fullNameInvalidLength();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+  }) {
+    return fullNameInvalidLength(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (fullNameInvalidLength != null) {
+      return fullNameInvalidLength(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InvalidLength<T> implements ValueFailure<T> {
+  const factory _InvalidLength() = _$_InvalidLength<T>;
+}
+
+/// @nodoc
+abstract class _$EmptyBirthDateCopyWith<T, $Res> {
+  factory _$EmptyBirthDateCopyWith(
+          _EmptyBirthDate<T> value, $Res Function(_EmptyBirthDate<T>) then) =
+      __$EmptyBirthDateCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$EmptyBirthDateCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$EmptyBirthDateCopyWith<T, $Res> {
+  __$EmptyBirthDateCopyWithImpl(
+      _EmptyBirthDate<T> _value, $Res Function(_EmptyBirthDate<T>) _then)
+      : super(_value, (v) => _then(v as _EmptyBirthDate<T>));
+
+  @override
+  _EmptyBirthDate<T> get _value => super._value as _EmptyBirthDate<T>;
+}
+
+/// @nodoc
+
+class _$_EmptyBirthDate<T>
+    with DiagnosticableTreeMixin
+    implements _EmptyBirthDate<T> {
+  const _$_EmptyBirthDate();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.emptyBirthDate()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.emptyBirthDate'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _EmptyBirthDate<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+  }) {
+    return emptyBirthDate();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (emptyBirthDate != null) {
+      return emptyBirthDate();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+  }) {
+    return emptyBirthDate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (emptyBirthDate != null) {
+      return emptyBirthDate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EmptyBirthDate<T> implements ValueFailure<T> {
+  const factory _EmptyBirthDate() = _$_EmptyBirthDate<T>;
+}
+
+/// @nodoc
+abstract class _$InvalidBirthDateCopyWith<T, $Res> {
+  factory _$InvalidBirthDateCopyWith(_InvalidBirthDate<T> value,
+          $Res Function(_InvalidBirthDate<T>) then) =
+      __$InvalidBirthDateCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$InvalidBirthDateCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$InvalidBirthDateCopyWith<T, $Res> {
+  __$InvalidBirthDateCopyWithImpl(
+      _InvalidBirthDate<T> _value, $Res Function(_InvalidBirthDate<T>) _then)
+      : super(_value, (v) => _then(v as _InvalidBirthDate<T>));
+
+  @override
+  _InvalidBirthDate<T> get _value => super._value as _InvalidBirthDate<T>;
+}
+
+/// @nodoc
+
+class _$_InvalidBirthDate<T>
+    with DiagnosticableTreeMixin
+    implements _InvalidBirthDate<T> {
+  const _$_InvalidBirthDate();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.birthDateInvalid()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.birthDateInvalid'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _InvalidBirthDate<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+  }) {
+    return birthDateInvalid();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (birthDateInvalid != null) {
+      return birthDateInvalid();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+  }) {
+    return birthDateInvalid(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (birthDateInvalid != null) {
+      return birthDateInvalid(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InvalidBirthDate<T> implements ValueFailure<T> {
+  const factory _InvalidBirthDate() = _$_InvalidBirthDate<T>;
+}
+
+/// @nodoc
+abstract class _$EmptyGenderCopyWith<T, $Res> {
+  factory _$EmptyGenderCopyWith(
+          _EmptyGender<T> value, $Res Function(_EmptyGender<T>) then) =
+      __$EmptyGenderCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$EmptyGenderCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$EmptyGenderCopyWith<T, $Res> {
+  __$EmptyGenderCopyWithImpl(
+      _EmptyGender<T> _value, $Res Function(_EmptyGender<T>) _then)
+      : super(_value, (v) => _then(v as _EmptyGender<T>));
+
+  @override
+  _EmptyGender<T> get _value => super._value as _EmptyGender<T>;
+}
+
+/// @nodoc
+
+class _$_EmptyGender<T>
+    with DiagnosticableTreeMixin
+    implements _EmptyGender<T> {
+  const _$_EmptyGender();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.emptyGender()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.emptyGender'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _EmptyGender<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+  }) {
+    return emptyGender();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (emptyGender != null) {
+      return emptyGender();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+  }) {
+    return emptyGender(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (emptyGender != null) {
+      return emptyGender(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EmptyGender<T> implements ValueFailure<T> {
+  const factory _EmptyGender() = _$_EmptyGender<T>;
+}
+
+/// @nodoc
+abstract class _$InvalidGenderCopyWith<T, $Res> {
+  factory _$InvalidGenderCopyWith(
+          _InvalidGender<T> value, $Res Function(_InvalidGender<T>) then) =
+      __$InvalidGenderCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$InvalidGenderCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$InvalidGenderCopyWith<T, $Res> {
+  __$InvalidGenderCopyWithImpl(
+      _InvalidGender<T> _value, $Res Function(_InvalidGender<T>) _then)
+      : super(_value, (v) => _then(v as _InvalidGender<T>));
+
+  @override
+  _InvalidGender<T> get _value => super._value as _InvalidGender<T>;
+}
+
+/// @nodoc
+
+class _$_InvalidGender<T>
+    with DiagnosticableTreeMixin
+    implements _InvalidGender<T> {
+  const _$_InvalidGender();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.invalidGender()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.invalidGender'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _InvalidGender<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+  }) {
+    return invalidGender();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (invalidGender != null) {
+      return invalidGender();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+  }) {
+    return invalidGender(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (invalidGender != null) {
+      return invalidGender(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InvalidGender<T> implements ValueFailure<T> {
+  const factory _InvalidGender() = _$_InvalidGender<T>;
+}
+
+/// @nodoc
+abstract class _$EmptyLocationCopyWith<T, $Res> {
+  factory _$EmptyLocationCopyWith(
+          _EmptyLocation<T> value, $Res Function(_EmptyLocation<T>) then) =
+      __$EmptyLocationCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$EmptyLocationCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$EmptyLocationCopyWith<T, $Res> {
+  __$EmptyLocationCopyWithImpl(
+      _EmptyLocation<T> _value, $Res Function(_EmptyLocation<T>) _then)
+      : super(_value, (v) => _then(v as _EmptyLocation<T>));
+
+  @override
+  _EmptyLocation<T> get _value => super._value as _EmptyLocation<T>;
+}
+
+/// @nodoc
+
+class _$_EmptyLocation<T>
+    with DiagnosticableTreeMixin
+    implements _EmptyLocation<T> {
+  const _$_EmptyLocation();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.emptyLocation()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.emptyLocation'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _EmptyLocation<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+  }) {
+    return emptyLocation();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (emptyLocation != null) {
+      return emptyLocation();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+  }) {
+    return emptyLocation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (emptyLocation != null) {
+      return emptyLocation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EmptyLocation<T> implements ValueFailure<T> {
+  const factory _EmptyLocation() = _$_EmptyLocation<T>;
+}
+
+/// @nodoc
+abstract class _$InvalidLocationCopyWith<T, $Res> {
+  factory _$InvalidLocationCopyWith(
+          _InvalidLocation<T> value, $Res Function(_InvalidLocation<T>) then) =
+      __$InvalidLocationCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$InvalidLocationCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$InvalidLocationCopyWith<T, $Res> {
+  __$InvalidLocationCopyWithImpl(
+      _InvalidLocation<T> _value, $Res Function(_InvalidLocation<T>) _then)
+      : super(_value, (v) => _then(v as _InvalidLocation<T>));
+
+  @override
+  _InvalidLocation<T> get _value => super._value as _InvalidLocation<T>;
+}
+
+/// @nodoc
+
+class _$_InvalidLocation<T>
+    with DiagnosticableTreeMixin
+    implements _InvalidLocation<T> {
+  const _$_InvalidLocation();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.invalidLocation()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.invalidLocation'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _InvalidLocation<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+  }) {
+    return invalidLocation();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (invalidLocation != null) {
+      return invalidLocation();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+  }) {
+    return invalidLocation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (invalidLocation != null) {
+      return invalidLocation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InvalidLocation<T> implements ValueFailure<T> {
+  const factory _InvalidLocation() = _$_InvalidLocation<T>;
+}
+
+/// @nodoc
+abstract class _$EmptyPhoneNumberCopyWith<T, $Res> {
+  factory _$EmptyPhoneNumberCopyWith(_EmptyPhoneNumber<T> value,
+          $Res Function(_EmptyPhoneNumber<T>) then) =
+      __$EmptyPhoneNumberCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$EmptyPhoneNumberCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$EmptyPhoneNumberCopyWith<T, $Res> {
+  __$EmptyPhoneNumberCopyWithImpl(
+      _EmptyPhoneNumber<T> _value, $Res Function(_EmptyPhoneNumber<T>) _then)
+      : super(_value, (v) => _then(v as _EmptyPhoneNumber<T>));
+
+  @override
+  _EmptyPhoneNumber<T> get _value => super._value as _EmptyPhoneNumber<T>;
+}
+
+/// @nodoc
+
+class _$_EmptyPhoneNumber<T>
+    with DiagnosticableTreeMixin
+    implements _EmptyPhoneNumber<T> {
+  const _$_EmptyPhoneNumber();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.emptyPhoneNumber()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.emptyPhoneNumber'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _EmptyPhoneNumber<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+  }) {
+    return emptyPhoneNumber();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (emptyPhoneNumber != null) {
+      return emptyPhoneNumber();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+  }) {
+    return emptyPhoneNumber(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (emptyPhoneNumber != null) {
+      return emptyPhoneNumber(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EmptyPhoneNumber<T> implements ValueFailure<T> {
+  const factory _EmptyPhoneNumber() = _$_EmptyPhoneNumber<T>;
+}
+
+/// @nodoc
+abstract class _$InvalidPhoneNumberCopyWith<T, $Res> {
+  factory _$InvalidPhoneNumberCopyWith(_InvalidPhoneNumber<T> value,
+          $Res Function(_InvalidPhoneNumber<T>) then) =
+      __$InvalidPhoneNumberCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$InvalidPhoneNumberCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$InvalidPhoneNumberCopyWith<T, $Res> {
+  __$InvalidPhoneNumberCopyWithImpl(_InvalidPhoneNumber<T> _value,
+      $Res Function(_InvalidPhoneNumber<T>) _then)
+      : super(_value, (v) => _then(v as _InvalidPhoneNumber<T>));
+
+  @override
+  _InvalidPhoneNumber<T> get _value => super._value as _InvalidPhoneNumber<T>;
+}
+
+/// @nodoc
+
+class _$_InvalidPhoneNumber<T>
+    with DiagnosticableTreeMixin
+    implements _InvalidPhoneNumber<T> {
+  const _$_InvalidPhoneNumber();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.invalidPhoneNumber()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.invalidPhoneNumber'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _InvalidPhoneNumber<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+  }) {
+    return invalidPhoneNumber();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (invalidPhoneNumber != null) {
+      return invalidPhoneNumber();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+  }) {
+    return invalidPhoneNumber(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (invalidPhoneNumber != null) {
+      return invalidPhoneNumber(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InvalidPhoneNumber<T> implements ValueFailure<T> {
+  const factory _InvalidPhoneNumber() = _$_InvalidPhoneNumber<T>;
+}
+
+/// @nodoc
+abstract class _$ShortPhoneNumberCopyWith<T, $Res> {
+  factory _$ShortPhoneNumberCopyWith(_ShortPhoneNumber<T> value,
+          $Res Function(_ShortPhoneNumber<T>) then) =
+      __$ShortPhoneNumberCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$ShortPhoneNumberCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$ShortPhoneNumberCopyWith<T, $Res> {
+  __$ShortPhoneNumberCopyWithImpl(
+      _ShortPhoneNumber<T> _value, $Res Function(_ShortPhoneNumber<T>) _then)
+      : super(_value, (v) => _then(v as _ShortPhoneNumber<T>));
+
+  @override
+  _ShortPhoneNumber<T> get _value => super._value as _ShortPhoneNumber<T>;
+}
+
+/// @nodoc
+
+class _$_ShortPhoneNumber<T>
+    with DiagnosticableTreeMixin
+    implements _ShortPhoneNumber<T> {
+  const _$_ShortPhoneNumber();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.shortPhoneNumber()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.shortPhoneNumber'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _ShortPhoneNumber<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+  }) {
+    return shortPhoneNumber();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (shortPhoneNumber != null) {
+      return shortPhoneNumber();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+  }) {
+    return shortPhoneNumber(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (shortPhoneNumber != null) {
+      return shortPhoneNumber(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ShortPhoneNumber<T> implements ValueFailure<T> {
+  const factory _ShortPhoneNumber() = _$_ShortPhoneNumber<T>;
+}
+
+/// @nodoc
+abstract class _$InvalidPhoneCodeCopyWith<T, $Res> {
+  factory _$InvalidPhoneCodeCopyWith(_InvalidPhoneCode<T> value,
+          $Res Function(_InvalidPhoneCode<T>) then) =
+      __$InvalidPhoneCodeCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$InvalidPhoneCodeCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$InvalidPhoneCodeCopyWith<T, $Res> {
+  __$InvalidPhoneCodeCopyWithImpl(
+      _InvalidPhoneCode<T> _value, $Res Function(_InvalidPhoneCode<T>) _then)
+      : super(_value, (v) => _then(v as _InvalidPhoneCode<T>));
+
+  @override
+  _InvalidPhoneCode<T> get _value => super._value as _InvalidPhoneCode<T>;
+}
+
+/// @nodoc
+
+class _$_InvalidPhoneCode<T>
+    with DiagnosticableTreeMixin
+    implements _InvalidPhoneCode<T> {
+  const _$_InvalidPhoneCode();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.invalidPhoneCode()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.invalidPhoneCode'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _InvalidPhoneCode<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+  }) {
+    return invalidPhoneCode();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (invalidPhoneCode != null) {
+      return invalidPhoneCode();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+  }) {
+    return invalidPhoneCode(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (invalidPhoneCode != null) {
+      return invalidPhoneCode(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InvalidPhoneCode<T> implements ValueFailure<T> {
+  const factory _InvalidPhoneCode() = _$_InvalidPhoneCode<T>;
+}
+
+/// @nodoc
+abstract class _$EmptyPhoneCodeCopyWith<T, $Res> {
+  factory _$EmptyPhoneCodeCopyWith(
+          _EmptyPhoneCode<T> value, $Res Function(_EmptyPhoneCode<T>) then) =
+      __$EmptyPhoneCodeCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$EmptyPhoneCodeCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$EmptyPhoneCodeCopyWith<T, $Res> {
+  __$EmptyPhoneCodeCopyWithImpl(
+      _EmptyPhoneCode<T> _value, $Res Function(_EmptyPhoneCode<T>) _then)
+      : super(_value, (v) => _then(v as _EmptyPhoneCode<T>));
+
+  @override
+  _EmptyPhoneCode<T> get _value => super._value as _EmptyPhoneCode<T>;
+}
+
+/// @nodoc
+
+class _$_EmptyPhoneCode<T>
+    with DiagnosticableTreeMixin
+    implements _EmptyPhoneCode<T> {
+  const _$_EmptyPhoneCode();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.emptyPhoneCode()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.emptyPhoneCode'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _EmptyPhoneCode<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+  }) {
+    return emptyPhoneCode();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (emptyPhoneCode != null) {
+      return emptyPhoneCode();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+  }) {
+    return emptyPhoneCode(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (emptyPhoneCode != null) {
+      return emptyPhoneCode(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EmptyPhoneCode<T> implements ValueFailure<T> {
+  const factory _EmptyPhoneCode() = _$_EmptyPhoneCode<T>;
+}
+
+/// @nodoc
+abstract class _$EmptyFileCopyWith<T, $Res> {
+  factory _$EmptyFileCopyWith(
+          _EmptyFile<T> value, $Res Function(_EmptyFile<T>) then) =
+      __$EmptyFileCopyWithImpl<T, $Res>;
+  $Res call({String failedValue});
+}
+
+/// @nodoc
+class __$EmptyFileCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$EmptyFileCopyWith<T, $Res> {
+  __$EmptyFileCopyWithImpl(
+      _EmptyFile<T> _value, $Res Function(_EmptyFile<T>) _then)
+      : super(_value, (v) => _then(v as _EmptyFile<T>));
+
+  @override
+  _EmptyFile<T> get _value => super._value as _EmptyFile<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_EmptyFile<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_EmptyFile<T> with DiagnosticableTreeMixin implements _EmptyFile<T> {
+  const _$_EmptyFile({required this.failedValue});
+
+  @override
+  final String failedValue;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.emptyFile(failedValue: $failedValue)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.emptyFile'))
+      ..add(DiagnosticsProperty('failedValue', failedValue));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _EmptyFile<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @JsonKey(ignore: true)
+  @override
+  _$EmptyFileCopyWith<T, _EmptyFile<T>> get copyWith =>
+      __$EmptyFileCopyWithImpl<T, _EmptyFile<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+  }) {
+    return emptyFile(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (emptyFile != null) {
+      return emptyFile(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+  }) {
+    return emptyFile(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (emptyFile != null) {
+      return emptyFile(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EmptyFile<T> implements ValueFailure<T> {
+  const factory _EmptyFile({required String failedValue}) = _$_EmptyFile<T>;
+
+  String get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$EmptyFileCopyWith<T, _EmptyFile<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$InvalidFileFormatCopyWith<T, $Res> {
+  factory _$InvalidFileFormatCopyWith(_InvalidFileFormat<T> value,
+          $Res Function(_InvalidFileFormat<T>) then) =
+      __$InvalidFileFormatCopyWithImpl<T, $Res>;
+  $Res call({String failedValue});
+}
+
+/// @nodoc
+class __$InvalidFileFormatCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$InvalidFileFormatCopyWith<T, $Res> {
+  __$InvalidFileFormatCopyWithImpl(
+      _InvalidFileFormat<T> _value, $Res Function(_InvalidFileFormat<T>) _then)
+      : super(_value, (v) => _then(v as _InvalidFileFormat<T>));
+
+  @override
+  _InvalidFileFormat<T> get _value => super._value as _InvalidFileFormat<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_InvalidFileFormat<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_InvalidFileFormat<T>
+    with DiagnosticableTreeMixin
+    implements _InvalidFileFormat<T> {
+  const _$_InvalidFileFormat({required this.failedValue});
+
+  @override
+  final String failedValue;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.invalidFileFormat(failedValue: $failedValue)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.invalidFileFormat'))
+      ..add(DiagnosticsProperty('failedValue', failedValue));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _InvalidFileFormat<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @JsonKey(ignore: true)
+  @override
+  _$InvalidFileFormatCopyWith<T, _InvalidFileFormat<T>> get copyWith =>
+      __$InvalidFileFormatCopyWithImpl<T, _InvalidFileFormat<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+  }) {
+    return invalidFileFormat(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (invalidFileFormat != null) {
+      return invalidFileFormat(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+  }) {
+    return invalidFileFormat(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (invalidFileFormat != null) {
+      return invalidFileFormat(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InvalidFileFormat<T> implements ValueFailure<T> {
+  const factory _InvalidFileFormat({required String failedValue}) =
+      _$_InvalidFileFormat<T>;
+
+  String get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$InvalidFileFormatCopyWith<T, _InvalidFileFormat<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$EmptyTestUrlCopyWith<T, $Res> {
+  factory _$EmptyTestUrlCopyWith(
+          _EmptyTestUrl<T> value, $Res Function(_EmptyTestUrl<T>) then) =
+      __$EmptyTestUrlCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$EmptyTestUrlCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$EmptyTestUrlCopyWith<T, $Res> {
+  __$EmptyTestUrlCopyWithImpl(
+      _EmptyTestUrl<T> _value, $Res Function(_EmptyTestUrl<T>) _then)
+      : super(_value, (v) => _then(v as _EmptyTestUrl<T>));
+
+  @override
+  _EmptyTestUrl<T> get _value => super._value as _EmptyTestUrl<T>;
+}
+
+/// @nodoc
+
+class _$_EmptyTestUrl<T>
+    with DiagnosticableTreeMixin
+    implements _EmptyTestUrl<T> {
+  const _$_EmptyTestUrl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.emptyProficencyTestUrl()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ValueFailure<$T>.emptyProficencyTestUrl'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _EmptyTestUrl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+  }) {
+    return emptyProficencyTestUrl();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (emptyProficencyTestUrl != null) {
+      return emptyProficencyTestUrl();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+  }) {
+    return emptyProficencyTestUrl(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (emptyProficencyTestUrl != null) {
+      return emptyProficencyTestUrl(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EmptyTestUrl<T> implements ValueFailure<T> {
+  const factory _EmptyTestUrl() = _$_EmptyTestUrl<T>;
+}
+
+/// @nodoc
+abstract class _$InvalidTestUrlCopyWith<T, $Res> {
+  factory _$InvalidTestUrlCopyWith(
+          _InvalidTestUrl<T> value, $Res Function(_InvalidTestUrl<T>) then) =
+      __$InvalidTestUrlCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$InvalidTestUrlCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$InvalidTestUrlCopyWith<T, $Res> {
+  __$InvalidTestUrlCopyWithImpl(
+      _InvalidTestUrl<T> _value, $Res Function(_InvalidTestUrl<T>) _then)
+      : super(_value, (v) => _then(v as _InvalidTestUrl<T>));
+
+  @override
+  _InvalidTestUrl<T> get _value => super._value as _InvalidTestUrl<T>;
+}
+
+/// @nodoc
+
+class _$_InvalidTestUrl<T>
+    with DiagnosticableTreeMixin
+    implements _InvalidTestUrl<T> {
+  const _$_InvalidTestUrl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.invalidProficencyTestUrl()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ValueFailure<$T>.invalidProficencyTestUrl'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _InvalidTestUrl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+  }) {
+    return invalidProficencyTestUrl();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (invalidProficencyTestUrl != null) {
+      return invalidProficencyTestUrl();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+  }) {
+    return invalidProficencyTestUrl(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (invalidProficencyTestUrl != null) {
+      return invalidProficencyTestUrl(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InvalidTestUrl<T> implements ValueFailure<T> {
+  const factory _InvalidTestUrl() = _$_InvalidTestUrl<T>;
+}
+
+/// @nodoc
+abstract class _$InvalidMilitaryFamilyStatusCopyWith<T, $Res> {
+  factory _$InvalidMilitaryFamilyStatusCopyWith(
+          _InvalidMilitaryFamilyStatus<T> value,
+          $Res Function(_InvalidMilitaryFamilyStatus<T>) then) =
+      __$InvalidMilitaryFamilyStatusCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$InvalidMilitaryFamilyStatusCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$InvalidMilitaryFamilyStatusCopyWith<T, $Res> {
+  __$InvalidMilitaryFamilyStatusCopyWithImpl(
+      _InvalidMilitaryFamilyStatus<T> _value,
+      $Res Function(_InvalidMilitaryFamilyStatus<T>) _then)
+      : super(_value, (v) => _then(v as _InvalidMilitaryFamilyStatus<T>));
+
+  @override
+  _InvalidMilitaryFamilyStatus<T> get _value =>
+      super._value as _InvalidMilitaryFamilyStatus<T>;
+}
+
+/// @nodoc
+
+class _$_InvalidMilitaryFamilyStatus<T>
+    with DiagnosticableTreeMixin
+    implements _InvalidMilitaryFamilyStatus<T> {
+  const _$_InvalidMilitaryFamilyStatus();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.invalidMilitaryFamilyStatus()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ValueFailure<$T>.invalidMilitaryFamilyStatus'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _InvalidMilitaryFamilyStatus<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+  }) {
+    return invalidMilitaryFamilyStatus();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (invalidMilitaryFamilyStatus != null) {
+      return invalidMilitaryFamilyStatus();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+  }) {
+    return invalidMilitaryFamilyStatus(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (invalidMilitaryFamilyStatus != null) {
+      return invalidMilitaryFamilyStatus(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InvalidMilitaryFamilyStatus<T> implements ValueFailure<T> {
+  const factory _InvalidMilitaryFamilyStatus() =
+      _$_InvalidMilitaryFamilyStatus<T>;
+}
+
+/// @nodoc
+abstract class _$InvalidUniversityFamilyStatusCopyWith<T, $Res> {
+  factory _$InvalidUniversityFamilyStatusCopyWith(
+          _InvalidUniversityFamilyStatus<T> value,
+          $Res Function(_InvalidUniversityFamilyStatus<T>) then) =
+      __$InvalidUniversityFamilyStatusCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$InvalidUniversityFamilyStatusCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$InvalidUniversityFamilyStatusCopyWith<T, $Res> {
+  __$InvalidUniversityFamilyStatusCopyWithImpl(
+      _InvalidUniversityFamilyStatus<T> _value,
+      $Res Function(_InvalidUniversityFamilyStatus<T>) _then)
+      : super(_value, (v) => _then(v as _InvalidUniversityFamilyStatus<T>));
+
+  @override
+  _InvalidUniversityFamilyStatus<T> get _value =>
+      super._value as _InvalidUniversityFamilyStatus<T>;
+}
+
+/// @nodoc
+
+class _$_InvalidUniversityFamilyStatus<T>
+    with DiagnosticableTreeMixin
+    implements _InvalidUniversityFamilyStatus<T> {
+  const _$_InvalidUniversityFamilyStatus();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.invalidUniversityFamilyStatus()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ValueFailure<$T>.invalidUniversityFamilyStatus'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _InvalidUniversityFamilyStatus<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+  }) {
+    return invalidUniversityFamilyStatus();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (invalidUniversityFamilyStatus != null) {
+      return invalidUniversityFamilyStatus();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+  }) {
+    return invalidUniversityFamilyStatus(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (invalidUniversityFamilyStatus != null) {
+      return invalidUniversityFamilyStatus(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InvalidUniversityFamilyStatus<T> implements ValueFailure<T> {
+  const factory _InvalidUniversityFamilyStatus() =
+      _$_InvalidUniversityFamilyStatus<T>;
+}
+
+/// @nodoc
+abstract class _$EmptyExtraEssayCopyWith<T, $Res> {
+  factory _$EmptyExtraEssayCopyWith(
+          _EmptyExtraEssay<T> value, $Res Function(_EmptyExtraEssay<T>) then) =
+      __$EmptyExtraEssayCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$EmptyExtraEssayCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$EmptyExtraEssayCopyWith<T, $Res> {
+  __$EmptyExtraEssayCopyWithImpl(
+      _EmptyExtraEssay<T> _value, $Res Function(_EmptyExtraEssay<T>) _then)
+      : super(_value, (v) => _then(v as _EmptyExtraEssay<T>));
+
+  @override
+  _EmptyExtraEssay<T> get _value => super._value as _EmptyExtraEssay<T>;
+}
+
+/// @nodoc
+
+class _$_EmptyExtraEssay<T>
+    with DiagnosticableTreeMixin
+    implements _EmptyExtraEssay<T> {
+  const _$_EmptyExtraEssay();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.emptyExtraEssay()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.emptyExtraEssay'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _EmptyExtraEssay<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+  }) {
+    return emptyExtraEssay();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (emptyExtraEssay != null) {
+      return emptyExtraEssay();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+  }) {
+    return emptyExtraEssay(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (emptyExtraEssay != null) {
+      return emptyExtraEssay(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EmptyExtraEssay<T> implements ValueFailure<T> {
+  const factory _EmptyExtraEssay() = _$_EmptyExtraEssay<T>;
+}
+
+/// @nodoc
+abstract class _$VeryShortExtraEssayCopyWith<T, $Res> {
+  factory _$VeryShortExtraEssayCopyWith(_VeryShortExtraEssay<T> value,
+          $Res Function(_VeryShortExtraEssay<T>) then) =
+      __$VeryShortExtraEssayCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$VeryShortExtraEssayCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$VeryShortExtraEssayCopyWith<T, $Res> {
+  __$VeryShortExtraEssayCopyWithImpl(_VeryShortExtraEssay<T> _value,
+      $Res Function(_VeryShortExtraEssay<T>) _then)
+      : super(_value, (v) => _then(v as _VeryShortExtraEssay<T>));
+
+  @override
+  _VeryShortExtraEssay<T> get _value => super._value as _VeryShortExtraEssay<T>;
+}
+
+/// @nodoc
+
+class _$_VeryShortExtraEssay<T>
+    with DiagnosticableTreeMixin
+    implements _VeryShortExtraEssay<T> {
+  const _$_VeryShortExtraEssay();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.veryShortExtraEssay()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'ValueFailure<$T>.veryShortExtraEssay'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _VeryShortExtraEssay<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+  }) {
+    return veryShortExtraEssay();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (veryShortExtraEssay != null) {
+      return veryShortExtraEssay();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+  }) {
+    return veryShortExtraEssay(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (veryShortExtraEssay != null) {
+      return veryShortExtraEssay(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _VeryShortExtraEssay<T> implements ValueFailure<T> {
+  const factory _VeryShortExtraEssay() = _$_VeryShortExtraEssay<T>;
+}
+
+/// @nodoc
+abstract class _$ExceedingLengthExtraEssayCopyWith<T, $Res> {
+  factory _$ExceedingLengthExtraEssayCopyWith(
+          _ExceedingLengthExtraEssay<T> value,
+          $Res Function(_ExceedingLengthExtraEssay<T>) then) =
+      __$ExceedingLengthExtraEssayCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$ExceedingLengthExtraEssayCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$ExceedingLengthExtraEssayCopyWith<T, $Res> {
+  __$ExceedingLengthExtraEssayCopyWithImpl(_ExceedingLengthExtraEssay<T> _value,
+      $Res Function(_ExceedingLengthExtraEssay<T>) _then)
+      : super(_value, (v) => _then(v as _ExceedingLengthExtraEssay<T>));
+
+  @override
+  _ExceedingLengthExtraEssay<T> get _value =>
+      super._value as _ExceedingLengthExtraEssay<T>;
+}
+
+/// @nodoc
+
+class _$_ExceedingLengthExtraEssay<T>
+    with DiagnosticableTreeMixin
+    implements _ExceedingLengthExtraEssay<T> {
+  const _$_ExceedingLengthExtraEssay();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.exceedingLengthExtraEssay()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ValueFailure<$T>.exceedingLengthExtraEssay'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _ExceedingLengthExtraEssay<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+  }) {
+    return exceedingLengthExtraEssay();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (exceedingLengthExtraEssay != null) {
+      return exceedingLengthExtraEssay();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+  }) {
+    return exceedingLengthExtraEssay(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    required TResult orElse(),
+  }) {
+    if (exceedingLengthExtraEssay != null) {
+      return exceedingLengthExtraEssay(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ExceedingLengthExtraEssay<T> implements ValueFailure<T> {
+  const factory _ExceedingLengthExtraEssay() = _$_ExceedingLengthExtraEssay<T>;
 }
