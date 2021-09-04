@@ -22,6 +22,9 @@ dependencies:
   injectable: ^1.4.9
   json_annotation: ^4.0.0
   curved_navigation_bar: ^1.0.1
+  sqflite: ^2.0.0+4
+  path: ^1.8.0
+  shared_preferences: ^2.0.7
 
 dev_dependencies:
   bloc_test: ^8.1.0
