@@ -64,6 +64,24 @@ abstract class ApplicationDto implements _$ApplicationDto {
         departmentSelection: [],
       );
 
+   Application toDomain() => Application(
+        schoolTranscript:
+            SchoolTranscript(schoolTranscriptPath: schoolTranscript),
+        mainEssay: MainEssay(mainEssayPath: "Essay Uploaded"),
+        extraEssay: ExtraEssay(extraEssayPath: extraEssay),
+        departmentSelection:
+            DepartmentSelection(departmentSelection: departmentSelection),
+        extraCertification: ExtraCertification(
+            extraCertificationPath: "Certification Uploaded"),
+        proficencyTest: ProficencyTest(proficiencyUrl: proficencyTest),
+        recomendationLetter: RecomendationLetter(
+            recomendationLetterPath: "Reccomendation Uploaded"),
+        militaryFamilyStatus:
+            MilitaryFamilyStatus(militaryFamilyStatus: militaryFamilyStatus),
+        universityFamilyStatus: UniversityFamilyStatus(
+            universityFamilyStatus: universityFamilyStatus),
+      );
+  
   factory ApplicationDto.fromJson(Map<String, dynamic> json) =>
       _$ApplicationDtoFromJson(json);
 }
