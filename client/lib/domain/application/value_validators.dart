@@ -89,3 +89,12 @@ Either<ValueFailure<String>, List> validateDepartmentSelection(
   // TODO : Implement Validation
   return right([]);
 }
+
+Either<ValueFailure<String>, String> validateAdmissionStatus(String admissionStatusStr) {
+  const validStatus = ["", "pending", "accepted", "rejected"];
+
+  if (validStatus.contains(admissionStatusStr)) {
+    return right(admissionStatusStr);
+  }
+  return left(ValueFailure.invalidAdmissionStatus(failedValue: admissionStatusStr));
+}

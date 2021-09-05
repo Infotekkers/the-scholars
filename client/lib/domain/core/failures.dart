@@ -104,4 +104,6 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.veryShortExtraEssay() = _VeryShortExtraEssay;
   const factory ValueFailure.exceedingLengthExtraEssay() =
       _ExceedingLengthExtraEssay;
+
+  const factory ValueFailure.invalidAdmissionStatus({required T failedValue}) = InvalidAdmissionStatus;
 }
