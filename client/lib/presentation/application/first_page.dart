@@ -158,7 +158,7 @@ class FirstApplicationPage extends StatelessWidget {
                                 const ApplicationEvent.firstPageComplete(),
                               );
                             },
-                            color: Colors.amber,
+                            color: Colors.purple,
                             child: const Text("Next Page"),
                           ),
                   ),

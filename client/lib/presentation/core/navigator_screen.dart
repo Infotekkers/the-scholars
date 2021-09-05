@@ -32,7 +32,10 @@ class NavigatorPage extends StatelessWidget {
               child: const FirstApplicationPage(),
             );
           } else if (state.pageIndexNumber == 1) {
-            return const SecondApplicationPage();
+            return BlocProvider.value(
+              value: getIt<ApplicationBloc>(),
+              child: const SecondApplicationPage(),
+            );
           } else {
             return const ThirdApplicationPage();
           }
