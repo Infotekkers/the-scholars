@@ -4,7 +4,7 @@ import 'package:client/domain/core/value_objects.dart';
 import 'package:dartz/dartz.dart';
 
 // Value object for Application id
-class ApplicationId extends ValueObject {
+class ApplicationId extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
@@ -151,4 +151,15 @@ class DepartmentSelection extends ValueObject {
   }
 
   const DepartmentSelection._({required this.value});
+}
+
+class AdmissionStatus extends ValueObject<String> {
+  @override
+  final Either<ValueFailure<String>, String> value;
+
+  factory AdmissionStatus({required String admissionStatusStr}) {
+    return AdmissionStatus._(value: validateAdmissionStatus(admissionStatusStr));
+  }
+
+  const AdmissionStatus._({required this.value});
 }
