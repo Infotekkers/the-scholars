@@ -12,19 +12,21 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       // Define General Theme
       theme: ThemeData(
-        primaryColor: Colors.red,
-        accentColor: Colors.amber,
-        fontFamily: "Georgia",
-        textTheme: const TextTheme(
-          bodyText1: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-        ),
+          primaryColor: Colors.purple,
+          accentColor: Colors.black,
+          fontFamily: "Georgia",
+          textTheme: const TextTheme(
+            bodyText1: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
 
-        // Icon Theme to match with color
-        primaryIconTheme: const IconThemeData(color: Colors.purple),
-        accentIconTheme: const IconThemeData(color: Colors.white),
-
-        iconTheme: const IconThemeData(color: Colors.black),
-      ),
+          // Icon Theme to match with color
+          primaryIconTheme: const IconThemeData(color: Colors.purple),
+          accentIconTheme: const IconThemeData(color: Colors.white),
+          iconTheme: const IconThemeData(color: Colors.black),
+          radioTheme: RadioThemeData(
+            fillColor: MaterialStateColor.resolveWith(
+                (states) => Theme.of(context).primaryColor),
+          )),
       routes: _appRouter.allRoutes,
       home: BlocProvider.value(
         value: getIt<NavigationBloc>(),

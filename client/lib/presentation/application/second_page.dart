@@ -190,6 +190,9 @@ class SecondApplicationPage extends StatelessWidget {
                               child: ListTile(
                                 title: const Text("Yes"),
                                 leading: Radio(
+                                  fillColor: MaterialStateColor.resolveWith(
+                                      (states) =>
+                                          Theme.of(context).primaryColor),
                                   value: 'yes',
                                   onChanged: (val) => {
                                     BlocProvider.of<ApplicationBloc>(context)
@@ -209,6 +212,9 @@ class SecondApplicationPage extends StatelessWidget {
                               child: ListTile(
                                 title: const Text("No"),
                                 leading: Radio(
+                                  fillColor: MaterialStateColor.resolveWith(
+                                      (states) =>
+                                          Theme.of(context).primaryColor),
                                   value: 'no',
                                   onChanged: (val) => {
                                     BlocProvider.of<ApplicationBloc>(context)
@@ -245,6 +251,9 @@ class SecondApplicationPage extends StatelessWidget {
                               child: ListTile(
                                 title: const Text("Yes"),
                                 leading: Radio(
+                                  fillColor: MaterialStateColor.resolveWith(
+                                      (states) =>
+                                          Theme.of(context).primaryColor),
                                   value: 'yes',
                                   onChanged: (val) => {
                                     BlocProvider.of<ApplicationBloc>(context)
@@ -265,6 +274,9 @@ class SecondApplicationPage extends StatelessWidget {
                               child: ListTile(
                                 title: const Text("No"),
                                 leading: Radio(
+                                  fillColor: MaterialStateColor.resolveWith(
+                                      (states) =>
+                                          Theme.of(context).primaryColor),
                                   value: 'no',
                                   onChanged: (val) => {
                                     BlocProvider.of<ApplicationBloc>(context)
