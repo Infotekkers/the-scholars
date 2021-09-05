@@ -1,6 +1,7 @@
 // Main File For displaying navigation bar
 // Will be supplied with a NAVIGATIONBLOC to maintain state
 
+import 'package:client/application/application/application_bloc.dart';
 import 'package:client/application/navigation/navigation_bloc.dart';
 import 'package:client/injectable.dart';
 import 'package:client/presentation/application/first_page.dart';
@@ -26,7 +27,10 @@ class NavigatorPage extends StatelessWidget {
         // Function to get page
         Widget? getPage() {
           if (state.pageIndexNumber == 0) {
-            return const FirstApplicationPage();
+            return BlocProvider.value(
+              value: getIt<ApplicationBloc>(),
+              child: const FirstApplicationPage(),
+            );
           } else if (state.pageIndexNumber == 1) {
             return const SecondApplicationPage();
           } else {

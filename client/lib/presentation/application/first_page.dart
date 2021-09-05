@@ -69,7 +69,13 @@ class FirstApplicationPage extends StatelessWidget {
                   );
                 },
                 (_) => {
-                  Navigator.popAndPushNamed(context, '/second'),
+                  // Navigator.popAndPushNamed(context, '/second'),
+
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text("Application Cached"),
+                    ),
+                  ),
                 },
               ),
             );
@@ -82,17 +88,20 @@ class FirstApplicationPage extends StatelessWidget {
                   : AutovalidateMode.disabled,
               child: ListView(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 25, 25, 25),
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.pop(context);
-                        applicationBloc.add(
-                            const ApplicationEvent.checkCacheApplication());
-                      },
-                      child: const Icon(Icons.close),
-                    ),
-                  ),
+                  // TODO: Activate
+
+                  // Exit button will be activated when some other parts are completed
+                  // Padding(
+                  //   padding: const EdgeInsets.fromLTRB(0, 25, 25, 25),
+                  //   child: InkWell(
+                  //     onTap: () {
+                  //       Navigator.pop(context);
+                  //       applicationBloc.add(
+                  //           const ApplicationEvent.checkCacheApplication());
+                  //     },
+                  //     child: const Icon(Icons.close),
+                  //   ),
+                  // ),
                   Container(
                     margin: const EdgeInsets.symmetric(vertical: 10),
                     child: const Center(
