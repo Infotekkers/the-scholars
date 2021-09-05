@@ -21,7 +21,7 @@ router.get("/applications", async (req, res) => {
         // Get highlights only from complete application
         allApplication.forEach((application) => {
             allApplicationsHighlight.push({
-                fullName: application["fullName"],
+                name: application["fullName"],
                 applicationId: application["_id"],
                 admissionStatus: application["admissionStatus"],
             });
