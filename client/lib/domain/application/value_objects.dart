@@ -158,7 +158,8 @@ class AdmissionStatus extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
   factory AdmissionStatus({required String admissionStatusStr}) {
-    return AdmissionStatus._(value: validateAdmissionStatus(admissionStatusStr));
+    return AdmissionStatus._(
+        value: validateAdmissionStatus(admissionStatusStr));
   }
 
   const AdmissionStatus._({required this.value});
