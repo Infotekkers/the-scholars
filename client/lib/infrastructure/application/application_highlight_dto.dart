@@ -4,6 +4,7 @@ import 'package:client/domain/auth/value_objects.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'application_highlight_dto.freezed.dart';
+part 'application_highlight_dto.g.dart';
 
 @freezed
 abstract class ApplicationHighlightDto with _$ApplicationHighlightDto {

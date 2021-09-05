@@ -88,17 +88,17 @@ class FirstApplicationPage extends StatelessWidget {
                   // TODO: Activate
 
                   // Exit button will be activated when some other parts are completed
-                  // Padding(
-                  //   padding: const EdgeInsets.fromLTRB(0, 25, 25, 25),
-                  //   child: InkWell(
-                  //     onTap: () {
-                  //       Navigator.pop(context);
-                  //       applicationBloc.add(
-                  //           const ApplicationEvent.checkCacheApplication());
-                  //     },
-                  //     child: const Icon(Icons.close),
-                  //   ),
-                  // ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 25, 25, 25),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.pop(context);
+                        applicationBloc.add(
+                            const ApplicationEvent.checkCacheApplication());
+                      },
+                      child: const Icon(Icons.close),
+                    ),
+                  ),
                   Container(
                     margin: const EdgeInsets.symmetric(vertical: 10),
                     child: const Center(

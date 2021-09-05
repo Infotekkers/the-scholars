@@ -12,7 +12,7 @@ part 'util_state.dart';
 
 part 'util_bloc.freezed.dart';
 
-@injectable
+@lazySingleton
 class UtilBloc extends Bloc<UtilEvent, UtilState> {
   UtilBloc() : super(UtilState.initial());
 

@@ -138,17 +138,17 @@ class SecondApplicationPage extends StatelessWidget {
                   // TODO: Activate
 
                   // Will be activated when other components complete
-                  // Padding(
-                  //   padding: const EdgeInsets.fromLTRB(0, 25, 25, 25),
-                  //   child: InkWell(
-                  //     onTap: () {
-                  //       Navigator.pop(context);
-                  //       applicationBloc
-                  //         .add(const ApplicationEvent.checkCacheApplication());
-                  //     },
-                  //     child: const Icon(Icons.close),
-                  //   ),
-                  // ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 25, 25, 25),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.pop(context);
+                        applicationBloc.add(
+                            const ApplicationEvent.checkCacheApplication());
+                      },
+                      child: const Icon(Icons.close),
+                    ),
+                  ),
                   // Proficiency Test Area
                   const FormLabel(textValue: "Proficiency Test URL"),
                   Container(
