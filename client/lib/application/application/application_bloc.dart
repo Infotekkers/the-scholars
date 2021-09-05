@@ -6,6 +6,7 @@ import 'package:client/domain/application/application_failure.dart';
 import 'package:client/domain/application/i_application_repository.dart';
 import 'package:client/domain/application/value_objects.dart';
 import 'package:client/domain/core/failures.dart';
+import 'package:client/infrastructure/application/application_dto.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -124,8 +125,8 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
           application = Application(
             schoolTranscript: state.schoolTranscript,
             mainEssay: state.mainEssay,
-            departmentSelection:
-                DepartmentSelection(departmentSelection: ["1", "2", "3", "4"]),
+            departmentSelection: DepartmentSelection(
+                departmentSelection: const ["1", "2", "3", "4"]),
             extraCertification: state.extraCertification,
             proficencyTest: state.proficencyTest,
             extraEssay: state.extraEssay,
@@ -136,7 +137,6 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
 
           failureOrSuccess = await _iApplicationRepository
               .createServerApplication(application: application);
-          print("@applicatio bloc called creator");
           yield state.copyWith(
             isSubmitting: false,
             applicationFailureOrSuccess: optionOf(failureOrSuccess),
@@ -182,6 +182,171 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
               const ValueFailure.generalError(),
             ),
           ),
+        );
+      },
+      firstPageComplete: (e) async* {
+        // Start Loading Animation
+        yield state.copyWith(
+          isSubmitting: true,
+          showErrorMessages: false,
+        );
+
+        // Check Validity of Selected Documents
+        final isSchoolTranscriptValid = state.schoolTranscript.isValid() &&
+            state.schoolTranscript.value.fold(
+              (l) => true,
+              (r) {
+                // Check to see if value is initial place holder
+                return r != "Please Select a File";
+              },
+            );
+        final isMainEssayValid = state.mainEssay.isValid() &&
+            state.mainEssay.value.fold(
+              (l) => true,
+              (r) {
+                return r != "Please Select a File";
+              },
+            );
+        final isExtraCertificationValid = state.extraCertification.isValid() &&
+            state.extraCertification.value.fold(
+              (l) => true,
+              (r) {
+                return r != "Please Select a File";
+              },
+            );
+        final isRecommendationLetterValid =
+            state.recomendationLetter.isValid() &&
+                state.recomendationLetter.value.fold(
+                  (l) => true,
+                  (r) {
+                    return r != "Please Select a File";
+                  },
+                );
+
+        // If All Documents Selected and Valid
+        if (isSchoolTranscriptValid == true &&
+            isMainEssayValid == true &&
+            isExtraCertificationValid == true &&
+            isRecommendationLetterValid == true) {
+          // Create Ap Application
+          final Application application = Application(
+            schoolTranscript: state.schoolTranscript,
+            mainEssay: state.mainEssay,
+            departmentSelection:
+                DepartmentSelection(departmentSelection: const []),
+            extraCertification: state.extraCertification,
+            extraEssay: state.extraEssay,
+            militaryFamilyStatus: state.militaryFamilyStatus,
+            proficencyTest: state.proficencyTest,
+            recomendationLetter: state.recomendationLetter,
+            universityFamilyStatus: state.universityFamilyStatus,
+          );
+
+          // Request For Cache of Profile
+          final cacheResult =
+              await _iApplicationRepository.saveCacheApplication(
+            applicationDto: ApplicationDto.fromDomain(application: application),
+          );
+
+          // End Loader Animaction
+          yield state.copyWith(
+            showErrorMessages: true,
+            // isSubmitting: false,
+            applicationFailureOrSuccess: optionOf(cacheResult),
+          );
+        }
+        // If not valid
+        else {
+          late ValueFailure failureOrSuccess;
+          if (!isSchoolTranscriptValid) {
+            state.schoolTranscript.value.fold(
+              (l) => failureOrSuccess = l,
+              (r) {
+                if (r == "Please Select a File") {
+                  failureOrSuccess = const ValueFailure.emptyFile(
+                      failedValue: "School Transcript");
+                } else {
+                  failureOrSuccess = const ValueFailure.invalidFileFormat(
+                      failedValue: "School Transcript");
+                }
+              },
+            );
+          } else if (!isMainEssayValid) {
+            state.mainEssay.value.fold(
+              (l) => failureOrSuccess = l,
+              (r) {
+                if (r == "Please Select a File") {
+                  failureOrSuccess =
+                      const ValueFailure.emptyFile(failedValue: "Main Essay");
+                } else {
+                  failureOrSuccess = const ValueFailure.invalidFileFormat(
+                      failedValue: "Main Essay");
+                }
+              },
+            );
+          } else if (!isExtraCertificationValid) {
+            state.extraCertification.value.fold(
+              (l) => failureOrSuccess = l,
+              (r) {
+                if (r == "Please Select a File") {
+                  failureOrSuccess = const ValueFailure.emptyFile(
+                      failedValue: "Extra Certification");
+                } else {
+                  failureOrSuccess = const ValueFailure.invalidFileFormat(
+                      failedValue: "Extra Certification");
+                }
+              },
+            );
+          } else if (!isRecommendationLetterValid) {
+            state.recomendationLetter.value.fold(
+              (l) => failureOrSuccess = l,
+              (r) {
+                if (r == "Please Select a File") {
+                  failureOrSuccess = const ValueFailure.emptyFile(
+                      failedValue: "Recommendation Letter");
+                } else {
+                  failureOrSuccess = const ValueFailure.invalidFileFormat(
+                      failedValue: "Reccomendation Letter");
+                }
+              },
+            );
+          } else {
+            failureOrSuccess = const ValueFailure.generalError();
+          }
+
+          // End Loading Spinner
+          yield state.copyWith(
+            isSubmitting: false,
+            showErrorMessages: true,
+            valueFailureOrSuccess: some(
+              left(failureOrSuccess),
+            ),
+          );
+        }
+
+        // Reset State for re validation
+        yield state.copyWith(
+          isSubmitting: false,
+          showErrorMessages: true,
+          valueFailureOrSuccess: some(
+            left(
+              const ValueFailure.generalError(),
+            ),
+          ),
+        );
+      },
+      checkCacheApplication: (e) async* {
+        // Check Cache Status
+        final cacheResult = await _iApplicationRepository.getCacheApplication();
+
+        bool isApplicationCached = false;
+
+        // If Cache is not empty
+        if (cacheResult.isNotEmpty) {
+          isApplicationCached = true;
+        }
+        yield state.copyWith(
+          isApplicationCached: isApplicationCached,
         );
       },
     );

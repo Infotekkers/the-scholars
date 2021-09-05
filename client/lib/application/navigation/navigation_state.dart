@@ -6,5 +6,6 @@ abstract class NavigationState with _$NavigationState {
     required int pageIndexNumber,
   }) = _NavigationState;
 
-  factory NavigationState.initial() => NavigationState(pageIndexNumber: 0);
+  factory NavigationState.initial() =>
+      const NavigationState(pageIndexNumber: 0);
 }
