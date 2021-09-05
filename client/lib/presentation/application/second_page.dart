@@ -329,8 +329,10 @@ class SecondApplicationPage extends StatelessWidget {
                               applicationBloc.add(const ApplicationEvent
                                   .submitApplicationClicked());
                             },
-                            color: Colors.purple,
-                            child: const Text("Submit Application"),
+                            color: Theme.of(context).primaryColor,
+                            child: const Text(
+                              "Submit Application",
+                            ),
                           ),
                   ),
                 ],

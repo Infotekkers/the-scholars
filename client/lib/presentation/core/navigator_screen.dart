@@ -44,28 +44,25 @@ class NavigatorPage extends StatelessWidget {
         return Scaffold(
           bottomNavigationBar: CurvedNavigationBar(
             height: 50,
-            backgroundColor: Colors.purple,
-            color: Colors.black,
+            backgroundColor: Theme.of(context).primaryColor,
+            color: Theme.of(context).accentColor,
             animationCurve: Curves.easeInOut,
             animationDuration: const Duration(milliseconds: 400),
             key: _bottomNavigationKey,
             letIndexChange: (index) => true,
             // ignore: prefer_const_literals_to_create_immutables
             items: <Widget>[
-              const Icon(
-                Icons.school_sharp,
-                size: 30,
-                color: Colors.white,
+              IconTheme(
+                data: Theme.of(context).accentIconTheme,
+                child: const Icon(Icons.school_sharp),
               ),
-              const Icon(
-                Icons.person,
-                size: 30,
-                color: Colors.white,
+              IconTheme(
+                data: Theme.of(context).accentIconTheme,
+                child: const Icon(Icons.person),
               ),
-              const Icon(
-                Icons.settings,
-                size: 30,
-                color: Colors.white,
+              IconTheme(
+                data: Theme.of(context).accentIconTheme,
+                child: const Icon(Icons.settings),
               ),
             ],
             onTap: (index) {

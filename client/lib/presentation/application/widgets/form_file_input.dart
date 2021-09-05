@@ -65,7 +65,10 @@ class FileForm extends StatelessWidget {
                           }
                         }
                       },
-                      child: const Icon(Icons.attach_file),
+                      child: IconTheme(
+                        data: Theme.of(context).iconTheme,
+                        child: const Icon(Icons.attach_file),
+                      ),
                     ),
                   ),
                   Expanded(
@@ -97,10 +100,13 @@ class FileForm extends StatelessWidget {
                           );
                         }
                       },
-                      child: const Icon(
-                        Icons.remove,
-                        size: 25,
-                        color: Colors.red,
+                      child: IconTheme(
+                        data: IconTheme.of(context).copyWith(color: Colors.red),
+                        child: const Icon(
+                          Icons.remove,
+                          size: 25,
+                          color: Colors.red,
+                        ),
                       ),
                     ),
                   )
