@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:client/domain/application/application.dart';
+import 'package:client/domain/application/value_objects.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'application_dto.freezed.dart';
@@ -64,7 +65,7 @@ abstract class ApplicationDto implements _$ApplicationDto {
         departmentSelection: [],
       );
 
-   Application toDomain() => Application(
+  Application toDomain() => Application(
         schoolTranscript:
             SchoolTranscript(schoolTranscriptPath: schoolTranscript),
         mainEssay: MainEssay(mainEssayPath: "Essay Uploaded"),
@@ -81,7 +82,7 @@ abstract class ApplicationDto implements _$ApplicationDto {
         universityFamilyStatus: UniversityFamilyStatus(
             universityFamilyStatus: universityFamilyStatus),
       );
-  
+
   factory ApplicationDto.fromJson(Map<String, dynamic> json) =>
       _$ApplicationDtoFromJson(json);
 }

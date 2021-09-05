@@ -26,57 +26,59 @@ class SignInForm extends StatelessWidget {
       },
       builder: (context, state) {
         return Form(
-          autovalidateMode: state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
+            autovalidateMode: state.showErrorMessages
+                ? AutovalidateMode.always
+                : AutovalidateMode.disabled,
             child: Column(
-          children: [
-            TextFormField(
-              decoration: const InputDecoration(
-                prefixIcon: Icon(Icons.email),
-                labelText: 'Email',
-              ),
-              autocorrect: false,
-              onChanged: (value) => BlocProvider.of<SignInFormBloc>(context)
-                  .add(SignInFormEvent.emailChanged(value)),
-              validator: (_) => BlocProvider.of<SignInFormBloc>(context)
-                  .state
-                  .emailAddress
-                  .value
-                  .fold(
-                      (failure) => failure.maybeMap(
-                          invalidEmail: (_) => "Invalid Email",
-                          orElse: () => null),
-                      (_) => null),
-            ),
-            TextFormField(
-              decoration: const InputDecoration(
-                prefixIcon: Icon(Icons.lock),
-                labelText: 'Password',
-              ),
-              autocorrect: false,
-              obscureText: true,
-              onChanged: (value) => BlocProvider.of<SignInFormBloc>(context)
-                  .add(SignInFormEvent.passwordChanged(value)),
-              validator: (_) => BlocProvider.of<SignInFormBloc>(context)
-                  .state
-                  .emailAddress
-                  .value
-                  .fold(
-                      (failure) => failure.maybeMap(
-                          shortPassword: (_) => "Invalid Password",
-                          orElse: () => null),
-                      (_) => null),
-            ),
-            ElevatedButton(
-                onPressed: state.isSubmitting
-                    ? null
-                    : () {
-                        BlocProvider.of<SignInFormBloc>(context)
-                            .add(const SignInFormEvent.signInPressed());
-                      },
-                child: const Text("Login")),
-            ElevatedButton(onPressed: () {}, child: const Text("Register")),
-          ],
-        ));
+              children: [
+                TextFormField(
+                  decoration: const InputDecoration(
+                    prefixIcon: Icon(Icons.email),
+                    labelText: 'Email',
+                  ),
+                  autocorrect: false,
+                  onChanged: (value) => BlocProvider.of<SignInFormBloc>(context)
+                      .add(SignInFormEvent.emailChanged(value)),
+                  validator: (_) => BlocProvider.of<SignInFormBloc>(context)
+                      .state
+                      .emailAddress
+                      .value
+                      .fold(
+                          (failure) => failure.maybeMap(
+                              invalidEmail: (_) => "Invalid Email",
+                              orElse: () => null),
+                          (_) => null),
+                ),
+                TextFormField(
+                  decoration: const InputDecoration(
+                    prefixIcon: Icon(Icons.lock),
+                    labelText: 'Password',
+                  ),
+                  autocorrect: false,
+                  obscureText: true,
+                  onChanged: (value) => BlocProvider.of<SignInFormBloc>(context)
+                      .add(SignInFormEvent.passwordChanged(value)),
+                  validator: (_) => BlocProvider.of<SignInFormBloc>(context)
+                      .state
+                      .emailAddress
+                      .value
+                      .fold(
+                          (failure) => failure.maybeMap(
+                              shortPassword: (_) => "Invalid Password",
+                              orElse: () => null),
+                          (_) => null),
+                ),
+                ElevatedButton(
+                    onPressed: state.isSubmitting
+                        ? null
+                        : () {
+                            BlocProvider.of<SignInFormBloc>(context)
+                                .add(const SignInFormEvent.signInPressed());
+                          },
+                    child: const Text("Login")),
+                ElevatedButton(onPressed: () {}, child: const Text("Register")),
+              ],
+            ));
       },
     );
   }
