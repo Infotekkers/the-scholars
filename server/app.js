@@ -7,6 +7,7 @@ require("dotenv").config();
 // Importing custom middleware
 const authRoutes = require("./routes/auth/authRoutes");
 const userRoutes = require("./routes/user/userRoutes");
+const adminRoutes= require("./routes/admin/adminRoutes");
 
 // Creating express instance
 const app = express();
@@ -51,6 +52,9 @@ app.use("/auth", authRoutes);
 
 // User route middleware
 app.use("/user", userRoutes);
+
+// Admin route middleware
+app.use("/admin", adminRoutes);
 
 // Run server
 const port = process.env.PORT_NUMBER || 3000;
