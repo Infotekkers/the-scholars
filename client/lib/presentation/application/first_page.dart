@@ -69,13 +69,10 @@ class FirstApplicationPage extends StatelessWidget {
                   );
                 },
                 (_) => {
-                  // Navigator.popAndPushNamed(context, '/second'),
-
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text("Application Cached"),
-                    ),
-                  ),
+                  // Move to next page
+                  Future.delayed(const Duration(seconds: 1), () {
+                    Navigator.popAndPushNamed(context, '/second');
+                  }),
                 },
               ),
             );
@@ -158,7 +155,7 @@ class FirstApplicationPage extends StatelessWidget {
                                 const ApplicationEvent.firstPageComplete(),
                               );
                             },
-                            color: Colors.amber,
+                            color: Theme.of(context).primaryColor,
                             child: const Text("Next Page"),
                           ),
                   ),
