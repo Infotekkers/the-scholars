@@ -138,12 +138,12 @@ class ExtraEssay extends ValueObject {
   const ExtraEssay._({required this.value});
 }
 
-// Value Object for Department Selction AS ARRAY
+// Value Object for Department Selction
 class DepartmentSelection extends ValueObject {
   @override
-  final Either<ValueFailure<String>, List> value;
+  final Either<ValueFailure<String>, String> value;
 
-  factory DepartmentSelection({required List departmentSelection}) {
+  factory DepartmentSelection({required String departmentSelection}) {
     return DepartmentSelection._(
       value:
           validateDepartmentSelection(departmentSelection: departmentSelection),

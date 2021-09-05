@@ -36,7 +36,7 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i10.RegisterFormBloc(get<_i7.IAuthRepository>()));
   gh.factory<_i11.SignInFormBloc>(
       () => _i11.SignInFormBloc(get<_i7.IAuthRepository>()));
-  gh.factory<_i12.UtilBloc>(() => _i12.UtilBloc());
+  gh.lazySingleton<_i12.UtilBloc>(() => _i12.UtilBloc());
   gh.lazySingleton<_i13.ApplicationBloc>(
       () => _i13.ApplicationBloc(get<_i5.IApplicationRepository>()));
   return get;

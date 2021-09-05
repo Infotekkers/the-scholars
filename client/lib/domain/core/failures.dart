@@ -107,4 +107,8 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
 
   const factory ValueFailure.invalidAdmissionStatus({required T failedValue}) =
       InvalidAdmissionStatus;
+
+  // Department Selection Validation
+  const factory ValueFailure.emptyDepartmentSelection() =
+      _EmptyDepartmentSelection;
 }

@@ -16,7 +16,7 @@ abstract class ApplicationDto implements _$ApplicationDto {
     required String schoolTranscript,
     required String mainEssay,
     required String extraEssay,
-    required List<dynamic> departmentSelection,
+    required String departmentSelection,
     required String extraCertification,
     required String proficencyTest,
     required String recomendationLetter,
@@ -62,7 +62,9 @@ abstract class ApplicationDto implements _$ApplicationDto {
         universityFamilyStatus: application.universityFamilyStatus.isValid()
             ? application.universityFamilyStatus.getOrCrash().toString()
             : "",
-        departmentSelection: [],
+        departmentSelection: application.departmentSelection.isValid()
+            ? application.departmentSelection.getOrCrash().toString()
+            : "Computer Science",
       );
 
   Application toDomain() => Application(
