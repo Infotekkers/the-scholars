@@ -10,9 +10,7 @@ Either<ValueFailure<String>, String> validateApplicationId(
 
 // General Selected File Validator
 Either<ValueFailure<String>, String> validateUploadFile(
-    // ignore: type_annotate_public_apis
-    {required String uploadFilePath,
-    required String ifFailedValue}) {
+    {required String uploadFilePath, required String ifFailedValue}) {
   if (uploadFilePath == "") {
     return left(
       ValueFailure.emptyFile(failedValue: ifFailedValue),
@@ -31,7 +29,11 @@ Either<ValueFailure<String>, String> validateUploadFile(
 
 Either<ValueFailure<String>, String> validateProficencyTest(
     {required String proficiencyUrl}) {
-  if (!Uri.parse(proficiencyUrl).isAbsolute) {
+  if (proficiencyUrl == "") {
+    return left(
+      const ValueFailure.emptyProficencyTestUrl(),
+    );
+  } else if (!Uri.parse(proficiencyUrl).isAbsolute) {
     return left(
       const ValueFailure.invalidProficencyTestUrl(),
     );
