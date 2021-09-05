@@ -74,6 +74,14 @@ class _$ApplicationEventTearOff {
   _SubmitApplicationClicked submitApplicationClicked() {
     return const _SubmitApplicationClicked();
   }
+
+  _FirstPageComplete firstPageComplete() {
+    return const _FirstPageComplete();
+  }
+
+  _CheckApplicationCache checkCacheApplication() {
+    return const _CheckApplicationCache();
+  }
 }
 
 /// @nodoc
@@ -96,6 +104,8 @@ mixin _$ApplicationEvent {
     required TResult Function(String universityStatus) universityStatusChanged,
     required TResult Function(String testUrl) proficiencyUrlChanged,
     required TResult Function() submitApplicationClicked,
+    required TResult Function() firstPageComplete,
+    required TResult Function() checkCacheApplication,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -111,6 +121,8 @@ mixin _$ApplicationEvent {
     TResult Function(String universityStatus)? universityStatusChanged,
     TResult Function(String testUrl)? proficiencyUrlChanged,
     TResult Function()? submitApplicationClicked,
+    TResult Function()? firstPageComplete,
+    TResult Function()? checkCacheApplication,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -132,6 +144,9 @@ mixin _$ApplicationEvent {
     required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
     required TResult Function(_SubmitApplicationClicked value)
         submitApplicationClicked,
+    required TResult Function(_FirstPageComplete value) firstPageComplete,
+    required TResult Function(_CheckApplicationCache value)
+        checkCacheApplication,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -148,6 +163,8 @@ mixin _$ApplicationEvent {
     TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
     TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    TResult Function(_FirstPageComplete value)? firstPageComplete,
+    TResult Function(_CheckApplicationCache value)? checkCacheApplication,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -223,6 +240,8 @@ class _$_InitialApplication implements _InitialApplication {
     required TResult Function(String universityStatus) universityStatusChanged,
     required TResult Function(String testUrl) proficiencyUrlChanged,
     required TResult Function() submitApplicationClicked,
+    required TResult Function() firstPageComplete,
+    required TResult Function() checkCacheApplication,
   }) {
     return initialEvent();
   }
@@ -241,6 +260,8 @@ class _$_InitialApplication implements _InitialApplication {
     TResult Function(String universityStatus)? universityStatusChanged,
     TResult Function(String testUrl)? proficiencyUrlChanged,
     TResult Function()? submitApplicationClicked,
+    TResult Function()? firstPageComplete,
+    TResult Function()? checkCacheApplication,
     required TResult orElse(),
   }) {
     if (initialEvent != null) {
@@ -268,6 +289,9 @@ class _$_InitialApplication implements _InitialApplication {
     required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
     required TResult Function(_SubmitApplicationClicked value)
         submitApplicationClicked,
+    required TResult Function(_FirstPageComplete value) firstPageComplete,
+    required TResult Function(_CheckApplicationCache value)
+        checkCacheApplication,
   }) {
     return initialEvent(this);
   }
@@ -287,6 +311,8 @@ class _$_InitialApplication implements _InitialApplication {
     TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
     TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    TResult Function(_FirstPageComplete value)? firstPageComplete,
+    TResult Function(_CheckApplicationCache value)? checkCacheApplication,
     required TResult orElse(),
   }) {
     if (initialEvent != null) {
@@ -382,6 +408,8 @@ class _$_SchoolTranscriptChanged implements _SchoolTranscriptChanged {
     required TResult Function(String universityStatus) universityStatusChanged,
     required TResult Function(String testUrl) proficiencyUrlChanged,
     required TResult Function() submitApplicationClicked,
+    required TResult Function() firstPageComplete,
+    required TResult Function() checkCacheApplication,
   }) {
     return schoolTranscriptChanged(schoolTranscriptPath);
   }
@@ -400,6 +428,8 @@ class _$_SchoolTranscriptChanged implements _SchoolTranscriptChanged {
     TResult Function(String universityStatus)? universityStatusChanged,
     TResult Function(String testUrl)? proficiencyUrlChanged,
     TResult Function()? submitApplicationClicked,
+    TResult Function()? firstPageComplete,
+    TResult Function()? checkCacheApplication,
     required TResult orElse(),
   }) {
     if (schoolTranscriptChanged != null) {
@@ -427,6 +457,9 @@ class _$_SchoolTranscriptChanged implements _SchoolTranscriptChanged {
     required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
     required TResult Function(_SubmitApplicationClicked value)
         submitApplicationClicked,
+    required TResult Function(_FirstPageComplete value) firstPageComplete,
+    required TResult Function(_CheckApplicationCache value)
+        checkCacheApplication,
   }) {
     return schoolTranscriptChanged(this);
   }
@@ -446,6 +479,8 @@ class _$_SchoolTranscriptChanged implements _SchoolTranscriptChanged {
     TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
     TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    TResult Function(_FirstPageComplete value)? firstPageComplete,
+    TResult Function(_CheckApplicationCache value)? checkCacheApplication,
     required TResult orElse(),
   }) {
     if (schoolTranscriptChanged != null) {
@@ -550,6 +585,8 @@ class _$_ReccomendationLetterChanged implements _ReccomendationLetterChanged {
     required TResult Function(String universityStatus) universityStatusChanged,
     required TResult Function(String testUrl) proficiencyUrlChanged,
     required TResult Function() submitApplicationClicked,
+    required TResult Function() firstPageComplete,
+    required TResult Function() checkCacheApplication,
   }) {
     return reccomnedationLetterChanged(reccomendationLetterPath);
   }
@@ -568,6 +605,8 @@ class _$_ReccomendationLetterChanged implements _ReccomendationLetterChanged {
     TResult Function(String universityStatus)? universityStatusChanged,
     TResult Function(String testUrl)? proficiencyUrlChanged,
     TResult Function()? submitApplicationClicked,
+    TResult Function()? firstPageComplete,
+    TResult Function()? checkCacheApplication,
     required TResult orElse(),
   }) {
     if (reccomnedationLetterChanged != null) {
@@ -595,6 +634,9 @@ class _$_ReccomendationLetterChanged implements _ReccomendationLetterChanged {
     required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
     required TResult Function(_SubmitApplicationClicked value)
         submitApplicationClicked,
+    required TResult Function(_FirstPageComplete value) firstPageComplete,
+    required TResult Function(_CheckApplicationCache value)
+        checkCacheApplication,
   }) {
     return reccomnedationLetterChanged(this);
   }
@@ -614,6 +656,8 @@ class _$_ReccomendationLetterChanged implements _ReccomendationLetterChanged {
     TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
     TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    TResult Function(_FirstPageComplete value)? firstPageComplete,
+    TResult Function(_CheckApplicationCache value)? checkCacheApplication,
     required TResult orElse(),
   }) {
     if (reccomnedationLetterChanged != null) {
@@ -712,6 +756,8 @@ class _$_MainEssayChanged implements _MainEssayChanged {
     required TResult Function(String universityStatus) universityStatusChanged,
     required TResult Function(String testUrl) proficiencyUrlChanged,
     required TResult Function() submitApplicationClicked,
+    required TResult Function() firstPageComplete,
+    required TResult Function() checkCacheApplication,
   }) {
     return mainEssayChanged(mainEssayPath);
   }
@@ -730,6 +776,8 @@ class _$_MainEssayChanged implements _MainEssayChanged {
     TResult Function(String universityStatus)? universityStatusChanged,
     TResult Function(String testUrl)? proficiencyUrlChanged,
     TResult Function()? submitApplicationClicked,
+    TResult Function()? firstPageComplete,
+    TResult Function()? checkCacheApplication,
     required TResult orElse(),
   }) {
     if (mainEssayChanged != null) {
@@ -757,6 +805,9 @@ class _$_MainEssayChanged implements _MainEssayChanged {
     required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
     required TResult Function(_SubmitApplicationClicked value)
         submitApplicationClicked,
+    required TResult Function(_FirstPageComplete value) firstPageComplete,
+    required TResult Function(_CheckApplicationCache value)
+        checkCacheApplication,
   }) {
     return mainEssayChanged(this);
   }
@@ -776,6 +827,8 @@ class _$_MainEssayChanged implements _MainEssayChanged {
     TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
     TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    TResult Function(_FirstPageComplete value)? firstPageComplete,
+    TResult Function(_CheckApplicationCache value)? checkCacheApplication,
     required TResult orElse(),
   }) {
     if (mainEssayChanged != null) {
@@ -877,6 +930,8 @@ class _$_ExtraCertificationChanged implements _ExtraCertificationChanged {
     required TResult Function(String universityStatus) universityStatusChanged,
     required TResult Function(String testUrl) proficiencyUrlChanged,
     required TResult Function() submitApplicationClicked,
+    required TResult Function() firstPageComplete,
+    required TResult Function() checkCacheApplication,
   }) {
     return extraCertificationChanged(extraCertificationPath);
   }
@@ -895,6 +950,8 @@ class _$_ExtraCertificationChanged implements _ExtraCertificationChanged {
     TResult Function(String universityStatus)? universityStatusChanged,
     TResult Function(String testUrl)? proficiencyUrlChanged,
     TResult Function()? submitApplicationClicked,
+    TResult Function()? firstPageComplete,
+    TResult Function()? checkCacheApplication,
     required TResult orElse(),
   }) {
     if (extraCertificationChanged != null) {
@@ -922,6 +979,9 @@ class _$_ExtraCertificationChanged implements _ExtraCertificationChanged {
     required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
     required TResult Function(_SubmitApplicationClicked value)
         submitApplicationClicked,
+    required TResult Function(_FirstPageComplete value) firstPageComplete,
+    required TResult Function(_CheckApplicationCache value)
+        checkCacheApplication,
   }) {
     return extraCertificationChanged(this);
   }
@@ -941,6 +1001,8 @@ class _$_ExtraCertificationChanged implements _ExtraCertificationChanged {
     TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
     TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    TResult Function(_FirstPageComplete value)? firstPageComplete,
+    TResult Function(_CheckApplicationCache value)? checkCacheApplication,
     required TResult orElse(),
   }) {
     if (extraCertificationChanged != null) {
@@ -1039,6 +1101,8 @@ class _$_ExtraEssay implements _ExtraEssay {
     required TResult Function(String universityStatus) universityStatusChanged,
     required TResult Function(String testUrl) proficiencyUrlChanged,
     required TResult Function() submitApplicationClicked,
+    required TResult Function() firstPageComplete,
+    required TResult Function() checkCacheApplication,
   }) {
     return extraEssayChanged(extraEssay);
   }
@@ -1057,6 +1121,8 @@ class _$_ExtraEssay implements _ExtraEssay {
     TResult Function(String universityStatus)? universityStatusChanged,
     TResult Function(String testUrl)? proficiencyUrlChanged,
     TResult Function()? submitApplicationClicked,
+    TResult Function()? firstPageComplete,
+    TResult Function()? checkCacheApplication,
     required TResult orElse(),
   }) {
     if (extraEssayChanged != null) {
@@ -1084,6 +1150,9 @@ class _$_ExtraEssay implements _ExtraEssay {
     required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
     required TResult Function(_SubmitApplicationClicked value)
         submitApplicationClicked,
+    required TResult Function(_FirstPageComplete value) firstPageComplete,
+    required TResult Function(_CheckApplicationCache value)
+        checkCacheApplication,
   }) {
     return extraEssayChanged(this);
   }
@@ -1103,6 +1172,8 @@ class _$_ExtraEssay implements _ExtraEssay {
     TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
     TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    TResult Function(_FirstPageComplete value)? firstPageComplete,
+    TResult Function(_CheckApplicationCache value)? checkCacheApplication,
     required TResult orElse(),
   }) {
     if (extraEssayChanged != null) {
@@ -1202,6 +1273,8 @@ class _$_MilitaryStatusChanged implements _MilitaryStatusChanged {
     required TResult Function(String universityStatus) universityStatusChanged,
     required TResult Function(String testUrl) proficiencyUrlChanged,
     required TResult Function() submitApplicationClicked,
+    required TResult Function() firstPageComplete,
+    required TResult Function() checkCacheApplication,
   }) {
     return militaryStatusChanged(militaryStatus);
   }
@@ -1220,6 +1293,8 @@ class _$_MilitaryStatusChanged implements _MilitaryStatusChanged {
     TResult Function(String universityStatus)? universityStatusChanged,
     TResult Function(String testUrl)? proficiencyUrlChanged,
     TResult Function()? submitApplicationClicked,
+    TResult Function()? firstPageComplete,
+    TResult Function()? checkCacheApplication,
     required TResult orElse(),
   }) {
     if (militaryStatusChanged != null) {
@@ -1247,6 +1322,9 @@ class _$_MilitaryStatusChanged implements _MilitaryStatusChanged {
     required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
     required TResult Function(_SubmitApplicationClicked value)
         submitApplicationClicked,
+    required TResult Function(_FirstPageComplete value) firstPageComplete,
+    required TResult Function(_CheckApplicationCache value)
+        checkCacheApplication,
   }) {
     return militaryStatusChanged(this);
   }
@@ -1266,6 +1344,8 @@ class _$_MilitaryStatusChanged implements _MilitaryStatusChanged {
     TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
     TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    TResult Function(_FirstPageComplete value)? firstPageComplete,
+    TResult Function(_CheckApplicationCache value)? checkCacheApplication,
     required TResult orElse(),
   }) {
     if (militaryStatusChanged != null) {
@@ -1367,6 +1447,8 @@ class _$_UniversityStatusChanged implements _UniversityStatusChanged {
     required TResult Function(String universityStatus) universityStatusChanged,
     required TResult Function(String testUrl) proficiencyUrlChanged,
     required TResult Function() submitApplicationClicked,
+    required TResult Function() firstPageComplete,
+    required TResult Function() checkCacheApplication,
   }) {
     return universityStatusChanged(universityStatus);
   }
@@ -1385,6 +1467,8 @@ class _$_UniversityStatusChanged implements _UniversityStatusChanged {
     TResult Function(String universityStatus)? universityStatusChanged,
     TResult Function(String testUrl)? proficiencyUrlChanged,
     TResult Function()? submitApplicationClicked,
+    TResult Function()? firstPageComplete,
+    TResult Function()? checkCacheApplication,
     required TResult orElse(),
   }) {
     if (universityStatusChanged != null) {
@@ -1412,6 +1496,9 @@ class _$_UniversityStatusChanged implements _UniversityStatusChanged {
     required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
     required TResult Function(_SubmitApplicationClicked value)
         submitApplicationClicked,
+    required TResult Function(_FirstPageComplete value) firstPageComplete,
+    required TResult Function(_CheckApplicationCache value)
+        checkCacheApplication,
   }) {
     return universityStatusChanged(this);
   }
@@ -1431,6 +1518,8 @@ class _$_UniversityStatusChanged implements _UniversityStatusChanged {
     TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
     TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    TResult Function(_FirstPageComplete value)? firstPageComplete,
+    TResult Function(_CheckApplicationCache value)? checkCacheApplication,
     required TResult orElse(),
   }) {
     if (universityStatusChanged != null) {
@@ -1528,6 +1617,8 @@ class _$_ProficiencyChanged implements _ProficiencyChanged {
     required TResult Function(String universityStatus) universityStatusChanged,
     required TResult Function(String testUrl) proficiencyUrlChanged,
     required TResult Function() submitApplicationClicked,
+    required TResult Function() firstPageComplete,
+    required TResult Function() checkCacheApplication,
   }) {
     return proficiencyUrlChanged(testUrl);
   }
@@ -1546,6 +1637,8 @@ class _$_ProficiencyChanged implements _ProficiencyChanged {
     TResult Function(String universityStatus)? universityStatusChanged,
     TResult Function(String testUrl)? proficiencyUrlChanged,
     TResult Function()? submitApplicationClicked,
+    TResult Function()? firstPageComplete,
+    TResult Function()? checkCacheApplication,
     required TResult orElse(),
   }) {
     if (proficiencyUrlChanged != null) {
@@ -1573,6 +1666,9 @@ class _$_ProficiencyChanged implements _ProficiencyChanged {
     required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
     required TResult Function(_SubmitApplicationClicked value)
         submitApplicationClicked,
+    required TResult Function(_FirstPageComplete value) firstPageComplete,
+    required TResult Function(_CheckApplicationCache value)
+        checkCacheApplication,
   }) {
     return proficiencyUrlChanged(this);
   }
@@ -1592,6 +1688,8 @@ class _$_ProficiencyChanged implements _ProficiencyChanged {
     TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
     TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    TResult Function(_FirstPageComplete value)? firstPageComplete,
+    TResult Function(_CheckApplicationCache value)? checkCacheApplication,
     required TResult orElse(),
   }) {
     if (proficiencyUrlChanged != null) {
@@ -1664,6 +1762,8 @@ class _$_SubmitApplicationClicked implements _SubmitApplicationClicked {
     required TResult Function(String universityStatus) universityStatusChanged,
     required TResult Function(String testUrl) proficiencyUrlChanged,
     required TResult Function() submitApplicationClicked,
+    required TResult Function() firstPageComplete,
+    required TResult Function() checkCacheApplication,
   }) {
     return submitApplicationClicked();
   }
@@ -1682,6 +1782,8 @@ class _$_SubmitApplicationClicked implements _SubmitApplicationClicked {
     TResult Function(String universityStatus)? universityStatusChanged,
     TResult Function(String testUrl)? proficiencyUrlChanged,
     TResult Function()? submitApplicationClicked,
+    TResult Function()? firstPageComplete,
+    TResult Function()? checkCacheApplication,
     required TResult orElse(),
   }) {
     if (submitApplicationClicked != null) {
@@ -1709,6 +1811,9 @@ class _$_SubmitApplicationClicked implements _SubmitApplicationClicked {
     required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
     required TResult Function(_SubmitApplicationClicked value)
         submitApplicationClicked,
+    required TResult Function(_FirstPageComplete value) firstPageComplete,
+    required TResult Function(_CheckApplicationCache value)
+        checkCacheApplication,
   }) {
     return submitApplicationClicked(this);
   }
@@ -1728,6 +1833,8 @@ class _$_SubmitApplicationClicked implements _SubmitApplicationClicked {
     TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
     TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    TResult Function(_FirstPageComplete value)? firstPageComplete,
+    TResult Function(_CheckApplicationCache value)? checkCacheApplication,
     required TResult orElse(),
   }) {
     if (submitApplicationClicked != null) {
@@ -1739,6 +1846,284 @@ class _$_SubmitApplicationClicked implements _SubmitApplicationClicked {
 
 abstract class _SubmitApplicationClicked implements ApplicationEvent {
   const factory _SubmitApplicationClicked() = _$_SubmitApplicationClicked;
+}
+
+/// @nodoc
+abstract class _$FirstPageCompleteCopyWith<$Res> {
+  factory _$FirstPageCompleteCopyWith(
+          _FirstPageComplete value, $Res Function(_FirstPageComplete) then) =
+      __$FirstPageCompleteCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$FirstPageCompleteCopyWithImpl<$Res>
+    extends _$ApplicationEventCopyWithImpl<$Res>
+    implements _$FirstPageCompleteCopyWith<$Res> {
+  __$FirstPageCompleteCopyWithImpl(
+      _FirstPageComplete _value, $Res Function(_FirstPageComplete) _then)
+      : super(_value, (v) => _then(v as _FirstPageComplete));
+
+  @override
+  _FirstPageComplete get _value => super._value as _FirstPageComplete;
+}
+
+/// @nodoc
+
+class _$_FirstPageComplete implements _FirstPageComplete {
+  const _$_FirstPageComplete();
+
+  @override
+  String toString() {
+    return 'ApplicationEvent.firstPageComplete()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _FirstPageComplete);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialEvent,
+    required TResult Function(String schoolTranscriptPath)
+        schoolTranscriptChanged,
+    required TResult Function(String reccomendationLetterPath)
+        reccomnedationLetterChanged,
+    required TResult Function(String mainEssayPath) mainEssayChanged,
+    required TResult Function(String extraCertificationPath)
+        extraCertificationChanged,
+    required TResult Function(String extraEssay) extraEssayChanged,
+    required TResult Function(String militaryStatus) militaryStatusChanged,
+    required TResult Function(String universityStatus) universityStatusChanged,
+    required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function() submitApplicationClicked,
+    required TResult Function() firstPageComplete,
+    required TResult Function() checkCacheApplication,
+  }) {
+    return firstPageComplete();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialEvent,
+    TResult Function(String schoolTranscriptPath)? schoolTranscriptChanged,
+    TResult Function(String reccomendationLetterPath)?
+        reccomnedationLetterChanged,
+    TResult Function(String mainEssayPath)? mainEssayChanged,
+    TResult Function(String extraCertificationPath)? extraCertificationChanged,
+    TResult Function(String extraEssay)? extraEssayChanged,
+    TResult Function(String militaryStatus)? militaryStatusChanged,
+    TResult Function(String universityStatus)? universityStatusChanged,
+    TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function()? submitApplicationClicked,
+    TResult Function()? firstPageComplete,
+    TResult Function()? checkCacheApplication,
+    required TResult orElse(),
+  }) {
+    if (firstPageComplete != null) {
+      return firstPageComplete();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialApplication value) initialEvent,
+    required TResult Function(_SchoolTranscriptChanged value)
+        schoolTranscriptChanged,
+    required TResult Function(_ReccomendationLetterChanged value)
+        reccomnedationLetterChanged,
+    required TResult Function(_MainEssayChanged value) mainEssayChanged,
+    required TResult Function(_ExtraCertificationChanged value)
+        extraCertificationChanged,
+    required TResult Function(_ExtraEssay value) extraEssayChanged,
+    required TResult Function(_MilitaryStatusChanged value)
+        militaryStatusChanged,
+    required TResult Function(_UniversityStatusChanged value)
+        universityStatusChanged,
+    required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_SubmitApplicationClicked value)
+        submitApplicationClicked,
+    required TResult Function(_FirstPageComplete value) firstPageComplete,
+    required TResult Function(_CheckApplicationCache value)
+        checkCacheApplication,
+  }) {
+    return firstPageComplete(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialApplication value)? initialEvent,
+    TResult Function(_SchoolTranscriptChanged value)? schoolTranscriptChanged,
+    TResult Function(_ReccomendationLetterChanged value)?
+        reccomnedationLetterChanged,
+    TResult Function(_MainEssayChanged value)? mainEssayChanged,
+    TResult Function(_ExtraCertificationChanged value)?
+        extraCertificationChanged,
+    TResult Function(_ExtraEssay value)? extraEssayChanged,
+    TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
+    TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
+    TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    TResult Function(_FirstPageComplete value)? firstPageComplete,
+    TResult Function(_CheckApplicationCache value)? checkCacheApplication,
+    required TResult orElse(),
+  }) {
+    if (firstPageComplete != null) {
+      return firstPageComplete(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FirstPageComplete implements ApplicationEvent {
+  const factory _FirstPageComplete() = _$_FirstPageComplete;
+}
+
+/// @nodoc
+abstract class _$CheckApplicationCacheCopyWith<$Res> {
+  factory _$CheckApplicationCacheCopyWith(_CheckApplicationCache value,
+          $Res Function(_CheckApplicationCache) then) =
+      __$CheckApplicationCacheCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$CheckApplicationCacheCopyWithImpl<$Res>
+    extends _$ApplicationEventCopyWithImpl<$Res>
+    implements _$CheckApplicationCacheCopyWith<$Res> {
+  __$CheckApplicationCacheCopyWithImpl(_CheckApplicationCache _value,
+      $Res Function(_CheckApplicationCache) _then)
+      : super(_value, (v) => _then(v as _CheckApplicationCache));
+
+  @override
+  _CheckApplicationCache get _value => super._value as _CheckApplicationCache;
+}
+
+/// @nodoc
+
+class _$_CheckApplicationCache implements _CheckApplicationCache {
+  const _$_CheckApplicationCache();
+
+  @override
+  String toString() {
+    return 'ApplicationEvent.checkCacheApplication()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _CheckApplicationCache);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialEvent,
+    required TResult Function(String schoolTranscriptPath)
+        schoolTranscriptChanged,
+    required TResult Function(String reccomendationLetterPath)
+        reccomnedationLetterChanged,
+    required TResult Function(String mainEssayPath) mainEssayChanged,
+    required TResult Function(String extraCertificationPath)
+        extraCertificationChanged,
+    required TResult Function(String extraEssay) extraEssayChanged,
+    required TResult Function(String militaryStatus) militaryStatusChanged,
+    required TResult Function(String universityStatus) universityStatusChanged,
+    required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function() submitApplicationClicked,
+    required TResult Function() firstPageComplete,
+    required TResult Function() checkCacheApplication,
+  }) {
+    return checkCacheApplication();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialEvent,
+    TResult Function(String schoolTranscriptPath)? schoolTranscriptChanged,
+    TResult Function(String reccomendationLetterPath)?
+        reccomnedationLetterChanged,
+    TResult Function(String mainEssayPath)? mainEssayChanged,
+    TResult Function(String extraCertificationPath)? extraCertificationChanged,
+    TResult Function(String extraEssay)? extraEssayChanged,
+    TResult Function(String militaryStatus)? militaryStatusChanged,
+    TResult Function(String universityStatus)? universityStatusChanged,
+    TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function()? submitApplicationClicked,
+    TResult Function()? firstPageComplete,
+    TResult Function()? checkCacheApplication,
+    required TResult orElse(),
+  }) {
+    if (checkCacheApplication != null) {
+      return checkCacheApplication();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialApplication value) initialEvent,
+    required TResult Function(_SchoolTranscriptChanged value)
+        schoolTranscriptChanged,
+    required TResult Function(_ReccomendationLetterChanged value)
+        reccomnedationLetterChanged,
+    required TResult Function(_MainEssayChanged value) mainEssayChanged,
+    required TResult Function(_ExtraCertificationChanged value)
+        extraCertificationChanged,
+    required TResult Function(_ExtraEssay value) extraEssayChanged,
+    required TResult Function(_MilitaryStatusChanged value)
+        militaryStatusChanged,
+    required TResult Function(_UniversityStatusChanged value)
+        universityStatusChanged,
+    required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_SubmitApplicationClicked value)
+        submitApplicationClicked,
+    required TResult Function(_FirstPageComplete value) firstPageComplete,
+    required TResult Function(_CheckApplicationCache value)
+        checkCacheApplication,
+  }) {
+    return checkCacheApplication(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialApplication value)? initialEvent,
+    TResult Function(_SchoolTranscriptChanged value)? schoolTranscriptChanged,
+    TResult Function(_ReccomendationLetterChanged value)?
+        reccomnedationLetterChanged,
+    TResult Function(_MainEssayChanged value)? mainEssayChanged,
+    TResult Function(_ExtraCertificationChanged value)?
+        extraCertificationChanged,
+    TResult Function(_ExtraEssay value)? extraEssayChanged,
+    TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
+    TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
+    TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    TResult Function(_FirstPageComplete value)? firstPageComplete,
+    TResult Function(_CheckApplicationCache value)? checkCacheApplication,
+    required TResult orElse(),
+  }) {
+    if (checkCacheApplication != null) {
+      return checkCacheApplication(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CheckApplicationCache implements ApplicationEvent {
+  const factory _CheckApplicationCache() = _$_CheckApplicationCache;
 }
 
 /// @nodoc

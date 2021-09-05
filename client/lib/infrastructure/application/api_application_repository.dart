@@ -100,8 +100,6 @@ class ApiApplicationRepository implements IApplicationRepository {
               .fold((l) => "", (r) => r),
         };
 
-        print("@api repo");
-
         // Send api call
         final apiResult = await http.post(
           Uri.parse("$apiUrl/user/application"),
@@ -182,7 +180,6 @@ class ApiApplicationRepository implements IApplicationRepository {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     final List<String>? allApplications =
         prefs.getStringList("allApplications");
-    print(allApplications);
 
     if (allApplications == null) {
       return right([]);
@@ -236,14 +233,13 @@ class ApiApplicationRepository implements IApplicationRepository {
   @override
   Future<Either<ApplicationFailure, Application>> saveCacheApplication(
       {required ApplicationDto applicationDto}) {
-    // TODO: implement saveCacheApplication
-    throw UnimplementedError();
+    return dbService.cacheApplication(applicationDto);
   }
 }
 
 class DatabaseService {
   // Database - Sql Lite vars
-  static const _databaseName = "itu_scholarship03.db";
+  static const _databaseName = "itu_scholarship.db";
   static const _databaseVersion = 1;
   static const tableName = "applications";
 

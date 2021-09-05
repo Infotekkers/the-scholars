@@ -22,7 +22,7 @@ abstract class Application with _$Application {
         schoolTranscript: SchoolTranscript(schoolTranscriptPath: ""),
         mainEssay: MainEssay(mainEssayPath: ""),
         extraEssay: ExtraEssay(extraEssayPath: ""),
-        departmentSelection: DepartmentSelection(departmentSelection: []),
+        departmentSelection: DepartmentSelection(departmentSelection: const []),
         extraCertification: ExtraCertification(extraCertificationPath: ""),
         proficencyTest: ProficencyTest(
           proficiencyUrl: "",

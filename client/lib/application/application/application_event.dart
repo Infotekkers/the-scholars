@@ -40,4 +40,10 @@ class ApplicationEvent with _$ApplicationEvent {
 // Event for Submission
   const factory ApplicationEvent.submitApplicationClicked() =
       _SubmitApplicationClicked;
+  // First Page Complete
+  const factory ApplicationEvent.firstPageComplete() = _FirstPageComplete;
+
+  // Check Cache Status
+  const factory ApplicationEvent.checkCacheApplication() =
+      _CheckApplicationCache;
 }
