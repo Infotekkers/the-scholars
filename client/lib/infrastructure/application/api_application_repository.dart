@@ -230,9 +230,10 @@ class ApiApplicationRepository implements IApplicationRepository {
       getApplicationHighlights() async {
     // Get All Application Ids from cache
     final List<String> allCachedApplicationIds = [
-      "613368431057ce51907482ff",
+      "6135fc6406bf3af1c5733dc8",
+      "61336a061057ce5190748305",
       "613369701057ce5190748302",
-      "61336a061057ce5190748305"
+      "613368431057ce51907482ff",
     ];
 
     // if cache is empty
@@ -262,11 +263,11 @@ class ApiApplicationRepository implements IApplicationRepository {
         // ignore: avoid_function_literals_in_foreach_calls
         allApplicationsHighight.forEach((applicationHighlight) {
           // Get Each applicationHighlight as Map
-          final Map<String, dynamic> currentItem =
-              allApplicationsHighight[0] as Map<String, dynamic>;
+          Map<String, dynamic> currentItem =
+              applicationHighlight as Map<String, dynamic>;
 
           // Create the DTO
-          final ApplicationHighlightDto dto =
+          ApplicationHighlightDto dto =
               ApplicationHighlightDto.fromJson(currentItem);
 
           // Add to array

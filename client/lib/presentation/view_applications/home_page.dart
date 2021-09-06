@@ -1,5 +1,7 @@
 import 'package:client/application/application/application_bloc.dart';
 import 'package:client/application/util/util_bloc.dart';
+import 'package:client/application/view_application/view_application_bloc.dart';
+import 'package:client/injectable.dart';
 import 'package:client/presentation/profile/profile_page.dart';
 import 'package:client/presentation/view_applications/widget/application_tabs.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +20,11 @@ class HomePage extends StatelessWidget {
     final ApplicationBloc _applicationBloc =
         BlocProvider.of<ApplicationBloc>(context);
     _applicationBloc.add(const ApplicationEvent.checkCacheApplication());
+
+    // Application Bloc
+    final ViewApplicationBloc _viewApplicationBloc =
+        getIt<ViewApplicationBloc>();
+    _viewApplicationBloc.add(const ViewApplicationEvent.started());
 
     return BlocConsumer<UtilBloc, UtilState>(
       listener: (context, state) {
@@ -72,12 +79,28 @@ class HomePage extends StatelessWidget {
               ),
               body: Container(
                 padding: const EdgeInsets.fromLTRB(8, 15, 8, 15),
-                child: const TabBarView(
+                child: TabBarView(
                   children: [
-                    ApplicationViewTab(admissionStatusToMatch: "All"),
-                    ApplicationViewTab(admissionStatusToMatch: "Pending"),
-                    ApplicationViewTab(admissionStatusToMatch: "Completed"),
-                    ApplicationViewTab(admissionStatusToMatch: "Rejected"),
+                    BlocProvider.value(
+                      value: _viewApplicationBloc,
+                      child:
+                          const ApplicationViewTab(admissionStatusToMatch: ""),
+                    ),
+                    BlocProvider.value(
+                      value: _viewApplicationBloc,
+                      child: const ApplicationViewTab(
+                          admissionStatusToMatch: "accepted"),
+                    ),
+                    BlocProvider.value(
+                      value: _viewApplicationBloc,
+                      child: const ApplicationViewTab(
+                          admissionStatusToMatch: "pending"),
+                    ),
+                    BlocProvider.value(
+                      value: _viewApplicationBloc,
+                      child: const ApplicationViewTab(
+                          admissionStatusToMatch: "rejected"),
+                    ),
                   ],
                 ),
               ),
