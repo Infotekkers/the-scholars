@@ -8,7 +8,7 @@ import 'package:client/injectable.dart';
 import 'package:client/presentation/application/first_page.dart';
 import 'package:client/presentation/application/second_page.dart';
 import 'package:client/presentation/application/thrid_page.dart';
-import 'package:client/presentation/core/home_page.dart';
+import 'package:client/presentation/view_applications/home_page.dart';
 import 'package:client/presentation/profile/profile_page.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';

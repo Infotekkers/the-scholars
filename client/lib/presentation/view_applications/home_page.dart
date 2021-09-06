@@ -1,6 +1,7 @@
 import 'package:client/application/application/application_bloc.dart';
 import 'package:client/application/util/util_bloc.dart';
 import 'package:client/presentation/profile/profile_page.dart';
+import 'package:client/presentation/view_applications/widget/application_tabs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -38,7 +39,50 @@ class HomePage extends StatelessWidget {
       },
       builder: (context, state) {
         return Scaffold(
-          body: Container(),
+          body: DefaultTabController(
+            length: 4,
+            child: Scaffold(
+              appBar: AppBar(
+                toolbarHeight: 45,
+                backgroundColor: Theme.of(context).primaryColor,
+                bottom: const TabBar(
+                  indicatorColor: Colors.white,
+                  tabs: [
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Icon(
+                        Icons.all_inbox,
+                        color: Colors.black,
+                      ),
+                    ),
+                    Icon(
+                      Icons.check,
+                      color: Colors.black,
+                    ),
+                    Icon(
+                      Icons.pending,
+                      color: Colors.black,
+                    ),
+                    Icon(
+                      Icons.remove_done,
+                      color: Colors.black,
+                    )
+                  ],
+                ),
+              ),
+              body: Container(
+                padding: const EdgeInsets.fromLTRB(8, 15, 8, 15),
+                child: const TabBarView(
+                  children: [
+                    ApplicationViewTab(admissionStatusToMatch: "All"),
+                    ApplicationViewTab(admissionStatusToMatch: "Pending"),
+                    ApplicationViewTab(admissionStatusToMatch: "Completed"),
+                    ApplicationViewTab(admissionStatusToMatch: "Rejected"),
+                  ],
+                ),
+              ),
+            ),
+          ),
           floatingActionButton: BlocConsumer<ApplicationBloc, ApplicationState>(
             listener: (context, state) {},
             builder: (context, state) {

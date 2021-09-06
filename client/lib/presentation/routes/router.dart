@@ -2,7 +2,7 @@ import 'package:client/application/application/application_bloc.dart';
 import 'package:client/injectable.dart';
 import 'package:client/presentation/application/first_page.dart';
 import 'package:client/presentation/application/second_page.dart';
-import 'package:client/presentation/core/home_page.dart';
+import 'package:client/presentation/view_applications/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
