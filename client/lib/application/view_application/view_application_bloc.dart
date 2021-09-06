@@ -31,9 +31,6 @@ class ViewApplicationBloc
         // Start Loader animation
         yield state.copyWith(isFetching: true);
 
-        // Mock Api call
-        await Future.delayed(const Duration(seconds: 2));
-
         Either<ApplicationFailure, List<ApplicationHighlightDto>>
             allApplicationsHighlightDtos =
             await _iApplicationRepository.getApplicationHighlights();
@@ -44,7 +41,7 @@ class ViewApplicationBloc
         // final allApplicationHighlights =
         //     await _iApplicationRepository.getApplicationHighlightsById();
 
-        print("@view bloc val is $allApplicationsHighlightDtos");
+//         print("@view bloc val is $allApplicationsHighlightDtos");
 
         // If Error is returned
         if (allApplicationsHighlightDtos.isLeft()) {
