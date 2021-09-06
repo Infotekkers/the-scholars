@@ -13,6 +13,9 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.shortPassword({
     required T failedValue,
   }) = ShortPassword<T>;
+  const factory ValueFailure.invalidUsername({
+    required T failedValue,
+  }) = InvalidUsername<T>;
   const factory ValueFailure.invalidPassword({
     required T failedValue,
   }) = InvalidPassword<T>;
@@ -105,5 +108,6 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.exceedingLengthExtraEssay() =
       _ExceedingLengthExtraEssay;
 
-  const factory ValueFailure.invalidAdmissionStatus({required T failedValue}) = InvalidAdmissionStatus;
+  const factory ValueFailure.invalidAdmissionStatus({required T failedValue}) =
+      InvalidAdmissionStatus;
 }
