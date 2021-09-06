@@ -24,8 +24,7 @@ Either<ValueFailure<String>, String> validatePassword(String passwordStr) {
 }
 
 Either<ValueFailure<String>, String> validateName(String nameStr) {
-  const nameRegex =
-      r'''([A-Z][a-z]{1,})\w+\s+([A-Z][a-z]{0,})\w''';
+  const nameRegex = r'''([A-Z][a-z]{1,})\w+\s+([A-Z][a-z]{0,})\w''';
 
   if (RegExp(nameRegex).hasMatch(nameStr)) {
     return right(nameStr);

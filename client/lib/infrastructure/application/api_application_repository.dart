@@ -5,6 +5,7 @@ import 'package:client/domain/application/application_failure.dart';
 import 'package:client/domain/application/application.dart';
 import 'package:client/domain/application/i_application_repository.dart';
 import 'package:client/infrastructure/application/application_dto.dart';
+import 'package:client/infrastructure/application/application_highlight_dto.dart';
 import 'package:client/injectable.dart';
 import 'package:dartz/dartz.dart';
 import 'package:client/domain/application/value_objects.dart';
@@ -225,9 +226,59 @@ class ApiApplicationRepository implements IApplicationRepository {
   }
 
   @override
-  Future<Either<ApplicationFailure, dynamic>> getApplicationHighlightsById() {
-    // TODO: implement getApplicationHighlightsById
-    throw UnimplementedError();
+  Future<Either<ApplicationFailure, List<ApplicationHighlightDto>>>
+      getApplicationHighlights() async {
+    // Get All Application Ids from cache
+    final List<String> allCachedApplicationIds = [
+      "6135fc6406bf3af1c5733dc8",
+      "61336a061057ce5190748305",
+      "613369701057ce5190748302",
+      "613368431057ce51907482ff",
+    ];
+
+    // if cache is empty
+    if (allCachedApplicationIds.isEmpty) {
+      return right([]);
+    } else {
+      // Call the api
+      final applicationResult =
+          await http.post(Uri.parse("$apiUrl/user/id/application"), body: {
+        "applicationIds": jsonEncode(allCachedApplicationIds),
+      }).timeout(
+        const Duration(seconds: 10),
+        onTimeout: () {
+          return http.Response("Server Timeout", 503);
+        },
+      );
+
+      // print("@api repo the result is ${jsonDecode(applicationResult.body)[1]}");
+
+      if (applicationResult.statusCode == 200) {
+        // Create ApplicationHightLight Dtos
+        final List allApplicationsHighight =
+            jsonDecode(applicationResult.body) as List;
+
+        final List<ApplicationHighlightDto> allApplicationHighlightDtos = [];
+
+        // ignore: avoid_function_literals_in_foreach_calls
+        allApplicationsHighight.forEach((applicationHighlight) {
+          // Get Each applicationHighlight as Map
+          Map<String, dynamic> currentItem =
+              applicationHighlight as Map<String, dynamic>;
+
+          // Create the DTO
+          ApplicationHighlightDto dto =
+              ApplicationHighlightDto.fromJson(currentItem);
+
+          // Add to array
+          allApplicationHighlightDtos.add(dto);
+        });
+
+        return right(allApplicationHighlightDtos);
+      } else {
+        return left(const ApplicationFailure.serverError());
+      }
+    }
   }
 
   @override
