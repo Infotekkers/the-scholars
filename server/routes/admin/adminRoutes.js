@@ -3,6 +3,7 @@ const { application } = require("express");
 const express = require("express");
 const router = express.Router();
 const fs = require("fs");
+const path = require("path");
 
 // Import pdf creator
 const pdf = require("pdf-creator-node");
@@ -54,7 +55,10 @@ router.get("/application.:applicationId", async (req, res) => {
 
 router.get("/application/download/:applicationId", async (req, res) => {
   try {
-    const html = fs.readFileSync("../../templates/template.html", "utf8");
+    const html = fs.readFileSync(
+      path.resolve(__dirname, "../", "../", "templates/template.html"),
+      "utf8"
+    );
     const id = req.params.applicationId;
 
     const selectedApplication = await Application.findById(id);
@@ -65,12 +69,18 @@ router.get("/application/download/:applicationId", async (req, res) => {
       border: "10mm",
     };
 
+    let applicant = [
+      {
+        fullName: `${selectedApplication["fullName"]}`,
+      },
+    ];
+
     let document = {
       html: html,
       data: {
-        application: selectedApplication,
+        applicant: applicant,
       },
-      path: `../../output/${id}.pdf`,
+      path: `./output/${selectedApplication["fullName"]}.pdf`,
     };
 
     pdf
@@ -81,7 +91,18 @@ router.get("/application/download/:applicationId", async (req, res) => {
       .catch((e) => {
         console.error(e);
       });
-      
+
+    const output = await fs.readFileSync(
+      path.resolve(
+        __dirname,
+        "../",
+        "../",
+        `output/${selectedApplication["fullName"]}.pdf`
+      ),
+      "utf8"
+    );
+
+    res.status(200).send("Pdf downloaded!").download(output);
   } catch (e) {
     handleError(e);
     res.status(500).send("Error");

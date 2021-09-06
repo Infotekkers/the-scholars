@@ -221,40 +221,40 @@ router.get("/admission-status", async (req, res) => {
 
 router.post("/application", async (req, res) => {
   console.log("Launched");
-  const receivedApplication = JSON.parse(req.body.application);
+  const receivedApplication = await req.body.application;
 
-  // Get School Transcript
-  const schoolTranscriptContent = receivedApplication.schoolTranscript;
-  const schoolTranscriptFileName = makeFile(schoolTranscriptContent);
+  // // Get School Transcript
+  // const schoolTranscriptContent = receivedApplication.schoolTranscript;
+  // const schoolTranscriptFileName = makeFile(schoolTranscriptContent);
 
-  // Main essay
-  const mainEssayContent = receivedApplication.mainEssay;
-  const mainEssayFileName = makeFile(mainEssayContent);
+  // // Main essay
+  // const mainEssayContent = receivedApplication.mainEssay;
+  // const mainEssayFileName = makeFile(mainEssayContent);
 
-  // Letter of Reccomendation
-  const recommendationLetterContent = receivedApplication.reccomendationLetter;
-  const reccomendationLetterFileName = makeFile(recommendationLetterContent);
+  // // Letter of Reccomendation
+  // const recommendationLetterContent = receivedApplication.reccomendationLetter;
+  // const reccomendationLetterFileName = makeFile(recommendationLetterContent);
 
-  // Extra Certification
-  const extraCertificationContent = receivedApplication.extraCertification;
-  const extraCertificationFileName = makeFile(extraCertificationContent);
+  // // Extra Certification
+  // const extraCertificationContent = receivedApplication.extraCertification;
+  // const extraCertificationFileName = makeFile(extraCertificationContent);
 
   // Create new Application Model
   const newApplication = new Application({
     fullName: receivedApplication.fullName,
-    birthDate: receivedApplication.birthDate,
-    gender: receivedApplication.gender,
-    location: receivedApplication.location,
-    phoneNumber: receivedApplication.phoneNumber,
-    schoolTranscript: schoolTranscriptFileName,
-    mainEssay: mainEssayFileName,
-    extraEssay: receivedApplication.extraEssay,
-    proficiencyTest: receivedApplication.proficencyTest,
-    extraCertification: extraCertificationFileName,
-    recommendationLetter: reccomendationLetterFileName,
-    departmentSelection: receivedApplication.departmentSelection,
-    militaryFamilyStatus: receivedApplication.militaryFamilyStatus,
-    universityFamilyStatus: receivedApplication.universityFamilyStatus,
+    // birthDate: receivedApplication.birthDate,
+    // gender: receivedApplication.gender,
+    // location: receivedApplication.location,
+    // phoneNumber: receivedApplication.phoneNumber,
+    // schoolTranscript: schoolTranscriptFileName,
+    // mainEssay: mainEssayFileName,
+    // extraEssay: receivedApplication.extraEssay,
+    // proficiencyTest: receivedApplication.proficencyTest,
+    // extraCertification: extraCertificationFileName,
+    // recommendationLetter: reccomendationLetterFileName,
+    // departmentSelection: receivedApplication.departmentSelection,
+    // militaryFamilyStatus: receivedApplication.militaryFamilyStatus,
+    // universityFamilyStatus: receivedApplication.universityFamilyStatus,
   });
 
   console.log(newApplication);

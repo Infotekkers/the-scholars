@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Application</title>
@@ -11,14 +11,14 @@
     <style></style>
   </head>
   <body>
-    {{#each application}}
+    {{#each applicant}}
     <main>
       <section id="basic-info" class="">
         <div class="profile-image"></div>
         <div class="basic-info__description">
           <div class="basic-info__contact">
             <label for="">Name</label>
-            <h3>{{}}</h3>
+            <h3>{{this.fullName}}</h3>
 
             <label for="">Phone number</label>
             <h3>+251 939507783</h3>
@@ -53,23 +53,26 @@
           <label class="large-label large-label--smaller" for="">Main</label>
           <div class="essay__main"></div>
 
-          <label class="large-label large-label--smaller" for="">Supplement</label>
+          <label class="large-label large-label--smaller" for=""
+            >Supplement</label
+          >
           <div class="essay__supplement"></div>
         </div>
 
         <label for="" class="large-label">National Exams</label>
         <div class="testing">
-          <label for="" class="large-label large-label--smaller">National Exams</label>
+          <label for="" class="large-label large-label--smaller"
+            >National Exams</label
+          >
           <div class="testing__national-exams"></div>
 
           <label for="" class="large-label large-label--smaller">SAT</label>
           <div class="testing__SAT"></div>
         </div>
-        <div class="extra-curricular">
-
-        </div>
+        <div class="extra-curricular"></div>
         <div class="department-choice"></div>
       </section>
     </main>
+    {{/each}}
   </body>
 </html>
