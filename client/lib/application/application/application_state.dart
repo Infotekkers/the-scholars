@@ -11,6 +11,7 @@ abstract class ApplicationState with _$ApplicationState {
     required RecomendationLetter recomendationLetter,
     required MilitaryFamilyStatus militaryFamilyStatus,
     required UniversityFamilyStatus universityFamilyStatus,
+    required DepartmentSelection departmentSelection,
     required bool isSubmitting,
     required bool showErrorMessages,
     required bool isApplicationCached,
@@ -20,6 +21,8 @@ abstract class ApplicationState with _$ApplicationState {
   }) = _ApplicationState;
 
   factory ApplicationState.initial() => ApplicationState(
+        departmentSelection:
+            DepartmentSelection(departmentSelection: "Computer Science"),
         schoolTranscript:
             SchoolTranscript(schoolTranscriptPath: "Please Select a File"),
         mainEssay: MainEssay(mainEssayPath: "Please Select a File"),

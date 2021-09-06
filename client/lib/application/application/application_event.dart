@@ -37,6 +37,10 @@ class ApplicationEvent with _$ApplicationEvent {
   const factory ApplicationEvent.proficiencyUrlChanged(String testUrl) =
       _ProficiencyChanged;
 
+  // Event for Department Selection
+  const factory ApplicationEvent.departmentSelectionChanged(
+      String departmentSelection) = _DepartmentSelectionChanged;
+
 // Event for Submission
   const factory ApplicationEvent.submitApplicationClicked() =
       _SubmitApplicationClicked;

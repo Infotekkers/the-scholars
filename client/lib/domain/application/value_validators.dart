@@ -85,18 +85,21 @@ Either<ValueFailure<String>, String> validateExtraEssay(
   }
 }
 
-Either<ValueFailure<String>, List> validateDepartmentSelection(
-    {required List departmentSelection}) {
-  // ignore: todo
-  // TODO : Implement Validation
-  return right([]);
+Either<ValueFailure<String>, String> validateDepartmentSelection(
+    {required String departmentSelection}) {
+  if (!departmentSelection.isNotEmpty) {
+    return left(const ValueFailure.emptyDepartmentSelection());
+  }
+  return right(departmentSelection);
 }
 
-Either<ValueFailure<String>, String> validateAdmissionStatus(String admissionStatusStr) {
+Either<ValueFailure<String>, String> validateAdmissionStatus(
+    String admissionStatusStr) {
   const validStatus = ["", "pending", "accepted", "rejected"];
 
   if (validStatus.contains(admissionStatusStr)) {
     return right(admissionStatusStr);
   }
-  return left(ValueFailure.invalidAdmissionStatus(failedValue: admissionStatusStr));
+  return left(
+      ValueFailure.invalidAdmissionStatus(failedValue: admissionStatusStr));
 }

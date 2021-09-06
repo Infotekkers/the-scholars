@@ -125,8 +125,7 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
           application = Application(
             schoolTranscript: state.schoolTranscript,
             mainEssay: state.mainEssay,
-            departmentSelection: DepartmentSelection(
-                departmentSelection: const ["1", "2", "3", "4"]),
+            departmentSelection: state.departmentSelection,
             extraCertification: state.extraCertification,
             proficencyTest: state.proficencyTest,
             extraEssay: state.extraEssay,
@@ -232,8 +231,7 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
           final Application application = Application(
             schoolTranscript: state.schoolTranscript,
             mainEssay: state.mainEssay,
-            departmentSelection:
-                DepartmentSelection(departmentSelection: const []),
+            departmentSelection: state.departmentSelection,
             extraCertification: state.extraCertification,
             extraEssay: state.extraEssay,
             militaryFamilyStatus: state.militaryFamilyStatus,
@@ -347,6 +345,12 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
         }
         yield state.copyWith(
           isApplicationCached: isApplicationCached,
+        );
+      },
+      departmentSelectionChanged: (e) async* {
+        yield state.copyWith(
+          departmentSelection:
+              DepartmentSelection(departmentSelection: e.departmentSelection),
         );
       },
     );

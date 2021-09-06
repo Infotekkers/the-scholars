@@ -221,7 +221,7 @@ class ApiApplicationRepository implements IApplicationRepository {
 
   @override
   void clearSQLDB() {
-    // TODO: implement clearSQLDB
+    dbService.clearDB();
   }
 
   @override

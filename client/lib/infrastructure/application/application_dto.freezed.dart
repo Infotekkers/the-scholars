@@ -24,7 +24,7 @@ class _$ApplicationDtoTearOff {
       {required String schoolTranscript,
       required String mainEssay,
       required String extraEssay,
-      required List<dynamic> departmentSelection,
+      required String departmentSelection,
       required String extraCertification,
       required String proficencyTest,
       required String recomendationLetter,
@@ -56,7 +56,7 @@ mixin _$ApplicationDto {
   String get schoolTranscript => throw _privateConstructorUsedError;
   String get mainEssay => throw _privateConstructorUsedError;
   String get extraEssay => throw _privateConstructorUsedError;
-  List<dynamic> get departmentSelection => throw _privateConstructorUsedError;
+  String get departmentSelection => throw _privateConstructorUsedError;
   String get extraCertification => throw _privateConstructorUsedError;
   String get proficencyTest => throw _privateConstructorUsedError;
   String get recomendationLetter => throw _privateConstructorUsedError;
@@ -78,7 +78,7 @@ abstract class $ApplicationDtoCopyWith<$Res> {
       {String schoolTranscript,
       String mainEssay,
       String extraEssay,
-      List<dynamic> departmentSelection,
+      String departmentSelection,
       String extraCertification,
       String proficencyTest,
       String recomendationLetter,
@@ -123,7 +123,7 @@ class _$ApplicationDtoCopyWithImpl<$Res>
       departmentSelection: departmentSelection == freezed
           ? _value.departmentSelection
           : departmentSelection // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as String,
       extraCertification: extraCertification == freezed
           ? _value.extraCertification
           : extraCertification // ignore: cast_nullable_to_non_nullable
@@ -159,7 +159,7 @@ abstract class _$ApplicationDtoCopyWith<$Res>
       {String schoolTranscript,
       String mainEssay,
       String extraEssay,
-      List<dynamic> departmentSelection,
+      String departmentSelection,
       String extraCertification,
       String proficencyTest,
       String recomendationLetter,
@@ -206,7 +206,7 @@ class __$ApplicationDtoCopyWithImpl<$Res>
       departmentSelection: departmentSelection == freezed
           ? _value.departmentSelection
           : departmentSelection // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as String,
       extraCertification: extraCertification == freezed
           ? _value.extraCertification
           : extraCertification // ignore: cast_nullable_to_non_nullable
@@ -256,7 +256,7 @@ class _$_ApplicationDto extends _ApplicationDto {
   @override
   final String extraEssay;
   @override
-  final List<dynamic> departmentSelection;
+  final String departmentSelection;
   @override
   final String extraCertification;
   @override
@@ -335,7 +335,7 @@ abstract class _ApplicationDto extends ApplicationDto {
       {required String schoolTranscript,
       required String mainEssay,
       required String extraEssay,
-      required List<dynamic> departmentSelection,
+      required String departmentSelection,
       required String extraCertification,
       required String proficencyTest,
       required String recomendationLetter,
@@ -353,7 +353,7 @@ abstract class _ApplicationDto extends ApplicationDto {
   @override
   String get extraEssay => throw _privateConstructorUsedError;
   @override
-  List<dynamic> get departmentSelection => throw _privateConstructorUsedError;
+  String get departmentSelection => throw _privateConstructorUsedError;
   @override
   String get extraCertification => throw _privateConstructorUsedError;
   @override
