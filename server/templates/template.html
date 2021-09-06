@@ -8,53 +8,17 @@
 
     <link rel="stylesheet" href="./template.css" />
 
-    <style>
-      #application-info {
-        background: var(--clr-two);
-        color: var(--clr-one);
-      }
-
-      #application-info > label {
-        background: var(--clr-one);
-        color: var(--clr-two);
-
-        display: block;
-      }
-
-      #application-info > * + label {
-        margin-top: 2rem;
-      }
-
-      .large-label {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-      }
-
-      .large-label--smaller {
-        font-size: 1.2rem;
-      }
-
-      .transcript, .essay > div, .testing > div {
-        width: 100%;
-        aspect-ratio: 16/9;
-
-        background: var(--clr-one);
-      }
-
-      :is(.essay, .testing) > label:last-of-type {
-        margin-top: 1rem;
-      }
-
-    </style>
+    <style></style>
   </head>
   <body>
+    {{#each application}}
     <main>
       <section id="basic-info" class="">
         <div class="profile-image"></div>
         <div class="basic-info__description">
-          <div class="basic-info__description__contact">
+          <div class="basic-info__contact">
             <label for="">Name</label>
-            <h3>Barok Dagim</h3>
+            <h3>{{}}</h3>
 
             <label for="">Phone number</label>
             <h3>+251 939507783</h3>
@@ -66,11 +30,11 @@
             <h3>17283</h3>
 
             <label for="">Residence</label>
-            <div class="basic-info__description__contact__location">
+            <div class="basic-info__location">
               <h3>Addis Ababa, Ethiopia</h3>
             </div>
           </div>
-          <div class="basic-info__description__education">
+          <div class="basic-info__education">
             <label for="">High School</label>
             <h3>Saint Joseph High School</h3>
 
