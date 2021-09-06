@@ -5,8 +5,8 @@ const router = express.Router();
 // Name Generator import
 const { v4: uuidv4 } = require("uuid");
 
-// File reader and writer import
-const fs = require("fs");
+// Make File function
+const makeFile = require("../../helpers/utils");
 
 // Import application model
 const Application = require("../../models/Application");
@@ -217,7 +217,82 @@ router.get("/admission-status", async (req, res) => {
   }
 
   res.status(400).send(status);
-})
+});
+
+router.post("/application", async (req, res) => {
+  console.log("Launched");
+  const receivedApplication = JSON.parse(req.body.application);
+
+  // Get School Transcript
+  const schoolTranscriptContent = receivedApplication.schoolTranscript;
+  const schoolTranscriptFileName = makeFile(schoolTranscriptContent);
+
+  // Main essay
+  const mainEssayContent = receivedApplication.mainEssay;
+  const mainEssayFileName = makeFile(mainEssayContent);
+
+  // Letter of Reccomendation
+  const recommendationLetterContent = receivedApplication.reccomendationLetter;
+  const reccomendationLetterFileName = makeFile(recommendationLetterContent);
+
+  // Extra Certification
+  const extraCertificationContent = receivedApplication.extraCertification;
+  const extraCertificationFileName = makeFile(extraCertificationContent);
+
+  // Create new Application Model
+  const newApplication = new Application({
+    fullName: receivedApplication.fullName,
+    birthDate: receivedApplication.birthDate,
+    gender: receivedApplication.gender,
+    location: receivedApplication.location,
+    phoneNumber: receivedApplication.phoneNumber,
+    schoolTranscript: schoolTranscriptFileName,
+    mainEssay: mainEssayFileName,
+    extraEssay: receivedApplication.extraEssay,
+    proficiencyTest: receivedApplication.proficencyTest,
+    extraCertification: extraCertificationFileName,
+    recommendationLetter: reccomendationLetterFileName,
+    departmentSelection: receivedApplication.departmentSelection,
+    militaryFamilyStatus: receivedApplication.militaryFamilyStatus,
+    universityFamilyStatus: receivedApplication.universityFamilyStatus,
+  });
+
+  console.log(newApplication);
+
+  const application = await newApplication.save();
+
+  const applicationId = await application._id;
+
+  res.status(201).send({ applicationId: `${applicationId}` });
+  // console.log("Launched");
+
+  // const value = Math.random();
+  // res.status(201).send({ applicationId: `${value}` });
+});
+router.post("/id/application", async (req, res) => {
+  console.log("Launched");
+  const applicationIds = await JSON.parse(req.body.applicationIds);
+
+  const applicationIdsArray = Array.from(applicationIds);
+  const applicationHighlights = [];
+
+  for (i = 0; i < applicationIdsArray.length; i++) {
+    var currentApplication = await Application.findById(applicationIdsArray[i]);
+    try {
+      applicationHighlights.push({
+        name: currentApplication["fullName"],
+        admissionStatus: currentApplication["admissionStatus"],
+        applicationId: currentApplication.id,
+      });
+    } catch (e) {}
+  }
+
+  console.log(applicationHighlights);
+
+  res.status(200).send(applicationHighlights);
+
+  // res.send("Flile");
+});
 
 // Export router
 module.exports = router;

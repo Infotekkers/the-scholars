@@ -19,9 +19,22 @@ class ApplicationCards extends StatelessWidget {
             currentApplicationHighlight.applicationId,
             style: const TextStyle(fontSize: 8),
           ),
-          trailing: Text(
-            currentApplicationHighlight.admissionStatus,
-          ),
+          trailing: currentApplicationHighlight.admissionStatus.toString() ==
+                  "pending"
+              ? const Icon(
+                  Icons.lock_clock,
+                  color: Colors.amber,
+                )
+              : currentApplicationHighlight.admissionStatus.toString() ==
+                      "rejected"
+                  ? const Icon(
+                      Icons.close,
+                      color: Colors.red,
+                    )
+                  : const Icon(
+                      Icons.done,
+                      color: Colors.green,
+                    ),
           // leading: const Text("All"),
         ),
       ),
