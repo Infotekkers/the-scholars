@@ -23,6 +23,8 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
     required T failedValue,
   }) = ExceedingLength<T>;
 
+  const factory ValueFailure.invalidRole() = _InvalidRole;
+
   // ignore: slash_for_doc_comments
   /**
    * Application Failures
