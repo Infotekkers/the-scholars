@@ -138,17 +138,17 @@ class SecondApplicationPage extends StatelessWidget {
                   // TODO: Activate
 
                   // Will be activated when other components complete
-                  // Padding(
-                  //   padding: const EdgeInsets.fromLTRB(0, 25, 25, 25),
-                  //   child: InkWell(
-                  //     onTap: () {
-                  //       Navigator.pop(context);
-                  //       applicationBloc
-                  //         .add(const ApplicationEvent.checkCacheApplication());
-                  //     },
-                  //     child: const Icon(Icons.close),
-                  //   ),
-                  // ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 25, 25, 25),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.pop(context);
+                        applicationBloc.add(
+                            const ApplicationEvent.checkCacheApplication());
+                      },
+                      child: const Icon(Icons.close),
+                    ),
+                  ),
                   // Proficiency Test Area
                   const FormLabel(textValue: "Proficiency Test URL"),
                   Container(
@@ -325,6 +325,50 @@ class SecondApplicationPage extends StatelessWidget {
                         ),
                         (r) => null,
                       ),
+                    ),
+                  ),
+
+                  // Department Selection Center
+                  const FormLabel(textValue: "Enrolled Department"),
+                  Container(
+                    padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                    child: Row(
+                      children: [
+                        DropdownButtonHideUnderline(
+                          child: DropdownButton<String>(
+                            focusColor: Colors.white,
+                            value: state.departmentSelection.value
+                                .fold((l) => "Computer Science", (r) => r),
+                            style: const TextStyle(color: Colors.white),
+                            iconEnabledColor: Colors.black,
+                            items: <String>[
+                              'Computer Science',
+                              'Software Engineering',
+                              'Information Technology',
+                              'Medical Science',
+                              'Accounting',
+                              'Marketing',
+                              'Other'
+                            ].map<DropdownMenuItem<String>>((String value) {
+                              return DropdownMenuItem<String>(
+                                value: value,
+                                child: Text(value,
+                                    style:
+                                        Theme.of(context).textTheme.bodyText2),
+                              );
+                            }).toList(),
+                            onChanged: (value) {
+                              if (value != null) {
+                                applicationBloc.add(
+                                  ApplicationEvent.departmentSelectionChanged(
+                                    value.toString(),
+                                  ),
+                                );
+                              }
+                            },
+                          ),
+                        ),
+                      ],
                     ),
                   ),
 

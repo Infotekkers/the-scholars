@@ -21,18 +21,22 @@ class ApiAdminApplicationRepository implements IAdminApplicationRepository {
   ApiAdminApplicationRepository.test(this.client);
 
   @override
-  Future<Either<ApplicationFailure, List<ApplicationHighlight>>> getServerApplicationsAdmin() async {
+  Future<Either<ApplicationFailure, List<ApplicationHighlight>>>
+      getServerApplicationsAdmin() async {
     final Uri url = Uri.parse("$_baseUrl/admin/applications");
-    List<ApplicationHighlight> applications = []; 
-    
+    List<ApplicationHighlight> applications = [];
+
     try {
-      final response = await client!.get(url);  
+      final response = await client!.get(url);
 
       if (response.statusCode == 200) {
         final List applicationsJson = jsonDecode(response.body) as List;
-        
+
         for (final applicationJson in applicationsJson) {
-          final ApplicationHighlight application = ApplicationHighlightDto.fromJson(applicationJson as Map<String, dynamic>).toDomain();
+          final ApplicationHighlight application =
+              ApplicationHighlightDto.fromJson(
+                      applicationJson as Map<String, dynamic>)
+                  .toDomain();
           applications.add(application);
         }
 
@@ -46,15 +50,16 @@ class ApiAdminApplicationRepository implements IAdminApplicationRepository {
   }
 
   @override
-  Future<Either<ApplicationFailure, Application>> getServerApplicationAdmin({required ApplicationId applicationId}) async {
+  Future<Either<ApplicationFailure, Application>> getServerApplicationAdmin(
+      {required ApplicationId applicationId}) async {
     final Uri url = Uri.parse("$_baseUrl/admin/application/$applicationId");
-  
+
     try {
-      final response = await client!.get(url);  
+      final response = await client!.get(url);
 
       if (response.statusCode == 200) {
-        final ApplicationDto applicationDto =
-           ApplicationDto.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+        final ApplicationDto applicationDto = ApplicationDto.fromJson(
+            jsonDecode(response.body) as Map<String, dynamic>);
         return right(applicationDto.toDomain());
       } else {
         return left(const ApplicationFailure.serverError());
@@ -65,13 +70,16 @@ class ApiAdminApplicationRepository implements IAdminApplicationRepository {
   }
 
   @override
-  Future<Either<ApplicationFailure, Unit>> updateServerApplicationAdmin({required ApplicationHighlight applicationHighlight}) async {
-    final applicationHighlightDto = ApplicationHighlightDto.fromDomain(applicationHighlight);
-    final Uri url = Uri.parse("$_baseUrl/admin/application/${applicationHighlightDto.applicationId}");
+  Future<Either<ApplicationFailure, Unit>> updateServerApplicationAdmin(
+      {required ApplicationHighlight applicationHighlight}) async {
+    final applicationHighlightDto =
+        ApplicationHighlightDto.fromDomain(applicationHighlight);
+    final Uri url = Uri.parse(
+        "$_baseUrl/admin/application/${applicationHighlightDto.applicationId}");
     final outgoingJson = applicationHighlightDto.toJson();
 
     try {
-      final response = await client!.put(url, body: outgoingJson);  
+      final response = await client!.put(url, body: outgoingJson);
 
       if (response.statusCode == 204) {
         return right(unit);
@@ -82,5 +90,4 @@ class ApiAdminApplicationRepository implements IAdminApplicationRepository {
       return left(const ApplicationFailure.noConnection());
     }
   }
-
 }

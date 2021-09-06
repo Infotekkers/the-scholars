@@ -10,9 +10,7 @@ Either<ValueFailure<String>, String> validateApplicationId(
 
 // General Selected File Validator
 Either<ValueFailure<String>, String> validateUploadFile(
-    // ignore: type_annotate_public_apis
-    {required String uploadFilePath,
-    required String ifFailedValue}) {
+    {required String uploadFilePath, required String ifFailedValue}) {
   if (uploadFilePath == "") {
     return left(
       ValueFailure.emptyFile(failedValue: ifFailedValue),
@@ -31,7 +29,11 @@ Either<ValueFailure<String>, String> validateUploadFile(
 
 Either<ValueFailure<String>, String> validateProficencyTest(
     {required String proficiencyUrl}) {
-  if (!Uri.parse(proficiencyUrl).isAbsolute) {
+  if (proficiencyUrl == "") {
+    return left(
+      const ValueFailure.emptyProficencyTestUrl(),
+    );
+  } else if (!Uri.parse(proficiencyUrl).isAbsolute) {
     return left(
       const ValueFailure.invalidProficencyTestUrl(),
     );
@@ -83,18 +85,21 @@ Either<ValueFailure<String>, String> validateExtraEssay(
   }
 }
 
-Either<ValueFailure<String>, List> validateDepartmentSelection(
-    {required List departmentSelection}) {
-  // ignore: todo
-  // TODO : Implement Validation
-  return right([]);
+Either<ValueFailure<String>, String> validateDepartmentSelection(
+    {required String departmentSelection}) {
+  if (!departmentSelection.isNotEmpty) {
+    return left(const ValueFailure.emptyDepartmentSelection());
+  }
+  return right(departmentSelection);
 }
 
-Either<ValueFailure<String>, String> validateAdmissionStatus(String admissionStatusStr) {
+Either<ValueFailure<String>, String> validateAdmissionStatus(
+    String admissionStatusStr) {
   const validStatus = ["", "pending", "accepted", "rejected"];
 
   if (validStatus.contains(admissionStatusStr)) {
     return right(admissionStatusStr);
   }
-  return left(ValueFailure.invalidAdmissionStatus(failedValue: admissionStatusStr));
+  return left(
+      ValueFailure.invalidAdmissionStatus(failedValue: admissionStatusStr));
 }

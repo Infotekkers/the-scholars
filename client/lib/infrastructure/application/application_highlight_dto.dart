@@ -10,18 +10,23 @@ part 'application_highlight_dto.g.dart';
 abstract class ApplicationHighlightDto with _$ApplicationHighlightDto {
   const ApplicationHighlightDto._();
 
-  const factory ApplicationHighlightDto({
-    required String applicationId,
-    required String name,
-    required String admissionStatus
-  }) = _ApplicationHighlightDto;
+  const factory ApplicationHighlightDto(
+      {required String applicationId,
+      required String name,
+      required String admissionStatus}) = _ApplicationHighlightDto;
 
   factory ApplicationHighlightDto.fromDomain(
           ApplicationHighlight applicationHighlight) =>
       ApplicationHighlightDto(
-          applicationId: applicationHighlight.applicationId.isValid() ? applicationHighlight.applicationId.getOrCrash() : "",
-          name: applicationHighlight.name.isValid() ? applicationHighlight.name.getOrCrash() : "",
-          admissionStatus: applicationHighlight.admissionStatus.isValid() ? applicationHighlight.admissionStatus.getOrCrash() : "",
+        applicationId: applicationHighlight.applicationId.isValid()
+            ? applicationHighlight.applicationId.getOrCrash()
+            : "",
+        name: applicationHighlight.name.isValid()
+            ? applicationHighlight.name.getOrCrash()
+            : "",
+        admissionStatus: applicationHighlight.admissionStatus.isValid()
+            ? applicationHighlight.admissionStatus.getOrCrash()
+            : "",
       );
 
   ApplicationHighlight toDomain() => ApplicationHighlight(

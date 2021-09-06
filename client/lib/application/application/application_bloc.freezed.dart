@@ -71,6 +71,13 @@ class _$ApplicationEventTearOff {
     );
   }
 
+  _DepartmentSelectionChanged departmentSelectionChanged(
+      String departmentSelection) {
+    return _DepartmentSelectionChanged(
+      departmentSelection,
+    );
+  }
+
   _SubmitApplicationClicked submitApplicationClicked() {
     return const _SubmitApplicationClicked();
   }
@@ -103,6 +110,8 @@ mixin _$ApplicationEvent {
     required TResult Function(String militaryStatus) militaryStatusChanged,
     required TResult Function(String universityStatus) universityStatusChanged,
     required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function(String departmentSelection)
+        departmentSelectionChanged,
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
@@ -120,6 +129,7 @@ mixin _$ApplicationEvent {
     TResult Function(String militaryStatus)? militaryStatusChanged,
     TResult Function(String universityStatus)? universityStatusChanged,
     TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function(String departmentSelection)? departmentSelectionChanged,
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
@@ -142,6 +152,8 @@ mixin _$ApplicationEvent {
     required TResult Function(_UniversityStatusChanged value)
         universityStatusChanged,
     required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_DepartmentSelectionChanged value)
+        departmentSelectionChanged,
     required TResult Function(_SubmitApplicationClicked value)
         submitApplicationClicked,
     required TResult Function(_FirstPageComplete value) firstPageComplete,
@@ -162,6 +174,8 @@ mixin _$ApplicationEvent {
     TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
     TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
     TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_DepartmentSelectionChanged value)?
+        departmentSelectionChanged,
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
@@ -239,6 +253,8 @@ class _$_InitialApplication implements _InitialApplication {
     required TResult Function(String militaryStatus) militaryStatusChanged,
     required TResult Function(String universityStatus) universityStatusChanged,
     required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function(String departmentSelection)
+        departmentSelectionChanged,
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
@@ -259,6 +275,7 @@ class _$_InitialApplication implements _InitialApplication {
     TResult Function(String militaryStatus)? militaryStatusChanged,
     TResult Function(String universityStatus)? universityStatusChanged,
     TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function(String departmentSelection)? departmentSelectionChanged,
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
@@ -287,6 +304,8 @@ class _$_InitialApplication implements _InitialApplication {
     required TResult Function(_UniversityStatusChanged value)
         universityStatusChanged,
     required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_DepartmentSelectionChanged value)
+        departmentSelectionChanged,
     required TResult Function(_SubmitApplicationClicked value)
         submitApplicationClicked,
     required TResult Function(_FirstPageComplete value) firstPageComplete,
@@ -310,6 +329,8 @@ class _$_InitialApplication implements _InitialApplication {
     TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
     TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
     TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_DepartmentSelectionChanged value)?
+        departmentSelectionChanged,
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
@@ -407,6 +428,8 @@ class _$_SchoolTranscriptChanged implements _SchoolTranscriptChanged {
     required TResult Function(String militaryStatus) militaryStatusChanged,
     required TResult Function(String universityStatus) universityStatusChanged,
     required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function(String departmentSelection)
+        departmentSelectionChanged,
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
@@ -427,6 +450,7 @@ class _$_SchoolTranscriptChanged implements _SchoolTranscriptChanged {
     TResult Function(String militaryStatus)? militaryStatusChanged,
     TResult Function(String universityStatus)? universityStatusChanged,
     TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function(String departmentSelection)? departmentSelectionChanged,
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
@@ -455,6 +479,8 @@ class _$_SchoolTranscriptChanged implements _SchoolTranscriptChanged {
     required TResult Function(_UniversityStatusChanged value)
         universityStatusChanged,
     required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_DepartmentSelectionChanged value)
+        departmentSelectionChanged,
     required TResult Function(_SubmitApplicationClicked value)
         submitApplicationClicked,
     required TResult Function(_FirstPageComplete value) firstPageComplete,
@@ -478,6 +504,8 @@ class _$_SchoolTranscriptChanged implements _SchoolTranscriptChanged {
     TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
     TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
     TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_DepartmentSelectionChanged value)?
+        departmentSelectionChanged,
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
@@ -584,6 +612,8 @@ class _$_ReccomendationLetterChanged implements _ReccomendationLetterChanged {
     required TResult Function(String militaryStatus) militaryStatusChanged,
     required TResult Function(String universityStatus) universityStatusChanged,
     required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function(String departmentSelection)
+        departmentSelectionChanged,
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
@@ -604,6 +634,7 @@ class _$_ReccomendationLetterChanged implements _ReccomendationLetterChanged {
     TResult Function(String militaryStatus)? militaryStatusChanged,
     TResult Function(String universityStatus)? universityStatusChanged,
     TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function(String departmentSelection)? departmentSelectionChanged,
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
@@ -632,6 +663,8 @@ class _$_ReccomendationLetterChanged implements _ReccomendationLetterChanged {
     required TResult Function(_UniversityStatusChanged value)
         universityStatusChanged,
     required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_DepartmentSelectionChanged value)
+        departmentSelectionChanged,
     required TResult Function(_SubmitApplicationClicked value)
         submitApplicationClicked,
     required TResult Function(_FirstPageComplete value) firstPageComplete,
@@ -655,6 +688,8 @@ class _$_ReccomendationLetterChanged implements _ReccomendationLetterChanged {
     TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
     TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
     TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_DepartmentSelectionChanged value)?
+        departmentSelectionChanged,
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
@@ -755,6 +790,8 @@ class _$_MainEssayChanged implements _MainEssayChanged {
     required TResult Function(String militaryStatus) militaryStatusChanged,
     required TResult Function(String universityStatus) universityStatusChanged,
     required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function(String departmentSelection)
+        departmentSelectionChanged,
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
@@ -775,6 +812,7 @@ class _$_MainEssayChanged implements _MainEssayChanged {
     TResult Function(String militaryStatus)? militaryStatusChanged,
     TResult Function(String universityStatus)? universityStatusChanged,
     TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function(String departmentSelection)? departmentSelectionChanged,
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
@@ -803,6 +841,8 @@ class _$_MainEssayChanged implements _MainEssayChanged {
     required TResult Function(_UniversityStatusChanged value)
         universityStatusChanged,
     required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_DepartmentSelectionChanged value)
+        departmentSelectionChanged,
     required TResult Function(_SubmitApplicationClicked value)
         submitApplicationClicked,
     required TResult Function(_FirstPageComplete value) firstPageComplete,
@@ -826,6 +866,8 @@ class _$_MainEssayChanged implements _MainEssayChanged {
     TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
     TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
     TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_DepartmentSelectionChanged value)?
+        departmentSelectionChanged,
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
@@ -929,6 +971,8 @@ class _$_ExtraCertificationChanged implements _ExtraCertificationChanged {
     required TResult Function(String militaryStatus) militaryStatusChanged,
     required TResult Function(String universityStatus) universityStatusChanged,
     required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function(String departmentSelection)
+        departmentSelectionChanged,
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
@@ -949,6 +993,7 @@ class _$_ExtraCertificationChanged implements _ExtraCertificationChanged {
     TResult Function(String militaryStatus)? militaryStatusChanged,
     TResult Function(String universityStatus)? universityStatusChanged,
     TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function(String departmentSelection)? departmentSelectionChanged,
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
@@ -977,6 +1022,8 @@ class _$_ExtraCertificationChanged implements _ExtraCertificationChanged {
     required TResult Function(_UniversityStatusChanged value)
         universityStatusChanged,
     required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_DepartmentSelectionChanged value)
+        departmentSelectionChanged,
     required TResult Function(_SubmitApplicationClicked value)
         submitApplicationClicked,
     required TResult Function(_FirstPageComplete value) firstPageComplete,
@@ -1000,6 +1047,8 @@ class _$_ExtraCertificationChanged implements _ExtraCertificationChanged {
     TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
     TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
     TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_DepartmentSelectionChanged value)?
+        departmentSelectionChanged,
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
@@ -1100,6 +1149,8 @@ class _$_ExtraEssay implements _ExtraEssay {
     required TResult Function(String militaryStatus) militaryStatusChanged,
     required TResult Function(String universityStatus) universityStatusChanged,
     required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function(String departmentSelection)
+        departmentSelectionChanged,
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
@@ -1120,6 +1171,7 @@ class _$_ExtraEssay implements _ExtraEssay {
     TResult Function(String militaryStatus)? militaryStatusChanged,
     TResult Function(String universityStatus)? universityStatusChanged,
     TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function(String departmentSelection)? departmentSelectionChanged,
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
@@ -1148,6 +1200,8 @@ class _$_ExtraEssay implements _ExtraEssay {
     required TResult Function(_UniversityStatusChanged value)
         universityStatusChanged,
     required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_DepartmentSelectionChanged value)
+        departmentSelectionChanged,
     required TResult Function(_SubmitApplicationClicked value)
         submitApplicationClicked,
     required TResult Function(_FirstPageComplete value) firstPageComplete,
@@ -1171,6 +1225,8 @@ class _$_ExtraEssay implements _ExtraEssay {
     TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
     TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
     TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_DepartmentSelectionChanged value)?
+        departmentSelectionChanged,
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
@@ -1272,6 +1328,8 @@ class _$_MilitaryStatusChanged implements _MilitaryStatusChanged {
     required TResult Function(String militaryStatus) militaryStatusChanged,
     required TResult Function(String universityStatus) universityStatusChanged,
     required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function(String departmentSelection)
+        departmentSelectionChanged,
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
@@ -1292,6 +1350,7 @@ class _$_MilitaryStatusChanged implements _MilitaryStatusChanged {
     TResult Function(String militaryStatus)? militaryStatusChanged,
     TResult Function(String universityStatus)? universityStatusChanged,
     TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function(String departmentSelection)? departmentSelectionChanged,
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
@@ -1320,6 +1379,8 @@ class _$_MilitaryStatusChanged implements _MilitaryStatusChanged {
     required TResult Function(_UniversityStatusChanged value)
         universityStatusChanged,
     required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_DepartmentSelectionChanged value)
+        departmentSelectionChanged,
     required TResult Function(_SubmitApplicationClicked value)
         submitApplicationClicked,
     required TResult Function(_FirstPageComplete value) firstPageComplete,
@@ -1343,6 +1404,8 @@ class _$_MilitaryStatusChanged implements _MilitaryStatusChanged {
     TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
     TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
     TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_DepartmentSelectionChanged value)?
+        departmentSelectionChanged,
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
@@ -1446,6 +1509,8 @@ class _$_UniversityStatusChanged implements _UniversityStatusChanged {
     required TResult Function(String militaryStatus) militaryStatusChanged,
     required TResult Function(String universityStatus) universityStatusChanged,
     required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function(String departmentSelection)
+        departmentSelectionChanged,
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
@@ -1466,6 +1531,7 @@ class _$_UniversityStatusChanged implements _UniversityStatusChanged {
     TResult Function(String militaryStatus)? militaryStatusChanged,
     TResult Function(String universityStatus)? universityStatusChanged,
     TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function(String departmentSelection)? departmentSelectionChanged,
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
@@ -1494,6 +1560,8 @@ class _$_UniversityStatusChanged implements _UniversityStatusChanged {
     required TResult Function(_UniversityStatusChanged value)
         universityStatusChanged,
     required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_DepartmentSelectionChanged value)
+        departmentSelectionChanged,
     required TResult Function(_SubmitApplicationClicked value)
         submitApplicationClicked,
     required TResult Function(_FirstPageComplete value) firstPageComplete,
@@ -1517,6 +1585,8 @@ class _$_UniversityStatusChanged implements _UniversityStatusChanged {
     TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
     TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
     TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_DepartmentSelectionChanged value)?
+        departmentSelectionChanged,
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
@@ -1616,6 +1686,8 @@ class _$_ProficiencyChanged implements _ProficiencyChanged {
     required TResult Function(String militaryStatus) militaryStatusChanged,
     required TResult Function(String universityStatus) universityStatusChanged,
     required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function(String departmentSelection)
+        departmentSelectionChanged,
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
@@ -1636,6 +1708,7 @@ class _$_ProficiencyChanged implements _ProficiencyChanged {
     TResult Function(String militaryStatus)? militaryStatusChanged,
     TResult Function(String universityStatus)? universityStatusChanged,
     TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function(String departmentSelection)? departmentSelectionChanged,
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
@@ -1664,6 +1737,8 @@ class _$_ProficiencyChanged implements _ProficiencyChanged {
     required TResult Function(_UniversityStatusChanged value)
         universityStatusChanged,
     required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_DepartmentSelectionChanged value)
+        departmentSelectionChanged,
     required TResult Function(_SubmitApplicationClicked value)
         submitApplicationClicked,
     required TResult Function(_FirstPageComplete value) firstPageComplete,
@@ -1687,6 +1762,8 @@ class _$_ProficiencyChanged implements _ProficiencyChanged {
     TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
     TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
     TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_DepartmentSelectionChanged value)?
+        departmentSelectionChanged,
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
@@ -1706,6 +1783,188 @@ abstract class _ProficiencyChanged implements ApplicationEvent {
   @JsonKey(ignore: true)
   _$ProficiencyChangedCopyWith<_ProficiencyChanged> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$DepartmentSelectionChangedCopyWith<$Res> {
+  factory _$DepartmentSelectionChangedCopyWith(
+          _DepartmentSelectionChanged value,
+          $Res Function(_DepartmentSelectionChanged) then) =
+      __$DepartmentSelectionChangedCopyWithImpl<$Res>;
+  $Res call({String departmentSelection});
+}
+
+/// @nodoc
+class __$DepartmentSelectionChangedCopyWithImpl<$Res>
+    extends _$ApplicationEventCopyWithImpl<$Res>
+    implements _$DepartmentSelectionChangedCopyWith<$Res> {
+  __$DepartmentSelectionChangedCopyWithImpl(_DepartmentSelectionChanged _value,
+      $Res Function(_DepartmentSelectionChanged) _then)
+      : super(_value, (v) => _then(v as _DepartmentSelectionChanged));
+
+  @override
+  _DepartmentSelectionChanged get _value =>
+      super._value as _DepartmentSelectionChanged;
+
+  @override
+  $Res call({
+    Object? departmentSelection = freezed,
+  }) {
+    return _then(_DepartmentSelectionChanged(
+      departmentSelection == freezed
+          ? _value.departmentSelection
+          : departmentSelection // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_DepartmentSelectionChanged implements _DepartmentSelectionChanged {
+  const _$_DepartmentSelectionChanged(this.departmentSelection);
+
+  @override
+  final String departmentSelection;
+
+  @override
+  String toString() {
+    return 'ApplicationEvent.departmentSelectionChanged(departmentSelection: $departmentSelection)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _DepartmentSelectionChanged &&
+            (identical(other.departmentSelection, departmentSelection) ||
+                const DeepCollectionEquality()
+                    .equals(other.departmentSelection, departmentSelection)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(departmentSelection);
+
+  @JsonKey(ignore: true)
+  @override
+  _$DepartmentSelectionChangedCopyWith<_DepartmentSelectionChanged>
+      get copyWith => __$DepartmentSelectionChangedCopyWithImpl<
+          _DepartmentSelectionChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialEvent,
+    required TResult Function(String schoolTranscriptPath)
+        schoolTranscriptChanged,
+    required TResult Function(String reccomendationLetterPath)
+        reccomnedationLetterChanged,
+    required TResult Function(String mainEssayPath) mainEssayChanged,
+    required TResult Function(String extraCertificationPath)
+        extraCertificationChanged,
+    required TResult Function(String extraEssay) extraEssayChanged,
+    required TResult Function(String militaryStatus) militaryStatusChanged,
+    required TResult Function(String universityStatus) universityStatusChanged,
+    required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function(String departmentSelection)
+        departmentSelectionChanged,
+    required TResult Function() submitApplicationClicked,
+    required TResult Function() firstPageComplete,
+    required TResult Function() checkCacheApplication,
+  }) {
+    return departmentSelectionChanged(departmentSelection);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialEvent,
+    TResult Function(String schoolTranscriptPath)? schoolTranscriptChanged,
+    TResult Function(String reccomendationLetterPath)?
+        reccomnedationLetterChanged,
+    TResult Function(String mainEssayPath)? mainEssayChanged,
+    TResult Function(String extraCertificationPath)? extraCertificationChanged,
+    TResult Function(String extraEssay)? extraEssayChanged,
+    TResult Function(String militaryStatus)? militaryStatusChanged,
+    TResult Function(String universityStatus)? universityStatusChanged,
+    TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function(String departmentSelection)? departmentSelectionChanged,
+    TResult Function()? submitApplicationClicked,
+    TResult Function()? firstPageComplete,
+    TResult Function()? checkCacheApplication,
+    required TResult orElse(),
+  }) {
+    if (departmentSelectionChanged != null) {
+      return departmentSelectionChanged(departmentSelection);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialApplication value) initialEvent,
+    required TResult Function(_SchoolTranscriptChanged value)
+        schoolTranscriptChanged,
+    required TResult Function(_ReccomendationLetterChanged value)
+        reccomnedationLetterChanged,
+    required TResult Function(_MainEssayChanged value) mainEssayChanged,
+    required TResult Function(_ExtraCertificationChanged value)
+        extraCertificationChanged,
+    required TResult Function(_ExtraEssay value) extraEssayChanged,
+    required TResult Function(_MilitaryStatusChanged value)
+        militaryStatusChanged,
+    required TResult Function(_UniversityStatusChanged value)
+        universityStatusChanged,
+    required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_DepartmentSelectionChanged value)
+        departmentSelectionChanged,
+    required TResult Function(_SubmitApplicationClicked value)
+        submitApplicationClicked,
+    required TResult Function(_FirstPageComplete value) firstPageComplete,
+    required TResult Function(_CheckApplicationCache value)
+        checkCacheApplication,
+  }) {
+    return departmentSelectionChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialApplication value)? initialEvent,
+    TResult Function(_SchoolTranscriptChanged value)? schoolTranscriptChanged,
+    TResult Function(_ReccomendationLetterChanged value)?
+        reccomnedationLetterChanged,
+    TResult Function(_MainEssayChanged value)? mainEssayChanged,
+    TResult Function(_ExtraCertificationChanged value)?
+        extraCertificationChanged,
+    TResult Function(_ExtraEssay value)? extraEssayChanged,
+    TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
+    TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
+    TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_DepartmentSelectionChanged value)?
+        departmentSelectionChanged,
+    TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    TResult Function(_FirstPageComplete value)? firstPageComplete,
+    TResult Function(_CheckApplicationCache value)? checkCacheApplication,
+    required TResult orElse(),
+  }) {
+    if (departmentSelectionChanged != null) {
+      return departmentSelectionChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DepartmentSelectionChanged implements ApplicationEvent {
+  const factory _DepartmentSelectionChanged(String departmentSelection) =
+      _$_DepartmentSelectionChanged;
+
+  String get departmentSelection => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$DepartmentSelectionChangedCopyWith<_DepartmentSelectionChanged>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1761,6 +2020,8 @@ class _$_SubmitApplicationClicked implements _SubmitApplicationClicked {
     required TResult Function(String militaryStatus) militaryStatusChanged,
     required TResult Function(String universityStatus) universityStatusChanged,
     required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function(String departmentSelection)
+        departmentSelectionChanged,
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
@@ -1781,6 +2042,7 @@ class _$_SubmitApplicationClicked implements _SubmitApplicationClicked {
     TResult Function(String militaryStatus)? militaryStatusChanged,
     TResult Function(String universityStatus)? universityStatusChanged,
     TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function(String departmentSelection)? departmentSelectionChanged,
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
@@ -1809,6 +2071,8 @@ class _$_SubmitApplicationClicked implements _SubmitApplicationClicked {
     required TResult Function(_UniversityStatusChanged value)
         universityStatusChanged,
     required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_DepartmentSelectionChanged value)
+        departmentSelectionChanged,
     required TResult Function(_SubmitApplicationClicked value)
         submitApplicationClicked,
     required TResult Function(_FirstPageComplete value) firstPageComplete,
@@ -1832,6 +2096,8 @@ class _$_SubmitApplicationClicked implements _SubmitApplicationClicked {
     TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
     TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
     TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_DepartmentSelectionChanged value)?
+        departmentSelectionChanged,
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
@@ -1900,6 +2166,8 @@ class _$_FirstPageComplete implements _FirstPageComplete {
     required TResult Function(String militaryStatus) militaryStatusChanged,
     required TResult Function(String universityStatus) universityStatusChanged,
     required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function(String departmentSelection)
+        departmentSelectionChanged,
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
@@ -1920,6 +2188,7 @@ class _$_FirstPageComplete implements _FirstPageComplete {
     TResult Function(String militaryStatus)? militaryStatusChanged,
     TResult Function(String universityStatus)? universityStatusChanged,
     TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function(String departmentSelection)? departmentSelectionChanged,
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
@@ -1948,6 +2217,8 @@ class _$_FirstPageComplete implements _FirstPageComplete {
     required TResult Function(_UniversityStatusChanged value)
         universityStatusChanged,
     required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_DepartmentSelectionChanged value)
+        departmentSelectionChanged,
     required TResult Function(_SubmitApplicationClicked value)
         submitApplicationClicked,
     required TResult Function(_FirstPageComplete value) firstPageComplete,
@@ -1971,6 +2242,8 @@ class _$_FirstPageComplete implements _FirstPageComplete {
     TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
     TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
     TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_DepartmentSelectionChanged value)?
+        departmentSelectionChanged,
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
@@ -2039,6 +2312,8 @@ class _$_CheckApplicationCache implements _CheckApplicationCache {
     required TResult Function(String militaryStatus) militaryStatusChanged,
     required TResult Function(String universityStatus) universityStatusChanged,
     required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function(String departmentSelection)
+        departmentSelectionChanged,
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
@@ -2059,6 +2334,7 @@ class _$_CheckApplicationCache implements _CheckApplicationCache {
     TResult Function(String militaryStatus)? militaryStatusChanged,
     TResult Function(String universityStatus)? universityStatusChanged,
     TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function(String departmentSelection)? departmentSelectionChanged,
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
@@ -2087,6 +2363,8 @@ class _$_CheckApplicationCache implements _CheckApplicationCache {
     required TResult Function(_UniversityStatusChanged value)
         universityStatusChanged,
     required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_DepartmentSelectionChanged value)
+        departmentSelectionChanged,
     required TResult Function(_SubmitApplicationClicked value)
         submitApplicationClicked,
     required TResult Function(_FirstPageComplete value) firstPageComplete,
@@ -2110,6 +2388,8 @@ class _$_CheckApplicationCache implements _CheckApplicationCache {
     TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
     TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
     TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_DepartmentSelectionChanged value)?
+        departmentSelectionChanged,
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
@@ -2139,6 +2419,7 @@ class _$ApplicationStateTearOff {
       required RecomendationLetter recomendationLetter,
       required MilitaryFamilyStatus militaryFamilyStatus,
       required UniversityFamilyStatus universityFamilyStatus,
+      required DepartmentSelection departmentSelection,
       required bool isSubmitting,
       required bool showErrorMessages,
       required bool isApplicationCached,
@@ -2154,6 +2435,7 @@ class _$ApplicationStateTearOff {
       recomendationLetter: recomendationLetter,
       militaryFamilyStatus: militaryFamilyStatus,
       universityFamilyStatus: universityFamilyStatus,
+      departmentSelection: departmentSelection,
       isSubmitting: isSubmitting,
       showErrorMessages: showErrorMessages,
       isApplicationCached: isApplicationCached,
@@ -2179,6 +2461,8 @@ mixin _$ApplicationState {
   MilitaryFamilyStatus get militaryFamilyStatus =>
       throw _privateConstructorUsedError;
   UniversityFamilyStatus get universityFamilyStatus =>
+      throw _privateConstructorUsedError;
+  DepartmentSelection get departmentSelection =>
       throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
@@ -2207,6 +2491,7 @@ abstract class $ApplicationStateCopyWith<$Res> {
       RecomendationLetter recomendationLetter,
       MilitaryFamilyStatus militaryFamilyStatus,
       UniversityFamilyStatus universityFamilyStatus,
+      DepartmentSelection departmentSelection,
       bool isSubmitting,
       bool showErrorMessages,
       bool isApplicationCached,
@@ -2234,6 +2519,7 @@ class _$ApplicationStateCopyWithImpl<$Res>
     Object? recomendationLetter = freezed,
     Object? militaryFamilyStatus = freezed,
     Object? universityFamilyStatus = freezed,
+    Object? departmentSelection = freezed,
     Object? isSubmitting = freezed,
     Object? showErrorMessages = freezed,
     Object? isApplicationCached = freezed,
@@ -2273,6 +2559,10 @@ class _$ApplicationStateCopyWithImpl<$Res>
           ? _value.universityFamilyStatus
           : universityFamilyStatus // ignore: cast_nullable_to_non_nullable
               as UniversityFamilyStatus,
+      departmentSelection: departmentSelection == freezed
+          ? _value.departmentSelection
+          : departmentSelection // ignore: cast_nullable_to_non_nullable
+              as DepartmentSelection,
       isSubmitting: isSubmitting == freezed
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
@@ -2313,6 +2603,7 @@ abstract class _$ApplicationStateCopyWith<$Res>
       RecomendationLetter recomendationLetter,
       MilitaryFamilyStatus militaryFamilyStatus,
       UniversityFamilyStatus universityFamilyStatus,
+      DepartmentSelection departmentSelection,
       bool isSubmitting,
       bool showErrorMessages,
       bool isApplicationCached,
@@ -2342,6 +2633,7 @@ class __$ApplicationStateCopyWithImpl<$Res>
     Object? recomendationLetter = freezed,
     Object? militaryFamilyStatus = freezed,
     Object? universityFamilyStatus = freezed,
+    Object? departmentSelection = freezed,
     Object? isSubmitting = freezed,
     Object? showErrorMessages = freezed,
     Object? isApplicationCached = freezed,
@@ -2381,6 +2673,10 @@ class __$ApplicationStateCopyWithImpl<$Res>
           ? _value.universityFamilyStatus
           : universityFamilyStatus // ignore: cast_nullable_to_non_nullable
               as UniversityFamilyStatus,
+      departmentSelection: departmentSelection == freezed
+          ? _value.departmentSelection
+          : departmentSelection // ignore: cast_nullable_to_non_nullable
+              as DepartmentSelection,
       isSubmitting: isSubmitting == freezed
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
@@ -2417,6 +2713,7 @@ class _$_ApplicationState implements _ApplicationState {
       required this.recomendationLetter,
       required this.militaryFamilyStatus,
       required this.universityFamilyStatus,
+      required this.departmentSelection,
       required this.isSubmitting,
       required this.showErrorMessages,
       required this.isApplicationCached,
@@ -2440,6 +2737,8 @@ class _$_ApplicationState implements _ApplicationState {
   @override
   final UniversityFamilyStatus universityFamilyStatus;
   @override
+  final DepartmentSelection departmentSelection;
+  @override
   final bool isSubmitting;
   @override
   final bool showErrorMessages;
@@ -2453,7 +2752,7 @@ class _$_ApplicationState implements _ApplicationState {
 
   @override
   String toString() {
-    return 'ApplicationState(schoolTranscript: $schoolTranscript, mainEssay: $mainEssay, extraEssay: $extraEssay, proficencyTest: $proficencyTest, extraCertification: $extraCertification, recomendationLetter: $recomendationLetter, militaryFamilyStatus: $militaryFamilyStatus, universityFamilyStatus: $universityFamilyStatus, isSubmitting: $isSubmitting, showErrorMessages: $showErrorMessages, isApplicationCached: $isApplicationCached, applicationFailureOrSuccess: $applicationFailureOrSuccess, valueFailureOrSuccess: $valueFailureOrSuccess)';
+    return 'ApplicationState(schoolTranscript: $schoolTranscript, mainEssay: $mainEssay, extraEssay: $extraEssay, proficencyTest: $proficencyTest, extraCertification: $extraCertification, recomendationLetter: $recomendationLetter, militaryFamilyStatus: $militaryFamilyStatus, universityFamilyStatus: $universityFamilyStatus, departmentSelection: $departmentSelection, isSubmitting: $isSubmitting, showErrorMessages: $showErrorMessages, isApplicationCached: $isApplicationCached, applicationFailureOrSuccess: $applicationFailureOrSuccess, valueFailureOrSuccess: $valueFailureOrSuccess)';
   }
 
   @override
@@ -2484,6 +2783,9 @@ class _$_ApplicationState implements _ApplicationState {
             (identical(other.universityFamilyStatus, universityFamilyStatus) ||
                 const DeepCollectionEquality().equals(
                     other.universityFamilyStatus, universityFamilyStatus)) &&
+            (identical(other.departmentSelection, departmentSelection) ||
+                const DeepCollectionEquality()
+                    .equals(other.departmentSelection, departmentSelection)) &&
             (identical(other.isSubmitting, isSubmitting) ||
                 const DeepCollectionEquality()
                     .equals(other.isSubmitting, isSubmitting)) &&
@@ -2514,6 +2816,7 @@ class _$_ApplicationState implements _ApplicationState {
       const DeepCollectionEquality().hash(recomendationLetter) ^
       const DeepCollectionEquality().hash(militaryFamilyStatus) ^
       const DeepCollectionEquality().hash(universityFamilyStatus) ^
+      const DeepCollectionEquality().hash(departmentSelection) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isApplicationCached) ^
@@ -2536,6 +2839,7 @@ abstract class _ApplicationState implements ApplicationState {
       required RecomendationLetter recomendationLetter,
       required MilitaryFamilyStatus militaryFamilyStatus,
       required UniversityFamilyStatus universityFamilyStatus,
+      required DepartmentSelection departmentSelection,
       required bool isSubmitting,
       required bool showErrorMessages,
       required bool isApplicationCached,
@@ -2563,6 +2867,9 @@ abstract class _ApplicationState implements ApplicationState {
       throw _privateConstructorUsedError;
   @override
   UniversityFamilyStatus get universityFamilyStatus =>
+      throw _privateConstructorUsedError;
+  @override
+  DepartmentSelection get departmentSelection =>
       throw _privateConstructorUsedError;
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
