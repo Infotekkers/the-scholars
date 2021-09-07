@@ -31,6 +31,20 @@ class ApplicationsOverviewPage extends StatelessWidget {
                   ))));
                 },
                 orElse: () {});
+          }),
+          BlocListener<ApplicationsOverviewWatcherBloc,
+              ApplicationsOverviewWatcherState>(listener: (context, state) {
+            state.maybeMap(
+                loadFailed: (state) {
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      content: Text(state.applicationFailure.maybeMap(
+                    emptyApplication: (_) => "Empty!",
+                    noConnection: (_) => "No connection",
+                    serverError: (_) => "Server Error",
+                    orElse: () => "Error",
+                  ))));
+                },
+                orElse: () {});
           })
         ], child: ApplicationsOverviewTab()));
   }

@@ -6,6 +6,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class ApplicationsOverviewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final ApplicationsOverviewActorBloc actorBloc =
+        BlocProvider.of<ApplicationsOverviewActorBloc>(context);
+
     return BlocBuilder<ApplicationsOverviewWatcherBloc,
             ApplicationsOverviewWatcherState>(
         builder: (context, state) => state.map(
@@ -20,8 +23,44 @@ class ApplicationsOverviewBody extends StatelessWidget {
                         const Spacer(),
                         Text(state.applicationHighlights[index].admissionStatus
                             .getOrCrash()),
+                        ElevatedButton(
+                            onPressed: state.applicationHighlights[index]
+                                        .admissionStatus
+                                        .getOrCrash() ==
+                                    "pending"
+                                ? () {
+                                    actorBloc.add(
+                                        ApplicationsOverviewActorEvent.accepted(
+                                            state
+                                                .applicationHighlights[index]));
+                                  }
+                                : null,
+                            child: const Text("Accepted")),
+                        const Spacer(),
+                        ElevatedButton(
+                            onPressed: state.applicationHighlights[index]
+                                        .admissionStatus
+                                        .getOrCrash() ==
+                                    "pending"
+                                ? () {
+                                    actorBloc.add(
+                                        ApplicationsOverviewActorEvent.rejected(
+                                            state
+                                                .applicationHighlights[index]));
+                                  }
+                                : null,
+                            child: const Text("Rejected")),
+                        const Spacer(),
+                        ElevatedButton(
+                            onPressed: () {
+                              actorBloc.add(
+                                  ApplicationsOverviewActorEvent.downloaded(
+                                      state.applicationHighlights[index]));
+                            },
+                            child: const Icon(Icons.download)),
                       ],
                     )),
+            // TODO: Show proper error message
             loadFailed: (state) => const Text("Failure")));
   }
 }
