@@ -71,7 +71,20 @@ router.get("/application/download/:applicationId", async (req, res) => {
 
     let applicant = [
       {
-        fullName: `${selectedApplication["fullName"]}`,
+        fullName: selectedApplication.fullName,
+        birthDate: selectedApplication.birthDate,
+        gender: selectedApplication.gender,
+        location: selectedApplication.location,
+        phoneNumber: selectedApplication.phoneNumber,
+        schoolTranscript: schoolTranscriptFileName,
+        mainEssay: mainEssayFileName,
+        extraEssay: selectedApplication.extraEssay,
+        proficiencyTest: selectedApplication.proficencyTest,
+        extraCertification: extraCertificationFileName,
+        recommendationLetter: reccomendationLetterFileName,
+        departmentSelection: selectedApplication.departmentSelection,
+        militaryFamilyStatus: selectedApplication.militaryFamilyStatus,
+        universityFamilyStatus: selectedApplication.universityFamilyStatus,
       },
     ];
 
@@ -102,7 +115,7 @@ router.get("/application/download/:applicationId", async (req, res) => {
       "utf8"
     );
 
-    res.status(200).send("Pdf downloaded!").download(output);
+    res.status(200).send("Pdf downloaded!");
   } catch (e) {
     handleError(e);
     res.status(500).send("Error");
