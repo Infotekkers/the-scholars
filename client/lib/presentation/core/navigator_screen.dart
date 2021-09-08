@@ -10,6 +10,7 @@ import 'package:client/presentation/application/thrid_page.dart';
 import 'package:client/presentation/profile/edit_profile.dart';
 import 'package:client/presentation/view_applications/home_page.dart';
 import 'package:client/presentation/profile/profile_page.dart';
+
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

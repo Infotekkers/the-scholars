@@ -34,6 +34,12 @@ class _$ValueFailureTearOff {
     );
   }
 
+  InvalidUsername<T> invalidUsername<T>({required T failedValue}) {
+    return InvalidUsername<T>(
+      failedValue: failedValue,
+    );
+  }
+
   InvalidPassword<T> invalidPassword<T>({required T failedValue}) {
     return InvalidPassword<T>(
       failedValue: failedValue,
@@ -44,6 +50,10 @@ class _$ValueFailureTearOff {
     return ExceedingLength<T>(
       failedValue: failedValue,
     );
+  }
+
+  _InvalidRole<T> invalidRole<T>() {
+    return _InvalidRole<T>();
   }
 
   InvalidApplication<T> invalidApplication<T>({required T failedValue}) {
@@ -190,8 +200,10 @@ mixin _$ValueFailure<T> {
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -229,8 +241,10 @@ mixin _$ValueFailure<T> {
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -269,8 +283,10 @@ mixin _$ValueFailure<T> {
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -317,8 +333,10 @@ mixin _$ValueFailure<T> {
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -449,8 +467,10 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -491,8 +511,10 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -537,8 +559,10 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -588,8 +612,10 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -721,8 +747,10 @@ class _$InvalidEmail<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -763,8 +791,10 @@ class _$InvalidEmail<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -809,8 +839,10 @@ class _$InvalidEmail<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -860,8 +892,10 @@ class _$InvalidEmail<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -993,8 +1027,10 @@ class _$ShortPassword<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -1035,8 +1071,10 @@ class _$ShortPassword<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -1081,8 +1119,10 @@ class _$ShortPassword<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -1132,8 +1172,10 @@ class _$ShortPassword<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -1183,6 +1225,276 @@ abstract class ShortPassword<T> implements ValueFailure<T> {
   T get failedValue => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ShortPasswordCopyWith<T, ShortPassword<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $InvalidUsernameCopyWith<T, $Res> {
+  factory $InvalidUsernameCopyWith(
+          InvalidUsername<T> value, $Res Function(InvalidUsername<T>) then) =
+      _$InvalidUsernameCopyWithImpl<T, $Res>;
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class _$InvalidUsernameCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $InvalidUsernameCopyWith<T, $Res> {
+  _$InvalidUsernameCopyWithImpl(
+      InvalidUsername<T> _value, $Res Function(InvalidUsername<T>) _then)
+      : super(_value, (v) => _then(v as InvalidUsername<T>));
+
+  @override
+  InvalidUsername<T> get _value => super._value as InvalidUsername<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(InvalidUsername<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InvalidUsername<T>
+    with DiagnosticableTreeMixin
+    implements InvalidUsername<T> {
+  const _$InvalidUsername({required this.failedValue});
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.invalidUsername(failedValue: $failedValue)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.invalidUsername'))
+      ..add(DiagnosticsProperty('failedValue', failedValue));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is InvalidUsername<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @JsonKey(ignore: true)
+  @override
+  $InvalidUsernameCopyWith<T, InvalidUsername<T>> get copyWith =>
+      _$InvalidUsernameCopyWithImpl<T, InvalidUsername<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+    required TResult Function(T failedValue) invalidAdmissionStatus,
+  }) {
+    return invalidUsername(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    TResult Function(T failedValue)? invalidAdmissionStatus,
+    required TResult orElse(),
+  }) {
+    if (invalidUsername != null) {
+      return invalidUsername(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+    required TResult Function(InvalidAdmissionStatus<T> value)
+        invalidAdmissionStatus,
+  }) {
+    return invalidUsername(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    required TResult orElse(),
+  }) {
+    if (invalidUsername != null) {
+      return invalidUsername(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidUsername<T> implements ValueFailure<T> {
+  const factory InvalidUsername({required T failedValue}) =
+      _$InvalidUsername<T>;
+
+  T get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $InvalidUsernameCopyWith<T, InvalidUsername<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1265,8 +1577,10 @@ class _$InvalidPassword<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -1307,8 +1621,10 @@ class _$InvalidPassword<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -1353,8 +1669,10 @@ class _$InvalidPassword<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -1404,8 +1722,10 @@ class _$InvalidPassword<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -1538,8 +1858,10 @@ class _$ExceedingLength<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -1580,8 +1902,10 @@ class _$ExceedingLength<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -1626,8 +1950,10 @@ class _$ExceedingLength<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -1677,8 +2003,10 @@ class _$ExceedingLength<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -1730,6 +2058,243 @@ abstract class ExceedingLength<T> implements ValueFailure<T> {
   @JsonKey(ignore: true)
   $ExceedingLengthCopyWith<T, ExceedingLength<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$InvalidRoleCopyWith<T, $Res> {
+  factory _$InvalidRoleCopyWith(
+          _InvalidRole<T> value, $Res Function(_InvalidRole<T>) then) =
+      __$InvalidRoleCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$InvalidRoleCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$InvalidRoleCopyWith<T, $Res> {
+  __$InvalidRoleCopyWithImpl(
+      _InvalidRole<T> _value, $Res Function(_InvalidRole<T>) _then)
+      : super(_value, (v) => _then(v as _InvalidRole<T>));
+
+  @override
+  _InvalidRole<T> get _value => super._value as _InvalidRole<T>;
+}
+
+/// @nodoc
+
+class _$_InvalidRole<T>
+    with DiagnosticableTreeMixin
+    implements _InvalidRole<T> {
+  const _$_InvalidRole();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.invalidRole()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.invalidRole'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _InvalidRole<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+    required TResult Function(T failedValue) invalidAdmissionStatus,
+  }) {
+    return invalidRole();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    TResult Function(T failedValue)? invalidAdmissionStatus,
+    required TResult orElse(),
+  }) {
+    if (invalidRole != null) {
+      return invalidRole();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+    required TResult Function(InvalidAdmissionStatus<T> value)
+        invalidAdmissionStatus,
+  }) {
+    return invalidRole(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    required TResult orElse(),
+  }) {
+    if (invalidRole != null) {
+      return invalidRole(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InvalidRole<T> implements ValueFailure<T> {
+  const factory _InvalidRole() = _$_InvalidRole<T>;
 }
 
 /// @nodoc
@@ -1812,8 +2377,10 @@ class _$InvalidApplication<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -1854,8 +2421,10 @@ class _$InvalidApplication<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -1900,8 +2469,10 @@ class _$InvalidApplication<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -1951,8 +2522,10 @@ class _$InvalidApplication<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -2085,8 +2658,10 @@ class _$EmptyApplication<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -2127,8 +2702,10 @@ class _$EmptyApplication<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -2173,8 +2750,10 @@ class _$EmptyApplication<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -2224,8 +2803,10 @@ class _$EmptyApplication<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -2361,8 +2942,10 @@ class _$IncompleteApplication<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -2403,8 +2986,10 @@ class _$IncompleteApplication<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -2449,8 +3034,10 @@ class _$IncompleteApplication<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -2500,8 +3087,10 @@ class _$IncompleteApplication<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -2607,8 +3196,10 @@ class _$GeneralError<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -2649,8 +3240,10 @@ class _$GeneralError<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -2695,8 +3288,10 @@ class _$GeneralError<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -2746,8 +3341,10 @@ class _$GeneralError<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -2848,8 +3445,10 @@ class _$_InvalidFormat<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -2890,8 +3489,10 @@ class _$_InvalidFormat<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -2936,8 +3537,10 @@ class _$_InvalidFormat<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -2987,8 +3590,10 @@ class _$_InvalidFormat<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -3086,8 +3691,10 @@ class _$_EmptyValue<T> with DiagnosticableTreeMixin implements _EmptyValue<T> {
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -3128,8 +3735,10 @@ class _$_EmptyValue<T> with DiagnosticableTreeMixin implements _EmptyValue<T> {
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -3174,8 +3783,10 @@ class _$_EmptyValue<T> with DiagnosticableTreeMixin implements _EmptyValue<T> {
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -3225,8 +3836,10 @@ class _$_EmptyValue<T> with DiagnosticableTreeMixin implements _EmptyValue<T> {
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -3327,8 +3940,10 @@ class _$_InvalidLength<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -3369,8 +3984,10 @@ class _$_InvalidLength<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -3415,8 +4032,10 @@ class _$_InvalidLength<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -3466,8 +4085,10 @@ class _$_InvalidLength<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -3567,8 +4188,10 @@ class _$_EmptyBirthDate<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -3609,8 +4232,10 @@ class _$_EmptyBirthDate<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -3655,8 +4280,10 @@ class _$_EmptyBirthDate<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -3706,8 +4333,10 @@ class _$_EmptyBirthDate<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -3807,8 +4436,10 @@ class _$_InvalidBirthDate<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -3849,8 +4480,10 @@ class _$_InvalidBirthDate<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -3895,8 +4528,10 @@ class _$_InvalidBirthDate<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -3946,8 +4581,10 @@ class _$_InvalidBirthDate<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -4047,8 +4684,10 @@ class _$_EmptyGender<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -4089,8 +4728,10 @@ class _$_EmptyGender<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -4135,8 +4776,10 @@ class _$_EmptyGender<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -4186,8 +4829,10 @@ class _$_EmptyGender<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -4287,8 +4932,10 @@ class _$_InvalidGender<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -4329,8 +4976,10 @@ class _$_InvalidGender<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -4375,8 +5024,10 @@ class _$_InvalidGender<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -4426,8 +5077,10 @@ class _$_InvalidGender<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -4527,8 +5180,10 @@ class _$_EmptyLocation<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -4569,8 +5224,10 @@ class _$_EmptyLocation<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -4615,8 +5272,10 @@ class _$_EmptyLocation<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -4666,8 +5325,10 @@ class _$_EmptyLocation<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -4767,8 +5428,10 @@ class _$_InvalidLocation<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -4809,8 +5472,10 @@ class _$_InvalidLocation<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -4855,8 +5520,10 @@ class _$_InvalidLocation<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -4906,8 +5573,10 @@ class _$_InvalidLocation<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -5007,8 +5676,10 @@ class _$_EmptyPhoneNumber<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -5049,8 +5720,10 @@ class _$_EmptyPhoneNumber<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -5095,8 +5768,10 @@ class _$_EmptyPhoneNumber<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -5146,8 +5821,10 @@ class _$_EmptyPhoneNumber<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -5247,8 +5924,10 @@ class _$_InvalidPhoneNumber<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -5289,8 +5968,10 @@ class _$_InvalidPhoneNumber<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -5335,8 +6016,10 @@ class _$_InvalidPhoneNumber<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -5386,8 +6069,10 @@ class _$_InvalidPhoneNumber<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -5487,8 +6172,10 @@ class _$_ShortPhoneNumber<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -5529,8 +6216,10 @@ class _$_ShortPhoneNumber<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -5575,8 +6264,10 @@ class _$_ShortPhoneNumber<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -5626,8 +6317,10 @@ class _$_ShortPhoneNumber<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -5969,8 +6662,10 @@ class _$_InvalidPhoneCode<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -6011,8 +6706,10 @@ class _$_InvalidPhoneCode<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -6057,8 +6754,10 @@ class _$_InvalidPhoneCode<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -6108,8 +6807,10 @@ class _$_InvalidPhoneCode<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -6209,8 +6910,10 @@ class _$_EmptyPhoneCode<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -6251,8 +6954,10 @@ class _$_EmptyPhoneCode<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -6297,8 +7002,10 @@ class _$_EmptyPhoneCode<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -6348,8 +7055,10 @@ class _$_EmptyPhoneCode<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -6474,8 +7183,10 @@ class _$_EmptyFile<T> with DiagnosticableTreeMixin implements _EmptyFile<T> {
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -6516,8 +7227,10 @@ class _$_EmptyFile<T> with DiagnosticableTreeMixin implements _EmptyFile<T> {
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -6562,8 +7275,10 @@ class _$_EmptyFile<T> with DiagnosticableTreeMixin implements _EmptyFile<T> {
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -6613,8 +7328,10 @@ class _$_EmptyFile<T> with DiagnosticableTreeMixin implements _EmptyFile<T> {
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -6747,8 +7464,10 @@ class _$_InvalidFileFormat<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -6789,8 +7508,10 @@ class _$_InvalidFileFormat<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -6835,8 +7556,10 @@ class _$_InvalidFileFormat<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -6886,8 +7609,10 @@ class _$_InvalidFileFormat<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -6994,8 +7719,10 @@ class _$_EmptyTestUrl<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -7036,8 +7763,10 @@ class _$_EmptyTestUrl<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -7082,8 +7811,10 @@ class _$_EmptyTestUrl<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -7133,8 +7864,10 @@ class _$_EmptyTestUrl<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -7235,8 +7968,10 @@ class _$_InvalidTestUrl<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -7277,8 +8012,10 @@ class _$_InvalidTestUrl<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -7323,8 +8060,10 @@ class _$_InvalidTestUrl<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -7374,8 +8113,10 @@ class _$_InvalidTestUrl<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -7479,8 +8220,10 @@ class _$_InvalidMilitaryFamilyStatus<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -7521,8 +8264,10 @@ class _$_InvalidMilitaryFamilyStatus<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -7567,8 +8312,10 @@ class _$_InvalidMilitaryFamilyStatus<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -7618,8 +8365,10 @@ class _$_InvalidMilitaryFamilyStatus<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -7725,8 +8474,10 @@ class _$_InvalidUniversityFamilyStatus<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -7767,8 +8518,10 @@ class _$_InvalidUniversityFamilyStatus<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -7813,8 +8566,10 @@ class _$_InvalidUniversityFamilyStatus<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -7864,8 +8619,10 @@ class _$_InvalidUniversityFamilyStatus<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -7966,8 +8723,10 @@ class _$_EmptyExtraEssay<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -8008,8 +8767,10 @@ class _$_EmptyExtraEssay<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -8054,8 +8815,10 @@ class _$_EmptyExtraEssay<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -8105,8 +8868,10 @@ class _$_EmptyExtraEssay<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -8207,8 +8972,10 @@ class _$_VeryShortExtraEssay<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -8249,8 +9016,10 @@ class _$_VeryShortExtraEssay<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -8295,8 +9064,10 @@ class _$_VeryShortExtraEssay<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -8346,8 +9117,10 @@ class _$_VeryShortExtraEssay<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -8450,8 +9223,10 @@ class _$_ExceedingLengthExtraEssay<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -8492,8 +9267,10 @@ class _$_ExceedingLengthExtraEssay<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -8538,8 +9315,10 @@ class _$_ExceedingLengthExtraEssay<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -8589,8 +9368,10 @@ class _$_ExceedingLengthExtraEssay<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -8720,8 +9501,10 @@ class _$InvalidAdmissionStatus<T>
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) exceedingLength,
+    required TResult Function() invalidRole,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -8762,8 +9545,10 @@ class _$InvalidAdmissionStatus<T>
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? exceedingLength,
+    TResult Function()? invalidRole,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -8808,8 +9593,10 @@ class _$InvalidAdmissionStatus<T>
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -8859,8 +9646,10 @@ class _$InvalidAdmissionStatus<T>
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
