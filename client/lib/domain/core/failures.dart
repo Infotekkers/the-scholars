@@ -68,7 +68,9 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.emptyPhoneNumber() = _EmptyPhoneNumber;
   const factory ValueFailure.invalidPhoneNumber() = _InvalidPhoneNumber;
   const factory ValueFailure.shortPhoneNumber() = _ShortPhoneNumber;
+  const factory ValueFailure.exceedingPhoneNumber() = _ExceedingPhoneNumber;
 
+  // Phone Code Validation
   const factory ValueFailure.invalidPhoneCode() = _InvalidPhoneCode;
   const factory ValueFailure.emptyPhoneCode() = _EmptyPhoneCode;
 
