@@ -123,9 +123,6 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
 
           // Save to Database
 
-          // Return a success state
-          await Future.delayed(const Duration(seconds: 2));
-
           yield state.copyWith(
             showErrorMessages: false,
             isSubmitting: false,
