@@ -7,12 +7,11 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-
-import 'application/application/application_bloc.dart' as _i13;
+import 'application/application/application_bloc.dart' as _i14;
 import 'application/applications_overview_actor/applications_overview_actor_bloc.dart'
-    as _i14;
-import 'application/applications_overview_watcher/applications_overview_watcher_bloc.dart'
     as _i15;
+import 'application/applications_overview_watcher/applications_overview_watcher_bloc.dart'
+    as _i16;
 import 'application/auth/register_form/register_form_bloc.dart' as _i10;
 import 'application/auth/sign_in_form/sign_in_form_bloc.dart' as _i11;
 import 'application/navigation/navigation_bloc.dart' as _i9;
@@ -46,13 +45,11 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i13.ViewApplicationBloc>(() => _i13.ViewApplicationBloc());
   gh.lazySingleton<_i14.ApplicationBloc>(
       () => _i14.ApplicationBloc(get<_i5.IApplicationRepository>()));
-  gh.lazySingleton<_i13.ApplicationBloc>(
-      () => _i13.ApplicationBloc(get<_i5.IApplicationRepository>()));
-  gh.factory<_i14.ApplicationsOverviewActorBloc>(() =>
-      _i14.ApplicationsOverviewActorBloc(
+  gh.factory<_i15.ApplicationsOverviewActorBloc>(() =>
+      _i15.ApplicationsOverviewActorBloc(
           get<_i3.IAdminApplicationRepository>()));
-  gh.factory<_i15.ApplicationsOverviewWatcherBloc>(() =>
-      _i15.ApplicationsOverviewWatcherBloc(
+  gh.factory<_i16.ApplicationsOverviewWatcherBloc>(() =>
+      _i16.ApplicationsOverviewWatcherBloc(
           get<_i3.IAdminApplicationRepository>()));
   return get;
 }
