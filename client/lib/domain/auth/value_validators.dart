@@ -29,6 +29,13 @@ Either<ValueFailure<String>, String> validateName(String nameStr) {
   if (RegExp(nameRegex).hasMatch(nameStr)) {
     return right(nameStr);
   } else {
-    return left(ValueFailure.fullNameInvalidFormat());
+    return left(ValueFailure.invalidUsername(failedValue: nameStr));
   }
+}
+
+Either<ValueFailure<String>, String> validateRole({required String roleStr}) {
+  if (!(roleStr == 'User' || roleStr == 'Admin')) {
+    return left(const ValueFailure.invalidRole());
+  }
+  return right(roleStr);
 }

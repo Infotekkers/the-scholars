@@ -61,13 +61,17 @@ class SignInForm extends StatelessWidget {
                       .add(SignInFormEvent.passwordChanged(value)),
                   validator: (_) => BlocProvider.of<SignInFormBloc>(context)
                       .state
-                      .emailAddress
+                      .password
                       .value
                       .fold(
                           (failure) => failure.maybeMap(
                               shortPassword: (_) => "Invalid Password",
                               orElse: () => null),
                           (_) => null),
+                ),
+                // ignore: prefer_const_constructors
+                SizedBox(
+                  height: 5,
                 ),
                 ElevatedButton(
                     onPressed: state.isSubmitting

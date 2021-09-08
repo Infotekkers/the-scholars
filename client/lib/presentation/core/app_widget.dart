@@ -9,6 +9,7 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final AppRouter _appRouter = AppRouter();
+    
     return MultiBlocProvider(
       providers: [
         BlocProvider(
@@ -24,7 +25,6 @@ class AppWidget extends StatelessWidget {
             textTheme: const TextTheme(
               bodyText1: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
-
             // Icon Theme to match with color
             primaryIconTheme: const IconThemeData(color: Colors.purple),
             accentIconTheme: const IconThemeData(color: Colors.white),
