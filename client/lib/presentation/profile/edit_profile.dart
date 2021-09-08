@@ -174,7 +174,7 @@ class EditProfilePage extends StatelessWidget {
                     onTap: () {
                       _profileBloc.add(const ProfileEvent.deleteProfile());
                     },
-                    child: Icon(Icons.delete)),
+                    child: const Icon(Icons.delete)),
 
                 // Full Name Input area
                 const FormLabel(textValue: "Full Name"),
