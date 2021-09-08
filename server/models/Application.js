@@ -3,11 +3,38 @@ const mongoose = require("mongoose");
 
 // Creating user schema
 const applicationSchema = mongoose.Schema({
-  applicantIdentifier: {
+  // Full Name
+  fullName: {
     type: String,
     required: false,
     default: "",
   },
+
+  // Birth Date
+  birthDate: {
+    type: String,
+    required: false,
+    default: "",
+  },
+
+  gender: {
+    type: String,
+    required: false,
+    default: "",
+  },
+
+  location: {
+    type: String,
+    required: false,
+    default: "",
+  },
+
+  phoneNumber: {
+    type: String,
+    required: false,
+    default: "",
+  },
+
   // Stores the transcripts filename as string
   schoolTranscript: {
     type: String,
@@ -17,7 +44,7 @@ const applicationSchema = mongoose.Schema({
   },
 
   // Stores the essay filename as string
-  essayFile: {
+  mainEssay: {
     type: String,
     required: false,
     default: "",
@@ -25,30 +52,11 @@ const applicationSchema = mongoose.Schema({
   },
 
   //   Stores small Essay as text
-  smallEssay: {
+  extraEssay: {
     type: String,
     required: false,
     default: "",
     // unique: true,
-  },
-
-  //   Store Array of URLs for Standardized tests (SAT, TOEFL)
-  proficiencyExams: {
-    type: [String],
-    required: false,
-    default: "",
-  },
-
-  extracurricularActivities: {
-    type: String,
-    required: false,
-    default: "",
-  },
-  //   Department Choice Stored as Array in order of preference
-  departmentChoice: {
-    type: [String],
-    required: false,
-    default: "",
   },
 
   //   Filename stored as String
@@ -57,13 +65,45 @@ const applicationSchema = mongoose.Schema({
     required: false,
     default: "",
   },
-  admissionStatus: {
+
+  //   Store Array of URLs for Standardized tests (SAT, TOEFL)
+
+  recommendationLetter: {
     type: String,
     required: false,
     default: "",
   },
-});
 
+  proficiencyTest: {
+    type: String,
+    required: false,
+    default: "",
+  },
+  //   Department Choice Stored as Array in order of preference
+  departmentSelection: {
+    type: [String],
+    required: false,
+    default: "",
+  },
+
+  militaryFamilyStatus: {
+    type: String,
+    required: false,
+    default: "false",
+  },
+
+  universityFamilyStatus: {
+    type: String,
+    required: false,
+    default: "false",
+  },
+
+  admissionStatus: {
+    type: String,
+    required: false,
+    default: "complete",
+  },
+});
 
 // Package to ensure unique data
 const uniqueValidator = require("mongoose-unique-validator");

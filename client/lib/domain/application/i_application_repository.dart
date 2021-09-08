@@ -2,6 +2,7 @@ import 'package:client/domain/application/application.dart';
 import 'package:client/domain/application/application_failure.dart';
 import 'package:client/domain/application/value_objects.dart';
 import 'package:client/infrastructure/application/application_dto.dart';
+import 'package:client/infrastructure/application/application_highlight_dto.dart';
 import 'package:dartz/dartz.dart';
 
 abstract class IApplicationRepository {
@@ -43,6 +44,10 @@ abstract class IApplicationRepository {
   // Function to get any Item from Shared Preferences
   Future<Either<ApplicationFailure, dynamic>> getFromSharedPreference(
       {required String itemToGet});
+
+  // Get Application Highlights by All Cached IDs
+  Future<Either<ApplicationFailure, List<ApplicationHighlightDto>>>
+      getApplicationHighlights();
 
   // Workers
   void clearSQLDB();

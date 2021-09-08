@@ -180,6 +180,10 @@ class _$ValueFailureTearOff {
       failedValue: failedValue,
     );
   }
+
+  _EmptyDepartmentSelection<T> emptyDepartmentSelection<T>() {
+    return _EmptyDepartmentSelection<T>();
+  }
 }
 
 /// @nodoc
@@ -224,6 +228,7 @@ mixin _$ValueFailure<T> {
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -263,6 +268,7 @@ mixin _$ValueFailure<T> {
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -310,6 +316,8 @@ mixin _$ValueFailure<T> {
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -352,6 +360,8 @@ mixin _$ValueFailure<T> {
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -480,6 +490,7 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return empty(failedValue);
   }
@@ -522,6 +533,7 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -575,6 +587,8 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return empty(this);
   }
@@ -620,6 +634,8 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -749,6 +765,7 @@ class _$InvalidEmail<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return invalidEmail(failedValue);
   }
@@ -791,6 +808,7 @@ class _$InvalidEmail<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -844,6 +862,8 @@ class _$InvalidEmail<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return invalidEmail(this);
   }
@@ -889,6 +909,8 @@ class _$InvalidEmail<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -1018,6 +1040,7 @@ class _$ShortPassword<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return shortPassword(failedValue);
   }
@@ -1060,6 +1083,7 @@ class _$ShortPassword<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -1113,6 +1137,8 @@ class _$ShortPassword<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return shortPassword(this);
   }
@@ -1158,6 +1184,8 @@ class _$ShortPassword<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -1557,6 +1585,7 @@ class _$InvalidPassword<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return invalidPassword(failedValue);
   }
@@ -1599,6 +1628,7 @@ class _$InvalidPassword<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (invalidPassword != null) {
@@ -1652,6 +1682,8 @@ class _$InvalidPassword<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return invalidPassword(this);
   }
@@ -1697,6 +1729,8 @@ class _$InvalidPassword<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (invalidPassword != null) {
@@ -1827,6 +1861,7 @@ class _$ExceedingLength<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return exceedingLength(failedValue);
   }
@@ -1869,6 +1904,7 @@ class _$ExceedingLength<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (exceedingLength != null) {
@@ -1922,6 +1958,8 @@ class _$ExceedingLength<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return exceedingLength(this);
   }
@@ -1967,6 +2005,8 @@ class _$ExceedingLength<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (exceedingLength != null) {
@@ -2335,6 +2375,7 @@ class _$InvalidApplication<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return invalidApplication(failedValue);
   }
@@ -2377,6 +2418,7 @@ class _$InvalidApplication<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (invalidApplication != null) {
@@ -2430,6 +2472,8 @@ class _$InvalidApplication<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return invalidApplication(this);
   }
@@ -2475,6 +2519,8 @@ class _$InvalidApplication<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (invalidApplication != null) {
@@ -2605,6 +2651,7 @@ class _$EmptyApplication<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return emptyApplication(failedValue);
   }
@@ -2647,6 +2694,7 @@ class _$EmptyApplication<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (emptyApplication != null) {
@@ -2700,6 +2748,8 @@ class _$EmptyApplication<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return emptyApplication(this);
   }
@@ -2745,6 +2795,8 @@ class _$EmptyApplication<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (emptyApplication != null) {
@@ -2878,6 +2930,7 @@ class _$IncompleteApplication<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return incompleteApplication(failedValue);
   }
@@ -2920,6 +2973,7 @@ class _$IncompleteApplication<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (incompleteApplication != null) {
@@ -2973,6 +3027,8 @@ class _$IncompleteApplication<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return incompleteApplication(this);
   }
@@ -3018,6 +3074,8 @@ class _$IncompleteApplication<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (incompleteApplication != null) {
@@ -3121,6 +3179,7 @@ class _$GeneralError<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return generalError();
   }
@@ -3163,6 +3222,7 @@ class _$GeneralError<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (generalError != null) {
@@ -3216,6 +3276,8 @@ class _$GeneralError<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return generalError(this);
   }
@@ -3261,6 +3323,8 @@ class _$GeneralError<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (generalError != null) {
@@ -3359,6 +3423,7 @@ class _$_InvalidFormat<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return fullNameInvalidFormat();
   }
@@ -3401,6 +3466,7 @@ class _$_InvalidFormat<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (fullNameInvalidFormat != null) {
@@ -3454,6 +3520,8 @@ class _$_InvalidFormat<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return fullNameInvalidFormat(this);
   }
@@ -3499,6 +3567,8 @@ class _$_InvalidFormat<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (fullNameInvalidFormat != null) {
@@ -3594,6 +3664,7 @@ class _$_EmptyValue<T> with DiagnosticableTreeMixin implements _EmptyValue<T> {
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return fullNameEmptyValue();
   }
@@ -3636,6 +3707,7 @@ class _$_EmptyValue<T> with DiagnosticableTreeMixin implements _EmptyValue<T> {
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (fullNameEmptyValue != null) {
@@ -3689,6 +3761,8 @@ class _$_EmptyValue<T> with DiagnosticableTreeMixin implements _EmptyValue<T> {
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return fullNameEmptyValue(this);
   }
@@ -3734,6 +3808,8 @@ class _$_EmptyValue<T> with DiagnosticableTreeMixin implements _EmptyValue<T> {
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (fullNameEmptyValue != null) {
@@ -3832,6 +3908,7 @@ class _$_InvalidLength<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return fullNameInvalidLength();
   }
@@ -3874,6 +3951,7 @@ class _$_InvalidLength<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (fullNameInvalidLength != null) {
@@ -3927,6 +4005,8 @@ class _$_InvalidLength<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return fullNameInvalidLength(this);
   }
@@ -3972,6 +4052,8 @@ class _$_InvalidLength<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (fullNameInvalidLength != null) {
@@ -4069,6 +4151,7 @@ class _$_EmptyBirthDate<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return emptyBirthDate();
   }
@@ -4111,6 +4194,7 @@ class _$_EmptyBirthDate<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (emptyBirthDate != null) {
@@ -4164,6 +4248,8 @@ class _$_EmptyBirthDate<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return emptyBirthDate(this);
   }
@@ -4209,6 +4295,8 @@ class _$_EmptyBirthDate<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (emptyBirthDate != null) {
@@ -4306,6 +4394,7 @@ class _$_InvalidBirthDate<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return birthDateInvalid();
   }
@@ -4348,6 +4437,7 @@ class _$_InvalidBirthDate<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (birthDateInvalid != null) {
@@ -4401,6 +4491,8 @@ class _$_InvalidBirthDate<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return birthDateInvalid(this);
   }
@@ -4446,6 +4538,8 @@ class _$_InvalidBirthDate<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (birthDateInvalid != null) {
@@ -4543,6 +4637,7 @@ class _$_EmptyGender<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return emptyGender();
   }
@@ -4585,6 +4680,7 @@ class _$_EmptyGender<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (emptyGender != null) {
@@ -4638,6 +4734,8 @@ class _$_EmptyGender<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return emptyGender(this);
   }
@@ -4683,6 +4781,8 @@ class _$_EmptyGender<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (emptyGender != null) {
@@ -4780,6 +4880,7 @@ class _$_InvalidGender<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return invalidGender();
   }
@@ -4822,6 +4923,7 @@ class _$_InvalidGender<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (invalidGender != null) {
@@ -4875,6 +4977,8 @@ class _$_InvalidGender<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return invalidGender(this);
   }
@@ -4920,6 +5024,8 @@ class _$_InvalidGender<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (invalidGender != null) {
@@ -5017,6 +5123,7 @@ class _$_EmptyLocation<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return emptyLocation();
   }
@@ -5059,6 +5166,7 @@ class _$_EmptyLocation<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (emptyLocation != null) {
@@ -5112,6 +5220,8 @@ class _$_EmptyLocation<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return emptyLocation(this);
   }
@@ -5157,6 +5267,8 @@ class _$_EmptyLocation<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (emptyLocation != null) {
@@ -5254,6 +5366,7 @@ class _$_InvalidLocation<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return invalidLocation();
   }
@@ -5296,6 +5409,7 @@ class _$_InvalidLocation<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (invalidLocation != null) {
@@ -5349,6 +5463,8 @@ class _$_InvalidLocation<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return invalidLocation(this);
   }
@@ -5394,6 +5510,8 @@ class _$_InvalidLocation<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (invalidLocation != null) {
@@ -5491,6 +5609,7 @@ class _$_EmptyPhoneNumber<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return emptyPhoneNumber();
   }
@@ -5533,6 +5652,7 @@ class _$_EmptyPhoneNumber<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (emptyPhoneNumber != null) {
@@ -5586,6 +5706,8 @@ class _$_EmptyPhoneNumber<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return emptyPhoneNumber(this);
   }
@@ -5631,6 +5753,8 @@ class _$_EmptyPhoneNumber<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (emptyPhoneNumber != null) {
@@ -5728,6 +5852,7 @@ class _$_InvalidPhoneNumber<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return invalidPhoneNumber();
   }
@@ -5770,6 +5895,7 @@ class _$_InvalidPhoneNumber<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (invalidPhoneNumber != null) {
@@ -5823,6 +5949,8 @@ class _$_InvalidPhoneNumber<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return invalidPhoneNumber(this);
   }
@@ -5868,6 +5996,8 @@ class _$_InvalidPhoneNumber<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (invalidPhoneNumber != null) {
@@ -5965,6 +6095,7 @@ class _$_ShortPhoneNumber<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return shortPhoneNumber();
   }
@@ -6007,6 +6138,7 @@ class _$_ShortPhoneNumber<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (shortPhoneNumber != null) {
@@ -6060,6 +6192,8 @@ class _$_ShortPhoneNumber<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return shortPhoneNumber(this);
   }
@@ -6105,6 +6239,8 @@ class _$_ShortPhoneNumber<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (shortPhoneNumber != null) {
@@ -6202,6 +6338,7 @@ class _$_InvalidPhoneCode<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return invalidPhoneCode();
   }
@@ -6244,6 +6381,7 @@ class _$_InvalidPhoneCode<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (invalidPhoneCode != null) {
@@ -6297,6 +6435,8 @@ class _$_InvalidPhoneCode<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return invalidPhoneCode(this);
   }
@@ -6342,6 +6482,8 @@ class _$_InvalidPhoneCode<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (invalidPhoneCode != null) {
@@ -6439,6 +6581,7 @@ class _$_EmptyPhoneCode<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return emptyPhoneCode();
   }
@@ -6481,6 +6624,7 @@ class _$_EmptyPhoneCode<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (emptyPhoneCode != null) {
@@ -6534,6 +6678,8 @@ class _$_EmptyPhoneCode<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return emptyPhoneCode(this);
   }
@@ -6579,6 +6725,8 @@ class _$_EmptyPhoneCode<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (emptyPhoneCode != null) {
@@ -6701,6 +6849,7 @@ class _$_EmptyFile<T> with DiagnosticableTreeMixin implements _EmptyFile<T> {
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return emptyFile(failedValue);
   }
@@ -6743,6 +6892,7 @@ class _$_EmptyFile<T> with DiagnosticableTreeMixin implements _EmptyFile<T> {
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (emptyFile != null) {
@@ -6796,6 +6946,8 @@ class _$_EmptyFile<T> with DiagnosticableTreeMixin implements _EmptyFile<T> {
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return emptyFile(this);
   }
@@ -6841,6 +6993,8 @@ class _$_EmptyFile<T> with DiagnosticableTreeMixin implements _EmptyFile<T> {
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (emptyFile != null) {
@@ -6971,6 +7125,7 @@ class _$_InvalidFileFormat<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return invalidFileFormat(failedValue);
   }
@@ -7013,6 +7168,7 @@ class _$_InvalidFileFormat<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (invalidFileFormat != null) {
@@ -7066,6 +7222,8 @@ class _$_InvalidFileFormat<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return invalidFileFormat(this);
   }
@@ -7111,6 +7269,8 @@ class _$_InvalidFileFormat<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (invalidFileFormat != null) {
@@ -7215,6 +7375,7 @@ class _$_EmptyTestUrl<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return emptyProficencyTestUrl();
   }
@@ -7257,6 +7418,7 @@ class _$_EmptyTestUrl<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (emptyProficencyTestUrl != null) {
@@ -7310,6 +7472,8 @@ class _$_EmptyTestUrl<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return emptyProficencyTestUrl(this);
   }
@@ -7355,6 +7519,8 @@ class _$_EmptyTestUrl<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (emptyProficencyTestUrl != null) {
@@ -7453,6 +7619,7 @@ class _$_InvalidTestUrl<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return invalidProficencyTestUrl();
   }
@@ -7495,6 +7662,7 @@ class _$_InvalidTestUrl<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (invalidProficencyTestUrl != null) {
@@ -7548,6 +7716,8 @@ class _$_InvalidTestUrl<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return invalidProficencyTestUrl(this);
   }
@@ -7593,6 +7763,8 @@ class _$_InvalidTestUrl<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (invalidProficencyTestUrl != null) {
@@ -7694,6 +7866,7 @@ class _$_InvalidMilitaryFamilyStatus<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return invalidMilitaryFamilyStatus();
   }
@@ -7736,6 +7909,7 @@ class _$_InvalidMilitaryFamilyStatus<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (invalidMilitaryFamilyStatus != null) {
@@ -7789,6 +7963,8 @@ class _$_InvalidMilitaryFamilyStatus<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return invalidMilitaryFamilyStatus(this);
   }
@@ -7834,6 +8010,8 @@ class _$_InvalidMilitaryFamilyStatus<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (invalidMilitaryFamilyStatus != null) {
@@ -7937,6 +8115,7 @@ class _$_InvalidUniversityFamilyStatus<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return invalidUniversityFamilyStatus();
   }
@@ -7979,6 +8158,7 @@ class _$_InvalidUniversityFamilyStatus<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (invalidUniversityFamilyStatus != null) {
@@ -8032,6 +8212,8 @@ class _$_InvalidUniversityFamilyStatus<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return invalidUniversityFamilyStatus(this);
   }
@@ -8077,6 +8259,8 @@ class _$_InvalidUniversityFamilyStatus<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (invalidUniversityFamilyStatus != null) {
@@ -8175,6 +8359,7 @@ class _$_EmptyExtraEssay<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return emptyExtraEssay();
   }
@@ -8217,6 +8402,7 @@ class _$_EmptyExtraEssay<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (emptyExtraEssay != null) {
@@ -8270,6 +8456,8 @@ class _$_EmptyExtraEssay<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return emptyExtraEssay(this);
   }
@@ -8315,6 +8503,8 @@ class _$_EmptyExtraEssay<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (emptyExtraEssay != null) {
@@ -8413,6 +8603,7 @@ class _$_VeryShortExtraEssay<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return veryShortExtraEssay();
   }
@@ -8455,6 +8646,7 @@ class _$_VeryShortExtraEssay<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (veryShortExtraEssay != null) {
@@ -8508,6 +8700,8 @@ class _$_VeryShortExtraEssay<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return veryShortExtraEssay(this);
   }
@@ -8553,6 +8747,8 @@ class _$_VeryShortExtraEssay<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (veryShortExtraEssay != null) {
@@ -8653,6 +8849,7 @@ class _$_ExceedingLengthExtraEssay<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return exceedingLengthExtraEssay();
   }
@@ -8695,6 +8892,7 @@ class _$_ExceedingLengthExtraEssay<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (exceedingLengthExtraEssay != null) {
@@ -8748,6 +8946,8 @@ class _$_ExceedingLengthExtraEssay<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return exceedingLengthExtraEssay(this);
   }
@@ -8793,6 +8993,8 @@ class _$_ExceedingLengthExtraEssay<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (exceedingLengthExtraEssay != null) {
@@ -8920,6 +9122,7 @@ class _$InvalidAdmissionStatus<T>
     required TResult Function() veryShortExtraEssay,
     required TResult Function() exceedingLengthExtraEssay,
     required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
   }) {
     return invalidAdmissionStatus(failedValue);
   }
@@ -8962,6 +9165,7 @@ class _$InvalidAdmissionStatus<T>
     TResult Function()? veryShortExtraEssay,
     TResult Function()? exceedingLengthExtraEssay,
     TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (invalidAdmissionStatus != null) {
@@ -9015,6 +9219,8 @@ class _$InvalidAdmissionStatus<T>
         exceedingLengthExtraEssay,
     required TResult Function(InvalidAdmissionStatus<T> value)
         invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
   }) {
     return invalidAdmissionStatus(this);
   }
@@ -9060,6 +9266,8 @@ class _$InvalidAdmissionStatus<T>
     TResult Function(_ExceedingLengthExtraEssay<T> value)?
         exceedingLengthExtraEssay,
     TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
     required TResult orElse(),
   }) {
     if (invalidAdmissionStatus != null) {
@@ -9077,4 +9285,241 @@ abstract class InvalidAdmissionStatus<T> implements ValueFailure<T> {
   @JsonKey(ignore: true)
   $InvalidAdmissionStatusCopyWith<T, InvalidAdmissionStatus<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$EmptyDepartmentSelectionCopyWith<T, $Res> {
+  factory _$EmptyDepartmentSelectionCopyWith(_EmptyDepartmentSelection<T> value,
+          $Res Function(_EmptyDepartmentSelection<T>) then) =
+      __$EmptyDepartmentSelectionCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$EmptyDepartmentSelectionCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$EmptyDepartmentSelectionCopyWith<T, $Res> {
+  __$EmptyDepartmentSelectionCopyWithImpl(_EmptyDepartmentSelection<T> _value,
+      $Res Function(_EmptyDepartmentSelection<T>) _then)
+      : super(_value, (v) => _then(v as _EmptyDepartmentSelection<T>));
+
+  @override
+  _EmptyDepartmentSelection<T> get _value =>
+      super._value as _EmptyDepartmentSelection<T>;
+}
+
+/// @nodoc
+
+class _$_EmptyDepartmentSelection<T>
+    with DiagnosticableTreeMixin
+    implements _EmptyDepartmentSelection<T> {
+  const _$_EmptyDepartmentSelection();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.emptyDepartmentSelection()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ValueFailure<$T>.emptyDepartmentSelection'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _EmptyDepartmentSelection<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+    required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
+  }) {
+    return emptyDepartmentSelection();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
+    required TResult orElse(),
+  }) {
+    if (emptyDepartmentSelection != null) {
+      return emptyDepartmentSelection();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+    required TResult Function(InvalidAdmissionStatus<T> value)
+        invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
+  }) {
+    return emptyDepartmentSelection(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
+    required TResult orElse(),
+  }) {
+    if (emptyDepartmentSelection != null) {
+      return emptyDepartmentSelection(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EmptyDepartmentSelection<T> implements ValueFailure<T> {
+  const factory _EmptyDepartmentSelection() = _$_EmptyDepartmentSelection<T>;
 }

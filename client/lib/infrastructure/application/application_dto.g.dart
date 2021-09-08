@@ -11,7 +11,7 @@ _$_ApplicationDto _$_$_ApplicationDtoFromJson(Map<String, dynamic> json) {
     schoolTranscript: json['schoolTranscript'] as String,
     mainEssay: json['mainEssay'] as String,
     extraEssay: json['extraEssay'] as String,
-    departmentSelection: json['departmentSelection'] as List<dynamic>,
+    departmentSelection: json['departmentSelection'] as String,
     extraCertification: json['extraCertification'] as String,
     proficencyTest: json['proficencyTest'] as String,
     recomendationLetter: json['recomendationLetter'] as String,

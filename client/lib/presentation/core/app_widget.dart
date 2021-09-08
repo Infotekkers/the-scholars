@@ -1,4 +1,5 @@
 import 'package:client/application/navigation/navigation_bloc.dart';
+import 'package:client/application/util/util_bloc.dart';
 import 'package:client/injectable.dart';
 import 'package:client/presentation/core/navigator_screen.dart';
 import 'package:client/presentation/routes/router.dart';
@@ -34,7 +35,10 @@ class AppWidget extends StatelessWidget {
       home: BlocProvider.value(
         value: getIt<NavigationBloc>(),
         child: Scaffold(
-          body: NavigatorPage(),
+          body: BlocProvider.value(
+            value: getIt<UtilBloc>(),
+            child: NavigatorPage(),
+          ),
         ),
       ),
     );
