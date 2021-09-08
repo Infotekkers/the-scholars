@@ -18,14 +18,14 @@ class HomePage extends StatelessWidget {
     _utilBloc.add(const UtilEvent.checkProfileCompletion());
 
     // Start Application Cache Event
-    final ApplicationBloc _applicationBloc =
-        BlocProvider.of<ApplicationBloc>(context);
-    _applicationBloc.add(const ApplicationEvent.checkCacheApplication());
+    // final ApplicationBloc _applicationBloc =
+    //     BlocProvider.of<ApplicationBloc>(context);
+    // _applicationBloc.add(const ApplicationEvent.checkCacheApplication());
 
     // Application Bloc
     final ViewApplicationBloc _viewApplicationBloc =
         getIt<ViewApplicationBloc>();
-    _viewApplicationBloc.add(const ViewApplicationEvent.started());
+    // _viewApplicationBloc.add(const ViewApplicationEvent.started());
 
     return BlocConsumer<UtilBloc, UtilState>(
       listener: (context, state) {
@@ -38,9 +38,7 @@ class HomePage extends StatelessWidget {
                 return BlocProvider.value(
                   value: getIt<ProfileBloc>(),
                   child: const Scaffold(
-                    body: ProfilePage(
-                      showMessage: true,
-                    ),
+                    body: ProfilePage(),
                   ),
                 );
               },

@@ -6,17 +6,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 
-class ProfilePage extends StatelessWidget {
-  const ProfilePage();
+class EditProfilePage extends StatelessWidget {
+  const EditProfilePage();
   @override
   Widget build(BuildContext context) {
     // Get The bloc value from the provider
     final ProfileBloc _profileBloc = BlocProvider.of<ProfileBloc>(context);
 
+    // Activate Editing if Edit
+    _profileBloc.add(const ProfileEvent.editProfile());
+
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 8),
       child: BlocConsumer<ProfileBloc, ProfileState>(
         listener: (context, state) {
+          if (state.isDeleted) {
+            getWrappedFlashMessage(context, "Profile has been deleted");
+          }
           // Handle Value Failures
           state.valueFailureOrSuccess.fold(
             () {},
@@ -56,22 +62,22 @@ class ProfilePage extends StatelessWidget {
                   // Location
                   // Already Handled By Default Value
                   emptyLocation: (_) {
-                    // getWrappedFlashMessage(context, "Please enter a Location");
+                    getWrappedFlashMessage(context, "Please enter a Location");
                   },
                   invalidLocation: (_) {
-                    // getWrappedFlashMessage(
-                    //     context, "Please Select a valid Location");
+                    getWrappedFlashMessage(
+                        context, "Please Select a valid Location");
                   },
 
                   // Phone Code
                   // Already Handled By Default Value
                   emptyPhoneCode: (_) {
-                    // getWrappedFlashMessage(
-                    //     context, "Please select a Phone Code");
+                    getWrappedFlashMessage(
+                        context, "Please select a Phone Code");
                   },
                   invalidPhoneCode: (_) {
-                    // getWrappedFlashMessage(
-                    //     context, "Please select a valid Phone Code");
+                    getWrappedFlashMessage(
+                        context, "Please select a valid Phone Code");
                   },
 
                   // Phone Number
@@ -122,8 +128,6 @@ class ProfilePage extends StatelessWidget {
                   );
                 },
                 (_) {
-                  Navigator.pop(context);
-
                   // Custom Function which returns a snackbar
                   getWrappedFlashMessage(
                       context, "Your Profile has been saved");
@@ -133,6 +137,19 @@ class ProfilePage extends StatelessWidget {
           );
         },
         builder: (context, state) {
+          final TextEditingController _fullNameController =
+              TextEditingController();
+          final TextEditingController _phoneNumberController =
+              TextEditingController();
+
+          _fullNameController.text = state.fullName.value.fold(
+            (l) => "",
+            (r) => r,
+          );
+          _phoneNumberController.text = state.phoneNumber.value.fold(
+            (l) => "",
+            (r) => r,
+          );
           return Form(
             // Check Status of show error message to decide form validator state
             autovalidateMode: state.showErrorMessages
@@ -153,28 +170,25 @@ class ProfilePage extends StatelessWidget {
                   ),
                 ),
 
+                InkWell(
+                    onTap: () {
+                      _profileBloc.add(const ProfileEvent.deleteProfile());
+                    },
+                    child: Icon(Icons.delete)),
+
                 // Full Name Input area
                 const FormLabel(textValue: "Full Name"),
                 TextFormField(
                   autofocus: true,
                   autocorrect: false,
                   // initialValue: state.fullName.value.fold((l) => "", (r) => r),
-                  initialValue: state.fullName.value.fold(
-                    (l) => "",
-                    (r) => r,
-                  ),
+                  controller: _fullNameController,
                   decoration: const InputDecoration(
                     hintText: "Full Name",
                     border: OutlineInputBorder(),
                   ),
                   onChanged: (fullNameValue) {
                     // If Not empty
-                    if (fullNameValue != " ") {
-                      // Launch Name changed event
-                      _profileBloc.add(
-                        ProfileEvent.fullNameChanged(fullNameValue),
-                      );
-                    }
                   },
                   validator: (_) => _profileBloc.state.fullName.value.fold(
                     (l) => l.maybeMap(
@@ -283,8 +297,8 @@ class ProfilePage extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * 0.45,
                   height: 60,
                   child: DropdownButton<String>(
-                    value: state.location.value
-                        .fold((l) => "Ethiopia", (r) => r.toString()),
+                    value:
+                        state.location.value.fold((l) => "Ethiopia", (r) => r),
                     isExpanded: true,
                     onChanged: (locationValue) {
                       if (locationValue != null) {
@@ -379,18 +393,10 @@ class ProfilePage extends StatelessWidget {
                         width: MediaQuery.of(context).size.width * 0.5,
                         height: 52,
                         child: TextFormField(
-                          initialValue:
-                              state.phoneNumber.value.fold((l) => "", (r) => r),
+                          controller: _phoneNumberController,
                           decoration:
                               const InputDecoration(hintText: "Phone Digits"),
-                          onChanged: (phoneNumberValue) {
-                            if (phoneNumberValue.isNotEmpty) {
-                              _profileBloc.add(
-                                ProfileEvent.phoneNumberChanged(
-                                    phoneNumberValue),
-                              );
-                            }
-                          },
+                          onChanged: (phoneNumberValue) {},
                           validator: (_) =>
                               _profileBloc.state.phoneNumber.value.fold(
                             (l) => l.maybeMap(
@@ -421,6 +427,15 @@ class ProfilePage extends StatelessWidget {
                       : MaterialButton(
                           color: Theme.of(context).primaryColor,
                           onPressed: () {
+                            _profileBloc.add(
+                              ProfileEvent.fullNameChanged(
+                                  _fullNameController.text),
+                            );
+                            _profileBloc.add(
+                              ProfileEvent.phoneNumberChanged(
+                                  _phoneNumberController.text),
+                            );
+
                             // Add Event
                             _profileBloc.add(const ProfileEvent.saveProfile());
                           },

@@ -59,6 +59,10 @@ class _$ProfileEventTearOff {
   _EditProfile editProfile() {
     return const _EditProfile();
   }
+
+  _DeleteProfile deleteProfile() {
+    return const _DeleteProfile();
+  }
 }
 
 /// @nodoc
@@ -76,6 +80,7 @@ mixin _$ProfileEvent {
     required TResult Function(String phoneNumber) phoneNumberChanged,
     required TResult Function() saveProfile,
     required TResult Function() editProfile,
+    required TResult Function() deleteProfile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -88,6 +93,7 @@ mixin _$ProfileEvent {
     TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function()? saveProfile,
     TResult Function()? editProfile,
+    TResult Function()? deleteProfile,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -101,6 +107,7 @@ mixin _$ProfileEvent {
     required TResult Function(_PhoneNumberChanged value) phoneNumberChanged,
     required TResult Function(_SaveProfile value) saveProfile,
     required TResult Function(_EditProfile value) editProfile,
+    required TResult Function(_DeleteProfile value) deleteProfile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -113,6 +120,7 @@ mixin _$ProfileEvent {
     TResult Function(_PhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(_SaveProfile value)? saveProfile,
     TResult Function(_EditProfile value)? editProfile,
+    TResult Function(_DeleteProfile value)? deleteProfile,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -208,6 +216,7 @@ class _$_FullNameChanged implements _FullNameChanged {
     required TResult Function(String phoneNumber) phoneNumberChanged,
     required TResult Function() saveProfile,
     required TResult Function() editProfile,
+    required TResult Function() deleteProfile,
   }) {
     return fullNameChanged(fullName);
   }
@@ -223,6 +232,7 @@ class _$_FullNameChanged implements _FullNameChanged {
     TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function()? saveProfile,
     TResult Function()? editProfile,
+    TResult Function()? deleteProfile,
     required TResult orElse(),
   }) {
     if (fullNameChanged != null) {
@@ -242,6 +252,7 @@ class _$_FullNameChanged implements _FullNameChanged {
     required TResult Function(_PhoneNumberChanged value) phoneNumberChanged,
     required TResult Function(_SaveProfile value) saveProfile,
     required TResult Function(_EditProfile value) editProfile,
+    required TResult Function(_DeleteProfile value) deleteProfile,
   }) {
     return fullNameChanged(this);
   }
@@ -257,6 +268,7 @@ class _$_FullNameChanged implements _FullNameChanged {
     TResult Function(_PhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(_SaveProfile value)? saveProfile,
     TResult Function(_EditProfile value)? editProfile,
+    TResult Function(_DeleteProfile value)? deleteProfile,
     required TResult orElse(),
   }) {
     if (fullNameChanged != null) {
@@ -349,6 +361,7 @@ class _$_BirthDateChanged implements _BirthDateChanged {
     required TResult Function(String phoneNumber) phoneNumberChanged,
     required TResult Function() saveProfile,
     required TResult Function() editProfile,
+    required TResult Function() deleteProfile,
   }) {
     return birthDateChanged(birthDate);
   }
@@ -364,6 +377,7 @@ class _$_BirthDateChanged implements _BirthDateChanged {
     TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function()? saveProfile,
     TResult Function()? editProfile,
+    TResult Function()? deleteProfile,
     required TResult orElse(),
   }) {
     if (birthDateChanged != null) {
@@ -383,6 +397,7 @@ class _$_BirthDateChanged implements _BirthDateChanged {
     required TResult Function(_PhoneNumberChanged value) phoneNumberChanged,
     required TResult Function(_SaveProfile value) saveProfile,
     required TResult Function(_EditProfile value) editProfile,
+    required TResult Function(_DeleteProfile value) deleteProfile,
   }) {
     return birthDateChanged(this);
   }
@@ -398,6 +413,7 @@ class _$_BirthDateChanged implements _BirthDateChanged {
     TResult Function(_PhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(_SaveProfile value)? saveProfile,
     TResult Function(_EditProfile value)? editProfile,
+    TResult Function(_DeleteProfile value)? deleteProfile,
     required TResult orElse(),
   }) {
     if (birthDateChanged != null) {
@@ -489,6 +505,7 @@ class _$_GenderChanged implements _GenderChanged {
     required TResult Function(String phoneNumber) phoneNumberChanged,
     required TResult Function() saveProfile,
     required TResult Function() editProfile,
+    required TResult Function() deleteProfile,
   }) {
     return genderChanged(gender);
   }
@@ -504,6 +521,7 @@ class _$_GenderChanged implements _GenderChanged {
     TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function()? saveProfile,
     TResult Function()? editProfile,
+    TResult Function()? deleteProfile,
     required TResult orElse(),
   }) {
     if (genderChanged != null) {
@@ -523,6 +541,7 @@ class _$_GenderChanged implements _GenderChanged {
     required TResult Function(_PhoneNumberChanged value) phoneNumberChanged,
     required TResult Function(_SaveProfile value) saveProfile,
     required TResult Function(_EditProfile value) editProfile,
+    required TResult Function(_DeleteProfile value) deleteProfile,
   }) {
     return genderChanged(this);
   }
@@ -538,6 +557,7 @@ class _$_GenderChanged implements _GenderChanged {
     TResult Function(_PhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(_SaveProfile value)? saveProfile,
     TResult Function(_EditProfile value)? editProfile,
+    TResult Function(_DeleteProfile value)? deleteProfile,
     required TResult orElse(),
   }) {
     if (genderChanged != null) {
@@ -630,6 +650,7 @@ class _$_LocationChanged implements _LocationChanged {
     required TResult Function(String phoneNumber) phoneNumberChanged,
     required TResult Function() saveProfile,
     required TResult Function() editProfile,
+    required TResult Function() deleteProfile,
   }) {
     return locationChanged(location);
   }
@@ -645,6 +666,7 @@ class _$_LocationChanged implements _LocationChanged {
     TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function()? saveProfile,
     TResult Function()? editProfile,
+    TResult Function()? deleteProfile,
     required TResult orElse(),
   }) {
     if (locationChanged != null) {
@@ -664,6 +686,7 @@ class _$_LocationChanged implements _LocationChanged {
     required TResult Function(_PhoneNumberChanged value) phoneNumberChanged,
     required TResult Function(_SaveProfile value) saveProfile,
     required TResult Function(_EditProfile value) editProfile,
+    required TResult Function(_DeleteProfile value) deleteProfile,
   }) {
     return locationChanged(this);
   }
@@ -679,6 +702,7 @@ class _$_LocationChanged implements _LocationChanged {
     TResult Function(_PhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(_SaveProfile value)? saveProfile,
     TResult Function(_EditProfile value)? editProfile,
+    TResult Function(_DeleteProfile value)? deleteProfile,
     required TResult orElse(),
   }) {
     if (locationChanged != null) {
@@ -771,6 +795,7 @@ class _$_PhoneCodeChanged implements _PhoneCodeChanged {
     required TResult Function(String phoneNumber) phoneNumberChanged,
     required TResult Function() saveProfile,
     required TResult Function() editProfile,
+    required TResult Function() deleteProfile,
   }) {
     return phoneCodeChanged(phoneCode);
   }
@@ -786,6 +811,7 @@ class _$_PhoneCodeChanged implements _PhoneCodeChanged {
     TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function()? saveProfile,
     TResult Function()? editProfile,
+    TResult Function()? deleteProfile,
     required TResult orElse(),
   }) {
     if (phoneCodeChanged != null) {
@@ -805,6 +831,7 @@ class _$_PhoneCodeChanged implements _PhoneCodeChanged {
     required TResult Function(_PhoneNumberChanged value) phoneNumberChanged,
     required TResult Function(_SaveProfile value) saveProfile,
     required TResult Function(_EditProfile value) editProfile,
+    required TResult Function(_DeleteProfile value) deleteProfile,
   }) {
     return phoneCodeChanged(this);
   }
@@ -820,6 +847,7 @@ class _$_PhoneCodeChanged implements _PhoneCodeChanged {
     TResult Function(_PhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(_SaveProfile value)? saveProfile,
     TResult Function(_EditProfile value)? editProfile,
+    TResult Function(_DeleteProfile value)? deleteProfile,
     required TResult orElse(),
   }) {
     if (phoneCodeChanged != null) {
@@ -912,6 +940,7 @@ class _$_PhoneNumberChanged implements _PhoneNumberChanged {
     required TResult Function(String phoneNumber) phoneNumberChanged,
     required TResult Function() saveProfile,
     required TResult Function() editProfile,
+    required TResult Function() deleteProfile,
   }) {
     return phoneNumberChanged(phoneNumber);
   }
@@ -927,6 +956,7 @@ class _$_PhoneNumberChanged implements _PhoneNumberChanged {
     TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function()? saveProfile,
     TResult Function()? editProfile,
+    TResult Function()? deleteProfile,
     required TResult orElse(),
   }) {
     if (phoneNumberChanged != null) {
@@ -946,6 +976,7 @@ class _$_PhoneNumberChanged implements _PhoneNumberChanged {
     required TResult Function(_PhoneNumberChanged value) phoneNumberChanged,
     required TResult Function(_SaveProfile value) saveProfile,
     required TResult Function(_EditProfile value) editProfile,
+    required TResult Function(_DeleteProfile value) deleteProfile,
   }) {
     return phoneNumberChanged(this);
   }
@@ -961,6 +992,7 @@ class _$_PhoneNumberChanged implements _PhoneNumberChanged {
     TResult Function(_PhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(_SaveProfile value)? saveProfile,
     TResult Function(_EditProfile value)? editProfile,
+    TResult Function(_DeleteProfile value)? deleteProfile,
     required TResult orElse(),
   }) {
     if (phoneNumberChanged != null) {
@@ -1026,6 +1058,7 @@ class _$_SaveProfile implements _SaveProfile {
     required TResult Function(String phoneNumber) phoneNumberChanged,
     required TResult Function() saveProfile,
     required TResult Function() editProfile,
+    required TResult Function() deleteProfile,
   }) {
     return saveProfile();
   }
@@ -1041,6 +1074,7 @@ class _$_SaveProfile implements _SaveProfile {
     TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function()? saveProfile,
     TResult Function()? editProfile,
+    TResult Function()? deleteProfile,
     required TResult orElse(),
   }) {
     if (saveProfile != null) {
@@ -1060,6 +1094,7 @@ class _$_SaveProfile implements _SaveProfile {
     required TResult Function(_PhoneNumberChanged value) phoneNumberChanged,
     required TResult Function(_SaveProfile value) saveProfile,
     required TResult Function(_EditProfile value) editProfile,
+    required TResult Function(_DeleteProfile value) deleteProfile,
   }) {
     return saveProfile(this);
   }
@@ -1075,6 +1110,7 @@ class _$_SaveProfile implements _SaveProfile {
     TResult Function(_PhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(_SaveProfile value)? saveProfile,
     TResult Function(_EditProfile value)? editProfile,
+    TResult Function(_DeleteProfile value)? deleteProfile,
     required TResult orElse(),
   }) {
     if (saveProfile != null) {
@@ -1135,6 +1171,7 @@ class _$_EditProfile implements _EditProfile {
     required TResult Function(String phoneNumber) phoneNumberChanged,
     required TResult Function() saveProfile,
     required TResult Function() editProfile,
+    required TResult Function() deleteProfile,
   }) {
     return editProfile();
   }
@@ -1150,6 +1187,7 @@ class _$_EditProfile implements _EditProfile {
     TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function()? saveProfile,
     TResult Function()? editProfile,
+    TResult Function()? deleteProfile,
     required TResult orElse(),
   }) {
     if (editProfile != null) {
@@ -1169,6 +1207,7 @@ class _$_EditProfile implements _EditProfile {
     required TResult Function(_PhoneNumberChanged value) phoneNumberChanged,
     required TResult Function(_SaveProfile value) saveProfile,
     required TResult Function(_EditProfile value) editProfile,
+    required TResult Function(_DeleteProfile value) deleteProfile,
   }) {
     return editProfile(this);
   }
@@ -1184,6 +1223,7 @@ class _$_EditProfile implements _EditProfile {
     TResult Function(_PhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(_SaveProfile value)? saveProfile,
     TResult Function(_EditProfile value)? editProfile,
+    TResult Function(_DeleteProfile value)? deleteProfile,
     required TResult orElse(),
   }) {
     if (editProfile != null) {
@@ -1195,6 +1235,120 @@ class _$_EditProfile implements _EditProfile {
 
 abstract class _EditProfile implements ProfileEvent {
   const factory _EditProfile() = _$_EditProfile;
+}
+
+/// @nodoc
+abstract class _$DeleteProfileCopyWith<$Res> {
+  factory _$DeleteProfileCopyWith(
+          _DeleteProfile value, $Res Function(_DeleteProfile) then) =
+      __$DeleteProfileCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$DeleteProfileCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res>
+    implements _$DeleteProfileCopyWith<$Res> {
+  __$DeleteProfileCopyWithImpl(
+      _DeleteProfile _value, $Res Function(_DeleteProfile) _then)
+      : super(_value, (v) => _then(v as _DeleteProfile));
+
+  @override
+  _DeleteProfile get _value => super._value as _DeleteProfile;
+}
+
+/// @nodoc
+
+class _$_DeleteProfile implements _DeleteProfile {
+  const _$_DeleteProfile();
+
+  @override
+  String toString() {
+    return 'ProfileEvent.deleteProfile()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _DeleteProfile);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String fullName) fullNameChanged,
+    required TResult Function(DateTime birthDate) birthDateChanged,
+    required TResult Function(String gender) genderChanged,
+    required TResult Function(String location) locationChanged,
+    required TResult Function(String phoneCode) phoneCodeChanged,
+    required TResult Function(String phoneNumber) phoneNumberChanged,
+    required TResult Function() saveProfile,
+    required TResult Function() editProfile,
+    required TResult Function() deleteProfile,
+  }) {
+    return deleteProfile();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String fullName)? fullNameChanged,
+    TResult Function(DateTime birthDate)? birthDateChanged,
+    TResult Function(String gender)? genderChanged,
+    TResult Function(String location)? locationChanged,
+    TResult Function(String phoneCode)? phoneCodeChanged,
+    TResult Function(String phoneNumber)? phoneNumberChanged,
+    TResult Function()? saveProfile,
+    TResult Function()? editProfile,
+    TResult Function()? deleteProfile,
+    required TResult orElse(),
+  }) {
+    if (deleteProfile != null) {
+      return deleteProfile();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FullNameChanged value) fullNameChanged,
+    required TResult Function(_BirthDateChanged value) birthDateChanged,
+    required TResult Function(_GenderChanged value) genderChanged,
+    required TResult Function(_LocationChanged value) locationChanged,
+    required TResult Function(_PhoneCodeChanged value) phoneCodeChanged,
+    required TResult Function(_PhoneNumberChanged value) phoneNumberChanged,
+    required TResult Function(_SaveProfile value) saveProfile,
+    required TResult Function(_EditProfile value) editProfile,
+    required TResult Function(_DeleteProfile value) deleteProfile,
+  }) {
+    return deleteProfile(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FullNameChanged value)? fullNameChanged,
+    TResult Function(_BirthDateChanged value)? birthDateChanged,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
+    TResult Function(_PhoneCodeChanged value)? phoneCodeChanged,
+    TResult Function(_PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(_SaveProfile value)? saveProfile,
+    TResult Function(_EditProfile value)? editProfile,
+    TResult Function(_DeleteProfile value)? deleteProfile,
+    required TResult orElse(),
+  }) {
+    if (deleteProfile != null) {
+      return deleteProfile(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeleteProfile implements ProfileEvent {
+  const factory _DeleteProfile() = _$_DeleteProfile;
 }
 
 /// @nodoc
@@ -1210,6 +1364,7 @@ class _$ProfileStateTearOff {
       required PhoneNumber phoneNumber,
       required bool showErrorMessages,
       required bool isSubmitting,
+      required bool isDeleted,
       required Option<Either<ApplicationProfileFailure, ApplicationProfile>>
           applicationProfileFailureOrSuccess,
       required Option<Either<ValueFailure, dynamic>> valueFailureOrSuccess}) {
@@ -1222,6 +1377,7 @@ class _$ProfileStateTearOff {
       phoneNumber: phoneNumber,
       showErrorMessages: showErrorMessages,
       isSubmitting: isSubmitting,
+      isDeleted: isDeleted,
       applicationProfileFailureOrSuccess: applicationProfileFailureOrSuccess,
       valueFailureOrSuccess: valueFailureOrSuccess,
     );
@@ -1241,6 +1397,7 @@ mixin _$ProfileState {
   PhoneNumber get phoneNumber => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isDeleted => throw _privateConstructorUsedError;
   Option<Either<ApplicationProfileFailure, ApplicationProfile>>
       get applicationProfileFailureOrSuccess =>
           throw _privateConstructorUsedError;
@@ -1266,6 +1423,7 @@ abstract class $ProfileStateCopyWith<$Res> {
       PhoneNumber phoneNumber,
       bool showErrorMessages,
       bool isSubmitting,
+      bool isDeleted,
       Option<Either<ApplicationProfileFailure, ApplicationProfile>>
           applicationProfileFailureOrSuccess,
       Option<Either<ValueFailure, dynamic>> valueFailureOrSuccess});
@@ -1289,6 +1447,7 @@ class _$ProfileStateCopyWithImpl<$Res> implements $ProfileStateCopyWith<$Res> {
     Object? phoneNumber = freezed,
     Object? showErrorMessages = freezed,
     Object? isSubmitting = freezed,
+    Object? isDeleted = freezed,
     Object? applicationProfileFailureOrSuccess = freezed,
     Object? valueFailureOrSuccess = freezed,
   }) {
@@ -1325,6 +1484,10 @@ class _$ProfileStateCopyWithImpl<$Res> implements $ProfileStateCopyWith<$Res> {
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
               as bool,
+      isDeleted: isDeleted == freezed
+          ? _value.isDeleted
+          : isDeleted // ignore: cast_nullable_to_non_nullable
+              as bool,
       applicationProfileFailureOrSuccess: applicationProfileFailureOrSuccess ==
               freezed
           ? _value.applicationProfileFailureOrSuccess
@@ -1354,6 +1517,7 @@ abstract class _$ProfileStateCopyWith<$Res>
       PhoneNumber phoneNumber,
       bool showErrorMessages,
       bool isSubmitting,
+      bool isDeleted,
       Option<Either<ApplicationProfileFailure, ApplicationProfile>>
           applicationProfileFailureOrSuccess,
       Option<Either<ValueFailure, dynamic>> valueFailureOrSuccess});
@@ -1379,6 +1543,7 @@ class __$ProfileStateCopyWithImpl<$Res> extends _$ProfileStateCopyWithImpl<$Res>
     Object? phoneNumber = freezed,
     Object? showErrorMessages = freezed,
     Object? isSubmitting = freezed,
+    Object? isDeleted = freezed,
     Object? applicationProfileFailureOrSuccess = freezed,
     Object? valueFailureOrSuccess = freezed,
   }) {
@@ -1415,6 +1580,10 @@ class __$ProfileStateCopyWithImpl<$Res> extends _$ProfileStateCopyWithImpl<$Res>
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
               as bool,
+      isDeleted: isDeleted == freezed
+          ? _value.isDeleted
+          : isDeleted // ignore: cast_nullable_to_non_nullable
+              as bool,
       applicationProfileFailureOrSuccess: applicationProfileFailureOrSuccess ==
               freezed
           ? _value.applicationProfileFailureOrSuccess
@@ -1440,6 +1609,7 @@ class _$_ProfileState implements _ProfileState {
       required this.phoneNumber,
       required this.showErrorMessages,
       required this.isSubmitting,
+      required this.isDeleted,
       required this.applicationProfileFailureOrSuccess,
       required this.valueFailureOrSuccess});
 
@@ -1460,6 +1630,8 @@ class _$_ProfileState implements _ProfileState {
   @override
   final bool isSubmitting;
   @override
+  final bool isDeleted;
+  @override
   final Option<Either<ApplicationProfileFailure, ApplicationProfile>>
       applicationProfileFailureOrSuccess;
   @override
@@ -1467,7 +1639,7 @@ class _$_ProfileState implements _ProfileState {
 
   @override
   String toString() {
-    return 'ProfileState(fullName: $fullName, birthDate: $birthDate, gender: $gender, location: $location, phoneCode: $phoneCode, phoneNumber: $phoneNumber, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, applicationProfileFailureOrSuccess: $applicationProfileFailureOrSuccess, valueFailureOrSuccess: $valueFailureOrSuccess)';
+    return 'ProfileState(fullName: $fullName, birthDate: $birthDate, gender: $gender, location: $location, phoneCode: $phoneCode, phoneNumber: $phoneNumber, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, isDeleted: $isDeleted, applicationProfileFailureOrSuccess: $applicationProfileFailureOrSuccess, valueFailureOrSuccess: $valueFailureOrSuccess)';
   }
 
   @override
@@ -1497,6 +1669,9 @@ class _$_ProfileState implements _ProfileState {
             (identical(other.isSubmitting, isSubmitting) ||
                 const DeepCollectionEquality()
                     .equals(other.isSubmitting, isSubmitting)) &&
+            (identical(other.isDeleted, isDeleted) ||
+                const DeepCollectionEquality()
+                    .equals(other.isDeleted, isDeleted)) &&
             (identical(other.applicationProfileFailureOrSuccess,
                     applicationProfileFailureOrSuccess) ||
                 const DeepCollectionEquality().equals(
@@ -1518,6 +1693,7 @@ class _$_ProfileState implements _ProfileState {
       const DeepCollectionEquality().hash(phoneNumber) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
+      const DeepCollectionEquality().hash(isDeleted) ^
       const DeepCollectionEquality().hash(applicationProfileFailureOrSuccess) ^
       const DeepCollectionEquality().hash(valueFailureOrSuccess);
 
@@ -1537,6 +1713,7 @@ abstract class _ProfileState implements ProfileState {
       required PhoneNumber phoneNumber,
       required bool showErrorMessages,
       required bool isSubmitting,
+      required bool isDeleted,
       required Option<Either<ApplicationProfileFailure, ApplicationProfile>>
           applicationProfileFailureOrSuccess,
       required Option<Either<ValueFailure, dynamic>>
@@ -1558,6 +1735,8 @@ abstract class _ProfileState implements ProfileState {
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
+  @override
+  bool get isDeleted => throw _privateConstructorUsedError;
   @override
   Option<Either<ApplicationProfileFailure, ApplicationProfile>>
       get applicationProfileFailureOrSuccess =>

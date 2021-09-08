@@ -30,8 +30,6 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ) async* {
     yield* event.map(
       fullNameChanged: (e) async* {
-        print(
-            "@bloc : new name is ${state.fullName.value.fold((l) => "left", (r) => r)}");
         // Yeild with changed name
         yield state.copyWith(
           fullName: FullName(fullName: e.fullName),
@@ -197,13 +195,73 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
         );
       },
       editProfile: (e) async* {
+        // Start Loader Animation
+        yield state.copyWith(
+          isSubmitting: true,
+          showErrorMessages: true,
+        );
+
         // Get Values from SP
+        final Either<ApplicationProfileFailure, ApplicationProfile>
+            cachedApplicationProfile =
+            await _iApplicationProfileRepository.getApplicationProfile();
+
+        if (cachedApplicationProfile.isRight()) {
+          ApplicationProfile applicationProfile = ApplicationProfile.initial();
+
+          cachedApplicationProfile.fold(
+            (l) => l,
+            (r) => applicationProfile = r,
+          );
+
+          yield state.copyWith(
+            fullName: applicationProfile.fullName,
+            // birthDate: DateTime.parse(
+            //   applicationProfile.birthDate.toString().split(" ")[0],
+            // ),
+            gender: applicationProfile.gender,
+            location: applicationProfile.location,
+            phoneCode: applicationProfile.phoneCode,
+            phoneNumber: applicationProfile.phoneNumber,
+            isSubmitting: false,
+          );
+        } else {
+          yield state.copyWith(
+            isSubmitting: false,
+            showErrorMessages: true,
+            applicationProfileFailureOrSuccess: some(cachedApplicationProfile),
+          );
+        }
 
         // Create ApplicationProfileDTO
 
         // Inject To State
 
         // Return a state
+      },
+      deleteProfile: (e) async* {
+        // Send Loading State
+        yield state.copyWith(
+          showErrorMessages: true,
+          isSubmitting: true,
+        );
+
+        final Either<ApplicationProfileFailure, String> failureOrSuccess =
+            await _iApplicationProfileRepository.deleteApplicationProfile();
+
+        if (failureOrSuccess.isRight()) {
+          yield ProfileState.initial();
+        } else {
+          yield state.copyWith(
+            isSubmitting: false,
+            showErrorMessages: false,
+            applicationProfileFailureOrSuccess: some(
+              left(
+                const ApplicationProfileFailure.databaseError(),
+              ),
+            ),
+          );
+        }
       },
     );
   }

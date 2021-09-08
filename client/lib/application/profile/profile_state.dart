@@ -11,20 +11,21 @@ class ProfileState with _$ProfileState {
     required PhoneNumber phoneNumber,
     required bool showErrorMessages,
     required bool isSubmitting,
+    required bool isDeleted,
     required Option<Either<ApplicationProfileFailure, ApplicationProfile>>
         applicationProfileFailureOrSuccess,
     required Option<Either<ValueFailure, dynamic>> valueFailureOrSuccess,
   }) = _ProfileState;
 
   factory ProfileState.initial() => ProfileState(
-        // fullName: FullName(fullName: 'Thomas Alemayehu'),
-        fullName: FullName(fullName: 'Thomas Alemayehu'),
+        fullName: FullName(fullName: ''),
         birthDate: DateTime(DateTime.now().year - 15),
-        gender: Gender(gender: "male"),
+        gender: Gender(gender: ""),
         location: Location(location: "Ethiopia"),
         phoneCode: PhoneCode(phoneCode: "+251"),
-        phoneNumber: PhoneNumber(phoneNumber: "911870935"),
+        phoneNumber: PhoneNumber(phoneNumber: ""),
         isSubmitting: false,
+        isDeleted: false,
         showErrorMessages: false,
         applicationProfileFailureOrSuccess: none(),
         valueFailureOrSuccess: none(),

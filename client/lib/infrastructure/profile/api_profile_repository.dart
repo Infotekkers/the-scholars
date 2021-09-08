@@ -11,17 +11,42 @@ import 'package:shared_preferences/shared_preferences.dart';
 @LazySingleton(as: IApplicationProfileRepository)
 class ApiApplicationProfileRepository implements IApplicationProfileRepository {
   @override
-  Future<Either<ApplicationProfileFailure, ApplicationProfile>>
-      deleteApplicationProfile() {
-    // TODO: implement deleteApplicationProfile
-    throw UnimplementedError();
+  Future<Either<ApplicationProfileFailure, String>>
+      deleteApplicationProfile() async {
+    try {
+      // Get SP
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+
+      // delete
+      prefs.remove("applicationProfile");
+
+      return right("");
+    } catch (e) {
+      return left(const ApplicationProfileFailure.databaseError());
+    }
   }
 
   @override
   Future<Either<ApplicationProfileFailure, ApplicationProfile>>
-      getApplicationProfile({required ApplicationProfile applicationProfile}) {
-    // TODO: implement getApplicationProfile
-    throw UnimplementedError();
+      getApplicationProfile() async {
+    // In Try Catch to handle DB error
+    try {
+      // Set Up Shared Preferences
+      final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+      // Get From SP
+      final Map<String, dynamic> profileJSON =
+          jsonDecode(prefs.getString("applicationProfile")!)
+              as Map<String, dynamic>;
+
+      // Create ApplicationProfile through DTO
+      final ApplicationProfile applicationProfile =
+          ApplicationProfileDto.fromJson(profileJSON).toDomain();
+
+      return right(applicationProfile);
+    } catch (e) {
+      return left(const ApplicationProfileFailure.databaseError());
+    }
   }
 
   @override

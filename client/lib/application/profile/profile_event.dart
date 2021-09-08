@@ -29,4 +29,6 @@ class ProfileEvent with _$ProfileEvent {
   const factory ProfileEvent.saveProfile() = _SaveProfile;
 
   const factory ProfileEvent.editProfile() = _EditProfile;
+
+  const factory ProfileEvent.deleteProfile() = _DeleteProfile;
 }

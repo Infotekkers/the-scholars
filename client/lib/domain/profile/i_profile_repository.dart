@@ -8,12 +8,9 @@ abstract class IApplicationProfileRepository {
       saveApplicationProfile({required ApplicationProfile applicationProfile});
 
   // Method to delete Profile from cache
-  Future<Either<ApplicationProfileFailure, ApplicationProfile>>
-      deleteApplicationProfile();
+  Future<Either<ApplicationProfileFailure, String>> deleteApplicationProfile();
 
 // Method to get profile from cache
   Future<Either<ApplicationProfileFailure, ApplicationProfile>>
-      getApplicationProfile({
-    required ApplicationProfile applicationProfile,
-  });
+      getApplicationProfile();
 }
