@@ -15,6 +15,9 @@ class AppWidget extends StatelessWidget {
       theme: ThemeData(
           primaryColor: Colors.purple,
           accentColor: Colors.black,
+          inputDecorationTheme: InputDecorationTheme(
+              border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(8))),
           fontFamily: "Georgia",
           textTheme: const TextTheme(
             bodyText1: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),

@@ -13,12 +13,17 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.shortPassword({
     required T failedValue,
   }) = ShortPassword<T>;
+  const factory ValueFailure.invalidUsername({
+    required T failedValue,
+  }) = InvalidUsername<T>;
   const factory ValueFailure.invalidPassword({
     required T failedValue,
   }) = InvalidPassword<T>;
   const factory ValueFailure.exceedingLength({
     required T failedValue,
   }) = ExceedingLength<T>;
+
+  const factory ValueFailure.invalidRole() = _InvalidRole;
 
   // ignore: slash_for_doc_comments
   /**
@@ -108,7 +113,10 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.invalidAdmissionStatus({required T failedValue}) =
       InvalidAdmissionStatus;
 
+
+
   // Department Selection Validation
   const factory ValueFailure.emptyDepartmentSelection() =
       _EmptyDepartmentSelection;
+
 }
