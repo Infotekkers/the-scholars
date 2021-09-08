@@ -1,6 +1,5 @@
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:client/application/auth/register_form/register_form_bloc.dart';
-import 'package:client/domain/core/failures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -101,10 +100,10 @@ class RegisterForm extends StatelessWidget {
                 height: 5,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Expanded(
-                    child: const Text("Select Role: "),
+                  const Expanded(
+                    child: Text("Select Role:"),
                   ),
                   Expanded(
                     flex: 3,

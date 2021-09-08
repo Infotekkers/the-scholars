@@ -37,16 +37,14 @@ class Name extends ValueObject<String> {
 }
 
 class Role extends ValueObject<String> {
-  static const List<String> roles = [
-    // TODO: Add list of valid roles
-  ];
+  // static const List<String> roles = ['User', 'Admin'];
 
   @override
   final Either<ValueFailure<String>, String> value;
 
   factory Role(String roleStr) {
-    // TODO: Implement role validation
-    return Role._(right(roleStr));
+    // assert(roles.contains(roleStr));
+    return Role._(validateRole(roleStr: roleStr));
   }
 
   const Role._(this.value);

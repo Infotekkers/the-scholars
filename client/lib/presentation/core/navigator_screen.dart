@@ -7,6 +7,7 @@ import 'package:client/injectable.dart';
 import 'package:client/presentation/application/first_page.dart';
 import 'package:client/presentation/application/second_page.dart';
 import 'package:client/presentation/application/thrid_page.dart';
+import 'package:client/presentation/auth/register_page.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,7 +30,7 @@ class NavigatorPage extends StatelessWidget {
           if (state.pageIndexNumber == 0) {
             return BlocProvider.value(
               value: getIt<ApplicationBloc>(),
-              child: const FirstApplicationPage(),
+              child: const RegisterPage(),
             );
           } else if (state.pageIndexNumber == 1) {
             return BlocProvider.value(
