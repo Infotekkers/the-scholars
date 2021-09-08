@@ -1,4 +1,5 @@
 import 'package:another_flushbar/flushbar_helper.dart';
+import 'package:client/application/auth/auth_bloc.dart';
 import 'package:client/application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,7 +22,7 @@ class SignInForm extends StatelessWidget {
                     cancelledByUser: (_) => "Cancelled",
                   )).show(context);
                 }, (r) {
-                  // TODO: Push to HomePage
+                  BlocProvider.of<AuthBloc>(context).add(const AuthEvent.authCheckRequested());
                 }));
       },
       builder: (context, state) {

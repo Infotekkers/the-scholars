@@ -12,6 +12,7 @@ import 'application/applications_overview_actor/applications_overview_actor_bloc
     as _i15;
 import 'application/applications_overview_watcher/applications_overview_watcher_bloc.dart'
     as _i16;
+import 'application/auth/auth_bloc.dart' as _i17;
 import 'application/auth/register_form/register_form_bloc.dart' as _i10;
 import 'application/auth/sign_in_form/sign_in_form_bloc.dart' as _i11;
 import 'application/navigation/navigation_bloc.dart' as _i9;
@@ -51,5 +52,6 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i16.ApplicationsOverviewWatcherBloc>(() =>
       _i16.ApplicationsOverviewWatcherBloc(
           get<_i3.IAdminApplicationRepository>()));
+  gh.factory<_i17.AuthBloc>(() => _i17.AuthBloc(get<_i7.IAuthRepository>()));
   return get;
 }
