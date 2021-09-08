@@ -1,4 +1,5 @@
 import 'package:client/application/application/application_bloc.dart';
+import 'package:client/application/profile/profile_bloc.dart';
 import 'package:client/application/util/util_bloc.dart';
 import 'package:client/application/view_application/view_application_bloc.dart';
 import 'package:client/injectable.dart';
@@ -34,9 +35,12 @@ class HomePage extends StatelessWidget {
             context,
             MaterialPageRoute(
               builder: (_) {
-                return const Scaffold(
-                  body: ProfilePage(
-                    showMessage: true,
+                return BlocProvider.value(
+                  value: getIt<ProfileBloc>(),
+                  child: const Scaffold(
+                    body: ProfilePage(
+                      showMessage: true,
+                    ),
                   ),
                 );
               },
