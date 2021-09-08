@@ -26,8 +26,7 @@ class ProfileEvent with _$ProfileEvent {
       _PhoneNumberChanged;
 
 // Event for Save profile button
-  const factory ProfileEvent.saveProfile({required bool isEditPage}) =
-      _SaveProfile;
+  const factory ProfileEvent.saveProfile() = _SaveProfile;
 
   const factory ProfileEvent.editProfile() = _EditProfile;
 }

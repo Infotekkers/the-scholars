@@ -28,7 +28,7 @@ class ApiApplicationProfileRepository implements IApplicationProfileRepository {
   Future<Either<ApplicationProfileFailure, ApplicationProfile>>
       saveApplicationProfile(
           {required ApplicationProfile applicationProfile}) async {
-// In try catch to handle DB ERROR
+    // In try catch to handle DB ERROR
     try {
       // Set Up Shared Preferences
       final SharedPreferences prefs = await SharedPreferences.getInstance();

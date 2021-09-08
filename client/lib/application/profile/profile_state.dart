@@ -18,12 +18,12 @@ class ProfileState with _$ProfileState {
 
   factory ProfileState.initial() => ProfileState(
         // fullName: FullName(fullName: 'Thomas Alemayehu'),
-        fullName: FullName(fullName: ''),
+        fullName: FullName(fullName: 'Thomas Alemayehu'),
         birthDate: DateTime(DateTime.now().year - 15),
         gender: Gender(gender: "male"),
         location: Location(location: "Ethiopia"),
         phoneCode: PhoneCode(phoneCode: "+251"),
-        phoneNumber: PhoneNumber(phoneNumber: ""),
+        phoneNumber: PhoneNumber(phoneNumber: "911870935"),
         isSubmitting: false,
         showErrorMessages: false,
         applicationProfileFailureOrSuccess: none(),

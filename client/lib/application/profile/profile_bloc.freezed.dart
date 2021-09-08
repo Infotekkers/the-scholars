@@ -52,10 +52,8 @@ class _$ProfileEventTearOff {
     );
   }
 
-  _SaveProfile saveProfile({required bool isEditPage}) {
-    return _SaveProfile(
-      isEditPage: isEditPage,
-    );
+  _SaveProfile saveProfile() {
+    return const _SaveProfile();
   }
 
   _EditProfile editProfile() {
@@ -76,7 +74,7 @@ mixin _$ProfileEvent {
     required TResult Function(String location) locationChanged,
     required TResult Function(String phoneCode) phoneCodeChanged,
     required TResult Function(String phoneNumber) phoneNumberChanged,
-    required TResult Function(bool isEditPage) saveProfile,
+    required TResult Function() saveProfile,
     required TResult Function() editProfile,
   }) =>
       throw _privateConstructorUsedError;
@@ -88,7 +86,7 @@ mixin _$ProfileEvent {
     TResult Function(String location)? locationChanged,
     TResult Function(String phoneCode)? phoneCodeChanged,
     TResult Function(String phoneNumber)? phoneNumberChanged,
-    TResult Function(bool isEditPage)? saveProfile,
+    TResult Function()? saveProfile,
     TResult Function()? editProfile,
     required TResult orElse(),
   }) =>
@@ -208,7 +206,7 @@ class _$_FullNameChanged implements _FullNameChanged {
     required TResult Function(String location) locationChanged,
     required TResult Function(String phoneCode) phoneCodeChanged,
     required TResult Function(String phoneNumber) phoneNumberChanged,
-    required TResult Function(bool isEditPage) saveProfile,
+    required TResult Function() saveProfile,
     required TResult Function() editProfile,
   }) {
     return fullNameChanged(fullName);
@@ -223,7 +221,7 @@ class _$_FullNameChanged implements _FullNameChanged {
     TResult Function(String location)? locationChanged,
     TResult Function(String phoneCode)? phoneCodeChanged,
     TResult Function(String phoneNumber)? phoneNumberChanged,
-    TResult Function(bool isEditPage)? saveProfile,
+    TResult Function()? saveProfile,
     TResult Function()? editProfile,
     required TResult orElse(),
   }) {
@@ -349,7 +347,7 @@ class _$_BirthDateChanged implements _BirthDateChanged {
     required TResult Function(String location) locationChanged,
     required TResult Function(String phoneCode) phoneCodeChanged,
     required TResult Function(String phoneNumber) phoneNumberChanged,
-    required TResult Function(bool isEditPage) saveProfile,
+    required TResult Function() saveProfile,
     required TResult Function() editProfile,
   }) {
     return birthDateChanged(birthDate);
@@ -364,7 +362,7 @@ class _$_BirthDateChanged implements _BirthDateChanged {
     TResult Function(String location)? locationChanged,
     TResult Function(String phoneCode)? phoneCodeChanged,
     TResult Function(String phoneNumber)? phoneNumberChanged,
-    TResult Function(bool isEditPage)? saveProfile,
+    TResult Function()? saveProfile,
     TResult Function()? editProfile,
     required TResult orElse(),
   }) {
@@ -489,7 +487,7 @@ class _$_GenderChanged implements _GenderChanged {
     required TResult Function(String location) locationChanged,
     required TResult Function(String phoneCode) phoneCodeChanged,
     required TResult Function(String phoneNumber) phoneNumberChanged,
-    required TResult Function(bool isEditPage) saveProfile,
+    required TResult Function() saveProfile,
     required TResult Function() editProfile,
   }) {
     return genderChanged(gender);
@@ -504,7 +502,7 @@ class _$_GenderChanged implements _GenderChanged {
     TResult Function(String location)? locationChanged,
     TResult Function(String phoneCode)? phoneCodeChanged,
     TResult Function(String phoneNumber)? phoneNumberChanged,
-    TResult Function(bool isEditPage)? saveProfile,
+    TResult Function()? saveProfile,
     TResult Function()? editProfile,
     required TResult orElse(),
   }) {
@@ -630,7 +628,7 @@ class _$_LocationChanged implements _LocationChanged {
     required TResult Function(String location) locationChanged,
     required TResult Function(String phoneCode) phoneCodeChanged,
     required TResult Function(String phoneNumber) phoneNumberChanged,
-    required TResult Function(bool isEditPage) saveProfile,
+    required TResult Function() saveProfile,
     required TResult Function() editProfile,
   }) {
     return locationChanged(location);
@@ -645,7 +643,7 @@ class _$_LocationChanged implements _LocationChanged {
     TResult Function(String location)? locationChanged,
     TResult Function(String phoneCode)? phoneCodeChanged,
     TResult Function(String phoneNumber)? phoneNumberChanged,
-    TResult Function(bool isEditPage)? saveProfile,
+    TResult Function()? saveProfile,
     TResult Function()? editProfile,
     required TResult orElse(),
   }) {
@@ -771,7 +769,7 @@ class _$_PhoneCodeChanged implements _PhoneCodeChanged {
     required TResult Function(String location) locationChanged,
     required TResult Function(String phoneCode) phoneCodeChanged,
     required TResult Function(String phoneNumber) phoneNumberChanged,
-    required TResult Function(bool isEditPage) saveProfile,
+    required TResult Function() saveProfile,
     required TResult Function() editProfile,
   }) {
     return phoneCodeChanged(phoneCode);
@@ -786,7 +784,7 @@ class _$_PhoneCodeChanged implements _PhoneCodeChanged {
     TResult Function(String location)? locationChanged,
     TResult Function(String phoneCode)? phoneCodeChanged,
     TResult Function(String phoneNumber)? phoneNumberChanged,
-    TResult Function(bool isEditPage)? saveProfile,
+    TResult Function()? saveProfile,
     TResult Function()? editProfile,
     required TResult orElse(),
   }) {
@@ -912,7 +910,7 @@ class _$_PhoneNumberChanged implements _PhoneNumberChanged {
     required TResult Function(String location) locationChanged,
     required TResult Function(String phoneCode) phoneCodeChanged,
     required TResult Function(String phoneNumber) phoneNumberChanged,
-    required TResult Function(bool isEditPage) saveProfile,
+    required TResult Function() saveProfile,
     required TResult Function() editProfile,
   }) {
     return phoneNumberChanged(phoneNumber);
@@ -927,7 +925,7 @@ class _$_PhoneNumberChanged implements _PhoneNumberChanged {
     TResult Function(String location)? locationChanged,
     TResult Function(String phoneCode)? phoneCodeChanged,
     TResult Function(String phoneNumber)? phoneNumberChanged,
-    TResult Function(bool isEditPage)? saveProfile,
+    TResult Function()? saveProfile,
     TResult Function()? editProfile,
     required TResult orElse(),
   }) {
@@ -986,7 +984,6 @@ abstract class _$SaveProfileCopyWith<$Res> {
   factory _$SaveProfileCopyWith(
           _SaveProfile value, $Res Function(_SaveProfile) then) =
       __$SaveProfileCopyWithImpl<$Res>;
-  $Res call({bool isEditPage});
 }
 
 /// @nodoc
@@ -998,50 +995,25 @@ class __$SaveProfileCopyWithImpl<$Res> extends _$ProfileEventCopyWithImpl<$Res>
 
   @override
   _SaveProfile get _value => super._value as _SaveProfile;
-
-  @override
-  $Res call({
-    Object? isEditPage = freezed,
-  }) {
-    return _then(_SaveProfile(
-      isEditPage: isEditPage == freezed
-          ? _value.isEditPage
-          : isEditPage // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$_SaveProfile implements _SaveProfile {
-  const _$_SaveProfile({required this.isEditPage});
-
-  @override
-  final bool isEditPage;
+  const _$_SaveProfile();
 
   @override
   String toString() {
-    return 'ProfileEvent.saveProfile(isEditPage: $isEditPage)';
+    return 'ProfileEvent.saveProfile()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _SaveProfile &&
-            (identical(other.isEditPage, isEditPage) ||
-                const DeepCollectionEquality()
-                    .equals(other.isEditPage, isEditPage)));
+    return identical(this, other) || (other is _SaveProfile);
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(isEditPage);
-
-  @JsonKey(ignore: true)
-  @override
-  _$SaveProfileCopyWith<_SaveProfile> get copyWith =>
-      __$SaveProfileCopyWithImpl<_SaveProfile>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -1052,10 +1024,10 @@ class _$_SaveProfile implements _SaveProfile {
     required TResult Function(String location) locationChanged,
     required TResult Function(String phoneCode) phoneCodeChanged,
     required TResult Function(String phoneNumber) phoneNumberChanged,
-    required TResult Function(bool isEditPage) saveProfile,
+    required TResult Function() saveProfile,
     required TResult Function() editProfile,
   }) {
-    return saveProfile(isEditPage);
+    return saveProfile();
   }
 
   @override
@@ -1067,12 +1039,12 @@ class _$_SaveProfile implements _SaveProfile {
     TResult Function(String location)? locationChanged,
     TResult Function(String phoneCode)? phoneCodeChanged,
     TResult Function(String phoneNumber)? phoneNumberChanged,
-    TResult Function(bool isEditPage)? saveProfile,
+    TResult Function()? saveProfile,
     TResult Function()? editProfile,
     required TResult orElse(),
   }) {
     if (saveProfile != null) {
-      return saveProfile(isEditPage);
+      return saveProfile();
     }
     return orElse();
   }
@@ -1113,12 +1085,7 @@ class _$_SaveProfile implements _SaveProfile {
 }
 
 abstract class _SaveProfile implements ProfileEvent {
-  const factory _SaveProfile({required bool isEditPage}) = _$_SaveProfile;
-
-  bool get isEditPage => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$SaveProfileCopyWith<_SaveProfile> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory _SaveProfile() = _$_SaveProfile;
 }
 
 /// @nodoc
@@ -1166,7 +1133,7 @@ class _$_EditProfile implements _EditProfile {
     required TResult Function(String location) locationChanged,
     required TResult Function(String phoneCode) phoneCodeChanged,
     required TResult Function(String phoneNumber) phoneNumberChanged,
-    required TResult Function(bool isEditPage) saveProfile,
+    required TResult Function() saveProfile,
     required TResult Function() editProfile,
   }) {
     return editProfile();
@@ -1181,7 +1148,7 @@ class _$_EditProfile implements _EditProfile {
     TResult Function(String location)? locationChanged,
     TResult Function(String phoneCode)? phoneCodeChanged,
     TResult Function(String phoneNumber)? phoneNumberChanged,
-    TResult Function(bool isEditPage)? saveProfile,
+    TResult Function()? saveProfile,
     TResult Function()? editProfile,
     required TResult orElse(),
   }) {

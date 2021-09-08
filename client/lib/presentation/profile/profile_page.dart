@@ -1,5 +1,6 @@
 import 'package:client/application/profile/profile_bloc.dart';
 import 'package:client/presentation/application/widgets/form_label.dart';
+import 'package:client/presentation/core/widgets/flash_message.dart';
 import 'package:flag/flag.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,14 +13,91 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     // Get The bloc value from the provider
     final ProfileBloc _profileBloc = BlocProvider.of<ProfileBloc>(context);
-    return Form(
-      child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 8),
-        child: BlocConsumer<ProfileBloc, ProfileState>(
-          listener: (context, state) {},
-          builder: (context, state) {
-            print("@ profile builder ${state.isSubmitting}");
-            return ListView(
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 8),
+      child: BlocConsumer<ProfileBloc, ProfileState>(
+        listener: (context, state) {
+          // Handle Value Failures
+          state.valueFailureOrSuccess.fold(
+            () {},
+            (either) {
+              either.fold((failure) {
+                failure.maybeMap(
+                  // Full Name
+                  // Already Handled by form validator
+                  fullNameEmptyValue: (_) {},
+                  fullNameInvalidFormat: (_) {},
+                  fullNameInvalidLength: (_) {},
+
+                  // BirthDate
+                  // Already Handled By picker
+                  emptyBirthDate: (_) {},
+                  birthDateInvalid: (_) {},
+
+                  // Gender
+                  // Already Handled by Default Value
+                  emptyGender: (_) {
+                    getWrappedFlashMessage(context, "Please Select a gender");
+                  },
+                  invalidGender: (_) {
+                    getWrappedFlashMessage(
+                        context, "Please Select a valid gender");
+                  },
+
+                  // Location
+                  // Already Handled By Default Value
+                  emptyLocation: (_) {},
+                  invalidLocation: (_) {},
+
+                  // Phone Code
+                  // Already Handled By Default Value
+                  emptyPhoneCode: (_) {},
+                  invalidPhoneCode: (_) {},
+
+                  // Phone Number
+                  // Already Handled By form validator
+                  emptyPhoneNumber: (_) {},
+                  shortPhoneNumber: (_) {},
+                  invalidPhoneNumber: (_) {},
+                  exceedingPhoneNumber: (_) {},
+
+                  // Success Scenario
+                  orElse: () {},
+                );
+              }, (_) => {});
+            },
+          );
+          // Handle Profile Failures and Success
+          state.applicationProfileFailureOrSuccess.fold(
+            () {},
+            (either) {
+              either.fold(
+                (failure) {
+                  failure.maybeMap(
+                    emptyApplicationProfile: (_) {},
+                    incompleteApplicationProfile: (_) {},
+                    databaseError: (_) {},
+                    orElse: () {},
+                  );
+                },
+                (_) {
+                  Navigator.pop(context);
+
+                  // Custom Function which returns a snackbar
+                  getWrappedFlashMessage(
+                      context, "Your Profile has been saved");
+                },
+              );
+            },
+          );
+        },
+        builder: (context, state) {
+          return Form(
+            // Check Status of show error message to decide form validator state
+            autovalidateMode: state.showErrorMessages
+                ? AutovalidateMode.always
+                : AutovalidateMode.disabled,
+            child: ListView(
               // ignore: prefer_const_literals_to_create_immutables
               children: [
                 // Top Label
@@ -37,6 +115,7 @@ class ProfilePage extends StatelessWidget {
                 // Full Name Input area
                 const FormLabel(textValue: "Full Name"),
                 TextFormField(
+                  autocorrect: false,
                   initialValue: state.fullName.value.fold((l) => "", (r) => r),
                   decoration: const InputDecoration(
                     hintText: "Full Name",
@@ -54,8 +133,7 @@ class ProfilePage extends StatelessWidget {
                   validator: (_) => _profileBloc.state.fullName.value.fold(
                     (l) => l.maybeMap(
                       fullNameEmptyValue: (_) => "Fullname can't be empty",
-                      fullNameInvalidFormat: (_) =>
-                          "Fullname must have First and Last",
+                      fullNameInvalidFormat: (_) => "Enter First and Last Name",
                       fullNameInvalidLength: (_) =>
                           "Fullname can't contain initials",
                       orElse: () => null,
@@ -251,6 +329,8 @@ class ProfilePage extends StatelessWidget {
                         width: MediaQuery.of(context).size.width * 0.5,
                         height: 52,
                         child: TextFormField(
+                          initialValue:
+                              state.phoneNumber.value.fold((l) => "", (r) => r),
                           decoration:
                               const InputDecoration(hintText: "Phone Digits"),
                           onChanged: (phoneNumberValue) {
@@ -267,7 +347,8 @@ class ProfilePage extends StatelessWidget {
                               emptyPhoneNumber: (_) =>
                                   "Please Enter a Phone Number",
                               shortPhoneNumber: (_) =>
-                                  "Phone number must be 7 digits",
+                                  "Phone number must be 9 digits",
+                              exceedingLength: (_) => "Phone number too long",
                               invalidPhoneNumber: (_) => "Invalid Phone Number",
                               orElse: () => null,
                             ),
@@ -283,16 +364,23 @@ class ProfilePage extends StatelessWidget {
                 Container(
                   margin:
                       const EdgeInsets.symmetric(vertical: 30, horizontal: 15),
-                  child: MaterialButton(
-                    color: Theme.of(context).primaryColor,
-                    onPressed: () {},
-                    child: const Text("Save Profile"),
-                  ),
+                  child: state.isSubmitting
+                      ? const Center(
+                          child: CircularProgressIndicator(),
+                        )
+                      : MaterialButton(
+                          color: Theme.of(context).primaryColor,
+                          onPressed: () {
+                            // Add Event
+                            _profileBloc.add(const ProfileEvent.saveProfile());
+                          },
+                          child: const Text("Save Profile"),
+                        ),
                 )
               ],
-            );
-          },
-        ),
+            ),
+          );
+        },
       ),
     );
   }
