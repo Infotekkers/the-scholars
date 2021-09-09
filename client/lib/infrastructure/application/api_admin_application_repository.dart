@@ -23,8 +23,8 @@ class ApiAdminApplicationRepository implements IAdminApplicationRepository {
   @override
   Future<Either<ApplicationFailure, List<ApplicationHighlight>>>
       getServerApplicationsAdmin() async {
-    final Uri url = Uri.parse("$_baseUrl/admin/applications");
-    List<ApplicationHighlight> applications = [];
+    final Uri url = Uri.parse("$_baseUrl/applications");
+    final List<ApplicationHighlight> applications = [];
 
     try {
       final response = await client!.get(url);
@@ -52,7 +52,7 @@ class ApiAdminApplicationRepository implements IAdminApplicationRepository {
   @override
   Future<Either<ApplicationFailure, Application>> getServerApplicationAdmin(
       {required ApplicationId applicationId}) async {
-    final Uri url = Uri.parse("$_baseUrl/admin/application/$applicationId");
+    final Uri url = Uri.parse("$_baseUrl/application/$applicationId");
 
     try {
       final response = await client!.get(url);
@@ -75,7 +75,7 @@ class ApiAdminApplicationRepository implements IAdminApplicationRepository {
     final applicationHighlightDto =
         ApplicationHighlightDto.fromDomain(applicationHighlight);
     final Uri url = Uri.parse(
-        "$_baseUrl/admin/application/${applicationHighlightDto.applicationId}");
+        "$_baseUrl/application/${applicationHighlightDto.applicationId}");
     final outgoingJson = applicationHighlightDto.toJson();
 
     try {
