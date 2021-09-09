@@ -50,6 +50,12 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
             isSubmitting: false,
             showErrorMessages: true,
             authFailureOrSuccess: optionOf(failureOrSuccess));
+
+        if (failureOrSuccess?.isRight() ?? false) {
+          failureOrSuccess!.fold((l) => {}, (r) async {
+            await authRepository.setCachedUser(user: r);
+          });
+        }
       },
     );
   }
