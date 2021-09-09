@@ -446,6 +446,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.6.0"
+  liquid_pull_to_refresh:
+    dependency: "direct main"
+    description:
+      name: liquid_pull_to_refresh
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "3.0.0"
   logging:
     dependency: transitive
     description:

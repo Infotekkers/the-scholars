@@ -22,7 +22,8 @@ class SignInForm extends StatelessWidget {
                     cancelledByUser: (_) => "Cancelled",
                   )).show(context);
                 }, (r) {
-                  BlocProvider.of<AuthBloc>(context).add(const AuthEvent.authCheckRequested());
+                  BlocProvider.of<AuthBloc>(context)
+                      .add(const AuthEvent.authCheckRequested());
                 }));
       },
       builder: (context, state) {

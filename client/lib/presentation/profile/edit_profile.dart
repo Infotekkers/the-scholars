@@ -311,8 +311,9 @@ class EditProfilePage extends StatelessWidget {
                       'Kenya',
                       'Somalia',
                       'Eritrea',
-                      'South Sudan',
-                      'North Sudan'
+                      'Sudan',
+                      'Tanzania',
+                      'Uganda'
                     ].map((String code) {
                       return DropdownMenuItem<String>(
                           value: code,
@@ -366,8 +367,15 @@ class EditProfilePage extends StatelessWidget {
                               );
                             }
                           },
-                          items: <String>["+251", "+254", "+261"]
-                              .map((String code) {
+                          items: <String>[
+                            "+251",
+                            "+254",
+                            "+252",
+                            "+291",
+                            "+249",
+                            "+255",
+                            "+256"
+                          ].map((String code) {
                             return DropdownMenuItem<String>(
                                 value: code,
                                 // ignore: sized_box_for_whitespace
@@ -456,6 +464,14 @@ FlagsCode getFlagCode(String code) {
     return FlagsCode.ET;
   } else if (code == "+254") {
     return FlagsCode.KE;
+  } else if (code == "+291") {
+    return FlagsCode.ER;
+  } else if (code == "+249") {
+    return FlagsCode.SS;
+  } else if (code == "+252") {
+    return FlagsCode.SO;
+  } else if (code == "+255") {
+    return FlagsCode.TZ;
   } else {
     return FlagsCode.UG;
   }
@@ -470,9 +486,11 @@ FlagsCode countryFlag(String country) {
     return FlagsCode.SO;
   } else if (country == "Eritrea") {
     return FlagsCode.ER;
-  } else if (country == "South Sudan") {
+  } else if (country == "Sudan") {
     return FlagsCode.SS;
+  } else if (country == "Uganda") {
+    return FlagsCode.UG;
   } else {
-    return FlagsCode.SD;
+    return FlagsCode.TZ;
   }
 }

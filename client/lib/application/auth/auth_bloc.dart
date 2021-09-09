@@ -24,15 +24,20 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   Stream<AuthState> mapEventToState(
     AuthEvent event,
   ) async* {
-    yield* event.map(authCheckRequested: (e) async* {
-      final failureOrSuccess = await iAuthRepository.getCachedUser();
-      yield failureOrSuccess.fold(() => const AuthState.unauthenticated(), (r) {
-        if (e.claimedRole != "") {
-          return e.claimedRole == r.role.getOrCrash() ? AuthState.authorized(r) : const AuthState.unauthorized();
-        } else {
-          return AuthState.authorized(r);
-        }
-      });
-    }, signedOut: (e) async* {});
+    yield* event.map(
+        authCheckRequested: (e) async* {
+          final failureOrSuccess = await iAuthRepository.getCachedUser();
+          yield failureOrSuccess.fold(() => const AuthState.unauthenticated(),
+              (r) {
+            if (e.claimedRole != "") {
+              return e.claimedRole == r.role.getOrCrash()
+                  ? AuthState.authorized(r)
+                  : const AuthState.unauthorized();
+            } else {
+              return AuthState.authorized(r);
+            }
+          });
+        },
+        signedOut: (e) async* {});
   }
 }

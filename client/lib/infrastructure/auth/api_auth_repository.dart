@@ -15,7 +15,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class ApiAuthRepository implements IAuthRepository {
   // static final String? _baseUrl = dotenv.env["AUTH_API"];
   http.Client? client = http.Client();
-  static const String _baseUrl = "http://localhost:3000/auth";
+  static const String _baseUrl = "http://10.0.2.2:5000";
 
   ApiAuthRepository();
   ApiAuthRepository.test(this.client);
@@ -48,13 +48,15 @@ class ApiAuthRepository implements IAuthRepository {
   @override
   Future<Either<AuthFailure, User>> signIn(
       {required User user, required Password password}) async {
-    final Uri url = Uri.parse("$_baseUrl/login");
+    print("Launched");
+    final Uri url = Uri.parse("$_baseUrl/auth/login");
     final UserDto userDtoOut = UserDto.fromDomain(user);
     final outgoingJson =
         userDtoOut.copyWith(password: password.getOrCrash()).toJson();
 
     try {
       final response = await client!.post(url, body: outgoingJson);
+      print("HERE ${response.body}");
 
       if (response.statusCode == 200) {
         final UserDto userDtoIn =
@@ -76,7 +78,7 @@ class ApiAuthRepository implements IAuthRepository {
       final SharedPreferences prefs = await SharedPreferences.getInstance();
 
       final String? response = prefs.getString("user");
-      
+
       final UserDto userDtoIn =
           UserDto.fromJson(jsonDecode(response!) as Map<String, dynamic>);
       return optionOf(userDtoIn.toDomain());

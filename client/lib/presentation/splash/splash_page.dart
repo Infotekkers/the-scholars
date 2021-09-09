@@ -11,15 +11,15 @@ class SplashPage extends StatelessWidget {
             initial: (_) {},
             authorized: (state) {
               if (state.user.role.getOrCrash() == "admin") {
-                Navigator.pushNamed(context, "/application-overview");
+                Navigator.popAndPushNamed(context, "/application-overview");
               } else {
-                Navigator.pushNamed(context, "/home");
+                Navigator.popAndPushNamed(context, "/navigator");
               }
             },
             unauthenticated: (_) => Navigator.pushNamed(context, "/sign-in"),
             orElse: () {});
       },
-      child: const CircularProgressIndicator(),
+      child: const Center(child: CircularProgressIndicator()),
     );
   }
 }

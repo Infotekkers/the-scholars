@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:client/application/application/application_bloc.dart';
+import 'package:client/application/view_application/view_application_bloc.dart';
 import 'package:client/domain/application/application_failure.dart';
 import 'package:client/domain/application/application.dart';
 import 'package:client/domain/application/i_application_repository.dart';
@@ -24,7 +25,149 @@ class ApiApplicationRepository implements IApplicationRepository {
   final apiUrl = "http://10.0.2.2:5000";
 
   // Function to create a complete Applciation -- ON Server
-  // IMPLEMENTED
+  @override
+  Future<Either<ApplicationFailure, Application>> createServerApplication(
+      {required Application application}) async {
+    late String? applicationProfileRaw;
+    late SharedPreferences prefs;
+    late String? cachedApplicationIdRaw;
+    //  Get Application Profile -- Shared Prefs
+    try {
+      // Create SP Instance
+      prefs = await SharedPreferences.getInstance();
+
+      // Get Cached Application From SP
+      applicationProfileRaw = prefs.getString("applicationProfile");
+
+      // Check if value exits
+      if (applicationProfileRaw != null) {
+        final Map<String, dynamic> applicationProfileJson =
+            jsonDecode(applicationProfileRaw) as Map<String, dynamic>;
+
+        // Get Cached Application id from shared prefs - ID of First Page cache Stored on SP
+        cachedApplicationIdRaw = prefs.getString("cachedApplicationId");
+
+        if (cachedApplicationIdRaw != null) {
+          final int applicationId = int.parse(cachedApplicationIdRaw);
+
+          // Get Cached Application from DB -- Sql Flite
+          final cachedApplicationRaw =
+              await dbService.getCacheApplication(id: applicationId);
+
+          final Map<String, dynamic> cachedApplicationJson =
+              cachedApplicationRaw[0];
+
+          // Get Final Application JSON
+          final Map<String, dynamic> outJsonApplication = {
+            "fullName": applicationProfileJson['fullName'],
+            "birthDate": applicationProfileJson['birthDate'],
+            "gender": applicationProfileJson['gender'],
+            "location": applicationProfileJson['location'],
+            "phoneNumber":
+                "${applicationProfileJson['phoneCode']}-${applicationProfileJson['phoneNumber']}",
+            "schoolTranscript": cachedApplicationJson['schoolTranscript'],
+            "mainEssay": cachedApplicationJson['mainEssay'],
+            "extraCertification": cachedApplicationJson['extraCertification'],
+            "reccomendationLetter":
+                cachedApplicationJson['reccomendationLetter'],
+            "extraEssay":
+                application.extraEssay.value.fold((l) => "", (r) => r),
+            "proficencyTest":
+                application.proficencyTest.value.fold((l) => "", (r) => r),
+            "departmentSelection":
+                application.departmentSelection.value.fold((l) => "", (r) => r),
+            "militaryFamilyStatus": application.militaryFamilyStatus.value
+                .fold((l) => "", (r) => r),
+            "universityFamilyStatus": application.universityFamilyStatus.value
+                .fold((l) => "", (r) => r),
+          };
+
+          // Send api call
+          final apiResult = await http.post(
+            Uri.parse("$apiUrl/user/application"),
+            body: {
+              "application": jsonEncode(outJsonApplication),
+            },
+          ).timeout(
+            const Duration(seconds: 10),
+            onTimeout: () {
+              return http.Response("Server Timeout", 503);
+            },
+          );
+
+          // Success Scenario
+          if (apiResult.statusCode == 201) {
+            // Cache Application Id
+            final resultBody = jsonDecode(apiResult.body);
+            cacheSentApplicationId(
+              applicationId: ApplicationId(
+                applicationId: resultBody['applicationId'].toString(),
+              ),
+            );
+            // Delete Cached Application Values
+            clearSQLDB();
+
+            // Delete Cached Application ID
+            prefs.remove("cachedApplicationId");
+
+            // Reset Bloc to intial State
+            getIt<ApplicationBloc>().add(
+              const ApplicationEvent.initialEvent(),
+            );
+
+            // Reset View Applciation Bloc To Refresh
+            getIt<ViewApplicationBloc>()
+                .add(const ViewApplicationEvent.started());
+            return right(application);
+          }
+          // Duplicate Scenario
+          else if (apiResult.statusCode == 409) {
+            return left(
+              const ApplicationFailure.duplicateApplication(),
+            );
+          }
+
+          // Server Error Scenario
+          else {
+            return left(
+              const ApplicationFailure.serverError(),
+            );
+          }
+        }
+      } else {
+        return left(
+          const ApplicationFailure.databaseError(),
+        );
+      }
+
+      return right(application);
+    } catch (e) {
+      return left(const ApplicationFailure.databaseError());
+    }
+  }
+
+  // Function To delete an application --ON Server
+  @override
+  Future<Either<ApplicationFailure, Application>> deleteServerApplication(
+      {required ApplicationId applicationId}) {
+    // TODO: implement deleteServerApplication
+    throw UnimplementedError();
+  }
+
+  // Function to Cache First Page of an application
+  @override
+  Future<Either<ApplicationFailure, Application>> saveCacheApplication(
+      {required ApplicationDto applicationDto}) {
+    return dbService.cacheApplication(applicationDto);
+  }
+
+  // Function get to Cache First Page of an application
+  @override
+  Future<List<Map<String, dynamic>>> getCacheApplication() async {
+    return dbService.getCacheApplications();
+  }
+
+  // Caches applciation ID sent to Server
   @override
   Future<Either<ApplicationFailure, ApplicationId>> cacheSentApplicationId(
       {required ApplicationId applicationId}) async {
@@ -49,156 +192,31 @@ class ApiApplicationRepository implements IApplicationRepository {
     }
   }
 
-  // Function To delete an application --ON Server
-  // IMPLEMENTED
+  // Function to get any Item from Shared Preferences
   @override
-  Future<Either<ApplicationFailure, Application>> createServerApplication(
-      {required Application application}) async {
-    late String? applicationProfileRaw;
-    late SharedPreferences prefs;
-    late String? cachedApplicationIdRaw;
-    //  Get Application Profile -- Shared Prefs
+  Future<Either<ApplicationFailure, List>> getCacheSentApplicationId() async {
     try {
-      prefs = await SharedPreferences.getInstance();
-      applicationProfileRaw = prefs.getString("applicationProfile");
+      final SharedPreferences prefs = await SharedPreferences.getInstance();
+      final List<String>? allApplications =
+          prefs.getStringList("allApplications");
+
+      if (allApplications == null) {
+        return right([]);
+      } else {
+        final List allApplications = [];
+        // ignore: avoid_function_literals_in_foreach_calls
+        allApplications.forEach((element) {
+          allApplications.add(ApplicationId(applicationId: element.toString()));
+        });
+
+        return right(allApplications);
+      }
     } catch (e) {
       return left(const ApplicationFailure.databaseError());
     }
-
-    if (applicationProfileRaw != null) {
-      final Map<String, dynamic> applicationProfileJson =
-          jsonDecode(applicationProfileRaw) as Map<String, dynamic>;
-
-      // Get Cached Application id from shared prefs
-      cachedApplicationIdRaw = prefs.getString("cachedApplicationId");
-      if (cachedApplicationIdRaw != null) {
-        final int applicationId = int.parse(cachedApplicationIdRaw);
-
-        // Get Cached Application from DB -- Sql Flite
-        final cachedApplicationRaw =
-            await dbService.getCacheApplication(id: applicationId);
-
-        final Map<String, dynamic> cachedApplicationJson =
-            cachedApplicationRaw[0];
-
-        // Get Final Application JSON
-        final Map<String, dynamic> outJsonApplication = {
-          "fullName": applicationProfileJson['fullName'],
-          "birthDate": applicationProfileJson['birthDate'],
-          "gender": applicationProfileJson['gender'],
-          "location": applicationProfileJson['location'],
-          "phoneNumber":
-              "${applicationProfileJson['phoneCode']}-${applicationProfileJson['phoneNumber']}",
-          "schoolTranscript": cachedApplicationJson['schoolTranscript'],
-          "mainEssay": cachedApplicationJson['mainEssay'],
-          "extraCertification": cachedApplicationJson['extraCertification'],
-          "reccomendationLetter": cachedApplicationJson['reccomendationLetter'],
-          "extraEssay": application.extraEssay.value.fold((l) => "", (r) => r),
-          "proficencyTest":
-              application.proficencyTest.value.fold((l) => "", (r) => r),
-          "departmentSelection":
-              application.departmentSelection.value.fold((l) => "", (r) => r),
-          "militaryFamilyStatus":
-              application.militaryFamilyStatus.value.fold((l) => "", (r) => r),
-          "universityFamilyStatus": application.universityFamilyStatus.value
-              .fold((l) => "", (r) => r),
-        };
-
-        // Send api call
-        final apiResult = await http.post(
-          Uri.parse("$apiUrl/user/application"),
-          body: {
-            "application": jsonEncode(outJsonApplication),
-          },
-        ).timeout(
-          const Duration(seconds: 10),
-          onTimeout: () {
-            return http.Response("Server Timeout", 503);
-          },
-        );
-
-// Success Scenario
-        if (apiResult.statusCode == 201) {
-          // Cache Application Id
-          final resultBody = jsonDecode(apiResult.body);
-          cacheSentApplicationId(
-            applicationId: ApplicationId(
-              applicationId: resultBody['applicationId'].toString(),
-            ),
-          );
-          clearSQLDB();
-          getIt<ApplicationBloc>().add(const ApplicationEvent.initialEvent());
-          return right(application);
-        }
-        // Duplicate Scenario
-        else if (apiResult.statusCode == 409) {
-          return left(
-            const ApplicationFailure.duplicateApplication(),
-          );
-        }
-        // No Connection Scenario
-        else if (apiResult.statusCode == 503) {
-          return left(
-            const ApplicationFailure.serverError(),
-          );
-        }
-        // Server Error Scenario
-        else {
-          return left(
-            const ApplicationFailure.serverError(),
-          );
-        }
-      }
-    } else {}
-
-    return right(application);
   }
 
-// Function To Get an application --ON Server
-  @override
-  Future<Either<ApplicationFailure, Unit>> deleteFromSharedPreference(
-      {required String itemToDelete}) {
-    // TODO: implement deleteFromSharedPreference
-    throw UnimplementedError();
-  }
-
-  // Function to Cache First Page of an application --ON Sqlite
-  @override
-  Future<Either<ApplicationFailure, Application>> deleteServerApplication(
-      {required ApplicationId applicationId}) {
-    // TODO: implement deleteServerApplication
-    throw UnimplementedError();
-  }
-
-  // Function get to Cache First Page of an application
-  // IMPLEMENTED
-  @override
-  Future<List<Map<String, dynamic>>> getCacheApplication() async {
-    return dbService.getCacheApplications();
-  }
-
-// Function to Cache application ID of a sent application --ON Shared Preference
-// IMPLEMENTED
-  @override
-  Future<Either<ApplicationFailure, List>> getCacheSentApplicationId() async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    final List<String>? allApplications =
-        prefs.getStringList("allApplications");
-
-    if (allApplications == null) {
-      return right([]);
-    } else {
-      final List allApplications = [];
-      // ignore: avoid_function_literals_in_foreach_calls
-      allApplications.forEach((element) {
-        allApplications.add(ApplicationId(applicationId: element.toString()));
-      });
-
-      return right(allApplications);
-    }
-  }
-
-// IMPLEMENTED
+  // Get Application Highlights by All Cached IDs
   @override
   Future<Either<ApplicationFailure, dynamic>> getFromSharedPreference(
       {required String itemToGet}) async {
@@ -217,13 +235,6 @@ class ApiApplicationRepository implements IApplicationRepository {
   }
 
   @override
-  Future<Either<ApplicationFailure, Application>> getServerApplication(
-      {required ApplicationId applicationId}) {
-    // TODO: implement getServerApplication
-    throw UnimplementedError();
-  }
-
-  @override
   void clearSQLDB() {
     dbService.clearDB();
   }
@@ -231,22 +242,20 @@ class ApiApplicationRepository implements IApplicationRepository {
   @override
   Future<Either<ApplicationFailure, List<ApplicationHighlightDto>>>
       getApplicationHighlights() async {
+    print("Laucnhed getter");
     // Get All Application Ids from cache
-    final List<String> allCachedApplicationIds = [
-      "6135fc6406bf3af1c5733dc8",
-      "61336a061057ce5190748305",
-      "613369701057ce5190748302",
-      "613368431057ce51907482ff",
-    ];
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    final allApplicationIds = prefs.getStringList("allApplications")!;
 
     // if cache is empty
-    if (allCachedApplicationIds.isEmpty) {
+    if (allApplicationIds.isEmpty) {
       return right([]);
     } else {
       // Call the api
       final applicationResult =
           await http.post(Uri.parse("$apiUrl/user/id/application"), body: {
-        "applicationIds": jsonEncode(allCachedApplicationIds),
+        "applicationIds": jsonEncode(allApplicationIds),
       }).timeout(
         const Duration(seconds: 10),
         onTimeout: () {
@@ -379,10 +388,10 @@ class DatabaseService {
     await db.execute('''
       CREATE TABLE $tableName (
         $columnId INTEGER PRIMARY KEY AUTOINCREMENT,
-        $schoolTranscript TEXT NOT NULL,
-        $mainEssay TEXT NOT NULL,
-        $extraCertification TEXT NOT NULL,
-        $reccomendationLetter TEXT NOT NULL
+        $schoolTranscript BLOB NOT NULL,
+        $mainEssay BLOB NOT NULL,
+        $extraCertification BLOB NOT NULL,
+        $reccomendationLetter BLOB NOT NULL
       )
       ''');
   }
@@ -414,7 +423,7 @@ class DatabaseService {
           "cachedApplicationId", result[0]['lastid'].toString());
       return right(Application.initial());
     } catch (e) {
-      return left(ApplicationFailure.databaseError());
+      return left(const ApplicationFailure.databaseError());
     }
   }
 

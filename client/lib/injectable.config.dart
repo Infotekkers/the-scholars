@@ -12,19 +12,13 @@ import 'application/applications_overview_actor/applications_overview_actor_bloc
     as _i18;
 import 'application/applications_overview_watcher/applications_overview_watcher_bloc.dart'
     as _i19;
+import 'application/auth/auth_bloc.dart' as _i20;
 import 'application/auth/register_form/register_form_bloc.dart' as _i13;
 import 'application/auth/sign_in_form/sign_in_form_bloc.dart' as _i14;
 import 'application/navigation/navigation_bloc.dart' as _i11;
 import 'application/profile/profile_bloc.dart' as _i12;
 import 'application/util/util_bloc.dart' as _i15;
 import 'application/view_application/view_application_bloc.dart' as _i16;
-    as _i16;
-import 'application/auth/auth_bloc.dart' as _i17;
-import 'application/auth/register_form/register_form_bloc.dart' as _i10;
-import 'application/auth/sign_in_form/sign_in_form_bloc.dart' as _i11;
-import 'application/navigation/navigation_bloc.dart' as _i9;
-import 'application/util/util_bloc.dart' as _i12;
-import 'application/view_application/view_application_bloc.dart' as _i13;
 import 'domain/application/i_admin_application_repository.dart' as _i3;
 import 'domain/application/i_application_repository.dart' as _i7;
 import 'domain/auth/i_auth_repository.dart' as _i9;
@@ -65,6 +59,6 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i19.ApplicationsOverviewWatcherBloc>(() =>
       _i19.ApplicationsOverviewWatcherBloc(
           get<_i3.IAdminApplicationRepository>()));
-  gh.factory<_i17.AuthBloc>(() => _i17.AuthBloc(get<_i7.IAuthRepository>()));
+  gh.factory<_i20.AuthBloc>(() => _i20.AuthBloc(get<_i9.IAuthRepository>()));
   return get;
 }

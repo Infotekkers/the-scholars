@@ -81,7 +81,7 @@ const applicationSchema = mongoose.Schema({
   },
   //   Department Choice Stored as Array in order of preference
   departmentSelection: {
-    type: [String],
+    type: String,
     required: false,
     default: "",
   },
@@ -101,7 +101,7 @@ const applicationSchema = mongoose.Schema({
   admissionStatus: {
     type: String,
     required: false,
-    default: "complete",
+    default: "pending",
   },
 });
 

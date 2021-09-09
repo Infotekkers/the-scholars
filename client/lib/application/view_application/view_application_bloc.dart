@@ -35,13 +35,7 @@ class ViewApplicationBloc
             allApplicationsHighlightDtos =
             await _iApplicationRepository.getApplicationHighlights();
 
-        // print("@view bloc All Application are $allCachedApplicationIds");
-
-        // Get list of highlights
-        // final allApplicationHighlights =
-        //     await _iApplicationRepository.getApplicationHighlightsById();
-
-//         print("@view bloc val is $allApplicationsHighlightDtos");
+        // print("@view bloc val is $allApplicationsHighlightDtos");
 
         // If Error is returned
         if (allApplicationsHighlightDtos.isLeft()) {

@@ -176,12 +176,12 @@ router.post("/register", async (req, res) => {
     );
 
     // Return token
-    res.status(201).json({ 
+    res.status(201).json({
       token: token,
       name: user.userName,
       emailAddress: user.email,
       role: user.role,
-   });
+    });
   } catch (err) {
     // Use custom error middleware
     const errorMessage = handleError(err);
@@ -211,6 +211,7 @@ router.post("/register", async (req, res) => {
  *        description : Returns a generated user token
  */
 router.post("/login", async (req, res) => {
+  console.log("Logging in");
   const { emailAddress, password } = req.body;
 
   try {
@@ -236,6 +237,7 @@ router.post("/login", async (req, res) => {
         role: user.role,
       });
     }
+    console.log("User Matched");
   } catch (err) {
     res.status(400).json(err);
   }
