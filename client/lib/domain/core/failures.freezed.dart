@@ -64,6 +64,12 @@ class _$ValueFailureTearOff {
     );
   }
 
+  InvalidDate<T> invalidDate<T>({required T failedValue}) {
+    return InvalidDate<T>(
+      failedValue: failedValue,
+    );
+  }
+
   InvalidApplication<T> invalidApplication<T>({required T failedValue}) {
     return InvalidApplication<T>(
       failedValue: failedValue,
@@ -209,6 +215,7 @@ mixin _$ValueFailure<T> {
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -250,6 +257,7 @@ mixin _$ValueFailure<T> {
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -292,6 +300,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -341,6 +350,7 @@ mixin _$ValueFailure<T> {
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -475,6 +485,7 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -519,6 +530,7 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -567,6 +579,7 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -619,6 +632,7 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -754,6 +768,7 @@ class _$InvalidEmail<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -798,6 +813,7 @@ class _$InvalidEmail<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -846,6 +862,7 @@ class _$InvalidEmail<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -898,6 +915,7 @@ class _$InvalidEmail<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -1033,6 +1051,7 @@ class _$ShortPassword<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -1077,6 +1096,7 @@ class _$ShortPassword<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -1125,6 +1145,7 @@ class _$ShortPassword<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -1177,6 +1198,7 @@ class _$ShortPassword<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -1312,6 +1334,7 @@ class _$InvalidUsername<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -1356,6 +1379,7 @@ class _$InvalidUsername<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -1404,6 +1428,7 @@ class _$InvalidUsername<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -1456,6 +1481,7 @@ class _$InvalidUsername<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -1592,6 +1618,7 @@ class _$InvalidPassword<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -1636,6 +1663,7 @@ class _$InvalidPassword<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -1684,6 +1712,7 @@ class _$InvalidPassword<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -1736,6 +1765,7 @@ class _$InvalidPassword<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -1845,6 +1875,7 @@ class _$_InvalidRole<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -1889,6 +1920,7 @@ class _$_InvalidRole<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -1937,6 +1969,7 @@ class _$_InvalidRole<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -1989,6 +2022,7 @@ class _$_InvalidRole<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -2131,6 +2165,7 @@ class _$ExceedingLength<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -2175,6 +2210,7 @@ class _$ExceedingLength<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -2223,6 +2259,7 @@ class _$ExceedingLength<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -2275,6 +2312,7 @@ class _$ExceedingLength<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -2410,6 +2448,7 @@ class _$Multiline<T> with DiagnosticableTreeMixin implements Multiline<T> {
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -2454,6 +2493,7 @@ class _$Multiline<T> with DiagnosticableTreeMixin implements Multiline<T> {
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -2502,6 +2542,7 @@ class _$Multiline<T> with DiagnosticableTreeMixin implements Multiline<T> {
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -2554,6 +2595,7 @@ class _$Multiline<T> with DiagnosticableTreeMixin implements Multiline<T> {
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -2602,6 +2644,287 @@ abstract class Multiline<T> implements ValueFailure<T> {
   T get failedValue => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $MultilineCopyWith<T, Multiline<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $InvalidDateCopyWith<T, $Res> {
+  factory $InvalidDateCopyWith(
+          InvalidDate<T> value, $Res Function(InvalidDate<T>) then) =
+      _$InvalidDateCopyWithImpl<T, $Res>;
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class _$InvalidDateCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $InvalidDateCopyWith<T, $Res> {
+  _$InvalidDateCopyWithImpl(
+      InvalidDate<T> _value, $Res Function(InvalidDate<T>) _then)
+      : super(_value, (v) => _then(v as InvalidDate<T>));
+
+  @override
+  InvalidDate<T> get _value => super._value as InvalidDate<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(InvalidDate<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
+  const _$InvalidDate({required this.failedValue});
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.invalidDate(failedValue: $failedValue)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.invalidDate'))
+      ..add(DiagnosticsProperty('failedValue', failedValue));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is InvalidDate<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @JsonKey(ignore: true)
+  @override
+  $InvalidDateCopyWith<T, InvalidDate<T>> get copyWith =>
+      _$InvalidDateCopyWithImpl<T, InvalidDate<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function() invalidRole,
+    required TResult Function(T failedValue, int max) exceedingLength,
+    required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+    required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
+  }) {
+    return invalidDate(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function()? invalidRole,
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
+    required TResult orElse(),
+  }) {
+    if (invalidDate != null) {
+      return invalidDate(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(_InvalidRole<T> value) invalidRole,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+    required TResult Function(InvalidAdmissionStatus<T> value)
+        invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
+  }) {
+    return invalidDate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(_InvalidRole<T> value)? invalidRole,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
+    required TResult orElse(),
+  }) {
+    if (invalidDate != null) {
+      return invalidDate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidDate<T> implements ValueFailure<T> {
+  const factory InvalidDate({required T failedValue}) = _$InvalidDate<T>;
+
+  T get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $InvalidDateCopyWith<T, InvalidDate<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -2690,6 +3013,7 @@ class _$InvalidApplication<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -2734,6 +3058,7 @@ class _$InvalidApplication<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -2782,6 +3107,7 @@ class _$InvalidApplication<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -2834,6 +3160,7 @@ class _$InvalidApplication<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -2970,6 +3297,7 @@ class _$EmptyApplication<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -3014,6 +3342,7 @@ class _$EmptyApplication<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -3062,6 +3391,7 @@ class _$EmptyApplication<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -3114,6 +3444,7 @@ class _$EmptyApplication<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -3253,6 +3584,7 @@ class _$IncompleteApplication<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -3297,6 +3629,7 @@ class _$IncompleteApplication<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -3345,6 +3678,7 @@ class _$IncompleteApplication<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -3397,6 +3731,7 @@ class _$IncompleteApplication<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -3506,6 +3841,7 @@ class _$GeneralError<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -3550,6 +3886,7 @@ class _$GeneralError<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -3598,6 +3935,7 @@ class _$GeneralError<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -3650,6 +3988,7 @@ class _$GeneralError<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -3754,6 +4093,7 @@ class _$_InvalidFormat<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -3798,6 +4138,7 @@ class _$_InvalidFormat<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -3846,6 +4187,7 @@ class _$_InvalidFormat<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -3898,6 +4240,7 @@ class _$_InvalidFormat<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -3999,6 +4342,7 @@ class _$_EmptyValue<T> with DiagnosticableTreeMixin implements _EmptyValue<T> {
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -4043,6 +4387,7 @@ class _$_EmptyValue<T> with DiagnosticableTreeMixin implements _EmptyValue<T> {
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -4091,6 +4436,7 @@ class _$_EmptyValue<T> with DiagnosticableTreeMixin implements _EmptyValue<T> {
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -4143,6 +4489,7 @@ class _$_EmptyValue<T> with DiagnosticableTreeMixin implements _EmptyValue<T> {
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -4247,6 +4594,7 @@ class _$_InvalidLength<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -4291,6 +4639,7 @@ class _$_InvalidLength<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -4339,6 +4688,7 @@ class _$_InvalidLength<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -4391,6 +4741,7 @@ class _$_InvalidLength<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -4494,6 +4845,7 @@ class _$_EmptyBirthDate<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -4538,6 +4890,7 @@ class _$_EmptyBirthDate<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -4586,6 +4939,7 @@ class _$_EmptyBirthDate<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -4638,6 +4992,7 @@ class _$_EmptyBirthDate<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -4741,6 +5096,7 @@ class _$_InvalidBirthDate<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -4785,6 +5141,7 @@ class _$_InvalidBirthDate<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -4833,6 +5190,7 @@ class _$_InvalidBirthDate<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -4885,6 +5243,7 @@ class _$_InvalidBirthDate<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -4988,6 +5347,7 @@ class _$_EmptyGender<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -5032,6 +5392,7 @@ class _$_EmptyGender<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -5080,6 +5441,7 @@ class _$_EmptyGender<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -5132,6 +5494,7 @@ class _$_EmptyGender<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -5235,6 +5598,7 @@ class _$_InvalidGender<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -5279,6 +5643,7 @@ class _$_InvalidGender<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -5327,6 +5692,7 @@ class _$_InvalidGender<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -5379,6 +5745,7 @@ class _$_InvalidGender<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -5482,6 +5849,7 @@ class _$_EmptyLocation<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -5526,6 +5894,7 @@ class _$_EmptyLocation<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -5574,6 +5943,7 @@ class _$_EmptyLocation<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -5626,6 +5996,7 @@ class _$_EmptyLocation<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -5729,6 +6100,7 @@ class _$_InvalidLocation<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -5773,6 +6145,7 @@ class _$_InvalidLocation<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -5821,6 +6194,7 @@ class _$_InvalidLocation<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -5873,6 +6247,7 @@ class _$_InvalidLocation<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -5976,6 +6351,7 @@ class _$_EmptyPhoneNumber<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -6020,6 +6396,7 @@ class _$_EmptyPhoneNumber<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -6068,6 +6445,7 @@ class _$_EmptyPhoneNumber<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -6120,6 +6498,7 @@ class _$_EmptyPhoneNumber<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -6223,6 +6602,7 @@ class _$_InvalidPhoneNumber<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -6267,6 +6647,7 @@ class _$_InvalidPhoneNumber<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -6315,6 +6696,7 @@ class _$_InvalidPhoneNumber<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -6367,6 +6749,7 @@ class _$_InvalidPhoneNumber<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -6470,6 +6853,7 @@ class _$_ShortPhoneNumber<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -6514,6 +6898,7 @@ class _$_ShortPhoneNumber<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -6562,6 +6947,7 @@ class _$_ShortPhoneNumber<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -6614,6 +7000,7 @@ class _$_ShortPhoneNumber<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -6717,6 +7104,7 @@ class _$_InvalidPhoneCode<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -6761,6 +7149,7 @@ class _$_InvalidPhoneCode<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -6809,6 +7198,7 @@ class _$_InvalidPhoneCode<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -6861,6 +7251,7 @@ class _$_InvalidPhoneCode<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -6964,6 +7355,7 @@ class _$_EmptyPhoneCode<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -7008,6 +7400,7 @@ class _$_EmptyPhoneCode<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -7056,6 +7449,7 @@ class _$_EmptyPhoneCode<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -7108,6 +7502,7 @@ class _$_EmptyPhoneCode<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -7236,6 +7631,7 @@ class _$_EmptyFile<T> with DiagnosticableTreeMixin implements _EmptyFile<T> {
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -7280,6 +7676,7 @@ class _$_EmptyFile<T> with DiagnosticableTreeMixin implements _EmptyFile<T> {
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -7328,6 +7725,7 @@ class _$_EmptyFile<T> with DiagnosticableTreeMixin implements _EmptyFile<T> {
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -7380,6 +7778,7 @@ class _$_EmptyFile<T> with DiagnosticableTreeMixin implements _EmptyFile<T> {
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -7516,6 +7915,7 @@ class _$_InvalidFileFormat<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -7560,6 +7960,7 @@ class _$_InvalidFileFormat<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -7608,6 +8009,7 @@ class _$_InvalidFileFormat<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -7660,6 +8062,7 @@ class _$_InvalidFileFormat<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -7770,6 +8173,7 @@ class _$_EmptyTestUrl<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -7814,6 +8218,7 @@ class _$_EmptyTestUrl<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -7862,6 +8267,7 @@ class _$_EmptyTestUrl<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -7914,6 +8320,7 @@ class _$_EmptyTestUrl<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -8018,6 +8425,7 @@ class _$_InvalidTestUrl<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -8062,6 +8470,7 @@ class _$_InvalidTestUrl<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -8110,6 +8519,7 @@ class _$_InvalidTestUrl<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -8162,6 +8572,7 @@ class _$_InvalidTestUrl<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -8269,6 +8680,7 @@ class _$_InvalidMilitaryFamilyStatus<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -8313,6 +8725,7 @@ class _$_InvalidMilitaryFamilyStatus<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -8361,6 +8774,7 @@ class _$_InvalidMilitaryFamilyStatus<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -8413,6 +8827,7 @@ class _$_InvalidMilitaryFamilyStatus<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -8522,6 +8937,7 @@ class _$_InvalidUniversityFamilyStatus<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -8566,6 +8982,7 @@ class _$_InvalidUniversityFamilyStatus<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -8614,6 +9031,7 @@ class _$_InvalidUniversityFamilyStatus<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -8666,6 +9084,7 @@ class _$_InvalidUniversityFamilyStatus<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -8770,6 +9189,7 @@ class _$_EmptyExtraEssay<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -8814,6 +9234,7 @@ class _$_EmptyExtraEssay<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -8862,6 +9283,7 @@ class _$_EmptyExtraEssay<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -8914,6 +9336,7 @@ class _$_EmptyExtraEssay<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -9018,6 +9441,7 @@ class _$_VeryShortExtraEssay<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -9062,6 +9486,7 @@ class _$_VeryShortExtraEssay<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -9110,6 +9535,7 @@ class _$_VeryShortExtraEssay<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -9162,6 +9588,7 @@ class _$_VeryShortExtraEssay<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -9268,6 +9695,7 @@ class _$_ExceedingLengthExtraEssay<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -9312,6 +9740,7 @@ class _$_ExceedingLengthExtraEssay<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -9360,6 +9789,7 @@ class _$_ExceedingLengthExtraEssay<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -9412,6 +9842,7 @@ class _$_ExceedingLengthExtraEssay<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -9545,6 +9976,7 @@ class _$InvalidAdmissionStatus<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -9589,6 +10021,7 @@ class _$InvalidAdmissionStatus<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -9637,6 +10070,7 @@ class _$InvalidAdmissionStatus<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -9689,6 +10123,7 @@ class _$InvalidAdmissionStatus<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,
@@ -9800,6 +10235,7 @@ class _$_EmptyDepartmentSelection<T>
     required TResult Function() invalidRole,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidApplication,
     required TResult Function(T failedValue) emptyApplication,
     required TResult Function(T failedValue) incompleteApplication,
@@ -9844,6 +10280,7 @@ class _$_EmptyDepartmentSelection<T>
     TResult Function()? invalidRole,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidApplication,
     TResult Function(T failedValue)? emptyApplication,
     TResult Function(T failedValue)? incompleteApplication,
@@ -9892,6 +10329,7 @@ class _$_EmptyDepartmentSelection<T>
     required TResult Function(_InvalidRole<T> value) invalidRole,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidApplication<T> value) invalidApplication,
     required TResult Function(EmptyApplication<T> value) emptyApplication,
     required TResult Function(IncompleteApplication<T> value)
@@ -9944,6 +10382,7 @@ class _$_EmptyDepartmentSelection<T>
     TResult Function(_InvalidRole<T> value)? invalidRole,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Multiline<T> value)? multiline,
+    TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidApplication<T> value)? invalidApplication,
     TResult Function(EmptyApplication<T> value)? emptyApplication,
     TResult Function(IncompleteApplication<T> value)? incompleteApplication,

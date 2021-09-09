@@ -30,6 +30,8 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   }) = ExceedingLength<T>;
 
   const factory ValueFailure.multiline({required T failedValue}) = Multiline<T>;
+  const factory ValueFailure.invalidDate({required T failedValue}) =
+      InvalidDate<T>;
 
   // ignore: slash_for_doc_comments
   /**

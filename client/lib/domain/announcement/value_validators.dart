@@ -29,3 +29,14 @@ Either<ValueFailure<String>, String> validateSingleLine(String announceStr) {
     return right(announceStr);
   }
 }
+
+// Either<ValueFailure<String>, String> validateDate(String dateStr) {
+//   const dateRegex =
+//       r'''/^(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})$/''';
+
+//   if (RegExp(dateRegex).hasMatch(dateStr)) {
+//     return right(dateStr);
+//   } else {
+//     return left(ValueFailure.invalidDate(failedValue: dateStr));
+//   }
+// }
