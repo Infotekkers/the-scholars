@@ -3,10 +3,12 @@ import 'package:client/domain/auth/user.dart';
 import 'package:client/domain/auth/value_objects.dart';
 import 'package:client/infrastructure/auth/api_auth_repository.dart';
 import 'package:client/infrastructure/auth/auth_dtos.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:http/http.dart' as http;
 import 'package:mockito/mockito.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'api_auth_repository_unit_test.mocks.dart';
 
@@ -152,6 +154,85 @@ void main() {
           await authRepo.register(user: user, password: Password("Testing@12"));
 
       expect(result.fold((l) => l, (r) => r), isA<EmailAlreadyInUse>());
+    });
+  });
+
+  // * CACHE
+  group("Auth Repo cache", () {
+    // * GET
+    group("get user", () {
+      test("should return valid user", () async {
+        SharedPreferences.setMockInitialValues({
+          "user": """
+            {
+              "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiNjEyMGQ3Mjk0YTk0N2Q0MDZjZTgzM2IwIiwiaWF0IjoxNjMwNDc0Njk4LCJleHAiOjE2MzA0NzgyOTh9.3pMZDPaGcBaEWOMufLFdeM6oiMqdqk5IoM9MrTraTJ4",
+              "name": "Clown",
+              "emailAddress": "clown@ing.com",
+              "role": "user"
+          }
+          """
+        });
+
+        final ApiAuthRepository apiAuthRepository = ApiAuthRepository();
+        final response = await apiAuthRepository.getCachedUser();
+
+        expect(response.fold(() => null, (a) => a), isA<User>());
+      });
+      test("should return none", () async {
+        SharedPreferences.setMockInitialValues({});
+
+        final ApiAuthRepository apiAuthRepository = ApiAuthRepository();
+        final response = await apiAuthRepository.getCachedUser();
+
+        expect(response.fold(() => null, (a) => a), null);
+      });
+    });
+
+    // * SET
+    group("set user", () {
+      test("should return unit", () async {
+        SharedPreferences.setMockInitialValues({});
+
+        User user = User.initial();
+        user = user.copyWith(
+            emailAddress: EmailAddress("clown@ing.com"),
+            role: Role("user"),
+            name: Name("Clown"));
+
+        final ApiAuthRepository apiAuthRepository = ApiAuthRepository();
+        final response = await apiAuthRepository.setCachedUser(user: user);
+
+        expect(response.fold((l) => l, (r) => r), unit);
+      });
+    });
+
+    // * REMOVE
+    group("remove user", () {
+      test("should return unit", () async {
+        SharedPreferences.setMockInitialValues({
+          "user": """
+            {
+              "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiNjEyMGQ3Mjk0YTk0N2Q0MDZjZTgzM2IwIiwiaWF0IjoxNjMwNDc0Njk4LCJleHAiOjE2MzA0NzgyOTh9.3pMZDPaGcBaEWOMufLFdeM6oiMqdqk5IoM9MrTraTJ4",
+              "name": "Clown",
+              "emailAddress": "clown@ing.com",
+              "role": "user"
+          }
+          """
+        });
+
+        final ApiAuthRepository apiAuthRepository = ApiAuthRepository();
+        final response = await apiAuthRepository.removeCachedUser();
+
+        expect(response.fold((l) => l, (r) => r), unit);
+      });
+      test("should return unit", () async {
+        SharedPreferences.setMockInitialValues({});
+
+        final ApiAuthRepository apiAuthRepository = ApiAuthRepository();
+        final response = await apiAuthRepository.removeCachedUser();
+
+        expect(response.fold((l) => l, (r) => r), unit);
+      });
     });
   });
 }
