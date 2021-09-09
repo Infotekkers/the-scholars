@@ -3,11 +3,11 @@
 
 import 'package:client/application/application/application_bloc.dart';
 import 'package:client/application/navigation/navigation_bloc.dart';
+import 'package:client/application/profile/profile_bloc.dart';
 import 'package:client/application/util/util_bloc.dart';
 import 'package:client/injectable.dart';
-import 'package:client/presentation/application/first_page.dart';
-import 'package:client/presentation/application/second_page.dart';
 import 'package:client/presentation/application/thrid_page.dart';
+import 'package:client/presentation/profile/edit_profile.dart';
 import 'package:client/presentation/view_applications/home_page.dart';
 import 'package:client/presentation/profile/profile_page.dart';
 
@@ -29,9 +29,7 @@ class NavigatorPage extends StatelessWidget {
     );
 
     return BlocConsumer<UtilBloc, UtilState>(
-      listener: (context, state) {
-        print(state.isProfileComplete);
-      },
+      listener: (context, state) {},
       builder: (context, state) {
         isProfileComplete = state.isProfileComplete;
         return BlocConsumer<NavigationBloc, NavigationState>(
@@ -47,8 +45,9 @@ class NavigatorPage extends StatelessWidget {
                   child: const HomePage(),
                 );
               } else if (state.pageIndexNumber == 1) {
-                return const ProfilePage(
-                  showMessage: false,
+                return BlocProvider.value(
+                  value: getIt<ProfileBloc>(),
+                  child: const EditProfilePage(),
                 );
               } else {
                 return const ThirdApplicationPage();

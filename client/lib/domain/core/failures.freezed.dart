@@ -126,6 +126,10 @@ class _$ValueFailureTearOff {
     return _ShortPhoneNumber<T>();
   }
 
+  _ExceedingPhoneNumber<T> exceedingPhoneNumber<T>() {
+    return _ExceedingPhoneNumber<T>();
+  }
+
   _InvalidPhoneCode<T> invalidPhoneCode<T>() {
     return _InvalidPhoneCode<T>();
   }
@@ -216,6 +220,7 @@ mixin _$ValueFailure<T> {
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -256,6 +261,7 @@ mixin _$ValueFailure<T> {
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -298,6 +304,8 @@ mixin _$ValueFailure<T> {
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -345,6 +353,7 @@ mixin _$ValueFailure<T> {
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -478,6 +487,7 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -521,6 +531,7 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -569,6 +580,8 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -619,6 +632,7 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -753,6 +767,7 @@ class _$InvalidEmail<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -796,6 +811,7 @@ class _$InvalidEmail<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -844,6 +860,8 @@ class _$InvalidEmail<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -894,6 +912,7 @@ class _$InvalidEmail<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -1028,6 +1047,7 @@ class _$ShortPassword<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -1071,6 +1091,7 @@ class _$ShortPassword<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -1119,6 +1140,8 @@ class _$ShortPassword<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -1169,6 +1192,7 @@ class _$ShortPassword<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -1573,6 +1597,7 @@ class _$InvalidPassword<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -1616,6 +1641,7 @@ class _$InvalidPassword<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -1664,6 +1690,8 @@ class _$InvalidPassword<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -1714,6 +1742,7 @@ class _$InvalidPassword<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -1849,6 +1878,7 @@ class _$ExceedingLength<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -1892,6 +1922,7 @@ class _$ExceedingLength<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -1940,6 +1971,8 @@ class _$ExceedingLength<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -1990,6 +2023,7 @@ class _$ExceedingLength<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -2363,6 +2397,7 @@ class _$InvalidApplication<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -2406,6 +2441,7 @@ class _$InvalidApplication<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -2454,6 +2490,8 @@ class _$InvalidApplication<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -2504,6 +2542,7 @@ class _$InvalidApplication<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -2639,6 +2678,7 @@ class _$EmptyApplication<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -2682,6 +2722,7 @@ class _$EmptyApplication<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -2730,6 +2771,8 @@ class _$EmptyApplication<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -2780,6 +2823,7 @@ class _$EmptyApplication<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -2918,6 +2962,7 @@ class _$IncompleteApplication<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -2961,6 +3006,7 @@ class _$IncompleteApplication<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -3009,6 +3055,8 @@ class _$IncompleteApplication<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -3059,6 +3107,7 @@ class _$IncompleteApplication<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -3167,6 +3216,7 @@ class _$GeneralError<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -3210,6 +3260,7 @@ class _$GeneralError<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -3258,6 +3309,8 @@ class _$GeneralError<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -3308,6 +3361,7 @@ class _$GeneralError<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -3411,6 +3465,7 @@ class _$_InvalidFormat<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -3454,6 +3509,7 @@ class _$_InvalidFormat<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -3502,6 +3558,8 @@ class _$_InvalidFormat<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -3552,6 +3610,7 @@ class _$_InvalidFormat<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -3652,6 +3711,7 @@ class _$_EmptyValue<T> with DiagnosticableTreeMixin implements _EmptyValue<T> {
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -3695,6 +3755,7 @@ class _$_EmptyValue<T> with DiagnosticableTreeMixin implements _EmptyValue<T> {
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -3743,6 +3804,8 @@ class _$_EmptyValue<T> with DiagnosticableTreeMixin implements _EmptyValue<T> {
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -3793,6 +3856,7 @@ class _$_EmptyValue<T> with DiagnosticableTreeMixin implements _EmptyValue<T> {
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -3896,6 +3960,7 @@ class _$_InvalidLength<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -3939,6 +4004,7 @@ class _$_InvalidLength<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -3987,6 +4053,8 @@ class _$_InvalidLength<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -4037,6 +4105,7 @@ class _$_InvalidLength<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -4139,6 +4208,7 @@ class _$_EmptyBirthDate<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -4182,6 +4252,7 @@ class _$_EmptyBirthDate<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -4230,6 +4301,8 @@ class _$_EmptyBirthDate<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -4280,6 +4353,7 @@ class _$_EmptyBirthDate<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -4382,6 +4456,7 @@ class _$_InvalidBirthDate<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -4425,6 +4500,7 @@ class _$_InvalidBirthDate<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -4473,6 +4549,8 @@ class _$_InvalidBirthDate<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -4523,6 +4601,7 @@ class _$_InvalidBirthDate<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -4625,6 +4704,7 @@ class _$_EmptyGender<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -4668,6 +4748,7 @@ class _$_EmptyGender<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -4716,6 +4797,8 @@ class _$_EmptyGender<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -4766,6 +4849,7 @@ class _$_EmptyGender<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -4868,6 +4952,7 @@ class _$_InvalidGender<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -4911,6 +4996,7 @@ class _$_InvalidGender<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -4959,6 +5045,8 @@ class _$_InvalidGender<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -5009,6 +5097,7 @@ class _$_InvalidGender<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -5111,6 +5200,7 @@ class _$_EmptyLocation<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -5154,6 +5244,7 @@ class _$_EmptyLocation<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -5202,6 +5293,8 @@ class _$_EmptyLocation<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -5252,6 +5345,7 @@ class _$_EmptyLocation<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -5354,6 +5448,7 @@ class _$_InvalidLocation<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -5397,6 +5492,7 @@ class _$_InvalidLocation<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -5445,6 +5541,8 @@ class _$_InvalidLocation<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -5495,6 +5593,7 @@ class _$_InvalidLocation<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -5597,6 +5696,7 @@ class _$_EmptyPhoneNumber<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -5640,6 +5740,7 @@ class _$_EmptyPhoneNumber<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -5688,6 +5789,8 @@ class _$_EmptyPhoneNumber<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -5738,6 +5841,7 @@ class _$_EmptyPhoneNumber<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -5840,6 +5944,7 @@ class _$_InvalidPhoneNumber<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -5883,6 +5988,7 @@ class _$_InvalidPhoneNumber<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -5931,6 +6037,8 @@ class _$_InvalidPhoneNumber<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -5981,6 +6089,7 @@ class _$_InvalidPhoneNumber<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -6083,6 +6192,7 @@ class _$_ShortPhoneNumber<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -6126,6 +6236,7 @@ class _$_ShortPhoneNumber<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -6174,6 +6285,8 @@ class _$_ShortPhoneNumber<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -6224,6 +6337,7 @@ class _$_ShortPhoneNumber<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -6252,6 +6366,248 @@ class _$_ShortPhoneNumber<T>
 
 abstract class _ShortPhoneNumber<T> implements ValueFailure<T> {
   const factory _ShortPhoneNumber() = _$_ShortPhoneNumber<T>;
+}
+
+/// @nodoc
+abstract class _$ExceedingPhoneNumberCopyWith<T, $Res> {
+  factory _$ExceedingPhoneNumberCopyWith(_ExceedingPhoneNumber<T> value,
+          $Res Function(_ExceedingPhoneNumber<T>) then) =
+      __$ExceedingPhoneNumberCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$ExceedingPhoneNumberCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$ExceedingPhoneNumberCopyWith<T, $Res> {
+  __$ExceedingPhoneNumberCopyWithImpl(_ExceedingPhoneNumber<T> _value,
+      $Res Function(_ExceedingPhoneNumber<T>) _then)
+      : super(_value, (v) => _then(v as _ExceedingPhoneNumber<T>));
+
+  @override
+  _ExceedingPhoneNumber<T> get _value =>
+      super._value as _ExceedingPhoneNumber<T>;
+}
+
+/// @nodoc
+
+class _$_ExceedingPhoneNumber<T>
+    with DiagnosticableTreeMixin
+    implements _ExceedingPhoneNumber<T> {
+  const _$_ExceedingPhoneNumber();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.exceedingPhoneNumber()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'ValueFailure<$T>.exceedingPhoneNumber'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _ExceedingPhoneNumber<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) exceedingLength,
+    required TResult Function(T failedValue) invalidApplication,
+    required TResult Function(T failedValue) emptyApplication,
+    required TResult Function(T failedValue) incompleteApplication,
+    required TResult Function() generalError,
+    required TResult Function() fullNameInvalidFormat,
+    required TResult Function() fullNameEmptyValue,
+    required TResult Function() fullNameInvalidLength,
+    required TResult Function() emptyBirthDate,
+    required TResult Function() birthDateInvalid,
+    required TResult Function() emptyGender,
+    required TResult Function() invalidGender,
+    required TResult Function() emptyLocation,
+    required TResult Function() invalidLocation,
+    required TResult Function() emptyPhoneNumber,
+    required TResult Function() invalidPhoneNumber,
+    required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
+    required TResult Function() invalidPhoneCode,
+    required TResult Function() emptyPhoneCode,
+    required TResult Function(String failedValue) emptyFile,
+    required TResult Function(String failedValue) invalidFileFormat,
+    required TResult Function() emptyProficencyTestUrl,
+    required TResult Function() invalidProficencyTestUrl,
+    required TResult Function() invalidMilitaryFamilyStatus,
+    required TResult Function() invalidUniversityFamilyStatus,
+    required TResult Function() emptyExtraEssay,
+    required TResult Function() veryShortExtraEssay,
+    required TResult Function() exceedingLengthExtraEssay,
+    required TResult Function(T failedValue) invalidAdmissionStatus,
+    required TResult Function() emptyDepartmentSelection,
+  }) {
+    return exceedingPhoneNumber();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? exceedingLength,
+    TResult Function(T failedValue)? invalidApplication,
+    TResult Function(T failedValue)? emptyApplication,
+    TResult Function(T failedValue)? incompleteApplication,
+    TResult Function()? generalError,
+    TResult Function()? fullNameInvalidFormat,
+    TResult Function()? fullNameEmptyValue,
+    TResult Function()? fullNameInvalidLength,
+    TResult Function()? emptyBirthDate,
+    TResult Function()? birthDateInvalid,
+    TResult Function()? emptyGender,
+    TResult Function()? invalidGender,
+    TResult Function()? emptyLocation,
+    TResult Function()? invalidLocation,
+    TResult Function()? emptyPhoneNumber,
+    TResult Function()? invalidPhoneNumber,
+    TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
+    TResult Function()? invalidPhoneCode,
+    TResult Function()? emptyPhoneCode,
+    TResult Function(String failedValue)? emptyFile,
+    TResult Function(String failedValue)? invalidFileFormat,
+    TResult Function()? emptyProficencyTestUrl,
+    TResult Function()? invalidProficencyTestUrl,
+    TResult Function()? invalidMilitaryFamilyStatus,
+    TResult Function()? invalidUniversityFamilyStatus,
+    TResult Function()? emptyExtraEssay,
+    TResult Function()? veryShortExtraEssay,
+    TResult Function()? exceedingLengthExtraEssay,
+    TResult Function(T failedValue)? invalidAdmissionStatus,
+    TResult Function()? emptyDepartmentSelection,
+    required TResult orElse(),
+  }) {
+    if (exceedingPhoneNumber != null) {
+      return exceedingPhoneNumber();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidApplication<T> value) invalidApplication,
+    required TResult Function(EmptyApplication<T> value) emptyApplication,
+    required TResult Function(IncompleteApplication<T> value)
+        incompleteApplication,
+    required TResult Function(GeneralError<T> value) generalError,
+    required TResult Function(_InvalidFormat<T> value) fullNameInvalidFormat,
+    required TResult Function(_EmptyValue<T> value) fullNameEmptyValue,
+    required TResult Function(_InvalidLength<T> value) fullNameInvalidLength,
+    required TResult Function(_EmptyBirthDate<T> value) emptyBirthDate,
+    required TResult Function(_InvalidBirthDate<T> value) birthDateInvalid,
+    required TResult Function(_EmptyGender<T> value) emptyGender,
+    required TResult Function(_InvalidGender<T> value) invalidGender,
+    required TResult Function(_EmptyLocation<T> value) emptyLocation,
+    required TResult Function(_InvalidLocation<T> value) invalidLocation,
+    required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
+    required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
+    required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
+    required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
+    required TResult Function(_EmptyFile<T> value) emptyFile,
+    required TResult Function(_InvalidFileFormat<T> value) invalidFileFormat,
+    required TResult Function(_EmptyTestUrl<T> value) emptyProficencyTestUrl,
+    required TResult Function(_InvalidTestUrl<T> value)
+        invalidProficencyTestUrl,
+    required TResult Function(_InvalidMilitaryFamilyStatus<T> value)
+        invalidMilitaryFamilyStatus,
+    required TResult Function(_InvalidUniversityFamilyStatus<T> value)
+        invalidUniversityFamilyStatus,
+    required TResult Function(_EmptyExtraEssay<T> value) emptyExtraEssay,
+    required TResult Function(_VeryShortExtraEssay<T> value)
+        veryShortExtraEssay,
+    required TResult Function(_ExceedingLengthExtraEssay<T> value)
+        exceedingLengthExtraEssay,
+    required TResult Function(InvalidAdmissionStatus<T> value)
+        invalidAdmissionStatus,
+    required TResult Function(_EmptyDepartmentSelection<T> value)
+        emptyDepartmentSelection,
+  }) {
+    return exceedingPhoneNumber(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidApplication<T> value)? invalidApplication,
+    TResult Function(EmptyApplication<T> value)? emptyApplication,
+    TResult Function(IncompleteApplication<T> value)? incompleteApplication,
+    TResult Function(GeneralError<T> value)? generalError,
+    TResult Function(_InvalidFormat<T> value)? fullNameInvalidFormat,
+    TResult Function(_EmptyValue<T> value)? fullNameEmptyValue,
+    TResult Function(_InvalidLength<T> value)? fullNameInvalidLength,
+    TResult Function(_EmptyBirthDate<T> value)? emptyBirthDate,
+    TResult Function(_InvalidBirthDate<T> value)? birthDateInvalid,
+    TResult Function(_EmptyGender<T> value)? emptyGender,
+    TResult Function(_InvalidGender<T> value)? invalidGender,
+    TResult Function(_EmptyLocation<T> value)? emptyLocation,
+    TResult Function(_InvalidLocation<T> value)? invalidLocation,
+    TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
+    TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
+    TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
+    TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
+    TResult Function(_EmptyFile<T> value)? emptyFile,
+    TResult Function(_InvalidFileFormat<T> value)? invalidFileFormat,
+    TResult Function(_EmptyTestUrl<T> value)? emptyProficencyTestUrl,
+    TResult Function(_InvalidTestUrl<T> value)? invalidProficencyTestUrl,
+    TResult Function(_InvalidMilitaryFamilyStatus<T> value)?
+        invalidMilitaryFamilyStatus,
+    TResult Function(_InvalidUniversityFamilyStatus<T> value)?
+        invalidUniversityFamilyStatus,
+    TResult Function(_EmptyExtraEssay<T> value)? emptyExtraEssay,
+    TResult Function(_VeryShortExtraEssay<T> value)? veryShortExtraEssay,
+    TResult Function(_ExceedingLengthExtraEssay<T> value)?
+        exceedingLengthExtraEssay,
+    TResult Function(InvalidAdmissionStatus<T> value)? invalidAdmissionStatus,
+    TResult Function(_EmptyDepartmentSelection<T> value)?
+        emptyDepartmentSelection,
+    required TResult orElse(),
+  }) {
+    if (exceedingPhoneNumber != null) {
+      return exceedingPhoneNumber(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ExceedingPhoneNumber<T> implements ValueFailure<T> {
+  const factory _ExceedingPhoneNumber() = _$_ExceedingPhoneNumber<T>;
 }
 
 /// @nodoc
@@ -6326,6 +6682,7 @@ class _$_InvalidPhoneCode<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -6369,6 +6726,7 @@ class _$_InvalidPhoneCode<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -6417,6 +6775,8 @@ class _$_InvalidPhoneCode<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -6467,6 +6827,7 @@ class _$_InvalidPhoneCode<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -6569,6 +6930,7 @@ class _$_EmptyPhoneCode<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -6612,6 +6974,7 @@ class _$_EmptyPhoneCode<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -6660,6 +7023,8 @@ class _$_EmptyPhoneCode<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -6710,6 +7075,7 @@ class _$_EmptyPhoneCode<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -6837,6 +7203,7 @@ class _$_EmptyFile<T> with DiagnosticableTreeMixin implements _EmptyFile<T> {
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -6880,6 +7247,7 @@ class _$_EmptyFile<T> with DiagnosticableTreeMixin implements _EmptyFile<T> {
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -6928,6 +7296,8 @@ class _$_EmptyFile<T> with DiagnosticableTreeMixin implements _EmptyFile<T> {
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -6978,6 +7348,7 @@ class _$_EmptyFile<T> with DiagnosticableTreeMixin implements _EmptyFile<T> {
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -7113,6 +7484,7 @@ class _$_InvalidFileFormat<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -7156,6 +7528,7 @@ class _$_InvalidFileFormat<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -7204,6 +7577,8 @@ class _$_InvalidFileFormat<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -7254,6 +7629,7 @@ class _$_InvalidFileFormat<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -7363,6 +7739,7 @@ class _$_EmptyTestUrl<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -7406,6 +7783,7 @@ class _$_EmptyTestUrl<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -7454,6 +7832,8 @@ class _$_EmptyTestUrl<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -7504,6 +7884,7 @@ class _$_EmptyTestUrl<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -7607,6 +7988,7 @@ class _$_InvalidTestUrl<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -7650,6 +8032,7 @@ class _$_InvalidTestUrl<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -7698,6 +8081,8 @@ class _$_InvalidTestUrl<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -7748,6 +8133,7 @@ class _$_InvalidTestUrl<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -7854,6 +8240,7 @@ class _$_InvalidMilitaryFamilyStatus<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -7897,6 +8284,7 @@ class _$_InvalidMilitaryFamilyStatus<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -7945,6 +8333,8 @@ class _$_InvalidMilitaryFamilyStatus<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -7995,6 +8385,7 @@ class _$_InvalidMilitaryFamilyStatus<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -8103,6 +8494,7 @@ class _$_InvalidUniversityFamilyStatus<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -8146,6 +8538,7 @@ class _$_InvalidUniversityFamilyStatus<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -8194,6 +8587,8 @@ class _$_InvalidUniversityFamilyStatus<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -8244,6 +8639,7 @@ class _$_InvalidUniversityFamilyStatus<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -8347,6 +8743,7 @@ class _$_EmptyExtraEssay<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -8390,6 +8787,7 @@ class _$_EmptyExtraEssay<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -8438,6 +8836,8 @@ class _$_EmptyExtraEssay<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -8488,6 +8888,7 @@ class _$_EmptyExtraEssay<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -8591,6 +8992,7 @@ class _$_VeryShortExtraEssay<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -8634,6 +9036,7 @@ class _$_VeryShortExtraEssay<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -8682,6 +9085,8 @@ class _$_VeryShortExtraEssay<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -8732,6 +9137,7 @@ class _$_VeryShortExtraEssay<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -8837,6 +9243,7 @@ class _$_ExceedingLengthExtraEssay<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -8880,6 +9287,7 @@ class _$_ExceedingLengthExtraEssay<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -8928,6 +9336,8 @@ class _$_ExceedingLengthExtraEssay<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -8978,6 +9388,7 @@ class _$_ExceedingLengthExtraEssay<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -9110,6 +9521,7 @@ class _$InvalidAdmissionStatus<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -9153,6 +9565,7 @@ class _$InvalidAdmissionStatus<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -9201,6 +9614,8 @@ class _$InvalidAdmissionStatus<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -9251,6 +9666,7 @@ class _$InvalidAdmissionStatus<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,
@@ -9359,6 +9775,7 @@ class _$_EmptyDepartmentSelection<T>
     required TResult Function() emptyPhoneNumber,
     required TResult Function() invalidPhoneNumber,
     required TResult Function() shortPhoneNumber,
+    required TResult Function() exceedingPhoneNumber,
     required TResult Function() invalidPhoneCode,
     required TResult Function() emptyPhoneCode,
     required TResult Function(String failedValue) emptyFile,
@@ -9400,6 +9817,7 @@ class _$_EmptyDepartmentSelection<T>
     TResult Function()? emptyPhoneNumber,
     TResult Function()? invalidPhoneNumber,
     TResult Function()? shortPhoneNumber,
+    TResult Function()? exceedingPhoneNumber,
     TResult Function()? invalidPhoneCode,
     TResult Function()? emptyPhoneCode,
     TResult Function(String failedValue)? emptyFile,
@@ -9446,6 +9864,8 @@ class _$_EmptyDepartmentSelection<T>
     required TResult Function(_EmptyPhoneNumber<T> value) emptyPhoneNumber,
     required TResult Function(_InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(_ShortPhoneNumber<T> value) shortPhoneNumber,
+    required TResult Function(_ExceedingPhoneNumber<T> value)
+        exceedingPhoneNumber,
     required TResult Function(_InvalidPhoneCode<T> value) invalidPhoneCode,
     required TResult Function(_EmptyPhoneCode<T> value) emptyPhoneCode,
     required TResult Function(_EmptyFile<T> value) emptyFile,
@@ -9494,6 +9914,7 @@ class _$_EmptyDepartmentSelection<T>
     TResult Function(_EmptyPhoneNumber<T> value)? emptyPhoneNumber,
     TResult Function(_InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(_ShortPhoneNumber<T> value)? shortPhoneNumber,
+    TResult Function(_ExceedingPhoneNumber<T> value)? exceedingPhoneNumber,
     TResult Function(_InvalidPhoneCode<T> value)? invalidPhoneCode,
     TResult Function(_EmptyPhoneCode<T> value)? emptyPhoneCode,
     TResult Function(_EmptyFile<T> value)? emptyFile,

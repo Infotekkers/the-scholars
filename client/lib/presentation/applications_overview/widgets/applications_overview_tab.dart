@@ -18,16 +18,20 @@ class ApplicationsOverviewTab extends StatelessWidget {
               onTap: (index) {
                 switch (index) {
                   case 0:
-                    watcherBloc.add(const ApplicationsOverviewWatcherEvent.watchAllStarted());
+                    watcherBloc.add(const ApplicationsOverviewWatcherEvent
+                        .watchAllStarted());
                     break;
                   case 1:
-                    watcherBloc.add(const ApplicationsOverviewWatcherEvent.watchPendingStarted());
+                    watcherBloc.add(const ApplicationsOverviewWatcherEvent
+                        .watchPendingStarted());
                     break;
                   case 2:
-                    watcherBloc.add(const ApplicationsOverviewWatcherEvent.watchAcceptedStarted());
+                    watcherBloc.add(const ApplicationsOverviewWatcherEvent
+                        .watchAcceptedStarted());
                     break;
                   case 3:
-                    watcherBloc.add(const ApplicationsOverviewWatcherEvent.watchRejectedStarted());
+                    watcherBloc.add(const ApplicationsOverviewWatcherEvent
+                        .watchRejectedStarted());
                     break;
                   default:
                 }
