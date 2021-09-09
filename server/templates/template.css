@@ -48,3 +48,41 @@ h3 + label {
   display: flex;
   gap: 4rem;
 }
+
+#application-info {
+  background: var(--clr-two);
+  color: var(--clr-one);
+}
+
+#application-info > label {
+  background: var(--clr-one);
+  color: var(--clr-two);
+
+  display: block;
+}
+
+#application-info > * + label {
+  margin-top: 2rem;
+}
+
+.large-label {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.large-label--smaller {
+  font-size: 1.2rem;
+}
+
+.transcript,
+.essay > div,
+.testing > div {
+  width: 100%;
+  aspect-ratio: 16/9;
+
+  background: var(--clr-one);
+}
+
+:is(.essay, .testing) > label:last-of-type {
+  margin-top: 1rem;
+}
