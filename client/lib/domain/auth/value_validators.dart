@@ -34,8 +34,9 @@ Either<ValueFailure<String>, String> validateName(String nameStr) {
 }
 
 Either<ValueFailure<String>, String> validateRole({required String roleStr}) {
-  if (!(roleStr == 'User' || roleStr == 'Admin')) {
+  if (roleStr == "admin" || roleStr == "user") {
+    return right(roleStr);
+  } else {
     return left(const ValueFailure.invalidRole());
   }
-  return right(roleStr);
 }

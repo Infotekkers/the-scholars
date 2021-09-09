@@ -10,10 +10,11 @@ class SplashPage extends StatelessWidget {
         state.maybeMap(
             initial: (_) {},
             authorized: (state) {
+              state.user.role.value.fold((l) => print(l), (r) => print(r));
               if (state.user.role.getOrCrash() == "admin") {
-                Navigator.pushNamed(context, "/application-overview");
+                Navigator.popAndPushNamed(context, "/application-overview");
               } else {
-                Navigator.pushNamed(context, "/home");
+                Navigator.popAndPushNamed(context, "/navigator");
               }
             },
             unauthenticated: (_) => Navigator.pushNamed(context, "/sign-in"),

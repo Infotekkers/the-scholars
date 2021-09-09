@@ -17,14 +17,17 @@ class AppRouter {
     // * COMMON ROUTES
     // * Route - Sign In Page
     "/sign-in": (context) => SignInPage(),
-    
+
     // * STUDENT
     // * Route - Home Page
-    "/home": (context) =>
-        MultiBlocProvider(
+    "/home": (context) => MultiBlocProvider(
           providers: [
-            BlocProvider.value(value: getIt<UtilBloc>(),),
-            BlocProvider.value(value: getIt<ApplicationBloc>(),),
+            BlocProvider.value(
+              value: getIt<UtilBloc>(),
+            ),
+            BlocProvider.value(
+              value: getIt<ApplicationBloc>(),
+            ),
           ],
           child: const HomePage(),
         ),

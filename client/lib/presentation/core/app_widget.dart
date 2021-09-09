@@ -9,7 +9,7 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final AppRouter _appRouter = AppRouter();
-    
+
     return MultiBlocProvider(
       providers: [
         BlocProvider(

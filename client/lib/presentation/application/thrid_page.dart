@@ -14,13 +14,17 @@ class _ThirdApplicationPageState extends State<ThirdApplicationPage> {
   final IApplicationRepository _iApplicationRepository =
       getIt<IApplicationRepository>();
 
+  // ignore: avoid_void_async
   void getApps() async {
     final result = await _iApplicationRepository.getCacheApplication();
+    // ignore: avoid_print
     print(result);
   }
 
+  // ignore: avoid_void_async
   void getPrefs() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
+    // ignore: avoid_print
     print(prefs.getStringList("allApplications"));
   }
 
@@ -29,78 +33,116 @@ class _ThirdApplicationPageState extends State<ThirdApplicationPage> {
     return Center(
       child: ListView(
         children: [
+          // ignore: avoid_unnecessary_containers
           Container(
-            child: Center(child: Text("Work Page")),
+            child: const Center(child: Text("Work Page")),
           ),
+
+          /**
+           * 
+           * PROFILE
+           */
           Container(
-            margin: EdgeInsets.symmetric(vertical: 10, horizontal: 70),
+            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 70),
+            child: MaterialButton(
+              onPressed: () async {
+                final SharedPreferences prefs =
+                    await SharedPreferences.getInstance();
+                // ignore: avoid_print
+                print("PROFILE : ${prefs.get("applicationProfile")}");
+              },
+              color: Colors.purple,
+              child: const Text(
+                "Get Profile",
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+          ),
+
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 70),
             child: MaterialButton(
               onPressed: () async {
                 final SharedPreferences prefs =
                     await SharedPreferences.getInstance();
                 prefs.remove("applicationProfile");
+                // ignore: avoid_print
                 print("Application Profile Cleared");
               },
-              child: Text("Clear Profile"),
               color: Colors.purple,
+              child: const Text(
+                "Clear Profile",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
+
+          /**
+           * 
+           * 
+           * CACHED APPLICATION
+           */
+
           Container(
-            margin: EdgeInsets.symmetric(vertical: 10, horizontal: 70),
-            child: MaterialButton(
-              onPressed: () async {
-                final SharedPreferences prefs =
-                    await SharedPreferences.getInstance();
-                print("PROFILE : ${prefs.get("applicationProfile")}");
-              },
-              child: Text("Get Profile"),
-              color: Colors.purple,
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 10, horizontal: 70),
+            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 70),
             child: MaterialButton(
               onPressed: () async {
                 final _iA = getIt<IApplicationRepository>();
+                // ignore: avoid_print
                 print(await _iA.getCacheApplication());
               },
-              child: Text("Get Cached Application"),
               color: Colors.purple,
+              child: const Text(
+                "Get Cached Application",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
           Container(
-            margin: EdgeInsets.symmetric(vertical: 10, horizontal: 70),
+            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 70),
             child: MaterialButton(
               onPressed: () async {
                 final _iA = getIt<IApplicationRepository>();
                 _iA.clearSQLDB();
 
+                // ignore: avoid_print
                 print("DELETED");
               },
-              child: Text("Clear Cached Application"),
               color: Colors.purple,
+              child: const Text(
+                "Clear Cached Application",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
           Container(
-            margin: EdgeInsets.symmetric(vertical: 10, horizontal: 70),
+            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 70),
             child: MaterialButton(
               onPressed: () async {
+                // ignore: avoid_print
                 print(await _iApplicationRepository.getFromSharedPreference(
                     itemToGet: "cachedApplicationId"));
               },
-              child: Text("Get Cached Application ID"),
               color: Colors.purple,
+              child: const Text(
+                "Get Cached Application ID",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
           Container(
-            margin: EdgeInsets.symmetric(vertical: 10, horizontal: 70),
+            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 70),
             child: MaterialButton(
               onPressed: () async {
+                // ignore: avoid_print
                 print(await _iApplicationRepository.getFromSharedPreference(
                     itemToGet: "allApplications"));
               },
-              child: Text("Get All Application ID"),
               color: Colors.purple,
+              child: const Text(
+                "Get All Application ID",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
         ],

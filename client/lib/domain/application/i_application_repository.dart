@@ -6,18 +6,12 @@ import 'package:client/infrastructure/application/application_highlight_dto.dart
 import 'package:dartz/dartz.dart';
 
 abstract class IApplicationRepository {
-//  Application Methods
   // Function to create a complete Applciation -- ON Server
   Future<Either<ApplicationFailure, Application>> createServerApplication(
       {required Application application});
 
 // Function To delete an application --ON Server
   Future<Either<ApplicationFailure, Application>> deleteServerApplication({
-    required ApplicationId applicationId,
-  });
-
-  // Function To Get an application --ON Server
-  Future<Either<ApplicationFailure, Application>> getServerApplication({
     required ApplicationId applicationId,
   });
 
@@ -36,10 +30,6 @@ abstract class IApplicationRepository {
 
   // Function to get Cache application ID of a sent application --ON Shared Preference
   Future<Either<ApplicationFailure, List>> getCacheSentApplicationId();
-
-  // Function to Delete any Item from Shared Preferences
-  Future<Either<ApplicationFailure, Unit>> deleteFromSharedPreference(
-      {required String itemToDelete});
 
   // Function to get any Item from Shared Preferences
   Future<Either<ApplicationFailure, dynamic>> getFromSharedPreference(

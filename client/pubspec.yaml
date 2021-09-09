@@ -29,6 +29,7 @@ dependencies:
   intl: ^0.17.0
   date_format: ^2.0.4
   flag: ^5.0.1
+  liquid_pull_to_refresh: ^3.0.0
 
 dev_dependencies:
   bloc_test: ^8.1.0
