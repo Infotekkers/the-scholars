@@ -9,11 +9,14 @@ import 'package:client/infrastructure/application/application_highlight_dto.dart
 import 'package:client/injectable.dart';
 import 'package:dartz/dartz.dart';
 import 'package:client/domain/application/value_objects.dart';
+import 'package:dio/dio.dart';
+import 'package:ext_storage/ext_storage.dart';
 import 'package:injectable/injectable.dart';
 import 'package:path/path.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:http/http.dart' as http;
+import 'package:uuid/uuid.dart';
 
 @LazySingleton(as: IApplicationRepository)
 class ApiApplicationRepository implements IApplicationRepository {
@@ -285,6 +288,51 @@ class ApiApplicationRepository implements IApplicationRepository {
   Future<Either<ApplicationFailure, Application>> saveCacheApplication(
       {required ApplicationDto applicationDto}) {
     return dbService.cacheApplication(applicationDto);
+  }
+
+  @override
+  Future<Either<ApplicationFailure, String>> downloadApplicationFile() async {
+    // Get Application Bloc
+    final ApplicationBloc _applicationBloc = getIt<ApplicationBloc>();
+
+    // Get UUID
+    const uuid = Uuid();
+
+    // Get External Path
+    final dir = await ExtStorage.getExternalStoragePublicDirectory(
+        ExtStorage.DIRECTORY_DOWNLOADS);
+
+    // Create DIO Instance
+    final Dio dio = Dio();
+
+    //  Download URI
+    // const String downloadUri =
+    //     "https://unsplash.com/photos/8pb7Hq539Zw/download?force=true";
+
+    const String downloadUri = "http://10.0.2.2:5000/user/file/test";
+
+    //  Start Download
+    try {
+      await dio.download(downloadUri, "$dir/${uuid.v4()}.pdf",
+          deleteOnError: false,
+          options: Options(responseType: ResponseType.bytes),
+          onReceiveProgress: (rec, total) {
+        if (rec == total) {
+          _applicationBloc.add(const ApplicationEvent.downloadComplete());
+        } else {
+          _applicationBloc.add(
+            ApplicationEvent.progressDownload(
+              recievedAmount: rec.toDouble(),
+              totalAmount: total.toDouble(),
+            ),
+          );
+        }
+      });
+    } catch (e) {
+      print(e);
+    }
+
+    return right("");
   }
 }
 

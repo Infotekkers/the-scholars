@@ -15,6 +15,10 @@ abstract class ApplicationState with _$ApplicationState {
     required bool isSubmitting,
     required bool showErrorMessages,
     required bool isApplicationCached,
+    required bool isPreparingDownload,
+    required bool isDownloadComplete,
+    required double recievedAmount,
+    required double totalAmount,
     required Option<Either<ApplicationFailure, Application>>
         applicationFailureOrSuccess,
     required Option<Either<ValueFailure, dynamic>> valueFailureOrSuccess,
@@ -38,6 +42,10 @@ abstract class ApplicationState with _$ApplicationState {
         isSubmitting: false,
         showErrorMessages: false,
         isApplicationCached: false,
+        isPreparingDownload: false,
+        isDownloadComplete: false,
+        recievedAmount: 0.0,
+        totalAmount: 1.0,
         applicationFailureOrSuccess: none(),
         valueFailureOrSuccess: none(),
       );

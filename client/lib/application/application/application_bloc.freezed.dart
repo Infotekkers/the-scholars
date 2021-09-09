@@ -89,6 +89,22 @@ class _$ApplicationEventTearOff {
   _CheckApplicationCache checkCacheApplication() {
     return const _CheckApplicationCache();
   }
+
+  _StartDownload startDownload() {
+    return const _StartDownload();
+  }
+
+  _ProgressDownload progressDownload(
+      {required double recievedAmount, required double totalAmount}) {
+    return _ProgressDownload(
+      recievedAmount: recievedAmount,
+      totalAmount: totalAmount,
+    );
+  }
+
+  _DownloadComplete downloadComplete() {
+    return const _DownloadComplete();
+  }
 }
 
 /// @nodoc
@@ -115,6 +131,10 @@ mixin _$ApplicationEvent {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
+    required TResult Function() startDownload,
+    required TResult Function(double recievedAmount, double totalAmount)
+        progressDownload,
+    required TResult Function() downloadComplete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -133,6 +153,10 @@ mixin _$ApplicationEvent {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
+    TResult Function()? startDownload,
+    TResult Function(double recievedAmount, double totalAmount)?
+        progressDownload,
+    TResult Function()? downloadComplete,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -159,6 +183,9 @@ mixin _$ApplicationEvent {
     required TResult Function(_FirstPageComplete value) firstPageComplete,
     required TResult Function(_CheckApplicationCache value)
         checkCacheApplication,
+    required TResult Function(_StartDownload value) startDownload,
+    required TResult Function(_ProgressDownload value) progressDownload,
+    required TResult Function(_DownloadComplete value) downloadComplete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -179,6 +206,9 @@ mixin _$ApplicationEvent {
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
+    TResult Function(_StartDownload value)? startDownload,
+    TResult Function(_ProgressDownload value)? progressDownload,
+    TResult Function(_DownloadComplete value)? downloadComplete,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -258,6 +288,10 @@ class _$_InitialApplication implements _InitialApplication {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
+    required TResult Function() startDownload,
+    required TResult Function(double recievedAmount, double totalAmount)
+        progressDownload,
+    required TResult Function() downloadComplete,
   }) {
     return initialEvent();
   }
@@ -279,6 +313,10 @@ class _$_InitialApplication implements _InitialApplication {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
+    TResult Function()? startDownload,
+    TResult Function(double recievedAmount, double totalAmount)?
+        progressDownload,
+    TResult Function()? downloadComplete,
     required TResult orElse(),
   }) {
     if (initialEvent != null) {
@@ -311,6 +349,9 @@ class _$_InitialApplication implements _InitialApplication {
     required TResult Function(_FirstPageComplete value) firstPageComplete,
     required TResult Function(_CheckApplicationCache value)
         checkCacheApplication,
+    required TResult Function(_StartDownload value) startDownload,
+    required TResult Function(_ProgressDownload value) progressDownload,
+    required TResult Function(_DownloadComplete value) downloadComplete,
   }) {
     return initialEvent(this);
   }
@@ -334,6 +375,9 @@ class _$_InitialApplication implements _InitialApplication {
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
+    TResult Function(_StartDownload value)? startDownload,
+    TResult Function(_ProgressDownload value)? progressDownload,
+    TResult Function(_DownloadComplete value)? downloadComplete,
     required TResult orElse(),
   }) {
     if (initialEvent != null) {
@@ -433,6 +477,10 @@ class _$_SchoolTranscriptChanged implements _SchoolTranscriptChanged {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
+    required TResult Function() startDownload,
+    required TResult Function(double recievedAmount, double totalAmount)
+        progressDownload,
+    required TResult Function() downloadComplete,
   }) {
     return schoolTranscriptChanged(schoolTranscriptPath);
   }
@@ -454,6 +502,10 @@ class _$_SchoolTranscriptChanged implements _SchoolTranscriptChanged {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
+    TResult Function()? startDownload,
+    TResult Function(double recievedAmount, double totalAmount)?
+        progressDownload,
+    TResult Function()? downloadComplete,
     required TResult orElse(),
   }) {
     if (schoolTranscriptChanged != null) {
@@ -486,6 +538,9 @@ class _$_SchoolTranscriptChanged implements _SchoolTranscriptChanged {
     required TResult Function(_FirstPageComplete value) firstPageComplete,
     required TResult Function(_CheckApplicationCache value)
         checkCacheApplication,
+    required TResult Function(_StartDownload value) startDownload,
+    required TResult Function(_ProgressDownload value) progressDownload,
+    required TResult Function(_DownloadComplete value) downloadComplete,
   }) {
     return schoolTranscriptChanged(this);
   }
@@ -509,6 +564,9 @@ class _$_SchoolTranscriptChanged implements _SchoolTranscriptChanged {
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
+    TResult Function(_StartDownload value)? startDownload,
+    TResult Function(_ProgressDownload value)? progressDownload,
+    TResult Function(_DownloadComplete value)? downloadComplete,
     required TResult orElse(),
   }) {
     if (schoolTranscriptChanged != null) {
@@ -617,6 +675,10 @@ class _$_ReccomendationLetterChanged implements _ReccomendationLetterChanged {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
+    required TResult Function() startDownload,
+    required TResult Function(double recievedAmount, double totalAmount)
+        progressDownload,
+    required TResult Function() downloadComplete,
   }) {
     return reccomnedationLetterChanged(reccomendationLetterPath);
   }
@@ -638,6 +700,10 @@ class _$_ReccomendationLetterChanged implements _ReccomendationLetterChanged {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
+    TResult Function()? startDownload,
+    TResult Function(double recievedAmount, double totalAmount)?
+        progressDownload,
+    TResult Function()? downloadComplete,
     required TResult orElse(),
   }) {
     if (reccomnedationLetterChanged != null) {
@@ -670,6 +736,9 @@ class _$_ReccomendationLetterChanged implements _ReccomendationLetterChanged {
     required TResult Function(_FirstPageComplete value) firstPageComplete,
     required TResult Function(_CheckApplicationCache value)
         checkCacheApplication,
+    required TResult Function(_StartDownload value) startDownload,
+    required TResult Function(_ProgressDownload value) progressDownload,
+    required TResult Function(_DownloadComplete value) downloadComplete,
   }) {
     return reccomnedationLetterChanged(this);
   }
@@ -693,6 +762,9 @@ class _$_ReccomendationLetterChanged implements _ReccomendationLetterChanged {
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
+    TResult Function(_StartDownload value)? startDownload,
+    TResult Function(_ProgressDownload value)? progressDownload,
+    TResult Function(_DownloadComplete value)? downloadComplete,
     required TResult orElse(),
   }) {
     if (reccomnedationLetterChanged != null) {
@@ -795,6 +867,10 @@ class _$_MainEssayChanged implements _MainEssayChanged {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
+    required TResult Function() startDownload,
+    required TResult Function(double recievedAmount, double totalAmount)
+        progressDownload,
+    required TResult Function() downloadComplete,
   }) {
     return mainEssayChanged(mainEssayPath);
   }
@@ -816,6 +892,10 @@ class _$_MainEssayChanged implements _MainEssayChanged {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
+    TResult Function()? startDownload,
+    TResult Function(double recievedAmount, double totalAmount)?
+        progressDownload,
+    TResult Function()? downloadComplete,
     required TResult orElse(),
   }) {
     if (mainEssayChanged != null) {
@@ -848,6 +928,9 @@ class _$_MainEssayChanged implements _MainEssayChanged {
     required TResult Function(_FirstPageComplete value) firstPageComplete,
     required TResult Function(_CheckApplicationCache value)
         checkCacheApplication,
+    required TResult Function(_StartDownload value) startDownload,
+    required TResult Function(_ProgressDownload value) progressDownload,
+    required TResult Function(_DownloadComplete value) downloadComplete,
   }) {
     return mainEssayChanged(this);
   }
@@ -871,6 +954,9 @@ class _$_MainEssayChanged implements _MainEssayChanged {
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
+    TResult Function(_StartDownload value)? startDownload,
+    TResult Function(_ProgressDownload value)? progressDownload,
+    TResult Function(_DownloadComplete value)? downloadComplete,
     required TResult orElse(),
   }) {
     if (mainEssayChanged != null) {
@@ -976,6 +1062,10 @@ class _$_ExtraCertificationChanged implements _ExtraCertificationChanged {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
+    required TResult Function() startDownload,
+    required TResult Function(double recievedAmount, double totalAmount)
+        progressDownload,
+    required TResult Function() downloadComplete,
   }) {
     return extraCertificationChanged(extraCertificationPath);
   }
@@ -997,6 +1087,10 @@ class _$_ExtraCertificationChanged implements _ExtraCertificationChanged {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
+    TResult Function()? startDownload,
+    TResult Function(double recievedAmount, double totalAmount)?
+        progressDownload,
+    TResult Function()? downloadComplete,
     required TResult orElse(),
   }) {
     if (extraCertificationChanged != null) {
@@ -1029,6 +1123,9 @@ class _$_ExtraCertificationChanged implements _ExtraCertificationChanged {
     required TResult Function(_FirstPageComplete value) firstPageComplete,
     required TResult Function(_CheckApplicationCache value)
         checkCacheApplication,
+    required TResult Function(_StartDownload value) startDownload,
+    required TResult Function(_ProgressDownload value) progressDownload,
+    required TResult Function(_DownloadComplete value) downloadComplete,
   }) {
     return extraCertificationChanged(this);
   }
@@ -1052,6 +1149,9 @@ class _$_ExtraCertificationChanged implements _ExtraCertificationChanged {
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
+    TResult Function(_StartDownload value)? startDownload,
+    TResult Function(_ProgressDownload value)? progressDownload,
+    TResult Function(_DownloadComplete value)? downloadComplete,
     required TResult orElse(),
   }) {
     if (extraCertificationChanged != null) {
@@ -1154,6 +1254,10 @@ class _$_ExtraEssay implements _ExtraEssay {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
+    required TResult Function() startDownload,
+    required TResult Function(double recievedAmount, double totalAmount)
+        progressDownload,
+    required TResult Function() downloadComplete,
   }) {
     return extraEssayChanged(extraEssay);
   }
@@ -1175,6 +1279,10 @@ class _$_ExtraEssay implements _ExtraEssay {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
+    TResult Function()? startDownload,
+    TResult Function(double recievedAmount, double totalAmount)?
+        progressDownload,
+    TResult Function()? downloadComplete,
     required TResult orElse(),
   }) {
     if (extraEssayChanged != null) {
@@ -1207,6 +1315,9 @@ class _$_ExtraEssay implements _ExtraEssay {
     required TResult Function(_FirstPageComplete value) firstPageComplete,
     required TResult Function(_CheckApplicationCache value)
         checkCacheApplication,
+    required TResult Function(_StartDownload value) startDownload,
+    required TResult Function(_ProgressDownload value) progressDownload,
+    required TResult Function(_DownloadComplete value) downloadComplete,
   }) {
     return extraEssayChanged(this);
   }
@@ -1230,6 +1341,9 @@ class _$_ExtraEssay implements _ExtraEssay {
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
+    TResult Function(_StartDownload value)? startDownload,
+    TResult Function(_ProgressDownload value)? progressDownload,
+    TResult Function(_DownloadComplete value)? downloadComplete,
     required TResult orElse(),
   }) {
     if (extraEssayChanged != null) {
@@ -1333,6 +1447,10 @@ class _$_MilitaryStatusChanged implements _MilitaryStatusChanged {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
+    required TResult Function() startDownload,
+    required TResult Function(double recievedAmount, double totalAmount)
+        progressDownload,
+    required TResult Function() downloadComplete,
   }) {
     return militaryStatusChanged(militaryStatus);
   }
@@ -1354,6 +1472,10 @@ class _$_MilitaryStatusChanged implements _MilitaryStatusChanged {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
+    TResult Function()? startDownload,
+    TResult Function(double recievedAmount, double totalAmount)?
+        progressDownload,
+    TResult Function()? downloadComplete,
     required TResult orElse(),
   }) {
     if (militaryStatusChanged != null) {
@@ -1386,6 +1508,9 @@ class _$_MilitaryStatusChanged implements _MilitaryStatusChanged {
     required TResult Function(_FirstPageComplete value) firstPageComplete,
     required TResult Function(_CheckApplicationCache value)
         checkCacheApplication,
+    required TResult Function(_StartDownload value) startDownload,
+    required TResult Function(_ProgressDownload value) progressDownload,
+    required TResult Function(_DownloadComplete value) downloadComplete,
   }) {
     return militaryStatusChanged(this);
   }
@@ -1409,6 +1534,9 @@ class _$_MilitaryStatusChanged implements _MilitaryStatusChanged {
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
+    TResult Function(_StartDownload value)? startDownload,
+    TResult Function(_ProgressDownload value)? progressDownload,
+    TResult Function(_DownloadComplete value)? downloadComplete,
     required TResult orElse(),
   }) {
     if (militaryStatusChanged != null) {
@@ -1514,6 +1642,10 @@ class _$_UniversityStatusChanged implements _UniversityStatusChanged {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
+    required TResult Function() startDownload,
+    required TResult Function(double recievedAmount, double totalAmount)
+        progressDownload,
+    required TResult Function() downloadComplete,
   }) {
     return universityStatusChanged(universityStatus);
   }
@@ -1535,6 +1667,10 @@ class _$_UniversityStatusChanged implements _UniversityStatusChanged {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
+    TResult Function()? startDownload,
+    TResult Function(double recievedAmount, double totalAmount)?
+        progressDownload,
+    TResult Function()? downloadComplete,
     required TResult orElse(),
   }) {
     if (universityStatusChanged != null) {
@@ -1567,6 +1703,9 @@ class _$_UniversityStatusChanged implements _UniversityStatusChanged {
     required TResult Function(_FirstPageComplete value) firstPageComplete,
     required TResult Function(_CheckApplicationCache value)
         checkCacheApplication,
+    required TResult Function(_StartDownload value) startDownload,
+    required TResult Function(_ProgressDownload value) progressDownload,
+    required TResult Function(_DownloadComplete value) downloadComplete,
   }) {
     return universityStatusChanged(this);
   }
@@ -1590,6 +1729,9 @@ class _$_UniversityStatusChanged implements _UniversityStatusChanged {
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
+    TResult Function(_StartDownload value)? startDownload,
+    TResult Function(_ProgressDownload value)? progressDownload,
+    TResult Function(_DownloadComplete value)? downloadComplete,
     required TResult orElse(),
   }) {
     if (universityStatusChanged != null) {
@@ -1691,6 +1833,10 @@ class _$_ProficiencyChanged implements _ProficiencyChanged {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
+    required TResult Function() startDownload,
+    required TResult Function(double recievedAmount, double totalAmount)
+        progressDownload,
+    required TResult Function() downloadComplete,
   }) {
     return proficiencyUrlChanged(testUrl);
   }
@@ -1712,6 +1858,10 @@ class _$_ProficiencyChanged implements _ProficiencyChanged {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
+    TResult Function()? startDownload,
+    TResult Function(double recievedAmount, double totalAmount)?
+        progressDownload,
+    TResult Function()? downloadComplete,
     required TResult orElse(),
   }) {
     if (proficiencyUrlChanged != null) {
@@ -1744,6 +1894,9 @@ class _$_ProficiencyChanged implements _ProficiencyChanged {
     required TResult Function(_FirstPageComplete value) firstPageComplete,
     required TResult Function(_CheckApplicationCache value)
         checkCacheApplication,
+    required TResult Function(_StartDownload value) startDownload,
+    required TResult Function(_ProgressDownload value) progressDownload,
+    required TResult Function(_DownloadComplete value) downloadComplete,
   }) {
     return proficiencyUrlChanged(this);
   }
@@ -1767,6 +1920,9 @@ class _$_ProficiencyChanged implements _ProficiencyChanged {
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
+    TResult Function(_StartDownload value)? startDownload,
+    TResult Function(_ProgressDownload value)? progressDownload,
+    TResult Function(_DownloadComplete value)? downloadComplete,
     required TResult orElse(),
   }) {
     if (proficiencyUrlChanged != null) {
@@ -1872,6 +2028,10 @@ class _$_DepartmentSelectionChanged implements _DepartmentSelectionChanged {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
+    required TResult Function() startDownload,
+    required TResult Function(double recievedAmount, double totalAmount)
+        progressDownload,
+    required TResult Function() downloadComplete,
   }) {
     return departmentSelectionChanged(departmentSelection);
   }
@@ -1893,6 +2053,10 @@ class _$_DepartmentSelectionChanged implements _DepartmentSelectionChanged {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
+    TResult Function()? startDownload,
+    TResult Function(double recievedAmount, double totalAmount)?
+        progressDownload,
+    TResult Function()? downloadComplete,
     required TResult orElse(),
   }) {
     if (departmentSelectionChanged != null) {
@@ -1925,6 +2089,9 @@ class _$_DepartmentSelectionChanged implements _DepartmentSelectionChanged {
     required TResult Function(_FirstPageComplete value) firstPageComplete,
     required TResult Function(_CheckApplicationCache value)
         checkCacheApplication,
+    required TResult Function(_StartDownload value) startDownload,
+    required TResult Function(_ProgressDownload value) progressDownload,
+    required TResult Function(_DownloadComplete value) downloadComplete,
   }) {
     return departmentSelectionChanged(this);
   }
@@ -1948,6 +2115,9 @@ class _$_DepartmentSelectionChanged implements _DepartmentSelectionChanged {
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
+    TResult Function(_StartDownload value)? startDownload,
+    TResult Function(_ProgressDownload value)? progressDownload,
+    TResult Function(_DownloadComplete value)? downloadComplete,
     required TResult orElse(),
   }) {
     if (departmentSelectionChanged != null) {
@@ -2025,6 +2195,10 @@ class _$_SubmitApplicationClicked implements _SubmitApplicationClicked {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
+    required TResult Function() startDownload,
+    required TResult Function(double recievedAmount, double totalAmount)
+        progressDownload,
+    required TResult Function() downloadComplete,
   }) {
     return submitApplicationClicked();
   }
@@ -2046,6 +2220,10 @@ class _$_SubmitApplicationClicked implements _SubmitApplicationClicked {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
+    TResult Function()? startDownload,
+    TResult Function(double recievedAmount, double totalAmount)?
+        progressDownload,
+    TResult Function()? downloadComplete,
     required TResult orElse(),
   }) {
     if (submitApplicationClicked != null) {
@@ -2078,6 +2256,9 @@ class _$_SubmitApplicationClicked implements _SubmitApplicationClicked {
     required TResult Function(_FirstPageComplete value) firstPageComplete,
     required TResult Function(_CheckApplicationCache value)
         checkCacheApplication,
+    required TResult Function(_StartDownload value) startDownload,
+    required TResult Function(_ProgressDownload value) progressDownload,
+    required TResult Function(_DownloadComplete value) downloadComplete,
   }) {
     return submitApplicationClicked(this);
   }
@@ -2101,6 +2282,9 @@ class _$_SubmitApplicationClicked implements _SubmitApplicationClicked {
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
+    TResult Function(_StartDownload value)? startDownload,
+    TResult Function(_ProgressDownload value)? progressDownload,
+    TResult Function(_DownloadComplete value)? downloadComplete,
     required TResult orElse(),
   }) {
     if (submitApplicationClicked != null) {
@@ -2171,6 +2355,10 @@ class _$_FirstPageComplete implements _FirstPageComplete {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
+    required TResult Function() startDownload,
+    required TResult Function(double recievedAmount, double totalAmount)
+        progressDownload,
+    required TResult Function() downloadComplete,
   }) {
     return firstPageComplete();
   }
@@ -2192,6 +2380,10 @@ class _$_FirstPageComplete implements _FirstPageComplete {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
+    TResult Function()? startDownload,
+    TResult Function(double recievedAmount, double totalAmount)?
+        progressDownload,
+    TResult Function()? downloadComplete,
     required TResult orElse(),
   }) {
     if (firstPageComplete != null) {
@@ -2224,6 +2416,9 @@ class _$_FirstPageComplete implements _FirstPageComplete {
     required TResult Function(_FirstPageComplete value) firstPageComplete,
     required TResult Function(_CheckApplicationCache value)
         checkCacheApplication,
+    required TResult Function(_StartDownload value) startDownload,
+    required TResult Function(_ProgressDownload value) progressDownload,
+    required TResult Function(_DownloadComplete value) downloadComplete,
   }) {
     return firstPageComplete(this);
   }
@@ -2247,6 +2442,9 @@ class _$_FirstPageComplete implements _FirstPageComplete {
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
+    TResult Function(_StartDownload value)? startDownload,
+    TResult Function(_ProgressDownload value)? progressDownload,
+    TResult Function(_DownloadComplete value)? downloadComplete,
     required TResult orElse(),
   }) {
     if (firstPageComplete != null) {
@@ -2317,6 +2515,10 @@ class _$_CheckApplicationCache implements _CheckApplicationCache {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
+    required TResult Function() startDownload,
+    required TResult Function(double recievedAmount, double totalAmount)
+        progressDownload,
+    required TResult Function() downloadComplete,
   }) {
     return checkCacheApplication();
   }
@@ -2338,6 +2540,10 @@ class _$_CheckApplicationCache implements _CheckApplicationCache {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
+    TResult Function()? startDownload,
+    TResult Function(double recievedAmount, double totalAmount)?
+        progressDownload,
+    TResult Function()? downloadComplete,
     required TResult orElse(),
   }) {
     if (checkCacheApplication != null) {
@@ -2370,6 +2576,9 @@ class _$_CheckApplicationCache implements _CheckApplicationCache {
     required TResult Function(_FirstPageComplete value) firstPageComplete,
     required TResult Function(_CheckApplicationCache value)
         checkCacheApplication,
+    required TResult Function(_StartDownload value) startDownload,
+    required TResult Function(_ProgressDownload value) progressDownload,
+    required TResult Function(_DownloadComplete value) downloadComplete,
   }) {
     return checkCacheApplication(this);
   }
@@ -2393,6 +2602,9 @@ class _$_CheckApplicationCache implements _CheckApplicationCache {
     TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
     TResult Function(_FirstPageComplete value)? firstPageComplete,
     TResult Function(_CheckApplicationCache value)? checkCacheApplication,
+    TResult Function(_StartDownload value)? startDownload,
+    TResult Function(_ProgressDownload value)? progressDownload,
+    TResult Function(_DownloadComplete value)? downloadComplete,
     required TResult orElse(),
   }) {
     if (checkCacheApplication != null) {
@@ -2404,6 +2616,533 @@ class _$_CheckApplicationCache implements _CheckApplicationCache {
 
 abstract class _CheckApplicationCache implements ApplicationEvent {
   const factory _CheckApplicationCache() = _$_CheckApplicationCache;
+}
+
+/// @nodoc
+abstract class _$StartDownloadCopyWith<$Res> {
+  factory _$StartDownloadCopyWith(
+          _StartDownload value, $Res Function(_StartDownload) then) =
+      __$StartDownloadCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$StartDownloadCopyWithImpl<$Res>
+    extends _$ApplicationEventCopyWithImpl<$Res>
+    implements _$StartDownloadCopyWith<$Res> {
+  __$StartDownloadCopyWithImpl(
+      _StartDownload _value, $Res Function(_StartDownload) _then)
+      : super(_value, (v) => _then(v as _StartDownload));
+
+  @override
+  _StartDownload get _value => super._value as _StartDownload;
+}
+
+/// @nodoc
+
+class _$_StartDownload implements _StartDownload {
+  const _$_StartDownload();
+
+  @override
+  String toString() {
+    return 'ApplicationEvent.startDownload()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _StartDownload);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialEvent,
+    required TResult Function(String schoolTranscriptPath)
+        schoolTranscriptChanged,
+    required TResult Function(String reccomendationLetterPath)
+        reccomnedationLetterChanged,
+    required TResult Function(String mainEssayPath) mainEssayChanged,
+    required TResult Function(String extraCertificationPath)
+        extraCertificationChanged,
+    required TResult Function(String extraEssay) extraEssayChanged,
+    required TResult Function(String militaryStatus) militaryStatusChanged,
+    required TResult Function(String universityStatus) universityStatusChanged,
+    required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function(String departmentSelection)
+        departmentSelectionChanged,
+    required TResult Function() submitApplicationClicked,
+    required TResult Function() firstPageComplete,
+    required TResult Function() checkCacheApplication,
+    required TResult Function() startDownload,
+    required TResult Function(double recievedAmount, double totalAmount)
+        progressDownload,
+    required TResult Function() downloadComplete,
+  }) {
+    return startDownload();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialEvent,
+    TResult Function(String schoolTranscriptPath)? schoolTranscriptChanged,
+    TResult Function(String reccomendationLetterPath)?
+        reccomnedationLetterChanged,
+    TResult Function(String mainEssayPath)? mainEssayChanged,
+    TResult Function(String extraCertificationPath)? extraCertificationChanged,
+    TResult Function(String extraEssay)? extraEssayChanged,
+    TResult Function(String militaryStatus)? militaryStatusChanged,
+    TResult Function(String universityStatus)? universityStatusChanged,
+    TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function(String departmentSelection)? departmentSelectionChanged,
+    TResult Function()? submitApplicationClicked,
+    TResult Function()? firstPageComplete,
+    TResult Function()? checkCacheApplication,
+    TResult Function()? startDownload,
+    TResult Function(double recievedAmount, double totalAmount)?
+        progressDownload,
+    TResult Function()? downloadComplete,
+    required TResult orElse(),
+  }) {
+    if (startDownload != null) {
+      return startDownload();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialApplication value) initialEvent,
+    required TResult Function(_SchoolTranscriptChanged value)
+        schoolTranscriptChanged,
+    required TResult Function(_ReccomendationLetterChanged value)
+        reccomnedationLetterChanged,
+    required TResult Function(_MainEssayChanged value) mainEssayChanged,
+    required TResult Function(_ExtraCertificationChanged value)
+        extraCertificationChanged,
+    required TResult Function(_ExtraEssay value) extraEssayChanged,
+    required TResult Function(_MilitaryStatusChanged value)
+        militaryStatusChanged,
+    required TResult Function(_UniversityStatusChanged value)
+        universityStatusChanged,
+    required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_DepartmentSelectionChanged value)
+        departmentSelectionChanged,
+    required TResult Function(_SubmitApplicationClicked value)
+        submitApplicationClicked,
+    required TResult Function(_FirstPageComplete value) firstPageComplete,
+    required TResult Function(_CheckApplicationCache value)
+        checkCacheApplication,
+    required TResult Function(_StartDownload value) startDownload,
+    required TResult Function(_ProgressDownload value) progressDownload,
+    required TResult Function(_DownloadComplete value) downloadComplete,
+  }) {
+    return startDownload(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialApplication value)? initialEvent,
+    TResult Function(_SchoolTranscriptChanged value)? schoolTranscriptChanged,
+    TResult Function(_ReccomendationLetterChanged value)?
+        reccomnedationLetterChanged,
+    TResult Function(_MainEssayChanged value)? mainEssayChanged,
+    TResult Function(_ExtraCertificationChanged value)?
+        extraCertificationChanged,
+    TResult Function(_ExtraEssay value)? extraEssayChanged,
+    TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
+    TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
+    TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_DepartmentSelectionChanged value)?
+        departmentSelectionChanged,
+    TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    TResult Function(_FirstPageComplete value)? firstPageComplete,
+    TResult Function(_CheckApplicationCache value)? checkCacheApplication,
+    TResult Function(_StartDownload value)? startDownload,
+    TResult Function(_ProgressDownload value)? progressDownload,
+    TResult Function(_DownloadComplete value)? downloadComplete,
+    required TResult orElse(),
+  }) {
+    if (startDownload != null) {
+      return startDownload(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _StartDownload implements ApplicationEvent {
+  const factory _StartDownload() = _$_StartDownload;
+}
+
+/// @nodoc
+abstract class _$ProgressDownloadCopyWith<$Res> {
+  factory _$ProgressDownloadCopyWith(
+          _ProgressDownload value, $Res Function(_ProgressDownload) then) =
+      __$ProgressDownloadCopyWithImpl<$Res>;
+  $Res call({double recievedAmount, double totalAmount});
+}
+
+/// @nodoc
+class __$ProgressDownloadCopyWithImpl<$Res>
+    extends _$ApplicationEventCopyWithImpl<$Res>
+    implements _$ProgressDownloadCopyWith<$Res> {
+  __$ProgressDownloadCopyWithImpl(
+      _ProgressDownload _value, $Res Function(_ProgressDownload) _then)
+      : super(_value, (v) => _then(v as _ProgressDownload));
+
+  @override
+  _ProgressDownload get _value => super._value as _ProgressDownload;
+
+  @override
+  $Res call({
+    Object? recievedAmount = freezed,
+    Object? totalAmount = freezed,
+  }) {
+    return _then(_ProgressDownload(
+      recievedAmount: recievedAmount == freezed
+          ? _value.recievedAmount
+          : recievedAmount // ignore: cast_nullable_to_non_nullable
+              as double,
+      totalAmount: totalAmount == freezed
+          ? _value.totalAmount
+          : totalAmount // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ProgressDownload implements _ProgressDownload {
+  const _$_ProgressDownload(
+      {required this.recievedAmount, required this.totalAmount});
+
+  @override
+  final double recievedAmount;
+  @override
+  final double totalAmount;
+
+  @override
+  String toString() {
+    return 'ApplicationEvent.progressDownload(recievedAmount: $recievedAmount, totalAmount: $totalAmount)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ProgressDownload &&
+            (identical(other.recievedAmount, recievedAmount) ||
+                const DeepCollectionEquality()
+                    .equals(other.recievedAmount, recievedAmount)) &&
+            (identical(other.totalAmount, totalAmount) ||
+                const DeepCollectionEquality()
+                    .equals(other.totalAmount, totalAmount)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(recievedAmount) ^
+      const DeepCollectionEquality().hash(totalAmount);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ProgressDownloadCopyWith<_ProgressDownload> get copyWith =>
+      __$ProgressDownloadCopyWithImpl<_ProgressDownload>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialEvent,
+    required TResult Function(String schoolTranscriptPath)
+        schoolTranscriptChanged,
+    required TResult Function(String reccomendationLetterPath)
+        reccomnedationLetterChanged,
+    required TResult Function(String mainEssayPath) mainEssayChanged,
+    required TResult Function(String extraCertificationPath)
+        extraCertificationChanged,
+    required TResult Function(String extraEssay) extraEssayChanged,
+    required TResult Function(String militaryStatus) militaryStatusChanged,
+    required TResult Function(String universityStatus) universityStatusChanged,
+    required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function(String departmentSelection)
+        departmentSelectionChanged,
+    required TResult Function() submitApplicationClicked,
+    required TResult Function() firstPageComplete,
+    required TResult Function() checkCacheApplication,
+    required TResult Function() startDownload,
+    required TResult Function(double recievedAmount, double totalAmount)
+        progressDownload,
+    required TResult Function() downloadComplete,
+  }) {
+    return progressDownload(recievedAmount, totalAmount);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialEvent,
+    TResult Function(String schoolTranscriptPath)? schoolTranscriptChanged,
+    TResult Function(String reccomendationLetterPath)?
+        reccomnedationLetterChanged,
+    TResult Function(String mainEssayPath)? mainEssayChanged,
+    TResult Function(String extraCertificationPath)? extraCertificationChanged,
+    TResult Function(String extraEssay)? extraEssayChanged,
+    TResult Function(String militaryStatus)? militaryStatusChanged,
+    TResult Function(String universityStatus)? universityStatusChanged,
+    TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function(String departmentSelection)? departmentSelectionChanged,
+    TResult Function()? submitApplicationClicked,
+    TResult Function()? firstPageComplete,
+    TResult Function()? checkCacheApplication,
+    TResult Function()? startDownload,
+    TResult Function(double recievedAmount, double totalAmount)?
+        progressDownload,
+    TResult Function()? downloadComplete,
+    required TResult orElse(),
+  }) {
+    if (progressDownload != null) {
+      return progressDownload(recievedAmount, totalAmount);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialApplication value) initialEvent,
+    required TResult Function(_SchoolTranscriptChanged value)
+        schoolTranscriptChanged,
+    required TResult Function(_ReccomendationLetterChanged value)
+        reccomnedationLetterChanged,
+    required TResult Function(_MainEssayChanged value) mainEssayChanged,
+    required TResult Function(_ExtraCertificationChanged value)
+        extraCertificationChanged,
+    required TResult Function(_ExtraEssay value) extraEssayChanged,
+    required TResult Function(_MilitaryStatusChanged value)
+        militaryStatusChanged,
+    required TResult Function(_UniversityStatusChanged value)
+        universityStatusChanged,
+    required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_DepartmentSelectionChanged value)
+        departmentSelectionChanged,
+    required TResult Function(_SubmitApplicationClicked value)
+        submitApplicationClicked,
+    required TResult Function(_FirstPageComplete value) firstPageComplete,
+    required TResult Function(_CheckApplicationCache value)
+        checkCacheApplication,
+    required TResult Function(_StartDownload value) startDownload,
+    required TResult Function(_ProgressDownload value) progressDownload,
+    required TResult Function(_DownloadComplete value) downloadComplete,
+  }) {
+    return progressDownload(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialApplication value)? initialEvent,
+    TResult Function(_SchoolTranscriptChanged value)? schoolTranscriptChanged,
+    TResult Function(_ReccomendationLetterChanged value)?
+        reccomnedationLetterChanged,
+    TResult Function(_MainEssayChanged value)? mainEssayChanged,
+    TResult Function(_ExtraCertificationChanged value)?
+        extraCertificationChanged,
+    TResult Function(_ExtraEssay value)? extraEssayChanged,
+    TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
+    TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
+    TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_DepartmentSelectionChanged value)?
+        departmentSelectionChanged,
+    TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    TResult Function(_FirstPageComplete value)? firstPageComplete,
+    TResult Function(_CheckApplicationCache value)? checkCacheApplication,
+    TResult Function(_StartDownload value)? startDownload,
+    TResult Function(_ProgressDownload value)? progressDownload,
+    TResult Function(_DownloadComplete value)? downloadComplete,
+    required TResult orElse(),
+  }) {
+    if (progressDownload != null) {
+      return progressDownload(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ProgressDownload implements ApplicationEvent {
+  const factory _ProgressDownload(
+      {required double recievedAmount,
+      required double totalAmount}) = _$_ProgressDownload;
+
+  double get recievedAmount => throw _privateConstructorUsedError;
+  double get totalAmount => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ProgressDownloadCopyWith<_ProgressDownload> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$DownloadCompleteCopyWith<$Res> {
+  factory _$DownloadCompleteCopyWith(
+          _DownloadComplete value, $Res Function(_DownloadComplete) then) =
+      __$DownloadCompleteCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$DownloadCompleteCopyWithImpl<$Res>
+    extends _$ApplicationEventCopyWithImpl<$Res>
+    implements _$DownloadCompleteCopyWith<$Res> {
+  __$DownloadCompleteCopyWithImpl(
+      _DownloadComplete _value, $Res Function(_DownloadComplete) _then)
+      : super(_value, (v) => _then(v as _DownloadComplete));
+
+  @override
+  _DownloadComplete get _value => super._value as _DownloadComplete;
+}
+
+/// @nodoc
+
+class _$_DownloadComplete implements _DownloadComplete {
+  const _$_DownloadComplete();
+
+  @override
+  String toString() {
+    return 'ApplicationEvent.downloadComplete()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _DownloadComplete);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialEvent,
+    required TResult Function(String schoolTranscriptPath)
+        schoolTranscriptChanged,
+    required TResult Function(String reccomendationLetterPath)
+        reccomnedationLetterChanged,
+    required TResult Function(String mainEssayPath) mainEssayChanged,
+    required TResult Function(String extraCertificationPath)
+        extraCertificationChanged,
+    required TResult Function(String extraEssay) extraEssayChanged,
+    required TResult Function(String militaryStatus) militaryStatusChanged,
+    required TResult Function(String universityStatus) universityStatusChanged,
+    required TResult Function(String testUrl) proficiencyUrlChanged,
+    required TResult Function(String departmentSelection)
+        departmentSelectionChanged,
+    required TResult Function() submitApplicationClicked,
+    required TResult Function() firstPageComplete,
+    required TResult Function() checkCacheApplication,
+    required TResult Function() startDownload,
+    required TResult Function(double recievedAmount, double totalAmount)
+        progressDownload,
+    required TResult Function() downloadComplete,
+  }) {
+    return downloadComplete();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialEvent,
+    TResult Function(String schoolTranscriptPath)? schoolTranscriptChanged,
+    TResult Function(String reccomendationLetterPath)?
+        reccomnedationLetterChanged,
+    TResult Function(String mainEssayPath)? mainEssayChanged,
+    TResult Function(String extraCertificationPath)? extraCertificationChanged,
+    TResult Function(String extraEssay)? extraEssayChanged,
+    TResult Function(String militaryStatus)? militaryStatusChanged,
+    TResult Function(String universityStatus)? universityStatusChanged,
+    TResult Function(String testUrl)? proficiencyUrlChanged,
+    TResult Function(String departmentSelection)? departmentSelectionChanged,
+    TResult Function()? submitApplicationClicked,
+    TResult Function()? firstPageComplete,
+    TResult Function()? checkCacheApplication,
+    TResult Function()? startDownload,
+    TResult Function(double recievedAmount, double totalAmount)?
+        progressDownload,
+    TResult Function()? downloadComplete,
+    required TResult orElse(),
+  }) {
+    if (downloadComplete != null) {
+      return downloadComplete();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialApplication value) initialEvent,
+    required TResult Function(_SchoolTranscriptChanged value)
+        schoolTranscriptChanged,
+    required TResult Function(_ReccomendationLetterChanged value)
+        reccomnedationLetterChanged,
+    required TResult Function(_MainEssayChanged value) mainEssayChanged,
+    required TResult Function(_ExtraCertificationChanged value)
+        extraCertificationChanged,
+    required TResult Function(_ExtraEssay value) extraEssayChanged,
+    required TResult Function(_MilitaryStatusChanged value)
+        militaryStatusChanged,
+    required TResult Function(_UniversityStatusChanged value)
+        universityStatusChanged,
+    required TResult Function(_ProficiencyChanged value) proficiencyUrlChanged,
+    required TResult Function(_DepartmentSelectionChanged value)
+        departmentSelectionChanged,
+    required TResult Function(_SubmitApplicationClicked value)
+        submitApplicationClicked,
+    required TResult Function(_FirstPageComplete value) firstPageComplete,
+    required TResult Function(_CheckApplicationCache value)
+        checkCacheApplication,
+    required TResult Function(_StartDownload value) startDownload,
+    required TResult Function(_ProgressDownload value) progressDownload,
+    required TResult Function(_DownloadComplete value) downloadComplete,
+  }) {
+    return downloadComplete(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialApplication value)? initialEvent,
+    TResult Function(_SchoolTranscriptChanged value)? schoolTranscriptChanged,
+    TResult Function(_ReccomendationLetterChanged value)?
+        reccomnedationLetterChanged,
+    TResult Function(_MainEssayChanged value)? mainEssayChanged,
+    TResult Function(_ExtraCertificationChanged value)?
+        extraCertificationChanged,
+    TResult Function(_ExtraEssay value)? extraEssayChanged,
+    TResult Function(_MilitaryStatusChanged value)? militaryStatusChanged,
+    TResult Function(_UniversityStatusChanged value)? universityStatusChanged,
+    TResult Function(_ProficiencyChanged value)? proficiencyUrlChanged,
+    TResult Function(_DepartmentSelectionChanged value)?
+        departmentSelectionChanged,
+    TResult Function(_SubmitApplicationClicked value)? submitApplicationClicked,
+    TResult Function(_FirstPageComplete value)? firstPageComplete,
+    TResult Function(_CheckApplicationCache value)? checkCacheApplication,
+    TResult Function(_StartDownload value)? startDownload,
+    TResult Function(_ProgressDownload value)? progressDownload,
+    TResult Function(_DownloadComplete value)? downloadComplete,
+    required TResult orElse(),
+  }) {
+    if (downloadComplete != null) {
+      return downloadComplete(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DownloadComplete implements ApplicationEvent {
+  const factory _DownloadComplete() = _$_DownloadComplete;
 }
 
 /// @nodoc
@@ -2423,6 +3162,10 @@ class _$ApplicationStateTearOff {
       required bool isSubmitting,
       required bool showErrorMessages,
       required bool isApplicationCached,
+      required bool isPreparingDownload,
+      required bool isDownloadComplete,
+      required double recievedAmount,
+      required double totalAmount,
       required Option<Either<ApplicationFailure, Application>>
           applicationFailureOrSuccess,
       required Option<Either<ValueFailure, dynamic>> valueFailureOrSuccess}) {
@@ -2439,6 +3182,10 @@ class _$ApplicationStateTearOff {
       isSubmitting: isSubmitting,
       showErrorMessages: showErrorMessages,
       isApplicationCached: isApplicationCached,
+      isPreparingDownload: isPreparingDownload,
+      isDownloadComplete: isDownloadComplete,
+      recievedAmount: recievedAmount,
+      totalAmount: totalAmount,
       applicationFailureOrSuccess: applicationFailureOrSuccess,
       valueFailureOrSuccess: valueFailureOrSuccess,
     );
@@ -2467,6 +3214,10 @@ mixin _$ApplicationState {
   bool get isSubmitting => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isApplicationCached => throw _privateConstructorUsedError;
+  bool get isPreparingDownload => throw _privateConstructorUsedError;
+  bool get isDownloadComplete => throw _privateConstructorUsedError;
+  double get recievedAmount => throw _privateConstructorUsedError;
+  double get totalAmount => throw _privateConstructorUsedError;
   Option<Either<ApplicationFailure, Application>>
       get applicationFailureOrSuccess => throw _privateConstructorUsedError;
   Option<Either<ValueFailure, dynamic>> get valueFailureOrSuccess =>
@@ -2495,6 +3246,10 @@ abstract class $ApplicationStateCopyWith<$Res> {
       bool isSubmitting,
       bool showErrorMessages,
       bool isApplicationCached,
+      bool isPreparingDownload,
+      bool isDownloadComplete,
+      double recievedAmount,
+      double totalAmount,
       Option<Either<ApplicationFailure, Application>>
           applicationFailureOrSuccess,
       Option<Either<ValueFailure, dynamic>> valueFailureOrSuccess});
@@ -2523,6 +3278,10 @@ class _$ApplicationStateCopyWithImpl<$Res>
     Object? isSubmitting = freezed,
     Object? showErrorMessages = freezed,
     Object? isApplicationCached = freezed,
+    Object? isPreparingDownload = freezed,
+    Object? isDownloadComplete = freezed,
+    Object? recievedAmount = freezed,
+    Object? totalAmount = freezed,
     Object? applicationFailureOrSuccess = freezed,
     Object? valueFailureOrSuccess = freezed,
   }) {
@@ -2575,6 +3334,22 @@ class _$ApplicationStateCopyWithImpl<$Res>
           ? _value.isApplicationCached
           : isApplicationCached // ignore: cast_nullable_to_non_nullable
               as bool,
+      isPreparingDownload: isPreparingDownload == freezed
+          ? _value.isPreparingDownload
+          : isPreparingDownload // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isDownloadComplete: isDownloadComplete == freezed
+          ? _value.isDownloadComplete
+          : isDownloadComplete // ignore: cast_nullable_to_non_nullable
+              as bool,
+      recievedAmount: recievedAmount == freezed
+          ? _value.recievedAmount
+          : recievedAmount // ignore: cast_nullable_to_non_nullable
+              as double,
+      totalAmount: totalAmount == freezed
+          ? _value.totalAmount
+          : totalAmount // ignore: cast_nullable_to_non_nullable
+              as double,
       applicationFailureOrSuccess: applicationFailureOrSuccess == freezed
           ? _value.applicationFailureOrSuccess
           : applicationFailureOrSuccess // ignore: cast_nullable_to_non_nullable
@@ -2607,6 +3382,10 @@ abstract class _$ApplicationStateCopyWith<$Res>
       bool isSubmitting,
       bool showErrorMessages,
       bool isApplicationCached,
+      bool isPreparingDownload,
+      bool isDownloadComplete,
+      double recievedAmount,
+      double totalAmount,
       Option<Either<ApplicationFailure, Application>>
           applicationFailureOrSuccess,
       Option<Either<ValueFailure, dynamic>> valueFailureOrSuccess});
@@ -2637,6 +3416,10 @@ class __$ApplicationStateCopyWithImpl<$Res>
     Object? isSubmitting = freezed,
     Object? showErrorMessages = freezed,
     Object? isApplicationCached = freezed,
+    Object? isPreparingDownload = freezed,
+    Object? isDownloadComplete = freezed,
+    Object? recievedAmount = freezed,
+    Object? totalAmount = freezed,
     Object? applicationFailureOrSuccess = freezed,
     Object? valueFailureOrSuccess = freezed,
   }) {
@@ -2689,6 +3472,22 @@ class __$ApplicationStateCopyWithImpl<$Res>
           ? _value.isApplicationCached
           : isApplicationCached // ignore: cast_nullable_to_non_nullable
               as bool,
+      isPreparingDownload: isPreparingDownload == freezed
+          ? _value.isPreparingDownload
+          : isPreparingDownload // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isDownloadComplete: isDownloadComplete == freezed
+          ? _value.isDownloadComplete
+          : isDownloadComplete // ignore: cast_nullable_to_non_nullable
+              as bool,
+      recievedAmount: recievedAmount == freezed
+          ? _value.recievedAmount
+          : recievedAmount // ignore: cast_nullable_to_non_nullable
+              as double,
+      totalAmount: totalAmount == freezed
+          ? _value.totalAmount
+          : totalAmount // ignore: cast_nullable_to_non_nullable
+              as double,
       applicationFailureOrSuccess: applicationFailureOrSuccess == freezed
           ? _value.applicationFailureOrSuccess
           : applicationFailureOrSuccess // ignore: cast_nullable_to_non_nullable
@@ -2717,6 +3516,10 @@ class _$_ApplicationState implements _ApplicationState {
       required this.isSubmitting,
       required this.showErrorMessages,
       required this.isApplicationCached,
+      required this.isPreparingDownload,
+      required this.isDownloadComplete,
+      required this.recievedAmount,
+      required this.totalAmount,
       required this.applicationFailureOrSuccess,
       required this.valueFailureOrSuccess});
 
@@ -2745,6 +3548,14 @@ class _$_ApplicationState implements _ApplicationState {
   @override
   final bool isApplicationCached;
   @override
+  final bool isPreparingDownload;
+  @override
+  final bool isDownloadComplete;
+  @override
+  final double recievedAmount;
+  @override
+  final double totalAmount;
+  @override
   final Option<Either<ApplicationFailure, Application>>
       applicationFailureOrSuccess;
   @override
@@ -2752,7 +3563,7 @@ class _$_ApplicationState implements _ApplicationState {
 
   @override
   String toString() {
-    return 'ApplicationState(schoolTranscript: $schoolTranscript, mainEssay: $mainEssay, extraEssay: $extraEssay, proficencyTest: $proficencyTest, extraCertification: $extraCertification, recomendationLetter: $recomendationLetter, militaryFamilyStatus: $militaryFamilyStatus, universityFamilyStatus: $universityFamilyStatus, departmentSelection: $departmentSelection, isSubmitting: $isSubmitting, showErrorMessages: $showErrorMessages, isApplicationCached: $isApplicationCached, applicationFailureOrSuccess: $applicationFailureOrSuccess, valueFailureOrSuccess: $valueFailureOrSuccess)';
+    return 'ApplicationState(schoolTranscript: $schoolTranscript, mainEssay: $mainEssay, extraEssay: $extraEssay, proficencyTest: $proficencyTest, extraCertification: $extraCertification, recomendationLetter: $recomendationLetter, militaryFamilyStatus: $militaryFamilyStatus, universityFamilyStatus: $universityFamilyStatus, departmentSelection: $departmentSelection, isSubmitting: $isSubmitting, showErrorMessages: $showErrorMessages, isApplicationCached: $isApplicationCached, isPreparingDownload: $isPreparingDownload, isDownloadComplete: $isDownloadComplete, recievedAmount: $recievedAmount, totalAmount: $totalAmount, applicationFailureOrSuccess: $applicationFailureOrSuccess, valueFailureOrSuccess: $valueFailureOrSuccess)';
   }
 
   @override
@@ -2795,6 +3606,18 @@ class _$_ApplicationState implements _ApplicationState {
             (identical(other.isApplicationCached, isApplicationCached) ||
                 const DeepCollectionEquality()
                     .equals(other.isApplicationCached, isApplicationCached)) &&
+            (identical(other.isPreparingDownload, isPreparingDownload) ||
+                const DeepCollectionEquality()
+                    .equals(other.isPreparingDownload, isPreparingDownload)) &&
+            (identical(other.isDownloadComplete, isDownloadComplete) ||
+                const DeepCollectionEquality()
+                    .equals(other.isDownloadComplete, isDownloadComplete)) &&
+            (identical(other.recievedAmount, recievedAmount) ||
+                const DeepCollectionEquality()
+                    .equals(other.recievedAmount, recievedAmount)) &&
+            (identical(other.totalAmount, totalAmount) ||
+                const DeepCollectionEquality()
+                    .equals(other.totalAmount, totalAmount)) &&
             (identical(other.applicationFailureOrSuccess,
                     applicationFailureOrSuccess) ||
                 const DeepCollectionEquality().equals(
@@ -2820,6 +3643,10 @@ class _$_ApplicationState implements _ApplicationState {
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isApplicationCached) ^
+      const DeepCollectionEquality().hash(isPreparingDownload) ^
+      const DeepCollectionEquality().hash(isDownloadComplete) ^
+      const DeepCollectionEquality().hash(recievedAmount) ^
+      const DeepCollectionEquality().hash(totalAmount) ^
       const DeepCollectionEquality().hash(applicationFailureOrSuccess) ^
       const DeepCollectionEquality().hash(valueFailureOrSuccess);
 
@@ -2843,6 +3670,10 @@ abstract class _ApplicationState implements ApplicationState {
       required bool isSubmitting,
       required bool showErrorMessages,
       required bool isApplicationCached,
+      required bool isPreparingDownload,
+      required bool isDownloadComplete,
+      required double recievedAmount,
+      required double totalAmount,
       required Option<Either<ApplicationFailure, Application>>
           applicationFailureOrSuccess,
       required Option<Either<ValueFailure, dynamic>>
@@ -2877,6 +3708,14 @@ abstract class _ApplicationState implements ApplicationState {
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
   bool get isApplicationCached => throw _privateConstructorUsedError;
+  @override
+  bool get isPreparingDownload => throw _privateConstructorUsedError;
+  @override
+  bool get isDownloadComplete => throw _privateConstructorUsedError;
+  @override
+  double get recievedAmount => throw _privateConstructorUsedError;
+  @override
+  double get totalAmount => throw _privateConstructorUsedError;
   @override
   Option<Either<ApplicationFailure, Application>>
       get applicationFailureOrSuccess => throw _privateConstructorUsedError;

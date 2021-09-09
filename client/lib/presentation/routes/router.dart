@@ -4,9 +4,13 @@ import 'package:client/application/util/util_bloc.dart';
 import 'package:client/injectable.dart';
 import 'package:client/presentation/application/first_page.dart';
 import 'package:client/presentation/application/second_page.dart';
+
+import 'package:client/presentation/view_applications/download_page.dart';
+
 import 'package:client/presentation/applications_overview/applications_overview_page.dart';
 import 'package:client/presentation/auth/sign_in_page.dart';
 import 'package:client/presentation/core/navigator_screen.dart';
+
 import 'package:client/presentation/view_applications/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -50,8 +54,15 @@ class AppRouter {
           child: const SecondApplicationPage(),
         ),
 
+    "/download": (context) => BlocProvider.value(
+          value: getIt<ApplicationBloc>(),
+          child: const DownloadPage(),
+        ),
+
+
     // * ADMIN
     // * Route - Application Overview
     "/application-overview": (context) => ApplicationsOverviewPage(),
+
   };
 }
