@@ -18,9 +18,6 @@ void main() {
         find.byValueKey("profilePagePhoneNumberInput");
     final profilePageSaveButton = find.byValueKey("profilePageSaveButton");
 
-    // Navigator Items
-    final navigatorOneFinder = find.byValueKey("navigatorIndexOne");
-
     final successItem = find.byValueKey("ScaffoldMessenger");
 
     late FlutterDriver driver;
@@ -33,7 +30,7 @@ void main() {
       driver.close();
     });
 
-    test("Login", () async {
+    test("Login and Complete Profile", () async {
       // Enter Username
       await driver.tap(userNameFinder);
       await driver.enterText("userone@gmail.com");
@@ -61,11 +58,6 @@ void main() {
 
       // Save Button
       await driver.tap(profilePageSaveButton);
-
-      // Navigate
-      await driver.scrollIntoView(successItem);
-
-      await driver.waitFor(successItem);
     });
   });
 }
