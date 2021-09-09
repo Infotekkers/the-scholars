@@ -294,12 +294,6 @@ class ApiApplicationRepository implements IApplicationRepository {
   }
 
   @override
-  Future<Either<ApplicationFailure, Application>> saveCacheApplication(
-      {required ApplicationDto applicationDto}) {
-    return dbService.cacheApplication(applicationDto);
-  }
-
-  @override
   Future<Either<ApplicationFailure, String>> downloadApplicationFile() async {
     // Get Application Bloc
     final ApplicationBloc _applicationBloc = getIt<ApplicationBloc>();
