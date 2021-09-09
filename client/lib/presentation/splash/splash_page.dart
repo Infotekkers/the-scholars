@@ -10,7 +10,6 @@ class SplashPage extends StatelessWidget {
         state.maybeMap(
             initial: (_) {},
             authorized: (state) {
-              state.user.role.value.fold((l) => print(l), (r) => print(r));
               if (state.user.role.getOrCrash() == "admin") {
                 Navigator.popAndPushNamed(context, "/application-overview");
               } else {
@@ -20,7 +19,7 @@ class SplashPage extends StatelessWidget {
             unauthenticated: (_) => Navigator.pushNamed(context, "/sign-in"),
             orElse: () {});
       },
-      child: const CircularProgressIndicator(),
+      child: const Center(child: CircularProgressIndicator()),
     );
   }
 }
