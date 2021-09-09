@@ -70,6 +70,7 @@ class NavigatorPage extends StatelessWidget {
                     child: const Icon(Icons.school_sharp),
                   ),
                   IconTheme(
+                    key: const ValueKey("navigatorIndexOne"),
                     data: Theme.of(context).accentIconTheme,
                     child: const Icon(Icons.person),
                   ),

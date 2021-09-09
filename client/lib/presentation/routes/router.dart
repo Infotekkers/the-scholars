@@ -4,6 +4,7 @@ import 'package:client/application/util/util_bloc.dart';
 import 'package:client/injectable.dart';
 import 'package:client/presentation/application/first_page.dart';
 import 'package:client/presentation/application/second_page.dart';
+import 'package:client/presentation/auth/register_page.dart';
 
 import 'package:client/presentation/view_applications/download_page.dart';
 
@@ -21,6 +22,7 @@ class AppRouter {
     // * COMMON ROUTES
     // * Route - Sign In Page
     "/sign-in": (context) => SignInPage(),
+    "/register": (context) => const RegisterPage(),
 
     // * STUDENT
     // * Route - Home Page

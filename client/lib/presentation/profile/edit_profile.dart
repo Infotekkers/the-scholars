@@ -179,6 +179,7 @@ class EditProfilePage extends StatelessWidget {
                 // Full Name Input area
                 const FormLabel(textValue: "Full Name"),
                 TextFormField(
+                  key: const ValueKey("fullNameInput"),
                   autofocus: true,
                   autocorrect: false,
                   // initialValue: state.fullName.value.fold((l) => "", (r) => r),
@@ -211,6 +212,7 @@ class EditProfilePage extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 15),
                       child: InkWell(
+                        key: const ValueKey("birthDayInput"),
                         onTap: () async {
                           final DateTime? picked = await showDatePicker(
                             context: context,
@@ -248,6 +250,7 @@ class EditProfilePage extends StatelessWidget {
                         child: ListTile(
                           title: const Text("Male"),
                           leading: Radio(
+                            key: const ValueKey("maleGenderInput"),
                             fillColor: MaterialStateColor.resolveWith(
                                 (states) => Theme.of(context).primaryColor),
                             value: 'male',
@@ -398,6 +401,7 @@ class EditProfilePage extends StatelessWidget {
                       ),
                       // ignore: sized_box_for_whitespace
                       Container(
+                        key: const ValueKey("phoneNumberInput"),
                         width: MediaQuery.of(context).size.width * 0.5,
                         height: 52,
                         child: TextFormField(
@@ -433,6 +437,7 @@ class EditProfilePage extends StatelessWidget {
                           child: CircularProgressIndicator(),
                         )
                       : MaterialButton(
+                          key: const ValueKey("editSaveButton"),
                           color: Theme.of(context).primaryColor,
                           onPressed: () {
                             _profileBloc.add(
