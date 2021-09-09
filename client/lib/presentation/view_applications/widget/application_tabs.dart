@@ -1,4 +1,6 @@
+import 'package:client/application/application/application_bloc.dart';
 import 'package:client/application/view_application/view_application_bloc.dart';
+import 'package:client/injectable.dart';
 import 'package:client/presentation/view_applications/widget/application_cards.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -33,8 +35,12 @@ class ApplicationViewTab extends StatelessWidget {
             return ListView.builder(
               itemCount: state.allApplications.length,
               itemBuilder: (context, index) {
-                return ApplicationCards(
-                    currentApplicationHighlight: state.allApplications[index]);
+                return BlocProvider.value(
+                  value: getIt<ApplicationBloc>(),
+                  child: ApplicationCards(
+                      currentApplicationHighlight:
+                          state.allApplications[index]),
+                );
               },
             );
           }
@@ -45,9 +51,12 @@ class ApplicationViewTab extends StatelessWidget {
               itemBuilder: (context, index) {
                 if (state.allApplications[index].admissionStatus ==
                     admissionStatusToMatch) {
-                  return ApplicationCards(
-                      currentApplicationHighlight:
-                          state.allApplications[index]);
+                  return BlocProvider.value(
+                    value: getIt<ApplicationBloc>(),
+                    child: ApplicationCards(
+                        currentApplicationHighlight:
+                            state.allApplications[index]),
+                  );
                 } else {
                   return SizedBox();
                 }

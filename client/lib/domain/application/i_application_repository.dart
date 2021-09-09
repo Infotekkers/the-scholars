@@ -39,6 +39,9 @@ abstract class IApplicationRepository {
   Future<Either<ApplicationFailure, List<ApplicationHighlightDto>>>
       getApplicationHighlights();
 
+  // Get Application Highlights by All Cached IDs
+  Future<Either<ApplicationFailure, String>> downloadApplicationFile();
+
   // Workers
   void clearSQLDB();
 }
