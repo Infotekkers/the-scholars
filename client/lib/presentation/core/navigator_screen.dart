@@ -8,6 +8,7 @@ import 'package:client/injectable.dart';
 import 'package:client/presentation/application/first_page.dart';
 import 'package:client/presentation/application/second_page.dart';
 import 'package:client/presentation/application/thrid_page.dart';
+import 'package:client/presentation/auth/register_page.dart';
 import 'package:client/presentation/view_applications/home_page.dart';
 import 'package:client/presentation/profile/profile_page.dart';
 
@@ -44,7 +45,7 @@ class NavigatorPage extends StatelessWidget {
               if (state.pageIndexNumber == 0) {
                 return BlocProvider.value(
                   value: getIt<ApplicationBloc>(),
-                  child: const HomePage(),
+                  child: const RegisterPage(),
                 );
               } else if (state.pageIndexNumber == 1) {
                 return const ProfilePage(

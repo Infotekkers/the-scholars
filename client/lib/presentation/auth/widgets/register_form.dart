@@ -30,6 +30,7 @@ class RegisterForm extends StatelessWidget {
               ? AutovalidateMode.always
               : AutovalidateMode.disabled,
           child: ListView(
+            padding: const EdgeInsets.all(6),
             children: [
               const SizedBox(
                 height: 5,
@@ -166,7 +167,7 @@ class RegisterForm extends StatelessWidget {
                         onPressed: () {}, child: const Text("Sign In")),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         );
