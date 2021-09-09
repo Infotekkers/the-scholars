@@ -26,7 +26,7 @@ router.get("/applications", async (req, res) => {
     // Get highlights only from complete application
     allApplication.forEach((application) => {
       allApplicationsHighlight.push({
-        fullName: application["fullName"],
+        name: application["fullName"],
         applicationId: application["_id"],
         admissionStatus: application["admissionStatus"],
       });
@@ -105,15 +105,15 @@ router.get("/application/download/:applicationId", async (req, res) => {
         console.error(e);
       });
 
-    const output = await fs.readFileSync(
-      path.resolve(
-        __dirname,
-        "../",
-        "../",
-        `output/${selectedApplication["fullName"]}.pdf`
-      ),
-      "utf8"
-    );
+    // const output = await fs.readFileSync(
+    //   path.resolve(
+    //     __dirname,
+    //     "../",
+    //     "../",
+    //     `output/${selectedApplication["fullName"]}.pdf`
+    //   ),
+    //   "utf8"
+    // );
 
     res.status(200).send("Pdf downloaded!");
   } catch (e) {
