@@ -203,7 +203,7 @@ packages:
       name: dart_style
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.3"
+    version: "2.1.0"
   dartz:
     dependency: "direct main"
     description:
@@ -211,6 +211,23 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.10.0"
+<<<<<<< Updated upstream
+=======
+  date_format:
+    dependency: "direct main"
+    description:
+      name: date_format
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.4"
+  enum_to_string:
+    dependency: transitive
+    description:
+      name: enum_to_string
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.1"
+>>>>>>> Stashed changes
   fake_async:
     dependency: transitive
     description:
@@ -246,6 +263,16 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+<<<<<<< Updated upstream
+=======
+  flag:
+    dependency: "direct main"
+    description:
+      name: flag
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.1"
+>>>>>>> Stashed changes
   flutter:
     dependency: "direct main"
     description: flutter
@@ -272,6 +299,16 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.3"
+<<<<<<< Updated upstream
+=======
+  flutter_svg:
+    dependency: transitive
+    description:
+      name: flutter_svg
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.22.0"
+>>>>>>> Stashed changes
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -359,6 +396,16 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.4.1"
+<<<<<<< Updated upstream
+=======
+  intl:
+    dependency: "direct main"
+    description:
+      name: intl
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.17.0"
+>>>>>>> Stashed changes
   io:
     dependency: transitive
     description:
@@ -464,6 +511,23 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0"
+<<<<<<< Updated upstream
+=======
+  path_drawing:
+    dependency: transitive
+    description:
+      name: path_drawing
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.5.1"
+  path_parsing:
+    dependency: transitive
+    description:
+      name: path_parsing
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.1"
+>>>>>>> Stashed changes
   path_provider_linux:
     dependency: transitive
     description:
@@ -492,6 +556,16 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.11.1"
+<<<<<<< Updated upstream
+=======
+  petitparser:
+    dependency: transitive
+    description:
+      name: petitparser
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.1.0"
+>>>>>>> Stashed changes
   platform:
     dependency: transitive
     description:
@@ -784,6 +858,16 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.2.0"
+<<<<<<< Updated upstream
+=======
+  xml:
+    dependency: transitive
+    description:
+      name: xml
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.1.2"
+>>>>>>> Stashed changes
   yaml:
     dependency: transitive
     description:

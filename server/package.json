@@ -21,6 +21,11 @@
     "mongoose": "^5.13.7",
     "mongoose-unique-validator": "^2.0.3",
     "nodemailer": "^6.6.3",
+<<<<<<< Updated upstream
+=======
+    "nodemon": "^2.0.12",
+    "pdf-creator-node": "^2.2.4",
+>>>>>>> Stashed changes
     "swagger-jsdoc": "^6.1.0",
     "swagger-ui-express": "^4.1.6",
     "uuid": "^8.3.2",
