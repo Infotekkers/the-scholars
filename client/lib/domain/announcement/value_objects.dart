@@ -37,3 +37,14 @@ class AnnouncementBody extends ValueObject<String> {
 
   const AnnouncementBody._(this.value);
 }
+
+class AnnouncementDate extends ValueObject<String> {
+  @override
+  final Either<ValueFailure<String>, String> value;
+
+  factory AnnouncementDate(String dateStr) {
+    return AnnouncementDate._(right(dateStr));
+  }
+
+  const AnnouncementDate._(this.value);
+}
