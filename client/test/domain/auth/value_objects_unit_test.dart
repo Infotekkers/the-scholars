@@ -8,7 +8,9 @@ void main() {
     final EmailAddress emailAddress = EmailAddress("test@scholars.com");
     expect(emailAddress.value.fold((l) => l, (r) => r), "test@scholars.com");
   });
-  test("Email address should return an empty invalid email address value failure.", () {
+  test(
+      "Email address should return an empty invalid email address value failure.",
+      () {
     final EmailAddress emailAddress = EmailAddress("");
     expect(emailAddress.value.fold((l) => l, (r) => r),
         const ValueFailure.invalidEmail(failedValue: ""));

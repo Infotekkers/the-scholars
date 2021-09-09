@@ -91,13 +91,14 @@ void main() {
           name: Name("Depressed Clown"),
           admissionStatus: AdmissionStatus(admissionStatusStr: "accepted"));
       final applicationHighlightDto =
-        ApplicationHighlightDto.fromDomain(applicationHighlight);
+          ApplicationHighlightDto.fromDomain(applicationHighlight);
       final outgoingJson = applicationHighlightDto.toJson();
 
       final Uri url = Uri.parse(
           "$_baseUrl/application/${applicationHighlight.applicationId.getOrCrash()}");
 
-      when(client.put(url, body: outgoingJson)).thenAnswer((_) async => http.Response("", 204));
+      when(client.put(url, body: outgoingJson))
+          .thenAnswer((_) async => http.Response("", 204));
 
       final ApiAdminApplicationRepository adminApplicationRepository =
           ApiAdminApplicationRepository.test(client);
@@ -115,13 +116,14 @@ void main() {
           name: Name("Depressed Clown"),
           admissionStatus: AdmissionStatus(admissionStatusStr: "accepted"));
       final applicationHighlightDto =
-        ApplicationHighlightDto.fromDomain(applicationHighlight);
+          ApplicationHighlightDto.fromDomain(applicationHighlight);
       final outgoingJson = applicationHighlightDto.toJson();
 
       final Uri url = Uri.parse(
           "$_baseUrl/application/${applicationHighlight.applicationId.getOrCrash()}");
 
-      when(client.put(url, body: outgoingJson)).thenAnswer((_) async => http.Response("", 500));
+      when(client.put(url, body: outgoingJson))
+          .thenAnswer((_) async => http.Response("", 500));
 
       final ApiAdminApplicationRepository adminApplicationRepository =
           ApiAdminApplicationRepository.test(client);
