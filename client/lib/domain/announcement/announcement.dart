@@ -8,12 +8,12 @@ abstract class Announcement with _$Announcement {
   const factory Announcement({
     required AnnouncementTitle title,
     required AnnouncementBody body,
-    required AnnouncementDate date,
+    required AnnouncementDate postdate,
   }) = _Announcement;
 
   factory Announcement.initial() => Announcement(
         title: AnnouncementTitle(""),
         body: AnnouncementBody(""),
-        date: AnnouncementDate(""),
+        postdate: AnnouncementDate(""),
       );
 }
