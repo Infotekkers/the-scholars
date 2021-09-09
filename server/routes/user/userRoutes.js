@@ -290,8 +290,16 @@ router.post("/id/application", async (req, res) => {
   console.log(applicationHighlights);
 
   res.status(200).send(applicationHighlights);
+});
 
-  // res.send("Flile");
+router.get("/file/test", (req, res) => {
+  console.log("Launched Down");
+  (res.shouldKeepAlive = true),
+    res
+      .status(200)
+      .download(
+        "C:/Users/Thomas/Desktop/AMP/the-scholars/server/uploads/Test.pdf"
+      );
 });
 
 // Export router

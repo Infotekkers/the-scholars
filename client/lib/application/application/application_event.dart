@@ -50,4 +50,20 @@ class ApplicationEvent with _$ApplicationEvent {
   // Check Cache Status
   const factory ApplicationEvent.checkCacheApplication() =
       _CheckApplicationCache;
+
+  // ignore: slash_for_doc_comments
+  /**
+   * Download File Events
+   */
+
+  // Prepare download Event
+  const factory ApplicationEvent.startDownload() = _StartDownload;
+
+  // Progress Download event
+  const factory ApplicationEvent.progressDownload(
+      {required double recievedAmount,
+      required double totalAmount}) = _ProgressDownload;
+
+  // End Download
+  const factory ApplicationEvent.downloadComplete() = _DownloadComplete;
 }

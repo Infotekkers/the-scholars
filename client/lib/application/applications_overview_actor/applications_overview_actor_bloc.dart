@@ -25,40 +25,35 @@ class ApplicationsOverviewActorBloc extends Bloc<ApplicationsOverviewActorEvent,
   Stream<ApplicationsOverviewActorState> mapEventToState(
     ApplicationsOverviewActorEvent event,
   ) async* {
-    yield* event.map(
-        downloaded: (e) async* {
-          yield const ApplicationsOverviewActorState.actionInProgress();
-          final failureOrSuccess =
-              await iAdminApplicationRepository.getServerApplicationAdmin(
-                  applicationId: e.applicationHighlight.applicationId);
-          yield failureOrSuccess.fold(
-              (l) => ApplicationsOverviewActorState.actionFailure(l),
-              // TODO: Return downloadable pdf
-              (r) => const ApplicationsOverviewActorState.actionSuccess());
-        },
-
-        accepted: (e) async* {
-          yield const ApplicationsOverviewActorState.actionInProgress();
-          final failureOrSuccess =
-              await iAdminApplicationRepository.updateServerApplicationAdmin(
-                  applicationHighlight: e.applicationHighlight.copyWith(
-                      admissionStatus:
-                          AdmissionStatus(admissionStatusStr: "accepted")));
-          yield failureOrSuccess.fold(
-              (l) => ApplicationsOverviewActorState.actionFailure(l),
-              (r) => const ApplicationsOverviewActorState.actionSuccess());
-        },
-
-        rejected: (e) async* {
-          yield const ApplicationsOverviewActorState.actionInProgress();
-          final failureOrSuccess =
-              await iAdminApplicationRepository.updateServerApplicationAdmin(
-                  applicationHighlight: e.applicationHighlight.copyWith(
-                      admissionStatus:
-                          AdmissionStatus(admissionStatusStr: "rejected")));
-          yield failureOrSuccess.fold(
-              (l) => ApplicationsOverviewActorState.actionFailure(l),
-              (r) => const ApplicationsOverviewActorState.actionSuccess());
-        });
+    yield* event.map(downloaded: (e) async* {
+      yield const ApplicationsOverviewActorState.actionInProgress();
+      final failureOrSuccess =
+          await iAdminApplicationRepository.getServerApplicationAdmin(
+              applicationId: e.applicationHighlight.applicationId);
+      yield failureOrSuccess.fold(
+          (l) => ApplicationsOverviewActorState.actionFailure(l),
+          // TODO: Return downloadable pdf
+          (r) => const ApplicationsOverviewActorState.actionSuccess());
+    }, accepted: (e) async* {
+      yield const ApplicationsOverviewActorState.actionInProgress();
+      final failureOrSuccess =
+          await iAdminApplicationRepository.updateServerApplicationAdmin(
+              applicationHighlight: e.applicationHighlight.copyWith(
+                  admissionStatus:
+                      AdmissionStatus(admissionStatusStr: "accepted")));
+      yield failureOrSuccess.fold(
+          (l) => ApplicationsOverviewActorState.actionFailure(l),
+          (r) => const ApplicationsOverviewActorState.actionSuccess());
+    }, rejected: (e) async* {
+      yield const ApplicationsOverviewActorState.actionInProgress();
+      final failureOrSuccess =
+          await iAdminApplicationRepository.updateServerApplicationAdmin(
+              applicationHighlight: e.applicationHighlight.copyWith(
+                  admissionStatus:
+                      AdmissionStatus(admissionStatusStr: "rejected")));
+      yield failureOrSuccess.fold(
+          (l) => ApplicationsOverviewActorState.actionFailure(l),
+          (r) => const ApplicationsOverviewActorState.actionSuccess());
+    });
   }
 }
