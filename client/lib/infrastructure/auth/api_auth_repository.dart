@@ -9,6 +9,7 @@ import 'package:client/domain/auth/user.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:injectable/injectable.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 @LazySingleton(as: IAuthRepository)
 class ApiAuthRepository implements IAuthRepository {
@@ -66,6 +67,49 @@ class ApiAuthRepository implements IAuthRepository {
       }
     } catch (err) {
       return left(const AuthFailure.networkError());
+    }
+  }
+
+  @override
+  Future<Option<User>> getCachedUser() async {
+    try {
+      final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+      final String? response = prefs.getString("user");
+      
+      final UserDto userDtoIn =
+          UserDto.fromJson(jsonDecode(response!) as Map<String, dynamic>);
+      return optionOf(userDtoIn.toDomain());
+    } catch (err) {
+      return none();
+    }
+  }
+
+  @override
+  Future<Either<AuthFailure, Unit>> setCachedUser({required User user}) async {
+    try {
+      final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+      final UserDto userDtoOut = UserDto.fromDomain(user);
+
+      prefs.setString("user", jsonEncode(userDtoOut.toJson()));
+
+      return right(unit);
+    } catch (err) {
+      return left(const AuthFailure.serverError());
+    }
+  }
+
+  @override
+  Future<Either<AuthFailure, Unit>> removeCachedUser() async {
+    try {
+      final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+      prefs.remove("user");
+
+      return right(unit);
+    } catch (err) {
+      return left(const AuthFailure.serverError());
     }
   }
 }

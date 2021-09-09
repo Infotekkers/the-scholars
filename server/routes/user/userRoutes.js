@@ -221,7 +221,7 @@ router.get("/admission-status", async (req, res) => {
 
 router.post("/application", async (req, res) => {
   console.log("Launched");
-  const receivedApplication = JSON.parse(req.body.application);
+  const receivedApplication = await req.body.application;
 
   // Get School Transcript
   const schoolTranscriptContent = receivedApplication.schoolTranscript;
