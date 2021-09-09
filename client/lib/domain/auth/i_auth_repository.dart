@@ -8,4 +8,7 @@ abstract class IAuthRepository {
       {required User user, required Password password});
   Future<Either<AuthFailure, User>> register(
       {required User user, required Password password});
+  Future<Option<User>> getCachedUser();
+  Future<Either<AuthFailure, Unit>> setCachedUser({required User user});
+  Future<Either<AuthFailure, Unit>> removeCachedUser();
 }
