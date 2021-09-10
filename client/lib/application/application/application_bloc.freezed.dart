@@ -3160,6 +3160,7 @@ class _$ApplicationStateTearOff {
       required UniversityFamilyStatus universityFamilyStatus,
       required DepartmentSelection departmentSelection,
       required bool isSubmitting,
+      required bool isApplicationPending,
       required bool showErrorMessages,
       required bool isApplicationCached,
       required bool isPreparingDownload,
@@ -3180,6 +3181,7 @@ class _$ApplicationStateTearOff {
       universityFamilyStatus: universityFamilyStatus,
       departmentSelection: departmentSelection,
       isSubmitting: isSubmitting,
+      isApplicationPending: isApplicationPending,
       showErrorMessages: showErrorMessages,
       isApplicationCached: isApplicationCached,
       isPreparingDownload: isPreparingDownload,
@@ -3212,6 +3214,7 @@ mixin _$ApplicationState {
   DepartmentSelection get departmentSelection =>
       throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isApplicationPending => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isApplicationCached => throw _privateConstructorUsedError;
   bool get isPreparingDownload => throw _privateConstructorUsedError;
@@ -3244,6 +3247,7 @@ abstract class $ApplicationStateCopyWith<$Res> {
       UniversityFamilyStatus universityFamilyStatus,
       DepartmentSelection departmentSelection,
       bool isSubmitting,
+      bool isApplicationPending,
       bool showErrorMessages,
       bool isApplicationCached,
       bool isPreparingDownload,
@@ -3276,6 +3280,7 @@ class _$ApplicationStateCopyWithImpl<$Res>
     Object? universityFamilyStatus = freezed,
     Object? departmentSelection = freezed,
     Object? isSubmitting = freezed,
+    Object? isApplicationPending = freezed,
     Object? showErrorMessages = freezed,
     Object? isApplicationCached = freezed,
     Object? isPreparingDownload = freezed,
@@ -3325,6 +3330,10 @@ class _$ApplicationStateCopyWithImpl<$Res>
       isSubmitting: isSubmitting == freezed
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isApplicationPending: isApplicationPending == freezed
+          ? _value.isApplicationPending
+          : isApplicationPending // ignore: cast_nullable_to_non_nullable
               as bool,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
@@ -3380,6 +3389,7 @@ abstract class _$ApplicationStateCopyWith<$Res>
       UniversityFamilyStatus universityFamilyStatus,
       DepartmentSelection departmentSelection,
       bool isSubmitting,
+      bool isApplicationPending,
       bool showErrorMessages,
       bool isApplicationCached,
       bool isPreparingDownload,
@@ -3414,6 +3424,7 @@ class __$ApplicationStateCopyWithImpl<$Res>
     Object? universityFamilyStatus = freezed,
     Object? departmentSelection = freezed,
     Object? isSubmitting = freezed,
+    Object? isApplicationPending = freezed,
     Object? showErrorMessages = freezed,
     Object? isApplicationCached = freezed,
     Object? isPreparingDownload = freezed,
@@ -3463,6 +3474,10 @@ class __$ApplicationStateCopyWithImpl<$Res>
       isSubmitting: isSubmitting == freezed
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isApplicationPending: isApplicationPending == freezed
+          ? _value.isApplicationPending
+          : isApplicationPending // ignore: cast_nullable_to_non_nullable
               as bool,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
@@ -3514,6 +3529,7 @@ class _$_ApplicationState implements _ApplicationState {
       required this.universityFamilyStatus,
       required this.departmentSelection,
       required this.isSubmitting,
+      required this.isApplicationPending,
       required this.showErrorMessages,
       required this.isApplicationCached,
       required this.isPreparingDownload,
@@ -3544,6 +3560,8 @@ class _$_ApplicationState implements _ApplicationState {
   @override
   final bool isSubmitting;
   @override
+  final bool isApplicationPending;
+  @override
   final bool showErrorMessages;
   @override
   final bool isApplicationCached;
@@ -3563,7 +3581,7 @@ class _$_ApplicationState implements _ApplicationState {
 
   @override
   String toString() {
-    return 'ApplicationState(schoolTranscript: $schoolTranscript, mainEssay: $mainEssay, extraEssay: $extraEssay, proficencyTest: $proficencyTest, extraCertification: $extraCertification, recomendationLetter: $recomendationLetter, militaryFamilyStatus: $militaryFamilyStatus, universityFamilyStatus: $universityFamilyStatus, departmentSelection: $departmentSelection, isSubmitting: $isSubmitting, showErrorMessages: $showErrorMessages, isApplicationCached: $isApplicationCached, isPreparingDownload: $isPreparingDownload, isDownloadComplete: $isDownloadComplete, recievedAmount: $recievedAmount, totalAmount: $totalAmount, applicationFailureOrSuccess: $applicationFailureOrSuccess, valueFailureOrSuccess: $valueFailureOrSuccess)';
+    return 'ApplicationState(schoolTranscript: $schoolTranscript, mainEssay: $mainEssay, extraEssay: $extraEssay, proficencyTest: $proficencyTest, extraCertification: $extraCertification, recomendationLetter: $recomendationLetter, militaryFamilyStatus: $militaryFamilyStatus, universityFamilyStatus: $universityFamilyStatus, departmentSelection: $departmentSelection, isSubmitting: $isSubmitting, isApplicationPending: $isApplicationPending, showErrorMessages: $showErrorMessages, isApplicationCached: $isApplicationCached, isPreparingDownload: $isPreparingDownload, isDownloadComplete: $isDownloadComplete, recievedAmount: $recievedAmount, totalAmount: $totalAmount, applicationFailureOrSuccess: $applicationFailureOrSuccess, valueFailureOrSuccess: $valueFailureOrSuccess)';
   }
 
   @override
@@ -3600,6 +3618,9 @@ class _$_ApplicationState implements _ApplicationState {
             (identical(other.isSubmitting, isSubmitting) ||
                 const DeepCollectionEquality()
                     .equals(other.isSubmitting, isSubmitting)) &&
+            (identical(other.isApplicationPending, isApplicationPending) ||
+                const DeepCollectionEquality().equals(
+                    other.isApplicationPending, isApplicationPending)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
                 const DeepCollectionEquality()
                     .equals(other.showErrorMessages, showErrorMessages)) &&
@@ -3641,6 +3662,7 @@ class _$_ApplicationState implements _ApplicationState {
       const DeepCollectionEquality().hash(universityFamilyStatus) ^
       const DeepCollectionEquality().hash(departmentSelection) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
+      const DeepCollectionEquality().hash(isApplicationPending) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isApplicationCached) ^
       const DeepCollectionEquality().hash(isPreparingDownload) ^
@@ -3668,6 +3690,7 @@ abstract class _ApplicationState implements ApplicationState {
       required UniversityFamilyStatus universityFamilyStatus,
       required DepartmentSelection departmentSelection,
       required bool isSubmitting,
+      required bool isApplicationPending,
       required bool showErrorMessages,
       required bool isApplicationCached,
       required bool isPreparingDownload,
@@ -3704,6 +3727,8 @@ abstract class _ApplicationState implements ApplicationState {
       throw _privateConstructorUsedError;
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
+  @override
+  bool get isApplicationPending => throw _privateConstructorUsedError;
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override

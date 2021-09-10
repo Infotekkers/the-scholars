@@ -7,13 +7,10 @@ import 'package:client/domain/application/i_application_repository.dart';
 import 'package:client/domain/application/value_objects.dart';
 import 'package:client/domain/core/failures.dart';
 import 'package:client/infrastructure/application/application_dto.dart';
-import 'package:client/injectable.dart';
 import 'package:dartz/dartz.dart';
-import 'package:dio/dio.dart';
-import 'package:ext_storage/ext_storage.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:uuid/uuid.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 part 'application_event.dart';
 part 'application_state.dart';
@@ -32,8 +29,18 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
   ) async* {
     yield* event.map(
       initialEvent: (e) async* {
-        // Return Inital State -- empty state
-        yield ApplicationState.initial();
+        // Get Pending status
+        final Either<ApplicationFailure, bool> failureOrSuccess =
+            await _iApplicationRepository.isAppicationPending();
+
+        if (failureOrSuccess.isLeft()) {
+          yield ApplicationState.initial();
+        } else {
+          bool value = false;
+          failureOrSuccess.fold((l) => null, (r) => value = r);
+          yield ApplicationState.initial()
+              .copyWith(isApplicationPending: value);
+        }
       },
       schoolTranscriptChanged: (e) async* {
         yield state.copyWith(

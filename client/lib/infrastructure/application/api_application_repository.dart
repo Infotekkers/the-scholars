@@ -2,21 +2,22 @@ import 'dart:convert';
 
 import 'package:client/application/application/application_bloc.dart';
 import 'package:client/application/view_application/view_application_bloc.dart';
-import 'package:client/domain/application/application_failure.dart';
 import 'package:client/domain/application/application.dart';
+import 'package:client/domain/application/application_failure.dart';
 import 'package:client/domain/application/i_application_repository.dart';
+import 'package:client/domain/application/value_objects.dart';
 import 'package:client/infrastructure/application/application_dto.dart';
 import 'package:client/infrastructure/application/application_highlight_dto.dart';
 import 'package:client/injectable.dart';
 import 'package:dartz/dartz.dart';
-import 'package:client/domain/application/value_objects.dart';
 import 'package:dio/dio.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:ext_storage/ext_storage.dart';
+import 'package:http/http.dart' as http;
 import 'package:injectable/injectable.dart';
 import 'package:path/path.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:http/http.dart' as http;
 import 'package:uuid/uuid.dart';
 
 @LazySingleton(as: IApplicationRepository)
@@ -242,12 +243,11 @@ class ApiApplicationRepository implements IApplicationRepository {
   @override
   Future<Either<ApplicationFailure, List<ApplicationHighlightDto>>>
       getApplicationHighlights() async {
-    print("Laucnhed getter");
     // Get All Application Ids from cache
-    SharedPreferences prefs = await SharedPreferences.getInstance();
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
 
-    final List<String>? allApplicationIds =
-        prefs.getStringList("allApplications");
+    final allApplicationIds = prefs.getStringList("allApplications");
+
 
     // if cache is empty
     if (allApplicationIds == []) {
@@ -337,6 +337,37 @@ class ApiApplicationRepository implements IApplicationRepository {
     }
 
     return right("");
+  }
+
+  @override
+  Future<Either<ApplicationFailure, bool>> isAppicationPending() async {
+    print("Running");
+    // Get All Ids
+    try {
+      final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+      final List<String>? allApplicationsId =
+          prefs.getStringList("allApplications");
+
+      print("allApps $allApplicationsId");
+
+      if (allApplicationsId == [] || allApplicationsId == null) {
+        return right(false);
+      } else {
+        final response =
+            await http.post(Uri.parse("$apiUrl/user/check"), body: {
+          "applicationIds": jsonEncode(allApplicationsId),
+        });
+
+        if (response.statusCode == 200) {
+          return right(true);
+        } else {
+          return right(false);
+        }
+      }
+    } catch (e) {
+      return left(const ApplicationFailure.serverError());
+    }
   }
 }
 
