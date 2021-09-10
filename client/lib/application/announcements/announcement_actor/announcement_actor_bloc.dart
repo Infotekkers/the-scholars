@@ -29,8 +29,8 @@ class AnnouncementActorBloc
         .deleteAnnouncement(event.announcement);
 
     yield possibleFailure.fold(
-      (f) => AnnouncementActorState.deleteFailure(f),
-      (_) => const AnnouncementActorState.deleteSuccess(),
+      (f) => AnnouncementActorState.actionFailure(f),
+      (_) => const AnnouncementActorState.actionSuccess(),
     );
   }
 }

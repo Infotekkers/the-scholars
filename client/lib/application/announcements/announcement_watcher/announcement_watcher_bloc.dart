@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+
 import 'package:client/domain/announcement/announcement.dart';
 import 'package:client/domain/announcement/announcement_failure.dart';
 import 'package:client/domain/announcement/i_admin_announcement_repository.dart';
@@ -25,17 +26,14 @@ class AnnouncementWatcherBloc
   Stream<AnnouncementWatcherState> mapEventToState(
     AnnouncementWatcherEvent event,
   ) async* {
-    yield* event.map(
-      getAllStarted: (e) async* {
-        yield const AnnouncementWatcherState.loadInProgress();
-        yield* _iadminAnnouncementRepository.getAnnouncement().map(
-              (failureOrAnnouncements) => failureOrAnnouncements.fold(
-                (f) => AnnouncementWatcherState.loadFailure(f),
-                (announcements) =>
-                    AnnouncementWatcherState.loadSuccess(announcements),
-              ),
-            );
-      },
-    );
+    yield* event.map(getAllStarted: (e) async* {
+      yield const AnnouncementWatcherState.loadInProgress();
+      final failOrSuccess =
+          await _iadminAnnouncementRepository.getAnnouncement();
+      yield failOrSuccess.fold(
+          (l) => AnnouncementWatcherState.loadFailure(l),
+          (announcements) =>
+              AnnouncementWatcherState.loadSuccess(announcements));
+    });
   }
 }
