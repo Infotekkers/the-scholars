@@ -150,6 +150,8 @@ class FirstApplicationPage extends StatelessWidget {
                             child: CircularProgressIndicator(),
                           )
                         : MaterialButton(
+                            key: const ValueKey(
+                                "firstApplicationPageSubmitButton"),
                             onPressed: () {
                               applicationBloc.add(
                                 const ApplicationEvent.firstPageComplete(),

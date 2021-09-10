@@ -18,7 +18,10 @@ void main() {
         find.byValueKey("profilePagePhoneNumberInput");
     final profilePageSaveButton = find.byValueKey("profilePageSaveButton");
 
-    final successItem = find.byValueKey("ScaffoldMessenger");
+    final newApplicationFabFinder = find.byValueKey("homePageFAB");
+
+    final firstApplicationPageSubmitButtonFinder =
+        find.byValueKey("firstApplicationPageSubmitButton");
 
     late FlutterDriver driver;
 
@@ -58,6 +61,13 @@ void main() {
 
       // Save Button
       await driver.tap(profilePageSaveButton);
+
+      //
+      await driver.tap(newApplicationFabFinder);
+
+      //
+      await driver.scrollIntoView(firstApplicationPageSubmitButtonFinder);
+      await driver.tap(firstApplicationPageSubmitButtonFinder);
     });
   });
 }
