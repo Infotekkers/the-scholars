@@ -5,6 +5,7 @@ import 'package:client/application/application/application_bloc.dart';
 import 'package:client/application/navigation/navigation_bloc.dart';
 import 'package:client/application/util/util_bloc.dart';
 import 'package:client/injectable.dart';
+import 'package:client/presentation/announcement/announcement_form/announcement_form_page.dart';
 import 'package:client/presentation/application/first_page.dart';
 import 'package:client/presentation/application/second_page.dart';
 import 'package:client/presentation/application/thrid_page.dart';
@@ -45,7 +46,7 @@ class NavigatorPage extends StatelessWidget {
               if (state.pageIndexNumber == 0) {
                 return BlocProvider.value(
                   value: getIt<ApplicationBloc>(),
-                  child: const RegisterPage(),
+                  child: const AnnouncementFormPage(),
                 );
               } else if (state.pageIndexNumber == 1) {
                 return const ProfilePage(

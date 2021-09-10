@@ -25,7 +25,7 @@ class AnnouncementBody extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  static const maxLength = 500;
+  static const maxLength = 250;
 
   factory AnnouncementBody(String announceStr) {
     assert(announceStr != null);
