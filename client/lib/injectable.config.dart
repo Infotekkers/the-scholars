@@ -9,13 +9,15 @@ import 'package:injectable/injectable.dart' as _i2;
 
 import 'application/announcements/announcement_actor/announcement_actor_bloc.dart'
     as _i16;
-import 'application/announcements/announcement_watcher/announcement_watcher_bloc.dart'
+import 'application/announcements/announcement_form/announcement_form_bloc.dart'
     as _i17;
-import 'application/application/application_bloc.dart' as _i18;
+import 'application/announcements/announcement_watcher/announcement_watcher_bloc.dart'
+    as _i18;
+import 'application/application/application_bloc.dart' as _i19;
 import 'application/applications_overview_actor/applications_overview_actor_bloc.dart'
-    as _i19;
-import 'application/applications_overview_watcher/applications_overview_watcher_bloc.dart'
     as _i20;
+import 'application/applications_overview_watcher/applications_overview_watcher_bloc.dart'
+    as _i21;
 import 'application/auth/register_form/register_form_bloc.dart' as _i12;
 import 'application/auth/sign_in_form/sign_in_form_bloc.dart' as _i13;
 import 'application/navigation/navigation_bloc.dart' as _i11;
@@ -53,15 +55,17 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i15.ViewApplicationBloc>(() => _i15.ViewApplicationBloc());
   gh.factory<_i16.AnnouncementActorBloc>(() =>
       _i16.AnnouncementActorBloc(get<_i3.IAdminAnnouncementRepository>()));
-  gh.factory<_i17.AnnouncementWatcherBloc>(() =>
-      _i17.AnnouncementWatcherBloc(get<_i3.IAdminAnnouncementRepository>()));
-  gh.lazySingleton<_i18.ApplicationBloc>(
-      () => _i18.ApplicationBloc(get<_i7.IApplicationRepository>()));
-  gh.factory<_i19.ApplicationsOverviewActorBloc>(() =>
-      _i19.ApplicationsOverviewActorBloc(
+  gh.factory<_i17.AnnouncementFormBloc>(
+      () => _i17.AnnouncementFormBloc(get<_i3.IAdminAnnouncementRepository>()));
+  gh.factory<_i18.AnnouncementWatcherBloc>(() =>
+      _i18.AnnouncementWatcherBloc(get<_i3.IAdminAnnouncementRepository>()));
+  gh.lazySingleton<_i19.ApplicationBloc>(
+      () => _i19.ApplicationBloc(get<_i7.IApplicationRepository>()));
+  gh.factory<_i20.ApplicationsOverviewActorBloc>(() =>
+      _i20.ApplicationsOverviewActorBloc(
           get<_i5.IAdminApplicationRepository>()));
-  gh.factory<_i20.ApplicationsOverviewWatcherBloc>(() =>
-      _i20.ApplicationsOverviewWatcherBloc(
+  gh.factory<_i21.ApplicationsOverviewWatcherBloc>(() =>
+      _i21.ApplicationsOverviewWatcherBloc(
           get<_i5.IAdminApplicationRepository>()));
   return get;
 }

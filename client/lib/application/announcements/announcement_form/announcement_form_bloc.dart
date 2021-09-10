@@ -1,0 +1,73 @@
+import 'dart:async';
+
+import 'package:bloc/bloc.dart';
+import 'package:client/domain/announcement/announcement.dart';
+import 'package:client/domain/announcement/announcement_failure.dart';
+import 'package:client/domain/announcement/i_admin_announcement_repository.dart';
+import 'package:client/domain/announcement/value_objects.dart';
+import 'package:dartz/dartz.dart';
+import 'package:flutter/rendering.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
+import 'package:meta/meta.dart';
+
+part 'announcement_form_event.dart';
+part 'announcement_form_state.dart';
+
+part 'announcement_form_bloc.freezed.dart';
+
+@injectable
+class AnnouncementFormBloc
+    extends Bloc<AnnouncementFormEvent, AnnouncementFormState> {
+  final IAdminAnnouncementRepository _iAdminAnnouncementRepository;
+
+  AnnouncementFormBloc(this._iAdminAnnouncementRepository)
+      : super(AnnouncementFormState.initial());
+
+  @override
+  Stream<AnnouncementFormState> mapEventToState(
+    AnnouncementFormEvent event,
+  ) async* {
+    yield* event.map(
+      initialized: (e) async* {
+        yield e.initialAnnOption.fold(
+            () => state,
+            (initialAnn) => state.copyWith(
+                  title: initialAnn.title,
+                  body: initialAnn.body,
+                  isEditing: true,
+                ));
+      },
+      titleChanged: (e) async* {
+        yield state.copyWith(
+          title: AnnouncementTitle(e.titleStr),
+          saveFailureOrSuccess: none(),
+        );
+      },
+      bodyChanged: (e) async* {
+        yield state.copyWith(
+          body: AnnouncementBody(e.bodyStr),
+          saveFailureOrSuccess: none(),
+        );
+      },
+      saved: (e) async* {
+        Either<AnnouncementFailure, Unit>? failureOrSuccess;
+        yield state.copyWith(
+          isSaving: true,
+          saveFailureOrSuccess: none(),
+        );
+        if (state.title.isValid() && state.body.isValid()) {
+          // state.isEditing? await _iAdminAnnouncementRepository.updateAnnouncement()
+          // :await _iAdminAnnouncementRepository.createAnnouncement();
+          // todo implement create and update from repositoru
+          print("something");
+        }
+        yield state.copyWith(
+          isSaving: false,
+          showErrorMessages: true,
+          saveFailureOrSuccess: optionOf(failureOrSuccess),
+        );
+      },
+    );
+  }
+}
