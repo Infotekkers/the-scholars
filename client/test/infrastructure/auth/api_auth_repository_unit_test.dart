@@ -4,6 +4,7 @@ import 'package:client/domain/auth/value_objects.dart';
 import 'package:client/infrastructure/auth/api_auth_repository.dart';
 import 'package:client/infrastructure/auth/auth_dtos.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:http/http.dart' as http;
@@ -14,7 +15,7 @@ import 'api_auth_repository_unit_test.mocks.dart';
 
 @GenerateMocks([http.Client])
 void main() {
-  const String _baseUrl = "http://localhost:3000/auth";
+  final String _baseUrl = "${dotenv.env["API"]}/auth";
 
   // * SIGN IN
   group("Auth Repo sign in", () {

@@ -5,6 +5,7 @@ import 'package:client/domain/auth/value_objects.dart';
 import 'package:client/infrastructure/application/api_admin_application_repository.dart';
 import 'package:client/infrastructure/application/application_highlight_dto.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:mockito/annotations.dart';
@@ -14,8 +15,8 @@ import 'api_admin_application_repository_test.mocks.dart';
 
 @GenerateMocks([http.Client])
 void main() {
-  const String _baseUrl = "http://localhost:3000/admin";
-
+  final String _baseUrl = "${dotenv.env["API"]}/admin";
+  
   // * GET SERVER APPLICATIONS
   group("Api Admin App Overview Repo get server applications", () {
     const successfulResponseBody = '''

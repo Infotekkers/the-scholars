@@ -12,6 +12,7 @@ import 'package:dartz/dartz.dart';
 import 'package:client/domain/application/value_objects.dart';
 import 'package:dio/dio.dart';
 import 'package:ext_storage/ext_storage.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:injectable/injectable.dart';
 import 'package:path/path.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -22,7 +23,7 @@ import 'package:uuid/uuid.dart';
 @LazySingleton(as: IApplicationRepository)
 class ApiApplicationRepository implements IApplicationRepository {
   final dbService = DatabaseService.dbInstance;
-  final apiUrl = "http://10.0.2.2:5000";
+  static final String? apiUrl = dotenv.env["API"];
 
   // Function to create a complete Applciation -- ON Server
   @override
@@ -294,12 +295,6 @@ class ApiApplicationRepository implements IApplicationRepository {
   }
 
   @override
-  Future<Either<ApplicationFailure, Application>> saveCacheApplication(
-      {required ApplicationDto applicationDto}) {
-    return dbService.cacheApplication(applicationDto);
-  }
-
-  @override
   Future<Either<ApplicationFailure, String>> downloadApplicationFile() async {
     // Get Application Bloc
     final ApplicationBloc _applicationBloc = getIt<ApplicationBloc>();
@@ -318,7 +313,7 @@ class ApiApplicationRepository implements IApplicationRepository {
     // const String downloadUri =
     //     "https://unsplash.com/photos/8pb7Hq539Zw/download?force=true";
 
-    const String downloadUri = "http://10.0.2.2:5000/user/file/test";
+    final String downloadUri = "${dotenv.env["API"]}/user/file/test";
 
     //  Start Download
     try {

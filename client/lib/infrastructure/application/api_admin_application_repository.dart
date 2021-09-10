@@ -8,14 +8,14 @@ import 'package:client/domain/application/value_objects.dart';
 import 'package:client/infrastructure/application/application_dto.dart';
 import 'package:client/infrastructure/application/application_highlight_dto.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:injectable/injectable.dart';
 import 'package:http/http.dart' as http;
 
 @LazySingleton(as: IAdminApplicationRepository)
 class ApiAdminApplicationRepository implements IAdminApplicationRepository {
-  // static final String? _baseUrl = dotenv.env["ADMIN_API"];
+  static final String _baseUrl = "${dotenv.env["API"]}/admin";
   http.Client? client = http.Client();
-  static const String _baseUrl = "http://localhost:3000/admin";
 
   ApiAdminApplicationRepository();
   ApiAdminApplicationRepository.test(this.client);
