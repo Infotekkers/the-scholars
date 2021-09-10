@@ -1,10 +1,14 @@
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:client/application/announcements/announcement_form/announcement_form_bloc.dart';
+import 'package:client/domain/announcement/announcement.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AnnouncementForm extends StatelessWidget {
-  const AnnouncementForm({Key? key}) : super(key: key);
+  final Announcement announcement;
+
+  const AnnouncementForm({Key? key, required this.announcement})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +29,6 @@ class AnnouncementForm extends StatelessWidget {
                 }));
       },
       builder: (context, state) {
-        Text t;
         return Form(
           autovalidateMode: state.showErrorMessages
               ? AutovalidateMode.always
@@ -85,14 +88,12 @@ class AnnouncementForm extends StatelessWidget {
                               (_) => null),
                 ),
               ),
-              t = const Text(''),
               ElevatedButton(
                 onPressed: state.isSaving
                     ? null
                     : () {
                         BlocProvider.of<AnnouncementFormBloc>(context)
                             .add(const AnnouncementFormEvent.saved());
-                        print(DateTime.now());
                       },
                 child: const Text('Post'),
               ),
