@@ -35,7 +35,7 @@ class RegisterForm extends StatelessWidget {
                       children: <Widget>[
                         Align(
                           alignment: Alignment.topLeft,
-                          child: Image.asset("assets/images/icon7.png", width: 100), 
+                          child: Image.asset("assets/images/icon7.png", width: 200), 
                         ),
                          Align(
                           alignment: Alignment.topLeft,
@@ -57,7 +57,7 @@ class RegisterForm extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               // ignore: prefer_const_literals_to_create_immutables
                               children: <Widget>[
-                                const Text("Register",
+                                const Text("Sign Up",
                                     // ignore: unnecessary_const
                                     style: const TextStyle(
                                         color: Colors.white,
@@ -245,7 +245,7 @@ class RegisterForm extends StatelessWidget {
                         Expanded(
                           child: ElevatedButton(
                               onPressed: () {},
-                              child: const Text("Sign In",   
+                              child: const Text("Sign Up",   
                                   style: TextStyle(
                                           color: Colors.grey,
                                           fontSize: 16,

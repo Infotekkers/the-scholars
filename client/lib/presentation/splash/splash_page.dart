@@ -46,7 +46,8 @@ class SplashPage extends StatelessWidget {
                       // ignore: prefer_const_literals_to_create_immutables
                       children: <Widget>[
                           const Image(image: AssetImage('assets/images/cartoon6.jpg')),
-                        
+                          const  SizedBox(height: 20),
+
                           const Text("The Scholars Build your Future Here and Now",
                               style: TextStyle(
                                   color: Colors.white,

@@ -38,7 +38,7 @@ class SignInForm extends StatelessWidget {
                   children: <Widget>[
                     Align(
                       alignment: Alignment.topLeft,
-                      child: Image.asset("assets/images/icon7.png", width: 100), 
+                      child: Image.asset("assets/images/icon7.png", width: 200), 
                     ),
                      Align(
                   alignment: Alignment.topLeft,
@@ -51,6 +51,19 @@ class SignInForm extends StatelessWidget {
                     ),
                   ),
                 ),
+               // Align(
+                //   alignment: Alignment.centerLeft,
+                //   child: Padding(
+                //     padding: const EdgeInsets.only(top: 150, left: 30),
+                //     child: Row(
+                //       mainAxisAlignment: MainAxisAlignment.center,
+                //       // ignore: prefer_const_literals_to_create_immutables
+                //       children: <Widget>[
+                //        const Image(image: AssetImage('assets/images/scholars.PNG'),)
+                //       ],
+                //     ),
+                //   ),
+                // ),
                      Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(
@@ -158,8 +171,22 @@ class SignInForm extends StatelessWidget {
                                       ),
                                   padding: const EdgeInsets.all(20) //content padding inside button
                               ),
-                              child: const Text("Login")),
-                          ),
+                              child: const Text("Log In", 
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.normal)))),
+                          
+                           const SizedBox(
+                          height: 15,
+                        ),
+                        const Center(
+                          child: Text(  
+                            "Sign UP", 
+                                style: TextStyle(
+                                    color: Colors.grey,
+                                    fontSize: 16,
+                                )))
                       ],
                     ),
                   )),
