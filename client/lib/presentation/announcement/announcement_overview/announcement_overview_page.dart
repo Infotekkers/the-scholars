@@ -1,7 +1,7 @@
 import 'package:client/application/announcements/announcement_actor/announcement_actor_bloc.dart';
 import 'package:client/application/announcements/announcement_watcher/announcement_watcher_bloc.dart';
 import 'package:client/injectable.dart';
-import 'package:client/presentation/announcement/announcement_overview/widgets/announcements_overview_body.dart';
+import 'package:client/presentation/announcement/announcement_overview/widgets/announcement_overview_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
