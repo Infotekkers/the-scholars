@@ -9,59 +9,77 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:http/http.dart' as http;
 
-@LazySingleton(as: IAdminAnnouncementRepository)
-class AnnoncementAdminRepository implements IAdminAnnouncementRepository {
+@LazySingleton(as: IAnnouncementRepository)
+class AnnoncementRepository implements IAnnouncementRepository {
   http.Client? client = http.Client();
-  static const String _baseUrl = "http://192.168.1.9:3000/admin";
+  static const String _baseUrl = "http://localhost:3000/admin";
 
-  AnnoncementAdminRepository();
+  AnnoncementRepository();
   @override
   Future<Either<AnnouncementFailure, List<Announcement>>>
-      getAnnouncement() async {
-    // TODO: implement getAnnouncement
-
-    throw UnimplementedError();
-  }
-
-  @override
-  Future<Either<AnnouncementFailure, Announcement>> createAnnouncement(
-      {required Announcement announcement}) async {
+      getAnnouncements() async {
     final Uri url = Uri.parse("$_baseUrl/announcements");
-    final AnnouncementDto announcementDtoOut =
-        AnnouncementDto.fromDomain(announcement);
-    final outgoingJson = announcementDtoOut.toJson();
-    print(outgoingJson);
+    final List<Announcement> announcements = [];
 
     try {
-      final response = await client!.post(url, body: outgoingJson);
-      print(response);
+      final response = await client!.get(url);
 
-      if (response.statusCode == 201) {
-        final AnnouncementDto announcementDtoIn = AnnouncementDto.fromJson(
-            jsonDecode(response.body) as Map<String, dynamic>);
+      if (response.statusCode == 200) {
+        final List announcementsJson = jsonDecode(response.body) as List;
 
-        return right(announcementDtoIn.toDomain());
-      } else if (response.statusCode == 400) {
-        return left(const AnnouncementFailure.unexpected());
+        for (final announcementJson in announcementsJson) {
+          final Announcement announcement =
+              AnnouncementDto.fromJson(announcementJson as Map<String, dynamic>)
+                  .toDomain();
+          announcements.add(announcement);
+        }
+
+        return right(announcements);
+      } else {
+        return left(const AnnouncementFailure.serverError());
       }
     } catch (e) {
-      print(e);
       return left(const AnnouncementFailure.networkError());
     }
-    throw UnimplementedError();
   }
 
   @override
-  Future<Either<AnnouncementFailure, Announcement>> updateAnnouncement(
-      Announcement announcement) {
-    // TODO: implement updateAnnouncement
-    throw UnimplementedError();
+  Future<Either<AnnouncementFailure, Announcement>> saveAnnouncement(
+      Announcement announcement) async {
+    final AnnouncementDto announcementDto = AnnouncementDto.fromDomain(announcement);
+    final Uri url = Uri.parse("$_baseUrl/announcements");
+    final outgoingJson = announcementDto.toJson();
+
+    try {
+      final response = await client!.put(url, body: outgoingJson);
+
+      if (response.statusCode == 201) {
+        return right(announcement);
+      } else {
+        return left(const AnnouncementFailure.serverError());
+      }
+    } catch (e) {
+      return left(const AnnouncementFailure.networkError());
+    }
   }
 
   @override
   Future<Either<AnnouncementFailure, Unit>> deleteAnnouncement(
-      Announcement announcement) {
-    // TODO: implement deleteAnnouncement
-    throw UnimplementedError();
+      Announcement announcement) async {
+    final AnnouncementDto announcementDto = AnnouncementDto.fromDomain(announcement);
+    final Uri url = Uri.parse("$_baseUrl/announcements/${announcementDto.title}");
+    final outgoingJson = announcementDto.toJson();
+
+    try {
+      final response = await client!.delete(url, body: outgoingJson);
+
+      if (response.statusCode == 204) {
+        return right(unit);
+      } else {
+        return left(const AnnouncementFailure.serverError());
+      }
+    } catch (e) {
+      return left(const AnnouncementFailure.networkError());
+    }
   }
 }

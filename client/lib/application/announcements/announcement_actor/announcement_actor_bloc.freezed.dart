@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$AnnouncementActorEventTearOff {
   const _$AnnouncementActorEventTearOff();
 
-  _Deleted deleteNote(Announcement announcement) {
+  _Deleted deleted(Announcement announcement) {
     return _Deleted(
       announcement,
     );
@@ -32,23 +32,23 @@ mixin _$AnnouncementActorEvent {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Announcement announcement) deleteNote,
+    required TResult Function(Announcement announcement) deleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Announcement announcement)? deleteNote,
+    TResult Function(Announcement announcement)? deleted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Deleted value) deleteNote,
+    required TResult Function(_Deleted value) deleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Deleted value)? deleteNote,
+    TResult Function(_Deleted value)? deleted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -142,7 +142,7 @@ class _$_Deleted implements _Deleted {
 
   @override
   String toString() {
-    return 'AnnouncementActorEvent.deleteNote(announcement: $announcement)';
+    return 'AnnouncementActorEvent.deleted(announcement: $announcement)';
   }
 
   @override
@@ -166,19 +166,19 @@ class _$_Deleted implements _Deleted {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Announcement announcement) deleteNote,
+    required TResult Function(Announcement announcement) deleted,
   }) {
-    return deleteNote(announcement);
+    return deleted(announcement);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Announcement announcement)? deleteNote,
+    TResult Function(Announcement announcement)? deleted,
     required TResult orElse(),
   }) {
-    if (deleteNote != null) {
-      return deleteNote(announcement);
+    if (deleted != null) {
+      return deleted(announcement);
     }
     return orElse();
   }
@@ -186,19 +186,19 @@ class _$_Deleted implements _Deleted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Deleted value) deleteNote,
+    required TResult Function(_Deleted value) deleted,
   }) {
-    return deleteNote(this);
+    return deleted(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Deleted value)? deleteNote,
+    TResult Function(_Deleted value)? deleted,
     required TResult orElse(),
   }) {
-    if (deleteNote != null) {
-      return deleteNote(this);
+    if (deleted != null) {
+      return deleted(this);
     }
     return orElse();
   }

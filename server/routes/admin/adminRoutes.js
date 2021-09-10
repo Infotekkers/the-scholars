@@ -70,6 +70,8 @@ router.put("/admissionStatus/:applicationId", async (req, res) => {
         res.status(500).send("Error");
     };
 });
+
+////////// * ANNOUNCEMENTS
 // Route to get Application highlights
 router.get("/announcements", async (req, res) => {
     try {
@@ -88,7 +90,7 @@ router.get("/announcements", async (req, res) => {
         res.status(400).send("Item Not Found");
     }
 });
-// Announcement Routes
+
 router.get("/announcements/:id", async (req, res) => {
   // Get Data from ID from Param
   try {
@@ -129,7 +131,7 @@ router.post("/announcements", async (req, res) => {
   }
 });
 
-router.patch("/announcements", async (req, res) => {
+router.put("/announcements", async (req, res) => {
   try {
     // Get Data from body
     const bodyData = req.body;
@@ -145,7 +147,7 @@ router.patch("/announcements", async (req, res) => {
       date: date,
     };
 
-    const newAnnouncement = await Announcement.findByIdAndUpdate(
+    await Announcement.findByIdAndUpdate(
       id,
       updateValue
     );

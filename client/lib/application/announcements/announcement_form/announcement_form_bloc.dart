@@ -6,7 +6,6 @@ import 'package:client/domain/announcement/announcement_failure.dart';
 import 'package:client/domain/announcement/i_admin_announcement_repository.dart';
 import 'package:client/domain/announcement/value_objects.dart';
 import 'package:dartz/dartz.dart';
-import 'package:flutter/rendering.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:intl/intl.dart';
@@ -20,9 +19,9 @@ part 'announcement_form_bloc.freezed.dart';
 @injectable
 class AnnouncementFormBloc
     extends Bloc<AnnouncementFormEvent, AnnouncementFormState> {
-  final IAdminAnnouncementRepository _iAdminAnnouncementRepository;
+  final IAnnouncementRepository _iAnnouncementRepository;
 
-  AnnouncementFormBloc(this._iAdminAnnouncementRepository)
+  AnnouncementFormBloc(this._iAnnouncementRepository)
       : super(AnnouncementFormState.initial());
 
   @override
@@ -60,9 +59,8 @@ class AnnouncementFormBloc
               DateFormat.yMMMd().format(DateTime.now()).toString());
 
           final Announcement announcement = Announcement.initial();
-          failureOrSuccess =
-              await _iAdminAnnouncementRepository.createAnnouncement(
-                  announcement: announcement.copyWith(
+          failureOrSuccess = await _iAnnouncementRepository
+              .saveAnnouncement(announcement.copyWith(
             title: state.title,
             body: state.body,
             date: dateNow,
