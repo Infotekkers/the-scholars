@@ -26,11 +26,11 @@ Either<ValueFailure<String>, String> validatePassword(String passwordStr) {
 Either<ValueFailure<String>, String> validateName(String nameStr) {
   const nameRegex = r'''([A-Z][a-z]{1,})\w+\s+([A-Z][a-z]{0,})\w''';
 
-  // if (RegExp(nameRegex).hasMatch(nameStr)) {
-  return right(nameStr);
-  // } else {
-  //   return left(ValueFailure.invalidUsername(failedValue: nameStr));
-  // }
+  if (RegExp(nameRegex).hasMatch(nameStr)) {
+    return right(nameStr);
+  } else {
+    return left(ValueFailure.invalidUsername(failedValue: nameStr));
+  }
 }
 
 Either<ValueFailure<String>, String> validateRole({required String roleStr}) {
