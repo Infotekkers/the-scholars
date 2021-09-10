@@ -156,6 +156,7 @@ class EditProfilePage extends StatelessWidget {
                 ? AutovalidateMode.always
                 : AutovalidateMode.disabled,
             child: ListView(
+              key: const ValueKey("editProfilePageListView"),
               // ignore: prefer_const_literals_to_create_immutables
               children: [
                 // Top Label
@@ -181,7 +182,6 @@ class EditProfilePage extends StatelessWidget {
                 TextFormField(
                   autofocus: true,
                   autocorrect: false,
-                  // initialValue: state.fullName.value.fold((l) => "", (r) => r),
                   controller: _fullNameController,
                   decoration: const InputDecoration(
                     hintText: "Full Name",
@@ -211,6 +211,7 @@ class EditProfilePage extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 15),
                       child: InkWell(
+                        key: const ValueKey("birthDayInput"),
                         onTap: () async {
                           final DateTime? picked = await showDatePicker(
                             context: context,
@@ -248,6 +249,7 @@ class EditProfilePage extends StatelessWidget {
                         child: ListTile(
                           title: const Text("Male"),
                           leading: Radio(
+                            key: const ValueKey("maleGenderInput"),
                             fillColor: MaterialStateColor.resolveWith(
                                 (states) => Theme.of(context).primaryColor),
                             value: 'male',
@@ -271,6 +273,8 @@ class EditProfilePage extends StatelessWidget {
                         child: ListTile(
                           title: const Text("Female"),
                           leading: Radio(
+                            key: const ValueKey(
+                                "profileEditPageGenderFemaleInput"),
                             fillColor: MaterialStateColor.resolveWith(
                                 (states) => Theme.of(context).primaryColor),
                             value: 'female',
@@ -297,6 +301,7 @@ class EditProfilePage extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * 0.45,
                   height: 60,
                   child: DropdownButton<String>(
+                    key: const ValueKey("profileEditPageLocationDropdown"),
                     value:
                         state.location.value.fold((l) => "Ethiopia", (r) => r),
                     isExpanded: true,
@@ -356,6 +361,8 @@ class EditProfilePage extends StatelessWidget {
                         width: MediaQuery.of(context).size.width * 0.45,
                         height: 60,
                         child: DropdownButton<String>(
+                          key:
+                              const ValueKey("profilEditPagePhoneCodeDropdown"),
                           value: state.phoneCode.value.fold(
                             (l) => "+251",
                             (r) => r,
@@ -433,6 +440,7 @@ class EditProfilePage extends StatelessWidget {
                           child: CircularProgressIndicator(),
                         )
                       : MaterialButton(
+                          key: const ValueKey("profileEditPageSaveButton"),
                           color: Theme.of(context).primaryColor,
                           onPressed: () {
                             _profileBloc.add(

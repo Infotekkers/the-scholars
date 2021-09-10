@@ -59,10 +59,10 @@ class RegisterFormBloc extends Bloc<RegisterFormEvent, RegisterFormState> {
           yield state.copyWith(
               isSubmitting: true, authFailureOrSuccess: none());
 
-          final User user = User.initial();
-          user.copyWith(emailAddress: state.emailAddress);
-          user.copyWith(name: state.name);
-          user.copyWith(role: state.role);
+          User user = User.initial();
+          user = user.copyWith(emailAddress: state.emailAddress);
+          user = user.copyWith(name: state.name);
+          user = user.copyWith(role: state.role);
 
           failureOrSuccess = await authRepository.register(
               user: user, password: state.password);

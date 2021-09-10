@@ -123,6 +123,7 @@ class HomePage extends StatelessWidget {
               listener: (context, state) {},
               builder: (context, state) {
                 return FloatingActionButton(
+                  key: const ValueKey("homePageFAB"),
                   tooltip: "Add New Application",
                   backgroundColor: Colors.purple,
                   onPressed: () {

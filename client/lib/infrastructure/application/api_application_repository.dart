@@ -246,10 +246,11 @@ class ApiApplicationRepository implements IApplicationRepository {
     // Get All Application Ids from cache
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
-    final allApplicationIds = prefs.getStringList("allApplications")!;
+    final List<String>? allApplicationIds =
+        prefs.getStringList("allApplications");
 
     // if cache is empty
-    if (allApplicationIds.isEmpty) {
+    if (allApplicationIds == []) {
       return right([]);
     } else {
       // Call the api
