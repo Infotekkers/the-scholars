@@ -82,7 +82,9 @@ class SignInForm extends StatelessWidget {
                                 .add(const SignInFormEvent.signInPressed());
                           },
                     child: const Text("Login")),
-                ElevatedButton(onPressed: () {}, child: const Text("Register")),
+                ElevatedButton(
+                    onPressed: () => Navigator.pushNamed(context, "/register"),
+                    child: const Text("Register")),
               ],
             ));
       },
