@@ -9,6 +9,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/rendering.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:intl/intl.dart';
 import 'package:meta/meta.dart';
 
 part 'announcement_form_event.dart';
@@ -55,8 +56,8 @@ class AnnouncementFormBloc
         if (state.title.isValid() && state.body.isValid()) {
           yield state.copyWith(isSaving: true, saveFailureOrSuccess: none());
 
-          final AnnouncementDate dateNow =
-              AnnouncementDate(DateTime.now().toString());
+          final AnnouncementDate dateNow = AnnouncementDate(
+              DateFormat.yMMMd().format(DateTime.now()).toString());
 
           final Announcement announcement = Announcement.initial();
           failureOrSuccess =
