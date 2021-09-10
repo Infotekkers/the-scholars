@@ -1,6 +1,6 @@
 import 'package:client/application/announcements/announcement_form/announcement_form_bloc.dart';
 import 'package:client/injectable.dart';
-import 'package:client/presentation/announcement/widgets/announcement_form.dart';
+import 'package:client/presentation/announcement/announcement_form/widgets/announcement_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

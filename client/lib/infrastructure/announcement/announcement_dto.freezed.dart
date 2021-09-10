@@ -21,11 +21,11 @@ class _$AnnouncementDtoTearOff {
   const _$AnnouncementDtoTearOff();
 
   _AnnouncementDto call(
-      {required String title, required String body, required String postdate}) {
+      {required String title, required String body, required String date}) {
     return _AnnouncementDto(
       title: title,
       body: body,
-      postdate: postdate,
+      date: date,
     );
   }
 
@@ -41,7 +41,7 @@ const $AnnouncementDto = _$AnnouncementDtoTearOff();
 mixin _$AnnouncementDto {
   String get title => throw _privateConstructorUsedError;
   String get body => throw _privateConstructorUsedError;
-  String get postdate => throw _privateConstructorUsedError;
+  String get date => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -54,7 +54,7 @@ abstract class $AnnouncementDtoCopyWith<$Res> {
   factory $AnnouncementDtoCopyWith(
           AnnouncementDto value, $Res Function(AnnouncementDto) then) =
       _$AnnouncementDtoCopyWithImpl<$Res>;
-  $Res call({String title, String body, String postdate});
+  $Res call({String title, String body, String date});
 }
 
 /// @nodoc
@@ -70,7 +70,7 @@ class _$AnnouncementDtoCopyWithImpl<$Res>
   $Res call({
     Object? title = freezed,
     Object? body = freezed,
-    Object? postdate = freezed,
+    Object? date = freezed,
   }) {
     return _then(_value.copyWith(
       title: title == freezed
@@ -81,9 +81,9 @@ class _$AnnouncementDtoCopyWithImpl<$Res>
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
               as String,
-      postdate: postdate == freezed
-          ? _value.postdate
-          : postdate // ignore: cast_nullable_to_non_nullable
+      date: date == freezed
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -96,7 +96,7 @@ abstract class _$AnnouncementDtoCopyWith<$Res>
           _AnnouncementDto value, $Res Function(_AnnouncementDto) then) =
       __$AnnouncementDtoCopyWithImpl<$Res>;
   @override
-  $Res call({String title, String body, String postdate});
+  $Res call({String title, String body, String date});
 }
 
 /// @nodoc
@@ -114,7 +114,7 @@ class __$AnnouncementDtoCopyWithImpl<$Res>
   $Res call({
     Object? title = freezed,
     Object? body = freezed,
-    Object? postdate = freezed,
+    Object? date = freezed,
   }) {
     return _then(_AnnouncementDto(
       title: title == freezed
@@ -125,9 +125,9 @@ class __$AnnouncementDtoCopyWithImpl<$Res>
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
               as String,
-      postdate: postdate == freezed
-          ? _value.postdate
-          : postdate // ignore: cast_nullable_to_non_nullable
+      date: date == freezed
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -137,7 +137,7 @@ class __$AnnouncementDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_AnnouncementDto extends _AnnouncementDto {
   const _$_AnnouncementDto(
-      {required this.title, required this.body, required this.postdate})
+      {required this.title, required this.body, required this.date})
       : super._();
 
   factory _$_AnnouncementDto.fromJson(Map<String, dynamic> json) =>
@@ -148,11 +148,11 @@ class _$_AnnouncementDto extends _AnnouncementDto {
   @override
   final String body;
   @override
-  final String postdate;
+  final String date;
 
   @override
   String toString() {
-    return 'AnnouncementDto(title: $title, body: $body, postdate: $postdate)';
+    return 'AnnouncementDto(title: $title, body: $body, date: $date)';
   }
 
   @override
@@ -163,9 +163,8 @@ class _$_AnnouncementDto extends _AnnouncementDto {
                 const DeepCollectionEquality().equals(other.title, title)) &&
             (identical(other.body, body) ||
                 const DeepCollectionEquality().equals(other.body, body)) &&
-            (identical(other.postdate, postdate) ||
-                const DeepCollectionEquality()
-                    .equals(other.postdate, postdate)));
+            (identical(other.date, date) ||
+                const DeepCollectionEquality().equals(other.date, date)));
   }
 
   @override
@@ -173,7 +172,7 @@ class _$_AnnouncementDto extends _AnnouncementDto {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(body) ^
-      const DeepCollectionEquality().hash(postdate);
+      const DeepCollectionEquality().hash(date);
 
   @JsonKey(ignore: true)
   @override
@@ -190,7 +189,7 @@ abstract class _AnnouncementDto extends AnnouncementDto {
   const factory _AnnouncementDto(
       {required String title,
       required String body,
-      required String postdate}) = _$_AnnouncementDto;
+      required String date}) = _$_AnnouncementDto;
   const _AnnouncementDto._() : super._();
 
   factory _AnnouncementDto.fromJson(Map<String, dynamic> json) =
@@ -201,7 +200,7 @@ abstract class _AnnouncementDto extends AnnouncementDto {
   @override
   String get body => throw _privateConstructorUsedError;
   @override
-  String get postdate => throw _privateConstructorUsedError;
+  String get date => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$AnnouncementDtoCopyWith<_AnnouncementDto> get copyWith =>

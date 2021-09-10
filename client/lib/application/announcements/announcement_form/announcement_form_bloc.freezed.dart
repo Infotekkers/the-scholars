@@ -582,7 +582,7 @@ class _$AnnouncementFormStateTearOff {
       required bool showErrorMessages,
       required bool isSaving,
       required bool isEditing,
-      required Option<Either<AnnouncementFailure, Unit>>
+      required Option<Either<AnnouncementFailure, Announcement>>
           saveFailureOrSuccess}) {
     return _AnnouncementFormState(
       title: title,
@@ -607,7 +607,7 @@ mixin _$AnnouncementFormState {
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isSaving => throw _privateConstructorUsedError;
   bool get isEditing => throw _privateConstructorUsedError;
-  Option<Either<AnnouncementFailure, Unit>> get saveFailureOrSuccess =>
+  Option<Either<AnnouncementFailure, Announcement>> get saveFailureOrSuccess =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -627,7 +627,7 @@ abstract class $AnnouncementFormStateCopyWith<$Res> {
       bool showErrorMessages,
       bool isSaving,
       bool isEditing,
-      Option<Either<AnnouncementFailure, Unit>> saveFailureOrSuccess});
+      Option<Either<AnnouncementFailure, Announcement>> saveFailureOrSuccess});
 }
 
 /// @nodoc
@@ -677,7 +677,7 @@ class _$AnnouncementFormStateCopyWithImpl<$Res>
       saveFailureOrSuccess: saveFailureOrSuccess == freezed
           ? _value.saveFailureOrSuccess
           : saveFailureOrSuccess // ignore: cast_nullable_to_non_nullable
-              as Option<Either<AnnouncementFailure, Unit>>,
+              as Option<Either<AnnouncementFailure, Announcement>>,
     ));
   }
 }
@@ -696,7 +696,7 @@ abstract class _$AnnouncementFormStateCopyWith<$Res>
       bool showErrorMessages,
       bool isSaving,
       bool isEditing,
-      Option<Either<AnnouncementFailure, Unit>> saveFailureOrSuccess});
+      Option<Either<AnnouncementFailure, Announcement>> saveFailureOrSuccess});
 }
 
 /// @nodoc
@@ -748,7 +748,7 @@ class __$AnnouncementFormStateCopyWithImpl<$Res>
       saveFailureOrSuccess: saveFailureOrSuccess == freezed
           ? _value.saveFailureOrSuccess
           : saveFailureOrSuccess // ignore: cast_nullable_to_non_nullable
-              as Option<Either<AnnouncementFailure, Unit>>,
+              as Option<Either<AnnouncementFailure, Announcement>>,
     ));
   }
 }
@@ -778,7 +778,7 @@ class _$_AnnouncementFormState implements _AnnouncementFormState {
   @override
   final bool isEditing;
   @override
-  final Option<Either<AnnouncementFailure, Unit>> saveFailureOrSuccess;
+  final Option<Either<AnnouncementFailure, Announcement>> saveFailureOrSuccess;
 
   @override
   String toString() {
@@ -835,7 +835,7 @@ abstract class _AnnouncementFormState implements AnnouncementFormState {
       required bool showErrorMessages,
       required bool isSaving,
       required bool isEditing,
-      required Option<Either<AnnouncementFailure, Unit>>
+      required Option<Either<AnnouncementFailure, Announcement>>
           saveFailureOrSuccess}) = _$_AnnouncementFormState;
 
   @override
@@ -851,7 +851,7 @@ abstract class _AnnouncementFormState implements AnnouncementFormState {
   @override
   bool get isEditing => throw _privateConstructorUsedError;
   @override
-  Option<Either<AnnouncementFailure, Unit>> get saveFailureOrSuccess =>
+  Option<Either<AnnouncementFailure, Announcement>> get saveFailureOrSuccess =>
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

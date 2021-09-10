@@ -1,3 +1,4 @@
+import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:client/application/announcements/announcement_form/announcement_form_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,8 +9,23 @@ class AnnouncementForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AnnouncementFormBloc, AnnouncementFormState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        state.saveFailureOrSuccess.fold(
+            () {},
+            (either) => either.fold((failure) {
+                  FlushbarHelper.createError(
+                      message: failure.map(
+                    unexpected: (_) => "unexpected error",
+                    networkError: (_) => " Check network connection",
+                    serverError: (_) => "Server error",
+                    cancelledByUser: (_) => "Cancelled",
+                  )).show(context);
+                }, (r) {
+                  // TODO: direct to LOGIN
+                }));
+      },
       builder: (context, state) {
+        Text t;
         return Form(
           autovalidateMode: state.showErrorMessages
               ? AutovalidateMode.always
@@ -51,7 +67,6 @@ class AnnouncementForm extends StatelessWidget {
                   keyboardType: TextInputType.multiline,
                   decoration: const InputDecoration(
                       helperText: 'Body must not exceed 250 characters',
-                      prefixIcon: Icon(Icons.list),
                       labelText: 'Body'),
                   onChanged: (value) =>
                       BlocProvider.of<AnnouncementFormBloc>(context)
@@ -70,13 +85,14 @@ class AnnouncementForm extends StatelessWidget {
                               (_) => null),
                 ),
               ),
+              t = const Text(''),
               ElevatedButton(
                 onPressed: state.isSaving
                     ? null
                     : () {
                         BlocProvider.of<AnnouncementFormBloc>(context)
                             .add(const AnnouncementFormEvent.saved());
-                        // implement passing Dates
+                        print(DateTime.now());
                       },
                 child: const Text('Post'),
               ),

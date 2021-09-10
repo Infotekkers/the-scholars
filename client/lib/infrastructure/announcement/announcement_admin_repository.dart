@@ -1,6 +1,9 @@
+import 'dart:convert';
+
 import 'package:client/domain/announcement/announcement_failure.dart';
 import 'package:client/domain/announcement/announcement.dart';
 import 'package:client/domain/announcement/i_admin_announcement_repository.dart';
+import 'package:client/infrastructure/announcement/announcement_dto.dart';
 
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
@@ -16,25 +19,35 @@ class AnnoncementAdminRepository implements IAdminAnnouncementRepository {
   Future<Either<AnnouncementFailure, List<Announcement>>>
       getAnnouncement() async {
     // TODO: implement getAnnouncement
-    final Uri url = Uri.parse("$_baseUrl/admin/announcements");
-
-    try {
-      final response = await client!.get(url);
-
-      if (response.statusCode == 200) {
-        print("wow");
-      }
-    } catch (err) {
-      print(err);
-    }
 
     throw UnimplementedError();
   }
 
   @override
   Future<Either<AnnouncementFailure, Announcement>> createAnnouncement(
-      Announcement announcement) {
-    // TODO: implement createAnnouncement
+      {required Announcement announcement}) async {
+    final Uri url = Uri.parse("$_baseUrl/announcements");
+    final AnnouncementDto announcementDtoOut =
+        AnnouncementDto.fromDomain(announcement);
+    final outgoingJson = announcementDtoOut.toJson();
+    print(outgoingJson);
+
+    try {
+      final response = await client!.post(url, body: outgoingJson);
+      print(response);
+
+      if (response.statusCode == 201) {
+        final AnnouncementDto announcementDtoIn = AnnouncementDto.fromJson(
+            jsonDecode(response.body) as Map<String, dynamic>);
+
+        return right(announcementDtoIn.toDomain());
+      } else if (response.statusCode == 400) {
+        return left(const AnnouncementFailure.unexpected());
+      }
+    } catch (e) {
+      print(e);
+      return left(const AnnouncementFailure.networkError());
+    }
     throw UnimplementedError();
   }
 

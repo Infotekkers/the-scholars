@@ -10,7 +10,7 @@ _$_AnnouncementDto _$_$_AnnouncementDtoFromJson(Map<String, dynamic> json) {
   return _$_AnnouncementDto(
     title: json['title'] as String,
     body: json['body'] as String,
-    postdate: json['postdate'] as String,
+    date: json['date'] as String,
   );
 }
 
@@ -18,5 +18,5 @@ Map<String, dynamic> _$_$_AnnouncementDtoToJson(_$_AnnouncementDto instance) =>
     <String, dynamic>{
       'title': instance.title,
       'body': instance.body,
-      'postdate': instance.postdate,
+      'date': instance.date,
     };

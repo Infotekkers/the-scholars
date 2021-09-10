@@ -46,7 +46,7 @@ class NavigatorPage extends StatelessWidget {
               if (state.pageIndexNumber == 0) {
                 return BlocProvider.value(
                   value: getIt<ApplicationBloc>(),
-                  child: const AnnouncementFormPage(),
+                  child: const HomePage(),
                 );
               } else if (state.pageIndexNumber == 1) {
                 return const ProfilePage(

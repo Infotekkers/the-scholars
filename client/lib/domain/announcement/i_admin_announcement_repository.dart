@@ -6,7 +6,7 @@ import 'announcement_failure.dart';
 abstract class IAdminAnnouncementRepository {
   Future<Either<AnnouncementFailure, List<Announcement>>> getAnnouncement();
   Future<Either<AnnouncementFailure, Announcement>> createAnnouncement(
-      Announcement announcement);
+      {required Announcement announcement});
   Future<Either<AnnouncementFailure, Announcement>> updateAnnouncement(
       Announcement announcement);
   Future<Either<AnnouncementFailure, Unit>> deleteAnnouncement(

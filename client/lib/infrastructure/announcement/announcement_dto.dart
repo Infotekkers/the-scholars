@@ -12,14 +12,15 @@ abstract class AnnouncementDto implements _$AnnouncementDto {
   const factory AnnouncementDto({
     required String title,
     required String body,
-    required String postdate,
+    required String date,
   }) = _AnnouncementDto;
 
   factory AnnouncementDto.fromDomain(Announcement announcement) {
     return AnnouncementDto(
-      title: announcement.title.getOrCrash(),
-      body: announcement.body.getOrCrash(),
-      postdate: announcement.postdate.getOrCrash(),
+      title:
+          announcement.title.isValid() ? announcement.title.getOrCrash() : "",
+      body: announcement.body.isValid() ? announcement.body.getOrCrash() : "",
+      date: announcement.date.isValid() ? announcement.date.getOrCrash() : "",
     );
   }
 
@@ -27,7 +28,7 @@ abstract class AnnouncementDto implements _$AnnouncementDto {
     return Announcement(
         title: AnnouncementTitle(title),
         body: AnnouncementBody(body),
-        postdate: AnnouncementDate(postdate));
+        date: AnnouncementDate(date));
   }
 
   factory AnnouncementDto.fromJson(Map<String, dynamic> json) =>

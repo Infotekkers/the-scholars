@@ -51,16 +51,21 @@ class AnnouncementFormBloc
         );
       },
       saved: (e) async* {
-        Either<AnnouncementFailure, Unit>? failureOrSuccess;
-        yield state.copyWith(
-          isSaving: true,
-          saveFailureOrSuccess: none(),
-        );
+        Either<AnnouncementFailure, Announcement>? failureOrSuccess;
         if (state.title.isValid() && state.body.isValid()) {
-          // state.isEditing? await _iAdminAnnouncementRepository.updateAnnouncement()
-          // :await _iAdminAnnouncementRepository.createAnnouncement();
-          // todo implement create and update from repositoru
-          print("something");
+          yield state.copyWith(isSaving: true, saveFailureOrSuccess: none());
+
+          final AnnouncementDate dateNow =
+              AnnouncementDate(DateTime.now().toString());
+
+          final Announcement announcement = Announcement.initial();
+          failureOrSuccess =
+              await _iAdminAnnouncementRepository.createAnnouncement(
+                  announcement: announcement.copyWith(
+            title: state.title,
+            body: state.body,
+            date: dateNow,
+          ));
         }
         yield state.copyWith(
           isSaving: false,

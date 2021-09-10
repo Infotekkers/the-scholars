@@ -9,7 +9,8 @@ abstract class AnnouncementFormState with _$AnnouncementFormState {
     required bool showErrorMessages,
     required bool isSaving,
     required bool isEditing,
-    required Option<Either<AnnouncementFailure, Unit>> saveFailureOrSuccess,
+    required Option<Either<AnnouncementFailure, Announcement>>
+        saveFailureOrSuccess,
   }) = _AnnouncementFormState;
 
   factory AnnouncementFormState.initial() => AnnouncementFormState(

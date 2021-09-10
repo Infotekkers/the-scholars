@@ -120,6 +120,7 @@ router.post("/announcements", async (req, res) => {
     });
 
     const announcement = await newAnnouncement.save();
+    console.log(announcement);
 
     res.status(201).send({ announcementId: announcement._id });
   } catch (e) {
