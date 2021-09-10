@@ -65,14 +65,16 @@ void main() {
                   applicationHighlight: applicationHighlight.copyWith(
                       admissionStatus:
                           AdmissionStatus(admissionStatusStr: "accepted"))))
-              .thenAnswer((_) async => left(const ApplicationFailure.serverError()));
+              .thenAnswer(
+                  (_) async => left(const ApplicationFailure.serverError()));
           return ApplicationsOverviewActorBloc(adminApplicationRepository);
         },
         act: (bloc) => bloc
             .add(ApplicationsOverviewActorEvent.accepted(applicationHighlight)),
         expect: () => const [
               ApplicationsOverviewActorState.actionInProgress(),
-              ApplicationsOverviewActorState.actionFailure(ApplicationFailure.serverError()),
+              ApplicationsOverviewActorState.actionFailure(
+                  ApplicationFailure.serverError()),
             ]);
     blocTest<ApplicationsOverviewActorBloc, ApplicationsOverviewActorState>(
         "should emit action failed because of no connection.",
@@ -81,14 +83,16 @@ void main() {
                   applicationHighlight: applicationHighlight.copyWith(
                       admissionStatus:
                           AdmissionStatus(admissionStatusStr: "accepted"))))
-              .thenAnswer((_) async => left(const ApplicationFailure.noConnection()));
+              .thenAnswer(
+                  (_) async => left(const ApplicationFailure.noConnection()));
           return ApplicationsOverviewActorBloc(adminApplicationRepository);
         },
         act: (bloc) => bloc
             .add(ApplicationsOverviewActorEvent.accepted(applicationHighlight)),
         expect: () => const [
               ApplicationsOverviewActorState.actionInProgress(),
-              ApplicationsOverviewActorState.actionFailure(ApplicationFailure.noConnection()),
+              ApplicationsOverviewActorState.actionFailure(
+                  ApplicationFailure.noConnection()),
             ]);
   });
 }

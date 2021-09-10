@@ -60,7 +60,7 @@ class RegisterFormBloc extends Bloc<RegisterFormEvent, RegisterFormState> {
               isSubmitting: true, authFailureOrSuccess: none());
 
           final User user = User.initial();
-
+          
           failureOrSuccess = await authRepository.register(
               user: user.copyWith(
                   emailAddress: state.emailAddress,

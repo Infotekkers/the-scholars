@@ -287,7 +287,9 @@ router.post("/id/application", async (req, res) => {
         admissionStatus: currentApplication["admissionStatus"],
         applicationId: currentApplication.id,
       });
-    } catch (e) {}
+    } catch (e) {
+      const applicationIds = await JSON.parse(req.body.applicationIds);
+    }
   }
 
   console.log(applicationHighlights);
@@ -295,6 +297,34 @@ router.post("/id/application", async (req, res) => {
   res.status(200).send(applicationHighlights);
 });
 
+router.post("/check", async (req, res) => {
+  console.log("Launched");
+  var hasPending = false;
+  const applicationIds = await JSON.parse(req.body.applicationIds);
+
+  const applicationIdsArray = Array.from(applicationIds);
+  for (i = 0; i < applicationIdsArray.length; i++) {
+    var currentApplication = await Application.findById(applicationIdsArray[i]);
+    try {
+      if (currentApplication["admissionStatus"] == "pending") {
+        hasPending = true;
+        break;
+      }
+    } catch (e) {
+      res.status(500).send();
+    }
+  }
+
+  if (hasPending) {
+    res.status(200).send();
+  } else {
+    res.send(404).send();
+  }
+});
+
+/*********
+ * Test
+ */
 router.get("/file/test", (req, res) => {
   console.log("Launched Down");
   (res.shouldKeepAlive = true),

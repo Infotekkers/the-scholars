@@ -22,7 +22,9 @@ class AppRouter {
     // * COMMON ROUTES
     // * Route - Sign In Page
     "/sign-in": (context) => SignInPage(),
+    // * Route - Register Page
     "/register": (context) => RegisterPage(),
+
 
     // * STUDENT
     // * Route - Home Page
@@ -64,10 +66,8 @@ class AppRouter {
           child: const DownloadPage(),
         ),
 
-
     // * ADMIN
     // * Route - Application Overview
     "/application-overview": (context) => ApplicationsOverviewPage(),
-
   };
 }

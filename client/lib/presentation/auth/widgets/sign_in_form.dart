@@ -34,6 +34,7 @@ class SignInForm extends StatelessWidget {
             child: Column(
               children: [
                 TextFormField(
+                  key: const ValueKey("loginPageUserName"),
                   decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.email),
                     labelText: 'Email',
@@ -52,6 +53,7 @@ class SignInForm extends StatelessWidget {
                           (_) => null),
                 ),
                 TextFormField(
+                  key: const ValueKey("loginPagePassword"),
                   decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.lock),
                     labelText: 'Password',
@@ -75,6 +77,7 @@ class SignInForm extends StatelessWidget {
                   height: 5,
                 ),
                 ElevatedButton(
+                    key: const ValueKey("loginPageLoginButton"),
                     onPressed: state.isSubmitting
                         ? null
                         : () {
@@ -83,7 +86,10 @@ class SignInForm extends StatelessWidget {
                           },
                     child: const Text("Login")),
                 ElevatedButton(
-                    onPressed: () => Navigator.pushNamed(context, "/register"),
+                    key: ValueKey("loginPageRegisterButton"),
+                    onPressed: () {
+                      Navigator.popAndPushNamed(context, '/register');
+                    },
                     child: const Text("Register")),
               ],
             ));

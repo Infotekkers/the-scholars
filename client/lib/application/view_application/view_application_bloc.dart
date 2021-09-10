@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
+import 'package:client/application/application/application_bloc.dart';
 import 'package:client/domain/application/application.dart';
 import 'package:client/domain/application/application_failure.dart';
 import 'package:client/domain/application/i_application_repository.dart';
@@ -28,14 +29,13 @@ class ViewApplicationBloc
         getIt<IApplicationRepository>();
     yield* event.map(
       started: (e) async* {
+        getIt<ApplicationBloc>().add(const ApplicationEvent.initialEvent());
         // Start Loader animation
         yield state.copyWith(isFetching: true);
 
         Either<ApplicationFailure, List<ApplicationHighlightDto>>
             allApplicationsHighlightDtos =
             await _iApplicationRepository.getApplicationHighlights();
-
-        // print("@view bloc val is $allApplicationsHighlightDtos");
 
         // If Error is returned
         if (allApplicationsHighlightDtos.isLeft()) {

@@ -2,6 +2,7 @@ import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:client/application/auth/auth_bloc.dart';
 import 'package:client/application/auth/register_form/register_form_bloc.dart';
 import 'package:client/domain/auth/value_objects.dart';
+import 'package:client/presentation/core/widgets/flash_message.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -25,6 +26,8 @@ class RegisterForm extends StatelessWidget {
                 }, (r) {
                   BlocProvider.of<AuthBloc>(context)
                       .add(const AuthEvent.authCheckRequested());
+                  getWrappedFlashMessage(
+                      context, "Account has been created.Login");
                 }));
       },
       builder: (context, state) {
@@ -38,6 +41,7 @@ class RegisterForm extends StatelessWidget {
                 height: 5,
               ),
               TextFormField(
+                key: const ValueKey("registerPageFullNameInput"),
                 decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.person), labelText: 'Username'),
                 autocorrect: false,
@@ -58,6 +62,7 @@ class RegisterForm extends StatelessWidget {
                 height: 5,
               ),
               TextFormField(
+                key: const ValueKey("registerPageEmailInput"),
                 decoration: const InputDecoration(
                   prefixIcon: Icon(Icons.email),
                   labelText: 'Email',
@@ -80,6 +85,7 @@ class RegisterForm extends StatelessWidget {
                 height: 5,
               ),
               TextFormField(
+                key: const ValueKey("registerPagePasswordInput"),
                 decoration: const InputDecoration(
                   prefixIcon: Icon(Icons.lock),
                   labelText: 'Password',
@@ -113,6 +119,7 @@ class RegisterForm extends StatelessWidget {
                     child: ListTile(
                       title: const Text("User"),
                       leading: Radio(
+                        key: const ValueKey("registerPageRoleUserInput"),
                         fillColor: MaterialStateColor.resolveWith(
                             (states) => Theme.of(context).primaryColor),
                         value: Role("user"),
@@ -148,6 +155,7 @@ class RegisterForm extends StatelessWidget {
                 children: [
                   Expanded(
                     child: ElevatedButton(
+                        key: const ValueKey("registerPageRegisterButton"),
                         onPressed: state.isSubmitting
                             ? null
                             : () {
@@ -162,8 +170,10 @@ class RegisterForm extends StatelessWidget {
                 children: [
                   Expanded(
                     child: ElevatedButton(
-                        onPressed: () =>
-                            Navigator.pushNamed(context, "/sign-in"),
+                        key: ValueKey("registerPageLoginButton"),
+                        onPressed: () {
+                          Navigator.popAndPushNamed(context, '/sign-in');
+                        },
                         child: const Text("Sign In")),
                   ),
                 ],

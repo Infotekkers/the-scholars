@@ -156,6 +156,7 @@ class ProfilePage extends StatelessWidget {
                 // Full Name Input area
                 const FormLabel(textValue: "Full Name"),
                 TextFormField(
+                  key: const ValueKey("profilePageFullNameInput"),
                   autofocus: true,
                   autocorrect: false,
                   // initialValue: state.fullName.value.fold((l) => "", (r) => r),
@@ -235,6 +236,7 @@ class ProfilePage extends StatelessWidget {
                         child: ListTile(
                           title: const Text("Male"),
                           leading: Radio(
+                            key: const ValueKey("profilePageGenderMaleInput"),
                             fillColor: MaterialStateColor.resolveWith(
                                 (states) => Theme.of(context).primaryColor),
                             value: 'male',
@@ -388,6 +390,7 @@ class ProfilePage extends StatelessWidget {
                         width: MediaQuery.of(context).size.width * 0.5,
                         height: 52,
                         child: TextFormField(
+                          key: const ValueKey("profilePagePhoneNumberInput"),
                           initialValue:
                               state.phoneNumber.value.fold((l) => "", (r) => r),
                           decoration:
@@ -428,6 +431,7 @@ class ProfilePage extends StatelessWidget {
                           child: CircularProgressIndicator(),
                         )
                       : MaterialButton(
+                          key: const ValueKey("profilePageSaveButton"),
                           color: Theme.of(context).primaryColor,
                           onPressed: () {
                             // Add Event
