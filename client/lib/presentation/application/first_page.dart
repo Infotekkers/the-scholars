@@ -84,6 +84,7 @@ class FirstApplicationPage extends StatelessWidget {
                   ? AutovalidateMode.always
                   : AutovalidateMode.disabled,
               child: ListView(
+                key: const ValueKey("firstApplciationPageListView"),
                 children: [
                   // TODO: Activate
 
@@ -117,6 +118,8 @@ class FirstApplicationPage extends StatelessWidget {
                   // Area for School Transcript
                   const FormLabel(textValue: "School Transcript"),
                   const FileForm(
+                    addKey: ValueKey("schoolTranscriptAddButton"),
+                    clearKey: ValueKey("schoolTranscriptClearButton"),
                     type: "S",
                   ),
 
@@ -125,6 +128,8 @@ class FirstApplicationPage extends StatelessWidget {
                   Container(
                     margin: const EdgeInsets.symmetric(vertical: 1),
                     child: const FileForm(
+                      addKey: ValueKey("mainEssayAddButton"),
+                      clearKey: ValueKey("mainEssayClearButton"),
                       type: "M",
                     ),
                   ),
@@ -132,12 +137,16 @@ class FirstApplicationPage extends StatelessWidget {
                   // Area for Certification
                   const FormLabel(textValue: "Extra Certification"),
                   const FileForm(
+                    addKey: ValueKey("certificationAddButton"),
+                    clearKey: ValueKey("certificationClearButton"),
                     type: "E",
                   ),
 
                   // Area for Letter Of Rec
                   const FormLabel(textValue: "Reccomendation Letter"),
                   const FileForm(
+                    addKey: ValueKey("letterAddButton"),
+                    clearKey: ValueKey("letterClearButton"),
                     type: "R",
                   ),
 

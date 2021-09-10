@@ -36,6 +36,8 @@ dependencies:
   flag: ^5.0.1
   liquid_pull_to_refresh: ^3.0.0
 
+  path_provider: ^2.0.3
+
 dev_dependencies:
   bloc_test: ^8.1.0
   build_runner: ^2.1.1

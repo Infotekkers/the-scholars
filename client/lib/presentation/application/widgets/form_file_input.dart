@@ -5,7 +5,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class FileForm extends StatelessWidget {
   final String type;
-  const FileForm({required this.type});
+  final ValueKey addKey;
+  final ValueKey clearKey;
+  const FileForm(
+      {required this.type, required this.addKey, required this.clearKey});
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +70,10 @@ class FileForm extends StatelessWidget {
                       },
                       child: IconTheme(
                         data: Theme.of(context).iconTheme,
-                        child: const Icon(Icons.attach_file),
+                        child: Icon(
+                          Icons.attach_file,
+                          key: addKey,
+                        ),
                       ),
                     ),
                   ),
@@ -102,10 +108,11 @@ class FileForm extends StatelessWidget {
                       },
                       child: IconTheme(
                         data: IconTheme.of(context).copyWith(color: Colors.red),
-                        child: const Icon(
+                        child: Icon(
                           Icons.remove,
                           size: 25,
                           color: Colors.red,
+                          key: clearKey,
                         ),
                       ),
                     ),

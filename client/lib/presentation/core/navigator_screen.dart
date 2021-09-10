@@ -67,12 +67,17 @@ class NavigatorPage extends StatelessWidget {
                 items: <Widget>[
                   IconTheme(
                     data: Theme.of(context).accentIconTheme,
-                    child: const Icon(Icons.school_sharp),
+                    child: const Icon(
+                      Icons.school_sharp,
+                      key: ValueKey("navigatorPageIndexZero"),
+                    ),
                   ),
                   IconTheme(
-                    key: const ValueKey("navigatorIndexOne"),
                     data: Theme.of(context).accentIconTheme,
-                    child: const Icon(Icons.person),
+                    child: const Icon(
+                      Icons.person,
+                      key: ValueKey("navigatorPageIndexOne"),
+                    ),
                   ),
                   IconTheme(
                     data: Theme.of(context).accentIconTheme,
