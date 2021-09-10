@@ -16,8 +16,8 @@ part 'announcement_actor_bloc.freezed.dart';
 @injectable
 class AnnouncementActorBloc
     extends Bloc<AnnouncementActorEvent, AnnouncementActorState> {
-  final IAdminAnnouncementRepository _iAdminAnnouncementRepository;
-  AnnouncementActorBloc(this._iAdminAnnouncementRepository)
+  final IAnnouncementRepository _iAnnouncementRepository;
+  AnnouncementActorBloc(this._iAnnouncementRepository)
       : super(const AnnouncementActorState.initial());
 
   @override
@@ -25,7 +25,7 @@ class AnnouncementActorBloc
     AnnouncementActorEvent event,
   ) async* {
     yield const AnnouncementActorState.actionInProgress();
-    final possibleFailure = await _iAdminAnnouncementRepository
+    final possibleFailure = await _iAnnouncementRepository
         .deleteAnnouncement(event.announcement);
 
     yield possibleFailure.fold(
