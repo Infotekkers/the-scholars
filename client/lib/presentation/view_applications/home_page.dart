@@ -125,6 +125,7 @@ class HomePage extends StatelessWidget {
               builder: (context, state) {
                 print("@home page : ${state.isApplicationPending}");
                 return FloatingActionButton(
+                  key: const ValueKey("homePageFAB"),
                   tooltip: "Add New Application",
                   backgroundColor: Colors.purple,
                   onPressed: () {
