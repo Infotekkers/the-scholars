@@ -15,7 +15,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 class ApiAuthRepository implements IAuthRepository {
   // static final String? _baseUrl = dotenv.env["AUTH_API"];
   http.Client? client = http.Client();
-  static const String _baseUrl = "http://10.0.2.2:5000";
+  static const String _baseUrl = "http://localhost:3000/auth";
+  // static const String _baseUrl = "http://10.0.2.2:5000";
 
   ApiAuthRepository();
   ApiAuthRepository.test(this.client);
@@ -27,7 +28,7 @@ class ApiAuthRepository implements IAuthRepository {
     final UserDto userDtoOut = UserDto.fromDomain(user);
     final outgoingJson =
         userDtoOut.copyWith(password: password.getOrCrash()).toJson();
-
+        
     try {
       final response = await client!.post(url, body: outgoingJson);
 
@@ -36,7 +37,7 @@ class ApiAuthRepository implements IAuthRepository {
             UserDto.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
         return right(userDtoIn.toDomain());
       } else if (response.statusCode == 400) {
-        return left(const AuthFailure.emailAlreadyInUse());
+        return left(const AuthFailure.invalidEmailPasswordCombination());
       } else {
         return left(const AuthFailure.serverError());
       }
@@ -48,15 +49,13 @@ class ApiAuthRepository implements IAuthRepository {
   @override
   Future<Either<AuthFailure, User>> signIn(
       {required User user, required Password password}) async {
-    print("Launched");
-    final Uri url = Uri.parse("$_baseUrl/auth/login");
+    final Uri url = Uri.parse("$_baseUrl/login");
     final UserDto userDtoOut = UserDto.fromDomain(user);
     final outgoingJson =
         userDtoOut.copyWith(password: password.getOrCrash()).toJson();
 
     try {
       final response = await client!.post(url, body: outgoingJson);
-      print("HERE ${response.body}");
 
       if (response.statusCode == 200) {
         final UserDto userDtoIn =
