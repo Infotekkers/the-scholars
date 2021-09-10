@@ -17,9 +17,9 @@ part 'announcement_watcher_bloc.freezed.dart';
 @injectable
 class AnnouncementWatcherBloc
     extends Bloc<AnnouncementWatcherEvent, AnnouncementWatcherState> {
-  final IAdminAnnouncementRepository _iadminAnnouncementRepository;
+  final IAnnouncementRepository _iAnnouncementRepository;
 
-  AnnouncementWatcherBloc(this._iadminAnnouncementRepository)
+  AnnouncementWatcherBloc(this._iAnnouncementRepository)
       : super(const AnnouncementWatcherState.initial());
 
   @override
@@ -29,7 +29,7 @@ class AnnouncementWatcherBloc
     yield* event.map(getAllStarted: (e) async* {
       yield const AnnouncementWatcherState.loadInProgress();
       final failOrSuccess =
-          await _iadminAnnouncementRepository.getAnnouncement();
+          await _iAnnouncementRepository.getAnnouncements();
       yield failOrSuccess.fold(
           (l) => AnnouncementWatcherState.loadFailure(l),
           (announcements) =>
