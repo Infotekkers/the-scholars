@@ -62,10 +62,8 @@ class AppRouter {
           child: const DownloadPage(),
         ),
 
-
     // * ADMIN
     // * Route - Application Overview
     "/application-overview": (context) => ApplicationsOverviewPage(),
-
   };
 }

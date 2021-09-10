@@ -3,6 +3,7 @@ import 'package:client/application/profile/profile_bloc.dart';
 import 'package:client/application/util/util_bloc.dart';
 import 'package:client/application/view_application/view_application_bloc.dart';
 import 'package:client/injectable.dart';
+import 'package:client/presentation/core/widgets/flash_message.dart';
 import 'package:client/presentation/profile/profile_page.dart';
 import 'package:client/presentation/view_applications/widget/application_tabs.dart';
 import 'package:flutter/material.dart';
@@ -122,25 +123,31 @@ class HomePage extends StatelessWidget {
                 BlocConsumer<ApplicationBloc, ApplicationState>(
               listener: (context, state) {},
               builder: (context, state) {
+                print("@home page : ${state.isApplicationPending}");
                 return FloatingActionButton(
                   tooltip: "Add New Application",
                   backgroundColor: Colors.purple,
                   onPressed: () {
-                    // Start event of checking cache
-                    BlocProvider.of<ApplicationBloc>(context)
-                        .add(const ApplicationEvent.checkCacheApplication());
-                    // If Application is Cached
-                    if (state.isApplicationCached) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content:
-                              Text("Seems like you have an active application"),
-                        ),
-                      );
+                    if (!state.isApplicationPending) {
+                      // Start event of checking cache
+                      BlocProvider.of<ApplicationBloc>(context)
+                          .add(const ApplicationEvent.checkCacheApplication());
+                      // If Application is Cached
+                      if (state.isApplicationCached) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text(
+                                "Seems like you have an active application"),
+                          ),
+                        );
 
-                      Navigator.pushNamed(context, '/second');
+                        Navigator.pushNamed(context, '/second');
+                      } else {
+                        Navigator.pushNamed(context, '/application');
+                      }
                     } else {
-                      Navigator.pushNamed(context, '/application');
+                      getWrappedFlashMessage(
+                          context, "You have a pending application.");
                     }
                   },
                   child: const Icon(Icons.add),
