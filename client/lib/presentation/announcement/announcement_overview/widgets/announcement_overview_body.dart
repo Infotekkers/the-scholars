@@ -9,7 +9,7 @@ class AnnouncementsOverviewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final AnnouncementActorBloc actorBloc =
         BlocProvider.of<AnnouncementActorBloc>(context);
-          
+
     return BlocBuilder<AnnouncementWatcherBloc, AnnouncementWatcherState>(
         builder: (context, state) => state.map(
             initial: (_) => Container(),

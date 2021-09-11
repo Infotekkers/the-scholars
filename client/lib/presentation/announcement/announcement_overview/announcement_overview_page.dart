@@ -10,58 +10,60 @@ class AnnouncementsOverviewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-        providers: [
-          BlocProvider<AnnouncementActorBloc>(
-              create: (context) => getIt<AnnouncementActorBloc>()),
-          BlocProvider<AnnouncementWatcherBloc>(
-              create: (context) => getIt<AnnouncementWatcherBloc>()
-                ..add(const AnnouncementWatcherEvent.getAllStarted())),
+      providers: [
+        BlocProvider<AnnouncementActorBloc>(
+            create: (context) => getIt<AnnouncementActorBloc>()),
+        BlocProvider<AnnouncementWatcherBloc>(
+            create: (context) => getIt<AnnouncementWatcherBloc>()
+              ..add(const AnnouncementWatcherEvent.getAllStarted())),
+      ],
+      child: MultiBlocListener(
+        listeners: [
+          BlocListener<AnnouncementActorBloc, AnnouncementActorState>(
+              listener: (context, state) {
+            state.maybeMap(
+                actionFailure: (state) {
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      content: Text(state.announcementFailure.map(
+                          unexpected: (_) => "Unexpected error",
+                          serverError: (_) => "Server error",
+                          networkError: (_) => "No connection",
+                          cancelledByUser: (_) => "Cancelled by user"))));
+                },
+                orElse: () {});
+          }),
+          BlocListener<AnnouncementWatcherBloc, AnnouncementWatcherState>(
+              listener: (context, state) {
+            state.maybeMap(
+                loadFailure: (state) {
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      content: Text(state.announcementFailure.map(
+                          unexpected: (_) => "Unexpected error",
+                          serverError: (_) => "Server error",
+                          networkError: (_) => "No connection",
+                          cancelledByUser: (_) => "Cancelled by user"))));
+                },
+                orElse: () {});
+          }),
         ],
-        child: MultiBlocListener(
-            listeners: [
-              BlocListener<AnnouncementActorBloc, AnnouncementActorState>(
-                  listener: (context, state) {
-                state.maybeMap(
-                    actionFailure: (state) {
-                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                          content: Text(state.announcementFailure.map(
-                              unexpected: (_) => "Unexpected error",
-                              serverError: (_) => "Server error",
-                              networkError: (_) => "No connection",
-                              cancelledByUser: (_) => "Cancelled by user"))));
-                    },
-                    orElse: () {});
-              }),
-              BlocListener<AnnouncementWatcherBloc, AnnouncementWatcherState>(
-                  listener: (context, state) {
-                state.maybeMap(
-                    loadFailure: (state) {
-                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                          content: Text(state.announcementFailure.map(
-                              unexpected: (_) => "Unexpected error",
-                              serverError: (_) => "Server error",
-                              networkError: (_) => "No connection",
-                              cancelledByUser: (_) => "Cancelled by user"))));
-                    },
-                    orElse: () {});
-              }),
-            ],
-            child: Scaffold(
-                appBar: AppBar(
-                  title: const Text("Annoucements"),
-                  leading: IconButton(
-                    onPressed: () => Navigator.pop(context),
-                    icon: const Icon(Icons.chevron_left),
-                    color: Colors.white,
-                  ),
-                ),
-                floatingActionButton: FloatingActionButton(
-                  onPressed: () => Navigator.pushNamed(
-                      context, "/annoucement-form",
-                      arguments: Announcement.initial()),
-                  backgroundColor: Colors.blue,
-                  child: const Icon(Icons.add),
-                ),
-                body: AnnouncementsOverviewBody())));
+        child: Scaffold(
+          appBar: AppBar(
+            title: const Text("Annoucements"),
+            leading: IconButton(
+              onPressed: () => Navigator.pop(context),
+              icon: const Icon(Icons.chevron_left),
+              color: Colors.white,
+            ),
+          ),
+          floatingActionButton: FloatingActionButton(
+              onPressed: () => Navigator.pushNamed(context, "/annoucement-form",
+                  arguments: Announcement.initial()),
+              backgroundColor: Colors.blue,
+              child: const Icon(Icons.add),
+              key: const ValueKey("announcmentFabButton")),
+          body: AnnouncementsOverviewBody(),
+        ),
+      ),
+    );
   }
 }

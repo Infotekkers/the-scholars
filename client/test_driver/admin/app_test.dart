@@ -3,7 +3,7 @@ import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('User Side', () {
+  group('Admin Side', () {
     // Login Page Values
     final loginPageUserNameFinder = find.byValueKey("loginPageUserName");
     final loginPagePasswordFinder = find.byValueKey("loginPagePassword");
@@ -66,6 +66,9 @@ void main() {
 
     final logoutButtonFinder = find.byValueKey("credentialsLogoutButton");
 
+    final newAnnouncementButtonFinder =
+        find.byValueKey("newAnnouncementsButton");
+
 // announcement Page
     final announcementPageTitleFinder =
         find.byValueKey("announcementTitleInput");
@@ -73,6 +76,7 @@ void main() {
         find.byValueKey("announcementPageBodyInput");
     final announcementPageButtonFinder =
         find.byValueKey("announcementPagePostButton");
+    final accouncementFabFinder = find.byValueKey("announcmentFabButton");
     // Announcmenet
     late FlutterDriver driver;
 
@@ -84,8 +88,7 @@ void main() {
       driver.close();
     });
 
-    test("Register User and Login fill out profile and Edit Profile Logout",
-        () async {
+    test("Admin Register Login Create Announcment Logout", () async {
       await driver.waitFor(loginPageLoginButtonFinder);
 
       await driver.scrollUntilVisible(
@@ -96,11 +99,11 @@ void main() {
 
       // Input Username
       await driver.tap(registerPageFullNameFinder);
-      await driver.enterText("User Two");
+      await driver.enterText("User Admin");
 
       // Input Email
       await driver.tap(registerPageEmailFinder);
-      await driver.enterText("usertwo@gmail.com");
+      await driver.enterText("useradmin@gmail.com");
 
       // Scroll
       await driver.scrollUntilVisible(
@@ -112,7 +115,7 @@ void main() {
       await driver.enterText("Testing@123");
 
       // Select Role
-      await driver.tap(registerPageRoleFinder);
+      await driver.tap(registerPageRoleAdminFinder);
 
       // Scroll
       await driver.scrollUntilVisible(
@@ -122,57 +125,21 @@ void main() {
       // Regitser button
       await driver.tap(registerPageRegisterButtonFinder);
 
-      await driver.waitFor(profilePageFullNameFinder);
+      //
+      await driver.waitFor(newAnnouncementButtonFinder);
+      await driver.tap(newAnnouncementButtonFinder);
 
-      // Input full name
-      await driver.tap(profilePageFullNameFinder);
-      await driver.enterText("Integration testing");
+      await driver.waitFor(accouncementFabFinder);
+      await driver.tap(accouncementFabFinder);
 
-      // Input gender
-      await driver.tap(profilePageGenderFinder);
+      await driver.waitFor(announcementPageTitleFinder);
+      await driver.tap(announcementPageTitleFinder);
+      await driver.enterText("Integration Testing");
 
-      // Input Phone Number
-      await driver.tap(profilePagePhoneNumberInput);
-      await driver.enterText("123456789");
+      await driver.tap(announcementPageBodyFinder);
+      await driver.enterText("This is a test for integration testing");
 
-      // Scroll
-      await driver.scrollIntoView(profilePageSaveButton);
-
-      // Save Button
-      await driver.tap(profilePageSaveButton);
-
-      // navigate to edit page
-      await driver.tap(navigatorPageIndexOneFinder);
-
-      // Edit Gender
-      await driver.tap(profileEditPageGenderInputFinder);
-
-      // Edit Location
-      await driver.tap(profileEditPageCountryFinder);
-      await driver.waitFor(find.text("Kenya"));
-      await driver.tap(find.text("Kenya"));
-
-      await driver.scrollUntilVisible(
-          profileEditPageListViewFinder, profileEditPagePhoneCodeFinder,
-          dyScroll: -80);
-
-      // Edit Phone code
-      await driver.tap(profileEditPagePhoneCodeFinder);
-      await driver.waitFor(find.text("+254"));
-      await driver.tap(find.text("+254"));
-
-      // Submit Profile
-      await driver.scrollUntilVisible(
-          profileEditPageListViewFinder, profileEditPageSaveButtonFinder,
-          dyScroll: -100);
-      await driver.tap(profileEditPageSaveButtonFinder);
-
-      // Navigate
-      await driver.tap(navigatorPageIndexThreeFinder);
-
-      // Logout
-      await driver.waitFor(logoutButtonFinder);
-      await driver.tap(logoutButtonFinder);
+      await driver.tap(announcementPageButtonFinder);
     });
   });
 }
