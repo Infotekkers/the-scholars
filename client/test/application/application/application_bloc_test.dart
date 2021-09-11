@@ -25,11 +25,7 @@ void main() {
       "should emit initial again",
       build: () => ApplicationBloc(mockApiApplicationRepository),
       act: (bloc) => bloc.add(const ApplicationEvent.initialEvent()),
-      expect: () {
-        ApplicationState expectedState = ApplicationState.initial();
-        expectedState = expectedState;
-        return [expectedState];
-      },
+      expect: () => const [],
     );
 
     // School Transcript
