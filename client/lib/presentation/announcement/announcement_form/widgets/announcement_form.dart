@@ -47,6 +47,7 @@ class AnnouncementForm extends StatelessWidget {
                             Container(
                               margin: const EdgeInsets.all(5),
                               child: TextFormField(
+                                key: const ValueKey("announcementTitleInput"),
                                 initialValue: announcement.title.value.fold((l) => "", (r) => r),
                                 keyboardType: TextInputType.text,
                                 decoration: const InputDecoration(
@@ -91,6 +92,8 @@ class AnnouncementForm extends StatelessWidget {
                             Container(
                               margin: const EdgeInsets.all(5),
                               child: TextFormField(
+                                key:
+                                    const ValueKey("announcementPageBodyInput"),
                                 initialValue: announcement.body.value.fold((l) => "", (r) => r),
                                 maxLines: 10,
                                 keyboardType: TextInputType.multiline,
@@ -126,6 +129,8 @@ class AnnouncementForm extends StatelessWidget {
                               ),
                             ),
                             ElevatedButton(
+                                key: const ValueKey(
+                                    "announcementPagePostButton"),
                                 onPressed: state.isSaving
                                     ? null
                                     : () {

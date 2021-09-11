@@ -35,6 +35,7 @@ class SignInForm extends StatelessWidget {
           child: Scaffold(
             backgroundColor: Colors.grey[800],
             body: SingleChildScrollView(
+              key: const ValueKey("loginPageView"),
               child: Column(
                 children: <Widget>[
                   Stack(
@@ -86,6 +87,7 @@ class SignInForm extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             TextFormField(
+                              key: const ValueKey("loginPageUserName"),
                               keyboardType: TextInputType.text,
                               decoration: const InputDecoration(
                                 border: OutlineInputBorder(
@@ -116,6 +118,7 @@ class SignInForm extends StatelessWidget {
                             ),
                             const SizedBox(height: 35),
                             TextFormField(
+                              key: const ValueKey("loginPagePassword"),
                               decoration: const InputDecoration(
                                 border: OutlineInputBorder(
                                     borderRadius:
@@ -154,6 +157,7 @@ class SignInForm extends StatelessWidget {
                                 height: 60,
                                 width: MediaQuery.of(context).size.width,
                                 child: ElevatedButton(
+                                    key: const ValueKey("loginPageLoginButton"),
                                     onPressed: state.isSubmitting
                                         ? null
                                         : () {
@@ -205,7 +209,7 @@ class SignInForm extends StatelessWidget {
                                     padding: const EdgeInsets.all(
                                         20) //content padding inside button
                                     ),
-                                key: const ValueKey("signInRegisterButton"),
+                                key: const ValueKey("loginPageRegisterButton"),
                                 onPressed: () {
                                   Navigator.popAndPushNamed(
                                       context, '/register');

@@ -10,7 +10,6 @@ import 'package:client/infrastructure/application/application_dto.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 part 'application_event.dart';
 part 'application_state.dart';

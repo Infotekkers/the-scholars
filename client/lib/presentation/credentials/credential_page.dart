@@ -18,7 +18,9 @@ class CredentialPage extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 30),
       child: BlocConsumer<CredentialsBloc, CredentialState>(
         listener: (context, state) {
-          // TODO: implement listener
+          if (state.isDeleted) {
+            Navigator.popAndPushNamed(context, '/sign-in');
+          }
           state.valueFailureOrSuccess.fold(
             () {},
             (either) {
@@ -163,6 +165,7 @@ class CredentialPage extends StatelessWidget {
                 margin:
                     const EdgeInsets.symmetric(vertical: 60, horizontal: 120),
                 child: MaterialButton(
+                  key: const ValueKey("credentialsLogoutButton"),
                   onPressed: () {
                     getIt<IAuthRepository>().removeCachedUser();
                     getIt<NavigationBloc>().add(
@@ -174,6 +177,22 @@ class CredentialPage extends StatelessWidget {
                   color: Colors.red,
                   child: const Text(
                     "Logout",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+
+              Container(
+                margin:
+                    const EdgeInsets.symmetric(vertical: 0, horizontal: 100),
+                child: MaterialButton(
+                  onPressed: () {
+                    _credentialsBloc
+                        .add(const CredentialsEvent.deleteAccount());
+                  },
+                  color: Colors.red,
+                  child: const Text(
+                    "Delete Account",
                     style: TextStyle(color: Colors.white),
                   ),
                 ),

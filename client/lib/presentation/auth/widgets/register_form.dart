@@ -2,7 +2,6 @@ import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:client/application/auth/auth_bloc.dart';
 import 'package:client/application/auth/register_form/register_form_bloc.dart';
 import 'package:client/domain/auth/value_objects.dart';
-import 'package:client/presentation/core/widgets/flash_message.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -32,6 +31,7 @@ class RegisterForm extends StatelessWidget {
         return Scaffold(
           backgroundColor: Colors.grey[800],
           body: SingleChildScrollView(
+            key: const ValueKey("registerPageView"),
             child: Column(
               children: <Widget>[
                 Stack(
@@ -83,6 +83,7 @@ class RegisterForm extends StatelessWidget {
                       padding: const EdgeInsets.all(20.0),
                       child: Column(children: [
                         TextFormField(
+                          key: const ValueKey("registerPageFullNameInput"),
                           decoration: const InputDecoration(
                             border: OutlineInputBorder(
                                 borderRadius:
@@ -115,6 +116,7 @@ class RegisterForm extends StatelessWidget {
                           height: 35,
                         ),
                         TextFormField(
+                          key: const ValueKey("registerPageEmailInput"),
                           decoration: const InputDecoration(
                             border: OutlineInputBorder(
                                 borderRadius:
@@ -147,6 +149,7 @@ class RegisterForm extends StatelessWidget {
                           height: 35,
                         ),
                         TextFormField(
+                          key: const ValueKey("registerPagePasswordInput"),
                           decoration: const InputDecoration(
                             border: OutlineInputBorder(
                                 borderRadius:
@@ -213,6 +216,8 @@ class RegisterForm extends StatelessWidget {
                               child: ListTile(
                                 title: const Text("Admin"),
                                 leading: Radio(
+                                  key: const ValueKey(
+                                      "registerPageRoleAdminInput"),
                                   fillColor: MaterialStateColor.resolveWith(
                                       (states) =>
                                           Theme.of(context).primaryColor),

@@ -26,6 +26,8 @@ class ApiApplicationRepository implements IApplicationRepository {
   final dbService = DatabaseService.dbInstance;
   // static final String? apiUrl = "http://192.168.0.147:5000";
 
+  // static final String? apiUrl = "http://10.0.2.2:5000";
+
   static final String? apiUrl = dotenv.env["API"];
 
   // Function to create a complete Applciation -- ON Server

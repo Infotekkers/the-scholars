@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:client/domain/auth/value_objects.dart';
 import 'package:client/domain/credentials/credentials_failures.dart';
 import 'package:client/domain/credentials/credentials.dart';
 import 'package:client/domain/credentials/i_credentials_repository.dart';
@@ -74,5 +75,25 @@ class ApiCredentials implements ICredentialsRepository {
     } else {
       return left(const CredentialFailure.serverError());
     }
+  }
+
+  @override
+  Future<Either<CredentialFailure, String>> deleteAccount(
+      {required String emailAddress}) async {
+    final response = await http.delete(
+      Uri.parse("$baseUri/auth/delete"),
+      body: {
+        "email": emailAddress,
+      },
+    ).timeout(
+      const Duration(seconds: 10),
+      onTimeout: () {
+        return http.Response("Server Timeout", 503);
+      },
+    );
+
+    // Filter Result R
+
+    return right("");
   }
 }

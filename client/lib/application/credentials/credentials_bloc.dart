@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:client/application/auth/auth_bloc.dart';
 import 'package:client/domain/auth/i_auth_repository.dart';
 import 'package:client/domain/auth/user.dart';
 import 'package:client/domain/auth/value_objects.dart';
@@ -8,8 +9,7 @@ import 'package:client/domain/core/failures.dart';
 import 'package:client/domain/credentials/credentials.dart';
 import 'package:client/domain/credentials/credentials_failures.dart';
 import 'package:client/domain/credentials/i_credentials_repository.dart';
-import 'package:client/domain/profile/profile.dart';
-import 'package:client/domain/profile/profile_failures.dart';
+
 import 'package:client/injectable.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -83,6 +83,7 @@ class CredentialsBloc extends Bloc<CredentialsEvent, CredentialState> {
         final Option<User> user =
             await getIt<IAuthRepository>().getCachedUser();
 
+        // ignore: prefer_final_locals
         String currentEmail = user.fold(
           () => "",
           (a) => a.emailAddress.value.fold(
@@ -114,8 +115,6 @@ class CredentialsBloc extends Bloc<CredentialsEvent, CredentialState> {
             resetFailureOrSuccess: some(failureOrSuccess),
             showErrorMessages: false,
           );
-
-          print("RESULT OF REPO : $failureOrSuccess");
         } else {
           ValueFailure failureValue = ValueFailure.generalError();
           if (!isCurrentPassswordValid) {
@@ -149,6 +148,7 @@ class CredentialsBloc extends Bloc<CredentialsEvent, CredentialState> {
 
         String currentEmail = user.fold(
           () => "",
+          // ignore: prefer_final_locals
           (a) => a.emailAddress.value.fold(
             (l) => "",
             (r) => r,
@@ -201,6 +201,37 @@ class CredentialsBloc extends Bloc<CredentialsEvent, CredentialState> {
         }
 
         yield state.copyWith();
+      },
+      deleteAccount: (e) async* {
+        yield state.copyWith(
+          isFetching: true,
+        );
+        final Option<User> user =
+            await getIt<IAuthRepository>().getCachedUser();
+
+        String currentEmail = user.fold(
+          () => "",
+          // ignore: prefer_final_locals
+          (a) => a.emailAddress.value.fold(
+            (l) => "",
+            (r) => r,
+          ),
+        );
+        // Clear Cache
+        final Either<CredentialFailure, String> applicationFailureOrSuccess =
+            await _iCredentialsRepository.deleteAccount(
+                emailAddress: currentEmail);
+
+        print(applicationFailureOrSuccess);
+
+        // Navigate
+        if (applicationFailureOrSuccess.isRight()) {
+          yield state.copyWith(isDeleted: true);
+          getIt<IAuthRepository>().removeCachedUser();
+          getIt<AuthBloc>().add(const AuthEvent.authCheckRequested());
+        } else {
+          yield state;
+        }
       },
     );
   }
