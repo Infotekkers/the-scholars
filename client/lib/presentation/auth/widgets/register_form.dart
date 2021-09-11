@@ -39,10 +39,10 @@ class RegisterForm extends StatelessWidget {
                 Stack(
                   alignment: Alignment.topCenter,
                   children: <Widget>[
-                    Align(
-                      alignment: Alignment.topLeft,
-                      child: Image.asset("assets/images/icon7.png", width: 200),
-                    ),
+                    // Align(
+                    //   alignment: Alignment.topLeft,
+                    //   child: Image.asset("assets/images/icon7.png", width: 200),
+                    // ),
                     Align(
                       alignment: Alignment.topLeft,
                       child: Padding(
@@ -50,7 +50,11 @@ class RegisterForm extends StatelessWidget {
                         child: IconButton(
                             icon: const Icon(Icons.arrow_back,
                                 color: Colors.white),
-                            onPressed: () {}),
+                             key: const ValueKey("registerPageLoginButton"),
+                                onPressed: () {
+                                  Navigator.popAndPushNamed(
+                                      context, '/sign-in');
+                                },),
                       ),
                     ),
                     Align(
@@ -89,7 +93,7 @@ class RegisterForm extends StatelessWidget {
                                 borderSide:
                                     BorderSide(color: Colors.grey, width: 1)),
                             fillColor: Colors.white,
-                            prefixIcon: Icon(Icons.email),
+                            prefixIcon: Icon(Icons.person),
                             labelText: 'Username',
                             labelStyle: TextStyle(color: Colors.white),
                           ),
@@ -261,27 +265,7 @@ class RegisterForm extends StatelessWidget {
                         ),
 
                         const SizedBox(height: 15),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Expanded(
-                              child: ElevatedButton(
-                                key: const ValueKey("registerPageLoginButton"),
-                                onPressed: () {
-                                  Navigator.popAndPushNamed(
-                                      context, '/sign-in');
-                                },
-                                child: const Text("Log In",
-                                    style: TextStyle(
-                                        color: Colors.grey,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.normal)),
-                              ),
-                              // ],
-                            )
-                          ],
-                        ),
+                        
                       ]),
                     )),
               ],
