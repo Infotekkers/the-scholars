@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:client/domain/auth/auth_failure.dart';
 import 'package:client/domain/auth/i_auth_repository.dart';
 import 'package:client/domain/auth/user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -24,20 +25,21 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   Stream<AuthState> mapEventToState(
     AuthEvent event,
   ) async* {
-    yield* event.map(
-        authCheckRequested: (e) async* {
-          final failureOrSuccess = await iAuthRepository.getCachedUser();
-          yield failureOrSuccess.fold(() => const AuthState.unauthenticated(),
-              (r) {
-            if (e.claimedRole != "") {
-              return e.claimedRole == r.role.getOrCrash()
-                  ? AuthState.authorized(r)
-                  : const AuthState.unauthorized();
-            } else {
-              return AuthState.authorized(r);
-            }
-          });
-        },
-        signedOut: (e) async* {});
+    yield* event.map(authCheckRequested: (e) async* {
+      final failureOrSuccess = await iAuthRepository.getCachedUser();
+      yield failureOrSuccess.fold(() => const AuthState.unauthenticated(), (r) {
+        if (e.claimedRole != "") {
+          return e.claimedRole == r.role.getOrCrash()
+              ? AuthState.authorized(r)
+              : const AuthState.unauthorized();
+        } else {
+          return AuthState.authorized(r);
+        }
+      });
+    }, signedOut: (e) async* {
+      final failureOrSuccess = await iAuthRepository.removeCachedUser();
+      yield failureOrSuccess.fold(
+          (_) => const AuthState.initial(), (_) => const AuthState.initial());
+    });
   }
 }
