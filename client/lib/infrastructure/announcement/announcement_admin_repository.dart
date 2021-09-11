@@ -46,7 +46,8 @@ class AnnoncementRepository implements IAnnouncementRepository {
   @override
   Future<Either<AnnouncementFailure, Announcement>> saveAnnouncement(
       Announcement announcement) async {
-    final AnnouncementDto announcementDto = AnnouncementDto.fromDomain(announcement);
+    final AnnouncementDto announcementDto =
+        AnnouncementDto.fromDomain(announcement);
     final Uri url = Uri.parse("$_baseUrl/announcements");
     final outgoingJson = announcementDto.toJson();
 
@@ -66,8 +67,10 @@ class AnnoncementRepository implements IAnnouncementRepository {
   @override
   Future<Either<AnnouncementFailure, Unit>> deleteAnnouncement(
       Announcement announcement) async {
-    final AnnouncementDto announcementDto = AnnouncementDto.fromDomain(announcement);
-    final Uri url = Uri.parse("$_baseUrl/announcements/${announcementDto.title}");
+    final AnnouncementDto announcementDto =
+        AnnouncementDto.fromDomain(announcement);
+    final Uri url =
+        Uri.parse("$_baseUrl/announcements/${announcementDto.title}");
     final outgoingJson = announcementDto.toJson();
 
     try {

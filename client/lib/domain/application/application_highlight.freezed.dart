@@ -17,10 +17,12 @@ class _$ApplicationHighlightTearOff {
   const _$ApplicationHighlightTearOff();
 
   _ApplicationHighlight call(
-      {required ApplicationId applicationId,
+      {required String date,
+      required ApplicationId applicationId,
       required Name name,
       required AdmissionStatus admissionStatus}) {
     return _ApplicationHighlight(
+      date: date,
       applicationId: applicationId,
       name: name,
       admissionStatus: admissionStatus,
@@ -33,6 +35,7 @@ const $ApplicationHighlight = _$ApplicationHighlightTearOff();
 
 /// @nodoc
 mixin _$ApplicationHighlight {
+  String get date => throw _privateConstructorUsedError;
   ApplicationId get applicationId => throw _privateConstructorUsedError;
   Name get name => throw _privateConstructorUsedError;
   AdmissionStatus get admissionStatus => throw _privateConstructorUsedError;
@@ -48,7 +51,8 @@ abstract class $ApplicationHighlightCopyWith<$Res> {
           $Res Function(ApplicationHighlight) then) =
       _$ApplicationHighlightCopyWithImpl<$Res>;
   $Res call(
-      {ApplicationId applicationId,
+      {String date,
+      ApplicationId applicationId,
       Name name,
       AdmissionStatus admissionStatus});
 }
@@ -64,11 +68,16 @@ class _$ApplicationHighlightCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? date = freezed,
     Object? applicationId = freezed,
     Object? name = freezed,
     Object? admissionStatus = freezed,
   }) {
     return _then(_value.copyWith(
+      date: date == freezed
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as String,
       applicationId: applicationId == freezed
           ? _value.applicationId
           : applicationId // ignore: cast_nullable_to_non_nullable
@@ -93,7 +102,8 @@ abstract class _$ApplicationHighlightCopyWith<$Res>
       __$ApplicationHighlightCopyWithImpl<$Res>;
   @override
   $Res call(
-      {ApplicationId applicationId,
+      {String date,
+      ApplicationId applicationId,
       Name name,
       AdmissionStatus admissionStatus});
 }
@@ -111,11 +121,16 @@ class __$ApplicationHighlightCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? date = freezed,
     Object? applicationId = freezed,
     Object? name = freezed,
     Object? admissionStatus = freezed,
   }) {
     return _then(_ApplicationHighlight(
+      date: date == freezed
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as String,
       applicationId: applicationId == freezed
           ? _value.applicationId
           : applicationId // ignore: cast_nullable_to_non_nullable
@@ -136,10 +151,13 @@ class __$ApplicationHighlightCopyWithImpl<$Res>
 
 class _$_ApplicationHighlight implements _ApplicationHighlight {
   const _$_ApplicationHighlight(
-      {required this.applicationId,
+      {required this.date,
+      required this.applicationId,
       required this.name,
       required this.admissionStatus});
 
+  @override
+  final String date;
   @override
   final ApplicationId applicationId;
   @override
@@ -149,13 +167,15 @@ class _$_ApplicationHighlight implements _ApplicationHighlight {
 
   @override
   String toString() {
-    return 'ApplicationHighlight(applicationId: $applicationId, name: $name, admissionStatus: $admissionStatus)';
+    return 'ApplicationHighlight(date: $date, applicationId: $applicationId, name: $name, admissionStatus: $admissionStatus)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ApplicationHighlight &&
+            (identical(other.date, date) ||
+                const DeepCollectionEquality().equals(other.date, date)) &&
             (identical(other.applicationId, applicationId) ||
                 const DeepCollectionEquality()
                     .equals(other.applicationId, applicationId)) &&
@@ -169,6 +189,7 @@ class _$_ApplicationHighlight implements _ApplicationHighlight {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(date) ^
       const DeepCollectionEquality().hash(applicationId) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(admissionStatus);
@@ -182,10 +203,13 @@ class _$_ApplicationHighlight implements _ApplicationHighlight {
 
 abstract class _ApplicationHighlight implements ApplicationHighlight {
   const factory _ApplicationHighlight(
-      {required ApplicationId applicationId,
+      {required String date,
+      required ApplicationId applicationId,
       required Name name,
       required AdmissionStatus admissionStatus}) = _$_ApplicationHighlight;
 
+  @override
+  String get date => throw _privateConstructorUsedError;
   @override
   ApplicationId get applicationId => throw _privateConstructorUsedError;
   @override

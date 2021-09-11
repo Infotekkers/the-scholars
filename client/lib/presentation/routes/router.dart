@@ -22,7 +22,9 @@ class AppRouter {
     // * COMMON ROUTES
     // * Route - Sign In Page
     "/sign-in": (context) => SignInPage(),
-    "/register": (context) => const RegisterPage(),
+    // * Route - Register Page
+    "/register": (context) => RegisterPage(),
+
 
     // * STUDENT
     // * Route - Home Page

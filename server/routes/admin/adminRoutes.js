@@ -2,8 +2,15 @@
 const { application } = require("express");
 const express = require("express");
 const router = express.Router();
+
+// File System
 const fs = require("fs");
+
+// Path
 const path = require("path");
+
+// PDF pArser
+const pdfParse = require("pdf-parse");
 
 // Import pdf creator
 const pdf = require("pdf-creator-node");
@@ -57,15 +64,16 @@ router.get("/application.:applicationId", async (req, res) => {
 });
 
 router.get("/application/download/:applicationId", async (req, res) => {
-  try {
-    const html = fs.readFileSync(
-      path.resolve(__dirname, "../", "../", "templates/template.html"),
-      "utf8"
-    );
-    const id = req.params.applicationId;
+  console.log("Preparing FILE");
+  const html = fs.readFileSync(
+    path.resolve(__dirname, "../", "../", "templates/template.html"),
+    "utf8"
+  );
+  const id = req.params.applicationId;
 
-    const selectedApplication = await Application.findById(id);
+  const selectedApplication = await Application.findById(id);
 
+  if (selectedApplication != null) {
     let options = {
       format: "A4",
       orientation: "portrait",
@@ -79,15 +87,22 @@ router.get("/application/download/:applicationId", async (req, res) => {
         gender: selectedApplication.gender,
         location: selectedApplication.location,
         phoneNumber: selectedApplication.phoneNumber,
-        schoolTranscript: schoolTranscriptFileName,
-        mainEssay: mainEssayFileName,
+        schoolTranscript: await getContent(
+          selectedApplication.schoolTranscript
+        ),
+        mainEssay: await getContent(selectedApplication.mainEssay),
         extraEssay: selectedApplication.extraEssay,
         proficiencyTest: selectedApplication.proficencyTest,
-        extraCertification: extraCertificationFileName,
-        recommendationLetter: reccomendationLetterFileName,
+        extraCertification: await getContent(
+          selectedApplication.extraCertification
+        ),
+        recommendationLetter: await getContent(
+          selectedApplication.recommendationLetter
+        ),
         departmentSelection: selectedApplication.departmentSelection,
         militaryFamilyStatus: selectedApplication.militaryFamilyStatus,
         universityFamilyStatus: selectedApplication.universityFamilyStatus,
+        date: selectedApplication.date,
       },
     ];
 
@@ -99,7 +114,7 @@ router.get("/application/download/:applicationId", async (req, res) => {
       path: `./output/${selectedApplication["fullName"]}.pdf`,
     };
 
-    pdf
+    await pdf
       .create(document, options)
       .then((res) => {
         console.log(res);
@@ -108,20 +123,17 @@ router.get("/application/download/:applicationId", async (req, res) => {
         console.error(e);
       });
 
-    // const output = await fs.readFileSync(
-    //   path.resolve(
-    //     __dirname,
-    //     "../",
-    //     "../",
-    //     `output/${selectedApplication["fullName"]}.pdf`
-    //   ),
-    //   "utf8"
-    // );
-
-    res.status(200).send("Pdf downloaded!");
-  } catch (e) {
-    handleError(e);
-    res.status(500).send("Error");
+    console.log("SENDING FILE");
+    res.sendFile(
+      path.resolve(
+        __dirname,
+        "../",
+        "../",
+        `output/${selectedApplication["fullName"]}.pdf`
+      )
+    );
+  } else {
+    res.sendStatus(404);
   }
 });
 
@@ -145,106 +157,121 @@ router.put("/admissionStatus/:applicationId", async (req, res) => {
   }
 });
 
+async function getContent(fileName) {
+  let dataBuffer = fs.readFileSync(
+    path.resolve(__dirname, "../", "../", `uploads/${fileName}.pdf`)
+  );
+  await pdfParse(dataBuffer)
+    .then(function (data) {
+      fs.writeFileSync("./test.txt", data.text, () => {
+        console.log("done");
+      }),
+        (content = data.text);
+    })
+    .catch((e) => {});
+
+  var content = fs.readFileSync("./test.txt", "utf8");
+  return content;
+}
 ////////// * ANNOUNCEMENTS
-// Route to get Application highlights
+// Route to get Announcements
 router.get("/announcements", async (req, res) => {
-    try {
-       
-
-        // Get all announcements from DB
-        const allAnnouncements = await Announcement.find();
-
-        console.log(allAnnouncements);
-
+  try {
      
 
-        res.status(200).send(allAnnouncements);
-    } catch (e) {
-        handleError(e);
-        res.status(400).send("Item Not Found");
-    }
+      // Get all announcements from DB
+      const allAnnouncements = await Announcement.find();
+
+      console.log(allAnnouncements);
+
+   
+
+      res.status(200).send(allAnnouncements);
+  } catch (e) {
+      handleError(e);
+      res.status(400).send("Item Not Found");
+  }
 });
 
 router.get("/announcements/:id", async (req, res) => {
-  // Get Data from ID from Param
-  try {
-    const announcementId = req.params.id;
+// Get Data from ID from Param
+try {
+  const announcementId = req.params.id;
 
-    const selectedAnnouncement = await Announcement.findById(announcementId);
+  const selectedAnnouncement = await Announcement.findById(announcementId);
 
-    console.log(selectedAnnouncement);
+  console.log(selectedAnnouncement);
 
-    res.status(200).send(selectedAnnouncement);
-  } catch (e) {
-    res.status(404).send("Item Not Found");
-  }
+  res.status(200).send(selectedAnnouncement);
+} catch (e) {
+  res.status(404).send("Item Not Found");
+}
 });
 
 router.post("/announcements", async (req, res) => {
-  try {
-    // Get Data from body
-    const bodyData = req.body;
+try {
+  // Get Data from body
+  const bodyData = req.body;
 
-    const title = bodyData.title;
-    const body = bodyData.body;
-    const date = bodyData.date;
+  const title = bodyData.title;
+  const body = bodyData.body;
+  const date = bodyData.date;
 
-    const newAnnouncement = new Announcement({
-      title: title,
-      body: body,
-      date: date,
-    });
+  const newAnnouncement = new Announcement({
+    title: title,
+    body: body,
+    date: date,
+  });
 
-    const announcement = await newAnnouncement.save();
-    console.log(announcement);
+  const announcement = await newAnnouncement.save();
+  console.log(announcement);
 
-    res.status(201).send({ announcementId: announcement._id });
-  } catch (e) {
-    console.log(e);
-    res.status(500).send("Sever Error");
-  }
+  res.status(201).send({ announcementId: announcement._id });
+} catch (e) {
+  console.log(e);
+  res.status(500).send("Sever Error");
+}
 });
 
 router.put("/announcements", async (req, res) => {
-  try {
-    // Get Data from body
-    const bodyData = req.body;
+try {
+  // Get Data from body
+  const bodyData = req.body;
 
-    const title = bodyData.title;
-    const body = bodyData.body;
-    const date = bodyData.date;
-    const id = bodyData.id;
+  const title = bodyData.title;
+  const body = bodyData.body;
+  const date = bodyData.date;
+  const id = bodyData.id;
 
-    const updateValue = {
-      title: title,
-      body: body,
-      date: date,
-    };
+  const updateValue = {
+    title: title,
+    body: body,
+    date: date,
+  };
 
-    await Announcement.findByIdAndUpdate(
-      id,
-      updateValue
-    );
+  await Announcement.findByIdAndUpdate(
+    id,
+    updateValue
+  );
 
-    res.status(201).send("Update Complete");
-  } catch (e) {
-    console.log(e);
-    res.status(500).send("Sever Error");
-  }
+  res.status(201).send("Update Complete");
+} catch (e) {
+  console.log(e);
+  res.status(500).send("Sever Error");
+}
 });
 
 router.delete("/announcements/:id", async (req, res) => {
-  try {
-    // Get Data from body
-    const id = req.params.id;
+try {
+  // Get Data from body
+  const id = req.params.id;
 
-    const newAnnouncement = await Announcement.deleteOne({ _id: id });
+  const newAnnouncement = await Announcement.deleteOne({ _id: id });
 
-    res.status(204).send("Delete Complete");
-  } catch (e) {
-    console.log(e);
-    res.status(500).send("Sever Error");
-  }
+  res.status(204).send("Delete Complete");
+} catch (e) {
+  console.log(e);
+  res.status(500).send("Sever Error");
+}
 });
-
 module.exports = router;

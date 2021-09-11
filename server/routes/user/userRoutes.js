@@ -5,6 +5,9 @@ const router = express.Router();
 // Name Generator import
 const { v4: uuidv4 } = require("uuid");
 
+// Date Time parser
+const date = require("date-and-time");
+
 // Make File function
 const makeFile = require("../../helpers/utils");
 
@@ -257,7 +260,10 @@ router.post("/application", async (req, res) => {
       departmentSelection: receivedApplication.departmentSelection,
       militaryFamilyStatus: receivedApplication.militaryFamilyStatus,
       universityFamilyStatus: receivedApplication.universityFamilyStatus,
-      departmentSelection: "Computer Science",
+      departmentSelection: receivedApplication.departmentSelection,
+      date: date
+        .format(new Date(), date.compile("ddd, MMM DD YYYY"))
+        .toString(),
     });
 
     console.log(newApplication);
@@ -276,17 +282,24 @@ router.post("/id/application", async (req, res) => {
   console.log("Launched");
   const applicationIds = await JSON.parse(req.body.applicationIds);
 
+  console.log(applicationIds);
+
   const applicationIdsArray = Array.from(applicationIds);
   const applicationHighlights = [];
 
   for (i = 0; i < applicationIdsArray.length; i++) {
     var currentApplication = await Application.findById(applicationIdsArray[i]);
+    console.log(currentApplication);
     try {
+      console.log("Found");
       applicationHighlights.push({
         name: currentApplication["fullName"],
         admissionStatus: currentApplication["admissionStatus"],
         applicationId: currentApplication.id,
+        date: currentApplication.date,
       });
+
+      console.log(applicationHighlights);
     } catch (e) {
       const applicationIds = await JSON.parse(req.body.applicationIds);
     }
@@ -297,29 +310,39 @@ router.post("/id/application", async (req, res) => {
   res.status(200).send(applicationHighlights);
 });
 
+/**
+ *
+ * CHECK IF A PENDING APPLICATION IS OPEN -- TAKES ARRAY OF APPLICATION IDS
+ */
 router.post("/check", async (req, res) => {
   console.log("Launched");
-  var hasPending = false;
   const applicationIds = await JSON.parse(req.body.applicationIds);
 
   const applicationIdsArray = Array.from(applicationIds);
+  const applications = [];
+
   for (i = 0; i < applicationIdsArray.length; i++) {
     var currentApplication = await Application.findById(applicationIdsArray[i]);
     try {
-      if (currentApplication["admissionStatus"] == "pending") {
-        hasPending = true;
-        break;
+      if (
+        currentApplication != null &&
+        currentApplication["admissionStatus"] == "pending"
+      ) {
+        applications.push({
+          admissionStatus: currentApplication["admissionStatus"],
+        });
       }
     } catch (e) {
-      res.status(500).send();
+      const applicationIds = await JSON.parse(req.body.applicationIds);
     }
   }
 
-  if (hasPending) {
+  if (applications.length > 0) {
     res.status(200).send();
   } else {
-    res.send(404).send();
+    res.status(404).send();
   }
+  res.status(200);
 });
 
 /*********

@@ -25,8 +25,8 @@ class AnnouncementActorBloc
     AnnouncementActorEvent event,
   ) async* {
     yield const AnnouncementActorState.actionInProgress();
-    final possibleFailure = await _iAnnouncementRepository
-        .deleteAnnouncement(event.announcement);
+    final possibleFailure =
+        await _iAnnouncementRepository.deleteAnnouncement(event.announcement);
 
     yield possibleFailure.fold(
       (f) => AnnouncementActorState.actionFailure(f),

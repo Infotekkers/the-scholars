@@ -10,10 +10,12 @@ part 'application_highlight_dto.g.dart';
 abstract class ApplicationHighlightDto with _$ApplicationHighlightDto {
   const ApplicationHighlightDto._();
 
-  const factory ApplicationHighlightDto(
-      {required String applicationId,
-      required String name,
-      required String admissionStatus}) = _ApplicationHighlightDto;
+  const factory ApplicationHighlightDto({
+    required String applicationId,
+    required String name,
+    required String admissionStatus,
+    required String date,
+  }) = _ApplicationHighlightDto;
 
   factory ApplicationHighlightDto.fromDomain(
           ApplicationHighlight applicationHighlight) =>
@@ -27,12 +29,15 @@ abstract class ApplicationHighlightDto with _$ApplicationHighlightDto {
         admissionStatus: applicationHighlight.admissionStatus.isValid()
             ? applicationHighlight.admissionStatus.getOrCrash()
             : "",
+        date: DateTime.now().toString().split("")[0],
       );
 
   ApplicationHighlight toDomain() => ApplicationHighlight(
-      applicationId: ApplicationId(applicationId: applicationId),
-      name: Name(name),
-      admissionStatus: AdmissionStatus(admissionStatusStr: admissionStatus));
+        applicationId: ApplicationId(applicationId: applicationId),
+        name: Name(name),
+        admissionStatus: AdmissionStatus(admissionStatusStr: admissionStatus),
+        date: date,
+      );
 
   factory ApplicationHighlightDto.fromJson(Map<String, dynamic> json) =>
       _$ApplicationHighlightDtoFromJson(json);

@@ -12,6 +12,7 @@ _$_ApplicationHighlightDto _$_$_ApplicationHighlightDtoFromJson(
     applicationId: json['applicationId'] as String,
     name: json['name'] as String,
     admissionStatus: json['admissionStatus'] as String,
+    date: json['date'] as String,
   );
 }
 
@@ -21,4 +22,5 @@ Map<String, dynamic> _$_$_ApplicationHighlightDtoToJson(
       'applicationId': instance.applicationId,
       'name': instance.name,
       'admissionStatus': instance.admissionStatus,
+      'date': instance.date,
     };

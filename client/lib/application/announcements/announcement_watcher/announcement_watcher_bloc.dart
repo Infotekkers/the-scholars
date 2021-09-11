@@ -28,8 +28,7 @@ class AnnouncementWatcherBloc
   ) async* {
     yield* event.map(getAllStarted: (e) async* {
       yield const AnnouncementWatcherState.loadInProgress();
-      final failOrSuccess =
-          await _iAnnouncementRepository.getAnnouncements();
+      final failOrSuccess = await _iAnnouncementRepository.getAnnouncements();
       yield failOrSuccess.fold(
           (l) => AnnouncementWatcherState.loadFailure(l),
           (announcements) =>

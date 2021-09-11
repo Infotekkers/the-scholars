@@ -59,11 +59,8 @@ class RegisterFormBloc extends Bloc<RegisterFormEvent, RegisterFormState> {
           yield state.copyWith(
               isSubmitting: true, authFailureOrSuccess: none());
 
-          User user = User.initial();
-          user = user.copyWith(emailAddress: state.emailAddress);
-          user = user.copyWith(name: state.name);
-          user = user.copyWith(role: state.role);
-
+          final User user = User.initial();
+          
           failureOrSuccess = await authRepository.register(
               user: user.copyWith(
                   emailAddress: state.emailAddress,
@@ -76,6 +73,12 @@ class RegisterFormBloc extends Bloc<RegisterFormEvent, RegisterFormState> {
             isSubmitting: false,
             showErrorMessages: true,
             authFailureOrSuccess: optionOf(failureOrSuccess));
+        
+        if (failureOrSuccess?.isRight() ?? false) {
+          failureOrSuccess!.fold((l) => {}, (r) async {
+            await authRepository.setCachedUser(user: r);
+          });
+        }
       },
     );
   }

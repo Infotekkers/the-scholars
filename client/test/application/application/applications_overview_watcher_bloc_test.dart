@@ -20,14 +20,17 @@ void main() {
   group("Applications Overview Watcher bloc", () {
     final mockApps = [
       ApplicationHighlight(
+          date: DateTime.now().toString().split(" ")[0],
           applicationId: ApplicationId(applicationId: "123"),
           name: Name("Hello Msg"),
           admissionStatus: AdmissionStatus(admissionStatusStr: "pending")),
       ApplicationHighlight(
+          date: DateTime.now().toString().split(" ")[0],
           applicationId: ApplicationId(applicationId: "32"),
           name: Name("Hello Msg"),
           admissionStatus: AdmissionStatus(admissionStatusStr: "accepted")),
       ApplicationHighlight(
+          date: DateTime.now().toString().split(" ")[0],
           applicationId: ApplicationId(applicationId: "213"),
           name: Name("Hello Msg"),
           admissionStatus: AdmissionStatus(admissionStatusStr: "rejected")),

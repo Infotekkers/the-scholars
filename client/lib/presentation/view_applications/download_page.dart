@@ -56,7 +56,9 @@ class DownloadPage extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.symmetric(vertical: 25, horizontal: 80),
                   child: MaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     child: Text("Cancel Download"),
                     color: Colors.red,
                   ),

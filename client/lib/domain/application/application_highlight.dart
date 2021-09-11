@@ -6,6 +6,7 @@ part 'application_highlight.freezed.dart';
 @freezed
 abstract class ApplicationHighlight with _$ApplicationHighlight {
   const factory ApplicationHighlight({
+    required String date,
     required ApplicationId applicationId,
     required Name name,
     required AdmissionStatus admissionStatus,
