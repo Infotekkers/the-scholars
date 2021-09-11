@@ -352,10 +352,10 @@ router.post("/request/reset", async (req, res) => {
  *      200 :
  */
 router.post("/reset/email/:token", async (req, res) => {
-  // Verify Token expiry
-  const token = req.params.token;
-
   try {
+    // Verify Token expiry
+    const token = req.params.token;
+
     // Get Old email
     const decoded = jwt.verify(token, secret_key);
     const email = decoded.data;
@@ -403,8 +403,8 @@ router.post("/reset/email/:token", async (req, res) => {
       }
       res.json({ message: "Incorrect password" });
     }
-  } catch (err) {
-    res.send(err);
+  } catch (e) {
+    res.status(500).send("Please try again later!");
   }
 });
 
@@ -432,7 +432,7 @@ router.patch("/update/email", async (req, res) => {
       res.status(404).send();
     }
   } catch (e) {
-    res.status(500).send();
+    res.status(500).send("Please try again later!");
   }
 });
 
@@ -469,7 +469,7 @@ router.patch("/update/password", async (req, res) => {
     }
   } catch (e) {
     console.log(e);
-    res.status(500).send();
+    res.status(500).send("Please try again later!");
   }
 });
 
@@ -492,14 +492,18 @@ router.patch("/update/password", async (req, res) => {
  *      200 :
  */
 router.delete("/delete", async (req, res) => {
-  const { email } = req.body;
-  const user = await User.deleteOne({ email })
-    .then(() => {
-      res.json("Deleted");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  try {
+    const { email } = req.body;
+    const user = await User.deleteOne({ email })
+      .then(() => {
+        res.json("Deleted");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  } catch (e) {
+    res.status(500).send("Please try again later!");
+  }
 });
 
 module.exports = router;
