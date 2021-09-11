@@ -2,7 +2,6 @@ import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:client/application/auth/auth_bloc.dart';
 import 'package:client/application/auth/register_form/register_form_bloc.dart';
 import 'package:client/domain/auth/value_objects.dart';
-import 'package:client/presentation/core/widgets/flash_message.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
