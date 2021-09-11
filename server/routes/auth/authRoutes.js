@@ -150,9 +150,10 @@ const transporter = nodemailer.createTransport({
  *        description : Returns a generated user token
  */
 router.post("/register", async (req, res) => {
-  console.log("Registering New User");
-  const receivedData = req.body;
   try {
+    console.log("Registering New User");
+    const receivedData = req.body;
+
     const newUser = new User({
       userName: `${receivedData.name}`,
       password: `${receivedData.password}`,
@@ -187,7 +188,8 @@ router.post("/register", async (req, res) => {
     const errorMessage = handleError(err);
 
     // Return error message
-    res.status(400).json({ errors: errorMessage });
+    // res.status(400).json({ errors: errorMessage });
+    res.status(500).send("Please try again later!");
   }
 });
 
@@ -211,10 +213,10 @@ router.post("/register", async (req, res) => {
  *        description : Returns a generated user token
  */
 router.post("/login", async (req, res) => {
-  console.log("Logging in");
-  const { emailAddress, password } = req.body;
-
   try {
+    console.log("Logging in");
+    const { emailAddress, password } = req.body;
+
     const user = await User.login(emailAddress, password);
     if (user) {
       // Get user id
@@ -239,7 +241,8 @@ router.post("/login", async (req, res) => {
     }
     console.log("User Matched");
   } catch (err) {
-    res.status(400).json(err);
+    // res.status(400).json(err);
+    res.status(500).send("Please try again later!");
   }
 });
 
@@ -270,19 +273,28 @@ router.post("/login", async (req, res) => {
  *      200 :
  */
 router.patch("/reset/:changeItem", async (req, res) => {
-  const { changeValue, email } = req.body;
-  if (req.params.changeItem == "role" || req.params.changeItem == "username") {
-    // Create Update item
-    const updateValue = {};
-    updateValue[req.params.changeItem] = changeValue;
+  try {
+    const { changeValue, email } = req.body;
 
-    console.log(updateValue);
+    if (
+      req.params.changeItem == "role" ||
+      req.params.changeItem == "username"
+    ) {
+      // Create Update item
+      const updateValue = {};
+      updateValue[req.params.changeItem] = changeValue;
 
-    const userUpdate = await User.updateOne({ email }, { $set: updateValue });
-    const user = await User.findOne({ email });
-    res.status(200).json(user);
-  } else {
-    res.status(404).json({ message: "Route not found" });
+      console.log(updateValue);
+
+      const userUpdate = await User.updateOne({ email }, { $set: updateValue });
+      const user = await User.findOne({ email });
+      res.status(200).json(user);
+    } else {
+      res.status(404).json({ message: "Route not found" });
+    }
+  } catch (e) {
+    console.log(e);
+    res.status(500).send("Please try again later!");
   }
 });
 
@@ -305,33 +317,37 @@ router.patch("/reset/:changeItem", async (req, res) => {
  *      200 :
  */
 router.post("/request/reset", async (req, res) => {
-  const { email } = req.body;
+  try {
+    const { email } = req.body;
 
-  const resetToken = jwt.sign(
-    {
-      data: email,
-    },
-    secret_key,
-    { expiresIn: 60 * 60 }
-  );
-  const resetUrl = `http://localhost:5000/auth/reset/email/${resetToken}`;
+    const resetToken = jwt.sign(
+      {
+        data: email,
+      },
+      secret_key,
+      { expiresIn: 60 * 60 }
+    );
+    const resetUrl = `http://localhost:5000/auth/reset/email/${resetToken}`;
 
-  var mailOptions = {
-    from: "swifttbookss@gmail.com",
-    to: "thomas2alexmech@gmail.com",
-    subject: "Sending Email using Node.js",
-    text: `${resetUrl}`,
-  };
+    var mailOptions = {
+      from: "swifttbookss@gmail.com",
+      to: "thomas2alexmech@gmail.com",
+      subject: "Sending Email using Node.js",
+      text: `${resetUrl}`,
+    };
 
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      res.status(400).json({ message: "Could not send reset email" });
-      console.log(error);
-    } else {
-      res.status(200).json({ message: "Email Successfully sent" });
-      console.log("Email sent: " + info.response);
-    }
-  });
+    transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        res.status(400).json({ message: "Could not send reset email" });
+        console.log(error);
+      } else {
+        res.status(200).json({ message: "Email Successfully sent" });
+        console.log("Email sent: " + info.response);
+      }
+    });
+  } catch (e) {
+    res.status(500).send("Please try again later!");
+  }
 });
 
 /**
@@ -352,10 +368,10 @@ router.post("/request/reset", async (req, res) => {
  *      200 :
  */
 router.post("/reset/email/:token", async (req, res) => {
-  // Verify Token expiry
-  const token = req.params.token;
-
   try {
+    // Verify Token expiry
+    const token = req.params.token;
+
     // Get Old email
     const decoded = jwt.verify(token, secret_key);
     const email = decoded.data;
@@ -403,8 +419,8 @@ router.post("/reset/email/:token", async (req, res) => {
       }
       res.json({ message: "Incorrect password" });
     }
-  } catch (err) {
-    res.send(err);
+  } catch (e) {
+    res.status(500).send("Please try again later!");
   }
 });
 
@@ -427,14 +443,18 @@ router.post("/reset/email/:token", async (req, res) => {
  *      200 :
  */
 router.delete("/delete", async (req, res) => {
-  const { email } = req.body;
-  const user = await User.deleteOne({ email })
-    .then(() => {
-      res.json("Deleted");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  try {
+    const { email } = req.body;
+    const user = await User.deleteOne({ email })
+      .then(() => {
+        res.json("Deleted");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  } catch (e) {
+    res.status(500).send("Please try again later!");
+  }
 });
 
 module.exports = router;
