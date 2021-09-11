@@ -27,7 +27,7 @@ class ApiAuthRepository implements IAuthRepository {
     final UserDto userDtoOut = UserDto.fromDomain(user);
     final outgoingJson =
         userDtoOut.copyWith(password: password.getOrCrash()).toJson();
-        
+
     try {
       final response = await client!.post(url, body: outgoingJson);
 

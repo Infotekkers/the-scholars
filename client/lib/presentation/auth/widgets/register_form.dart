@@ -259,7 +259,6 @@ class RegisterForm extends StatelessWidget {
                                   ),
                               child: const Text("Register")),
                         ),
-
                         const SizedBox(height: 15),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,

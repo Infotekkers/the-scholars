@@ -314,7 +314,8 @@ class ApiApplicationRepository implements IApplicationRepository {
     // const String downloadUri =
     //     "https://unsplash.com/photos/8pb7Hq539Zw/download?force=true";
 
-    final String downloadUri = "${dotenv.env["API"]}/admin/application/download/613c7b83c3b4db5174bebddb";
+    final String downloadUri =
+        "${dotenv.env["API"]}/admin/application/download/613c7b83c3b4db5174bebddb";
 
     //  Start Download
     try {

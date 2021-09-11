@@ -182,26 +182,26 @@ class SignInForm extends StatelessWidget {
                             height: 15,
                           ),
                           Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Expanded(
-                              child: ElevatedButton(
-                                key: const ValueKey("signInRegisterButton"),
-                                onPressed: () {
-                                  Navigator.popAndPushNamed(
-                                      context, '/register');
-                                },
-                                child: const Text("Sign Up",
-                                    style: TextStyle(
-                                        color: Colors.grey,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.normal)),
-                              ),
-                              // ],
-                            )
-                          ],
-                        )
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Expanded(
+                                child: ElevatedButton(
+                                  key: const ValueKey("signInRegisterButton"),
+                                  onPressed: () {
+                                    Navigator.popAndPushNamed(
+                                        context, '/register');
+                                  },
+                                  child: const Text("Sign Up",
+                                      style: TextStyle(
+                                          color: Colors.grey,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.normal)),
+                                ),
+                                // ],
+                              )
+                            ],
+                          )
                         ],
                       ),
                     )),

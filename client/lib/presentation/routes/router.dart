@@ -25,7 +25,6 @@ class AppRouter {
     // * Route - Register Page
     "/register": (context) => RegisterPage(),
 
-
     // * STUDENT
     // * Route - Home Page
     "/home": (context) => MultiBlocProvider(
