@@ -5,6 +5,9 @@ import 'package:client/presentation/splash/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+// Styling imports
+import 'package:client/presentation/auth/register_page.dart';
+
 class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -34,7 +37,7 @@ class AppWidget extends StatelessWidget {
                   (states) => Theme.of(context).primaryColor),
             )),
         routes: _appRouter.allRoutes,
-        home: SplashPage(),
+        home: RegisterPage(),
       ),
     );
   }
