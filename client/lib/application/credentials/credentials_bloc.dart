@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:client/application/auth/auth_bloc.dart';
 import 'package:client/domain/auth/i_auth_repository.dart';
 import 'package:client/domain/auth/user.dart';
 import 'package:client/domain/auth/value_objects.dart';
@@ -200,6 +201,37 @@ class CredentialsBloc extends Bloc<CredentialsEvent, CredentialState> {
         }
 
         yield state.copyWith();
+      },
+      deleteAccount: (e) async* {
+        yield state.copyWith(
+          isFetching: true,
+        );
+        final Option<User> user =
+            await getIt<IAuthRepository>().getCachedUser();
+
+        String currentEmail = user.fold(
+          () => "",
+          // ignore: prefer_final_locals
+          (a) => a.emailAddress.value.fold(
+            (l) => "",
+            (r) => r,
+          ),
+        );
+        // Clear Cache
+        final Either<CredentialFailure, String> applicationFailureOrSuccess =
+            await _iCredentialsRepository.deleteAccount(
+                emailAddress: currentEmail);
+
+        print(applicationFailureOrSuccess);
+
+        // Navigate
+        if (applicationFailureOrSuccess.isRight()) {
+          yield state.copyWith(isDeleted: true);
+          getIt<IAuthRepository>().removeCachedUser();
+          getIt<AuthBloc>().add(const AuthEvent.authCheckRequested());
+        } else {
+          yield state;
+        }
       },
     );
   }

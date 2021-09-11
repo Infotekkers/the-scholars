@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:client/domain/auth/value_objects.dart';
 import 'package:client/domain/credentials/credentials_failures.dart';
 import 'package:client/domain/credentials/credentials.dart';
 import 'package:client/domain/credentials/i_credentials_repository.dart';
@@ -11,9 +12,9 @@ import 'package:http/http.dart' as http;
 
 @LazySingleton(as: ICredentialsRepository)
 class ApiCredentials implements ICredentialsRepository {
-  // final String baseUri = "http://10.0.2.2:5000";
+  final String baseUri = "http://10.0.2.2:5000";
 
-  static final String baseUri = "${dotenv.env["API"]}";
+  // static final String baseUri = "${dotenv.env["API"]}";
   @override
   Future<Either<CredentialFailure, String>> resetEmail(
       {required CredentialsEmail credentialsEmail}) async {
@@ -74,5 +75,25 @@ class ApiCredentials implements ICredentialsRepository {
     } else {
       return left(const CredentialFailure.serverError());
     }
+  }
+
+  @override
+  Future<Either<CredentialFailure, String>> deleteAccount(
+      {required String emailAddress}) async {
+    final response = await http.delete(
+      Uri.parse("$baseUri/auth/delete"),
+      body: {
+        "email": emailAddress,
+      },
+    ).timeout(
+      const Duration(seconds: 10),
+      onTimeout: () {
+        return http.Response("Server Timeout", 503);
+      },
+    );
+
+    // Filter Result R
+
+    return right("");
   }
 }

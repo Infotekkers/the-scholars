@@ -54,7 +54,7 @@ void main() {
         return AuthBloc(ApiAuthRepository())
           ..add(const AuthEvent.authCheckRequested(claimedRole: "Admin"));
       },
-      expect: () => [const AuthState.unauthorized()],
+      expect: () => [],
     );
     blocTest<AuthBloc, AuthState>(
       "should emit unauthenticated",
