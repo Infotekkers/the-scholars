@@ -12,9 +12,9 @@ import 'package:http/http.dart' as http;
 
 @LazySingleton(as: ICredentialsRepository)
 class ApiCredentials implements ICredentialsRepository {
-  final String baseUri = "http://10.0.2.2:5000";
+  // final String baseUri = "http://10.0.2.2:5000";
 
-  // static final String baseUri = "${dotenv.env["API"]}";
+  static final String baseUri = "${dotenv.env["API"]}";
   @override
   Future<Either<CredentialFailure, String>> resetEmail(
       {required CredentialsEmail credentialsEmail}) async {

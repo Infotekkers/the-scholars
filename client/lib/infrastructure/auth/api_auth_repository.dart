@@ -15,9 +15,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 class ApiAuthRepository implements IAuthRepository {
   // static final String _baseUrl = "http://192.168.0.147:5000/auth";
 
-  static final String _baseUrl = "http://10.0.2.2:5000/auth";
+  // static final String _baseUrl = "http://10.0.2.2:5000/auth";
 
-  // static final String _baseUrl = "${dotenv.env["API"]}/auth";
+  static final String _baseUrl = "${dotenv.env["API"]}/auth";
   http.Client? client = http.Client();
 
   ApiAuthRepository();
