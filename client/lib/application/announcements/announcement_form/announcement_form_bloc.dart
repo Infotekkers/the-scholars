@@ -33,6 +33,7 @@ class AnnouncementFormBloc
         yield e.initialAnnOption.fold(
             () => state,
             (initialAnn) => state.copyWith(
+                  id: initialAnn.id,
                   title: initialAnn.title,
                   body: initialAnn.body,
                   isEditing: true,
@@ -61,6 +62,7 @@ class AnnouncementFormBloc
           final Announcement announcement = Announcement.initial();
           failureOrSuccess = await _iAnnouncementRepository
               .saveAnnouncement(announcement.copyWith(
+            id: state.id,
             title: state.title,
             body: state.body,
             date: dateNow,

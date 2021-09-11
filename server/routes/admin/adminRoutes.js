@@ -180,10 +180,20 @@ router.get("/announcements", async (req, res) => {
   try {
     // Get all announcements from DB
     const allAnnouncements = await Announcement.find();
+    
+    let response = [];
 
-    console.log(allAnnouncements);
+    for (const announcementDB of allAnnouncements) {
+      let announcement = {
+        id: `${announcementDB._id}`,
+        title: announcementDB.title,
+        body: announcementDB.body,
+        date: announcementDB.date
+      };
+      response.push(announcement);
+    }
 
-    res.status(200).send(allAnnouncements);
+    res.status(200).send(response);
   } catch (e) {
     handleError(e);
     res.status(400).send("Item Not Found");
@@ -221,7 +231,6 @@ router.post("/announcements", async (req, res) => {
     });
 
     const announcement = await newAnnouncement.save();
-    console.log(announcement);
 
     res.status(201).send({ announcementId: announcement._id });
   } catch (e) {
@@ -238,7 +247,6 @@ router.put("/announcements", async (req, res) => {
     const title = bodyData.title;
     const body = bodyData.body;
     const date = bodyData.date;
-    const id = bodyData.id;
 
     const updateValue = {
       title: title,
@@ -246,9 +254,18 @@ router.put("/announcements", async (req, res) => {
       date: date,
     };
 
-    await Announcement.findByIdAndUpdate(id, updateValue);
+    let id;
+    console.log(bodyData.id);
+    if (bodyData.id != "") {
+      id = bodyData.id;
+      await Announcement.findByIdAndUpdate(id, updateValue);
+    } else {
+      const newAnnouncement = new Announcement(updateValue);
+      id = newAnnouncement._id;
+      await newAnnouncement.save();
+    }
 
-    res.status(201).send("Update Complete");
+    res.status(201).send({id:`${id}`});
   } catch (e) {
     console.log(e);
     res.status(500).send("Sever Error");

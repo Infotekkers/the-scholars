@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:client/domain/announcement/announcement_failure.dart';
 import 'package:client/domain/announcement/announcement.dart';
 import 'package:client/domain/announcement/i_admin_announcement_repository.dart';
+import 'package:client/domain/announcement/value_objects.dart';
+import 'package:client/domain/core/failures.dart';
 import 'package:client/infrastructure/announcement/announcement_dto.dart';
 
 import 'package:dartz/dartz.dart';
@@ -52,12 +54,14 @@ class AnnoncementRepository implements IAnnouncementRepository {
         AnnouncementDto.fromDomain(announcement);
     final Uri url = Uri.parse("$_baseUrl/announcements");
     final outgoingJson = announcementDto.toJson();
+    print(announcement);
 
     try {
       final response = await client!.put(url, body: outgoingJson);
 
       if (response.statusCode == 201) {
-        return right(announcement);
+        final idMap = jsonDecode(response.body) as Map;
+        return right(announcement.copyWith(id: AnnouncementId(idMap["id"] as String)));
       } else {
         return left(const AnnouncementFailure.serverError());
       }
@@ -72,7 +76,7 @@ class AnnoncementRepository implements IAnnouncementRepository {
     final AnnouncementDto announcementDto =
         AnnouncementDto.fromDomain(announcement);
     final Uri url =
-        Uri.parse("$_baseUrl/announcements/${announcementDto.title}");
+        Uri.parse("$_baseUrl/announcements/${announcementDto.id}");
     final outgoingJson = announcementDto.toJson();
 
     try {
