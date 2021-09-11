@@ -97,7 +97,7 @@ class SignInForm extends StatelessWidget {
                         TextFormField(
                           keyboardType: TextInputType.text,
                           decoration: const InputDecoration(
-                            enabledBorder: OutlineInputBorder(
+                            border: OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(20.0)),
                               borderSide: BorderSide(
                                 color: Colors.grey, width: 1
@@ -124,7 +124,7 @@ class SignInForm extends StatelessWidget {
                        const SizedBox(height: 35),
                         TextFormField(
                           decoration: const InputDecoration(
-                            enabledBorder: OutlineInputBorder(
+                            border: OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(20.0)),
                               borderSide: BorderSide(
                                 color: Colors.grey, width: 1,)),
