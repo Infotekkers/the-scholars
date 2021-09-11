@@ -12,6 +12,7 @@ const adminRoutes = require("./routes/admin/adminRoutes");
 // Creating express instance
 const app = express();
 
+app.use(express.static(__dirname + "/templates/assets/img"));
 // Body parser middleware
 app.use(express.json());
 app.use(

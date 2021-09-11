@@ -367,6 +367,8 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
       downloadComplete: (e) async* {
         yield state.copyWith(
           isDownloadComplete: true,
+          recievedAmount: 5,
+          totalAmount: 5,
         );
       },
       progressDownload: (e) async* {
@@ -379,6 +381,8 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
       startDownload: (e) async* {
         yield state.copyWith(
           isPreparingDownload: true,
+          recievedAmount: 0,
+          totalAmount: 1,
         );
         _iApplicationRepository.downloadApplicationFile(
             applicationId: e.applicationId);

@@ -29,7 +29,7 @@ class DownloadProgressBar extends StatelessWidget {
           Align(
             alignment: Alignment.centerRight,
             child: Text(
-              "${progressAmount + 1}%",
+              "${progressAmount}%",
               style: const TextStyle(color: Colors.white, fontSize: 12),
             ),
           )

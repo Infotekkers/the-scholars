@@ -5,6 +5,7 @@ import 'package:client/injectable.dart';
 import 'package:client/presentation/application/first_page.dart';
 import 'package:client/presentation/application/second_page.dart';
 import 'package:client/presentation/auth/register_page.dart';
+import 'package:client/presentation/splash/splash_page.dart';
 
 import 'package:client/presentation/view_applications/download_page.dart';
 
@@ -20,6 +21,7 @@ import 'package:path/path.dart';
 class AppRouter {
   Map<String, Widget Function(BuildContext)> allRoutes = {
     // * COMMON ROUTES
+    "/splash": (context) => SplashPage(),
     // * Route - Sign In Page
     "/sign-in": (context) => SignInPage(),
     // * Route - Register Page

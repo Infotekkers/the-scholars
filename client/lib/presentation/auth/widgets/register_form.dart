@@ -26,8 +26,6 @@ class RegisterForm extends StatelessWidget {
                 }, (r) {
                   BlocProvider.of<AuthBloc>(context)
                       .add(const AuthEvent.authCheckRequested());
-                  getWrappedFlashMessage(
-                      context, "Account has been created.Login");
                 }));
       },
       builder: (context, state) {

@@ -68,7 +68,6 @@ const Application = require("../../models/Application");
  *      200 :
  */
 router.post("/document", async (req, res) => {
-  console.log("Launched");
   // get document form body
   const documentContent = req.body.documentContent;
   const documentType = req.body.documentType;
@@ -223,7 +222,6 @@ router.get("/admission-status", async (req, res) => {
 });
 
 router.post("/application", async (req, res) => {
-  console.log("Launched");
   try {
     const receivedApplication = await JSON.parse(req.body.application);
 
@@ -266,8 +264,6 @@ router.post("/application", async (req, res) => {
         .toString(),
     });
 
-    console.log(newApplication);
-
     const application = await newApplication.save();
 
     const applicationId = await application._id;
@@ -282,30 +278,22 @@ router.post("/id/application", async (req, res) => {
   console.log("Launched");
   const applicationIds = await JSON.parse(req.body.applicationIds);
 
-  console.log(applicationIds);
-
   const applicationIdsArray = Array.from(applicationIds);
   const applicationHighlights = [];
 
   for (i = 0; i < applicationIdsArray.length; i++) {
     var currentApplication = await Application.findById(applicationIdsArray[i]);
-    console.log(currentApplication);
     try {
-      console.log("Found");
       applicationHighlights.push({
         name: currentApplication["fullName"],
         admissionStatus: currentApplication["admissionStatus"],
         applicationId: currentApplication.id,
         date: currentApplication.date,
       });
-
-      console.log(applicationHighlights);
     } catch (e) {
       const applicationIds = await JSON.parse(req.body.applicationIds);
     }
   }
-
-  console.log(applicationHighlights);
 
   res.status(200).send(applicationHighlights);
 });
@@ -318,11 +306,13 @@ router.post("/check", async (req, res) => {
   console.log("Launched");
   const applicationIds = await JSON.parse(req.body.applicationIds);
 
-  const applicationIdsArray = Array.from(applicationIds);
+  const applicationIdsArray = Array.from(applicationIds).reverse();
+
   const applications = [];
 
   for (i = 0; i < applicationIdsArray.length; i++) {
     var currentApplication = await Application.findById(applicationIdsArray[i]);
+    console.log(`Check for ${currentApplication}`);
     try {
       if (
         currentApplication != null &&
@@ -337,6 +327,8 @@ router.post("/check", async (req, res) => {
     }
   }
 
+  console.log(applications);
+
   if (applications.length > 0) {
     res.status(200).send();
   } else {
@@ -349,7 +341,6 @@ router.post("/check", async (req, res) => {
  * Test
  */
 router.get("/file/test", (req, res) => {
-  console.log("Launched Down");
   (res.shouldKeepAlive = true),
     res
       .status(200)

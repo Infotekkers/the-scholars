@@ -18,6 +18,15 @@ class DownloadPage extends StatelessWidget {
             margin: EdgeInsets.symmetric(vertical: 60, horizontal: 2),
             child: ListView(
               children: [
+                Container(
+                  margin: const EdgeInsets.fromLTRB(0, 0, 0, 20),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Icon(Icons.close),
+                  ),
+                ),
                 // Intro
                 const Text(
                   "Downloading Your Application",
