@@ -21,7 +21,7 @@
             <h3>{{this.fullName}}</h3>
 
             <label for="">Phone number</label>
-            <h3>+251 939507783</h3>
+            <h3>{{this.phoneNumber}}</h3>
 
             <label for="">Email</label>
             <h3>dagimbarok@gmail.com</h3>
@@ -31,7 +31,7 @@
 
             <label for="">Residence</label>
             <div class="basic-info__location">
-              <h3>Addis Ababa, Ethiopia</h3>
+              <h3>{{this.location}}</h3>
             </div>
           </div>
           <div class="basic-info__education">
@@ -46,7 +46,9 @@
 
       <section id="application-info">
         <label class="large-label" for="">Transcript</label>
-        <div class="transcript"></div>
+        <div class="transcript">
+          {{this.mainEssay}}
+        </div>
 
         <label class="large-label" for="">Essays</label>
         <div class="essay">

@@ -5,8 +5,9 @@ const router = express.Router();
 const fs = require("fs");
 const path = require("path");
 
-// Import pdf creator
-const pdf = require("pdf-creator-node");
+// Import pdf creator and pdf-parser
+const pdf_creator = require("pdf-creator-node");
+const pdf_parser = require("pdf-parse");
 
 // Import error handler
 const handleError = require("../../helpers/errorHandler");
@@ -76,17 +77,31 @@ router.get("/application/download/:applicationId", async (req, res) => {
         gender: selectedApplication.gender,
         location: selectedApplication.location,
         phoneNumber: selectedApplication.phoneNumber,
-        schoolTranscript: schoolTranscriptFileName,
-        mainEssay: mainEssayFileName,
+        schoolTranscript: selectedApplication.schoolTranscriptFileName,
+        mainEssay: selectedApplication.mainEssay,
         extraEssay: selectedApplication.extraEssay,
         proficiencyTest: selectedApplication.proficencyTest,
-        extraCertification: extraCertificationFileName,
-        recommendationLetter: reccomendationLetterFileName,
+        extraCertification: selectedApplication.extraCertificationFileName,
+        recommendationLetter: selectedApplication.reccomendationLetterFileName,
         departmentSelection: selectedApplication.departmentSelection,
         militaryFamilyStatus: selectedApplication.militaryFamilyStatus,
         universityFamilyStatus: selectedApplication.universityFamilyStatus,
       },
     ];
+
+    let essayFile = selectedApplication.mainEssay;
+
+    let dataBuffer = fs.readFileSync(
+      path.resolve(__dirname, "../", "../", `uploads/${essayFile}.pdf`)
+    );
+
+    pdf_parser(dataBuffer)
+      .then(function (data) {
+        console.log(data.text);
+      })
+      .catch((e) => {
+        console.error(e);
+      });
 
     let document = {
       html: html,
@@ -96,7 +111,7 @@ router.get("/application/download/:applicationId", async (req, res) => {
       path: `./output/${selectedApplication["fullName"]}.pdf`,
     };
 
-    pdf
+    pdf_creator
       .create(document, options)
       .then((res) => {
         console.log(res);
@@ -104,16 +119,6 @@ router.get("/application/download/:applicationId", async (req, res) => {
       .catch((e) => {
         console.error(e);
       });
-
-    // const output = await fs.readFileSync(
-    //   path.resolve(
-    //     __dirname,
-    //     "../",
-    //     "../",
-    //     `output/${selectedApplication["fullName"]}.pdf`
-    //   ),
-    //   "utf8"
-    // );
 
     res.status(200).send("Pdf downloaded!");
   } catch (e) {

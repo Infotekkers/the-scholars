@@ -138,7 +138,7 @@ router.post("/extra-curricular", async (req, res) => {
 
   try {
     await Application.findByIdAndUpdate(applicationId, {
-      extracurricularActivities: inputExtraCurricular,
+      $set: { extracurricularActivities: inputExtraCurricular },
     });
 
     res.status(200).send("Extra-curricular information recorded");
