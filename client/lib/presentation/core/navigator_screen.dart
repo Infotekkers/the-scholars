@@ -58,9 +58,6 @@ class NavigatorPage extends StatelessWidget {
                 );
               } else if (state.pageIndexNumber == 2) {
                 return AnnouncementsUserPage();
-              }
-              else {
-                return const ThirdApplicationPage();
               } else {
                 return BlocProvider.value(
                   value: getIt<CredentialsBloc>(),
