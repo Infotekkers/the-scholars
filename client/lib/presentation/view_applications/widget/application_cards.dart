@@ -27,8 +27,8 @@ class ApplicationCards extends StatelessWidget {
             child: ListTile(
               title: Text(currentApplicationHighlight.name),
               subtitle: Text(
-                currentApplicationHighlight.applicationId,
-                style: const TextStyle(fontSize: 8),
+                currentApplicationHighlight.date,
+                style: const TextStyle(fontSize: 12),
               ),
               trailing: currentApplicationHighlight.admissionStatus
                           .toString() ==

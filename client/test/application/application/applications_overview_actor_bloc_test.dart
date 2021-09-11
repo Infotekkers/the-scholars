@@ -19,6 +19,7 @@ void main() {
 
   group("Applications Overview Actor bloc", () {
     final ApplicationHighlight applicationHighlight = ApplicationHighlight(
+        date: DateTime.now().toString().split(" ")[0],
         applicationId: ApplicationId(applicationId: "3"),
         name: Name("Depressed Clown"),
         admissionStatus: AdmissionStatus(admissionStatusStr: "pending"));
