@@ -21,8 +21,12 @@ class _$AnnouncementDtoTearOff {
   const _$AnnouncementDtoTearOff();
 
   _AnnouncementDto call(
-      {required String title, required String body, required String date}) {
+      {required String id,
+      required String title,
+      required String body,
+      required String date}) {
     return _AnnouncementDto(
+      id: id,
       title: title,
       body: body,
       date: date,
@@ -39,6 +43,7 @@ const $AnnouncementDto = _$AnnouncementDtoTearOff();
 
 /// @nodoc
 mixin _$AnnouncementDto {
+  String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get body => throw _privateConstructorUsedError;
   String get date => throw _privateConstructorUsedError;
@@ -54,7 +59,7 @@ abstract class $AnnouncementDtoCopyWith<$Res> {
   factory $AnnouncementDtoCopyWith(
           AnnouncementDto value, $Res Function(AnnouncementDto) then) =
       _$AnnouncementDtoCopyWithImpl<$Res>;
-  $Res call({String title, String body, String date});
+  $Res call({String id, String title, String body, String date});
 }
 
 /// @nodoc
@@ -68,11 +73,16 @@ class _$AnnouncementDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? title = freezed,
     Object? body = freezed,
     Object? date = freezed,
   }) {
     return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -96,7 +106,7 @@ abstract class _$AnnouncementDtoCopyWith<$Res>
           _AnnouncementDto value, $Res Function(_AnnouncementDto) then) =
       __$AnnouncementDtoCopyWithImpl<$Res>;
   @override
-  $Res call({String title, String body, String date});
+  $Res call({String id, String title, String body, String date});
 }
 
 /// @nodoc
@@ -112,11 +122,16 @@ class __$AnnouncementDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? title = freezed,
     Object? body = freezed,
     Object? date = freezed,
   }) {
     return _then(_AnnouncementDto(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -137,12 +152,17 @@ class __$AnnouncementDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_AnnouncementDto extends _AnnouncementDto {
   const _$_AnnouncementDto(
-      {required this.title, required this.body, required this.date})
+      {required this.id,
+      required this.title,
+      required this.body,
+      required this.date})
       : super._();
 
   factory _$_AnnouncementDto.fromJson(Map<String, dynamic> json) =>
       _$_$_AnnouncementDtoFromJson(json);
 
+  @override
+  final String id;
   @override
   final String title;
   @override
@@ -152,13 +172,15 @@ class _$_AnnouncementDto extends _AnnouncementDto {
 
   @override
   String toString() {
-    return 'AnnouncementDto(title: $title, body: $body, date: $date)';
+    return 'AnnouncementDto(id: $id, title: $title, body: $body, date: $date)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AnnouncementDto &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.title, title) ||
                 const DeepCollectionEquality().equals(other.title, title)) &&
             (identical(other.body, body) ||
@@ -170,6 +192,7 @@ class _$_AnnouncementDto extends _AnnouncementDto {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(body) ^
       const DeepCollectionEquality().hash(date);
@@ -187,7 +210,8 @@ class _$_AnnouncementDto extends _AnnouncementDto {
 
 abstract class _AnnouncementDto extends AnnouncementDto {
   const factory _AnnouncementDto(
-      {required String title,
+      {required String id,
+      required String title,
       required String body,
       required String date}) = _$_AnnouncementDto;
   const _AnnouncementDto._() : super._();
@@ -195,6 +219,8 @@ abstract class _AnnouncementDto extends AnnouncementDto {
   factory _AnnouncementDto.fromJson(Map<String, dynamic> json) =
       _$_AnnouncementDto.fromJson;
 
+  @override
+  String get id => throw _privateConstructorUsedError;
   @override
   String get title => throw _privateConstructorUsedError;
   @override

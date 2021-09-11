@@ -576,7 +576,8 @@ class _$AnnouncementFormStateTearOff {
   const _$AnnouncementFormStateTearOff();
 
   _AnnouncementFormState call(
-      {required AnnouncementTitle title,
+      {required AnnouncementId id,
+      required AnnouncementTitle title,
       required AnnouncementBody body,
       required AnnouncementDate date,
       required bool showErrorMessages,
@@ -585,6 +586,7 @@ class _$AnnouncementFormStateTearOff {
       required Option<Either<AnnouncementFailure, Announcement>>
           saveFailureOrSuccess}) {
     return _AnnouncementFormState(
+      id: id,
       title: title,
       body: body,
       date: date,
@@ -601,6 +603,7 @@ const $AnnouncementFormState = _$AnnouncementFormStateTearOff();
 
 /// @nodoc
 mixin _$AnnouncementFormState {
+  AnnouncementId get id => throw _privateConstructorUsedError;
   AnnouncementTitle get title => throw _privateConstructorUsedError;
   AnnouncementBody get body => throw _privateConstructorUsedError;
   AnnouncementDate get date => throw _privateConstructorUsedError;
@@ -621,7 +624,8 @@ abstract class $AnnouncementFormStateCopyWith<$Res> {
           $Res Function(AnnouncementFormState) then) =
       _$AnnouncementFormStateCopyWithImpl<$Res>;
   $Res call(
-      {AnnouncementTitle title,
+      {AnnouncementId id,
+      AnnouncementTitle title,
       AnnouncementBody body,
       AnnouncementDate date,
       bool showErrorMessages,
@@ -641,6 +645,7 @@ class _$AnnouncementFormStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? title = freezed,
     Object? body = freezed,
     Object? date = freezed,
@@ -650,6 +655,10 @@ class _$AnnouncementFormStateCopyWithImpl<$Res>
     Object? saveFailureOrSuccess = freezed,
   }) {
     return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as AnnouncementId,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -690,7 +699,8 @@ abstract class _$AnnouncementFormStateCopyWith<$Res>
       __$AnnouncementFormStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {AnnouncementTitle title,
+      {AnnouncementId id,
+      AnnouncementTitle title,
       AnnouncementBody body,
       AnnouncementDate date,
       bool showErrorMessages,
@@ -712,6 +722,7 @@ class __$AnnouncementFormStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? title = freezed,
     Object? body = freezed,
     Object? date = freezed,
@@ -721,6 +732,10 @@ class __$AnnouncementFormStateCopyWithImpl<$Res>
     Object? saveFailureOrSuccess = freezed,
   }) {
     return _then(_AnnouncementFormState(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as AnnouncementId,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -757,7 +772,8 @@ class __$AnnouncementFormStateCopyWithImpl<$Res>
 
 class _$_AnnouncementFormState implements _AnnouncementFormState {
   const _$_AnnouncementFormState(
-      {required this.title,
+      {required this.id,
+      required this.title,
       required this.body,
       required this.date,
       required this.showErrorMessages,
@@ -765,6 +781,8 @@ class _$_AnnouncementFormState implements _AnnouncementFormState {
       required this.isEditing,
       required this.saveFailureOrSuccess});
 
+  @override
+  final AnnouncementId id;
   @override
   final AnnouncementTitle title;
   @override
@@ -782,13 +800,15 @@ class _$_AnnouncementFormState implements _AnnouncementFormState {
 
   @override
   String toString() {
-    return 'AnnouncementFormState(title: $title, body: $body, date: $date, showErrorMessages: $showErrorMessages, isSaving: $isSaving, isEditing: $isEditing, saveFailureOrSuccess: $saveFailureOrSuccess)';
+    return 'AnnouncementFormState(id: $id, title: $title, body: $body, date: $date, showErrorMessages: $showErrorMessages, isSaving: $isSaving, isEditing: $isEditing, saveFailureOrSuccess: $saveFailureOrSuccess)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AnnouncementFormState &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.title, title) ||
                 const DeepCollectionEquality().equals(other.title, title)) &&
             (identical(other.body, body) ||
@@ -812,6 +832,7 @@ class _$_AnnouncementFormState implements _AnnouncementFormState {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(body) ^
       const DeepCollectionEquality().hash(date) ^
@@ -829,7 +850,8 @@ class _$_AnnouncementFormState implements _AnnouncementFormState {
 
 abstract class _AnnouncementFormState implements AnnouncementFormState {
   const factory _AnnouncementFormState(
-      {required AnnouncementTitle title,
+      {required AnnouncementId id,
+      required AnnouncementTitle title,
       required AnnouncementBody body,
       required AnnouncementDate date,
       required bool showErrorMessages,
@@ -838,6 +860,8 @@ abstract class _AnnouncementFormState implements AnnouncementFormState {
       required Option<Either<AnnouncementFailure, Announcement>>
           saveFailureOrSuccess}) = _$_AnnouncementFormState;
 
+  @override
+  AnnouncementId get id => throw _privateConstructorUsedError;
   @override
   AnnouncementTitle get title => throw _privateConstructorUsedError;
   @override

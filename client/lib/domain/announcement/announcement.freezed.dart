@@ -17,10 +17,12 @@ class _$AnnouncementTearOff {
   const _$AnnouncementTearOff();
 
   _Announcement call(
-      {required AnnouncementTitle title,
+      {required AnnouncementId id,
+      required AnnouncementTitle title,
       required AnnouncementBody body,
       required AnnouncementDate date}) {
     return _Announcement(
+      id: id,
       title: title,
       body: body,
       date: date,
@@ -33,6 +35,7 @@ const $Announcement = _$AnnouncementTearOff();
 
 /// @nodoc
 mixin _$Announcement {
+  AnnouncementId get id => throw _privateConstructorUsedError;
   AnnouncementTitle get title => throw _privateConstructorUsedError;
   AnnouncementBody get body => throw _privateConstructorUsedError;
   AnnouncementDate get date => throw _privateConstructorUsedError;
@@ -48,7 +51,10 @@ abstract class $AnnouncementCopyWith<$Res> {
           Announcement value, $Res Function(Announcement) then) =
       _$AnnouncementCopyWithImpl<$Res>;
   $Res call(
-      {AnnouncementTitle title, AnnouncementBody body, AnnouncementDate date});
+      {AnnouncementId id,
+      AnnouncementTitle title,
+      AnnouncementBody body,
+      AnnouncementDate date});
 }
 
 /// @nodoc
@@ -61,11 +67,16 @@ class _$AnnouncementCopyWithImpl<$Res> implements $AnnouncementCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? title = freezed,
     Object? body = freezed,
     Object? date = freezed,
   }) {
     return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as AnnouncementId,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -90,7 +101,10 @@ abstract class _$AnnouncementCopyWith<$Res>
       __$AnnouncementCopyWithImpl<$Res>;
   @override
   $Res call(
-      {AnnouncementTitle title, AnnouncementBody body, AnnouncementDate date});
+      {AnnouncementId id,
+      AnnouncementTitle title,
+      AnnouncementBody body,
+      AnnouncementDate date});
 }
 
 /// @nodoc
@@ -105,11 +119,16 @@ class __$AnnouncementCopyWithImpl<$Res> extends _$AnnouncementCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? title = freezed,
     Object? body = freezed,
     Object? date = freezed,
   }) {
     return _then(_Announcement(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as AnnouncementId,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -130,8 +149,13 @@ class __$AnnouncementCopyWithImpl<$Res> extends _$AnnouncementCopyWithImpl<$Res>
 
 class _$_Announcement implements _Announcement {
   const _$_Announcement(
-      {required this.title, required this.body, required this.date});
+      {required this.id,
+      required this.title,
+      required this.body,
+      required this.date});
 
+  @override
+  final AnnouncementId id;
   @override
   final AnnouncementTitle title;
   @override
@@ -141,13 +165,15 @@ class _$_Announcement implements _Announcement {
 
   @override
   String toString() {
-    return 'Announcement(title: $title, body: $body, date: $date)';
+    return 'Announcement(id: $id, title: $title, body: $body, date: $date)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Announcement &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.title, title) ||
                 const DeepCollectionEquality().equals(other.title, title)) &&
             (identical(other.body, body) ||
@@ -159,6 +185,7 @@ class _$_Announcement implements _Announcement {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(body) ^
       const DeepCollectionEquality().hash(date);
@@ -171,10 +198,13 @@ class _$_Announcement implements _Announcement {
 
 abstract class _Announcement implements Announcement {
   const factory _Announcement(
-      {required AnnouncementTitle title,
+      {required AnnouncementId id,
+      required AnnouncementTitle title,
       required AnnouncementBody body,
       required AnnouncementDate date}) = _$_Announcement;
 
+  @override
+  AnnouncementId get id => throw _privateConstructorUsedError;
   @override
   AnnouncementTitle get title => throw _privateConstructorUsedError;
   @override
