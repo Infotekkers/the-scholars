@@ -15,13 +15,14 @@ class ApplicationsOverviewTab extends StatelessWidget {
           appBar: AppBar(
             actions: [
               IconButton(
+                key: const ValueKey("newAnnouncementsButton"),
                 onPressed: () =>
                     Navigator.pushNamed(context, "/annoucements-overview"),
                 icon: const Icon(Icons.announcement),
                 tooltip: "Announcements",
                 color: Colors.white,
               ),
-              const SizedBox(width:30),
+              const SizedBox(width: 30),
             ],
             bottom: TabBar(
               physics: const NeverScrollableScrollPhysics(),
