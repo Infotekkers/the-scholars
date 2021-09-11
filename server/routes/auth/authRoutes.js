@@ -352,10 +352,10 @@ router.post("/request/reset", async (req, res) => {
  *      200 :
  */
 router.post("/reset/email/:token", async (req, res) => {
-  // Verify Token expiry
-  const token = req.params.token;
-
   try {
+    // Verify Token expiry
+    const token = req.params.token;
+
     // Get Old email
     const decoded = jwt.verify(token, secret_key);
     const email = decoded.data;
@@ -403,8 +403,73 @@ router.post("/reset/email/:token", async (req, res) => {
       }
       res.json({ message: "Incorrect password" });
     }
-  } catch (err) {
-    res.send(err);
+  } catch (e) {
+    res.status(500).send("Please try again later!");
+  }
+});
+
+router.patch("/update/email", async (req, res) => {
+  try {
+    const bodyData = JSON.parse(req.body.creds);
+
+    const currentEmail = bodyData["currentEmail"];
+
+    const password = bodyData["currentPassword"];
+    const newEmail = bodyData["newEmail"];
+    const updateValue = { email: newEmail };
+
+    try {
+      // Login User
+      const userLogin = await User.login(currentEmail, password);
+      if (userLogin) {
+        const currentUser = await User.updateOne(
+          { email: currentEmail },
+          { $set: updateValue }
+        );
+        res.status(204).send();
+      }
+    } catch (e) {
+      res.status(404).send();
+    }
+  } catch (e) {
+    res.status(500).send("Please try again later!");
+  }
+});
+
+router.patch("/update/password", async (req, res) => {
+  console.log("Launched");
+  try {
+    const bodyData = JSON.parse(req.body.creds);
+
+    const currentEmail = bodyData["currentEmail"];
+
+    const password = bodyData["currentPassword"];
+    var newPassword = bodyData["newPassword"];
+
+    const salt = await bcrypt.genSalt();
+
+    newPassword = await bcrypt.hash(newPassword, salt);
+
+    var updateValue = { password: newPassword };
+
+    console.log(currentEmail, password);
+
+    try {
+      // Login User
+      const userLogin = await User.login(currentEmail, password);
+      if (userLogin) {
+        const currentUser = await User.updateOne(
+          { email: currentEmail },
+          { $set: updateValue }
+        );
+        res.status(204).send();
+      }
+    } catch (e) {
+      res.status(404).send();
+    }
+  } catch (e) {
+    console.log(e);
+    res.status(500).send("Please try again later!");
   }
 });
 
@@ -427,14 +492,18 @@ router.post("/reset/email/:token", async (req, res) => {
  *      200 :
  */
 router.delete("/delete", async (req, res) => {
-  const { email } = req.body;
-  const user = await User.deleteOne({ email })
-    .then(() => {
-      res.json("Deleted");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  try {
+    const { email } = req.body;
+    const user = await User.deleteOne({ email })
+      .then(() => {
+        res.json("Deleted");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  } catch (e) {
+    res.status(500).send("Please try again later!");
+  }
 });
 
 module.exports = router;
