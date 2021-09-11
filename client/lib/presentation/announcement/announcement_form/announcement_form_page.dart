@@ -13,13 +13,10 @@ class AnnouncementFormPage extends StatelessWidget {
         ModalRoute.of(context)!.settings.arguments as Announcement;
 
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("AnnouncementFormPage"),
-        ),
         body: BlocProvider(
-          create: (BuildContext context) => getIt<AnnouncementFormBloc>()
-            ..add(AnnouncementFormEvent.initialized(optionOf(announcement))),
-          child: AnnouncementForm(announcement: announcement),
-        ));
+      create: (BuildContext context) => getIt<AnnouncementFormBloc>()
+        ..add(AnnouncementFormEvent.initialized(optionOf(announcement))),
+      child: AnnouncementForm(announcement: announcement),
+    ));
   }
 }

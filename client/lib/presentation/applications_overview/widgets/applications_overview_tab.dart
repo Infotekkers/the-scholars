@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:client/application/applications_overview_watcher/applications_overview_watcher_bloc.dart';
 import 'package:client/application/auth/auth_bloc.dart';
 import 'package:client/presentation/applications_overview/widgets/applications_overview_body.dart';
@@ -25,18 +23,20 @@ class ApplicationsOverviewTab extends StatelessWidget {
                 tooltip: "Announcements",
                 color: Colors.white,
               ),
-              const SizedBox(width:30),
+              const SizedBox(width: 30),
               IconButton(
                 onPressed: () {
-                  BlocProvider.of<AuthBloc>(context).add(const AuthEvent.signedOut());
-                  BlocProvider.of<AuthBloc>(context).add(const AuthEvent.authCheckRequested());
-                  Navigator.pushNamed(context, "/splash");
+                  BlocProvider.of<AuthBloc>(context)
+                      .add(const AuthEvent.signedOut());
+                  BlocProvider.of<AuthBloc>(context)
+                      .add(const AuthEvent.authCheckRequested());
+                  Navigator.pushNamed(context, "/sign-in");
                 },
                 icon: const Icon(Icons.exit_to_app),
                 tooltip: "Log Out",
                 color: Colors.white,
               ),
-              const SizedBox(width:30),
+              const SizedBox(width: 30),
             ],
             bottom: TabBar(
               physics: const NeverScrollableScrollPhysics(),

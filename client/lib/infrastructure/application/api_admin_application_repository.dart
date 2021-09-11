@@ -8,9 +8,12 @@ import 'package:client/domain/application/value_objects.dart';
 import 'package:client/infrastructure/application/application_dto.dart';
 import 'package:client/infrastructure/application/application_highlight_dto.dart';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
+import 'package:ext_storage/ext_storage.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:injectable/injectable.dart';
 import 'package:http/http.dart' as http;
+import 'package:uuid/uuid.dart';
 
 @LazySingleton(as: IAdminApplicationRepository)
 class ApiAdminApplicationRepository implements IAdminApplicationRepository {
@@ -56,19 +59,39 @@ class ApiAdminApplicationRepository implements IAdminApplicationRepository {
   @override
   Future<Either<ApplicationFailure, Application>> getServerApplicationAdmin(
       {required ApplicationId applicationId}) async {
-    final Uri url = Uri.parse("$_baseUrl/application/$applicationId");
+    print("Launched");
+    final id = applicationId.value.fold((l) => "", (r) => r);
+
+    final Uri url = Uri.parse("$_baseUrl/application/$id");
+
+    const uuid = Uuid();
 
     try {
-      final response = await client!.get(url);
+      // // Get External Path
+      final dir = await ExtStorage.getExternalStoragePublicDirectory(
+          ExtStorage.DIRECTORY_DOWNLOADS);
 
-      if (response.statusCode == 200) {
-        final ApplicationDto applicationDto = ApplicationDto.fromJson(
-            jsonDecode(response.body) as Map<String, dynamic>);
-        return right(applicationDto.toDomain());
-      } else {
-        return left(const ApplicationFailure.serverError());
-      }
+      // Create DIO Instance
+      final Dio dio = Dio();
+
+      final String downloadUri =
+          "${dotenv.env["API"]}/admin/application/download/$id";
+
+      // final String downloadUri =
+      //     "http://10.0.2.2:5000/admin/application/download/$id";
+
+      print(downloadUri);
+
+      await dio.download(downloadUri, "$dir/${uuid.v4()}.pdf",
+          deleteOnError: false,
+          options: Options(responseType: ResponseType.bytes),
+          onReceiveProgress: (rec, total) {
+        print("recieved");
+      });
+
+      return right(Application.initial());
     } catch (err) {
+      print(err);
       return left(const ApplicationFailure.noConnection());
     }
   }
@@ -76,10 +99,11 @@ class ApiAdminApplicationRepository implements IAdminApplicationRepository {
   @override
   Future<Either<ApplicationFailure, Unit>> updateServerApplicationAdmin(
       {required ApplicationHighlight applicationHighlight}) async {
+    print("HEREEEEEEEEEE");
     final applicationHighlightDto =
         ApplicationHighlightDto.fromDomain(applicationHighlight);
     final Uri url = Uri.parse(
-        "$_baseUrl/application/${applicationHighlightDto.applicationId}");
+        "$_baseUrl/admissionStatus/${applicationHighlightDto.applicationId}");
     final outgoingJson = applicationHighlightDto.toJson();
 
     try {

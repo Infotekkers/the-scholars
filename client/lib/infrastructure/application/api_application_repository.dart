@@ -315,11 +315,11 @@ class ApiApplicationRepository implements IApplicationRepository {
     // Create DIO Instance
     final Dio dio = Dio();
 
-    // final String downloadUri =
-    // "$apiUrl/admin/application/download/$applicationId";
-
     final String downloadUri =
-        "${dotenv.env["API"]}/admin/application/download/$applicationId";
+        "$apiUrl/admin/application/download/$applicationId";
+
+    // final String downloadUri =
+    //     "${dotenv.env["API"]}/admin/application/download/$applicationId";
     //  Start Download
     try {
       print("Downloading");

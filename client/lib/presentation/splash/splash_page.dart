@@ -25,15 +25,12 @@ class SplashPage extends StatelessWidget {
                 child: Column(children: <Widget>[
               Stack(
                 alignment: Alignment.topCenter,
+                // ignore: prefer_const_literals_to_create_immutables
                 children: <Widget>[
-                  Align(
+                  const Align(
                     alignment: Alignment.topLeft,
                     child: Padding(
                       padding: const EdgeInsets.only(top: 25),
-                      child: IconButton(
-                          icon:
-                              const Icon(Icons.arrow_back, color: Colors.white),
-                          onPressed: () {}),
                     ),
                   ),
                 ],

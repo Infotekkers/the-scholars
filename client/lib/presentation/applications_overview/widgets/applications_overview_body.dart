@@ -29,43 +29,48 @@ class ApplicationsOverviewBody extends StatelessWidget {
                           Text(state
                               .applicationHighlights[index].admissionStatus
                               .getOrCrash()),
-                          ElevatedButton(
-                              onPressed: state.applicationHighlights[index]
-                                          .admissionStatus
-                                          .getOrCrash() ==
-                                      "pending"
-                                  ? () {
-                                      actorBloc.add(
-                                          ApplicationsOverviewActorEvent
-                                              .accepted(
-                                                  state.applicationHighlights[
-                                                      index]));
-                                    }
-                                  : null,
-                              child: const Text("Accepted")),
+                          IconButton(
+                            onPressed: state.applicationHighlights[index]
+                                        .admissionStatus
+                                        .getOrCrash() ==
+                                    "pending"
+                                ? () {
+                                    print("@accept");
+                                    actorBloc.add(
+                                        ApplicationsOverviewActorEvent.accepted(
+                                            state
+                                                .applicationHighlights[index]));
+                                  }
+                                : null,
+                            icon: const Icon(
+                              Icons.check,
+                              color: Colors.green,
+                            ),
+                          ),
                           const Spacer(),
-                          ElevatedButton(
-                              onPressed: state.applicationHighlights[index]
-                                          .admissionStatus
-                                          .getOrCrash() ==
-                                      "pending"
-                                  ? () {
-                                      actorBloc.add(
-                                          ApplicationsOverviewActorEvent
-                                              .rejected(
-                                                  state.applicationHighlights[
-                                                      index]));
-                                    }
-                                  : null,
-                              child: const Text("Rejected")),
+                          IconButton(
+                            onPressed: state.applicationHighlights[index]
+                                        .admissionStatus
+                                        .getOrCrash() ==
+                                    "pending"
+                                ? () {
+                                    actorBloc.add(
+                                        ApplicationsOverviewActorEvent.rejected(
+                                            state
+                                                .applicationHighlights[index]));
+                                  }
+                                : null,
+                            icon: Icon(Icons.close),
+                          ),
                           const Spacer(),
-                          ElevatedButton(
-                              onPressed: () {
-                                actorBloc.add(
-                                    ApplicationsOverviewActorEvent.downloaded(
-                                        state.applicationHighlights[index]));
-                              },
-                              child: const Icon(Icons.download)),
+                          IconButton(
+                            onPressed: () {
+                              actorBloc.add(
+                                  ApplicationsOverviewActorEvent.downloaded(
+                                      state.applicationHighlights[index]));
+                            },
+                            icon: Icon(Icons.download),
+                          ),
                         ],
                       ));
             },

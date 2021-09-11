@@ -19,6 +19,8 @@ class AnnoncementRepository implements IAnnouncementRepository {
 
   // static const String _baseUrl = "http://localhost:3000/admin";
 
+  // static const String _baseUrl = "http://10.0.2.2:5000/admin";
+
   static final String _baseUrl = "${dotenv.env["API"]}/admin";
 
   AnnoncementRepository();
@@ -60,11 +62,12 @@ class AnnoncementRepository implements IAnnouncementRepository {
     print(announcement);
 
     try {
-      final response = await client!.put(url, body: outgoingJson);
+      final response = await client!.post(url, body: outgoingJson);
 
       if (response.statusCode == 201) {
         final idMap = jsonDecode(response.body) as Map;
-        return right(announcement.copyWith(id: AnnouncementId(idMap["id"] as String)));
+        return right(
+            announcement.copyWith(id: AnnouncementId(idMap["id"] as String)));
       } else {
         return left(const AnnouncementFailure.serverError());
       }
@@ -78,8 +81,7 @@ class AnnoncementRepository implements IAnnouncementRepository {
       Announcement announcement) async {
     final AnnouncementDto announcementDto =
         AnnouncementDto.fromDomain(announcement);
-    final Uri url =
-        Uri.parse("$_baseUrl/announcements/${announcementDto.id}");
+    final Uri url = Uri.parse("$_baseUrl/announcements/${announcementDto.id}");
     final outgoingJson = announcementDto.toJson();
 
     try {

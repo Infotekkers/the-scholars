@@ -1,17 +1,63 @@
 
 
-A letter of recommendation or recommendation letter, also known as a letter of 
-reference, reference letter or simply reference, is a document in which the writer assesses the 
-qualities, characteristics, and capabilities of the person being recommended in terms of that 
-individual's ability to perform a particular task or function. Letters of recommendation are 
-typically related to employment (such a letter may also be called an employment reference or job 
-reference), admission to institutions of higher education, or scholarship eligibility. 
-Recommendation letters are usually specifically requested to be written about someone, and are 
-therefore addressed to a particular requester (such as a new employer, university admissions 
-officer, etc.), although they may also be issued to the person being recommended without 
-specifying an addressee. 
-References may also be required of companies seeking to win contracts, particularly in the fields 
-of engineering, consultancy, industry and construction, and with regard to public 
-procurement and tenders. Reference letters for organizations are used to assess its ability to 
-deliver the required level of service. 
- 
+Student Name:Jane Q. Student
+SSN:123-45-6789
+YearCourse/SubjectGradeCredit TypeHS 
+Credits 
+Earned
+Quality 
+Pts
+Term 
+GPA
+Cum. 
+GPA
+9th Grade2005-06 School Year
+English 9AEnglish14
+Algebra IBmath13
+Earth ScienceBscience13
+CivicsAsocial studies14
+Spanish IC
+second language.
+12
+PE/ Health (SCC HEA 110)Ahealth & PE14
+Computer Applications (SCC CIS 110)A*elective15
+73.573.57
+10th Grade2006-07 School Year
+English 10AEnglish14
+GeometryAmath14
+BiologyBscience13
+World History (SCC HIS 111)B*social studies14
+Spanish IIC
+second language.
+12
+Government (SCC POL 120)C*elective13
+Creative Writing IAelective14
+73.433.50
+11th Grade2007-08 School Year
+English 11 (SCC ENG 111)A*English15
+Algebra IIAmath14
+Physical ScienceBscience13
+US History (SCC HIS 131)B*social studies14
+Religion (SCC REL 111)B*elective14
+Teen Living / Life SkillsAelective14
+Dramatic Arts IAelective14
+74.003.67
+12th Grade2008-09 School Year
+English 12 (SCC ENG 113)A*English15
+Pre-Calculus (SCC MAT 175/175A)B*math14
+MythologyBelective13
+Psychology (SCC PSY 150)C*elective13
+Dramatic Arts IIAelective14
+Creative Writing IIAelective14
+Anatomy (SCC BIO 168)B*elective14
+73.863.71
+* = weighted grades earn 1 additional quality point
+28
+High School Diploma Awarded?   Yes
+Date:5/31/2009
+Reviewed By:Offical signature Here
+XYZ Homeschool Administrator
+123 Main Street
+MyTown, NC 28713
+Sample OFFICIAL HIGH SCHOOL TRANSCRIPT
+XYZ Homeschool, MyTown, NC

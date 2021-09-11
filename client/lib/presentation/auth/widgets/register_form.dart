@@ -188,9 +188,6 @@ class RegisterForm extends StatelessWidget {
                           // ignore: avoid_redundant_argument_values
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            const Expanded(
-                              child: Text("Select Role:"),
-                            ),
                             Expanded(
                               child: ListTile(
                                 title: const Text("User"),

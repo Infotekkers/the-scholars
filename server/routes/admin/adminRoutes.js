@@ -42,6 +42,7 @@ router.get("/applications", async (req, res) => {
       });
     });
 
+    console.log(allApplicationsHighlight);
     res.status(200).send(allApplicationsHighlight);
   } catch (e) {
     handleError(e);
@@ -150,7 +151,7 @@ router.put("/admissionStatus/:applicationId", async (req, res) => {
     const result = await selectedApplication.updateOne({
       admissionStatus: updatedAdmissionStatus,
     });
-
+    console.log("HERE");
     res.status(204).send("Completed");
   } catch (e) {
     handleError(e);
@@ -180,7 +181,7 @@ router.get("/announcements", async (req, res) => {
   try {
     // Get all announcements from DB
     const allAnnouncements = await Announcement.find();
-    
+
     let response = [];
 
     for (const announcementDB of allAnnouncements) {
@@ -188,7 +189,7 @@ router.get("/announcements", async (req, res) => {
         id: `${announcementDB._id}`,
         title: announcementDB.title,
         body: announcementDB.body,
-        date: announcementDB.date
+        date: announcementDB.date,
       };
       response.push(announcement);
     }
@@ -265,7 +266,7 @@ router.put("/announcements", async (req, res) => {
       await newAnnouncement.save();
     }
 
-    res.status(201).send({id:`${id}`});
+    res.status(201).send({ id: `${id}` });
   } catch (e) {
     console.log(e);
     res.status(500).send("Sever Error");

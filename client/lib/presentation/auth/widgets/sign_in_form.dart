@@ -46,20 +46,16 @@ class SignInForm extends StatelessWidget {
                         child:
                             Image.asset("assets/images/icon7.png", width: 200),
                       ),
-                      Align(
+                      const Align(
                         alignment: Alignment.topLeft,
                         child: Padding(
                           padding: const EdgeInsets.only(top: 25),
-                          child: IconButton(
-                              icon: const Icon(Icons.arrow_back,
-                                  color: Colors.black),
-                              onPressed: () {}),
                         ),
                       ),
                       Align(
                         alignment: Alignment.topLeft,
                         child: Padding(
-                          padding: const EdgeInsets.only(top: 280, left: 10),
+                          padding: const EdgeInsets.only(top: 120, left: 10),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             // ignore: prefer_const_literals_to_create_immutables
@@ -179,7 +175,7 @@ class SignInForm extends StatelessWidget {
                                             borderRadius:
                                                 BorderRadius.circular(30)),
                                         padding: const EdgeInsets.all(
-                                            20) //content padding inside button
+                                            10) //content padding inside button
                                         ),
                                     child: const Text("Log in",
                                         style: TextStyle(
@@ -207,7 +203,7 @@ class SignInForm extends StatelessWidget {
                                         borderRadius:
                                             BorderRadius.circular(30)),
                                     padding: const EdgeInsets.all(
-                                        20) //content padding inside button
+                                        10) //content padding inside button
                                     ),
                                 key: const ValueKey("loginPageRegisterButton"),
                                 onPressed: () {
