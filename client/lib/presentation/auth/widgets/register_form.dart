@@ -186,104 +186,106 @@ class RegisterForm extends StatelessWidget {
                             const Expanded(
                               child: Text("Select Role:"),
                             ),
-                        (_) => null),
-              ),
-              const SizedBox(
-                height: 5,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Expanded(
-                    child: Text("Select Role:"),
-                  ),
-                  Expanded(
-                    flex: 3,
-                    child: ListTile(
-                      title: const Text("User"),
-                      leading: Radio(
-                        key: const ValueKey("registerPageRoleUserInput"),
-                        fillColor: MaterialStateColor.resolveWith(
-                            (states) => Theme.of(context).primaryColor),
-                        value: Role("user"),
-                        groupValue: state.role,
-                        onChanged: (_) => {
-                          BlocProvider.of<RegisterFormBloc>(context).add(
-                            const RegisterFormEvent.roleChanged("user"),
-                          )
-                        },
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 3,
-                    child: ListTile(
-                      title: const Text("Admin"),
-                      leading: Radio(
-                        fillColor: MaterialStateColor.resolveWith(
-                            (states) => Theme.of(context).primaryColor),
-                        value: Role("admin"),
-                        groupValue: state.role,
-                        onChanged: (_) => {
-                          BlocProvider.of<RegisterFormBloc>(context).add(
-                            const RegisterFormEvent.roleChanged("admin"),
-                          )
-                        },
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 35),
-              SizedBox(
-                height: 60,
-                width: MediaQuery.of(context).size.width,
-                child: ElevatedButton(
-                    key: const ValueKey("registerPageRegisterButton"),
-                    onPressed: state.isSubmitting
-                        ? null
-                        : () {
-                            BlocProvider.of<RegisterFormBloc>(context).add(
-                                const RegisterFormEvent.registerPressed());
-                          },
-                    style: ElevatedButton.styleFrom(
-                              primary:
-                                  Colors.grey, //background color of button
-                              side: const BorderSide(
-                                  width: 3,
-                                  color:
-                                      Colors.grey), //border width and color
-                              elevation: 3, //elevation of button
-                              shape: RoundedRectangleBorder(
-                                  //to set border radius to button
-                                  borderRadius: BorderRadius.circular(30)),
-                              padding: const EdgeInsets.all(
-                                  20) //content padding inside button
+                            Expanded(
+                              flex: 3,
+                              child: ListTile(
+                                title: const Text("User"),
+                                leading: Radio(
+                                  key: const ValueKey(
+                                      "registerPageRoleUserInput"),
+                                  fillColor: MaterialStateColor.resolveWith(
+                                      (states) =>
+                                          Theme.of(context).primaryColor),
+                                  value: Role("user"),
+                                  groupValue: state.role,
+                                  onChanged: (_) => {
+                                    BlocProvider.of<RegisterFormBloc>(context)
+                                        .add(
+                                      const RegisterFormEvent.roleChanged(
+                                          "user"),
+                                    )
+                                  },
+                                ),
                               ),
-                    child: const Text("Register")),
-              ),
-                
-              ),
-              SizedBox(height: 15),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: ElevatedButton(
-                        key: ValueKey("registerPageLoginButton"),
-                        onPressed: () {
-                          Navigator.popAndPushNamed(context, '/sign-in');
-                        },
-                        child: const Text("Sign Up",
-                                  style: TextStyle(
-                                      color: Colors.grey,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.normal)),
-                  ),
-                ],
-              )
-            ],
+                            ),
+                            Expanded(
+                              flex: 3,
+                              child: ListTile(
+                                title: const Text("Admin"),
+                                leading: Radio(
+                                  fillColor: MaterialStateColor.resolveWith(
+                                      (states) =>
+                                          Theme.of(context).primaryColor),
+                                  value: Role("admin"),
+                                  groupValue: state.role,
+                                  onChanged: (_) => {
+                                    BlocProvider.of<RegisterFormBloc>(context)
+                                        .add(
+                                      const RegisterFormEvent.roleChanged(
+                                          "admin"),
+                                    )
+                                  },
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 35),
+                        SizedBox(
+                          height: 60,
+                          width: MediaQuery.of(context).size.width,
+                          child: ElevatedButton(
+                              key: const ValueKey("registerPageRegisterButton"),
+                              onPressed: state.isSubmitting
+                                  ? null
+                                  : () {
+                                      BlocProvider.of<RegisterFormBloc>(context)
+                                          .add(const RegisterFormEvent
+                                              .registerPressed());
+                                    },
+                              style: ElevatedButton.styleFrom(
+                                  primary:
+                                      Colors.grey, //background color of button
+                                  side: const BorderSide(
+                                      width: 3,
+                                      color:
+                                          Colors.grey), //border width and color
+                                  elevation: 3, //elevation of button
+                                  shape: RoundedRectangleBorder(
+                                      //to set border radius to button
+                                      borderRadius: BorderRadius.circular(30)),
+                                  padding: const EdgeInsets.all(
+                                      20) //content padding inside button
+                                  ),
+                              child: const Text("Register")),
+                        ),
+
+                        const SizedBox(height: 15),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Expanded(
+                              child: ElevatedButton(
+                                key: const ValueKey("registerPageLoginButton"),
+                                onPressed: () {
+                                  Navigator.popAndPushNamed(
+                                      context, '/sign-in');
+                                },
+                                child: const Text("Log In",
+                                    style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.normal)),
+                              ),
+                              // ],
+                            )
+                          ],
+                        ),
+                      ]),
+                    )),
+              ],
+            ),
           ),
         );
       },

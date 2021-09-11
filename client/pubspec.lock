@@ -26,7 +26,7 @@ packages:
     dependency: transitive
     description:
       name: archive
-      url: "https://pub.flutter-io.cn"
+      url: "https://pub.dartlang.org"
     source: hosted
     version: "3.1.2"
   args:
@@ -219,18 +219,17 @@ packages:
     source: hosted
     version: "0.10.0"
   date_format:
-
     dependency: "direct main"
     description:
       name: date_format
-      url: "https://pub.flutter-io.cn"
+      url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.4"
   dio:
     dependency: "direct main"
     description:
       name: dio
-      url: "https://pub.flutter-io.cn"
+      url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.0"
   enum_to_string:
@@ -558,7 +557,7 @@ packages:
     dependency: "direct main"
     description:
       name: path_provider
-      url: "https://pub.flutter-io.cn"
+      url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.3"
   path_provider_linux:
@@ -572,7 +571,7 @@ packages:
     dependency: transitive
     description:
       name: path_provider_macos
-      url: "https://pub.flutter-io.cn"
+      url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.2"
   path_provider_platform_interface:
@@ -801,7 +800,7 @@ packages:
     dependency: transitive
     description:
       name: sync_http
-      url: "https://pub.flutter-io.cn"
+      url: "https://pub.dartlang.org"
     source: hosted
     version: "0.3.0"
   synchronized:
@@ -892,7 +891,7 @@ packages:
     dependency: transitive
     description:
       name: webdriver
-      url: "https://pub.flutter-io.cn"
+      url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.0"
   webkit_inspection_protocol:
