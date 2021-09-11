@@ -57,7 +57,8 @@ class ApplicationEvent with _$ApplicationEvent {
    */
 
   // Prepare download Event
-  const factory ApplicationEvent.startDownload() = _StartDownload;
+  const factory ApplicationEvent.startDownload(
+      {required String applicationId}) = _StartDownload;
 
   // Progress Download event
   const factory ApplicationEvent.progressDownload(

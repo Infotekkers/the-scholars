@@ -11,7 +11,7 @@ import 'package:http/http.dart' as http;
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
-import 'api_admin_application_repository_test.mocks.dart';
+import '../auth/api_auth_repository_unit_test.mocks.dart';
 
 @GenerateMocks([http.Client])
 void main() {
@@ -88,6 +88,7 @@ void main() {
       final http.Client client = MockClient();
 
       final ApplicationHighlight applicationHighlight = ApplicationHighlight(
+          date: DateTime.now().toString().split(" ")[0],
           applicationId: ApplicationId(applicationId: "3"),
           name: Name("Depressed Clown"),
           admissionStatus: AdmissionStatus(admissionStatusStr: "accepted"));
@@ -113,6 +114,7 @@ void main() {
       final http.Client client = MockClient();
 
       final ApplicationHighlight applicationHighlight = ApplicationHighlight(
+          date: DateTime.now().toString().split(" ")[0],
           applicationId: ApplicationId(applicationId: "3"),
           name: Name("Depressed Clown"),
           admissionStatus: AdmissionStatus(admissionStatusStr: "accepted"));

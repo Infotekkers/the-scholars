@@ -6,6 +6,7 @@ part "failures.freezed.dart";
 @freezed
 abstract class ValueFailure<T> with _$ValueFailure<T> {
   // TODO: Add more failures
+  // Auth Failures
   const factory ValueFailure.empty({required T failedValue}) = Empty<T>;
   const factory ValueFailure.invalidEmail({
     required T failedValue,
@@ -19,11 +20,18 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.invalidPassword({
     required T failedValue,
   }) = InvalidPassword<T>;
-  const factory ValueFailure.exceedingLength({
-    required T failedValue,
-  }) = ExceedingLength<T>;
 
   const factory ValueFailure.invalidRole() = _InvalidRole;
+
+  // Announcement Failures
+  const factory ValueFailure.exceedingLength({
+    required T failedValue,
+    required int max,
+  }) = ExceedingLength<T>;
+
+  const factory ValueFailure.multiline({required T failedValue}) = Multiline<T>;
+  const factory ValueFailure.invalidDate({required T failedValue}) =
+      InvalidDate<T>;
 
   // ignore: slash_for_doc_comments
   /**

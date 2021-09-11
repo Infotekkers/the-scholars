@@ -40,7 +40,8 @@ abstract class IApplicationRepository {
       getApplicationHighlights();
 
   // Get Application Highlights by All Cached IDs
-  Future<Either<ApplicationFailure, String>> downloadApplicationFile();
+  Future<Either<ApplicationFailure, String>> downloadApplicationFile(
+      {required String applicationId});
 
   // Get Application Highlights by All Cached IDs
   Future<Either<ApplicationFailure, bool>> isAppicationPending();

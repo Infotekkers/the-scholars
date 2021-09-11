@@ -145,6 +145,24 @@ class _ThirdApplicationPageState extends State<ThirdApplicationPage> {
               ),
             ),
           ),
+
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 70),
+            child: MaterialButton(
+              onPressed: () async {
+                // ignore: avoid_print
+                SharedPreferences prefs = await SharedPreferences.getInstance();
+
+                prefs.remove("allApplications");
+                print("Deleted");
+              },
+              color: Colors.purple,
+              child: const Text(
+                "Clear All Application ID",
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+          ),
         ],
       ),
     );

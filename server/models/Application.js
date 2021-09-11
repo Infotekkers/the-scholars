@@ -98,6 +98,11 @@ const applicationSchema = mongoose.Schema({
     default: "false",
   },
 
+  date: {
+    type: String,
+    required: false,
+  },
+
   admissionStatus: {
     type: String,
     required: false,

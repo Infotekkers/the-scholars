@@ -24,11 +24,13 @@ class _$ApplicationHighlightDtoTearOff {
   _ApplicationHighlightDto call(
       {required String applicationId,
       required String name,
-      required String admissionStatus}) {
+      required String admissionStatus,
+      required String date}) {
     return _ApplicationHighlightDto(
       applicationId: applicationId,
       name: name,
       admissionStatus: admissionStatus,
+      date: date,
     );
   }
 
@@ -45,6 +47,7 @@ mixin _$ApplicationHighlightDto {
   String get applicationId => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get admissionStatus => throw _privateConstructorUsedError;
+  String get date => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -57,7 +60,8 @@ abstract class $ApplicationHighlightDtoCopyWith<$Res> {
   factory $ApplicationHighlightDtoCopyWith(ApplicationHighlightDto value,
           $Res Function(ApplicationHighlightDto) then) =
       _$ApplicationHighlightDtoCopyWithImpl<$Res>;
-  $Res call({String applicationId, String name, String admissionStatus});
+  $Res call(
+      {String applicationId, String name, String admissionStatus, String date});
 }
 
 /// @nodoc
@@ -74,6 +78,7 @@ class _$ApplicationHighlightDtoCopyWithImpl<$Res>
     Object? applicationId = freezed,
     Object? name = freezed,
     Object? admissionStatus = freezed,
+    Object? date = freezed,
   }) {
     return _then(_value.copyWith(
       applicationId: applicationId == freezed
@@ -88,6 +93,10 @@ class _$ApplicationHighlightDtoCopyWithImpl<$Res>
           ? _value.admissionStatus
           : admissionStatus // ignore: cast_nullable_to_non_nullable
               as String,
+      date: date == freezed
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -99,7 +108,8 @@ abstract class _$ApplicationHighlightDtoCopyWith<$Res>
           $Res Function(_ApplicationHighlightDto) then) =
       __$ApplicationHighlightDtoCopyWithImpl<$Res>;
   @override
-  $Res call({String applicationId, String name, String admissionStatus});
+  $Res call(
+      {String applicationId, String name, String admissionStatus, String date});
 }
 
 /// @nodoc
@@ -119,6 +129,7 @@ class __$ApplicationHighlightDtoCopyWithImpl<$Res>
     Object? applicationId = freezed,
     Object? name = freezed,
     Object? admissionStatus = freezed,
+    Object? date = freezed,
   }) {
     return _then(_ApplicationHighlightDto(
       applicationId: applicationId == freezed
@@ -133,6 +144,10 @@ class __$ApplicationHighlightDtoCopyWithImpl<$Res>
           ? _value.admissionStatus
           : admissionStatus // ignore: cast_nullable_to_non_nullable
               as String,
+      date: date == freezed
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -143,7 +158,8 @@ class _$_ApplicationHighlightDto extends _ApplicationHighlightDto {
   const _$_ApplicationHighlightDto(
       {required this.applicationId,
       required this.name,
-      required this.admissionStatus})
+      required this.admissionStatus,
+      required this.date})
       : super._();
 
   factory _$_ApplicationHighlightDto.fromJson(Map<String, dynamic> json) =>
@@ -155,10 +171,12 @@ class _$_ApplicationHighlightDto extends _ApplicationHighlightDto {
   final String name;
   @override
   final String admissionStatus;
+  @override
+  final String date;
 
   @override
   String toString() {
-    return 'ApplicationHighlightDto(applicationId: $applicationId, name: $name, admissionStatus: $admissionStatus)';
+    return 'ApplicationHighlightDto(applicationId: $applicationId, name: $name, admissionStatus: $admissionStatus, date: $date)';
   }
 
   @override
@@ -172,7 +190,9 @@ class _$_ApplicationHighlightDto extends _ApplicationHighlightDto {
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.admissionStatus, admissionStatus) ||
                 const DeepCollectionEquality()
-                    .equals(other.admissionStatus, admissionStatus)));
+                    .equals(other.admissionStatus, admissionStatus)) &&
+            (identical(other.date, date) ||
+                const DeepCollectionEquality().equals(other.date, date)));
   }
 
   @override
@@ -180,7 +200,8 @@ class _$_ApplicationHighlightDto extends _ApplicationHighlightDto {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(applicationId) ^
       const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(admissionStatus);
+      const DeepCollectionEquality().hash(admissionStatus) ^
+      const DeepCollectionEquality().hash(date);
 
   @JsonKey(ignore: true)
   @override
@@ -198,7 +219,8 @@ abstract class _ApplicationHighlightDto extends ApplicationHighlightDto {
   const factory _ApplicationHighlightDto(
       {required String applicationId,
       required String name,
-      required String admissionStatus}) = _$_ApplicationHighlightDto;
+      required String admissionStatus,
+      required String date}) = _$_ApplicationHighlightDto;
   const _ApplicationHighlightDto._() : super._();
 
   factory _ApplicationHighlightDto.fromJson(Map<String, dynamic> json) =
@@ -210,6 +232,8 @@ abstract class _ApplicationHighlightDto extends ApplicationHighlightDto {
   String get name => throw _privateConstructorUsedError;
   @override
   String get admissionStatus => throw _privateConstructorUsedError;
+  @override
+  String get date => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ApplicationHighlightDtoCopyWith<_ApplicationHighlightDto> get copyWith =>

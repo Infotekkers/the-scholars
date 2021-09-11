@@ -2,8 +2,15 @@
 const { application } = require("express");
 const express = require("express");
 const router = express.Router();
+
+// File System
 const fs = require("fs");
+
+// Path
 const path = require("path");
+
+// PDF pArser
+const pdfParse = require("pdf-parse");
 
 // Import pdf creator
 const pdf = require("pdf-creator-node");
@@ -13,6 +20,9 @@ const handleError = require("../../helpers/errorHandler");
 
 // Import application model
 const Application = require("../../models/Application");
+
+// Import announcement model
+const Announcement = require("../../models/Announcement");
 
 // Route to get Application highlights
 router.get("/applications", async (req, res) => {
@@ -54,15 +64,16 @@ router.get("/application.:applicationId", async (req, res) => {
 });
 
 router.get("/application/download/:applicationId", async (req, res) => {
-  try {
-    const html = fs.readFileSync(
-      path.resolve(__dirname, "../", "../", "templates/template.html"),
-      "utf8"
-    );
-    const id = req.params.applicationId;
+  console.log("Preparing FILE");
+  const html = fs.readFileSync(
+    path.resolve(__dirname, "../", "../", "templates/template.html"),
+    "utf8"
+  );
+  const id = req.params.applicationId;
 
-    const selectedApplication = await Application.findById(id);
+  const selectedApplication = await Application.findById(id);
 
+  if (selectedApplication != null) {
     let options = {
       format: "A4",
       orientation: "portrait",
@@ -76,15 +87,22 @@ router.get("/application/download/:applicationId", async (req, res) => {
         gender: selectedApplication.gender,
         location: selectedApplication.location,
         phoneNumber: selectedApplication.phoneNumber,
-        schoolTranscript: schoolTranscriptFileName,
-        mainEssay: mainEssayFileName,
+        schoolTranscript: await getContent(
+          selectedApplication.schoolTranscript
+        ),
+        mainEssay: await getContent(selectedApplication.mainEssay),
         extraEssay: selectedApplication.extraEssay,
         proficiencyTest: selectedApplication.proficencyTest,
-        extraCertification: extraCertificationFileName,
-        recommendationLetter: reccomendationLetterFileName,
+        extraCertification: await getContent(
+          selectedApplication.extraCertification
+        ),
+        recommendationLetter: await getContent(
+          selectedApplication.recommendationLetter
+        ),
         departmentSelection: selectedApplication.departmentSelection,
         militaryFamilyStatus: selectedApplication.militaryFamilyStatus,
         universityFamilyStatus: selectedApplication.universityFamilyStatus,
+        date: selectedApplication.date,
       },
     ];
 
@@ -96,7 +114,7 @@ router.get("/application/download/:applicationId", async (req, res) => {
       path: `./output/${selectedApplication["fullName"]}.pdf`,
     };
 
-    pdf
+    await pdf
       .create(document, options)
       .then((res) => {
         console.log(res);
@@ -105,20 +123,17 @@ router.get("/application/download/:applicationId", async (req, res) => {
         console.error(e);
       });
 
-    // const output = await fs.readFileSync(
-    //   path.resolve(
-    //     __dirname,
-    //     "../",
-    //     "../",
-    //     `output/${selectedApplication["fullName"]}.pdf`
-    //   ),
-    //   "utf8"
-    // );
-
-    res.status(200).send("Pdf downloaded!");
-  } catch (e) {
-    handleError(e);
-    res.status(500).send("Error");
+    console.log("SENDING FILE");
+    res.sendFile(
+      path.resolve(
+        __dirname,
+        "../",
+        "../",
+        `output/${selectedApplication["fullName"]}.pdf`
+      )
+    );
+  } else {
+    res.sendStatus(404);
   }
 });
 
@@ -141,5 +156,22 @@ router.put("/admissionStatus/:applicationId", async (req, res) => {
     res.status(500).send("Error");
   }
 });
+
+async function getContent(fileName) {
+  let dataBuffer = fs.readFileSync(
+    path.resolve(__dirname, "../", "../", `uploads/${fileName}.pdf`)
+  );
+  await pdfParse(dataBuffer)
+    .then(function (data) {
+      fs.writeFileSync("./test.txt", data.text, () => {
+        console.log("done");
+      }),
+        (content = data.text);
+    })
+    .catch((e) => {});
+
+  var content = fs.readFileSync("./test.txt", "utf8");
+  return content;
+}
 
 module.exports = router;

@@ -14,63 +14,94 @@
     {{#each applicant}}
     <main>
       <section id="basic-info" class="">
-        <div class="profile-image"></div>
-        <div class="basic-info__description">
-          <div class="basic-info__contact">
-            <label for="">Name</label>
-            <h3>{{this.fullName}}</h3>
-
-            <label for="">Phone number</label>
-            <h3>+251 939507783</h3>
-
-            <label for="">Email</label>
-            <h3>dagimbarok@gmail.com</h3>
-
-            <label for="">P.O. Box</label>
-            <h3>17283</h3>
-
-            <label for="">Residence</label>
-            <div class="basic-info__location">
-              <h3>Addis Ababa, Ethiopia</h3>
-            </div>
-          </div>
-          <div class="basic-info__education">
-            <label for="">High School</label>
-            <h3>Saint Joseph High School</h3>
-
-            <label for="">Dates Attended</label>
-            <h3>September 2015 - June 2018</h3>
-          </div>
-        </div>
-      </section>
-
-      <section id="application-info">
-        <label class="large-label" for="">Transcript</label>
-        <div class="transcript"></div>
-
-        <label class="large-label" for="">Essays</label>
-        <div class="essay">
-          <label class="large-label large-label--smaller" for="">Main</label>
-          <div class="essay__main"></div>
-
-          <label class="large-label large-label--smaller" for=""
-            >Supplement</label
-          >
-          <div class="essay__supplement"></div>
+        <!-- Full Name -->
+        <div>
+          <span>Full Name : </span>
+          <b>{{this.fullName}}</b>
         </div>
 
-        <label for="" class="large-label">National Exams</label>
-        <div class="testing">
-          <label for="" class="large-label large-label--smaller"
-            >National Exams</label
-          >
-          <div class="testing__national-exams"></div>
-
-          <label for="" class="large-label large-label--smaller">SAT</label>
-          <div class="testing__SAT"></div>
+        <!-- BirthDate -->
+        <div>
+          <span>BirthDate : </span>
+          <b>{{this.birthDate}}</b>
         </div>
-        <div class="extra-curricular"></div>
-        <div class="department-choice"></div>
+
+        <!-- Gender -->
+        <div>
+          <span>Gender : </span>
+          <b>{{this.gender}}</b>
+        </div>
+
+        <!-- Location -->
+        <div>
+          <span>Location : </span>
+          <b>{{this.location}}</b>
+        </div>
+
+        <!-- Phone Number -->
+        <div>
+          <span>Phone Number : </span>
+          <b>{{this.phoneNumber}}</b>
+        </div>
+
+        <!-- Department-->
+        <div>
+          <span>Department : </span>
+          <b>{{this.departmentSelection}}</b>
+        </div>
+
+        <!-- Military -->
+        <div>
+          <span>Family in Military Service : </span>
+          <b>{{this.militaryFamilyStatus}}</b>
+        </div>
+
+        <!-- Uni -->
+        <div>
+          <span>Family in University Service : </span>
+          <b>{{this.universityFamilyStatus}}</b>
+        </div>
+
+        <!-- Exam-->
+        <div>
+          <span>Proficiency Test : </span>
+          <b>{{this.proficiencyTest}}</b>
+        </div>
+
+        <!-- Transcript -->
+        <div>
+          <div><b>School Transcript :</b></div>
+          <div>{{this.schoolTranscript}}</div>
+        </div>
+
+        <!-- Main Essay -->
+        <div>
+          <div><b>Main Essay :</b></div>
+          <div>{{this.mainEssay}}</div>
+        </div>
+
+        <!-- Supplement Essay -->
+        <div>
+          <div><b>Supplement Essay :</b></div>
+          <div>{{this.extraEssay}}</div>
+        </div>
+
+        <!-- Letter Essay -->
+        <div>
+          <div><b>Recommendation Letter :</b></div>
+          <div>{{this.recommendationLetter}}</div>
+        </div>
+
+        <!-- Certification Essay -->
+        <div>
+          <div><b>Extra Certification :</b></div>
+          <div>{{this.extraCertification}}</div>
+        </div>
+
+        <!-- Date -->
+        <div>
+          <b><em>{{this.date}}</em></b>
+        </div>
       </section>
     </main>
     {{/each}}

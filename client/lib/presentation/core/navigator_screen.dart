@@ -6,8 +6,12 @@ import 'package:client/application/navigation/navigation_bloc.dart';
 import 'package:client/application/profile/profile_bloc.dart';
 import 'package:client/application/util/util_bloc.dart';
 import 'package:client/injectable.dart';
-import 'package:client/presentation/application/thrid_page.dart';
+import 'package:client/presentation/application/work.dart';
 import 'package:client/presentation/profile/edit_profile.dart';
+import 'package:client/presentation/announcement/announcement_form/announcement_form_page.dart';
+import 'package:client/presentation/application/first_page.dart';
+import 'package:client/presentation/application/second_page.dart';
+import 'package:client/presentation/auth/register_page.dart';
 import 'package:client/presentation/view_applications/home_page.dart';
 import 'package:client/presentation/profile/profile_page.dart';
 

@@ -249,9 +249,8 @@ class ApiApplicationRepository implements IApplicationRepository {
 
     final allApplicationIds = prefs.getStringList("allApplications");
 
-
     // if cache is empty
-    if (allApplicationIds == []) {
+    if (allApplicationIds == [] || allApplicationIds == null) {
       return right([]);
     } else {
       // Call the api
@@ -296,7 +295,8 @@ class ApiApplicationRepository implements IApplicationRepository {
   }
 
   @override
-  Future<Either<ApplicationFailure, String>> downloadApplicationFile() async {
+  Future<Either<ApplicationFailure, String>> downloadApplicationFile(
+      {required String applicationId}) async {
     // Get Application Bloc
     final ApplicationBloc _applicationBloc = getIt<ApplicationBloc>();
 
@@ -314,14 +314,16 @@ class ApiApplicationRepository implements IApplicationRepository {
     // const String downloadUri =
     //     "https://unsplash.com/photos/8pb7Hq539Zw/download?force=true";
 
-    final String downloadUri = "${dotenv.env["API"]}/user/file/test";
+    final String downloadUri = "${dotenv.env["API"]}/admin/application/download/613c7b83c3b4db5174bebddb";
 
     //  Start Download
     try {
+      print("Downloading");
       await dio.download(downloadUri, "$dir/${uuid.v4()}.pdf",
           deleteOnError: false,
           options: Options(responseType: ResponseType.bytes),
           onReceiveProgress: (rec, total) {
+        print(rec);
         if (rec == total) {
           _applicationBloc.add(const ApplicationEvent.downloadComplete());
         } else {
