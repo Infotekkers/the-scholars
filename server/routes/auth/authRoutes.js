@@ -154,9 +154,9 @@ router.post("/register", async (req, res) => {
   const receivedData = req.body;
   try {
     const newUser = new User({
-      userName: `${receivedData.userName}`,
+      userName: `${receivedData.name}`,
       password: `${receivedData.password}`,
-      email: `${receivedData.email}`,
+      email: `${receivedData.emailAddress}`,
       role: `${receivedData.role}`,
     });
 
