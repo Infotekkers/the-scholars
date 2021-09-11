@@ -34,7 +34,7 @@ class RegisterForm extends StatelessWidget {
         return Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("images/patterns/shattered-island.gif"),
+              image: AssetImage("images/shattered-island.gif"),
               fit: BoxFit.cover,
             ),
           ),
@@ -204,75 +204,82 @@ class RegisterForm extends StatelessWidget {
                                           (_) => null),
                             ),
                             const SizedBox(
-                              height: 20,
+                              height: 30,
                             ),
-                            Row(
-                              children: [
-                                // const Expanded(
-                                //   flex: 0,
-                                //   child: Text(
-                                //     "Role:",
-                                //     style: TextStyle(
-                                //       fontSize: 20,
-                                //       color: Colors.white,
-                                //     ),
-                                //   ),
-                                // ),
-                                Expanded(
-                                  child: ListTile(
-                                    title: const Text(
-                                      "User",
-                                      style: TextStyle(
-                                        fontSize: 16,
-                                        color: Colors.white,
+                            SizedBox(
+                              width: 300,
+                              child: Row(
+                                children: [
+                                  // const Expanded(
+                                  //   flex: 0,
+                                  //   child: Text(
+                                  //     "Role:",
+                                  //     style: TextStyle(
+                                  //       fontSize: 20,
+                                  //       color: Colors.white,
+                                  //     ),
+                                  //   ),
+                                  // ),
+                                  Expanded(
+                                    child: ListTile(
+                                      title: const Text(
+                                        "User",
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      leading: Radio(
+                                        materialTapTargetSize:
+                                            MaterialTapTargetSize.shrinkWrap,
+                                        key: const ValueKey(
+                                            "registerPageRoleUserInput"),
+                                        fillColor: MaterialStateColor.resolveWith(
+                                            (states) => Theme.of(context)
+                                                .secondaryHeaderColor),
+                                        value: Role("user"),
+                                        groupValue: state.role,
+                                        onChanged: (_) => {
+                                          BlocProvider.of<RegisterFormBloc>(
+                                                  context)
+                                              .add(
+                                            const RegisterFormEvent.roleChanged(
+                                                "user"),
+                                          )
+                                        },
                                       ),
                                     ),
-                                    leading: Radio(
-                                      key: const ValueKey(
-                                          "registerPageRoleUserInput"),
-                                      fillColor: MaterialStateColor.resolveWith(
-                                          (states) =>
-                                              Theme.of(context).primaryColor),
-                                      value: Role("user"),
-                                      groupValue: state.role,
-                                      onChanged: (_) => {
-                                        BlocProvider.of<RegisterFormBloc>(
-                                                context)
-                                            .add(
-                                          const RegisterFormEvent.roleChanged(
-                                              "user"),
-                                        )
-                                      },
-                                    ),
                                   ),
-                                ),
-                                Expanded(
-                                  child: ListTile(
-                                    title: const Text(
-                                      "Admin",
-                                      style: TextStyle(
-                                        fontSize: 16,
-                                        color: Colors.white,
+                                  Expanded(
+                                    child: ListTile(
+                                      title: const Text(
+                                        "Admin",
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      leading: Radio(
+                                        materialTapTargetSize:
+                                            MaterialTapTargetSize.shrinkWrap,
+                                        fillColor: MaterialStateColor.resolveWith(
+                                            (states) => Theme.of(context)
+                                                .secondaryHeaderColor),
+                                        value: Role("admin"),
+                                        groupValue: state.role,
+                                        onChanged: (_) => {
+                                          BlocProvider.of<RegisterFormBloc>(
+                                                  context)
+                                              .add(
+                                            const RegisterFormEvent.roleChanged(
+                                                "admin"),
+                                          )
+                                        },
                                       ),
                                     ),
-                                    leading: Radio(
-                                      fillColor: MaterialStateColor.resolveWith(
-                                          (states) =>
-                                              Theme.of(context).primaryColor),
-                                      value: Role("admin"),
-                                      groupValue: state.role,
-                                      onChanged: (_) => {
-                                        BlocProvider.of<RegisterFormBloc>(
-                                                context)
-                                            .add(
-                                          const RegisterFormEvent.roleChanged(
-                                              "admin"),
-                                        )
-                                      },
-                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                             const SizedBox(height: 35),
                             SizedBox(

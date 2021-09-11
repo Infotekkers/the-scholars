@@ -31,7 +31,7 @@ class SignInForm extends StatelessWidget {
         return Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("images/patterns/shattered-island.gif"),
+              image: AssetImage("images/shattered-island.gif"),
               fit: BoxFit.cover,
             ),
           ),
