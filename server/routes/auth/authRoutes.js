@@ -408,6 +408,71 @@ router.post("/reset/email/:token", async (req, res) => {
   }
 });
 
+router.patch("/update/email", async (req, res) => {
+  try {
+    const bodyData = JSON.parse(req.body.creds);
+
+    const currentEmail = bodyData["currentEmail"];
+
+    const password = bodyData["currentPassword"];
+    const newEmail = bodyData["newEmail"];
+    const updateValue = { email: newEmail };
+
+    try {
+      // Login User
+      const userLogin = await User.login(currentEmail, password);
+      if (userLogin) {
+        const currentUser = await User.updateOne(
+          { email: currentEmail },
+          { $set: updateValue }
+        );
+        res.status(204).send();
+      }
+    } catch (e) {
+      res.status(404).send();
+    }
+  } catch (e) {
+    res.status(500).send();
+  }
+});
+
+router.patch("/update/password", async (req, res) => {
+  console.log("Launched");
+  try {
+    const bodyData = JSON.parse(req.body.creds);
+
+    const currentEmail = bodyData["currentEmail"];
+
+    const password = bodyData["currentPassword"];
+    var newPassword = bodyData["newPassword"];
+
+    const salt = await bcrypt.genSalt();
+
+    newPassword = await bcrypt.hash(newPassword, salt);
+
+    var updateValue = { password: newPassword };
+
+    console.log(currentEmail, password);
+
+    try {
+      // Login User
+      const userLogin = await User.login(currentEmail, password);
+      if (userLogin) {
+        const currentUser = await User.updateOne(
+          { email: currentEmail },
+          { $set: updateValue }
+        );
+        res.status(204).send();
+      }
+    } catch (e) {
+      res.status(404).send();
+    }
+  } catch (e) {
+    console.log(e);
+    res.status(500).send();
+  }
+});
+
 /**
  * @swagger
  * /auth/request/reset:
