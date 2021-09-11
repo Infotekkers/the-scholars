@@ -30,10 +30,46 @@ class AnnouncementForm extends StatelessWidget {
       },
       builder: (context, state) {
         return Scaffold(
-          backgroundColor: Colors.grey[900],
+          backgroundColor: Colors.grey[800],
           body: SingleChildScrollView(
             child: Column(
-              children: [
+              children: <Widget>[
+                Stack(
+                  alignment: Alignment.topCenter,
+                  children: <Widget>[
+                   
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 25),
+                        child: IconButton(
+                            icon: const Icon(Icons.arrow_back,
+                                color: Colors.white),
+                            onPressed: () {}),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 180, left: 30),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          // ignore: prefer_const_literals_to_create_immutables
+                          children: <Widget>[
+                            const Text("Post Announcment",
+                                // ignore: unnecessary_const
+                                style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 40,
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 2.0)),
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+            
                 Padding(
                   padding: const EdgeInsets.all(20),
                   child: Column(
@@ -50,7 +86,7 @@ class AnnouncementForm extends StatelessWidget {
                                 initialValue: announcement.title.value.fold((l) => "", (r) => r),
                                 keyboardType: TextInputType.text,
                                 decoration: const InputDecoration(
-                                  enabledBorder: OutlineInputBorder(
+                                  border: OutlineInputBorder(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(20.0)),
                                       borderSide: BorderSide(
@@ -61,8 +97,7 @@ class AnnouncementForm extends StatelessWidget {
                                   prefix: Icon(Icons.info_outlined),
                                   labelText: 'Title',
                                   labelStyle: TextStyle(color: Colors.white),
-                                  helperText:
-                                      'Title must not exceed 50 characters',
+                                  
                                 ),
                                 autocorrect: false,
                                 onChanged: (value) =>
@@ -95,14 +130,11 @@ class AnnouncementForm extends StatelessWidget {
                                 maxLines: 10,
                                 keyboardType: TextInputType.multiline,
                                 decoration: const InputDecoration(
-                                  enabledBorder: OutlineInputBorder(
+                                  border: OutlineInputBorder(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(20.0)),
                                       borderSide: BorderSide(
-                                          color: Colors.grey, width: 1)),
-                                  helperText:
-                                      'Body must not exceed 250 characters',
-                                  labelText: 'Enter Your Text Here',
+                                          color: Colors.grey, width: 2)),
                                   labelStyle: TextStyle(color: Colors.white),
                                 ),
                                 onChanged: (value) =>
@@ -125,35 +157,40 @@ class AnnouncementForm extends StatelessWidget {
                                         (_) => null),
                               ),
                             ),
-                            ElevatedButton(
-                                onPressed: state.isSaving
-                                    ? null
-                                    : () {
-                                        BlocProvider.of<AnnouncementFormBloc>(
-                                                context)
-                                            .add(const AnnouncementFormEvent
-                                                .saved());
-                                      },
-                                style: ElevatedButton.styleFrom(
-                                    primary: Colors
-                                        .grey, //background color of button
-                                    side: const BorderSide(
-                                        width: 3,
-                                        color: Colors
-                                            .grey), //border width and color
-                                    elevation: 3, //elevation of button
-                                    shape: RoundedRectangleBorder(
-                                        //to set border radius to button
-                                        borderRadius:
-                                            BorderRadius.circular(30)),
-                                    padding: const EdgeInsets.all(
-                                        20) //content padding inside button
-                                    ),
-                                child: const Text('Post',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.normal))),
+                            const SizedBox(height: 15,),
+                            SizedBox(
+                              height: 60,
+                              width: MediaQuery.of(context).size.width,
+                              child: ElevatedButton(
+                                  onPressed: state.isSaving
+                                      ? null
+                                      : () {
+                                          BlocProvider.of<AnnouncementFormBloc>(
+                                                  context)
+                                              .add(const AnnouncementFormEvent
+                                                  .saved());
+                                        },
+                                  style: ElevatedButton.styleFrom(
+                                        primary: Colors
+                                            .grey, //background color of button
+                                        side: const BorderSide(
+                                            width: 3,
+                                            color: Colors
+                                                .grey), //border width and color
+                                        elevation: 3, //elevation of button
+                                        shape: RoundedRectangleBorder(
+                                            //to set border radius to button
+                                            borderRadius:
+                                                BorderRadius.circular(30)),
+                                        padding: const EdgeInsets.all(
+                                            20) //content padding inside button
+                                        ),
+                                  child: const Text('Post',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.normal))),
+                            ),
                           ],
                         ),
                       ),

@@ -28,12 +28,26 @@ class AnnouncementsOverviewBody extends StatelessWidget {
                             arguments: state.annoucements[index]),
                         onLongPress: () => _showDeletionDialog(
                             context, actorBloc, state.annoucements[index]),
-                        child: Row(
-                          children: [
-                            Text(state.annoucements[index].title.getOrCrash()),
-                            const Spacer(),
-                            Text(state.annoucements[index].date.getOrCrash()),
-                            const Spacer(),
+                        child: Column(
+                          children: [ 
+                            SizedBox(
+                              width:double.infinity,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Card(
+                                  child:Column(
+                                    // ignore: prefer_const_literals_to_create_immutables
+                                    children: [ 
+                                    Text(state.annoucements[index].title.getOrCrash()),
+                                    const Spacer(),
+                                    Text(state.annoucements[index].date.getOrCrash()),
+                                    const Spacer(),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ) 
+                           
                           ],
                         ),
                       ));
