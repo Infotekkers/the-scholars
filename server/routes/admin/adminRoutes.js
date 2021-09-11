@@ -21,6 +21,9 @@ const handleError = require("../../helpers/errorHandler");
 // Import application model
 const Application = require("../../models/Application");
 
+// Import announcement model
+const Announcement = require("../../models/Announcement");
+
 // Route to get Application highlights
 router.get("/applications", async (req, res) => {
   try {
