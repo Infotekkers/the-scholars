@@ -22,7 +22,7 @@ class ApiAuthRepository implements IAuthRepository {
   @override
   Future<Either<AuthFailure, User>> register(
       {required User user, required Password password}) async {
-    final Uri url = Uri.parse("$_baseUrl/auth/register");
+    final Uri url = Uri.parse("$_baseUrl/register");
 
     final UserDto userDtoOut = UserDto.fromDomain(user);
     final outgoingJson =
