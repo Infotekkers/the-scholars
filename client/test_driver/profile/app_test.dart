@@ -11,6 +11,8 @@ void main() {
     final loginPageRegisterButtonFinder =
         find.byValueKey("loginPageRegisterButton");
 
+    final loginViewFinder = find.byValueKey("loginPageView");
+
     // Register Page Values
     final registerPageFullNameFinder =
         find.byValueKey("registerPageFullNameInput");
@@ -22,6 +24,7 @@ void main() {
         find.byValueKey("registerPageRegisterButton");
     final registerPageLoginButtonFinder =
         find.byValueKey("registerPageLoginButton");
+    final registerViewFinder = find.byValueKey("registerPageView");
 
     // Profile Page Values
     // Profile Values
@@ -38,6 +41,8 @@ void main() {
         find.byValueKey("navigatorPageIndexZero");
     final navigatorPageIndexOneFinder =
         find.byValueKey("navigatorPageIndexOne");
+    final navigatorPageIndexThreeFinder =
+        find.byValueKey("navigatorPageIndexThree");
 
     // Profile Edit Page Values
     final profileEditPageGenderInputFinder =
@@ -57,6 +62,7 @@ void main() {
     final firstApplicationPageSubmitButtonFinder =
         find.byValueKey("firstApplicationPageSubmitButton");
 
+    final logoutButtonFinder = find.byValueKey("credentialsLogoutButton");
     late FlutterDriver driver;
 
     setUpAll(() async {
@@ -68,6 +74,11 @@ void main() {
     });
 
     test("Register User and Login fill out profile and Edit Profile", () async {
+      await driver.waitFor(loginPageLoginButtonFinder);
+
+      await driver.scrollUntilVisible(
+          loginViewFinder, loginPageRegisterButtonFinder,
+          dyScroll: -100);
       // Go to register Page
       await driver.tap(loginPageRegisterButtonFinder);
 
@@ -79,6 +90,11 @@ void main() {
       await driver.tap(registerPageEmailFinder);
       await driver.enterText("usertwo@gmail.com");
 
+      // Scroll
+      await driver.scrollUntilVisible(
+          registerViewFinder, registerPagePasswordFinder,
+          dyScroll: -60);
+
       // Input Password
       await driver.tap(registerPagePasswordFinder);
       await driver.enterText("Testing@123");
@@ -86,19 +102,15 @@ void main() {
       // Select Role
       await driver.tap(registerPageRoleFinder);
 
+      // Scroll
+      await driver.scrollUntilVisible(
+          registerViewFinder, registerPageRegisterButtonFinder,
+          dyScroll: -60);
+
       // Regitser button
       await driver.tap(registerPageRegisterButtonFinder);
 
-      // Put in Username
-      await driver.tap(loginPageUserNameFinder);
-      await driver.enterText("usertwo@gmail.com");
-
-      // Enter password
-      await driver.tap(loginPagePasswordFinder);
-      await driver.enterText("Testing@123");
-
-      // Enter Login button
-      await driver.tap(loginPageLoginButtonFinder);
+      await driver.waitFor(profilePageFullNameFinder);
 
       // Input full name
       await driver.tap(profilePageFullNameFinder);
@@ -142,6 +154,13 @@ void main() {
           profileEditPageListViewFinder, profileEditPageSaveButtonFinder,
           dyScroll: -100);
       await driver.tap(profileEditPageSaveButtonFinder);
+
+      // Navigate
+      await driver.tap(navigatorPageIndexThreeFinder);
+
+      // Logout
+      await driver.waitFor(logoutButtonFinder);
+      await driver.tap(logoutButtonFinder);
     });
   });
 }

@@ -31,6 +31,7 @@ class RegisterForm extends StatelessWidget {
         return Scaffold(
           backgroundColor: Colors.grey[800],
           body: SingleChildScrollView(
+            key: const ValueKey("registerPageView"),
             child: Column(
               children: <Widget>[
                 Stack(
@@ -82,6 +83,7 @@ class RegisterForm extends StatelessWidget {
                       padding: const EdgeInsets.all(20.0),
                       child: Column(children: [
                         TextFormField(
+                          key: const ValueKey("registerPageFullNameInput"),
                           decoration: const InputDecoration(
                             border: OutlineInputBorder(
                                 borderRadius:
@@ -114,6 +116,7 @@ class RegisterForm extends StatelessWidget {
                           height: 35,
                         ),
                         TextFormField(
+                          key: const ValueKey("registerPageEmailInput"),
                           decoration: const InputDecoration(
                             border: OutlineInputBorder(
                                 borderRadius:
@@ -146,6 +149,7 @@ class RegisterForm extends StatelessWidget {
                           height: 35,
                         ),
                         TextFormField(
+                          key: const ValueKey("registerPagePasswordInput"),
                           decoration: const InputDecoration(
                             border: OutlineInputBorder(
                                 borderRadius:

@@ -35,6 +35,7 @@ class SignInForm extends StatelessWidget {
           child: Scaffold(
             backgroundColor: Colors.grey[800],
             body: SingleChildScrollView(
+              key: const ValueKey("loginPageView"),
               child: Column(
                 children: <Widget>[
                   Stack(

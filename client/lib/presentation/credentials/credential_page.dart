@@ -163,6 +163,7 @@ class CredentialPage extends StatelessWidget {
                 margin:
                     const EdgeInsets.symmetric(vertical: 60, horizontal: 120),
                 child: MaterialButton(
+                  key: const ValueKey("credentialsLogoutButton"),
                   onPressed: () {
                     getIt<IAuthRepository>().removeCachedUser();
                     getIt<NavigationBloc>().add(
