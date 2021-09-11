@@ -1,5 +1,7 @@
 import 'package:another_flushbar/flushbar_helper.dart';
+import 'package:client/application/auth/auth_bloc.dart';
 import 'package:client/application/auth/register_form/register_form_bloc.dart';
+import 'package:client/domain/auth/value_objects.dart';
 import 'package:client/presentation/core/widgets/flash_message.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,8 +24,8 @@ class RegisterForm extends StatelessWidget {
                     cancelledByUser: (_) => "Cancelled",
                   )).show(context);
                 }, (r) {
-                  // TODO: direct to LOGIN
-                  Navigator.popAndPushNamed(context, '/sign-in');
+                  BlocProvider.of<AuthBloc>(context)
+                      .add(const AuthEvent.authCheckRequested());
                   getWrappedFlashMessage(
                       context, "Account has been created.Login");
                 }));
@@ -189,20 +191,20 @@ class RegisterForm extends StatelessWidget {
                               child: ListTile(
                                 title: const Text("User"),
                                 leading: Radio(
+                                  key: const ValueKey(
+                                      "registerPageRoleUserInput"),
                                   fillColor: MaterialStateColor.resolveWith(
                                       (states) =>
                                           Theme.of(context).primaryColor),
-                                  value: 'User',
-                                  onChanged: (val) => {
+                                  value: Role("user"),
+                                  groupValue: state.role,
+                                  onChanged: (_) => {
                                     BlocProvider.of<RegisterFormBloc>(context)
                                         .add(
-                                      RegisterFormEvent.roleChanged(
-                                        val.toString(),
-                                      ),
+                                      const RegisterFormEvent.roleChanged(
+                                          "user"),
                                     )
                                   },
-                                  groupValue: state.role.value
-                                      .fold((l) => "", (r) => r),
                                 ),
                               ),
                             ),
@@ -214,17 +216,15 @@ class RegisterForm extends StatelessWidget {
                                   fillColor: MaterialStateColor.resolveWith(
                                       (states) =>
                                           Theme.of(context).primaryColor),
-                                  value: 'Admin',
-                                  onChanged: (val) => {
+                                  value: Role("admin"),
+                                  groupValue: state.role,
+                                  onChanged: (_) => {
                                     BlocProvider.of<RegisterFormBloc>(context)
                                         .add(
-                                      RegisterFormEvent.roleChanged(
-                                        val.toString(),
-                                      ),
+                                      const RegisterFormEvent.roleChanged(
+                                          "admin"),
                                     )
                                   },
-                                  groupValue: state.role.value
-                                      .fold((l) => "", (r) => r),
                                 ),
                               ),
                             ),
@@ -235,6 +235,7 @@ class RegisterForm extends StatelessWidget {
                           height: 60,
                           width: MediaQuery.of(context).size.width,
                           child: ElevatedButton(
+                              key: const ValueKey("registerPageRegisterButton"),
                               onPressed: state.isSubmitting
                                   ? null
                                   : () {
@@ -258,22 +259,29 @@ class RegisterForm extends StatelessWidget {
                                   ),
                               child: const Text("Register")),
                         ),
-                        SizedBox(height: 15),
+
+                        const SizedBox(height: 15),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Expanded(
-                                child: ElevatedButton(
-                              onPressed: () {},
-                              child: const Text("Sign Up",
-                                  style: TextStyle(
-                                      color: Colors.grey,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.normal)),
-                            )),
+                              child: ElevatedButton(
+                                key: const ValueKey("registerPageLoginButton"),
+                                onPressed: () {
+                                  Navigator.popAndPushNamed(
+                                      context, '/sign-in');
+                                },
+                                child: const Text("Log In",
+                                    style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.normal)),
+                              ),
+                              // ],
+                            )
                           ],
-                        )
+                        ),
                       ]),
                     )),
               ],

@@ -13,6 +13,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:ext_storage/ext_storage.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:injectable/injectable.dart';
 import 'package:path/path.dart';
@@ -23,7 +24,7 @@ import 'package:uuid/uuid.dart';
 @LazySingleton(as: IApplicationRepository)
 class ApiApplicationRepository implements IApplicationRepository {
   final dbService = DatabaseService.dbInstance;
-  final apiUrl = "http://10.0.2.2:5000";
+  static final String? apiUrl = dotenv.env["API"];
 
   // Function to create a complete Applciation -- ON Server
   @override
@@ -313,8 +314,7 @@ class ApiApplicationRepository implements IApplicationRepository {
     // const String downloadUri =
     //     "https://unsplash.com/photos/8pb7Hq539Zw/download?force=true";
 
-    const String downloadUri =
-        "http://10.0.2.2:5000/admin/application/download/613c7b83c3b4db5174bebddb";
+    final String downloadUri = "${dotenv.env["API"]}/admin/application/download/613c7b83c3b4db5174bebddb";
 
     //  Start Download
     try {

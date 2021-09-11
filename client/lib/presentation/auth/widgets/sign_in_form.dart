@@ -50,19 +50,6 @@ class SignInForm extends StatelessWidget {
                             onPressed: () {}),
                       ),
                     ),
-                    // Align(
-                    //   alignment: Alignment.centerLeft,
-                    //   child: Padding(
-                    //     padding: const EdgeInsets.only(top: 150, left: 30),
-                    //     child: Row(
-                    //       mainAxisAlignment: MainAxisAlignment.center,
-                    //       // ignore: prefer_const_literals_to_create_immutables
-                    //       children: <Widget>[
-                    //        const Image(image: AssetImage('assets/images/scholars.PNG'),)
-                    //       ],
-                    //     ),
-                    //   ),
-                    // ),
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
@@ -149,7 +136,7 @@ class SignInForm extends StatelessWidget {
                                     .value
                                     .fold(
                                         (failure) => failure.maybeMap(
-                                            shortPassword: (_) =>
+                                            invalidPassword: (_) =>
                                                 "Invalid Password",
                                             orElse: () => null),
                                         (_) => null),
@@ -194,12 +181,27 @@ class SignInForm extends StatelessWidget {
                           const SizedBox(
                             height: 15,
                           ),
-                          const Center(
-                              child: Text("Sign UP",
-                                  style: TextStyle(
-                                    color: Colors.grey,
-                                    fontSize: 16,
-                                  )))
+                          Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Expanded(
+                              child: ElevatedButton(
+                                key: const ValueKey("signInRegisterButton"),
+                                onPressed: () {
+                                  Navigator.popAndPushNamed(
+                                      context, '/register');
+                                },
+                                child: const Text("Sign Up",
+                                    style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.normal)),
+                              ),
+                              // ],
+                            )
+                          ],
+                        )
                         ],
                       ),
                     )),

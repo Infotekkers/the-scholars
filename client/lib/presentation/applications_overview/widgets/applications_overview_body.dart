@@ -14,52 +14,61 @@ class ApplicationsOverviewBody extends StatelessWidget {
         builder: (context, state) => state.map(
             initial: (_) => Container(),
             loadInProgress: (_) => const CircularProgressIndicator(),
-            loadSucceeded: (state) => ListView.builder(
-                itemCount: state.applicationHighlights.length,
-                itemBuilder: (_, index) => Row(
-                      children: [
-                        Text(state.applicationHighlights[index].name
-                            .getOrCrash()),
-                        const Spacer(),
-                        Text(state.applicationHighlights[index].admissionStatus
-                            .getOrCrash()),
-                        ElevatedButton(
-                            onPressed: state.applicationHighlights[index]
-                                        .admissionStatus
-                                        .getOrCrash() ==
-                                    "pending"
-                                ? () {
-                                    actorBloc.add(
-                                        ApplicationsOverviewActorEvent.accepted(
-                                            state
-                                                .applicationHighlights[index]));
-                                  }
-                                : null,
-                            child: const Text("Accepted")),
-                        const Spacer(),
-                        ElevatedButton(
-                            onPressed: state.applicationHighlights[index]
-                                        .admissionStatus
-                                        .getOrCrash() ==
-                                    "pending"
-                                ? () {
-                                    actorBloc.add(
-                                        ApplicationsOverviewActorEvent.rejected(
-                                            state
-                                                .applicationHighlights[index]));
-                                  }
-                                : null,
-                            child: const Text("Rejected")),
-                        const Spacer(),
-                        ElevatedButton(
-                            onPressed: () {
-                              actorBloc.add(
-                                  ApplicationsOverviewActorEvent.downloaded(
-                                      state.applicationHighlights[index]));
-                            },
-                            child: const Icon(Icons.download)),
-                      ],
-                    )),
+            loadSucceeded: (state) {
+              if (state.applicationHighlights.isEmpty) {
+                return const Text("No applications");
+              }
+
+              return ListView.builder(
+                  itemCount: state.applicationHighlights.length,
+                  itemBuilder: (_, index) => Row(
+                        children: [
+                          Text(state.applicationHighlights[index].name
+                              .getOrCrash()),
+                          const Spacer(),
+                          Text(state
+                              .applicationHighlights[index].admissionStatus
+                              .getOrCrash()),
+                          ElevatedButton(
+                              onPressed: state.applicationHighlights[index]
+                                          .admissionStatus
+                                          .getOrCrash() ==
+                                      "pending"
+                                  ? () {
+                                      actorBloc.add(
+                                          ApplicationsOverviewActorEvent
+                                              .accepted(
+                                                  state.applicationHighlights[
+                                                      index]));
+                                    }
+                                  : null,
+                              child: const Text("Accepted")),
+                          const Spacer(),
+                          ElevatedButton(
+                              onPressed: state.applicationHighlights[index]
+                                          .admissionStatus
+                                          .getOrCrash() ==
+                                      "pending"
+                                  ? () {
+                                      actorBloc.add(
+                                          ApplicationsOverviewActorEvent
+                                              .rejected(
+                                                  state.applicationHighlights[
+                                                      index]));
+                                    }
+                                  : null,
+                              child: const Text("Rejected")),
+                          const Spacer(),
+                          ElevatedButton(
+                              onPressed: () {
+                                actorBloc.add(
+                                    ApplicationsOverviewActorEvent.downloaded(
+                                        state.applicationHighlights[index]));
+                              },
+                              child: const Icon(Icons.download)),
+                        ],
+                      ));
+            },
             // TODO: Show proper error message
             loadFailed: (state) => const Text("Failure")));
   }
