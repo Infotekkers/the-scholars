@@ -61,6 +61,7 @@ router.get("/application.:applicationId", async (req, res) => {
 });
 
 router.get("/application/download/:applicationId", async (req, res) => {
+  console.log("Preparing FILE");
   const html = fs.readFileSync(
     path.resolve(__dirname, "../", "../", "templates/template.html"),
     "utf8"
@@ -69,61 +70,68 @@ router.get("/application/download/:applicationId", async (req, res) => {
 
   const selectedApplication = await Application.findById(id);
 
-  let options = {
-    format: "A4",
-    orientation: "portrait",
-    border: "10mm",
-  };
+  if (selectedApplication != null) {
+    let options = {
+      format: "A4",
+      orientation: "portrait",
+      border: "10mm",
+    };
 
-  let applicant = [
-    {
-      fullName: selectedApplication.fullName,
-      birthDate: selectedApplication.birthDate,
-      gender: selectedApplication.gender,
-      location: selectedApplication.location,
-      phoneNumber: selectedApplication.phoneNumber,
-      schoolTranscript: await getContent(selectedApplication.schoolTranscript),
-      mainEssay: await getContent(selectedApplication.mainEssay),
-      extraEssay: selectedApplication.extraEssay,
-      proficiencyTest: selectedApplication.proficencyTest,
-      extraCertification: await getContent(
-        selectedApplication.extraCertification
-      ),
-      recommendationLetter: await getContent(
-        selectedApplication.recommendationLetter
-      ),
-      departmentSelection: selectedApplication.departmentSelection,
-      militaryFamilyStatus: selectedApplication.militaryFamilyStatus,
-      universityFamilyStatus: selectedApplication.universityFamilyStatus,
-      date: selectedApplication.date,
-    },
-  ];
+    let applicant = [
+      {
+        fullName: selectedApplication.fullName,
+        birthDate: selectedApplication.birthDate,
+        gender: selectedApplication.gender,
+        location: selectedApplication.location,
+        phoneNumber: selectedApplication.phoneNumber,
+        schoolTranscript: await getContent(
+          selectedApplication.schoolTranscript
+        ),
+        mainEssay: await getContent(selectedApplication.mainEssay),
+        extraEssay: selectedApplication.extraEssay,
+        proficiencyTest: selectedApplication.proficencyTest,
+        extraCertification: await getContent(
+          selectedApplication.extraCertification
+        ),
+        recommendationLetter: await getContent(
+          selectedApplication.recommendationLetter
+        ),
+        departmentSelection: selectedApplication.departmentSelection,
+        militaryFamilyStatus: selectedApplication.militaryFamilyStatus,
+        universityFamilyStatus: selectedApplication.universityFamilyStatus,
+        date: selectedApplication.date,
+      },
+    ];
 
-  let document = {
-    html: html,
-    data: {
-      applicant: applicant,
-    },
-    path: `./output/${selectedApplication["fullName"]}.pdf`,
-  };
+    let document = {
+      html: html,
+      data: {
+        applicant: applicant,
+      },
+      path: `./output/${selectedApplication["fullName"]}.pdf`,
+    };
 
-  await pdf
-    .create(document, options)
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((e) => {
-      console.error(e);
-    });
+    await pdf
+      .create(document, options)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((e) => {
+        console.error(e);
+      });
 
-  res.sendFile(
-    path.resolve(
-      __dirname,
-      "../",
-      "../",
-      `output/${selectedApplication["fullName"]}.pdf`
-    )
-  );
+    console.log("SENDING FILE");
+    res.sendFile(
+      path.resolve(
+        __dirname,
+        "../",
+        "../",
+        `output/${selectedApplication["fullName"]}.pdf`
+      )
+    );
+  } else {
+    res.sendStatus(404);
+  }
 });
 
 // Route to update application status

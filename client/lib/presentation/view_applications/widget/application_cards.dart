@@ -20,7 +20,9 @@ class ApplicationCards extends StatelessWidget {
         return InkWell(
           onTap: () {
             // Add Download  Event
-            _applicationBloc.add(ApplicationEvent.startDownload());
+            _applicationBloc.add(ApplicationEvent.startDownload(
+                applicationId: currentApplicationHighlight.applicationId));
+
             Navigator.pushNamed(context, '/download');
           },
           child: Card(

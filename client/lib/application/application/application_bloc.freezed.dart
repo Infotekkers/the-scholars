@@ -90,8 +90,10 @@ class _$ApplicationEventTearOff {
     return const _CheckApplicationCache();
   }
 
-  _StartDownload startDownload() {
-    return const _StartDownload();
+  _StartDownload startDownload({required String applicationId}) {
+    return _StartDownload(
+      applicationId: applicationId,
+    );
   }
 
   _ProgressDownload progressDownload(
@@ -131,7 +133,7 @@ mixin _$ApplicationEvent {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
-    required TResult Function() startDownload,
+    required TResult Function(String applicationId) startDownload,
     required TResult Function(double recievedAmount, double totalAmount)
         progressDownload,
     required TResult Function() downloadComplete,
@@ -153,7 +155,7 @@ mixin _$ApplicationEvent {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
-    TResult Function()? startDownload,
+    TResult Function(String applicationId)? startDownload,
     TResult Function(double recievedAmount, double totalAmount)?
         progressDownload,
     TResult Function()? downloadComplete,
@@ -288,7 +290,7 @@ class _$_InitialApplication implements _InitialApplication {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
-    required TResult Function() startDownload,
+    required TResult Function(String applicationId) startDownload,
     required TResult Function(double recievedAmount, double totalAmount)
         progressDownload,
     required TResult Function() downloadComplete,
@@ -313,7 +315,7 @@ class _$_InitialApplication implements _InitialApplication {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
-    TResult Function()? startDownload,
+    TResult Function(String applicationId)? startDownload,
     TResult Function(double recievedAmount, double totalAmount)?
         progressDownload,
     TResult Function()? downloadComplete,
@@ -477,7 +479,7 @@ class _$_SchoolTranscriptChanged implements _SchoolTranscriptChanged {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
-    required TResult Function() startDownload,
+    required TResult Function(String applicationId) startDownload,
     required TResult Function(double recievedAmount, double totalAmount)
         progressDownload,
     required TResult Function() downloadComplete,
@@ -502,7 +504,7 @@ class _$_SchoolTranscriptChanged implements _SchoolTranscriptChanged {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
-    TResult Function()? startDownload,
+    TResult Function(String applicationId)? startDownload,
     TResult Function(double recievedAmount, double totalAmount)?
         progressDownload,
     TResult Function()? downloadComplete,
@@ -675,7 +677,7 @@ class _$_ReccomendationLetterChanged implements _ReccomendationLetterChanged {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
-    required TResult Function() startDownload,
+    required TResult Function(String applicationId) startDownload,
     required TResult Function(double recievedAmount, double totalAmount)
         progressDownload,
     required TResult Function() downloadComplete,
@@ -700,7 +702,7 @@ class _$_ReccomendationLetterChanged implements _ReccomendationLetterChanged {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
-    TResult Function()? startDownload,
+    TResult Function(String applicationId)? startDownload,
     TResult Function(double recievedAmount, double totalAmount)?
         progressDownload,
     TResult Function()? downloadComplete,
@@ -867,7 +869,7 @@ class _$_MainEssayChanged implements _MainEssayChanged {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
-    required TResult Function() startDownload,
+    required TResult Function(String applicationId) startDownload,
     required TResult Function(double recievedAmount, double totalAmount)
         progressDownload,
     required TResult Function() downloadComplete,
@@ -892,7 +894,7 @@ class _$_MainEssayChanged implements _MainEssayChanged {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
-    TResult Function()? startDownload,
+    TResult Function(String applicationId)? startDownload,
     TResult Function(double recievedAmount, double totalAmount)?
         progressDownload,
     TResult Function()? downloadComplete,
@@ -1062,7 +1064,7 @@ class _$_ExtraCertificationChanged implements _ExtraCertificationChanged {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
-    required TResult Function() startDownload,
+    required TResult Function(String applicationId) startDownload,
     required TResult Function(double recievedAmount, double totalAmount)
         progressDownload,
     required TResult Function() downloadComplete,
@@ -1087,7 +1089,7 @@ class _$_ExtraCertificationChanged implements _ExtraCertificationChanged {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
-    TResult Function()? startDownload,
+    TResult Function(String applicationId)? startDownload,
     TResult Function(double recievedAmount, double totalAmount)?
         progressDownload,
     TResult Function()? downloadComplete,
@@ -1254,7 +1256,7 @@ class _$_ExtraEssay implements _ExtraEssay {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
-    required TResult Function() startDownload,
+    required TResult Function(String applicationId) startDownload,
     required TResult Function(double recievedAmount, double totalAmount)
         progressDownload,
     required TResult Function() downloadComplete,
@@ -1279,7 +1281,7 @@ class _$_ExtraEssay implements _ExtraEssay {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
-    TResult Function()? startDownload,
+    TResult Function(String applicationId)? startDownload,
     TResult Function(double recievedAmount, double totalAmount)?
         progressDownload,
     TResult Function()? downloadComplete,
@@ -1447,7 +1449,7 @@ class _$_MilitaryStatusChanged implements _MilitaryStatusChanged {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
-    required TResult Function() startDownload,
+    required TResult Function(String applicationId) startDownload,
     required TResult Function(double recievedAmount, double totalAmount)
         progressDownload,
     required TResult Function() downloadComplete,
@@ -1472,7 +1474,7 @@ class _$_MilitaryStatusChanged implements _MilitaryStatusChanged {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
-    TResult Function()? startDownload,
+    TResult Function(String applicationId)? startDownload,
     TResult Function(double recievedAmount, double totalAmount)?
         progressDownload,
     TResult Function()? downloadComplete,
@@ -1642,7 +1644,7 @@ class _$_UniversityStatusChanged implements _UniversityStatusChanged {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
-    required TResult Function() startDownload,
+    required TResult Function(String applicationId) startDownload,
     required TResult Function(double recievedAmount, double totalAmount)
         progressDownload,
     required TResult Function() downloadComplete,
@@ -1667,7 +1669,7 @@ class _$_UniversityStatusChanged implements _UniversityStatusChanged {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
-    TResult Function()? startDownload,
+    TResult Function(String applicationId)? startDownload,
     TResult Function(double recievedAmount, double totalAmount)?
         progressDownload,
     TResult Function()? downloadComplete,
@@ -1833,7 +1835,7 @@ class _$_ProficiencyChanged implements _ProficiencyChanged {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
-    required TResult Function() startDownload,
+    required TResult Function(String applicationId) startDownload,
     required TResult Function(double recievedAmount, double totalAmount)
         progressDownload,
     required TResult Function() downloadComplete,
@@ -1858,7 +1860,7 @@ class _$_ProficiencyChanged implements _ProficiencyChanged {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
-    TResult Function()? startDownload,
+    TResult Function(String applicationId)? startDownload,
     TResult Function(double recievedAmount, double totalAmount)?
         progressDownload,
     TResult Function()? downloadComplete,
@@ -2028,7 +2030,7 @@ class _$_DepartmentSelectionChanged implements _DepartmentSelectionChanged {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
-    required TResult Function() startDownload,
+    required TResult Function(String applicationId) startDownload,
     required TResult Function(double recievedAmount, double totalAmount)
         progressDownload,
     required TResult Function() downloadComplete,
@@ -2053,7 +2055,7 @@ class _$_DepartmentSelectionChanged implements _DepartmentSelectionChanged {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
-    TResult Function()? startDownload,
+    TResult Function(String applicationId)? startDownload,
     TResult Function(double recievedAmount, double totalAmount)?
         progressDownload,
     TResult Function()? downloadComplete,
@@ -2195,7 +2197,7 @@ class _$_SubmitApplicationClicked implements _SubmitApplicationClicked {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
-    required TResult Function() startDownload,
+    required TResult Function(String applicationId) startDownload,
     required TResult Function(double recievedAmount, double totalAmount)
         progressDownload,
     required TResult Function() downloadComplete,
@@ -2220,7 +2222,7 @@ class _$_SubmitApplicationClicked implements _SubmitApplicationClicked {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
-    TResult Function()? startDownload,
+    TResult Function(String applicationId)? startDownload,
     TResult Function(double recievedAmount, double totalAmount)?
         progressDownload,
     TResult Function()? downloadComplete,
@@ -2355,7 +2357,7 @@ class _$_FirstPageComplete implements _FirstPageComplete {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
-    required TResult Function() startDownload,
+    required TResult Function(String applicationId) startDownload,
     required TResult Function(double recievedAmount, double totalAmount)
         progressDownload,
     required TResult Function() downloadComplete,
@@ -2380,7 +2382,7 @@ class _$_FirstPageComplete implements _FirstPageComplete {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
-    TResult Function()? startDownload,
+    TResult Function(String applicationId)? startDownload,
     TResult Function(double recievedAmount, double totalAmount)?
         progressDownload,
     TResult Function()? downloadComplete,
@@ -2515,7 +2517,7 @@ class _$_CheckApplicationCache implements _CheckApplicationCache {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
-    required TResult Function() startDownload,
+    required TResult Function(String applicationId) startDownload,
     required TResult Function(double recievedAmount, double totalAmount)
         progressDownload,
     required TResult Function() downloadComplete,
@@ -2540,7 +2542,7 @@ class _$_CheckApplicationCache implements _CheckApplicationCache {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
-    TResult Function()? startDownload,
+    TResult Function(String applicationId)? startDownload,
     TResult Function(double recievedAmount, double totalAmount)?
         progressDownload,
     TResult Function()? downloadComplete,
@@ -2623,6 +2625,7 @@ abstract class _$StartDownloadCopyWith<$Res> {
   factory _$StartDownloadCopyWith(
           _StartDownload value, $Res Function(_StartDownload) then) =
       __$StartDownloadCopyWithImpl<$Res>;
+  $Res call({String applicationId});
 }
 
 /// @nodoc
@@ -2635,25 +2638,50 @@ class __$StartDownloadCopyWithImpl<$Res>
 
   @override
   _StartDownload get _value => super._value as _StartDownload;
+
+  @override
+  $Res call({
+    Object? applicationId = freezed,
+  }) {
+    return _then(_StartDownload(
+      applicationId: applicationId == freezed
+          ? _value.applicationId
+          : applicationId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_StartDownload implements _StartDownload {
-  const _$_StartDownload();
+  const _$_StartDownload({required this.applicationId});
+
+  @override
+  final String applicationId;
 
   @override
   String toString() {
-    return 'ApplicationEvent.startDownload()';
+    return 'ApplicationEvent.startDownload(applicationId: $applicationId)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _StartDownload);
+    return identical(this, other) ||
+        (other is _StartDownload &&
+            (identical(other.applicationId, applicationId) ||
+                const DeepCollectionEquality()
+                    .equals(other.applicationId, applicationId)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(applicationId);
+
+  @JsonKey(ignore: true)
+  @override
+  _$StartDownloadCopyWith<_StartDownload> get copyWith =>
+      __$StartDownloadCopyWithImpl<_StartDownload>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2675,12 +2703,12 @@ class _$_StartDownload implements _StartDownload {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
-    required TResult Function() startDownload,
+    required TResult Function(String applicationId) startDownload,
     required TResult Function(double recievedAmount, double totalAmount)
         progressDownload,
     required TResult Function() downloadComplete,
   }) {
-    return startDownload();
+    return startDownload(applicationId);
   }
 
   @override
@@ -2700,14 +2728,14 @@ class _$_StartDownload implements _StartDownload {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
-    TResult Function()? startDownload,
+    TResult Function(String applicationId)? startDownload,
     TResult Function(double recievedAmount, double totalAmount)?
         progressDownload,
     TResult Function()? downloadComplete,
     required TResult orElse(),
   }) {
     if (startDownload != null) {
-      return startDownload();
+      return startDownload(applicationId);
     }
     return orElse();
   }
@@ -2775,7 +2803,13 @@ class _$_StartDownload implements _StartDownload {
 }
 
 abstract class _StartDownload implements ApplicationEvent {
-  const factory _StartDownload() = _$_StartDownload;
+  const factory _StartDownload({required String applicationId}) =
+      _$_StartDownload;
+
+  String get applicationId => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$StartDownloadCopyWith<_StartDownload> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2874,7 +2908,7 @@ class _$_ProgressDownload implements _ProgressDownload {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
-    required TResult Function() startDownload,
+    required TResult Function(String applicationId) startDownload,
     required TResult Function(double recievedAmount, double totalAmount)
         progressDownload,
     required TResult Function() downloadComplete,
@@ -2899,7 +2933,7 @@ class _$_ProgressDownload implements _ProgressDownload {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
-    TResult Function()? startDownload,
+    TResult Function(String applicationId)? startDownload,
     TResult Function(double recievedAmount, double totalAmount)?
         progressDownload,
     TResult Function()? downloadComplete,
@@ -3042,7 +3076,7 @@ class _$_DownloadComplete implements _DownloadComplete {
     required TResult Function() submitApplicationClicked,
     required TResult Function() firstPageComplete,
     required TResult Function() checkCacheApplication,
-    required TResult Function() startDownload,
+    required TResult Function(String applicationId) startDownload,
     required TResult Function(double recievedAmount, double totalAmount)
         progressDownload,
     required TResult Function() downloadComplete,
@@ -3067,7 +3101,7 @@ class _$_DownloadComplete implements _DownloadComplete {
     TResult Function()? submitApplicationClicked,
     TResult Function()? firstPageComplete,
     TResult Function()? checkCacheApplication,
-    TResult Function()? startDownload,
+    TResult Function(String applicationId)? startDownload,
     TResult Function(double recievedAmount, double totalAmount)?
         progressDownload,
     TResult Function()? downloadComplete,

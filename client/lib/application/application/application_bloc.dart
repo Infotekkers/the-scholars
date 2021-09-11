@@ -380,7 +380,8 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
         yield state.copyWith(
           isPreparingDownload: true,
         );
-        _iApplicationRepository.downloadApplicationFile();
+        _iApplicationRepository.downloadApplicationFile(
+            applicationId: e.applicationId);
       },
     );
   }
