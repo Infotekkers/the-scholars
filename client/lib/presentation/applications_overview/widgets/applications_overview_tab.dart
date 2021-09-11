@@ -1,4 +1,7 @@
+import 'dart:html';
+
 import 'package:client/application/applications_overview_watcher/applications_overview_watcher_bloc.dart';
+import 'package:client/application/auth/auth_bloc.dart';
 import 'package:client/presentation/applications_overview/widgets/applications_overview_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,6 +22,17 @@ class ApplicationsOverviewTab extends StatelessWidget {
                     Navigator.pushNamed(context, "/annoucements-overview"),
                 icon: const Icon(Icons.announcement),
                 tooltip: "Announcements",
+                color: Colors.white,
+              ),
+              const SizedBox(width:30),
+              IconButton(
+                onPressed: () {
+                  BlocProvider.of<AuthBloc>(context).add(const AuthEvent.signedOut());
+                  BlocProvider.of<AuthBloc>(context).add(const AuthEvent.authCheckRequested());
+                  Navigator.pushNamed(context, "/splash");
+                },
+                icon: const Icon(Icons.exit_to_app),
+                tooltip: "Log Out",
                 color: Colors.white,
               ),
               const SizedBox(width:30),
