@@ -34,8 +34,8 @@ router.get("/applications", async (req, res) => {
 
     res.status(200).send(allApplicationsHighlight);
   } catch (e) {
-    handleError(e);
-    res.status(500).send("Error");
+    // handleError(e);
+    res.status(500).send("Please try again later!");
   }
 });
 
@@ -48,8 +48,8 @@ router.get("/application.:applicationId", async (req, res) => {
 
     res.status(200).send(selectedApplication);
   } catch (e) {
-    handleError(e);
-    res.status(500).send("Error");
+    // handleError(e);
+    res.status(500).send("Please try again later!");
   }
 });
 
@@ -117,8 +117,8 @@ router.get("/application/download/:applicationId", async (req, res) => {
 
     res.status(200).send("Pdf downloaded!");
   } catch (e) {
-    handleError(e);
-    res.status(500).send("Error");
+    // handleError(e);
+    res.status(500).send("Please tyr again later!");
   }
 });
 
@@ -138,7 +138,7 @@ router.put("/admissionStatus/:applicationId", async (req, res) => {
     res.status(204).send("Completed");
   } catch (e) {
     handleError(e);
-    res.status(500).send("Error");
+    res.status(500).send("Please try again later!");
   }
 });
 

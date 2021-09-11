@@ -65,46 +65,50 @@ const Application = require("../../models/Application");
  *      200 :
  */
 router.post("/document", async (req, res) => {
-  console.log("Launched");
-  // get document form body
-  const documentContent = req.body.documentContent;
-  const documentType = req.body.documentType;
-  const documentExtension = req.body.documentExtension;
+  try {
+    console.log("Launched");
+    // get document form body
+    const documentContent = req.body.documentContent;
+    const documentType = req.body.documentType;
+    const documentExtension = req.body.documentExtension;
 
-  const applicationId = req.body.applicationId;
+    const applicationId = req.body.applicationId;
 
-  //   Options are "essayFile","schoolTranscript","extraCertification"
-  const submittedDocumentType = req.body.submittedDocumentType;
+    //   Options are "essayFile","schoolTranscript","extraCertification"
+    const submittedDocumentType = req.body.submittedDocumentType;
 
-  //   Generate random document number
-  const documentName = uuidv4();
+    //   Generate random document number
+    const documentName = uuidv4();
 
-  //   Create file from content
-  const formattedDocument = Buffer.from(documentContent, "base64");
+    //   Create file from content
+    const formattedDocument = Buffer.from(documentContent, "base64");
 
-  //   Modify save path based on document type
-  var savePath;
-  if (documentType == "image") {
-    savePath = `uploads/images/${documentName}.${documentExtension}`;
-  } else {
-    savePath = `uploads/docs/${documentName}.${documentExtension}`;
+    //   Modify save path based on document type
+    var savePath;
+    if (documentType == "image") {
+      savePath = `uploads/images/${documentName}.${documentExtension}`;
+    } else {
+      savePath = `uploads/docs/${documentName}.${documentExtension}`;
+    }
+
+    //   Save created file to local storage
+    fs.writeFileSync(savePath, formattedDocument, function (err) {
+      if (err) console.log(err);
+    });
+
+    //   get application and update content
+    const updateValue = {};
+    updateValue[submittedDocumentType] = documentName;
+
+    const applicationUpdate = await Application.findByIdAndUpdate(
+      applicationId,
+      updateValue
+    );
+
+    res.status(200).send("Completed");
+  } catch (e) {
+    res.status(500).send("Please try again later!");
   }
-
-  //   Save created file to local storage
-  fs.writeFileSync(savePath, formattedDocument, function (err) {
-    if (err) console.log(err);
-  });
-
-  //   get application and update content
-  const updateValue = {};
-  updateValue[submittedDocumentType] = documentName;
-
-  const applicationUpdate = await Application.findByIdAndUpdate(
-    applicationId,
-    updateValue
-  );
-
-  res.status(200).send("Completed");
 });
 
 /**
@@ -118,110 +122,118 @@ router.post("/document", async (req, res) => {
  *        description : Returns application Id
  */
 router.get("/test", async (req, res) => {
-  const newApplication = Application();
+  try {
+    const newApplication = Application();
 
-  const application = await newApplication.save();
+    const application = await newApplication.save();
 
-  const application_id = await application._id;
+    const application_id = await application._id;
 
-  console.log("Empty Application Generated Successfully");
-  res.status(200).send(application_id);
+    console.log("Empty Application Generated Successfully");
+    res.status(200).send(application_id);
+  } catch (e) {
+    res.status(500).send("Please try again later!");
+  }
 });
 
 router.post("/extra-curricular", async (req, res) => {
-  const applicationId = await req.body.applicationId;
-  const inputExtraCurricular = await req.body.extracurricularInfo;
-
-  if (!inputExtraCurricular) {
-    res.status(400).send("Please provide input");
-  }
-
   try {
+    const applicationId = await req.body.applicationId;
+    const inputExtraCurricular = await req.body.extracurricularInfo;
+
+    if (!inputExtraCurricular) {
+      res.status(400).send("Please provide input");
+    }
+
     await Application.findByIdAndUpdate(applicationId, {
       extracurricularActivities: inputExtraCurricular,
     });
 
     res.status(200).send("Extra-curricular information recorded");
   } catch (err) {
-    res.status(500).send("Couldn't process request please try again");
+    res.status(500).send("Please try again later!");
     console.log(err);
   }
 });
 
 router.put("/preferred-department", async (req, res) => {
-  const appllicationId = await req.body.applicationId;
-  const departmentPreference = await req.body.departmentChoice;
-
-  if (!departmentPreference) {
-    res.status(400).send("Please select preferences");
-  }
-
   try {
+    const appllicationId = await req.body.applicationId;
+    const departmentPreference = await req.body.departmentChoice;
+
+    if (!departmentPreference) {
+      res.status(400).send("Please select preferences");
+    }
+
     await Application.findByIdAndUpdate(appllicationId, {
       $set: { departmentChoice: departmentPreference },
     });
 
     res.status(200).send("Department choice recorded");
   } catch (err) {
-    res.status(500).send("Couldn't process request please try again");
+    res.status(500).send("Please try again later!");
     console.log(err);
   }
 });
 
 router.post("/standardized-tests", async (req, res) => {
-  const appllicationId = await req.body.applicationId;
-  const proficiencyTests = await req.body.standardizedTestScores;
-
-  if (!proficiencyTests) {
-    res.status(400).send("Please complete fields");
-  }
-
   try {
+    const appllicationId = await req.body.applicationId;
+    const proficiencyTests = await req.body.standardizedTestScores;
+
+    if (!proficiencyTests) {
+      res.status(400).send("Please complete fields");
+    }
+
     await Application.findByIdAndUpdate(appllicationId, {
       $set: { proficiencyExams: proficiencyTests },
     });
 
     res.status(200).send("Response recorded");
   } catch (err) {
-    res.status(500).send("Couldn't process request please try again");
+    res.status(500).send("Please try again later!");
     console.log(err);
   }
 });
 
 router.post("/supplement-essay", async (req, res) => {
-  const applicationId = await req.body.applicationId;
-  const supplements = await req.body.supplementEssay;
-
-  if (!supplements) {
-    res.status(400).send("Please complete fields");
-  }
-
   try {
+    const applicationId = await req.body.applicationId;
+    const supplements = await req.body.supplementEssay;
+
+    if (!supplements) {
+      res.status(400).send("Please complete fields");
+    }
+
     await Application.findByIdAndUpdate(applicationId, {
       $set: { smallEssay: supplements },
     });
 
     res.status(200).send("Response recorded");
   } catch (err) {
-    res.status(500).send("Couldn't process request please try again");
+    res.status(500).send("Please try again later!");
     console.log(err);
   }
 });
 
 router.get("/admission-status", async (req, res) => {
-  const applicationId = await req.body.applicationId;
-  const status = await req.body.admissionStatus;
+  try {
+    const applicationId = await req.body.applicationId;
+    const status = await req.body.admissionStatus;
 
-  if (!status) {
-    res.status(200).send("Nothing to display");
+    if (!status) {
+      res.status(200).send("Nothing to display");
+    }
+
+    res.status(400).send(status);
+  } catch (e) {
+    res.status(500).send("Please try again later!");
   }
-
-  res.status(400).send(status);
 });
 
 router.post("/application", async (req, res) => {
-  console.log("Launched");
   try {
+    console.log("Launched");
     const receivedApplication = await JSON.parse(req.body.application);
 
     // Get School Transcript
@@ -269,56 +281,69 @@ router.post("/application", async (req, res) => {
     res.status(201).send({ applicationId: `${applicationId}` });
   } catch (e) {
     console.log(e);
-    res.status(503).send();
+    res.status(500).send("Please try again later!");
   }
 });
+
 router.post("/id/application", async (req, res) => {
-  console.log("Launched");
-  const applicationIds = await JSON.parse(req.body.applicationIds);
+  try {
+    console.log("Launched");
+    const applicationIds = await JSON.parse(req.body.applicationIds);
 
-  const applicationIdsArray = Array.from(applicationIds);
-  const applicationHighlights = [];
+    const applicationIdsArray = Array.from(applicationIds);
+    const applicationHighlights = [];
 
-  for (i = 0; i < applicationIdsArray.length; i++) {
-    var currentApplication = await Application.findById(applicationIdsArray[i]);
-    try {
-      applicationHighlights.push({
-        name: currentApplication["fullName"],
-        admissionStatus: currentApplication["admissionStatus"],
-        applicationId: currentApplication.id,
-      });
-    } catch (e) {
-      const applicationIds = await JSON.parse(req.body.applicationIds);
+    for (i = 0; i < applicationIdsArray.length; i++) {
+      var currentApplication = await Application.findById(
+        applicationIdsArray[i]
+      );
+      try {
+        applicationHighlights.push({
+          name: currentApplication["fullName"],
+          admissionStatus: currentApplication["admissionStatus"],
+          applicationId: currentApplication.id,
+        });
+      } catch (e) {
+        const applicationIds = await JSON.parse(req.body.applicationIds);
+      }
     }
+
+    console.log(applicationHighlights);
+
+    res.status(200).send(applicationHighlights);
+  } catch (e) {
+    res.status(500).send("Please try again later!");
   }
-
-  console.log(applicationHighlights);
-
-  res.status(200).send(applicationHighlights);
 });
 
 router.post("/check", async (req, res) => {
-  console.log("Launched");
-  var hasPending = false;
-  const applicationIds = await JSON.parse(req.body.applicationIds);
+  try {
+    console.log("Launched");
+    var hasPending = false;
+    const applicationIds = await JSON.parse(req.body.applicationIds);
 
-  const applicationIdsArray = Array.from(applicationIds);
-  for (i = 0; i < applicationIdsArray.length; i++) {
-    var currentApplication = await Application.findById(applicationIdsArray[i]);
-    try {
-      if (currentApplication["admissionStatus"] == "pending") {
-        hasPending = true;
-        break;
+    const applicationIdsArray = Array.from(applicationIds);
+    for (i = 0; i < applicationIdsArray.length; i++) {
+      var currentApplication = await Application.findById(
+        applicationIdsArray[i]
+      );
+      try {
+        if (currentApplication["admissionStatus"] == "pending") {
+          hasPending = true;
+          break;
+        }
+      } catch (e) {
+        res.status(500).send();
       }
-    } catch (e) {
-      res.status(500).send();
     }
-  }
 
-  if (hasPending) {
-    res.status(200).send();
-  } else {
-    res.send(404).send();
+    if (hasPending) {
+      res.status(200).send();
+    } else {
+      res.send(404).send();
+    }
+  } catch (e) {
+    res.status(500).send("Please try again later!");
   }
 });
 
@@ -326,13 +351,17 @@ router.post("/check", async (req, res) => {
  * Test
  */
 router.get("/file/test", (req, res) => {
-  console.log("Launched Down");
-  (res.shouldKeepAlive = true),
-    res
-      .status(200)
-      .download(
-        "C:/Users/Thomas/Desktop/AMP/the-scholars/server/uploads/Test.pdf"
-      );
+  try {
+    console.log("Launched Down");
+    (res.shouldKeepAlive = true),
+      res
+        .status(200)
+        .download(
+          "C:/Users/Thomas/Desktop/AMP/the-scholars/server/uploads/Test.pdf"
+        );
+  } catch (e) {
+    res.status(500).send("Please try again later!");
+  }
 });
 
 // Export router
