@@ -120,8 +120,21 @@ class AnnouncementForm extends StatelessWidget {
                                   BlocProvider.of<AnnouncementFormBloc>(context)
                                       .add(const AnnouncementFormEvent.saved());
                                 },
-                          child: const Text('Post'),
-                        ),
+                                 style: ElevatedButton.styleFrom(
+                                primary: Colors.grey, //background color of button
+                                side: const BorderSide(width:3, color:Colors.grey), //border width and color
+                                elevation: 3, //elevation of button
+                                shape: RoundedRectangleBorder( //to set border radius to button
+                                          borderRadius: BorderRadius.circular(30)
+                                      ),
+                                  padding: const EdgeInsets.all(20) //content padding inside button
+                              ),
+                          child: const Text('Post',
+                          style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.normal))),
+                        
                       ],
                     ),
                   ),
