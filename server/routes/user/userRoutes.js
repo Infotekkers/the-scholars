@@ -297,29 +297,39 @@ router.post("/id/application", async (req, res) => {
   res.status(200).send(applicationHighlights);
 });
 
+/**
+ *
+ * CHECK IF A PENDING APPLICATION IS OPEN -- TAKES ARRAY OF APPLICATION IDS
+ */
 router.post("/check", async (req, res) => {
   console.log("Launched");
-  var hasPending = false;
   const applicationIds = await JSON.parse(req.body.applicationIds);
 
   const applicationIdsArray = Array.from(applicationIds);
+  const applications = [];
+
   for (i = 0; i < applicationIdsArray.length; i++) {
     var currentApplication = await Application.findById(applicationIdsArray[i]);
     try {
-      if (currentApplication["admissionStatus"] == "pending") {
-        hasPending = true;
-        break;
+      if (
+        currentApplication != null &&
+        currentApplication["admissionStatus"] == "pending"
+      ) {
+        applications.push({
+          admissionStatus: currentApplication["admissionStatus"],
+        });
       }
     } catch (e) {
-      res.status(500).send();
+      const applicationIds = await JSON.parse(req.body.applicationIds);
     }
   }
 
-  if (hasPending) {
+  if (applications.length > 0) {
     res.status(200).send();
   } else {
-    res.send(404).send();
+    res.status(404).send();
   }
+  res.status(200);
 });
 
 /*********

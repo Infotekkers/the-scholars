@@ -248,9 +248,8 @@ class ApiApplicationRepository implements IApplicationRepository {
 
     final allApplicationIds = prefs.getStringList("allApplications");
 
-
     // if cache is empty
-    if (allApplicationIds == []) {
+    if (allApplicationIds == [] || allApplicationIds == null) {
       return right([]);
     } else {
       // Call the api
