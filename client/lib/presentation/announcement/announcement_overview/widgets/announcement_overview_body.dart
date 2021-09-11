@@ -9,7 +9,7 @@ class AnnouncementsOverviewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final AnnouncementActorBloc actorBloc =
         BlocProvider.of<AnnouncementActorBloc>(context);
-
+          
     return BlocBuilder<AnnouncementWatcherBloc, AnnouncementWatcherState>(
         builder: (context, state) => state.map(
             initial: (_) => Container(),
@@ -24,7 +24,7 @@ class AnnouncementsOverviewBody extends StatelessWidget {
                   itemCount: state.annoucements.length,
                   itemBuilder: (_, index) => GestureDetector(
                         onTap: () => Navigator.pushNamed(
-                            context, "/annoucement",
+                            context, "/annoucement-form",
                             arguments: state.annoucements[index]),
                         onLongPress: () => _showDeletionDialog(
                             context, actorBloc, state.annoucements[index]),

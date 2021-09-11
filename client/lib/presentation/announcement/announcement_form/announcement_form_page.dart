@@ -7,13 +7,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AnnouncementFormPage extends StatelessWidget {
-  const AnnouncementFormPage({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     final Announcement announcement =
         ModalRoute.of(context)!.settings.arguments as Announcement;
-
+  
     return Scaffold(
         appBar: AppBar(
           title: const Text("AnnouncementFormPage"),

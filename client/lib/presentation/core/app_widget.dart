@@ -18,6 +18,7 @@ class AppWidget extends StatelessWidget {
       ],
       child: MaterialApp(
         // Define General Theme
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
             primaryColor: Colors.purple,
             accentColor: Colors.black,

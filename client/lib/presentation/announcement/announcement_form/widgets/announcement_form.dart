@@ -48,6 +48,7 @@ class AnnouncementForm extends StatelessWidget {
                               margin: const EdgeInsets.all(5),
                               child: TextFormField(
                                 key: const ValueKey("announcementTitleInput"),
+                                initialValue: announcement.title.value.fold((l) => "", (r) => r),
                                 keyboardType: TextInputType.text,
                                 decoration: const InputDecoration(
                                   enabledBorder: OutlineInputBorder(
@@ -93,6 +94,7 @@ class AnnouncementForm extends StatelessWidget {
                               child: TextFormField(
                                 key:
                                     const ValueKey("announcementPageBodyInput"),
+                                initialValue: announcement.body.value.fold((l) => "", (r) => r),
                                 maxLines: 10,
                                 keyboardType: TextInputType.multiline,
                                 decoration: const InputDecoration(

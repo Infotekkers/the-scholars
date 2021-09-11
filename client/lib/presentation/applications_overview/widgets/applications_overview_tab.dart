@@ -13,6 +13,16 @@ class ApplicationsOverviewTab extends StatelessWidget {
         length: 4,
         child: Scaffold(
           appBar: AppBar(
+            actions: [
+              IconButton(
+                onPressed: () =>
+                    Navigator.pushNamed(context, "/annoucements-overview"),
+                icon: const Icon(Icons.announcement),
+                tooltip: "Announcements",
+                color: Colors.white,
+              ),
+              const SizedBox(width:30),
+            ],
             bottom: TabBar(
               physics: const NeverScrollableScrollPhysics(),
               onTap: (index) {

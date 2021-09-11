@@ -10,7 +10,7 @@ class AnnouncementsUserPage extends StatelessWidget {
     return MultiBlocProvider(
         providers: [
           BlocProvider<AnnouncementWatcherBloc>(
-              create: (context) => getIt<AnnouncementWatcherBloc>()),
+              create: (context) => getIt<AnnouncementWatcherBloc>()..add(const AnnouncementWatcherEvent.getAllStarted())),
         ],
         child: MultiBlocListener(listeners: [
           BlocListener<AnnouncementWatcherBloc, AnnouncementWatcherState>(

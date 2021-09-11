@@ -10,6 +10,7 @@ abstract class AnnouncementDto implements _$AnnouncementDto {
   const AnnouncementDto._();
 
   const factory AnnouncementDto({
+    required String id,
     required String title,
     required String body,
     required String date,
@@ -21,11 +22,13 @@ abstract class AnnouncementDto implements _$AnnouncementDto {
           announcement.title.isValid() ? announcement.title.getOrCrash() : "",
       body: announcement.body.isValid() ? announcement.body.getOrCrash() : "",
       date: announcement.date.isValid() ? announcement.date.getOrCrash() : "",
+      id: announcement.id.isValid() ? announcement.id.getOrCrash() : "",
     );
   }
 
   Announcement toDomain() {
     return Announcement(
+        id: AnnouncementId(id),
         title: AnnouncementTitle(title),
         body: AnnouncementBody(body),
         date: AnnouncementDate(date));

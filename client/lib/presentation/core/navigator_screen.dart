@@ -7,6 +7,7 @@ import 'package:client/application/profile/profile_bloc.dart';
 import 'package:client/application/util/util_bloc.dart';
 import 'package:client/application/credentials/credentials_bloc.dart';
 import 'package:client/injectable.dart';
+import 'package:client/presentation/announcement/annoucement_user/announcement_user_page.dart';
 import 'package:client/presentation/application/work.dart';
 import 'package:client/presentation/profile/edit_profile.dart';
 import 'package:client/presentation/announcement/announcement_form/announcement_form_page.dart';
@@ -56,7 +57,7 @@ class NavigatorPage extends StatelessWidget {
                   child: const EditProfilePage(),
                 );
               } else if (state.pageIndexNumber == 2) {
-                return const ThirdApplicationPage();
+                return AnnouncementsUserPage();
               } else {
                 return BlocProvider.value(
                   value: getIt<CredentialsBloc>(),
