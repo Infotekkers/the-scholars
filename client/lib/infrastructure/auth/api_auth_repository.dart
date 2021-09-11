@@ -13,7 +13,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 @LazySingleton(as: IAuthRepository)
 class ApiAuthRepository implements IAuthRepository {
-  static final String _baseUrl = "http://192.168.0.147:5000/auth";
+  // static final String _baseUrl = "http://192.168.0.147:5000/auth";
+
+  static final String _baseUrl = "${dotenv.env["API"]}/auth";
   http.Client? client = http.Client();
 
   ApiAuthRepository();

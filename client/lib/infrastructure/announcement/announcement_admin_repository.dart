@@ -12,7 +12,9 @@ import 'package:http/http.dart' as http;
 @LazySingleton(as: IAnnouncementRepository)
 class AnnoncementRepository implements IAnnouncementRepository {
   http.Client? client = http.Client();
-  static const String _baseUrl = "http://192.168.0.147:5000/admin";
+  // static const String _baseUrl = "http://192.168.0.147:5000/admin";
+
+  static const String _baseUrl = "http://localhost:3000/admin";
 
   AnnoncementRepository();
   @override

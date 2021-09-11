@@ -8,9 +8,6 @@ class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Register Here'),
-      ),
       body: BlocProvider(
         create: (BuildContext context) => getIt<RegisterFormBloc>(),
         child: RegisterForm(),

@@ -5,12 +5,15 @@ import 'package:client/domain/credentials/credentials.dart';
 import 'package:client/domain/credentials/i_credentials_repository.dart';
 import 'package:client/infrastructure/credentials/credential_dto.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:injectable/injectable.dart';
 import 'package:http/http.dart' as http;
 
 @LazySingleton(as: ICredentialsRepository)
 class ApiCredentials implements ICredentialsRepository {
-  final String baseUri = "http://10.0.2.2:5000";
+  // final String baseUri = "http://10.0.2.2:5000";
+
+  static final String baseUri = "${dotenv.env["API"]}";
   @override
   Future<Either<CredentialFailure, String>> resetEmail(
       {required CredentialsEmail credentialsEmail}) async {
