@@ -28,184 +28,228 @@ class SignInForm extends StatelessWidget {
                 }));
       },
       builder: (context, state) {
-        return Scaffold(
-          backgroundColor: Colors.grey[800],
-          body: SingleChildScrollView(
-            child: Column(
-              children: <Widget>[
-                Stack(
-                  alignment: Alignment.topCenter,
-                  children: <Widget>[
-                    Align(
-                      alignment: Alignment.topLeft,
-                      child: Image.asset("assets/images/icon7.png", width: 200),
-                    ),
-                    Align(
-                      alignment: Alignment.topLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 25),
-                        child: IconButton(
-                            icon: const Icon(Icons.arrow_back,
-                                color: Colors.white),
-                            onPressed: () {}),
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 150, left: 30),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          // ignore: prefer_const_literals_to_create_immutables
-                          children: <Widget>[
-                            const Text("Login",
+        return Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("images/patterns/shattered-island.gif"),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: Scaffold(
+            backgroundColor: Colors.transparent,
+            body: SingleChildScrollView(
+              child: Column(
+                children: <Widget>[
+                  Stack(
+                    children: <Widget>[
+                      // Align(
+                      //   alignment: Alignment.topLeft,
+                      //   child:
+                      //       Image.asset("assets/images/icon7.png", width: 200),
+                      // ),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 150, left: 40),
+                          child: Row(
+                            // ignore: prefer_const_literals_to_create_immutables
+                            children: <Widget>[
+                              const Text(
+                                "Welcome",
                                 // ignore: unnecessary_const
                                 style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 40,
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: 2.0)),
-                          ],
+                                    color: Color(0xff796b9e),
+                                    fontSize: 26,
+                                    letterSpacing: 2.0),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                    )
-                  ],
-                ),
-                Form(
-                    autovalidateMode: state.showErrorMessages
-                        ? AutovalidateMode.always
-                        : AutovalidateMode.disabled,
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          TextFormField(
-                            keyboardType: TextInputType.text,
-                            decoration: const InputDecoration(
-                              enabledBorder: OutlineInputBorder(
+                      Positioned(
+                        right: 0,
+                        top: 100,
+                        child: Transform.rotate(
+                          angle: 45,
+                          // ignore: sized_box_for_whitespace
+                          child: Container(
+                            width: 230,
+                            child: Image.asset(
+                              'images/pencil.png',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 40.0),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Get started',
+                        style: TextStyle(
+                          fontSize: 40.0,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 80),
+                    child: Form(
+                      autovalidateMode: state.showErrorMessages
+                          ? AutovalidateMode.always
+                          : AutovalidateMode.disabled,
+                      child: Padding(
+                        padding: const EdgeInsets.all(40.0),
+                        child: Column(
+                          children: [
+                            TextFormField(
+                              keyboardType: TextInputType.text,
+                              decoration: const InputDecoration(
+                                border: OutlineInputBorder(
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(20.0)),
+                                      BorderRadius.all(Radius.circular(8.0)),
                                   borderSide:
-                                      BorderSide(color: Colors.grey, width: 1)),
-                              fillColor: Colors.white,
-                              prefixIcon: Icon(Icons.email),
-                              labelText: 'Email',
-                              labelStyle: TextStyle(color: Colors.white),
+                                      BorderSide(color: Colors.white, width: 2),
+                                ),
+                                fillColor: Colors.white,
+                                prefixIcon: Icon(
+                                  Icons.email,
+                                  color: Color(0xff796b9e),
+                                ),
+                                labelText: 'Email',
+                                labelStyle: TextStyle(color: Colors.white),
+                              ),
+                              autocorrect: false,
+                              onChanged: (value) =>
+                                  BlocProvider.of<SignInFormBloc>(context)
+                                      .add(SignInFormEvent.emailChanged(value)),
+                              validator: (_) =>
+                                  BlocProvider.of<SignInFormBloc>(context)
+                                      .state
+                                      .emailAddress
+                                      .value
+                                      .fold(
+                                          (failure) => failure.maybeMap(
+                                              invalidEmail: (_) =>
+                                                  "Invalid Email",
+                                              orElse: () => null),
+                                          (_) => null),
                             ),
-                            autocorrect: false,
-                            onChanged: (value) =>
-                                BlocProvider.of<SignInFormBloc>(context)
-                                    .add(SignInFormEvent.emailChanged(value)),
-                            validator: (_) =>
-                                BlocProvider.of<SignInFormBloc>(context)
-                                    .state
-                                    .emailAddress
-                                    .value
-                                    .fold(
-                                        (failure) => failure.maybeMap(
-                                            invalidEmail: (_) =>
-                                                "Invalid Email",
-                                            orElse: () => null),
-                                        (_) => null),
-                          ),
-                          const SizedBox(height: 35),
-                          TextFormField(
-                            decoration: const InputDecoration(
-                              enabledBorder: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(20.0)),
-                                  borderSide: BorderSide(
-                                    color: Colors.grey,
-                                    width: 1,
-                                  )),
-                              fillColor: Colors.white,
-                              prefixIcon: Icon(Icons.lock),
-                              labelText: 'Password',
-                              labelStyle: TextStyle(color: Colors.white),
+                            const SizedBox(height: 35),
+                            TextFormField(
+                              decoration: const InputDecoration(
+                                border: OutlineInputBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(8.0)),
+                                    borderSide: BorderSide(
+                                      color: Colors.white,
+                                      width: 2,
+                                    )),
+                                fillColor: Colors.white,
+                                prefixIcon:
+                                    Icon(Icons.lock, color: Color(0xff796b9e)),
+                                labelText: 'Password',
+                                labelStyle: TextStyle(color: Colors.white),
+                              ),
+                              autocorrect: false,
+                              obscureText: true,
+                              onChanged: (value) =>
+                                  BlocProvider.of<SignInFormBloc>(context).add(
+                                      SignInFormEvent.passwordChanged(value)),
+                              validator: (_) =>
+                                  BlocProvider.of<SignInFormBloc>(context)
+                                      .state
+                                      .password
+                                      .value
+                                      .fold(
+                                          (failure) => failure.maybeMap(
+                                              invalidPassword: (_) =>
+                                                  "Invalid Password",
+                                              orElse: () => null),
+                                          (_) => null),
                             ),
-                            autocorrect: false,
-                            obscureText: true,
-                            onChanged: (value) =>
-                                BlocProvider.of<SignInFormBloc>(context).add(
-                                    SignInFormEvent.passwordChanged(value)),
-                            validator: (_) =>
-                                BlocProvider.of<SignInFormBloc>(context)
-                                    .state
-                                    .password
-                                    .value
-                                    .fold(
-                                        (failure) => failure.maybeMap(
-                                            invalidPassword: (_) =>
-                                                "Invalid Password",
-                                            orElse: () => null),
-                                        (_) => null),
-                          ),
-                          // ignore: prefer_const_constructors
-                          SizedBox(
-                            height: 35,
-                          ),
-                          SizedBox(
+                            // ignore: prefer_const_constructors
+                            SizedBox(
+                              height: 35,
+                            ),
+                            SizedBox(
+                                height: 60,
+                                width: MediaQuery.of(context).size.width,
+                                child: ElevatedButton(
+                                    onPressed: state.isSubmitting
+                                        ? null
+                                        : () {
+                                            BlocProvider.of<SignInFormBloc>(
+                                                    context)
+                                                .add(const SignInFormEvent
+                                                    .signInPressed());
+                                          },
+                                    style: ElevatedButton.styleFrom(
+                                        primary: const Color(
+                                            0xff5621e8), //background color of button //border width and color
+                                        elevation: 3, //elevation of button
+                                        shape: RoundedRectangleBorder(
+                                            //to set border radius to button
+                                            borderRadius:
+                                                BorderRadius.circular(8)),
+                                        padding: const EdgeInsets.all(
+                                            20) //content padding inside button
+                                        ),
+                                    child: const Text("Log in",
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.normal)))),
+
+                            const SizedBox(
+                              height: 15,
+                            ),
+
+                            SizedBox(
                               height: 60,
                               width: MediaQuery.of(context).size.width,
-                              child: ElevatedButton(
-                                  onPressed: state.isSubmitting
-                                      ? null
-                                      : () {
-                                          BlocProvider.of<SignInFormBloc>(
-                                                  context)
-                                              .add(const SignInFormEvent
-                                                  .signInPressed());
-                                        },
+                              child: Expanded(
+                                child: ElevatedButton(
+                                  key: const ValueKey("signInRegisterButton"),
+                                  onPressed: () {
+                                    Navigator.popAndPushNamed(
+                                        context, '/register');
+                                  },
                                   style: ElevatedButton.styleFrom(
                                       primary: Colors
-                                          .grey, //background color of button
+                                          .transparent, //background color of button
                                       side: const BorderSide(
-                                          width: 3,
+                                          width: 2,
                                           color: Colors
                                               .grey), //border width and color
                                       elevation: 3, //elevation of button
                                       shape: RoundedRectangleBorder(
                                           //to set border radius to button
                                           borderRadius:
-                                              BorderRadius.circular(30)),
+                                              BorderRadius.circular(8)),
                                       padding: const EdgeInsets.all(
                                           20) //content padding inside button
                                       ),
-                                  child: const Text("Log In",
+                                  child: const Text("Sign up",
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontSize: 20,
-                                          fontWeight: FontWeight.normal)))),
-
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Expanded(
-                              child: ElevatedButton(
-                                key: const ValueKey("signInRegisterButton"),
-                                onPressed: () {
-                                  Navigator.popAndPushNamed(
-                                      context, '/register');
-                                },
-                                child: const Text("Sign Up",
-                                    style: TextStyle(
-                                        color: Colors.grey,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.normal)),
+                                          fontWeight: FontWeight.normal)),
+                                ),
+                                // ],
                               ),
-                              // ],
                             )
                           ],
-                        )
-                        ],
+                        ),
                       ),
-                    )),
-              ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         );
