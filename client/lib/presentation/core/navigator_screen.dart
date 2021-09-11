@@ -5,6 +5,7 @@ import 'package:client/application/application/application_bloc.dart';
 import 'package:client/application/navigation/navigation_bloc.dart';
 import 'package:client/application/profile/profile_bloc.dart';
 import 'package:client/application/util/util_bloc.dart';
+import 'package:client/application/credentials/credentials_bloc.dart';
 import 'package:client/injectable.dart';
 import 'package:client/presentation/announcement/annoucement_user/announcement_user_page.dart';
 import 'package:client/presentation/application/work.dart';
@@ -15,6 +16,7 @@ import 'package:client/presentation/application/second_page.dart';
 import 'package:client/presentation/auth/register_page.dart';
 import 'package:client/presentation/view_applications/home_page.dart';
 import 'package:client/presentation/profile/profile_page.dart';
+import 'package:client/presentation/credentials/credential_page.dart';
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
@@ -59,6 +61,11 @@ class NavigatorPage extends StatelessWidget {
               }
               else {
                 return const ThirdApplicationPage();
+              } else {
+                return BlocProvider.value(
+                  value: getIt<CredentialsBloc>(),
+                  child: const CredentialPage(),
+                );
               }
             }
 
