@@ -216,6 +216,8 @@ class RegisterForm extends StatelessWidget {
                               child: ListTile(
                                 title: const Text("Admin"),
                                 leading: Radio(
+                                  key: const ValueKey(
+                                      "registerPageRoleAdminInput"),
                                   fillColor: MaterialStateColor.resolveWith(
                                       (states) =>
                                           Theme.of(context).primaryColor),

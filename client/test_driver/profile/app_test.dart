@@ -3,7 +3,7 @@ import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('Profile Section', () {
+  group('User Side', () {
     // Login Page Values
     final loginPageUserNameFinder = find.byValueKey("loginPageUserName");
     final loginPagePasswordFinder = find.byValueKey("loginPagePassword");
@@ -25,6 +25,8 @@ void main() {
     final registerPageLoginButtonFinder =
         find.byValueKey("registerPageLoginButton");
     final registerViewFinder = find.byValueKey("registerPageView");
+    final registerPageRoleAdminFinder =
+        find.byValueKey("registerPageRoleAdminInput");
 
     // Profile Page Values
     // Profile Values
@@ -63,6 +65,15 @@ void main() {
         find.byValueKey("firstApplicationPageSubmitButton");
 
     final logoutButtonFinder = find.byValueKey("credentialsLogoutButton");
+
+// announcement Page
+    final announcementPageTitleFinder =
+        find.byValueKey("announcementTitleInput");
+    final announcementPageBodyFinder =
+        find.byValueKey("announcementPageBodyInput");
+    final announcementPageButtonFinder =
+        find.byValueKey("announcementPagePostButton");
+    // Announcmenet
     late FlutterDriver driver;
 
     setUpAll(() async {
@@ -73,7 +84,8 @@ void main() {
       driver.close();
     });
 
-    test("Register User and Login fill out profile and Edit Profile", () async {
+    test("Register User and Login fill out profile and Edit Profile Logout",
+        () async {
       await driver.waitFor(loginPageLoginButtonFinder);
 
       await driver.scrollUntilVisible(
@@ -161,6 +173,44 @@ void main() {
       // Logout
       await driver.waitFor(logoutButtonFinder);
       await driver.tap(logoutButtonFinder);
+    });
+
+    test("Admin Register Login Create Announcment Logout", () async {
+      await driver.waitFor(loginPageLoginButtonFinder);
+
+      await driver.scrollUntilVisible(
+          loginViewFinder, loginPageRegisterButtonFinder,
+          dyScroll: -100);
+      // Go to register Page
+      await driver.tap(loginPageRegisterButtonFinder);
+
+      // Input Username
+      await driver.tap(registerPageFullNameFinder);
+      await driver.enterText("User Admin");
+
+      // Input Email
+      await driver.tap(registerPageEmailFinder);
+      await driver.enterText("useradmin@gmail.com");
+
+      // Scroll
+      await driver.scrollUntilVisible(
+          registerViewFinder, registerPagePasswordFinder,
+          dyScroll: -60);
+
+      // Input Password
+      await driver.tap(registerPagePasswordFinder);
+      await driver.enterText("Testing@123");
+
+      // Select Role
+      await driver.tap(registerPageRoleAdminFinder);
+
+      // Scroll
+      await driver.scrollUntilVisible(
+          registerViewFinder, registerPageRegisterButtonFinder,
+          dyScroll: -60);
+
+      // Regitser button
+      await driver.tap(registerPageRegisterButtonFinder);
     });
   });
 }

@@ -8,8 +8,7 @@ import 'package:client/domain/core/failures.dart';
 import 'package:client/domain/credentials/credentials.dart';
 import 'package:client/domain/credentials/credentials_failures.dart';
 import 'package:client/domain/credentials/i_credentials_repository.dart';
-import 'package:client/domain/profile/profile.dart';
-import 'package:client/domain/profile/profile_failures.dart';
+
 import 'package:client/injectable.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -83,6 +82,7 @@ class CredentialsBloc extends Bloc<CredentialsEvent, CredentialState> {
         final Option<User> user =
             await getIt<IAuthRepository>().getCachedUser();
 
+        // ignore: prefer_final_locals
         String currentEmail = user.fold(
           () => "",
           (a) => a.emailAddress.value.fold(
@@ -114,8 +114,6 @@ class CredentialsBloc extends Bloc<CredentialsEvent, CredentialState> {
             resetFailureOrSuccess: some(failureOrSuccess),
             showErrorMessages: false,
           );
-
-          print("RESULT OF REPO : $failureOrSuccess");
         } else {
           ValueFailure failureValue = ValueFailure.generalError();
           if (!isCurrentPassswordValid) {
@@ -149,6 +147,7 @@ class CredentialsBloc extends Bloc<CredentialsEvent, CredentialState> {
 
         String currentEmail = user.fold(
           () => "",
+          // ignore: prefer_final_locals
           (a) => a.emailAddress.value.fold(
             (l) => "",
             (r) => r,
