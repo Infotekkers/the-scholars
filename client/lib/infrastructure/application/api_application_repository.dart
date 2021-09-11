@@ -24,6 +24,10 @@ import 'package:uuid/uuid.dart';
 @LazySingleton(as: IApplicationRepository)
 class ApiApplicationRepository implements IApplicationRepository {
   final dbService = DatabaseService.dbInstance;
+  // static final String? apiUrl = "http://192.168.0.147:5000";
+
+  // static final String? apiUrl = "http://10.0.2.2:5000";
+
   static final String? apiUrl = dotenv.env["API"];
 
   // Function to create a complete Applciation -- ON Server
@@ -83,6 +87,7 @@ class ApiApplicationRepository implements IApplicationRepository {
             "universityFamilyStatus": application.universityFamilyStatus.value
                 .fold((l) => "", (r) => r),
           };
+          print("Application Created");
 
           // Send api call
           final apiResult = await http.post(
@@ -310,12 +315,11 @@ class ApiApplicationRepository implements IApplicationRepository {
     // Create DIO Instance
     final Dio dio = Dio();
 
-    //  Download URI
-    // const String downloadUri =
-    //     "https://unsplash.com/photos/8pb7Hq539Zw/download?force=true";
+    // final String downloadUri =
+    // "$apiUrl/admin/application/download/$applicationId";
 
-    final String downloadUri = "${dotenv.env["API"]}/admin/application/download/613c7b83c3b4db5174bebddb";
-
+    final String downloadUri =
+        "${dotenv.env["API"]}/admin/application/download/$applicationId";
     //  Start Download
     try {
       print("Downloading");

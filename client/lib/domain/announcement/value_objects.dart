@@ -48,3 +48,14 @@ class AnnouncementDate extends ValueObject<String> {
 
   const AnnouncementDate._(this.value);
 }
+
+class AnnouncementId extends ValueObject<String> {
+  @override
+  final Either<ValueFailure<String>, String> value;
+
+  factory AnnouncementId(String idStr) {
+    return AnnouncementId._(right(idStr));
+  }
+
+  const AnnouncementId._(this.value);
+}

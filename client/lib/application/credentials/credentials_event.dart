@@ -34,4 +34,6 @@ class CredentialsEvent with _$CredentialsEvent {
   const factory CredentialsEvent.emailSubmitEvent() = _EmailSubmit;
 
   const factory CredentialsEvent.passwordSubmitEvent() = _PasswordSubmit;
+
+  const factory CredentialsEvent.deleteAccount() = _DeleteAccount;
 }

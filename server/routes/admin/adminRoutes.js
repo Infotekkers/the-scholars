@@ -65,6 +65,7 @@ router.get("/application.:applicationId", async (req, res) => {
 
 router.get("/application/download/:applicationId", async (req, res) => {
   console.log("Preparing FILE");
+
   const html = fs.readFileSync(
     path.resolve(__dirname, "../", "../", "templates/template.html"),
     "utf8"
@@ -177,101 +178,111 @@ async function getContent(fileName) {
 // Route to get Announcements
 router.get("/announcements", async (req, res) => {
   try {
-     
+    // Get all announcements from DB
+    const allAnnouncements = await Announcement.find();
+    
+    let response = [];
 
-      // Get all announcements from DB
-      const allAnnouncements = await Announcement.find();
+    for (const announcementDB of allAnnouncements) {
+      let announcement = {
+        id: `${announcementDB._id}`,
+        title: announcementDB.title,
+        body: announcementDB.body,
+        date: announcementDB.date
+      };
+      response.push(announcement);
+    }
 
-      console.log(allAnnouncements);
-
-   
-
-      res.status(200).send(allAnnouncements);
+    res.status(200).send(response);
   } catch (e) {
-      handleError(e);
-      res.status(400).send("Item Not Found");
+    handleError(e);
+    res.status(400).send("Item Not Found");
   }
 });
 
 router.get("/announcements/:id", async (req, res) => {
-// Get Data from ID from Param
-try {
-  const announcementId = req.params.id;
+  // Get Data from ID from Param
+  try {
+    const announcementId = req.params.id;
 
-  const selectedAnnouncement = await Announcement.findById(announcementId);
+    const selectedAnnouncement = await Announcement.findById(announcementId);
 
-  console.log(selectedAnnouncement);
+    console.log(selectedAnnouncement);
 
-  res.status(200).send(selectedAnnouncement);
-} catch (e) {
-  res.status(404).send("Item Not Found");
-}
+    res.status(200).send(selectedAnnouncement);
+  } catch (e) {
+    res.status(404).send("Item Not Found");
+  }
 });
 
 router.post("/announcements", async (req, res) => {
-try {
-  // Get Data from body
-  const bodyData = req.body;
+  try {
+    // Get Data from body
+    const bodyData = req.body;
 
-  const title = bodyData.title;
-  const body = bodyData.body;
-  const date = bodyData.date;
+    const title = bodyData.title;
+    const body = bodyData.body;
+    const date = bodyData.date;
 
-  const newAnnouncement = new Announcement({
-    title: title,
-    body: body,
-    date: date,
-  });
+    const newAnnouncement = new Announcement({
+      title: title,
+      body: body,
+      date: date,
+    });
 
-  const announcement = await newAnnouncement.save();
-  console.log(announcement);
+    const announcement = await newAnnouncement.save();
 
-  res.status(201).send({ announcementId: announcement._id });
-} catch (e) {
-  console.log(e);
-  res.status(500).send("Sever Error");
-}
+    res.status(201).send({ announcementId: announcement._id });
+  } catch (e) {
+    console.log(e);
+    res.status(500).send("Sever Error");
+  }
 });
 
 router.put("/announcements", async (req, res) => {
-try {
-  // Get Data from body
-  const bodyData = req.body;
+  try {
+    // Get Data from body
+    const bodyData = req.body;
 
-  const title = bodyData.title;
-  const body = bodyData.body;
-  const date = bodyData.date;
-  const id = bodyData.id;
+    const title = bodyData.title;
+    const body = bodyData.body;
+    const date = bodyData.date;
 
-  const updateValue = {
-    title: title,
-    body: body,
-    date: date,
-  };
+    const updateValue = {
+      title: title,
+      body: body,
+      date: date,
+    };
 
-  await Announcement.findByIdAndUpdate(
-    id,
-    updateValue
-  );
+    let id;
+    console.log(bodyData.id);
+    if (bodyData.id != "") {
+      id = bodyData.id;
+      await Announcement.findByIdAndUpdate(id, updateValue);
+    } else {
+      const newAnnouncement = new Announcement(updateValue);
+      id = newAnnouncement._id;
+      await newAnnouncement.save();
+    }
 
-  res.status(201).send("Update Complete");
-} catch (e) {
-  console.log(e);
-  res.status(500).send("Sever Error");
-}
+    res.status(201).send({id:`${id}`});
+  } catch (e) {
+    console.log(e);
+    res.status(500).send("Sever Error");
+  }
 });
 
 router.delete("/announcements/:id", async (req, res) => {
-try {
-  // Get Data from body
-  const id = req.params.id;
+  try {
+    // Get Data from body
+    const id = req.params.id;
 
-  const newAnnouncement = await Announcement.deleteOne({ _id: id });
+    const newAnnouncement = await Announcement.deleteOne({ _id: id });
 
-  res.status(204).send("Delete Complete");
-} catch (e) {
-  console.log(e);
-  res.status(500).send("Sever Error");
-}
+    res.status(204).send("Delete Complete");
+  } catch (e) {
+    console.log(e);
+    res.status(500).send("Sever Error");
+  }
 });
 module.exports = router;

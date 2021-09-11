@@ -3,6 +3,7 @@ part of 'announcement_form_bloc.dart';
 @freezed
 abstract class AnnouncementFormState with _$AnnouncementFormState {
   const factory AnnouncementFormState({
+    required AnnouncementId id,
     required AnnouncementTitle title,
     required AnnouncementBody body,
     required AnnouncementDate date,
@@ -14,6 +15,7 @@ abstract class AnnouncementFormState with _$AnnouncementFormState {
   }) = _AnnouncementFormState;
 
   factory AnnouncementFormState.initial() => AnnouncementFormState(
+        id: AnnouncementId(''),
         title: AnnouncementTitle(''),
         body: AnnouncementBody(''),
         date: AnnouncementDate(''),

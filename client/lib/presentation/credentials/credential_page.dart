@@ -1,4 +1,7 @@
+import 'package:client/application/auth/auth_bloc.dart';
 import 'package:client/application/credentials/credentials_bloc.dart';
+import 'package:client/application/navigation/navigation_bloc.dart';
+import 'package:client/domain/auth/i_auth_repository.dart';
 import 'package:client/injectable.dart';
 import 'package:client/presentation/application/widgets/form_label.dart';
 import 'package:client/presentation/core/widgets/flash_message.dart';
@@ -15,7 +18,9 @@ class CredentialPage extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 30),
       child: BlocConsumer<CredentialsBloc, CredentialState>(
         listener: (context, state) {
-          // TODO: implement listener
+          if (state.isDeleted) {
+            Navigator.popAndPushNamed(context, '/sign-in');
+          }
           state.valueFailureOrSuccess.fold(
             () {},
             (either) {
@@ -155,6 +160,43 @@ class CredentialPage extends StatelessWidget {
               ),
 
               getComponentPassword(state, context, _credentialsBloc),
+
+              Container(
+                margin:
+                    const EdgeInsets.symmetric(vertical: 60, horizontal: 120),
+                child: MaterialButton(
+                  key: const ValueKey("credentialsLogoutButton"),
+                  onPressed: () {
+                    getIt<IAuthRepository>().removeCachedUser();
+                    getIt<NavigationBloc>().add(
+                        const NavigationEvent.changePage(pageIndexNumber: 0));
+
+                    getIt<AuthBloc>().add(const AuthEvent.authCheckRequested());
+                    Navigator.popAndPushNamed(context, '/sign-in');
+                  },
+                  color: Colors.red,
+                  child: const Text(
+                    "Logout",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+
+              Container(
+                margin:
+                    const EdgeInsets.symmetric(vertical: 0, horizontal: 100),
+                child: MaterialButton(
+                  onPressed: () {
+                    _credentialsBloc
+                        .add(const CredentialsEvent.deleteAccount());
+                  },
+                  color: Colors.red,
+                  child: const Text(
+                    "Delete Account",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              )
             ],
           );
         },

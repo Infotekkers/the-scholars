@@ -11,7 +11,7 @@ class AnnouncementFormPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final Announcement announcement =
         ModalRoute.of(context)!.settings.arguments as Announcement;
-  
+
     return Scaffold(
         
         body: BlocProvider(

@@ -69,6 +69,7 @@ class AnnouncementForm extends StatelessWidget {
                                 const Text("Compose ",
                                     // ignore: unnecessary_const
                                     style: const TextStyle(
+
                                         color: Colors.white,
                                         fontSize: 40,
                                         fontWeight: FontWeight.normal,
@@ -168,6 +169,7 @@ class AnnouncementForm extends StatelessWidget {
                                                   'Exceeding Characters Limit',
                                               orElse: () => null),
                                           (_) => null),
+
                                 ),
                               ),
                               const SizedBox(height: 30,),
@@ -202,6 +204,7 @@ class AnnouncementForm extends StatelessWidget {
                               ),
                             ],
                           ),
+
                         ),
                       ],
                     ),

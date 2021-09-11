@@ -69,6 +69,10 @@ class _$CredentialsEventTearOff {
   _PasswordSubmit passwordSubmitEvent() {
     return const _PasswordSubmit();
   }
+
+  _DeleteAccount deleteAccount() {
+    return const _DeleteAccount();
+  }
 }
 
 /// @nodoc
@@ -89,6 +93,7 @@ mixin _$CredentialsEvent {
     required TResult Function(String currentPassword) currentPasswordChanged,
     required TResult Function() emailSubmitEvent,
     required TResult Function() passwordSubmitEvent,
+    required TResult Function() deleteAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -104,6 +109,7 @@ mixin _$CredentialsEvent {
     TResult Function(String currentPassword)? currentPasswordChanged,
     TResult Function()? emailSubmitEvent,
     TResult Function()? passwordSubmitEvent,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -126,6 +132,7 @@ mixin _$CredentialsEvent {
         currentPasswordChanged,
     required TResult Function(_EmailSubmit value) emailSubmitEvent,
     required TResult Function(_PasswordSubmit value) passwordSubmitEvent,
+    required TResult Function(_DeleteAccount value) deleteAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -143,6 +150,7 @@ mixin _$CredentialsEvent {
     TResult Function(_CurrentPasswordChanged value)? currentPasswordChanged,
     TResult Function(_EmailSubmit value)? emailSubmitEvent,
     TResult Function(_PasswordSubmit value)? passwordSubmitEvent,
+    TResult Function(_DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -213,6 +221,7 @@ class _$_Initial implements _Initial {
     required TResult Function(String currentPassword) currentPasswordChanged,
     required TResult Function() emailSubmitEvent,
     required TResult Function() passwordSubmitEvent,
+    required TResult Function() deleteAccount,
   }) {
     return initial();
   }
@@ -231,6 +240,7 @@ class _$_Initial implements _Initial {
     TResult Function(String currentPassword)? currentPasswordChanged,
     TResult Function()? emailSubmitEvent,
     TResult Function()? passwordSubmitEvent,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -259,6 +269,7 @@ class _$_Initial implements _Initial {
         currentPasswordChanged,
     required TResult Function(_EmailSubmit value) emailSubmitEvent,
     required TResult Function(_PasswordSubmit value) passwordSubmitEvent,
+    required TResult Function(_DeleteAccount value) deleteAccount,
   }) {
     return initial(this);
   }
@@ -279,6 +290,7 @@ class _$_Initial implements _Initial {
     TResult Function(_CurrentPasswordChanged value)? currentPasswordChanged,
     TResult Function(_EmailSubmit value)? emailSubmitEvent,
     TResult Function(_PasswordSubmit value)? passwordSubmitEvent,
+    TResult Function(_DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -343,6 +355,7 @@ class _$_ActivteEmailResetArea implements _ActivteEmailResetArea {
     required TResult Function(String currentPassword) currentPasswordChanged,
     required TResult Function() emailSubmitEvent,
     required TResult Function() passwordSubmitEvent,
+    required TResult Function() deleteAccount,
   }) {
     return activateEmailResetArea();
   }
@@ -361,6 +374,7 @@ class _$_ActivteEmailResetArea implements _ActivteEmailResetArea {
     TResult Function(String currentPassword)? currentPasswordChanged,
     TResult Function()? emailSubmitEvent,
     TResult Function()? passwordSubmitEvent,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (activateEmailResetArea != null) {
@@ -389,6 +403,7 @@ class _$_ActivteEmailResetArea implements _ActivteEmailResetArea {
         currentPasswordChanged,
     required TResult Function(_EmailSubmit value) emailSubmitEvent,
     required TResult Function(_PasswordSubmit value) passwordSubmitEvent,
+    required TResult Function(_DeleteAccount value) deleteAccount,
   }) {
     return activateEmailResetArea(this);
   }
@@ -409,6 +424,7 @@ class _$_ActivteEmailResetArea implements _ActivteEmailResetArea {
     TResult Function(_CurrentPasswordChanged value)? currentPasswordChanged,
     TResult Function(_EmailSubmit value)? emailSubmitEvent,
     TResult Function(_PasswordSubmit value)? passwordSubmitEvent,
+    TResult Function(_DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (activateEmailResetArea != null) {
@@ -474,6 +490,7 @@ class _$_ActivtePasswordResetArea implements _ActivtePasswordResetArea {
     required TResult Function(String currentPassword) currentPasswordChanged,
     required TResult Function() emailSubmitEvent,
     required TResult Function() passwordSubmitEvent,
+    required TResult Function() deleteAccount,
   }) {
     return activatePasswordResetArea();
   }
@@ -492,6 +509,7 @@ class _$_ActivtePasswordResetArea implements _ActivtePasswordResetArea {
     TResult Function(String currentPassword)? currentPasswordChanged,
     TResult Function()? emailSubmitEvent,
     TResult Function()? passwordSubmitEvent,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (activatePasswordResetArea != null) {
@@ -520,6 +538,7 @@ class _$_ActivtePasswordResetArea implements _ActivtePasswordResetArea {
         currentPasswordChanged,
     required TResult Function(_EmailSubmit value) emailSubmitEvent,
     required TResult Function(_PasswordSubmit value) passwordSubmitEvent,
+    required TResult Function(_DeleteAccount value) deleteAccount,
   }) {
     return activatePasswordResetArea(this);
   }
@@ -540,6 +559,7 @@ class _$_ActivtePasswordResetArea implements _ActivtePasswordResetArea {
     TResult Function(_CurrentPasswordChanged value)? currentPasswordChanged,
     TResult Function(_EmailSubmit value)? emailSubmitEvent,
     TResult Function(_PasswordSubmit value)? passwordSubmitEvent,
+    TResult Function(_DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (activatePasswordResetArea != null) {
@@ -605,6 +625,7 @@ class _$_DeactivteEmailResetArea implements _DeactivteEmailResetArea {
     required TResult Function(String currentPassword) currentPasswordChanged,
     required TResult Function() emailSubmitEvent,
     required TResult Function() passwordSubmitEvent,
+    required TResult Function() deleteAccount,
   }) {
     return deactivateEmailResetArea();
   }
@@ -623,6 +644,7 @@ class _$_DeactivteEmailResetArea implements _DeactivteEmailResetArea {
     TResult Function(String currentPassword)? currentPasswordChanged,
     TResult Function()? emailSubmitEvent,
     TResult Function()? passwordSubmitEvent,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (deactivateEmailResetArea != null) {
@@ -651,6 +673,7 @@ class _$_DeactivteEmailResetArea implements _DeactivteEmailResetArea {
         currentPasswordChanged,
     required TResult Function(_EmailSubmit value) emailSubmitEvent,
     required TResult Function(_PasswordSubmit value) passwordSubmitEvent,
+    required TResult Function(_DeleteAccount value) deleteAccount,
   }) {
     return deactivateEmailResetArea(this);
   }
@@ -671,6 +694,7 @@ class _$_DeactivteEmailResetArea implements _DeactivteEmailResetArea {
     TResult Function(_CurrentPasswordChanged value)? currentPasswordChanged,
     TResult Function(_EmailSubmit value)? emailSubmitEvent,
     TResult Function(_PasswordSubmit value)? passwordSubmitEvent,
+    TResult Function(_DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (deactivateEmailResetArea != null) {
@@ -737,6 +761,7 @@ class _$_DeactivtePasswordResetArea implements _DeactivtePasswordResetArea {
     required TResult Function(String currentPassword) currentPasswordChanged,
     required TResult Function() emailSubmitEvent,
     required TResult Function() passwordSubmitEvent,
+    required TResult Function() deleteAccount,
   }) {
     return deactivatePasswordResetArea();
   }
@@ -755,6 +780,7 @@ class _$_DeactivtePasswordResetArea implements _DeactivtePasswordResetArea {
     TResult Function(String currentPassword)? currentPasswordChanged,
     TResult Function()? emailSubmitEvent,
     TResult Function()? passwordSubmitEvent,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (deactivatePasswordResetArea != null) {
@@ -783,6 +809,7 @@ class _$_DeactivtePasswordResetArea implements _DeactivtePasswordResetArea {
         currentPasswordChanged,
     required TResult Function(_EmailSubmit value) emailSubmitEvent,
     required TResult Function(_PasswordSubmit value) passwordSubmitEvent,
+    required TResult Function(_DeleteAccount value) deleteAccount,
   }) {
     return deactivatePasswordResetArea(this);
   }
@@ -803,6 +830,7 @@ class _$_DeactivtePasswordResetArea implements _DeactivtePasswordResetArea {
     TResult Function(_CurrentPasswordChanged value)? currentPasswordChanged,
     TResult Function(_EmailSubmit value)? emailSubmitEvent,
     TResult Function(_PasswordSubmit value)? passwordSubmitEvent,
+    TResult Function(_DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (deactivatePasswordResetArea != null) {
@@ -894,6 +922,7 @@ class _$_NewEmailChanged implements _NewEmailChanged {
     required TResult Function(String currentPassword) currentPasswordChanged,
     required TResult Function() emailSubmitEvent,
     required TResult Function() passwordSubmitEvent,
+    required TResult Function() deleteAccount,
   }) {
     return newEmailAddressChanged(newEmailAddress);
   }
@@ -912,6 +941,7 @@ class _$_NewEmailChanged implements _NewEmailChanged {
     TResult Function(String currentPassword)? currentPasswordChanged,
     TResult Function()? emailSubmitEvent,
     TResult Function()? passwordSubmitEvent,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (newEmailAddressChanged != null) {
@@ -940,6 +970,7 @@ class _$_NewEmailChanged implements _NewEmailChanged {
         currentPasswordChanged,
     required TResult Function(_EmailSubmit value) emailSubmitEvent,
     required TResult Function(_PasswordSubmit value) passwordSubmitEvent,
+    required TResult Function(_DeleteAccount value) deleteAccount,
   }) {
     return newEmailAddressChanged(this);
   }
@@ -960,6 +991,7 @@ class _$_NewEmailChanged implements _NewEmailChanged {
     TResult Function(_CurrentPasswordChanged value)? currentPasswordChanged,
     TResult Function(_EmailSubmit value)? emailSubmitEvent,
     TResult Function(_PasswordSubmit value)? passwordSubmitEvent,
+    TResult Function(_DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (newEmailAddressChanged != null) {
@@ -1058,6 +1090,7 @@ class _$_NewPasswordEmailChanged implements _NewPasswordEmailChanged {
     required TResult Function(String currentPassword) currentPasswordChanged,
     required TResult Function() emailSubmitEvent,
     required TResult Function() passwordSubmitEvent,
+    required TResult Function() deleteAccount,
   }) {
     return newPasswordEmailChanged(newPassword);
   }
@@ -1076,6 +1109,7 @@ class _$_NewPasswordEmailChanged implements _NewPasswordEmailChanged {
     TResult Function(String currentPassword)? currentPasswordChanged,
     TResult Function()? emailSubmitEvent,
     TResult Function()? passwordSubmitEvent,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (newPasswordEmailChanged != null) {
@@ -1104,6 +1138,7 @@ class _$_NewPasswordEmailChanged implements _NewPasswordEmailChanged {
         currentPasswordChanged,
     required TResult Function(_EmailSubmit value) emailSubmitEvent,
     required TResult Function(_PasswordSubmit value) passwordSubmitEvent,
+    required TResult Function(_DeleteAccount value) deleteAccount,
   }) {
     return newPasswordEmailChanged(this);
   }
@@ -1124,6 +1159,7 @@ class _$_NewPasswordEmailChanged implements _NewPasswordEmailChanged {
     TResult Function(_CurrentPasswordChanged value)? currentPasswordChanged,
     TResult Function(_EmailSubmit value)? emailSubmitEvent,
     TResult Function(_PasswordSubmit value)? passwordSubmitEvent,
+    TResult Function(_DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (newPasswordEmailChanged != null) {
@@ -1220,6 +1256,7 @@ class _$_NewPasswordChanged implements _NewPasswordChanged {
     required TResult Function(String currentPassword) currentPasswordChanged,
     required TResult Function() emailSubmitEvent,
     required TResult Function() passwordSubmitEvent,
+    required TResult Function() deleteAccount,
   }) {
     return newPasswordChanged(newPassword);
   }
@@ -1238,6 +1275,7 @@ class _$_NewPasswordChanged implements _NewPasswordChanged {
     TResult Function(String currentPassword)? currentPasswordChanged,
     TResult Function()? emailSubmitEvent,
     TResult Function()? passwordSubmitEvent,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (newPasswordChanged != null) {
@@ -1266,6 +1304,7 @@ class _$_NewPasswordChanged implements _NewPasswordChanged {
         currentPasswordChanged,
     required TResult Function(_EmailSubmit value) emailSubmitEvent,
     required TResult Function(_PasswordSubmit value) passwordSubmitEvent,
+    required TResult Function(_DeleteAccount value) deleteAccount,
   }) {
     return newPasswordChanged(this);
   }
@@ -1286,6 +1325,7 @@ class _$_NewPasswordChanged implements _NewPasswordChanged {
     TResult Function(_CurrentPasswordChanged value)? currentPasswordChanged,
     TResult Function(_EmailSubmit value)? emailSubmitEvent,
     TResult Function(_PasswordSubmit value)? passwordSubmitEvent,
+    TResult Function(_DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (newPasswordChanged != null) {
@@ -1384,6 +1424,7 @@ class _$_CurrentPasswordChanged implements _CurrentPasswordChanged {
     required TResult Function(String currentPassword) currentPasswordChanged,
     required TResult Function() emailSubmitEvent,
     required TResult Function() passwordSubmitEvent,
+    required TResult Function() deleteAccount,
   }) {
     return currentPasswordChanged(currentPassword);
   }
@@ -1402,6 +1443,7 @@ class _$_CurrentPasswordChanged implements _CurrentPasswordChanged {
     TResult Function(String currentPassword)? currentPasswordChanged,
     TResult Function()? emailSubmitEvent,
     TResult Function()? passwordSubmitEvent,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (currentPasswordChanged != null) {
@@ -1430,6 +1472,7 @@ class _$_CurrentPasswordChanged implements _CurrentPasswordChanged {
         currentPasswordChanged,
     required TResult Function(_EmailSubmit value) emailSubmitEvent,
     required TResult Function(_PasswordSubmit value) passwordSubmitEvent,
+    required TResult Function(_DeleteAccount value) deleteAccount,
   }) {
     return currentPasswordChanged(this);
   }
@@ -1450,6 +1493,7 @@ class _$_CurrentPasswordChanged implements _CurrentPasswordChanged {
     TResult Function(_CurrentPasswordChanged value)? currentPasswordChanged,
     TResult Function(_EmailSubmit value)? emailSubmitEvent,
     TResult Function(_PasswordSubmit value)? passwordSubmitEvent,
+    TResult Function(_DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (currentPasswordChanged != null) {
@@ -1520,6 +1564,7 @@ class _$_EmailSubmit implements _EmailSubmit {
     required TResult Function(String currentPassword) currentPasswordChanged,
     required TResult Function() emailSubmitEvent,
     required TResult Function() passwordSubmitEvent,
+    required TResult Function() deleteAccount,
   }) {
     return emailSubmitEvent();
   }
@@ -1538,6 +1583,7 @@ class _$_EmailSubmit implements _EmailSubmit {
     TResult Function(String currentPassword)? currentPasswordChanged,
     TResult Function()? emailSubmitEvent,
     TResult Function()? passwordSubmitEvent,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (emailSubmitEvent != null) {
@@ -1566,6 +1612,7 @@ class _$_EmailSubmit implements _EmailSubmit {
         currentPasswordChanged,
     required TResult Function(_EmailSubmit value) emailSubmitEvent,
     required TResult Function(_PasswordSubmit value) passwordSubmitEvent,
+    required TResult Function(_DeleteAccount value) deleteAccount,
   }) {
     return emailSubmitEvent(this);
   }
@@ -1586,6 +1633,7 @@ class _$_EmailSubmit implements _EmailSubmit {
     TResult Function(_CurrentPasswordChanged value)? currentPasswordChanged,
     TResult Function(_EmailSubmit value)? emailSubmitEvent,
     TResult Function(_PasswordSubmit value)? passwordSubmitEvent,
+    TResult Function(_DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (emailSubmitEvent != null) {
@@ -1650,6 +1698,7 @@ class _$_PasswordSubmit implements _PasswordSubmit {
     required TResult Function(String currentPassword) currentPasswordChanged,
     required TResult Function() emailSubmitEvent,
     required TResult Function() passwordSubmitEvent,
+    required TResult Function() deleteAccount,
   }) {
     return passwordSubmitEvent();
   }
@@ -1668,6 +1717,7 @@ class _$_PasswordSubmit implements _PasswordSubmit {
     TResult Function(String currentPassword)? currentPasswordChanged,
     TResult Function()? emailSubmitEvent,
     TResult Function()? passwordSubmitEvent,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (passwordSubmitEvent != null) {
@@ -1696,6 +1746,7 @@ class _$_PasswordSubmit implements _PasswordSubmit {
         currentPasswordChanged,
     required TResult Function(_EmailSubmit value) emailSubmitEvent,
     required TResult Function(_PasswordSubmit value) passwordSubmitEvent,
+    required TResult Function(_DeleteAccount value) deleteAccount,
   }) {
     return passwordSubmitEvent(this);
   }
@@ -1716,6 +1767,7 @@ class _$_PasswordSubmit implements _PasswordSubmit {
     TResult Function(_CurrentPasswordChanged value)? currentPasswordChanged,
     TResult Function(_EmailSubmit value)? emailSubmitEvent,
     TResult Function(_PasswordSubmit value)? passwordSubmitEvent,
+    TResult Function(_DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (passwordSubmitEvent != null) {
@@ -1730,6 +1782,140 @@ abstract class _PasswordSubmit implements CredentialsEvent {
 }
 
 /// @nodoc
+abstract class _$DeleteAccountCopyWith<$Res> {
+  factory _$DeleteAccountCopyWith(
+          _DeleteAccount value, $Res Function(_DeleteAccount) then) =
+      __$DeleteAccountCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$DeleteAccountCopyWithImpl<$Res>
+    extends _$CredentialsEventCopyWithImpl<$Res>
+    implements _$DeleteAccountCopyWith<$Res> {
+  __$DeleteAccountCopyWithImpl(
+      _DeleteAccount _value, $Res Function(_DeleteAccount) _then)
+      : super(_value, (v) => _then(v as _DeleteAccount));
+
+  @override
+  _DeleteAccount get _value => super._value as _DeleteAccount;
+}
+
+/// @nodoc
+
+class _$_DeleteAccount implements _DeleteAccount {
+  const _$_DeleteAccount();
+
+  @override
+  String toString() {
+    return 'CredentialsEvent.deleteAccount()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _DeleteAccount);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() activateEmailResetArea,
+    required TResult Function() activatePasswordResetArea,
+    required TResult Function() deactivateEmailResetArea,
+    required TResult Function() deactivatePasswordResetArea,
+    required TResult Function(String newEmailAddress) newEmailAddressChanged,
+    required TResult Function(String newPassword) newPasswordEmailChanged,
+    required TResult Function(String newPassword) newPasswordChanged,
+    required TResult Function(String currentPassword) currentPasswordChanged,
+    required TResult Function() emailSubmitEvent,
+    required TResult Function() passwordSubmitEvent,
+    required TResult Function() deleteAccount,
+  }) {
+    return deleteAccount();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? activateEmailResetArea,
+    TResult Function()? activatePasswordResetArea,
+    TResult Function()? deactivateEmailResetArea,
+    TResult Function()? deactivatePasswordResetArea,
+    TResult Function(String newEmailAddress)? newEmailAddressChanged,
+    TResult Function(String newPassword)? newPasswordEmailChanged,
+    TResult Function(String newPassword)? newPasswordChanged,
+    TResult Function(String currentPassword)? currentPasswordChanged,
+    TResult Function()? emailSubmitEvent,
+    TResult Function()? passwordSubmitEvent,
+    TResult Function()? deleteAccount,
+    required TResult orElse(),
+  }) {
+    if (deleteAccount != null) {
+      return deleteAccount();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActivteEmailResetArea value)
+        activateEmailResetArea,
+    required TResult Function(_ActivtePasswordResetArea value)
+        activatePasswordResetArea,
+    required TResult Function(_DeactivteEmailResetArea value)
+        deactivateEmailResetArea,
+    required TResult Function(_DeactivtePasswordResetArea value)
+        deactivatePasswordResetArea,
+    required TResult Function(_NewEmailChanged value) newEmailAddressChanged,
+    required TResult Function(_NewPasswordEmailChanged value)
+        newPasswordEmailChanged,
+    required TResult Function(_NewPasswordChanged value) newPasswordChanged,
+    required TResult Function(_CurrentPasswordChanged value)
+        currentPasswordChanged,
+    required TResult Function(_EmailSubmit value) emailSubmitEvent,
+    required TResult Function(_PasswordSubmit value) passwordSubmitEvent,
+    required TResult Function(_DeleteAccount value) deleteAccount,
+  }) {
+    return deleteAccount(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActivteEmailResetArea value)? activateEmailResetArea,
+    TResult Function(_ActivtePasswordResetArea value)?
+        activatePasswordResetArea,
+    TResult Function(_DeactivteEmailResetArea value)? deactivateEmailResetArea,
+    TResult Function(_DeactivtePasswordResetArea value)?
+        deactivatePasswordResetArea,
+    TResult Function(_NewEmailChanged value)? newEmailAddressChanged,
+    TResult Function(_NewPasswordEmailChanged value)? newPasswordEmailChanged,
+    TResult Function(_NewPasswordChanged value)? newPasswordChanged,
+    TResult Function(_CurrentPasswordChanged value)? currentPasswordChanged,
+    TResult Function(_EmailSubmit value)? emailSubmitEvent,
+    TResult Function(_PasswordSubmit value)? passwordSubmitEvent,
+    TResult Function(_DeleteAccount value)? deleteAccount,
+    required TResult orElse(),
+  }) {
+    if (deleteAccount != null) {
+      return deleteAccount(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeleteAccount implements CredentialsEvent {
+  const factory _DeleteAccount() = _$_DeleteAccount;
+}
+
+/// @nodoc
 class _$CredentialStateTearOff {
   const _$CredentialStateTearOff();
 
@@ -1740,6 +1926,7 @@ class _$CredentialStateTearOff {
       required Password currentPassword,
       required bool showErrorMessages,
       required bool isFetching,
+      required bool isDeleted,
       required bool isEmailResetActive,
       required bool isPasswordResetActive,
       required Option<Either<CredentialFailure, String>> resetFailureOrSuccess,
@@ -1751,6 +1938,7 @@ class _$CredentialStateTearOff {
       currentPassword: currentPassword,
       showErrorMessages: showErrorMessages,
       isFetching: isFetching,
+      isDeleted: isDeleted,
       isEmailResetActive: isEmailResetActive,
       isPasswordResetActive: isPasswordResetActive,
       resetFailureOrSuccess: resetFailureOrSuccess,
@@ -1770,6 +1958,7 @@ mixin _$CredentialState {
   Password get currentPassword => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isFetching => throw _privateConstructorUsedError;
+  bool get isDeleted => throw _privateConstructorUsedError;
   bool get isEmailResetActive => throw _privateConstructorUsedError;
   bool get isPasswordResetActive => throw _privateConstructorUsedError;
   Option<Either<CredentialFailure, String>> get resetFailureOrSuccess =>
@@ -1794,6 +1983,7 @@ abstract class $CredentialStateCopyWith<$Res> {
       Password currentPassword,
       bool showErrorMessages,
       bool isFetching,
+      bool isDeleted,
       bool isEmailResetActive,
       bool isPasswordResetActive,
       Option<Either<CredentialFailure, String>> resetFailureOrSuccess,
@@ -1817,6 +2007,7 @@ class _$CredentialStateCopyWithImpl<$Res>
     Object? currentPassword = freezed,
     Object? showErrorMessages = freezed,
     Object? isFetching = freezed,
+    Object? isDeleted = freezed,
     Object? isEmailResetActive = freezed,
     Object? isPasswordResetActive = freezed,
     Object? resetFailureOrSuccess = freezed,
@@ -1846,6 +2037,10 @@ class _$CredentialStateCopyWithImpl<$Res>
       isFetching: isFetching == freezed
           ? _value.isFetching
           : isFetching // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isDeleted: isDeleted == freezed
+          ? _value.isDeleted
+          : isDeleted // ignore: cast_nullable_to_non_nullable
               as bool,
       isEmailResetActive: isEmailResetActive == freezed
           ? _value.isEmailResetActive
@@ -1881,6 +2076,7 @@ abstract class _$CredentialStateCopyWith<$Res>
       Password currentPassword,
       bool showErrorMessages,
       bool isFetching,
+      bool isDeleted,
       bool isEmailResetActive,
       bool isPasswordResetActive,
       Option<Either<CredentialFailure, String>> resetFailureOrSuccess,
@@ -1906,6 +2102,7 @@ class __$CredentialStateCopyWithImpl<$Res>
     Object? currentPassword = freezed,
     Object? showErrorMessages = freezed,
     Object? isFetching = freezed,
+    Object? isDeleted = freezed,
     Object? isEmailResetActive = freezed,
     Object? isPasswordResetActive = freezed,
     Object? resetFailureOrSuccess = freezed,
@@ -1935,6 +2132,10 @@ class __$CredentialStateCopyWithImpl<$Res>
       isFetching: isFetching == freezed
           ? _value.isFetching
           : isFetching // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isDeleted: isDeleted == freezed
+          ? _value.isDeleted
+          : isDeleted // ignore: cast_nullable_to_non_nullable
               as bool,
       isEmailResetActive: isEmailResetActive == freezed
           ? _value.isEmailResetActive
@@ -1966,6 +2167,7 @@ class _$_CredentialState implements _CredentialState {
       required this.currentPassword,
       required this.showErrorMessages,
       required this.isFetching,
+      required this.isDeleted,
       required this.isEmailResetActive,
       required this.isPasswordResetActive,
       required this.resetFailureOrSuccess,
@@ -1984,6 +2186,8 @@ class _$_CredentialState implements _CredentialState {
   @override
   final bool isFetching;
   @override
+  final bool isDeleted;
+  @override
   final bool isEmailResetActive;
   @override
   final bool isPasswordResetActive;
@@ -1994,7 +2198,7 @@ class _$_CredentialState implements _CredentialState {
 
   @override
   String toString() {
-    return 'CredentialState(currentEmailAddress: $currentEmailAddress, newEmailAddress: $newEmailAddress, newPassword: $newPassword, currentPassword: $currentPassword, showErrorMessages: $showErrorMessages, isFetching: $isFetching, isEmailResetActive: $isEmailResetActive, isPasswordResetActive: $isPasswordResetActive, resetFailureOrSuccess: $resetFailureOrSuccess, valueFailureOrSuccess: $valueFailureOrSuccess)';
+    return 'CredentialState(currentEmailAddress: $currentEmailAddress, newEmailAddress: $newEmailAddress, newPassword: $newPassword, currentPassword: $currentPassword, showErrorMessages: $showErrorMessages, isFetching: $isFetching, isDeleted: $isDeleted, isEmailResetActive: $isEmailResetActive, isPasswordResetActive: $isPasswordResetActive, resetFailureOrSuccess: $resetFailureOrSuccess, valueFailureOrSuccess: $valueFailureOrSuccess)';
   }
 
   @override
@@ -2019,6 +2223,9 @@ class _$_CredentialState implements _CredentialState {
             (identical(other.isFetching, isFetching) ||
                 const DeepCollectionEquality()
                     .equals(other.isFetching, isFetching)) &&
+            (identical(other.isDeleted, isDeleted) ||
+                const DeepCollectionEquality()
+                    .equals(other.isDeleted, isDeleted)) &&
             (identical(other.isEmailResetActive, isEmailResetActive) ||
                 const DeepCollectionEquality()
                     .equals(other.isEmailResetActive, isEmailResetActive)) &&
@@ -2042,6 +2249,7 @@ class _$_CredentialState implements _CredentialState {
       const DeepCollectionEquality().hash(currentPassword) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isFetching) ^
+      const DeepCollectionEquality().hash(isDeleted) ^
       const DeepCollectionEquality().hash(isEmailResetActive) ^
       const DeepCollectionEquality().hash(isPasswordResetActive) ^
       const DeepCollectionEquality().hash(resetFailureOrSuccess) ^
@@ -2061,6 +2269,7 @@ abstract class _CredentialState implements CredentialState {
       required Password currentPassword,
       required bool showErrorMessages,
       required bool isFetching,
+      required bool isDeleted,
       required bool isEmailResetActive,
       required bool isPasswordResetActive,
       required Option<Either<CredentialFailure, String>> resetFailureOrSuccess,
@@ -2079,6 +2288,8 @@ abstract class _CredentialState implements CredentialState {
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
   bool get isFetching => throw _privateConstructorUsedError;
+  @override
+  bool get isDeleted => throw _privateConstructorUsedError;
   @override
   bool get isEmailResetActive => throw _privateConstructorUsedError;
   @override

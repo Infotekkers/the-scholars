@@ -3,13 +3,15 @@ import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('Profile Section', () {
+  group('User Side', () {
     // Login Page Values
     final loginPageUserNameFinder = find.byValueKey("loginPageUserName");
     final loginPagePasswordFinder = find.byValueKey("loginPagePassword");
     final loginPageLoginButtonFinder = find.byValueKey("loginPageLoginButton");
     final loginPageRegisterButtonFinder =
         find.byValueKey("loginPageRegisterButton");
+
+    final loginViewFinder = find.byValueKey("loginPageView");
 
     // Register Page Values
     final registerPageFullNameFinder =
@@ -22,6 +24,9 @@ void main() {
         find.byValueKey("registerPageRegisterButton");
     final registerPageLoginButtonFinder =
         find.byValueKey("registerPageLoginButton");
+    final registerViewFinder = find.byValueKey("registerPageView");
+    final registerPageRoleAdminFinder =
+        find.byValueKey("registerPageRoleAdminInput");
 
     // Profile Page Values
     // Profile Values
@@ -38,6 +43,8 @@ void main() {
         find.byValueKey("navigatorPageIndexZero");
     final navigatorPageIndexOneFinder =
         find.byValueKey("navigatorPageIndexOne");
+    final navigatorPageIndexThreeFinder =
+        find.byValueKey("navigatorPageIndexThree");
 
     // Profile Edit Page Values
     final profileEditPageGenderInputFinder =
@@ -57,6 +64,16 @@ void main() {
     final firstApplicationPageSubmitButtonFinder =
         find.byValueKey("firstApplicationPageSubmitButton");
 
+    final logoutButtonFinder = find.byValueKey("credentialsLogoutButton");
+
+// announcement Page
+    final announcementPageTitleFinder =
+        find.byValueKey("announcementTitleInput");
+    final announcementPageBodyFinder =
+        find.byValueKey("announcementPageBodyInput");
+    final announcementPageButtonFinder =
+        find.byValueKey("announcementPagePostButton");
+    // Announcmenet
     late FlutterDriver driver;
 
     setUpAll(() async {
@@ -67,7 +84,13 @@ void main() {
       driver.close();
     });
 
-    test("Register User and Login fill out profile and Edit Profile", () async {
+    test("Register User and Login fill out profile and Edit Profile Logout",
+        () async {
+      await driver.waitFor(loginPageLoginButtonFinder);
+
+      await driver.scrollUntilVisible(
+          loginViewFinder, loginPageRegisterButtonFinder,
+          dyScroll: -100);
       // Go to register Page
       await driver.tap(loginPageRegisterButtonFinder);
 
@@ -79,6 +102,11 @@ void main() {
       await driver.tap(registerPageEmailFinder);
       await driver.enterText("usertwo@gmail.com");
 
+      // Scroll
+      await driver.scrollUntilVisible(
+          registerViewFinder, registerPagePasswordFinder,
+          dyScroll: -60);
+
       // Input Password
       await driver.tap(registerPagePasswordFinder);
       await driver.enterText("Testing@123");
@@ -86,19 +114,15 @@ void main() {
       // Select Role
       await driver.tap(registerPageRoleFinder);
 
+      // Scroll
+      await driver.scrollUntilVisible(
+          registerViewFinder, registerPageRegisterButtonFinder,
+          dyScroll: -60);
+
       // Regitser button
       await driver.tap(registerPageRegisterButtonFinder);
 
-      // Put in Username
-      await driver.tap(loginPageUserNameFinder);
-      await driver.enterText("usertwo@gmail.com");
-
-      // Enter password
-      await driver.tap(loginPagePasswordFinder);
-      await driver.enterText("Testing@123");
-
-      // Enter Login button
-      await driver.tap(loginPageLoginButtonFinder);
+      await driver.waitFor(profilePageFullNameFinder);
 
       // Input full name
       await driver.tap(profilePageFullNameFinder);
@@ -142,6 +166,13 @@ void main() {
           profileEditPageListViewFinder, profileEditPageSaveButtonFinder,
           dyScroll: -100);
       await driver.tap(profileEditPageSaveButtonFinder);
+
+      // Navigate
+      await driver.tap(navigatorPageIndexThreeFinder);
+
+      // Logout
+      await driver.waitFor(logoutButtonFinder);
+      await driver.tap(logoutButtonFinder);
     });
   });
 }

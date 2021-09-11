@@ -14,6 +14,10 @@ import 'package:http/http.dart' as http;
 
 @LazySingleton(as: IAdminApplicationRepository)
 class ApiAdminApplicationRepository implements IAdminApplicationRepository {
+  // static final String _baseUrl = "http://192.168.0.147:5000/admin";
+
+  // static final String _baseUrl = "http://10.0.2.2:5000/admin";
+
   static final String _baseUrl = "${dotenv.env["API"]}/admin";
   http.Client? client = http.Client();
 

@@ -16,7 +16,7 @@ import '../auth/api_auth_repository_unit_test.mocks.dart';
 @GenerateMocks([http.Client])
 void main() {
   final String _baseUrl = "${dotenv.env["API"]}/admin";
-  
+
   // * GET SERVER APPLICATIONS
   group("Api Admin App Overview Repo get server applications", () {
     const successfulResponseBody = '''

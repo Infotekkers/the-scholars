@@ -13,33 +13,53 @@
   <body>
     {{#each applicant}}
     <main>
+      <!-- <img src="./assets/img/icon.jpg" alt="" width="200" height="300" />
+
+      <img
+        src="./assets/img/icon.jpg"
+        alt=""
+        width="200"
+        height="300"
+        class="hidden"
+      />
+
+      <img
+        src="./assets/img/icon.jpg"
+        alt=""
+        width="200"
+        height="300"
+        class="hidden"
+      /> -->
+
+      <div class="myImg" style="width: 200; height: 600"></div>
+
       <section id="basic-info" class="">
         <!-- Full Name -->
-        <div>
+        <div class="main-container">
           <span>Full Name : </span>
           <b>{{this.fullName}}</b>
         </div>
 
         <!-- BirthDate -->
-        <div>
+        <div class="main-container">
           <span>BirthDate : </span>
           <b>{{this.birthDate}}</b>
         </div>
 
         <!-- Gender -->
-        <div>
+        <div class="main-container">
           <span>Gender : </span>
           <b>{{this.gender}}</b>
         </div>
 
         <!-- Location -->
-        <div>
+        <div class="main-container">
           <span>Location : </span>
           <b>{{this.location}}</b>
         </div>
 
         <!-- Phone Number -->
-        <div>
+        <div class="main-container">
           <span>Phone Number : </span>
           <b>{{this.phoneNumber}}</b>
         </div>

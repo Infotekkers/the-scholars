@@ -8,6 +8,7 @@ import 'package:client/presentation/announcement/announcement_overview/announcem
 import 'package:client/presentation/application/first_page.dart';
 import 'package:client/presentation/application/second_page.dart';
 import 'package:client/presentation/auth/register_page.dart';
+import 'package:client/presentation/splash/splash_page.dart';
 
 import 'package:client/presentation/view_applications/download_page.dart';
 
@@ -22,11 +23,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class AppRouter {
   Map<String, Widget Function(BuildContext)> allRoutes = {
     // * COMMON ROUTES
+    "/splash": (context) => SplashPage(),
     // * Route - Sign In Page
     "/sign-in": (context) => SignInPage(),
     // * Route - Register Page
     "/register": (context) => RegisterPage(),
-
 
     // * STUDENT
     // * Route - Home Page

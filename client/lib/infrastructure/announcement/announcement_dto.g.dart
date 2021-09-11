@@ -8,6 +8,7 @@ part of 'announcement_dto.dart';
 
 _$_AnnouncementDto _$_$_AnnouncementDtoFromJson(Map<String, dynamic> json) {
   return _$_AnnouncementDto(
+    id: json['id'] as String,
     title: json['title'] as String,
     body: json['body'] as String,
     date: json['date'] as String,
@@ -16,6 +17,7 @@ _$_AnnouncementDto _$_$_AnnouncementDtoFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$_$_AnnouncementDtoToJson(_$_AnnouncementDto instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'title': instance.title,
       'body': instance.body,
       'date': instance.date,

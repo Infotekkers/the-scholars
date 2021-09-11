@@ -9,4 +9,7 @@ abstract class ICredentialsRepository {
 
   Future<Either<CredentialFailure, String>> resetEmail(
       {required CredentialsEmail credentialsEmail});
+
+  Future<Either<CredentialFailure, String>> deleteAccount(
+      {required String emailAddress});
 }

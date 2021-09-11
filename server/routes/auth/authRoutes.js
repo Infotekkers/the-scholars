@@ -501,8 +501,9 @@ router.delete("/delete", async (req, res) => {
       .catch((err) => {
         console.log(err);
       });
+    res.status(204).send();
   } catch (e) {
-    res.status(500).send("Please try again later!");
+    res.sendStatus(500);
   }
 });
 

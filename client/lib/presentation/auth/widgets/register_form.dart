@@ -2,7 +2,6 @@ import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:client/application/auth/auth_bloc.dart';
 import 'package:client/application/auth/register_form/register_form_bloc.dart';
 import 'package:client/domain/auth/value_objects.dart';
-import 'package:client/presentation/core/widgets/flash_message.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -26,14 +25,13 @@ class RegisterForm extends StatelessWidget {
                 }, (r) {
                   BlocProvider.of<AuthBloc>(context)
                       .add(const AuthEvent.authCheckRequested());
-                  getWrappedFlashMessage(
-                      context, "Account has been created.Login");
                 }));
       },
       builder: (context, state) {
         return Scaffold(
           backgroundColor: Colors.grey[800],
           body: SingleChildScrollView(
+            key: const ValueKey("registerPageView"),
             child: Column(
               children: <Widget>[
                 Stack(
@@ -49,8 +47,11 @@ class RegisterForm extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 25),
                         child: IconButton(
                             icon: const Icon(Icons.arrow_back,
-                                color: Colors.white),
-                            onPressed: () {}),
+                                color: Colors.black),
+                            key: const ValueKey("registerPageLoginButton"),
+                            onPressed: () {
+                              Navigator.popAndPushNamed(context, '/sign-in');
+                            }),
                       ),
                     ),
                     Align(
@@ -82,14 +83,15 @@ class RegisterForm extends StatelessWidget {
                       padding: const EdgeInsets.all(20.0),
                       child: Column(children: [
                         TextFormField(
+                          key: const ValueKey("registerPageFullNameInput"),
                           decoration: const InputDecoration(
-                            enabledBorder: OutlineInputBorder(
+                            border: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(20.0)),
                                 borderSide:
                                     BorderSide(color: Colors.grey, width: 1)),
                             fillColor: Colors.white,
-                            prefixIcon: Icon(Icons.email),
+                            prefixIcon: Icon(Icons.person),
                             labelText: 'Username',
                             labelStyle: TextStyle(color: Colors.white),
                           ),
@@ -114,8 +116,9 @@ class RegisterForm extends StatelessWidget {
                           height: 35,
                         ),
                         TextFormField(
+                          key: const ValueKey("registerPageEmailInput"),
                           decoration: const InputDecoration(
-                            enabledBorder: OutlineInputBorder(
+                            border: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(20.0)),
                                 borderSide:
@@ -146,8 +149,9 @@ class RegisterForm extends StatelessWidget {
                           height: 35,
                         ),
                         TextFormField(
+                          key: const ValueKey("registerPagePasswordInput"),
                           decoration: const InputDecoration(
-                            enabledBorder: OutlineInputBorder(
+                            border: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(20.0)),
                                 borderSide: BorderSide(
@@ -181,13 +185,13 @@ class RegisterForm extends StatelessWidget {
                           height: 35,
                         ),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          // ignore: avoid_redundant_argument_values
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             const Expanded(
                               child: Text("Select Role:"),
                             ),
                             Expanded(
-                              flex: 3,
                               child: ListTile(
                                 title: const Text("User"),
                                 leading: Radio(
@@ -209,10 +213,11 @@ class RegisterForm extends StatelessWidget {
                               ),
                             ),
                             Expanded(
-                              flex: 3,
                               child: ListTile(
                                 title: const Text("Admin"),
                                 leading: Radio(
+                                  key: const ValueKey(
+                                      "registerPageRoleAdminInput"),
                                   fillColor: MaterialStateColor.resolveWith(
                                       (states) =>
                                           Theme.of(context).primaryColor),
@@ -259,29 +264,35 @@ class RegisterForm extends StatelessWidget {
                                   ),
                               child: const Text("Register")),
                         ),
-
                         const SizedBox(height: 15),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Expanded(
-                              child: ElevatedButton(
-                                key: const ValueKey("registerPageLoginButton"),
-                                onPressed: () {
-                                  Navigator.popAndPushNamed(
-                                      context, '/sign-in');
-                                },
-                                child: const Text("Log In",
-                                    style: TextStyle(
-                                        color: Colors.grey,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.normal)),
-                              ),
-                              // ],
-                            )
-                          ],
-                        ),
+                        // Row(
+                        //   crossAxisAlignment: CrossAxisAlignment.start,
+                        //   mainAxisAlignment: MainAxisAlignment.center,
+                        //   children: [
+                        //     Expanded(
+                        //       child: ElevatedButton(
+                        //          style: ElevatedButton.styleFrom(
+                        //         primary: Colors.grey,
+                        //         onPrimary: Colors.white,
+
+                        //         shape: RoundedRectangleBorder(
+                        //           borderRadius: BorderRadius.circular(12), // <-- Radius
+                        //        )),
+                        //         key: const ValueKey("registerPageLoginButton"),
+                        //         onPressed: () {
+                        //           Navigator.popAndPushNamed(
+                        //               context, '/sign-in');
+                        //         },
+                        //         child: const Text("Log In",
+                        //             style: TextStyle(
+                        //                 color: Colors.grey,
+                        //                 fontSize: 16,
+                        //                 fontWeight: FontWeight.normal)),
+                        //       ),
+                        //       // ],
+                        //     )
+                        //   ],
+                        // ),
                       ]),
                     )),
               ],

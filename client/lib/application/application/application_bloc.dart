@@ -10,7 +10,6 @@ import 'package:client/infrastructure/application/application_dto.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 part 'application_event.dart';
 part 'application_state.dart';
@@ -367,6 +366,8 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
       downloadComplete: (e) async* {
         yield state.copyWith(
           isDownloadComplete: true,
+          recievedAmount: 5,
+          totalAmount: 5,
         );
       },
       progressDownload: (e) async* {
@@ -379,6 +380,8 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
       startDownload: (e) async* {
         yield state.copyWith(
           isPreparingDownload: true,
+          recievedAmount: 0,
+          totalAmount: 1,
         );
         _iApplicationRepository.downloadApplicationFile(
             applicationId: e.applicationId);

@@ -60,7 +60,7 @@ class RegisterFormBloc extends Bloc<RegisterFormEvent, RegisterFormState> {
               isSubmitting: true, authFailureOrSuccess: none());
 
           final User user = User.initial();
-          
+
           failureOrSuccess = await authRepository.register(
               user: user.copyWith(
                   emailAddress: state.emailAddress,
@@ -73,7 +73,7 @@ class RegisterFormBloc extends Bloc<RegisterFormEvent, RegisterFormState> {
             isSubmitting: false,
             showErrorMessages: true,
             authFailureOrSuccess: optionOf(failureOrSuccess));
-        
+
         if (failureOrSuccess?.isRight() ?? false) {
           failureOrSuccess!.fold((l) => {}, (r) async {
             await authRepository.setCachedUser(user: r);
